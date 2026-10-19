@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C07B"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#A98548"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#211C16"/>
+      <stop offset="100%" stop-color="#12100E"/>
+    </linearGradient>
+  </defs>
+  <!-- Background squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#A98548" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <!-- Subtle inner glow -->
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="none" stroke="rgba(212,175,55,0.15)" stroke-width="1"/>
+
+  <!-- Monogram JL with Lightning speed accent -->
+  <text x="14" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="url(#goldGrad)" letter-spacing="-1.5">J</text>
+  <text x="30" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#FAF7F1" letter-spacing="-1.5">L</text>
+  
+  <!-- Speed indicator dot / spark -->
+  <polygon points="49,15 43,26 48,26 45,34 53,22 48,22" fill="url(#goldGrad)"/>
+</svg>
