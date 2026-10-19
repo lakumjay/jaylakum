@@ -318,13 +318,19 @@ def main():
             "body": f"<h2>1. The Real Cost of Sub-Second Latency in European E-Commerce</h2><p>When an online shopper in London or Amsterdam visits your store on a 4G connection, every 500ms delay adds friction. If a checkout page takes longer than 2.5 seconds to load, mobile bounce rates jump over 30%.</p><h2>2. Auditing Third-Party Scripts and Bloated Apps</h2><p>Most Shopify stores carry leftovers from apps installed two years ago. Each unused widget still executes JavaScript in the critical rendering path. Auditing and removing these scripts gives the fastest, cleanest speed lift without touching your visual layout.</p><h2>3. Checkout Reliability Across Currencies and Gateways</h2><p>Whether accommodating Dutch iDEAL, UK Apple Pay, or German Klarna, international payment gateways fail when caching layers cache dynamic session cookies. Ensure all cart and checkout endpoints bypass full-page caching completely.</p><h2>Need Your Store Speed Audited?</h2><p>If your webshop is losing customers to sluggish mobile speeds or checkout bugs, reach out through the contact form below. I reply within 24 hours with honest first thoughts and a free technical mini-audit of your store.</p>"
         }
         
-        # Paths
+        # Paths (Current directory where script runs + local fallbacks)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
         base_paths = [
+            current_dir,
             "/Users/jay/Documents/GitHub/jaylakum",
             "/Applications/XAMPP/xamppfiles/htdocs/jaylakum"
         ]
         
+        seen_paths = set()
         for p in base_paths:
+            if not p or p in seen_paths:
+                continue
+            seen_paths.add(p)
             html_file = os.path.join(p, "index.html")
             sitemap_file = os.path.join(p, "sitemap.xml")
             if os.path.exists(html_file):
@@ -343,13 +349,19 @@ def main():
     print("🎨 Generating clean non-copyright SVG illustration banner...")
     article_data["image"] = generate_non_copyright_svg(article_data["title"], article_data["category"])
 
-    # Update HTML and Sitemap in both repositories
+    # Update HTML and Sitemap in both repositories / cPanel directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     base_paths = [
+        current_dir,
         "/Users/jay/Documents/GitHub/jaylakum",
         "/Applications/XAMPP/xamppfiles/htdocs/jaylakum"
     ]
 
+    seen_paths = set()
     for p in base_paths:
+        if not p or p in seen_paths:
+            continue
+        seen_paths.add(p)
         html_file = os.path.join(p, "index.html")
         sitemap_file = os.path.join(p, "sitemap.xml")
         if os.path.exists(html_file):
