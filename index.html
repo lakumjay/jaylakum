@@ -841,6 +841,12 @@
         <div>
           <form class="req" id="contactForm" action="contact.php" method="POST">
             <input type="hidden" name="_to" value="lakumjay2000@gmail.com" />
+            <!-- Anti-Spam Honeypot Trap (Hidden from humans, traps bots) -->
+            <div style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden">
+              <label for="f-hp">Leave this field blank</label>
+              <input id="f-hp" name="_hp_company_website_verify" type="text" tabindex="-1" autocomplete="off" />
+              <input id="f-ts" name="_ts_token" type="hidden" value="" />
+            </div>
             <div class="field">
               <label for="f-name">Your name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required />
@@ -856,20 +862,33 @@
             <div class="field">
               <label for="f-type">What do you need help with?</label>
               <select id="f-type" name="problem_type" required>
-                <option value="Speed optimization">Speed optimization</option>
-                <option value="Bug fix">Bug fix</option>
-                <option value="Redesign">Redesign</option>
-                <option value="Custom web design & development">Custom web design & development</option>
-                <option value="Other">Other</option>
+                <option value="Speed optimization (Sub-1.5s Load Time)">⚡ Speed optimization (Sub-1.5s Mobile Load Time)</option>
+                <option value="Checkout & Payment Bug Fixes (iDEAL, Mollie, Stripe)">🐛 Checkout & Payment Bug Fixes (iDEAL, Mollie, Stripe)</option>
+                <option value="Boutique Webshop Redesign (Shopify / WooCommerce)">🎨 Boutique Webshop Redesign (Shopify / WooCommerce)</option>
+                <option value="Build New Webshop / Store from Scratch">🚀 Build New Webshop / Store from Scratch</option>
+                <option value="Core Web Vitals & Technical SEO">📈 Core Web Vitals & Technical SEO</option>
+                <option value="Other / Custom Technical Solution">🔧 Other / Custom Technical Solution</option>
               </select>
             </div>
             <div class="field">
-              <label for="f-msg">Tell me about the problem</label>
+              <label for="f-budget">Project Budget Range</label>
+              <select id="f-budget" name="budget" required>
+                <option value="€300 - €750 ($350 - $800) — Quick Fix / Speed Boost">€300 - €750 ($350 - $800) — Quick Fix / Speed Boost</option>
+                <option value="€750 - €1,500 ($800 - $1,600) — Standard Fixes & Optimizations" selected>€750 - €1,500 ($800 - $1,600) — Standard Fixes & Optimizations</option>
+                <option value="€1,500 - €3,000 ($1,600 - $3,300) — Complete Redesign / New Store">€1,500 - €3,000 ($1,600 - $3,300) — Complete Redesign / New Store</option>
+                <option value="€3,000+ ($3,300+) — Enterprise Custom Webshop">€3,000+ ($3,300+) — Enterprise Custom Webshop</option>
+                <option value="Flexible / Open to Quote based on Scope">Flexible / Open to Quote based on Scope</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-msg">Tell me about the problem / requirement</label>
               <textarea id="f-msg" name="message" placeholder="What's happening, when did it start, and what have you tried?" required></textarea>
             </div>
+            <!-- Optional Cloudflare Turnstile Free Anti-Bot Widget container -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAx_PLACEHOLDER_KEY" data-theme="auto" style="margin-bottom:12px"></div>
             <button class="btn" id="contactSubmitBtn" type="submit" style="justify-content:center">Send my requirement</button>
             <div id="formStatusMsg" style="display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5;"></div>
-            <p class="form-note">Your message goes straight to my inbox at lakumjay2000@gmail.com. No newsletters, no sharing your details — just a reply from me.</p>
+            <p class="form-note">🛡️ Protected against spam. Your message goes straight to my personal inbox. Fixed price quote within 24 hours.</p>
           </form>
         </div>
         <div class="contact-side">
@@ -1273,11 +1292,25 @@ document.getElementById('burger').addEventListener('click', function(){
 /* ---------- Contact Form Handler ---------- */
 var contactForm = document.getElementById('contactForm');
 if (contactForm){
+  // Set anti-spam timestamp token on load
+  var tsField = document.getElementById('f-ts');
+  if (tsField) tsField.value = Math.floor(Date.now() / 1000);
+
   contactForm.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = document.getElementById('contactSubmitBtn');
     var status = document.getElementById('formStatusMsg');
     var origText = btn.textContent;
+
+    // Check honeypot immediately
+    var hpValue = document.getElementById('f-hp') ? document.getElementById('f-hp').value : '';
+    if (hpValue && hpValue.trim() !== ''){
+      // Bot trapped! Silently pretend success
+      contactForm.reset();
+      btn.textContent = 'Sent Successfully!';
+      return;
+    }
+
     btn.textContent = 'Sending your requirement…';
     btn.disabled = true;
     status.style.display = 'none';
@@ -1287,7 +1320,10 @@ if (contactForm){
       email: document.getElementById('f-email').value,
       website: document.getElementById('f-url').value,
       problem_type: document.getElementById('f-type').value,
-      message: document.getElementById('f-msg').value
+      budget: document.getElementById('f-budget') ? document.getElementById('f-budget').value : 'Not Specified',
+      message: document.getElementById('f-msg').value,
+      _hp_company_website_verify: hpValue,
+      _ts_token: tsField ? tsField.value : ''
     };
 
     function showSuccess(msg){
