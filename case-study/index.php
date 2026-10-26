@@ -205,7 +205,7 @@
     <span class="tag">VERIFIED CASE STUDY &middot; SHOPIFY PERFORMANCE</span>
     <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique</h1>
     <p class="case-summary">
-      A high-end European apparel and accessories store was losing over half its mobile traffic to sluggish loading screens. Here is the exact technical breakdown of how we eliminated 140KB of ghost scripts, optimized critical rendering, and increased checkout completion by +34%.
+      A high-end European apparel and accessories store was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated 140KB of ghost scripts, optimized critical rendering, and increased checkout completion by +34%.
     </p>
 
     <!-- Metrics Highlights -->
@@ -216,9 +216,9 @@
         <div class="metric-note">&minus;64% Faster Load Time</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">PageSpeed Mobile</div>
-        <div class="metric-val">38 &rarr; 96</div>
-        <div class="metric-note">Passed Core Web Vitals</div>
+        <div class="metric-label">Core Web Vitals</div>
+        <div class="metric-val">PASS</div>
+        <div class="metric-note">Sub-2.5s LCP on Mobile</div>
       </div>
       <div class="metric-card">
         <div class="metric-label">Cart Abandonment</div>
@@ -236,13 +236,13 @@
     <div class="case-body">
       <h2>1. The Problem: The Hidden Cost of App Churn</h2>
       <p>
-        The merchant reached out after observing a sharp drop in their Google Ads and Instagram campaign ROAS. Despite driving high-intent mobile visitors, the bounce rate on product and collection pages exceeded 68%.
+        The merchant reached out after observing a sharp drop in their Google Ads and Instagram campaign ROAS. Despite driving high-intent mobile visitors, the bounce rate on product and collection pages was steadily climbing.
       </p>
       <p>
         A Chrome DevTools performance trace and WebPageTest profile revealed severe main-thread congestion:
       </p>
       <ul>
-        <li><strong>Ghost Liquid & JS Tags:</strong> Over 18 months, the merchant had tested and uninstalled 9 different Shopify apps (currency switchers, abandoned cart popups, bundle bars). None of them had cleaned up their assets from <code>theme.liquid</code>, injecting 140KB of blocking JavaScript and broken DNS preconnects on every page load.</li>
+        <li><strong>Ghost Liquid & JS Tags:</strong> Over 18 months, the merchant had tested and uninstalled 9 different Shopify apps (currency switchers, abandoned cart popups, bundle bars). None of them had cleaned up their assets from <code>theme.liquid</code>, injecting render-blocking JavaScript and unnecessary DNS lookups on every page load.</li>
         <li><strong>Massive Hero Imagery:</strong> The homepage and category banners were loading uncompressed 4.2MB PNG images directly onto mobile viewports without responsive <code>&lt;picture&gt;</code> tags or WebP formatting.</li>
         <li><strong>Render-Blocking Font Loading:</strong> Three separate Google Font families were loaded synchronously via <code>@import</code>, delaying First Contentful Paint by 2.4 seconds on mobile 4G networks.</li>
       </ul>

@@ -205,7 +205,7 @@
     <span class="tag">GEVERIFIEERDE CASE STUDY &middot; WEBSHOP SNELHEID</span>
     <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s (+34% Conversie)</h1>
     <p class="case-summary">
-      Een Europese mode- en accessoires webshop verloor meer dan de helft van haar mobiele bezoekers aan een trage laadpagina. Hier is het exacte stappenplan waarmee we 140KB aan achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
+      Een Europese mode- en accessoires webshop verloor waardevolle mobiele bestellingen door trage laadtijden aan een trage laadpagina. Hier is het exacte stappenplan waarmee we 140KB aan achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
     </p>
 
     <!-- Metrics Highlights -->
@@ -216,9 +216,9 @@
         <div class="metric-note">&minus;64% Snellere Laadtijd</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Google PageSpeed</div>
-        <div class="metric-val">38 &rarr; 96</div>
-        <div class="metric-note">Groene Core Web Vitals</div>
+        <div class="metric-label">Core Web Vitals</div>
+        <div class="metric-val">GROEN</div>
+        <div class="metric-note">Sub-2.5s LCP op Smartphone</div>
       </div>
       <div class="metric-card">
         <div class="metric-label">Winkelwagen Uitval</div>
@@ -236,13 +236,13 @@
     <div class="case-body">
       <h2>1. Het Probleem: Onzichtbare Vertraging door Verwijderde Apps</h2>
       <p>
-        De winkeleigenaar zag een verontrustende trend: ondanks constante advertentie-uitgaven op Meta en Google, verliet meer dan 68% van de smartphonebezoekers de productpagina voordat de afbeeldingen volledig geladen waren.
+        De winkeleigenaar zag een verontrustende trend: ondanks constante advertentie-uitgaven op Meta en Google, verliet een groot deel van de smartphonebezoekers de productpagina voordat de afbeeldingen volledig geladen waren.
       </p>
       <p>
         Uit een diepgaande analyse met Chrome DevTools en Google Lighthouse kwamen drie grote knelpunten naar voren:
       </p>
       <ul>
-        <li><strong>Achtergebleven 'Spookcode':</strong> In anderhalf jaar tijd had de webshop 9 verschillende apps geïnstalleerd en weer verwijderd (bundel apps, currency switchers, popups). Geen van deze apps had de tracking-scripts netjes verwijderd uit <code>theme.liquid</code>, waardoor er bij elk paginabezoek 140KB aan dode JavaScript werd ingeladen.</li>
+        <li><strong>Achtergebleven 'Spookcode':</strong> In anderhalf jaar tijd had de webshop 9 verschillende apps geïnstalleerd en weer verwijderd (bundel apps, currency switchers, popups). Geen van deze apps had de tracking-scripts netjes verwijderd uit <code>theme.liquid</code>, waardoor er bij elk paginabezoek onnodige vertragende JavaScript werd ingeladen.</li>
         <li><strong>Niet-geoptimaliseerde Banners:</strong> De homepage en categoriebanners bestonden uit zware PNG-bestanden van ruim 4MB, zonder WebP-formaat of responsive <code>&lt;picture&gt;</code> tags voor telefoons.</li>
         <li><strong>Blokkerende Externe Lettertypen:</strong> Drie verschillende lettertypen werden synchroon via externe servers ingeladen, wat voor 2.4 seconden wit scherm zorgde op 4G-verbindingen.</li>
       </ul>

@@ -650,79 +650,36 @@
 
   
   <!-- Klantbeoordelingen / Echte Resultaten -->
-  <section id="reviews" class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0">
-    <div class="wrap">
-      <div style="text-align:center;max-width:680px;margin:0 auto 44px">
-        <div class="eyebrow">ERVARINGEN &amp; RESULTATEN</div>
-        <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Wat Nederlandse Webshop Eigenaren Zeggen</h2>
-        <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
-          Eerlijke ervaringen van modeboetieks, lifestylemerken en WooCommerce webshops in Nederland en Europa.
-        </p>
-      </div>
-
-      <div class="review-grid">
-        <!-- Review 1 -->
-        <div class="review-card">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-              <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
-              <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+      <!-- Eerlijk Vakmanschap & Eerste Klant Garantie (Vervangt Ongeverifieerde Reviews) -->
+    <div class="section" style="border-bottom:1px solid var(--line);background:var(--bg)">
+      <div class="wrap">
+        <div style="background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:44px 32px;box-shadow:var(--shadow);max-width:880px;margin:0 auto;text-align:center">
+          <span class="tag" style="margin-bottom:14px">EERLIJK VAKMANSCHAP &middot; GEEN VERZONNEN REVIEWS</span>
+          <h2 style="font-family:var(--serif);font-size:clamp(26px,3.8vw,36px);margin-bottom:14px">Rechtstreeks Met De Developer. Betalen Bij Oplevering.</h2>
+          <p style="font-size:17px;color:var(--ink-soft);max-width:680px;margin:0 auto 28px;line-height:1.65">
+            Ik plaats geen verzonnen quotes van onbekende bedrijven. Ik kies voor 100% transparantie: Je werkt direct met mij, we testen alles veilig op een staging testomgeving zonder risico voor je live winkel, en je betaalt pas na tevreden oplevering.
+          </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;text-align:left;margin-bottom:32px">
+            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🛡️ NUL RISICO</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Betalen Bij Oplevering</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Geen verplichte aanbetaling. Je controleert het resultaat eerst zelf op staging.</p>
             </div>
-            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
-              "Onze Shopify Dawn theme laadde op mobiel in 5.8 seconden en we verloren dagelijks winkelmandjes. Jay heeft alle achtergebleven Liquid app scripts opgeschoond en onze Core Web Vitals geoptimaliseerd. Mobiele laadtijd is nu 1.3s en onze conversie steeg met 28% in de eerste maand. Eerlijke communicatie en vaste prijs vooraf."
-            </p>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
-            <div>
-              <strong style="display:block;font-size:14.5px;color:var(--ink)">Sophie van den Berg</strong>
-              <span style="font-size:13px;color:var(--ink-faint)">Oprichtster, L’Étoile Boutique (Amsterdam)</span>
+            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">⚡ ECHTE WEBWINKELS</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Live Te Bekijken</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Echte productiecode op Gecko Monaco, Opulentt en PostCraftAI.</p>
             </div>
-            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">5.8s → 1.3s (-77%)</span>
-          </div>
-        </div>
-
-        <!-- Review 2 -->
-        <div class="review-card">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-              <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
-              <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🎯 EERSTE KLANT DEAL</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Jouw Webshop Uitgelicht</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Jouw winkel wordt onze volgende officiële geverifieerde case study.</p>
             </div>
-            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
-              "Na een WooCommerce update kregen we plotseling 'In afwachting van betaling' fouten met iDEAL via Mollie. Jay traceerde binnen 2 uur de webhook timeout in onze caching configuratie en loste het op zonder downtime. Een echte specialist die weet wat hij doet."
-            </p>
           </div>
-          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
-            <div>
-              <strong style="display:block;font-size:14.5px;color:var(--ink)">Mark de Ridder</strong>
-              <span style="font-size:13px;color:var(--ink-faint)">E-Commerce Manager, Nordic Living NL</span>
-            </div>
-            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">iDEAL &amp; Mollie Opgelost</span>
-          </div>
-        </div>
-
-        <!-- Review 3 -->
-        <div class="review-card">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-              <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
-              <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
-            </div>
-            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
-              "Jay heeft voor Opulentt Fragrances een prachtige luxury webshop neergezet. Grote foto's laden direct, filters werken vlekkeloos en de afrekening verloopt soepel. Vaste prijs vooraf afgesproken en keurig binnen de planning opgeleverd."
-            </p>
-          </div>
-          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
-            <div>
-              <strong style="display:block;font-size:14.5px;color:var(--ink)">Elena Rostova</strong>
-              <span style="font-size:13px;color:var(--ink-faint)">Brand Director, Opulentt Fragrances</span>
-            </div>
-            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">Sub-Second Laadtijd</span>
-          </div>
+          <a href="#gratis-audit" class="btn" style="font-size:15px;padding:12px 28px">Vraag Jouw Gratis Video Audit Aan &rarr;</a>
         </div>
       </div>
     </div>
-  </section>
 
   <!-- Transparante Tarieven & Indicatie -->
   <section id="pricing" class="section" style="padding:72px 0">
@@ -1012,7 +969,7 @@ document.addEventListener('DOMContentLoaded', function(){
           status.style.background = 'rgba(46, 204, 113, 0.15)';
           status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
           status.style.color = '#166534';
-          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24 uur contact met je op met een gratis mini-audit.';
+          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24-48 uur contact met je op met een gratis mini-audit.';
         }
         if (btn) btn.textContent = 'Succesvol Verzonden!';
         form.reset();
@@ -1093,7 +1050,7 @@ document.addEventListener('DOMContentLoaded', function(){
           status.style.background = 'rgba(46, 204, 113, 0.15)';
           status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
           status.style.color = '#166534';
-          status.innerHTML = '<strong>✓ Gratis video audit aangevraagd!</strong> Ik neem je webshop op en stuur je binnen 24 uur een persoonlijke Loom schermopname.';
+          status.innerHTML = '<strong>✓ Gratis video audit aangevraagd!</strong> Ik neem je webshop op en stuur je binnen 24-48 uur een persoonlijke Loom schermopname.';
         }
         if (btn) btn.textContent = '✓ Aangevraagd!';
         auditForm.reset();

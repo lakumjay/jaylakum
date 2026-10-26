@@ -790,7 +790,7 @@ document.addEventListener('DOMContentLoaded', function(){
           status.style.background = 'rgba(46, 204, 113, 0.15)';
           status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
           status.style.color = '#166534';
-          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24 uur contact met je op met een gratis mini-audit.';
+          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24-48 uur contact met je op met een gratis mini-audit.';
         }
         if (btn) btn.textContent = 'Succesvol Verzonden!';
         form.reset();

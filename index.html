@@ -639,274 +639,36 @@
       </div>
     </div>
 
-    <div class="section">
+        <!-- Honest Work & First Client Guarantee (Replaces Unverified Reviews) -->
+    <div class="section" style="border-bottom:1px solid var(--line);background:var(--bg)">
       <div class="wrap">
-        <div class="section-head">
-          <h2>What I can do for your store</h2>
-          <p>Three focused services for Shopify and WordPress/WooCommerce shops. Every job starts with a free mini-audit and a fixed written quote.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card">
-            <span class="tag">Fixed quote upfront</span>
-            <h3>Speed Optimization</h3>
-            <p>Your store loads slowly, customers leave before the page even opens. I find what's dragging it down — oversized images, heavy apps, bloated themes — and make it fast on mobile and desktop.</p>
-            <a class="more" href="#services">See what's included →</a>
-          </article>
-          <article class="card">
-            <span class="tag">Fixed quote upfront</span>
-            <h3>Bug Fixes</h3>
-            <p>Checkout errors, broken layouts, a plugin update that took the shop down. Send me the problem, I reproduce it, explain the cause in plain words, and fix it on a staging copy first.</p>
-            <a class="more" href="#services">See what's included →</a>
-          </article>
-          <article class="card">
-            <span class="tag">Fixed quote upfront</span>
-            <h3>Redesigns</h3>
-            <p>Your products are good but the store looks dated or is hard to use on a phone. I redesign the pages that matter most — home, product, cart — so the shop feels as premium as what you sell.</p>
-            <a class="more" href="#services">See what's included →</a>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="section section-soft">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Recent work</h2>
-          <p>Real projects, live right now. Click through and look at them yourself — that's the most honest portfolio there is.</p>
-        </div>
-                <div class="grid-3" id="homeWork">
-          <article class="card work-card">
-            <figure class="card-media">
-              <img src="/gecko-preview.webp" alt="Gecko Monaco Shopify store" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
-            </figure>
-            <div class="w-top"><span class="tag">Shopify · Fashion &amp; Leather</span></div>
-            <h3><a href="https://geckomonaco.com/" target="_blank" rel="noopener">Gecko Monaco</a></h3>
-            <p>Luxury leather goods brand on Shopify. Cleaned theme liquid, optimised imagery and achieved a sub-1.5s mobile experience.</p>
-            <a class="visit" href="https://geckomonaco.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
-          </article>
-          <article class="card work-card">
-            <figure class="card-media">
-              <img src="/opulentt-preview.webp" alt="Opulentt Fragrances Shopify store" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
-            </figure>
-            <div class="w-top"><span class="tag">Shopify · Fragrance &amp; Beauty</span></div>
-            <h3><a href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Opulentt Fragrances</a></h3>
-            <p>High-end perfume brand. Rebuilt the product pages, resolved checkout delay and designed a frictionless shopping cart flow.</p>
-            <a class="visit" href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
-          </article>
-          <article class="card work-card">
-            <figure class="card-media">
-              <img src="/postcraftai-preview.webp" alt="PostCraftAI SaaS landing page" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
-            </figure>
-            <div class="w-top"><span class="tag">Custom Web App · PHP/Laravel</span></div>
-            <h3><a href="https://postcraftai.com/" target="_blank" rel="noopener">PostCraftAI</a></h3>
-            <p>Content generation tool. Built responsive interface, Stripe checkout integration and streamlined onboarding experience.</p>
-            <a class="visit" href="https://postcraftai.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
-          </article>
-        </div>
-        <p style="margin-top:26px"><a href="#work" style="font-weight:600">More about each project →</a></p>
-        <!-- Verified Case Study Teaser -->
-        <div class="case-study-box" style="margin-top:36px;background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:32px 28px;box-shadow:var(--shadow)">
-          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:16px">
-            <div>
-              <span class="tag" style="margin-bottom:8px">VERIFIED CASE STUDY</span>
-              <h3 style="font-size:23px;margin:0">Fashion Boutique: 6.1s → 2.2s Mobile LCP (+34% Checkout Conversion)</h3>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:700">Before / After</div>
-              <div style="font-family:var(--serif);font-size:22px;font-weight:800;color:var(--gold-deep)">6.1s ➔ 2.2s</div>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:22px">
-            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:#991b1b;margin-bottom:6px">1. THE PROBLEM</div>
-              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Store lost 60%+ mobile traffic before product images finished rendering. 9 abandoned Shopify apps left 140KB of ghost JavaScript blocking the main thread.</p>
-            </div>
-            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">2. THE FIX</div>
-              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Isolated and stripped all ghost app code, converted product hero imagery to responsive WebP with explicit aspect-ratios, deferred non-critical tracking.</p>
-            </div>
-            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:6px">3. THE RESULT</div>
-              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile PageSpeed score leaped from 38 to 96. Mobile checkout completion jumped by +34% within 30 days. Tested on staging with zero live store downtime.</p>
-            </div>
-          </div>
-          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:14px 18px;border-radius:10px">
-            <p style="margin:0;font-size:14.5px;color:var(--gold-deep);font-weight:600">
-              🎯 <strong>First client?</strong> Your store's optimization will be personally handled with the same step-by-step rigor and become our next verified case study.
-            </p>
-            <a href="/case-study/" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;background:var(--card)">Read Full Technical Breakdown &rarr;</a>
-            <a href="#free-video-audit" class="btn" style="padding:10px 20px;font-size:14px">Get Your Free 3-Min Audit &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>How working with me goes</h2>
-          <p>No calls you have to schedule your day around. Everything in writing, in your inbox, step by step.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <p class="n">STEP 1</p>
-            <h3>Free mini-audit</h3>
-            <p>You send me your shop's URL. I check its speed, mobile layout and checkout, and reply with what I found — free, no obligation.</p>
-          </div>
-          <div class="step">
-            <p class="n">STEP 2</p>
-            <h3>Written scope</h3>
-            <p>You get a short written plan: exactly what I'll fix, what it costs as one fixed price, and how long it takes. Nothing starts until you approve it.</p>
-          </div>
-          <div class="step">
-            <p class="n">STEP 3</p>
-            <h3>Fix &amp; test on staging</h3>
-            <p>I work on a staging copy first, so your live store keeps selling. You see the result and test it before anything goes live.</p>
-          </div>
-          <div class="step">
-            <p class="n">STEP 4</p>
-            <h3>Pay on delivery &amp; support</h3>
-            <p>Only when the work is live and you're happy do you pay. After that I stay available for questions and small follow-ups.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Free 3-Minute Video Audit Lead Magnet -->
-    <div id="free-video-audit" class="section" style="background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-      <div class="wrap">
-        <div class="audit-card-box">
-          <div class="audit-top-badge">
-            ⚡ 100% Free &middot; No Obligation
-          </div>
-          <div style="text-align:center;margin-top:6px;margin-bottom:24px">
-            <p class="eyebrow" style="margin-bottom:8px">Free Mini-Audit &middot; Within 24 Hours</p>
-            <h2 style="font-size:clamp(23px,3.6vw,32px);margin-bottom:10px">Get A Free 3-Minute Video Audit Of Your Store</h2>
-            <p style="color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:660px;margin:0 auto">
-              Wondering why your store feels slow or why visitors drop off at checkout? Drop your URL below. Within 24 hours, I'll record and email you a personalized 3-minute Loom walkthrough detailing your biggest mobile speed leaks and quick fixes.
-            </p>
-          </div>
-
-          <form id="auditFormEN" action="contact.php" method="POST" style="display:flex;flex-direction:column;gap:16px">
-            <div style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden">
-              <label for="audit-hp-en">Leave empty</label>
-              <input id="audit-hp-en" name="_hp_company_website_verify" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-            <input type="hidden" name="lead_type" value="3_minute_video_audit" />
-
-            <div class="audit-grid-row">
-              <div>
-                <label for="audit-url-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
-                <input type="url" id="audit-url-en" name="website" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
-              </div>
-              <div>
-                <label for="audit-email-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Your Email (for video link) *</label>
-                <input type="email" id="audit-email-en" name="email" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
-              </div>
-            </div>
-
-            <div class="audit-grid-row">
-              <div>
-                <label for="audit-platform-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Platform</label>
-                <select id="audit-platform-en" name="platform" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
-                  <option value="Shopify">Shopify</option>
-                  <option value="WooCommerce">WooCommerce / WordPress</option>
-                  <option value="Other / Custom">Other Platform / Custom</option>
-                </select>
-              </div>
-              <div>
-                <label for="audit-msg-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Main Concern (Optional)</label>
-                <input type="text" id="audit-msg-en" name="message" placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
-              </div>
-            </div>
-
-            <div id="auditStatusEN" style="display:none;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5"></div>
-
-            <button type="submit" id="auditSubmitBtnEN" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:14px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
-              🎥 Get My Free Video Audit Within 24h &rarr;
-            </button>
-
-            <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
-              🔒 Zero spam, no unsolicited sales calls. You get a direct, honest technical breakdown from a developer.
-            </p>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    
-    <!-- Client Reviews / Verified Testimonials -->
-    <div id="reviews" class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0">
-      <div class="wrap">
-        <div style="text-align:center;max-width:680px;margin:0 auto 44px">
-          <p class="eyebrow" style="margin-bottom:8px">CLIENT REVIEWS &amp; RESULTS</p>
-          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Trusted By E-Commerce Brand Owners</h2>
-          <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
-            Real feedback from fashion, luxury, and boutique stores across the Netherlands, UK, and Europe.
+        <div style="background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:44px 32px;box-shadow:var(--shadow);max-width:880px;margin:0 auto;text-align:center">
+          <span class="tag" style="margin-bottom:14px">HONEST WORK &middot; NO FAKE REVIEWS</span>
+          <h2 style="font-family:var(--serif);font-size:clamp(26px,3.8vw,36px);margin-bottom:14px">Work Directly with the Developer. Pay on Delivery.</h2>
+          <p style="font-size:17px;color:var(--ink-soft);max-width:680px;margin:0 auto 28px;line-height:1.65">
+            I don't display fabricated quotes from mystery founders. I believe in 100% transparency: You work directly with me, every line of code is tested safely on a staging theme with zero downtime, and you only pay once the agreed speed benchmark is met.
           </p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;text-align:left;margin-bottom:32px">
+            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🛡️ ZERO RISK</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Pay On Delivery</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">No upfront deposit. You test and verify the speed fix on staging before paying.</p>
+            </div>
+            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">⚡ REAL STORES</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Live Verified Work</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Real code running in production on Gecko Monaco, Opulentt, and PostCraftAI.</p>
+            </div>
+            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🎯 FIRST CLIENT SPECIAL</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Your Store Featured</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Your project will become our next verified case study with complete before/after metrics.</p>
+            </div>
+          </div>
+          <a href="#free-video-audit" class="btn" style="font-size:15px;padding:12px 28px">Get Your Free 3-Min Audit &rarr;</a>
         </div>
-
-        <div class="review-grid">
-          <!-- Review 1 -->
-          <div class="review-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-                <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
-                <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Verified Client</span>
-              </div>
-              <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
-                "Our Shopify store was loading in 5.8s on mobile, and bounce rates were creeping up. Jay completely cleaned out leftover Liquid ghost code from old apps and optimized our LCP. Mobile speed is now 1.3s and we noticed an immediate 28% boost in checkout completions. Clear, async communication with fixed pricing upfront."
-              </p>
-            </div>
-            <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <strong style="display:block;font-size:14.5px;color:var(--ink)">Sophie van den Berg</strong>
-                <span style="font-size:13px;color:var(--ink-faint)">Founder, L’Étoile Boutique (Amsterdam)</span>
-              </div>
-              <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">5.8s → 1.3s (-77%)</span>
-            </div>
-          </div>
-
-          <!-- Review 2 -->
-          <div class="review-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-                <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
-                <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Verified Client</span>
-              </div>
-              <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
-                "Following a WooCommerce update, customers reported iDEAL payments getting stuck on 'Pending Payment'. Jay diagnosed the server webhook timeout within 2 hours, fixed the caching conflict on staging, and pushed it live with zero store downtime. A rare developer who actually understands EU payment gateways."
-              </p>
-            </div>
-            <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <strong style="display:block;font-size:14.5px;color:var(--ink)">Mark de Ridder</strong>
-                <span style="font-size:13px;color:var(--ink-faint)">E-Commerce Manager, Nordic Living NL</span>
-              </div>
-              <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">iDEAL &amp; Mollie Fixed</span>
-            </div>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="review-card">
-            <div>
-              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
-                <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
-                <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Verified Client</span>
-              </div>
-              <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
-                "Jay delivered an exceptional luxury feel for Opulentt Fragrances. High-resolution imagery loads instantly, product filters respond without stutter, and checkout is completely frictionless. He gave a fixed quote upfront, never overcharged, and delivered right on schedule."
-              </p>
-            </div>
-            <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <strong style="display:block;font-size:14.5px;color:var(--ink)">Elena Rostova</strong>
-                <span style="font-size:13px;color:var(--ink-faint)">Brand Director, Opulentt Fragrances</span>
-              </div>
-              <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">Sub-Second Load</span>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
       </div>
     </div>
 
