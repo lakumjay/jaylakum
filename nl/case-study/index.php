@@ -9,7 +9,13 @@
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/case-study/" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- Favicon & Touch Icons -->
+<link rel=icon type=image/x-icon href=/favicon.ico />
+<link rel=icon type=image/png sizes=48x48 href=/favicon-48x48.png />
+<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png />
+<link rel=icon type=image/png sizes=192x192 href=/favicon-192x192.png />
+<link rel=icon type=image/svg+xml href=/favicon.svg />
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png />
 
 <!-- Open Graph -->
 <meta property="og:type" content="article" />
@@ -191,7 +197,7 @@
       <a href="/nl/#calculator">Omzet Calculator</a>
       <a href="/blog/">Kennisbank</a>
       <a href="/case-study/" class="lang-toggle-btn" title="English version">🇬🇧 EN</a>
-      <a href="/nl/#gratis-audit" class="btn">Gratis Mini-Audit</a>
+      <a href="/nl/#gratis-audit" class="btn">Gratis 3-Minuten Video Audit</a>
     </nav>
   </div>
 </header>
@@ -290,7 +296,7 @@
       </div>
     </div>
 
-    <!-- Free Mini-Audit CTA -->
+    <!-- Free 3-Minute Video Audit CTA -->
     <div class="cta-section">
       <span class="tag">WIL JIJ DEZELFDE RESULTATEN VOOR JOUW WEBWINKEL?</span>
       <h2>Vraag Een Gratis 3-Minuten Video Audit Aan</h2>

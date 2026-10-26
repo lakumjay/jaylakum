@@ -13,7 +13,13 @@
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/" />
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<!-- Favicon & Touch Icons -->
+<link rel=icon type=image/x-icon href=/favicon.ico />
+<link rel=icon type=image/png sizes=48x48 href=/favicon-48x48.png />
+<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png />
+<link rel=icon type=image/png sizes=192x192 href=/favicon-192x192.png />
+<link rel=icon type=image/svg+xml href=/favicon.svg />
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png />
 <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/favicon.svg" />
 

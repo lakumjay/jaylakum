@@ -6,9 +6,12 @@
 <meta name="color-scheme" content="light dark" />
 
 <!-- Favicon & Touch Icons -->
-<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="../../favicon.svg" />
-<link rel="apple-touch-icon" href="../../favicon.svg" />
+<link rel=icon type=image/x-icon href=/favicon.ico />
+<link rel=icon type=image/png sizes=48x48 href=/favicon-48x48.png />
+<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png />
+<link rel=icon type=image/png sizes=192x192 href=/favicon-192x192.png />
+<link rel=icon type=image/svg+xml href=/favicon.svg />
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png />
 
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>Shopify Specialist Den Haag — Webshop Snelheid & iDEAL Reparatie | Jay Lakum</title>
@@ -391,7 +394,7 @@
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (<1.5s doel)</span><span class="dot"></span>
+          <span>✓ Meetbare versnelling (doel: sub-1.5s binnen schriftelijke scope)</span><span class="dot"></span>
           <span>✓ Betalen bij oplevering</span><span class="dot"></span>
           <span>✓ iDEAL 2.0 & Mollie gereed</span>
         </div>
@@ -476,7 +479,7 @@
           <div style="font-size:12.5px;color:var(--ink-faint);line-height:1.55;margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;background:rgba(0,0,0,0.03);padding:10px 14px;border-radius:8px">
             📊 <b>Methodologie &amp; Bronnen:</b> Deze berekening is een indicatieve schatting gebaseerd op het benchmarkmodel van Google / SOASTA (gemiddeld ~7% conversieverlies per seconde mobiele vertraging) en Deloitte Digital (<i>Milliseconds Make Millions</i>). Werkelijke resultaten variëren per branche, type producten en doelgroep.
           </div>
-          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:16px;padding:14px 28px">⚡ Wil je dit omzetverlies stoppen? Vraag een gratis mini-audit aan →</a>
+          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:16px;padding:14px 28px">⚡ Wil je dit omzetverlies stoppen? Vraag een Gratis 3-Minuten Video Audit aan →</a>
         </div>
       </div>
     </div>
@@ -523,7 +526,7 @@
         <div>
           <span class="tag" style="margin-bottom:12px">VEELVOORKOMEND PROBLEEM IN NEDERLAND</span>
           <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:16px">Blijven iDEAL Betalingen Hangend of Mislukt?</h2>
-          <p style="color:var(--ink-soft);font-size:17.5px;margin-bottom:18px">Ruim 70% van de Nederlandse consumenten kiest voor iDEAL. Wanneer de communicatie tussen Mollie, jouw webshop en de bank hapert, kost dit direct omzet en gefrustreerde klanten.</p>
+          <p style="color:var(--ink-soft);font-size:17.5px;margin-bottom:18px">Volgens Currence / eCommerce50 kiest het overgrote deel (~70%) van de Nederlandse consumenten voor iDEAL. Wanneer de communicatie tussen Mollie, jouw webshop en de bank hapert, kost dit direct omzet en gefrustreerde klanten.</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:24px">
             <li><b>Webhook Timeouts:</b> Klant betaalt, maar order blijft op 'Pending' staan in WooCommerce.</li>
             <li><b>iDEAL 2.0 / Wero Migratie:</b> Voorbereiding op het vernieuwde Europese betaalprotocol.</li>
@@ -595,9 +598,9 @@
     <div class="wrap">
       <div class="contact-box">
         <div style="text-align:center;margin-bottom:24px">
-          <div class="eyebrow">GRATIS MINI-AUDIT & OFFERTE</div>
+          <div class="eyebrow">Gratis 3-Minuten Video Audit & OFFERTE</div>
           <h2>Vertel Me Over Jouw Webwinkel</h2>
-          <p style="color:var(--ink-soft);font-size:16px">Stuur je webshop URL mee. Binnen 24 uur ontvang je een gratis mini-audit en een vaste prijsopgave.</p>
+          <p style="color:var(--ink-soft);font-size:16px">Stuur je webshop URL mee. Binnen 24 uur ontvang je een Gratis 3-Minuten Video Audit en een vaste prijsopgave.</p>
         </div>
         <form id="dutchContactForm" action="../../contact.php" method="POST" style="display:flex;flex-direction:column;gap:16px">
           <!-- Anti-Spam Honeypot Trap -->
@@ -802,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function(){
           status.style.background = 'rgba(46, 204, 113, 0.15)';
           status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
           status.style.color = '#166534';
-          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24-48 uur contact met je op met een gratis mini-audit.';
+          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24-48 uur contact met je op met een Gratis 3-Minuten Video Audit.';
         }
         if (btn) btn.textContent = 'Succesvol Verzonden!';
         form.reset();

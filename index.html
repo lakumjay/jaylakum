@@ -6,9 +6,12 @@
 <meta name="color-scheme" content="light dark" />
 
 <!-- Favicon & Touch Icons -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="apple-touch-icon" href="favicon.svg" />
+<link rel=icon type=image/x-icon href=/favicon.ico />
+<link rel=icon type=image/png sizes=48x48 href=/favicon-48x48.png />
+<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png />
+<link rel=icon type=image/png sizes=192x192 href=/favicon-192x192.png />
+<link rel=icon type=image/svg+xml href=/favicon.svg />
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png />
 
 <!-- Primary SEO Meta -->
 <title>Jay Lakum — Shopify &amp; WordPress Developer for EU &amp; UK Webshops</title>
@@ -563,7 +566,7 @@
 
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="#home">Jay <span>lakum</span></a>
+    <a class="brand" href="#home">Jay <span>Lakum</span></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
     </button>
@@ -641,7 +644,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>What I can do for your store</h2>
-          <p>Three focused services for Shopify and WordPress/WooCommerce shops. Every job starts with a free mini-audit and a fixed written quote.</p>
+          <p>Three focused services for Shopify and WordPress/WooCommerce shops. Every job starts with a Free 3-Minute Video Audit and a fixed written quote.</p>
         </div>
         <div class="grid-3">
           <article class="card">
@@ -998,6 +1001,9 @@
             <a class="more" href="/blog/webshop-klaarmaken-feestdagen/">Read the article →</a>
           </article>
         </div>
+        <div style="text-align:center;margin-top:24px">
+          <a class="btn" href="/blog/" style="font-size:15px;padding:12px 28px">View all 10 engineering guides &rarr;</a>
+        </div>
         <div style="text-align:center;margin-top:28px">
           <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:12px 28px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff">
             Explore All 10 Practical Guides &amp; Case Studies &rarr;
@@ -1018,7 +1024,7 @@
           </details>
           <details class="faq-item">
             <summary>How much does it cost?</summary>
-            <p>Every job is quoted as <strong>one fixed price</strong> after a free mini-audit of your store — no hourly billing and no open-ended invoices. You approve the written scope and price first, and that's what you pay on delivery. If I can't fix your problem, you don't pay for the attempt.</p>
+            <p>Every job is quoted as <strong>one fixed price</strong> after a Free 3-Minute Video Audit of your store — no hourly billing and no open-ended invoices. You approve the written scope and price first, and that's what you pay on delivery. If I can't fix your problem, you don't pay for the attempt.</p>
           </details>
           <details class="faq-item">
             <summary>What if I don't like the result?</summary>
@@ -1036,7 +1042,7 @@
       <div class="wrap">
         <div class="cta-block">
           <h2>Tell me what's wrong with your store</h2>
-          <p>Send me your shop's URL and a sentence about the problem. You'll get a free mini-audit and a fixed quote — usually within 24 hours.</p>
+          <p>Send me your shop's URL and a sentence about the problem. You'll get a Free 3-Minute Video Audit and a fixed quote — usually within 24 hours.</p>
           <a class="btn cta-mail" href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
           <p style="margin:18px 0 0"><a href="#contact" style="font-weight:600">…or use the requirement form →</a></p>
         </div>
@@ -1050,7 +1056,7 @@
       <div class="page-head">
         <p class="eyebrow">Services</p>
         <h2>Speed, bug fixes &amp; redesigns for webshops</h2>
-        <p>Three services, one way of working: free mini-audit first, then a written scope with a <strong>fixed price</strong>, work done on staging, and payment only on delivery.</p>
+        <p>Three services, one way of working: Free 3-Minute Video Audit first, then a written scope with a <strong>fixed price</strong>, work done on staging, and payment only on delivery.</p>
       </div>
 
       <div class="service-block">
@@ -1227,7 +1233,7 @@
       <div class="page-head">
         <p class="eyebrow">Contact</p>
         <h2>Tell me about your store's problem</h2>
-        <p>Fill in the form, or just email me directly — whichever is easier. <strong>I reply within 24 hours</strong> with first thoughts and, if it fits, a free mini-audit of your store.</p>
+        <p>Fill in the form, or just email me directly — whichever is easier. <strong>I reply within 24 hours</strong> with first thoughts and a Free 3-Minute Video Audit of your store.</p>
       </div>
       <div class="contact-grid">
         <div>
@@ -1287,7 +1293,7 @@
           <h2>Prefer plain email?</h2>
           <p>Forms aren't for everyone. Email me directly with your store's URL and a line about what's wrong:</p>
           <a class="big-mail" href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
-          <p class="reply-note"><span class="tick">✓</span><span><strong>I reply within 24 hours</strong> — usually with a free mini-audit of your store and honest first thoughts, whether you hire me or not.</span></p>
+          <p class="reply-note"><span class="tick">✓</span><span><strong>I reply within 24 hours</strong> — usually with a Free 3-Minute Video Audit of your store and honest first thoughts, whether you hire me or not.</span></p>
           <p class="reply-note"><span class="tick">✓</span><span><strong>Async-first:</strong> everything in writing, so you can read and decide in your own time. If a call would help, a member of my team will join it.</span></p>
         </div>
       </div>
@@ -1575,7 +1581,7 @@ if (contactForm){
         status.style.background = 'rgba(46, 204, 113, 0.15)';
         status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
         status.style.color = '#166534';
-        status.innerHTML = '<strong>✓ Requirement Sent!</strong> ' + (msg || 'Your message has been sent directly to Jay (lakumjay2000@gmail.com). I reply within 24 hours with a free mini-audit of your store.');
+        status.innerHTML = '<strong>✓ Requirement Sent!</strong> ' + (msg || 'Your message has been sent directly to Jay (lakumjay2000@gmail.com). I reply within 24 hours with a Free 3-Minute Video Audit of your store.');
       }
       if (btn) btn.textContent = 'Sent Successfully!';
       contactForm.reset();

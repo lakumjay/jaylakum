@@ -328,7 +328,7 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
               <div style="background-color:#f1f5f9;border-left:4px solid #dca10d;padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0;">
                 <p style="margin:0 0 6px;font-weight:700;color:#0f172a;font-size:14px;">Wat gebeurt er nu?</p>
                 <p style="margin:0;font-size:14px;color:#475569;">
-                  Ik neem je webshop persoonlijk onder de loep en stuur je <strong>binnen 24 uur</strong> een ' . ($lead_type === '3_minute_video_audit' ? 'persoonlijke 3-minuten Loom video audit' : 'gratis mini-audit en vaste prijsopgave vooraf') . '.
+                  Ik neem je webshop persoonlijk onder de loep en stuur je <strong>binnen 24 uur</strong> een ' . ($lead_type === '3_minute_video_audit' ? 'persoonlijke 3-minuten Loom video audit' : 'Gratis 3-Minuten Video Audit en vaste prijsopgave vooraf') . '.
                 </p>
               </div>
 
