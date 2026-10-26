@@ -280,6 +280,106 @@ $headers .= "X-Mailer: PHP/" . phpversion();
 
 $sent = @mail($to, $subject, $html_content, $headers);
 
+// ==========================================
+// 📨 Auto-Reply Email to Client (Confirmation)
+// ==========================================
+if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $client_subject = ($lead_type === '3_minute_video_audit')
+        ? "Bevestiging: Je gratis 3-minuten video audit aanvraag — Jay Lakum"
+        : "Ontvangstbevestiging: Je aanvraag op jaylakum.com";
+
+    $client_html = '<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>' . htmlspecialchars($client_subject) . '</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;color:#334155;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#f8fafc;padding:32px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:580px;background-color:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 14px rgba(0,0,0,0.04);">
+          
+          <tr>
+            <td style="background-color:#18181b;padding:24px 30px;text-align:left;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <span style="font-family:Georgia,serif;font-size:20px;font-weight:700;color:#ffffff;">Jay <span style="color:#dca10d;">Lakum</span></span>
+                    <span style="display:block;font-size:12px;color:#94a3b8;margin-top:2px;">Shopify &amp; WooCommerce Performance Developer</span>
+                  </td>
+                  <td align="right">
+                    <span style="background-color:#2e7d32;color:#ffffff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;text-transform:uppercase;">✓ Ontvangen</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:28px 30px;line-height:1.65;font-size:15px;color:#334155;">
+              <h2 style="font-size:19px;color:#0f172a;margin:0 0 14px;">Beste ' . htmlspecialchars($name) . ',</h2>
+              
+              <p style="margin:0 0 14px;">
+                Bedankt voor je bericht! Ik heb je aanvraag voor ' . (!empty($website) ? '<strong>' . htmlspecialchars($website) . '</strong>' : 'jouw webwinkel') . ' in goede orde ontvangen.
+              </p>
+
+              <div style="background-color:#f1f5f9;border-left:4px solid #dca10d;padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0;">
+                <p style="margin:0 0 6px;font-weight:700;color:#0f172a;font-size:14px;">Wat gebeurt er nu?</p>
+                <p style="margin:0;font-size:14px;color:#475569;">
+                  Ik neem je webshop persoonlijk onder de loep en stuur je <strong>binnen 24 uur</strong> een ' . ($lead_type === '3_minute_video_audit' ? 'persoonlijke 3-minuten Loom video audit' : 'gratis mini-audit en vaste prijsopgave vooraf') . '.
+                </p>
+              </div>
+
+              <p style="margin:0 0 16px;">
+                Geen vage nacalculatie of uurtje-factuurtje: je weet altijd exact waar je aan toe bent voordat er code wordt gewijzigd.
+              </p>
+
+              <p style="margin:0 0 20px;">
+                Heb je in de tussentijd alvast een dringende vraag of screenshots? Je kunt direct antwoorden op deze e-mail.
+              </p>
+
+              <hr style="border:0;border-top:1px solid #f1f5f9;margin:22px 0;" />
+
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td style="width:48px;vertical-align:top;padding-right:12px;">
+                    <div style="background-color:#dca10d;color:#ffffff;font-size:16px;font-weight:700;width:42px;height:42px;border-radius:50%;text-align:center;line-height:42px;">JL</div>
+                  </td>
+                  <td style="vertical-align:top;line-height:1.45;">
+                    <strong style="color:#0f172a;font-size:15px;display:block;">Jay Lakum</strong>
+                    <span style="font-size:13px;color:#64748b;">Senior E-Commerce &amp; Speed Specialist</span><br>
+                    <a href="https://jaylakum.com/nl/" style="font-size:13px;color:#dca10d;text-decoration:none;font-weight:600;">jaylakum.com/nl/</a> &middot; <a href="mailto:jay@jaylakum.com" style="font-size:13px;color:#64748b;text-decoration:none;">jay@jaylakum.com</a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background-color:#f8fafc;padding:14px 30px;font-size:11.5px;color:#94a3b8;border-top:1px solid #e2e8f0;text-align:center;">
+              Dit is een geautomatiseerde ontvangstbevestiging van je aanvraag op jaylakum.com.
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>';
+
+    $client_headers  = "MIME-Version: 1.0\r\n";
+    $client_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $client_headers .= "From: Jay Lakum <jay@jaylakum.com>\r\n";
+    $client_headers .= "Reply-To: jay@jaylakum.com\r\n";
+    $client_headers .= "X-Mailer: PHP/" . phpversion();
+
+    @mail($email, $client_subject, $client_html, $client_headers);
+}
+
 echo json_encode([
     'success' => true,
     'message' => 'Your requirement has been sent successfully! Jay will review your store and reply within 24 hours with an audit & quote.'
