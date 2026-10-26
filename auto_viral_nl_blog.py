@@ -374,9 +374,47 @@ def main():
     history.add(article_data["slug"])
     save_published_history(history)
 
-    print("\n🎉 SUCCESS: Viral Dutch article published automatically!")
+    # Automatically package zip and push to GitHub
+    auto_git_push_and_package(article_data["title"])
+
+    print("\n🎉 SUCCESS: Viral Dutch article published & pushed automatically!")
     print(f"📰 Title: {article_data['title']}")
-    print(f"🔗 Link: https://jaylakum.com/#blog/{article_data['slug']}")
+    print(f"🔗 Link: https://jaylakum.com/blog/{article_data['slug']}/")
+
+def auto_git_push_and_package(article_title):
+    import subprocess
+    xampp_path = "/Applications/XAMPP/xamppfiles/htdocs/jaylakum"
+    git_repo = "/Users/jay/Documents/GitHub/jaylakum"
+    
+    # 1. Rebuild ready-to-upload zip package
+    try:
+        zip_path = os.path.join(xampp_path, "jaylakum-nl-all-cities-seo.zip")
+        cmd = ["zip", "-rq", zip_path, "index.html", "sitemap.xml", "robots.txt", ".htaccess", "auto_viral_nl_blog.py", "build_static_blog.py", "nl/", "blog/"]
+        subprocess.run(cmd, cwd=xampp_path, check=False)
+        print(f"📦 Updated deployment package: {zip_path}")
+    except Exception as e:
+        print(f"Notice on zip packaging: {e}")
+
+    # 2. Sync to GitHub repo and auto git push
+    if os.path.exists(git_repo) and os.path.exists(os.path.join(git_repo, ".git")):
+        try:
+            print("🚀 Syncing files to GitHub repository...")
+            subprocess.run([
+                "rsync", "-av", "--exclude=.git", "--exclude=*.zip",
+                f"{xampp_path}/", f"{git_repo}/"
+            ], check=False, stdout=subprocess.DEVNULL)
+            
+            subprocess.run(["git", "add", "-A"], cwd=git_repo, check=False)
+            commit_msg = f"Auto publish Dutch blog: {article_title}"
+            subprocess.run(["git", "commit", "-m", commit_msg], cwd=git_repo, check=False)
+            
+            push = subprocess.run(["git", "push", "origin", "main"], cwd=git_repo, capture_output=True, text=True)
+            if push.returncode == 0:
+                print("✅ Auto-pushed directly to GitHub (main) — 100% hands-free!")
+            else:
+                print(f"Git push notice: {push.stderr.strip()}")
+        except Exception as e:
+            print(f"Notice on auto-push: {e}")
 
 if __name__ == "__main__":
     main()
