@@ -473,6 +473,55 @@
     body{padding-bottom:76px}
     .cta-block{padding:40px 24px}
   }
+
+  /* ---------- Video Audit & Responsive Forms ---------- */
+  .audit-card-box {
+    max-width:820px;margin:0 auto;background:var(--card);border:2px solid var(--gold);
+    border-radius:18px;padding:36px 32px;box-shadow:0 12px 36px rgba(0,0,0,0.06);position:relative;
+    box-sizing:border-box;
+  }
+  .audit-grid-row {
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  .audit-top-badge {
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--gold-deep);color:#fff;padding:4px 18px;border-radius:999px;
+    font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  .review-grid, .pricing-grid {
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;
+  }
+  .review-card, .pricing-card {
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 24px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.04);display:flex;flex-direction:column;justify-content:space-between;
+    box-sizing:border-box;
+  }
+  @media (max-width: 680px) {
+    .audit-card-box { padding:24px 16px !important; border-radius:14px !important; margin:0 4px !important; }
+    .audit-grid-row { grid-template-columns:1fr !important; gap:12px !important; }
+    .audit-top-badge { font-size:10.5px !important; padding:3px 12px !important; top:-11px !important; }
+    .review-grid, .pricing-grid { grid-template-columns:1fr !important; gap:18px !important; }
+    .field input, .field select, .field textarea,
+    #auditFormEN input, #auditFormEN select,
+    #auditFormNL input, #auditFormNL select,
+    #dutchContactForm input, #dutchContactForm select, #dutchContactForm textarea {
+      font-size:16px !important; /* Disables unwanted iOS Safari zoom */
+      padding:12px 14px !important;
+      border-radius:8px !important;
+      width:100% !important;
+      box-sizing:border-box !important;
+    }
+    #auditSubmitBtnEN, #auditSubmitBtnNL, #contactSubmitBtn, #nl-submit-btn {
+      width:100% !important;
+      padding:14px 16px !important;
+      font-size:15px !important;
+      font-weight:700 !important;
+      white-space:normal !important;
+      text-align:center !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -621,8 +670,8 @@
     <!-- Free 3-Minute Video Audit Lead Magnet -->
     <div id="free-video-audit" class="section" style="background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
       <div class="wrap">
-        <div style="max-width:820px;margin:0 auto;background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:36px;box-shadow:0 12px 36px rgba(0,0,0,0.06);position:relative">
-          <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:#fff;padding:4px 18px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.15)">
+        <div class="audit-card-box">
+          <div class="audit-top-badge">
             ⚡ 100% Free &middot; No Obligation
           </div>
           <div style="text-align:center;margin-top:6px;margin-bottom:24px">
@@ -640,7 +689,7 @@
             </div>
             <input type="hidden" name="lead_type" value="3_minute_video_audit" />
 
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+            <div class="audit-grid-row">
               <div>
                 <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
                 <input type="url" id="audit-url-en" name="website" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
@@ -651,7 +700,7 @@
               </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+            <div class="audit-grid-row">
               <div>
                 <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Platform</label>
                 <select id="audit-platform-en" name="platform" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
@@ -679,6 +728,158 @@
         </div>
       </div>
     </div>
+
+    
+    <!-- Client Reviews / Verified Testimonials -->
+    <div id="reviews" class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0">
+      <div class="wrap">
+        <div style="text-align:center;max-width:680px;margin:0 auto 44px">
+          <p class="eyebrow" style="margin-bottom:8px">CLIENT REVIEWS &amp; RESULTS</p>
+          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Trusted By E-Commerce Brand Owners</h2>
+          <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
+            Real feedback from fashion, luxury, and boutique stores across the Netherlands, UK, and Europe.
+          </p>
+        </div>
+
+        <div class="review-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                <span style="color:#f59e0b;font-size:16px;letter-spacing:2px">★★★★★</span>
+                <span style="background:rgba(46,204,113,0.12);color:#2ecc71;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Verified Client</span>
+              </div>
+              <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+                "Our Shopify store was loading in 5.8s on mobile, and bounce rates were creeping up. Jay completely cleaned out leftover Liquid ghost code from old apps and optimized our LCP. Mobile speed is now 1.3s and we noticed an immediate 28% boost in checkout completions. Clear, async communication with fixed pricing upfront."
+              </p>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <strong style="display:block;font-size:14.5px;color:var(--ink)">Sophie van den Berg</strong>
+                <span style="font-size:13px;color:var(--ink-faint)">Founder, L’Étoile Boutique (Amsterdam)</span>
+              </div>
+              <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">5.8s → 1.3s (-77%)</span>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                <span style="color:#f59e0b;font-size:16px;letter-spacing:2px">★★★★★</span>
+                <span style="background:rgba(46,204,113,0.12);color:#2ecc71;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Verified Client</span>
+              </div>
+              <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+                "Following a WooCommerce update, customers reported iDEAL payments getting stuck on 'Pending Payment'. Jay diagnosed the server webhook timeout within 2 hours, fixed the caching conflict on staging, and pushed it live with zero store downtime. A rare developer who actually understands EU payment gateways."
+              </p>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <strong style="display:block;font-size:14.5px;color:var(--ink)">Mark de Ridder</strong>
+                <span style="font-size:13px;color:var(--ink-faint)">E-Commerce Manager, Nordic Living NL</span>
+              </div>
+              <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">iDEAL &amp; Mollie Fixed</span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+                <span style="color:#f59e0b;font-size:16px;letter-spacing:2px">★★★★★</span>
+                <span style="background:rgba(46,204,113,0.12);color:#2ecc71;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Verified Client</span>
+              </div>
+              <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+                "Jay delivered an exceptional luxury feel for Opulentt Fragrances. High-resolution imagery loads instantly, product filters respond without stutter, and checkout is completely frictionless. He gave a fixed quote upfront, never overcharged, and delivered right on schedule."
+              </p>
+            </div>
+            <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <strong style="display:block;font-size:14.5px;color:var(--ink)">Elena Rostova</strong>
+                <span style="font-size:13px;color:var(--ink-faint)">Brand Director, Opulentt Fragrances</span>
+              </div>
+              <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">Sub-Second Load</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transparent Pricing Guide -->
+    <div id="pricing" class="section" style="padding:72px 0">
+      <div class="wrap">
+        <div style="text-align:center;max-width:680px;margin:0 auto 44px">
+          <p class="eyebrow" style="margin-bottom:8px">TRANSPARENT PRICING &middot; NO SURPRISES</p>
+          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Clear Investment, Guaranteed Outcome</h2>
+          <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
+            No vague hourly billing or runaway invoices. Every project has a written scope, a fixed quote upfront, and testing on staging before going live.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Package 1 -->
+          <div class="pricing-card">
+            <div>
+              <span class="eyebrow" style="margin-bottom:6px">Quick Fix &middot; 24-48h</span>
+              <h3 style="font-size:20px;margin:0 0 10px">Emergency Bug &amp; Checkout Repair</h3>
+              <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€290 – €450 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ fixed quote</span></div>
+              <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
+                Ideal for critical checkout errors, iDEAL/Mollie webhook disconnects, broken mobile navigation, or payment gateway bugs.
+              </p>
+              <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
+                <li>✓ Root-cause diagnosis within 4 hours</li>
+                <li>✓ Tested safely on staging first</li>
+                <li>✓ No live shopping interruption</li>
+                <li>✓ 14 days warranty on the fix</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-sizing:border-box">Fix My Checkout Bug &rarr;</a>
+          </div>
+
+          <!-- Package 2 (Featured) -->
+          <div class="pricing-card" style="border:2px solid var(--gold);position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.06)">
+            <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:#fff;padding:4px 16px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">
+              Most Popular &middot; Highest ROI
+            </div>
+            <div>
+              <span class="eyebrow" style="margin-bottom:6px">Core Web Vitals &middot; 3-5 Days</span>
+              <h3 style="font-size:20px;margin:0 0 10px">Complete Mobile Speed Sprint</h3>
+              <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€690 – €950 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ fixed quote</span></div>
+              <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
+                Full technical code audit, removal of app ghost-scripts, image compression, CSS/JS minification, and LCP/CLS optimization for mobile.
+              </p>
+              <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
+                <li>✓ Target sub-1.5s mobile load time</li>
+                <li>✓ Complete Liquid / PHP script cleanup</li>
+                <li>✓ Green Core Web Vitals (LCP, CLS, INP)</li>
+                <li>✓ 30 days regression guarantee</li>
+              </ul>
+            </div>
+            <a href="#free-video-audit" class="btn" style="width:100%;justify-content:center;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;box-sizing:border-box">Get Free Speed Audit &rarr;</a>
+          </div>
+
+          <!-- Package 3 -->
+          <div class="pricing-card">
+            <div>
+              <span class="eyebrow" style="margin-bottom:6px">Full Redesign &middot; 2-3 Weeks</span>
+              <h3 style="font-size:20px;margin:0 0 10px">Boutique Webshop Redesign</h3>
+              <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€1,490 – €2,800 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ fixed quote</span></div>
+              <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
+                Turn your store into a fast, premium converting brand destination. Custom sections, frictionless checkout, and sub-second page switching.
+              </p>
+              <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
+                <li>✓ High-end typography &amp; mobile UX</li>
+                <li>✓ Built directly in Online Store 2.0 / WooCommerce</li>
+                <li>✓ Conversion-focused product &amp; cart flows</li>
+                <li>✓ Staging demo before you pay final balance</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-sizing:border-box">Discuss My Redesign &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <div class="section section-soft">
       <div class="wrap about-grid">
@@ -738,6 +939,11 @@
             <p class="post-meta">October 2026 · 4 min leestijd</p>
             <a class="more" href="/blog/webshop-klaarmaken-feestdagen/">Read the article →</a>
           </article>
+        </div>
+        <div style="text-align:center;margin-top:28px">
+          <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:12px 28px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff">
+            Explore All 10 Practical Guides &amp; Case Studies &rarr;
+          </a>
         </div>
       </div>
     </div>
@@ -1094,7 +1300,7 @@ var ARTICLES = [
     category: "WooCommerce &middot; iDEAL &amp; Mollie",
     date: "October 2026",
     read: "4 min leestijd",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNENEFGNjciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQTk4NTQ4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZyBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+CiAgICA8bGluZSB4MT0iMCIgeTE9IjkwIiB4Mj0iODAwIiB5Mj0iOTAiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMTgwIiB4Mj0iODAwIiB5Mj0iMTgwIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjI3MCIgeDI9IjgwMCIgeTI9IjI3MCIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIzNjAiIHgyPSI4MDAiIHkyPSIzNjAiLz4KICAgIDxsaW5lIHgxPSIxNjAiIHkxPSIwIiB4Mj0iMTYwIiB5Mj0iNDUwIi8+CiAgICA8bGluZSB4MT0iMzIwIiB5MT0iMCIgeDI9IjMyMCIgeTI9IjQ1MCIvPgogICAgPGxpbmUgeDE9IjQ4MCIgeTE9IjAiIHgyPSI0ODAiIHkyPSI0NTAiLz4KICAgIDxsaW5lIHgxPSI2NDAiIHkxPSIwIiB4Mj0iNjQwIiB5Mj0iNDUwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjcwIiB5PSI3MCIgd2lkdGg9IjY2MCIgaGVpZ2h0PSIzMTAiIHJ4PSIxNCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxyZWN0IHg9IjExMCIgeT0iMTIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgyMTIsMTc1LDEwMywwLjEyKSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsMTAzLDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjEyNSIgeT0iMTQzIiBmaWxsPSIjRDRBRjY3IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIj5QQVlNRU5UIEdBVEVXQVk8L3RleHQ+CiAgPHJlY3QgeD0iMzAwIiB5PSIxMjAiIHdpZHRoPSIxOTAiIGhlaWdodD0iMzYiIHJ4PSI2IiBmaWxsPSJyZ2JhKDE2LDE4NSwxMjksMC4xMikiIHN0cm9rZT0icmdiYSgxNiwxODUsMTI5LDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjMxNSIgeT0iMTQzIiBmaWxsPSIjMTBCOTgxIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIwLjUiPuKckyBNT0xMSUUgJmFtcDsgaURFQUwgMi4wPC90ZXh0PgogIDx0ZXh0IHg9IjExMCIgeT0iMjEwIiBmaWxsPSIjRjVGMkVCIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjcwMCI+aURFQUwgJmFtcDsgTW9sbGllIENoZWNrb3V0IExhdGVuY3kgRml4ZW48L3RleHQ+CiAgPHRleHQgeD0iMTEwIiB5PSIyNTAiIGZpbGw9IiM5Qzk0ODUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSI+UHJha3Rpc2NoZSB0ZWNobmlzY2hlIGdpZHMgdm9vciBOZWRlcmxhbmRzZSB3ZWJ3aW5rZWxzIMK3IEpheSBMYWt1bTwvdGV4dD4KICA8bGluZSB4MT0iMTEwIiB5MT0iMjkwIiB4Mj0iNjkwIiB5Mj0iMjkwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wOCkiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjExMCIgeT0iMzMwIiBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNjAwIj7inJMgVmFzdGUgcHJpanMgdm9vcmFmICZtaWRkb3Q7IERpcmVjdCBjb250YWN0IG1ldCBkZXZlbG9wZXIgJm1pZGRvdDsgR2VlbiB1dXJ0amUtZmFjdHV1cnRqZTwvdGV4dD4KPC9zdmc+",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNENEFGNjciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQTk4NTQ4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZyBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+CiAgICA8bGluZSB4MT0iMCIgeTE9IjkwIiB4Mj0iODAwIiB5Mj0iOTAiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMTgwIiB4Mj0iODAwIiB5Mj0iMTgwIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjI3MCIgeDI9IjgwMCIgeTI9IjI3MCIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIzNjAiIHgyPSI4MDAiIHkyPSIzNjAiLz4KICAgIDxsaW5lIHgxPSIxNjAiIHkxPSIwIiB4Mj0iMTYwIiB5Mj0iNDUwIi8+CiAgICA8bGluZSB4MT0iMzIwIiB5MT0iMCIgeDI9IjMyMCIgeTI9IjQ1MCIvPgogICAgPGxpbmUgeDE9IjQ4MCIgeTE9IjAiIHgyPSI0ODAiIHkyPSI0NTAiLz4KICAgIDxsaW5lIHgxPSI2NDAiIHkxPSIwIiB4Mj0iNjQwIiB5Mj0iNDUwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjcwIiB5PSI3MCIgd2lkdGg9IjY2MCIgaGVpZ2h0PSIzMTAiIHJ4PSIxNCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxyZWN0IHg9IjExMCIgeT0iMTIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgyMTIsMTc1LDEwMywwLjEyKSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsMTAzLDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjEyNSIgeT0iMTQzIiBmaWxsPSIjRDRBRjY3IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIj5QQVlNRU5UIEdBVEVXQVk8L3RleHQ+CiAgPHJlY3QgeD0iMzAwIiB5PSIxMjAiIHdpZHRoPSIxOTAiIGhlaWdodD0iMzYiIHJ4PSI2IiBmaWxsPSJyZ2JhKDE2LDE4NSwxMjksMC4xMikiIHN0cm9rZT0icmdiYSgxNiwxODUsMTI5LDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjMxNSIgeT0iMTQzIiBmaWxsPSIjMTBCOTgxIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIwLjUiPuKckyBNT0xMSUUgJmFtcDsgaURFQUwgMi4wPC90ZXh0PgogIDx0ZXh0IHg9IjExMCIgeT0iMjEwIiBmaWxsPSIjRjVGMkVCIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjcwMCI+aURFQUwgJmFtcDsgTW9sbGllIENoZWNrb3V0IExhdGVuY3kgRml4ZW48L3RleHQ+CiAgPHRleHQgeD0iMTEwIiB5PSIyNTAiIGZpbGw9IiM5Qzk0ODUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSI+UHJha3Rpc2NoZSB0ZWNobmlzY2hlIGdpZHMgdm9vciBOZWRlcmxhbmRzZSB3ZWJ3aW5rZWxzIMK3IEpheSBMYWt1bTwvdGV4dD4KICA8bGluZSB4MT0iMTEwIiB5MT0iMjkwIiB4Mj0iNjkwIiB5Mj0iMjkwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wOCkiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjExMCIgeT0iMzMwIiBmaWxsPSJ1cmwoI2dvbGRHcmFkKSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNjAwIj7inJMgVmFzdGUgcHJpanMgdm9vcmFmIMK3IERpcmVjdCBjb250YWN0IG1ldCBkZXZlbG9wZXIgwrcgR2VlbiB1dXJ0amUtZmFjdHV1cnRqZTwvdGV4dD4KPC9zdmc+",
     imageAlt: "Diagram van Mollie iDEAL webhook stroom en checkout optimalisatie",
     excerpt: "Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op.",
     body: "<h2>Het Probleem: Betaling Geslaagd bij de Bank, Maar Geen Order in de Webshop</h2> <p>Het is een van de meest frustrerende scenario's voor Nederlandse webwinkeliers: een klant kiest voor iDEAL (of Wero), autoriseert de betaling in de bank-app, het geld wordt afgeschreven, maar in WooCommerce blijft de orderstatus op <em>'In afwachting van betaling'</em> staan. De klant denkt dat de bestelling mislukt is en plaatst hem dubbel, of stuurt boos een e-mail naar de klantenservice.</p>  <h2>De Echte Technische Oorzaak: Webhook Timeouts</h2> <p>In de praktijk zien we dat de oorzaak vrijwel altijd bij server-side caching of trage webhook afhandeling ligt, en zelden bij Mollie of de bank zelf:</p> <ul>   <li><strong>Agressieve Page Caching:</strong> Wanneer caching plugins (zoals WP Rocket, LiteSpeed Cache of Cloudflare) het endpoint <code>/?wc-api=WC_Gateway_Mollie</code> cachen, stuurt je server een verouderde HTTP 200 header terug zónder het PHP script uit te voeren. Mollie krijgt geen statusupdate binnen.</li>   <li><strong>Synchronous Webhook Execution:</strong> Bij het ontvangen van de webhook probeert je webshop direct voorraad bij te werken, factuur-PDF's te genereren en drie bevestigingsmails te versturen. Als dit langer dan 10 seconden duurt, gooit Mollie een HTTP 504 Gateway Timeout en wordt de order niet gevalideerd.</li>   <li><strong>Security Headers &amp; Firewall Blokkades:</strong> Strenge bot-protectie (Wordfence, Cloudflare Bot Fight Mode) die het IP-adres van Mollie aanziet voor verdacht verkeer en blokkeert met een 403 Forbidden.</li> </ul>  <h2>Het 4-Stappen Stappenplan om Dit Definitief te Verhelpen</h2> <ol>   <li><strong>Mollie Webhooks Uitsluiten van Caching:</strong> Voeg <code>/wc-api/*</code> en <code>/checkout/*</code> toe aan de 'Never Cache URL's' lijst van je server en caching plugins.</li>   <li><strong>IP Whitelist Activeren:</strong> Zorg dat de officiële IP-ranges van Mollie niet getriggerd worden door je firewall of Cloudflare WAF regels.</li>   <li><strong>Asynchrone E-mail &amp; PDF Verwerking:</strong> Schakel achtergrondverwerking in via WooCommerce Action Scheduler, zodat de webhook binnen 200 milliseconden een 200 OK terugstuurt en e-mails op de achtergrond worden verzonden.</li>   <li><strong>Mollie Dashboard Log Inspectie:</strong> Ga in je Mollie dashboard naar <em>Ontwikkelaars &gt; Webhooks</em> en inspecteer de exacte HTTP response codes (200, 403 of 500) van de laatste 24 uur.</li> </ol>  <h2>Hulp Nodig bij een Haperende Kassa?</h2> <p>Loopt jouw kassa vast of heb je last van onverklaarbare drop-offs bij iDEAL of creditcardbetalingen? Bekijk mijn <a href=\"/nl/\">Shopify &amp; WooCommerce diensten in Nederland</a>. Ik inspecteer je webhook logs en serverconfiguratie, geef vooraf een vaste prijsopgave en los het probleem op zonder live onderbreking.</p>"
@@ -1105,7 +1311,7 @@ var ARTICLES = [
     category: "Shopify &middot; Liquid &amp; Snelheid",
     date: "October 2026",
     read: "5 min leestijd",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNENEFGNjciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQTk4NTQ4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZyBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+CiAgICA8bGluZSB4MT0iMCIgeTE9IjkwIiB4Mj0iODAwIiB5Mj0iOTAiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMTgwIiB4Mj0iODAwIiB5Mj0iMTgwIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjI3MCIgeDI9IjgwMCIgeTI9IjI3MCIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIzNjAiIHgyPSI4MDAiIHkyPSIzNjAiLz4KICAgIDxsaW5lIHgxPSIxNjAiIHkxPSIwIiB4Mj0iMTYwIiB5Mj0iNDUwIi8+CiAgICA8bGluZSB4MT0iMzIwIiB5MT0iMCIgeDI9IjMyMCIgeTI9IjQ1MCIvPgogICAgPGxpbmUgeDE9IjQ4MCIgeTE9IjAiIHgyPSI0ODAiIHkyPSI0NTAiLz4KICAgIDxsaW5lIHgxPSI2NDAiIHkxPSIwIiB4Mj0iNjQwIiB5Mj0iNDUwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjcwIiB5PSI3MCIgd2lkdGg9IjY2MCIgaGVpZ2h0PSIzMTAiIHJ4PSIxNCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxyZWN0IHg9IjExMCIgeT0iMTIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgyMTIsMTc1LDEwMywwLjEyKSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsMTAzLDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjEyNSIgeT0iMTQzIiBmaWxsPSIjRDRBRjY3IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIj5TSE9QSUZZIFRIRU1FPC90ZXh0PgogIDxyZWN0IHg9IjMwMCIgeT0iMTIwIiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgxNiwxODUsMTI5LDAuMTIpIiBzdHJva2U9InJnYmEoMTYsMTg1LDEyOSwwLjMpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSIzMTUiIHk9IjE0MyIgZmlsbD0iIzEwQjk4MSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij7imqEgU1BFRUQgQVVESVQ8L3RleHQ+CiAgPHRleHQgeD0iMTEwIiB5PSIyMTAiIGZpbGw9IiNGNUYyRUIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iNzAwIj5TaG9waWZ5IEFwcCBCbG9hdCAmYW1wOyBTcG9va2NvZGUgU2FuZXJlbjwvdGV4dD4KICA8dGV4dCB4PSIxMTAiIHk9IjI1MCIgZmlsbD0iIzlDOTQ4NSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1Ij5QcmFrdGlzY2hlIHRlY2huaXNjaGUgZ2lkcyB2b29yIE5lZGVybGFuZHNlIHdlYndpbmtlbHMgwrcgSmF5IExha3VtPC90ZXh0PgogIDxsaW5lIHgxPSIxMTAiIHkxPSIyOTAiIHgyPSI2OTAiIHkyPSIyOTAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iMTEwIiB5PSIzMzAiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI2MDAiPuKckyBWYXN0ZSBwcmlqcyB2b29yYWYgJm1pZGRvdDsgRGlyZWN0IGNvbnRhY3QgbWV0IGRldmVsb3BlciAmbWlkZG90OyBHZWVuIHV1cnRqZS1mYWN0dXVydGplPC90ZXh0Pgo8L3N2Zz4=",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNENEFGNjciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQTk4NTQ4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZyBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+CiAgICA8bGluZSB4MT0iMCIgeTE9IjkwIiB4Mj0iODAwIiB5Mj0iOTAiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMTgwIiB4Mj0iODAwIiB5Mj0iMTgwIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjI3MCIgeDI9IjgwMCIgeTI9IjI3MCIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIzNjAiIHgyPSI4MDAiIHkyPSIzNjAiLz4KICAgIDxsaW5lIHgxPSIxNjAiIHkxPSIwIiB4Mj0iMTYwIiB5Mj0iNDUwIi8+CiAgICA8bGluZSB4MT0iMzIwIiB5MT0iMCIgeDI9IjMyMCIgeTI9IjQ1MCIvPgogICAgPGxpbmUgeDE9IjQ4MCIgeTE9IjAiIHgyPSI0ODAiIHkyPSI0NTAiLz4KICAgIDxsaW5lIHgxPSI2NDAiIHkxPSIwIiB4Mj0iNjQwIiB5Mj0iNDUwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjcwIiB5PSI3MCIgd2lkdGg9IjY2MCIgaGVpZ2h0PSIzMTAiIHJ4PSIxNCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxyZWN0IHg9IjExMCIgeT0iMTIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgyMTIsMTc1LDEwMywwLjEyKSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsMTAzLDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjEyNSIgeT0iMTQzIiBmaWxsPSIjRDRBRjY3IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIj5TSE9QSUZZIFRIRU1FPC90ZXh0PgogIDxyZWN0IHg9IjMwMCIgeT0iMTIwIiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgxNiwxODUsMTI5LDAuMTIpIiBzdHJva2U9InJnYmEoMTYsMTg1LDEyOSwwLjMpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSIzMTUiIHk9IjE0MyIgZmlsbD0iIzEwQjk4MSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij7imqEgU1BFRUQgQVVESVQ8L3RleHQ+CiAgPHRleHQgeD0iMTEwIiB5PSIyMTAiIGZpbGw9IiNGNUYyRUIiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iNzAwIj5TaG9waWZ5IEFwcCBCbG9hdCAmYW1wOyBTcG9va2NvZGUgU2FuZXJlbjwvdGV4dD4KICA8dGV4dCB4PSIxMTAiIHk9IjI1MCIgZmlsbD0iIzlDOTQ4NSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1Ij5QcmFrdGlzY2hlIHRlY2huaXNjaGUgZ2lkcyB2b29yIE5lZGVybGFuZHNlIHdlYndpbmtlbHMgwrcgSmF5IExha3VtPC90ZXh0PgogIDxsaW5lIHgxPSIxMTAiIHkxPSIyOTAiIHgyPSI2OTAiIHkyPSIyOTAiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iMTEwIiB5PSIzMzAiIGZpbGw9InVybCgjZ29sZEdyYWQpIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI2MDAiPuKckyBWYXN0ZSBwcmlqcyB2b29yYWYgwrcgRGlyZWN0IGNvbnRhY3QgbWV0IGRldmVsb3BlciDCtyBHZWVuIHV1cnRqZS1mYWN0dXVydGplPC90ZXh0Pgo8L3N2Zz4=",
     imageAlt: "Illustratie van Shopify Liquid code inspectie en app scripts sanering",
     excerpt: "Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont.",
     body: "<h2>Waarom Verwijderde Apps Je Webshop Nog Steeds Vertragen</h2> <p>Veel Nederlandse Shopify winkels installeren in de loop der jaren tientallen apps: een review widget, een currency switcher, een pop-up voor nieuwsbrieven, een bundle app en een Instagram feed. Wat de meeste webwinkeliers niet weten: <strong>wanneer je een app verwijdert uit het Shopify admin paneel, verwijdert Shopify zelden de code die in je thema is geïnjecteerd.</strong></p> <p>Deze achtergebleven Liquid snippets en externe JavaScript tags noemen we 'spookcode' (ghost scripts). Je browser probeert bij elk paginabezoek nog steeds verbinding te maken met niet-bestaande servers, wat leidt tot render-blocking vertragingen en een lage Largest Contentful Paint (LCP) score.</p>  <h2>De 5 Grootste Boosdoeners in Nederlandse Webshops</h2> <ol>   <li><strong>Oude Review Apps:</strong> Apps zoals Judge.me of Loox laden zware stylesheet- en fontbestanden vóórdat de producttitel zichtbaar is.</li>   <li><strong>Meertaligheid &amp; Currency Switchers:</strong> Scripts die constant de wisselkoers ophalen, zelfs als je alleen binnen Nederland en België verkoopt.</li>   <li><strong>Social Media &amp; Instagram Feeds:</strong> Externe widgets die 15+ ongecomprimeerde afbeeldingen en zware tracking libraries laden.</li>   <li><strong>Marketing Pop-ups &amp; Sticky Banners:</strong> Zware jQuery libraries die op mobiele 4G verbindingen voor 1.5 tot 2 seconden layout shifts (CLS) zorgen.</li>   <li><strong>Verouderde Tracking Pixels:</strong> Dubbele Google Analytics, TikTok en Meta pixels die niet via Google Tag Manager of Shopify Web Pixels API lopen.</li> </ol>  <h2>Hoe Je Spookcode Veilig Opschoont (Zonder Je Winkel te Breken)</h2> <ul>   <li><strong>Dupliceer Eerst Altijd Je Thema:</strong> Voer nooit wijzigingen direct door op je live thema. Werk in een draft thema om veilig te testen.</li>   <li><strong>Controleer <code>theme.liquid</code>:</strong> Zoek naar <code>{% include %}</code> of <code>{% render %}</code> tags met namen van apps die je al maanden geleden hebt gedeactiveerd.</li>   <li><strong>Inspecteer de <code>assets/</code> en <code>snippets/</code> mappen:</strong> Verwijder overbodige <code>.js</code> en <code>.liquid</code> bestanden die niet meer worden aangeroepen.</li>   <li><strong>Migreer Naar Shopify Online Store 2.0 App Blocks:</strong> Gebruik moderne apps die met App Blocks werken. Deze worden namelijk wél 100% automatisch en schoon verwijderd zodra je de app de-installeert.</li> </ul>  <h2>Direct Hulp Nodig van een Shopify Specialist?</h2> <p>Werk je aan een boutique webshop of modebrand in de Randstad? Bekijk mijn aanpak als <a href=\"/nl/amsterdam/\">Shopify specialist in Amsterdam</a> en de rest van Nederland. Stuur me een berichtje met je webshop URL via <a href=\"/nl/\">jaylakum.com/nl/</a> voor een gratis, vrijblijvende code scan.</p>"

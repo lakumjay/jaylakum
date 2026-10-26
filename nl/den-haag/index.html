@@ -299,6 +299,26 @@
     .calc-box{padding:24px}
     .contact-box{padding:26px}
   }
+  /* City mobile form responsiveness */
+  @media (max-width: 680px) {
+    .field input, .field select, .field textarea,
+    #dutchContactForm input, #dutchContactForm select, #dutchContactForm textarea {
+      font-size: 16px !important;
+      padding: 12px 14px !important;
+      border-radius: 8px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    #nl-submit-btn {
+      width: 100% !important;
+      padding: 14px 16px !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
+      white-space: normal !important;
+      text-align: center !important;
+    }
+  }
+
 </style>
 </head>
 <body>

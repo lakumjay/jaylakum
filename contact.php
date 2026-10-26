@@ -380,8 +380,49 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
     @mail($email, $client_subject, $client_html, $client_headers);
 }
 
-echo json_encode([
-    'success' => true,
-    'message' => 'Your requirement has been sent successfully! Jay will review your store and reply within 24 hours with an audit & quote.'
-]);
+// Determine if request is AJAX/fetch or native browser form POST
+$is_ajax = !empty($json) || 
+           (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest') ||
+           (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false);
+
+if ($is_ajax) {
+    header('Content-Type: application/json; charset=UTF-8');
+    echo json_encode([
+        'success' => true,
+        'message' => 'Your requirement has been sent successfully! Jay will review your store and reply within 24 hours with an audit & quote.'
+    ]);
+    exit;
+}
+
+// Native browser POST response (clean responsive confirmation page)
+$referer = $_SERVER['HTTP_REFERER'] ?? '/';
+?>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aanvraag Ontvangen | Jay Lakum</title>
+<style>
+  body { margin:0; padding:20px; background:#0e1013; color:#f5f2eb; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; box-sizing:border-box; }
+  .box { max-width:520px; width:100%; background:#16181d; border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:38px 28px; text-align:center; box-shadow:0 12px 40px rgba(0,0,0,0.5); }
+  .badge { display:inline-block; background:rgba(46,204,113,0.15); color:#2ecc71; border:1px solid rgba(46,204,113,0.3); padding:6px 14px; border-radius:20px; font-size:12.5px; font-weight:700; margin-bottom:18px; text-transform:uppercase; letter-spacing:0.5px; }
+  h1 { font-size:24px; margin:0 0 14px; font-family:Georgia,serif; color:#fff; }
+  p { color:#9c9485; font-size:15px; line-height:1.65; margin:0 0 24px; }
+  .btn { display:inline-block; background:#dca10d; color:#fff; text-decoration:none; padding:13px 26px; border-radius:8px; font-weight:700; font-size:15px; transition:opacity .2s; }
+  .btn:hover { opacity:0.9; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="badge">✓ Aanvraag Succesvol Ontvangen</div>
+    <h1>Bedankt voor je aanvraag!</h1>
+    <p>Ik heb je gegevens ontvangen en stuur je <strong>binnen 24 uur</strong> een persoonlijke analyse en/of video-audit van je webwinkel.</p>
+    <a href="<?php echo htmlspecialchars($referer); ?>" class="btn">← Terug naar website</a>
+  </div>
+</body>
+</html>
+<?php
+exit;
+
 

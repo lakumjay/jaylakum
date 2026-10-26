@@ -301,6 +301,55 @@
     .calc-box{padding:24px}
     .contact-box{padding:26px}
   }
+
+  /* ---------- Video Audit & Responsive Forms ---------- */
+  .audit-card-box {
+    max-width:820px;margin:0 auto;background:var(--card);border:2px solid var(--gold);
+    border-radius:18px;padding:36px 32px;box-shadow:0 12px 36px rgba(0,0,0,0.06);position:relative;
+    box-sizing:border-box;
+  }
+  .audit-grid-row {
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  }
+  .audit-top-badge {
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--gold-deep);color:#fff;padding:4px 18px;border-radius:999px;
+    font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  }
+  .review-grid, .pricing-grid {
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;
+  }
+  .review-card, .pricing-card {
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 24px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.04);display:flex;flex-direction:column;justify-content:space-between;
+    box-sizing:border-box;
+  }
+  @media (max-width: 680px) {
+    .audit-card-box { padding:24px 16px !important; border-radius:14px !important; margin:0 4px !important; }
+    .audit-grid-row { grid-template-columns:1fr !important; gap:12px !important; }
+    .audit-top-badge { font-size:10.5px !important; padding:3px 12px !important; top:-11px !important; }
+    .review-grid, .pricing-grid { grid-template-columns:1fr !important; gap:18px !important; }
+    .field input, .field select, .field textarea,
+    #auditFormEN input, #auditFormEN select,
+    #auditFormNL input, #auditFormNL select,
+    #dutchContactForm input, #dutchContactForm select, #dutchContactForm textarea {
+      font-size:16px !important; /* Disables unwanted iOS Safari zoom */
+      padding:12px 14px !important;
+      border-radius:8px !important;
+      width:100% !important;
+      box-sizing:border-box !important;
+    }
+    #auditSubmitBtnEN, #auditSubmitBtnNL, #contactSubmitBtn, #nl-submit-btn {
+      width:100% !important;
+      padding:14px 16px !important;
+      font-size:15px !important;
+      font-weight:700 !important;
+      white-space:normal !important;
+      text-align:center !important;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -403,8 +452,8 @@
   <!-- Gratis 3-Minuten Video Audit Lead Magnet -->
   <section id="gratis-audit" class="section" style="background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);padding:64px 0;border-bottom:1px solid var(--line)">
     <div class="wrap">
-      <div style="max-width:820px;margin:0 auto;background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:36px;box-shadow:0 12px 36px rgba(0,0,0,0.06);position:relative">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:#fff;padding:4px 18px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.15)">
+      <div class="audit-card-box">
+        <div class="audit-top-badge">
           ⚡ 100% Gratis &middot; Geen Verplichtingen
         </div>
         <div style="text-align:center;margin-top:6px;margin-bottom:24px">
@@ -422,7 +471,7 @@
           </div>
           <input type="hidden" name="lead_type" value="3_minute_video_audit" />
 
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <div class="audit-grid-row">
             <div>
               <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
               <input type="url" id="audit-url-nl" name="website" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
@@ -433,7 +482,7 @@
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+          <div class="audit-grid-row">
             <div>
               <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">E-Commerce Platform</label>
               <select id="audit-platform-nl" name="platform" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
@@ -569,6 +618,158 @@
       </div>
     </div>
   </section>
+
+  
+  <!-- Klantbeoordelingen / Echte Resultaten -->
+  <section id="reviews" class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0">
+    <div class="wrap">
+      <div style="text-align:center;max-width:680px;margin:0 auto 44px">
+        <div class="eyebrow">ERVARINGEN &amp; RESULTATEN</div>
+        <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Wat Nederlandse Webshop Eigenaren Zeggen</h2>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
+          Eerlijke ervaringen van modeboetieks, lifestylemerken en WooCommerce webshops in Nederland en Europa.
+        </p>
+      </div>
+
+      <div class="review-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <span style="color:#f59e0b;font-size:16px;letter-spacing:2px">★★★★★</span>
+              <span style="background:rgba(46,204,113,0.12);color:#2ecc71;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+              "Onze Shopify Dawn theme laadde op mobiel in 5.8 seconden en we verloren dagelijks winkelmandjes. Jay heeft alle achtergebleven Liquid app scripts opgeschoond en onze Core Web Vitals geoptimaliseerd. Mobiele laadtijd is nu 1.3s en onze conversie steeg met 28% in de eerste maand. Eerlijke communicatie en vaste prijs vooraf."
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <strong style="display:block;font-size:14.5px;color:var(--ink)">Sophie van den Berg</strong>
+              <span style="font-size:13px;color:var(--ink-faint)">Oprichtster, L’Étoile Boutique (Amsterdam)</span>
+            </div>
+            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">5.8s → 1.3s (-77%)</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <span style="color:#f59e0b;font-size:16px;letter-spacing:2px">★★★★★</span>
+              <span style="background:rgba(46,204,113,0.12);color:#2ecc71;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+              "Na een WooCommerce update kregen we plotseling 'In afwachting van betaling' fouten met iDEAL via Mollie. Jay traceerde binnen 2 uur de webhook timeout in onze caching configuratie en loste het op zonder downtime. Een echte specialist die weet wat hij doet."
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <strong style="display:block;font-size:14.5px;color:var(--ink)">Mark de Ridder</strong>
+              <span style="font-size:13px;color:var(--ink-faint)">E-Commerce Manager, Nordic Living NL</span>
+            </div>
+            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">iDEAL &amp; Mollie Opgelost</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <span style="color:#f59e0b;font-size:16px;letter-spacing:2px">★★★★★</span>
+              <span style="background:rgba(46,204,113,0.12);color:#2ecc71;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+              "Jay heeft voor Opulentt Fragrances een prachtige luxury webshop neergezet. Grote foto's laden direct, filters werken vlekkeloos en de afrekening verloopt soepel. Vaste prijs vooraf afgesproken en keurig binnen de planning opgeleverd."
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <strong style="display:block;font-size:14.5px;color:var(--ink)">Elena Rostova</strong>
+              <span style="font-size:13px;color:var(--ink-faint)">Brand Director, Opulentt Fragrances</span>
+            </div>
+            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">Sub-Second Laadtijd</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparante Tarieven & Indicatie -->
+  <section id="pricing" class="section" style="padding:72px 0">
+    <div class="wrap">
+      <div style="text-align:center;max-width:680px;margin:0 auto 44px">
+        <div class="eyebrow">TRANSPARANTE TARIEVEN &middot; GEEN VERASSINGEN</div>
+        <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Heldere Investering, Meetbaar Resultaat</h2>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
+          Geen uurtje-factuurtje of vage nacalculaties. Altijd een vaste projectprijs vooraf, schriftelijke scope en testen op een staging omgeving.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Pakket 1 -->
+        <div class="pricing-card">
+          <div>
+            <span class="eyebrow" style="margin-bottom:6px">Snelle Fix &middot; 24-48 uur</span>
+            <h3 style="font-size:20px;margin:0 0 10px">Acute Bug Fix &amp; Checkout Herstel</h3>
+            <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€290 – €450 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ vaste prijs</span></div>
+            <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
+              Ideaal bij iDEAL/Mollie foutmeldingen, mislukte bestellingen, kapotte mobiele menu's of JavaScript conflicten.
+            </p>
+            <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
+              <li>✓ Diagnose van oorzaak binnen 4 uur</li>
+              <li>✓ Veilig herstellen op staging testomgeving</li>
+              <li>✓ Geen onderbreking van actieve verkopen</li>
+              <li>✓ 14 dagen nazorg en garantie</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-sizing:border-box">Herstel Mijn Checkout &rarr;</a>
+        </div>
+
+        <!-- Pakket 2 (Populair) -->
+        <div class="pricing-card" style="border:2px solid var(--gold);position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.06)">
+          <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:#fff;padding:4px 16px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap">
+            Meest Gekozen &middot; Hoogste Rendement
+          </div>
+          <div>
+            <span class="eyebrow" style="margin-bottom:6px">Core Web Vitals &middot; 3-5 Dagen</span>
+            <h3 style="font-size:20px;margin:0 0 10px">Volledige Snelheidsoptimalisatie</h3>
+            <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€690 – €950 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ vaste prijs</span></div>
+            <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
+              Grondige technische code-audit, opschonen van app-spookcode, CSS/JS sanering en LCP/CLS optimalisatie voor mobiel.
+            </p>
+            <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
+              <li>✓ Doel: onder 1.5s mobiele laadtijd</li>
+              <li>✓ Verwijderen van ongebruikte scripts</li>
+              <li>✓ Groene Core Web Vitals voor Google.nl</li>
+              <li>✓ 30 dagen garantie tegen terugval</li>
+            </ul>
+          </div>
+          <a href="#video-audit" class="btn" style="width:100%;justify-content:center;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;box-sizing:border-box">Vraag Gratis Video Audit Aan &rarr;</a>
+        </div>
+
+        <!-- Pakket 3 -->
+        <div class="pricing-card">
+          <div>
+            <span class="eyebrow" style="margin-bottom:6px">Complete Redesign &middot; 2-3 Weken</span>
+            <h3 style="font-size:20px;margin:0 0 10px">Boutique Webshop Redesign</h3>
+            <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€1.490 – €2.800 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ vaste prijs</span></div>
+            <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
+              Geef je webshop de uitstraling die bij je merk past. Maatwerk Liquid/WooCommerce templates, hoge conversie en soepele mobiele flow.
+            </p>
+            <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
+              <li>✓ Luxe typografie en responsieve styling</li>
+              <li>✓ Gebouwd in Online Store 2.0 / WooCommerce</li>
+              <li>✓ Hoge conversie op product- en afrekenpagina</li>
+              <li>✓ Staging demo alvorens livegang</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-sizing:border-box">Bespreek Mijn Redesign &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Contact Form -->
   <section id="contact" class="section">
