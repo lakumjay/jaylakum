@@ -89,8 +89,24 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://jaylakum.com/nl/#faq",
+      "@id": "https://jaylakum.com/nl/den-haag/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost het oplossen van een Mollie iDEAL checkout fout in Den Haag?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voor acute checkout en payment gateway reparaties hanteer ik een vaste prijsopgave vooraf met de 'geen oplossing, geen factuur' garantie binnen schriftelijke scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel is een Mollie iDEAL webhook storing in Den Haag opgelost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Webhook timeouts en iDEAL status haperingen los ik meestal binnen 24 tot 48 uur op door caching uitsluitingen en API-log analyses."
+          }
+        },
         {
           "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",

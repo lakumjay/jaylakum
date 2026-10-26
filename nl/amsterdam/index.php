@@ -89,8 +89,24 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://jaylakum.com/nl/#faq",
+      "@id": "https://jaylakum.com/nl/amsterdam/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost een Shopify speed optimalisatie voor een winkel in Amsterdam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voor Amsterdamse boutique- en modemerken werk ik met vaste projectprijzen vooraf. Na een kosteloze inspectie van je Liquid thema en app-scripts ontvang je een transparante offerte. Betaling volgt pas na oplevering op staging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel kan een trage Shopify store in Amsterdam geoptimaliseerd worden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acute checkout bugs of haperende Mollie iDEAL koppelingen worden binnen 24 tot 48 uur verholpen. Een complete Core Web Vitals optimalisatie duurt gemiddeld 3 tot 5 werkdagen inclusief grondige metingen."
+          }
+        },
         {
           "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",

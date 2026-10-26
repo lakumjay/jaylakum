@@ -89,8 +89,24 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://jaylakum.com/nl/#faq",
+      "@id": "https://jaylakum.com/nl/rotterdam/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost een WooCommerce speed optimalisatie voor een Rotterdamse retailer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rotterdamse retailers met grote catalogi en PostNL/Exact koppelingen ontvangen vooraf één duidelijke vaste offerte. Geen uurtje-factuurtje: je weet vooraf exact wat de investering is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel los je trage winkelmandjes en database queries op in Rotterdam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Database query optimalisatie en webhook vertragingen worden doorgaans binnen 48 uur geïsoleerd en opgelost op een veilige testomgeving zonder live onderbreking."
+          }
+        },
         {
           "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",

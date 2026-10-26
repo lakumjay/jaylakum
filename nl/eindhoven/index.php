@@ -89,8 +89,24 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://jaylakum.com/nl/#faq",
+      "@id": "https://jaylakum.com/nl/eindhoven/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost maatwerk Shopify of Storefront API ontwikkeling in Eindhoven?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voor Eindhovense tech- en hardware merken hanteer ik transparante projectprijzen op basis van modulaire architectuur en vaste mijlpalen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel worden custom Liquid scripts en filters in Eindhoven gebouwd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maatwerk functionaliteiten lever ik modulair op staging binnen 3 tot 5 werkdagen, getest op prestaties en mobiele responsiviteit."
+          }
+        },
         {
           "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",

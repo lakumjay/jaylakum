@@ -70,10 +70,15 @@ if (!empty($turnstile_secret) && !empty($turnstile_token)) {
 // ==========================================
 // Form Data Sanitization
 // ==========================================
+$lead_type    = strip_tags(trim($json['lead_type'] ?? $_POST['lead_type'] ?? 'contact_form'));
 $name         = strip_tags(trim($json['name'] ?? $_POST['name'] ?? ''));
+if (empty($name) && $lead_type === '3_minute_video_audit') {
+    $name = 'Webshop Eigenaar (Video Audit)';
+}
 $email        = filter_var(trim($json['email'] ?? $_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $website      = filter_var(trim($json['website'] ?? $_POST['website'] ?? ''), FILTER_SANITIZE_URL);
-$problem_type = strip_tags(trim($json['problem_type'] ?? $_POST['problem_type'] ?? 'General Inquiry'));
+$platform     = strip_tags(trim($json['platform'] ?? $_POST['platform'] ?? ''));
+$problem_type = strip_tags(trim($json['problem_type'] ?? $_POST['problem_type'] ?? ($lead_type === '3_minute_video_audit' ? "Gratis 3-Minuten Video Audit ($platform)" : 'General Inquiry')));
 $budget       = strip_tags(trim($json['budget'] ?? $_POST['budget'] ?? 'Not Specified'));
 $message      = strip_tags(trim($json['message'] ?? $_POST['message'] ?? ''));
 
@@ -102,17 +107,25 @@ if (preg_match('/[\x{0400}-\x{04FF}]/u', $name . $message)) {
     exit;
 }
 
-if (empty($name) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Please provide a valid name and email address.']);
+    echo json_encode(['success' => false, 'message' => 'Please provide a valid email address.']);
     exit;
+}
+
+if (empty($name)) {
+    $name = 'Webshop Owner';
 }
 
 // ==========================================
 // Dispatch Lead Email to Jay
 // ==========================================
 $to = 'lakumjay2000@gmail.com';
-$subject = "🔥 [Webshop Lead] $problem_type — Budget: $budget ($name)";
+if ($lead_type === '3_minute_video_audit') {
+    $subject = "🎥 [Video Audit Request] $platform: $website ($email)";
+} else {
+    $subject = "🔥 [Webshop Lead] $problem_type — Budget: $budget ($name)";
+}
 
 $email_content = "Hello Jay,\n\n"
                . "You have received a new verified client requirement from your website (jaylakum.com):\n\n"

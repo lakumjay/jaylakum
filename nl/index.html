@@ -95,6 +95,22 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Wat kost een Shopify of WooCommerce speed optimalisatie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een complete Shopify of WooCommerce snelheidsoptimalisatie voer ik uit op basis van één vaste projectprijs vooraf (geen onverwachte nacalculatie). Na een gratis mini-audit ontvang je een duidelijke schriftelijke scope met gegarandeerde doelen. Betaling gebeurt pas na oplevering en verificatie op staging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel is mijn trage WooCommerce checkout of Mollie storing opgelost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acute checkout storingen, vastlopende iDEAL betalingen en Mollie webhook timeouts los ik doorgaans binnen 24 tot 48 uur op op een veilige staging omgeving zonder dat je live winkel offline hoeft."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -380,6 +396,68 @@
           </div>
           <a href="#contact" class="btn" style="background:#27ae60;border-color:#27ae60">Stop Dit Verlies — Vraag Een Vaste Prijs Snelheidsfix Aan →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gratis 3-Minuten Video Audit Lead Magnet -->
+  <section id="gratis-audit" class="section" style="background:linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);padding:64px 0;border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div style="max-width:820px;margin:0 auto;background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:36px;box-shadow:0 12px 36px rgba(0,0,0,0.06);position:relative">
+        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:#fff;padding:4px 18px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.15)">
+          ⚡ 100% Gratis &middot; Geen Verplichtingen
+        </div>
+        <div style="text-align:center;margin-top:6px;margin-bottom:24px">
+          <div class="eyebrow" style="margin-bottom:8px">LEAD MAGNET &middot; PERSOONLIJKE LOOM VIDEO</div>
+          <h2 style="font-size:clamp(23px,3.6vw,32px);margin-bottom:10px">Gratis 3-Minuten Video Audit Van Je Webshop</h2>
+          <p style="color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:660px;margin:0 auto">
+            Wil je weten waarom je webwinkel traag laadt of waarom bezoekers afhaken bij het afrekenen? Vul je URL in. Binnen 24 uur stuur ik je een persoonlijke 3-minuten Loom schermopname met de grootste mobiele bottlenecks en concrete oplossingen.
+          </p>
+        </div>
+
+        <form id="auditFormNL" action="../contact.php" method="POST" style="display:flex;flex-direction:column;gap:16px">
+          <div style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden">
+            <label for="audit-hp-nl">Laat leeg</label>
+            <input id="audit-hp-nl" name="_hp_company_website_verify" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="lead_type" value="3_minute_video_audit" />
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+            <div>
+              <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
+              <input type="url" id="audit-url-nl" name="website" required placeholder="https://jouwwinkel.nl" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+            </div>
+            <div>
+              <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">E-mailadres (voor de videolink) *</label>
+              <input type="email" id="audit-email-nl" name="email" required placeholder="jouw@bedrijf.nl" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+            <div>
+              <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">E-Commerce Platform</label>
+              <select id="audit-platform-nl" name="platform" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+                <option value="Shopify">Shopify</option>
+                <option value="WooCommerce">WooCommerce / WordPress</option>
+                <option value="Anders / Magento / Lightspeed">Ander Platform / Lightspeed / Magento</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Grootste Frustratie (Optioneel)</label>
+              <input type="text" id="audit-msg-nl" name="message" placeholder="bijv. Haperende iDEAL betaling, trage checkout" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+            </div>
+          </div>
+
+          <div id="auditStatusNL" style="display:none;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5"></div>
+
+          <button type="submit" id="auditSubmitBtnNL" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:14px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
+            🎥 Ontvang Mijn Gratis Video Audit Binnen 24u &rarr;
+          </button>
+
+          <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
+            🔒 Geen spam, geen telefoontjes. Binnen 24 uur een eerlijke technische analyse van een ervaren developer.
+          </p>
+        </form>
       </div>
     </div>
   </section>

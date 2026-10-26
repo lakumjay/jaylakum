@@ -89,8 +89,24 @@
     },
     {
       "@type": "FAQPage",
-      "@id": "https://jaylakum.com/nl/#faq",
+      "@id": "https://jaylakum.com/nl/utrecht/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost het om Core Web Vitals groen te krijgen voor een webshop in Utrecht?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Afhankelijk van je e-commerce platform ontvang je een vaste prijsopgave met meetbare Core Web Vitals targets (LCP < 2.0s, INP < 200ms) binnen overeengekomen scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel kan mijn webwinkel in Utrecht sneller laden op mobiel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mobiele laadtijdverbeteringen voer ik binnen 3 tot 5 werkdagen uit met moderne WebP/AVIF compressie en CSS/JS stroomlijning op staging."
+          }
+        },
         {
           "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",

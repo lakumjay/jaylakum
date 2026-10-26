@@ -250,6 +250,10 @@ def update_index_html(html_path, article_data):
     with open(html_path, "r", encoding="utf-8") as f:
         content = f.read()
 
+    if f'slug: "{article_data["slug"]}"' in content or f'slug: \'{article_data["slug"]}\'' in content:
+        print(f"ℹ️ Article {article_data['slug']} already present in {html_path}")
+        return True
+
     match = re.search(r"var\s+ARTICLES\s*=\s*\[", content)
     if not match:
         return False

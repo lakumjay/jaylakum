@@ -618,6 +618,68 @@
       </div>
     </div>
 
+    <!-- Free 3-Minute Video Audit Lead Magnet -->
+    <div id="free-video-audit" class="section" style="background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap">
+        <div style="max-width:820px;margin:0 auto;background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:36px;box-shadow:0 12px 36px rgba(0,0,0,0.06);position:relative">
+          <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold-deep);color:#fff;padding:4px 18px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,0.15)">
+            ⚡ 100% Free &middot; No Obligation
+          </div>
+          <div style="text-align:center;margin-top:6px;margin-bottom:24px">
+            <p class="eyebrow" style="margin-bottom:8px">Free Mini-Audit &middot; Within 24 Hours</p>
+            <h2 style="font-size:clamp(23px,3.6vw,32px);margin-bottom:10px">Get A Free 3-Minute Video Audit Of Your Store</h2>
+            <p style="color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:660px;margin:0 auto">
+              Wondering why your store feels slow or why visitors drop off at checkout? Drop your URL below. Within 24 hours, I'll record and email you a personalized 3-minute Loom walkthrough detailing your biggest mobile speed leaks and quick fixes.
+            </p>
+          </div>
+
+          <form id="auditFormEN" action="contact.php" method="POST" style="display:flex;flex-direction:column;gap:16px">
+            <div style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden">
+              <label for="audit-hp-en">Leave empty</label>
+              <input id="audit-hp-en" name="_hp_company_website_verify" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <input type="hidden" name="lead_type" value="3_minute_video_audit" />
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+              <div>
+                <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
+                <input type="url" id="audit-url-en" name="website" required placeholder="https://yourstore.com" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              </div>
+              <div>
+                <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Your Email (for video link) *</label>
+                <input type="email" id="audit-email-en" name="email" required placeholder="you@yourstore.com" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+              <div>
+                <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Platform</label>
+                <select id="audit-platform-en" name="platform" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+                  <option value="Shopify">Shopify</option>
+                  <option value="WooCommerce">WooCommerce / WordPress</option>
+                  <option value="Other / Custom">Other Platform / Custom</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Main Concern (Optional)</label>
+                <input type="text" id="audit-msg-en" name="message" placeholder="e.g. Slow mobile PageSpeed, high cart abandonment" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              </div>
+            </div>
+
+            <div id="auditStatusEN" style="display:none;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5"></div>
+
+            <button type="submit" id="auditSubmitBtnEN" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:14px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
+              🎥 Get My Free Video Audit Within 24h &rarr;
+            </button>
+
+            <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
+              🔒 Zero spam, no unsolicited sales calls. You get a direct, honest technical breakdown from a developer.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="section section-soft">
       <div class="wrap about-grid">
         <div>
