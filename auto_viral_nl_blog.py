@@ -269,21 +269,10 @@ def update_sitemap(sitemap_path, slug):
     if f"#blog/{slug}" in content:
         return True
 
-    entry = f"""  <url>
-    <loc>https://jaylakum.com/#blog/{slug}</loc>
-    <xhtml:link rel="alternate" hreflang="nl-NL" href="https://jaylakum.com/#blog/{slug}"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-</urlset>"""
-
-    if "</urlset>" in content:
-        content = content.replace("</urlset>", entry)
-        with open(sitemap_path, "w", encoding="utf-8") as f:
-            f.write(content)
-        print(f"✓ Sitemap updated with slug: {slug}")
-        return True
-    return False
+    # Note: Google Sitemaps do not support URL fragments with '#'.
+    # Articles are dynamically rendered via SPA hash router in index.html,
+    # so sitemap points to clean crawlable HTML documents.
+    return True
 
 def main():
     print("=" * 70)

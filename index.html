@@ -636,6 +636,23 @@
       </div>
     </div>
 
+    <!-- Latest Articles on Home -->
+    <div class="section" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft)">
+      <div class="wrap">
+        <div class="section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
+          <div>
+            <p class="eyebrow">LATEST GUIDES &amp; INDUSTRY NOTES</p>
+            <h2>Fresh Insights from the Field</h2>
+            <p>Practical checks, checkout teardowns, and recent e-commerce updates.</p>
+          </div>
+          <div>
+            <a class="btn btn-ghost" href="#blog" style="padding:8px 18px;font-size:14px">View All Articles →</a>
+          </div>
+        </div>
+        <div class="blog-grid" id="homeBlogGrid" style="padding:20px 0 30px"></div>
+      </div>
+    </div>
+
     <div class="section">
       <div class="wrap">
         <div class="section-head">
@@ -1185,7 +1202,7 @@ document.getElementById('homeWork').innerHTML = PROJECTS.map(workCard).join('');
 document.getElementById('workGrid').innerHTML = PROJECTS.map(workCard).join('');
 
 /* ---------- Render: blog listing ---------- */
-document.getElementById('blogGrid').innerHTML = ARTICLES.map(function(a){
+function renderArticleCard(a){
   return '<article class="card post-card">' +
     '<figure class="card-media"><img src="' + a.image + '" alt="' + a.imageAlt + '" loading="lazy" /></figure>' +
     '<span class="p-cat">' + a.category + '</span>' +
@@ -1194,7 +1211,12 @@ document.getElementById('blogGrid').innerHTML = ARTICLES.map(function(a){
     '<p class="post-meta">' + a.date + ' · ' + a.read + '</p>' +
     '<a class="more" href="#blog/' + a.slug + '">Read the article →</a>' +
     '</article>';
-}).join('');
+}
+document.getElementById('blogGrid').innerHTML = ARTICLES.map(renderArticleCard).join('');
+var hbg = document.getElementById('homeBlogGrid');
+if (hbg) {
+  hbg.innerHTML = ARTICLES.slice(0, 3).map(renderArticleCard).join('');
+}
 
 /* ---------- SEO per view ---------- */
 var META = {
