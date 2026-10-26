@@ -60,6 +60,45 @@ HIGH_INTENT_TOPICS = [
     }
 ]
 
+# Dutch specific high-converting viral topics (Nederland / Google.nl)
+DUTCH_VIRAL_TOPICS = [
+    {
+        "title": "Shopify Snelheid Optimalisatie: Waarom Nederlandse Webwinkels 25% Omzet Verliezen aan Mobiele Laadtijd",
+        "category": "Shopify · Snelheid Optimalisatie",
+        "geo": "Nederland (Amsterdam, Rotterdam)",
+        "keywords": "Shopify webshop sneller maken, Core Web Vitals groen krijgen, PageSpeed 90+ Nederland, iDEAL checkout snelheid",
+        "lang": "nl"
+    },
+    {
+        "title": "Mollie & iDEAL 2.0 Checkout Fouten: Hoe Los Je 'Mislukte Betaling' Bugs Op in WooCommerce & Shopify?",
+        "category": "E-Commerce · iDEAL Reparatie",
+        "geo": "Nederland",
+        "keywords": "Mollie iDEAL betaling mislukt WooCommerce, webhook error iDEAL 2.0, checkout repareren webshop Nederland",
+        "lang": "nl"
+    },
+    {
+        "title": "Trage Webshop Versnellen in Nederland: 7 Stappen Naar Een 90+ Score op Google PageSpeed",
+        "category": "Webshop Optimalisatie · Google.nl",
+        "geo": "Nederland",
+        "keywords": "trage WooCommerce webshop versnellen, Shopify app audit, LCP onder 1.5s, Nederlandse webwinkel developer",
+        "lang": "nl"
+    },
+    {
+        "title": "Waarom Amsterdamse Modemerken Overstappen van Trage Thema's naar Custom Shopify Liquid",
+        "category": "Shopify · Maatwerk Development",
+        "geo": "Amsterdam & Randstad",
+        "keywords": "Shopify specialist Amsterdam, custom Liquid developer Nederland, boutique webshop redesign",
+        "lang": "nl"
+    },
+    {
+        "title": "Shopify Specialist vs Duur Amsterdams Bureau: Wat Is De Slimste Keuze Voor Groeiende Webshops?",
+        "category": "E-Commerce Advies · Nederland",
+        "geo": "Nederland",
+        "keywords": "freelance Shopify developer inhuren, e-commerce bureau Amsterdam kosten, vaste prijs webshop optimalisatie",
+        "lang": "nl"
+    }
+]
+
 def generate_non_copyright_svg(title, category):
     """
     Generates a crisp, modern, 100% copyright-free SVG illustration
@@ -147,7 +186,35 @@ def call_gemini_api(api_key, topic_info):
     """
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
     
-    prompt = f"""You are Jay Lakum, a world-class freelance Shopify and WordPress/WooCommerce developer who fixes, speeds up, and redesigns online stores for high-end fashion and beauty brands in Europe (UK, Netherlands, Germany) and the US.
+    is_dutch = topic_info.get("lang") == "nl"
+    
+    if is_dutch:
+        prompt = f"""Je bent Jay Lakum, een freelance Shopify en WordPress/WooCommerce specialist die webshops repareert, versnelt en herontwerpt voor modemerken en webwinkels in Nederland (Amsterdam, Rotterdam, Utrecht, Den Haag).
+
+Schrijf een diepgaand, technisch en praktisch blogartikel in natuurlijk, vloeiend Nederlands over het volgende onderwerp:
+Onderwerp suggestie: {topic_info['title']}
+Doelgroep & Regio: {topic_info.get('geo', 'Nederland')}
+Focus Zoekwoorden: {topic_info.get('keywords', '')}
+Categorie: {topic_info['category']}
+
+Doelgroep: Nederlandse webwinkeliers, e-commerce managers en founders van fashion/cosmetica webshops. Ze balen van trage laadtijden, mislukte Mollie/iDEAL transacties of verouderde logge thema's.
+Toon: Kalm, deskundig, nuchter, eerlijk en direct (geen AI-clichés of holle marketingpraat).
+
+Lever je antwoord strikt als JSON object met de volgende keys:
+{{
+  "slug": "korte-url-vriendelijke-slug-onder-50-tekens",
+  "title": "Aansprekende Nederlandse titel voor maximale CTR en Google ranking",
+  "category": "{topic_info['category']}",
+  "read": "4 min leestijd",
+  "imageAlt": "Omschrijving van de illustratie",
+  "excerpt": "Een krachtige 2-zinnen samenvatting die het probleem en de directe winst in laadtijd/omzet benadrukt.",
+  "body": "HTML string met <h2>, <h3>, <p>, <strong>, <code>, <ul>, <li> tags. Bevat 4-5 praktische secties (PageSpeed analyse, Mollie webhook verificatie, apps saneren, iDEAL checkout optimalisatie) en sluit af met een vriendelijke Call to Action om contact op te nemen via het contactformulier op jaylakum.com/nl/ voor een gratis mini-audit."
+}}
+
+Antwoord UITSLUITEND met geldige JSON.
+"""
+    else:
+        prompt = f"""You are Jay Lakum, a world-class freelance Shopify and WordPress/WooCommerce developer who fixes, speeds up, and redesigns online stores for high-end fashion and beauty brands in Europe (UK, Netherlands, Germany) and the US.
 
 Write an in-depth, deeply practical, and authoritative technical blog article based on the following topic:
 Title suggestion: {topic_info['title']}
@@ -280,15 +347,23 @@ def main():
         if arg == "--key" and i + 1 < len(sys.argv):
             api_key = sys.argv[i + 1]
 
+    # Check for --nl or --lang nl flag
+    use_dutch = "--nl" in sys.argv or ("--lang" in sys.argv and "nl" in sys.argv)
+
     # Select topic
-    topic = random.choice(HIGH_INTENT_TOPICS)
+    if use_dutch:
+        topic = random.choice(DUTCH_VIRAL_TOPICS)
+    else:
+        topic = random.choice(HIGH_INTENT_TOPICS)
+
     for i, arg in enumerate(sys.argv):
         if arg == "--topic" and i + 1 < len(sys.argv):
             topic = {
                 "title": sys.argv[i + 1],
-                "category": "Web Development",
-                "geo": "US, UK & Netherlands",
-                "keywords": "web design, speed optimization, shopify, wordpress"
+                "category": "Webshop Optimalisatie" if use_dutch else "Web Development",
+                "geo": "Nederland" if use_dutch else "US, UK & Netherlands",
+                "keywords": "shopify, woocommerce, snelheid, ideal, mollie",
+                "lang": "nl" if use_dutch else "en"
             }
 
     print("=" * 60)

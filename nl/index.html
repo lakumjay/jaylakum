@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 <meta property="og:locale" content="nl_NL" />
 
-<!-- Structured Data (JSON-LD) for Google Netherlands Local/Professional Service -->
+<!-- Structured Data (JSON-LD) for Google Netherlands Local/Professional Service + FAQ Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,12 +59,19 @@
       "email": "jay@jaylakum.com"
     },
     {
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "LocalBusiness"],
       "@id": "https://jaylakum.com/nl/#service",
       "name": "Jay Lakum — E-Commerce & Performance Specialist Nederland",
       "description": "Specialist in trage Shopify en WooCommerce webshops versnellen, Mollie iDEAL fouten oplossen en Core Web Vitals groen krijgen.",
       "email": "jay@jaylakum.com",
       "url": "https://jaylakum.com/nl/",
+      "priceRange": "€€",
+      "hasMap": "https://maps.google.com/?q=Amsterdam,Netherlands",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.3676,
+        "longitude": 4.9041
+      },
       "areaServed": [
         { "@type": "Country", "name": "Netherlands" },
         { "@type": "City", "name": "Amsterdam" },
@@ -79,6 +86,60 @@
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mollie & iDEAL Checkout Fouten Oplossen" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webshop Redesign & Conversie Verbetering" } }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://jaylakum.com/nl/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met één vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe werkt de resultaatgarantie ('Geen oplossing, geen factuur') precies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We leggen vooraf in een duidelijke schriftelijke scope vast wat het meetbare doel is (bijvoorbeeld: Mollie webhook herstellen zodat bestellingen direct op Voltooid springen of Mobile LCP onder 2.0s brengen op Google PageSpeed). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Komt mijn webshop hiermee direct op nummer 1 in Google.nl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wat deze optimalisatie doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Moet mijn webwinkel offline tijdens de optimalisatie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de developer zelf. Snellere communicatie, diepere technische focus en minimaal 50% lagere kosten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe snel kan mijn webshop versneld of gerepareerd worden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acute bug fixes en iDEAL haperingen worden meestal binnen 24 tot 48 uur opgelost. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
+          }
+        }
       ]
     }
   ]
@@ -493,12 +554,73 @@
       </div>
     </div>
   </section>
+
+  <!-- Google Maps & Regio Service Dekking Nederland -->
+  <section id="locaties" class="section section-soft" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head" style="text-align:center;margin:0 auto 32px">
+        <div class="eyebrow">LOCATIE & LANDELIJKE DEKKING</div>
+        <h2>Actief Voor Webshops Door Heel Nederland</h2>
+        <p style="color:var(--ink-soft);max-width:680px;margin:8px auto 0">Directe samenwerking op afstand met webwinkeliers in de Randstad en daarbuiten. Geen trage vergaderingen of reiskosten, maar snelle async communicatie via Slack, WhatsApp of e-mail.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.03)">
+        <div style="line-height:1.7">
+          <h3 style="font-size:20px;margin-bottom:12px">📍 Werkgebied & Focusregio's</h3>
+          <p style="font-size:15px;color:var(--ink-soft);margin-bottom:16px">Gespecialiseerd in snelle ondersteuning voor boutique modemerken, cosmetica webshops en D2C e-commerce in:</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:15px">
+            <li>🏛️ <b>Amsterdam & Regio:</b> <a href="/nl/amsterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Amsterdam</a></li>
+            <li>🚢 <b>Rotterdam & Rijnmond:</b> <a href="/nl/rotterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Rotterdam</a></li>
+            <li>⚡ <b>Utrecht & Midden-NL:</b> <a href="/nl/utrecht/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Utrecht</a></li>
+            <li>⚖️ <b>Den Haag & Westland:</b> <a href="/nl/den-haag/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Den Haag</a></li>
+            <li>💡 <b>Eindhoven & Brainport:</b> <a href="/nl/eindhoven/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Eindhoven</a></li>
+          </ul>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line);min-height:260px;position:relative">
+          <iframe 
+            title="Google Maps Nederland Dekking"
+            width="100%" 
+            height="260" 
+            style="border:0;display:block" 
+            loading="lazy" 
+            allowfullscreen 
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155856.7649514755!2d4.763878036069927!3d52.3702157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600db4cbdd057d3!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer style="padding:40px 0;border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--ink-faint);background:var(--bg-soft)">
+<footer style="padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-faint);background:var(--bg-soft)">
   <div class="wrap">
-    <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa.</p>
-    <p><a href="/nl/">Nederlands (NL)</a> &middot; <a href="/">English (International)</a> &middot; <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a></p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-bottom:24px;text-align:left">
+      <div style="flex:1;min-width:260px">
+        <strong style="color:var(--ink);font-size:16px;display:block;margin-bottom:8px">Jay Lakum — Performance & E-Commerce</strong>
+        <p style="margin:0 0 8px">Snelle Shopify & WooCommerce webwinkels in Nederland. Mollie & iDEAL 2.0 checkout integraties.</p>
+        <p style="margin:0">Vaste prijs vooraf &middot; Direct contact &middot; Binnen 24u reactie</p>
+      </div>
+      <div style="flex:1;min-width:240px">
+        <strong style="color:var(--ink);display:block;margin-bottom:8px">Regio's & Steden</strong>
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.8">
+          <li><a href="/nl/amsterdam/">Shopify Specialist Amsterdam</a></li>
+          <li><a href="/nl/rotterdam/">Shopify Specialist Rotterdam</a></li>
+          <li><a href="/nl/utrecht/">Shopify Specialist Utrecht</a></li>
+          <li><a href="/nl/den-haag/">Shopify Specialist Den Haag</a></li>
+          <li><a href="/nl/eindhoven/">Shopify Specialist Eindhoven</a></li>
+        </ul>
+      </div>
+      <div style="flex:1;min-width:200px">
+        <strong style="color:var(--ink);display:block;margin-bottom:8px">Contact & Info</strong>
+        <p style="margin:0 0 6px">Email: <a href="mailto:jay@jaylakum.com"><b>jay@jaylakum.com</b></a></p>
+        <p style="margin:0 0 6px"><a href="/nl/">Nederlands (NL)</a> &middot; <a href="/">English (Global)</a></p>
+        <p style="margin:0">Betaalmethoden: iDEAL, SEPA, Mollie, Creditcard</p>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--line);padding-top:20px;text-align:center">
+      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa.</p>
+    </div>
   </div>
 </footer>
 
