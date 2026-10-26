@@ -223,7 +223,7 @@
 
   /* ---------- Views ---------- */
   .view{display:none}
-  .view.active{display:block;animation:viewIn .35s ease both}
+  .view.active, #view-home.active{display:block;animation:viewIn .35s ease both}
   @keyframes viewIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
   /* ---------- Hero ---------- */
@@ -581,7 +581,7 @@
 
 <main>
   <!-- ================= HOME ================= -->
-  <section class="view" id="view-home">
+  <section class="view active" id="view-home">
     <div class="hero">
       <div class="wrap hero-grid">
         <div>
