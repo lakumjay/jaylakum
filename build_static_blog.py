@@ -14,6 +14,11 @@ HTDOCS = "/Applications/XAMPP/xamppfiles/htdocs/jaylakum"
 BLOG_DIR = os.path.join(HTDOCS, "blog")
 
 def get_articles_data():
+    articles_json_path = os.path.join(HTDOCS, "articles_data.json")
+    if os.path.exists(articles_json_path):
+        with open(articles_json_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    
     index_path = os.path.join(HTDOCS, "index.html")
     with open(index_path, "r", encoding="utf-8") as f:
         text = f.read()
@@ -191,10 +196,12 @@ def render_article_page(article, all_articles):
     --bg-soft:#F3EEE3;
     --card:#FFFFFF;
     --ink:#1C1A17;
-    --ink-soft:#4A463F;
-    --ink-faint:#6E6759;
-    --gold:#A98548;
-    --gold-deep:#8A6C33;
+    --ink-soft:#423E37;
+    --gold-btn:#745218;
+    --gold-btn-text:#FFFFFF;
+    --ink-faint:#595347;
+    --gold:#684B1B;
+    --gold-deep:#553D16;
     --gold-soft:#EFE6D2;
     --line:#E3DCCB;
     --line-strong:#CFC4A6;
@@ -205,17 +212,19 @@ def render_article_page(article, all_articles):
   }}
   @media(prefers-color-scheme:dark){{
     :root{{
-      --bg:#12110F;
-      --bg-soft:#1A1916;
-      --card:#211F1B;
-      --ink:#F5F2EB;
-      --ink-soft:#CCC5B8;
-      --ink-faint:#9C9485;
-      --gold:#D4AF67;
-      --gold-deep:#E2C485;
+      --bg:#171410;
+      --bg-soft:#1F1B15;
+      --card:#211C16;
+      --ink:#EDE6D6;
+      --ink-soft:#D4CBBC;
+      --gold-btn:#E5BE72;
+      --gold-btn-text:#171410;
+      --ink-faint:#B5A894;
+      --gold:#E5BE72;
+      --gold-deep:#F0CE8A;
       --gold-soft:#2E2718;
-      --line:#2E2A23;
-      --line-strong:#453E32;
+      --line:#37301F;
+      --line-strong:#4A4028;
       --shadow:0 10px 30px rgba(0,0,0,.45);
     }}
   }}
@@ -435,10 +444,12 @@ def render_blog_index(articles):
     --bg-soft:#F3EEE3;
     --card:#FFFFFF;
     --ink:#1C1A17;
-    --ink-soft:#4A463F;
-    --ink-faint:#6E6759;
-    --gold:#A98548;
-    --gold-deep:#8A6C33;
+    --ink-soft:#423E37;
+    --gold-btn:#745218;
+    --gold-btn-text:#FFFFFF;
+    --ink-faint:#595347;
+    --gold:#684B1B;
+    --gold-deep:#553D16;
     --gold-soft:#EFE6D2;
     --line:#E3DCCB;
     --shadow:0 10px 30px rgba(28,26,23,.08);
@@ -448,16 +459,18 @@ def render_blog_index(articles):
   }}
   @media(prefers-color-scheme:dark){{
     :root{{
-      --bg:#12110F;
-      --bg-soft:#1A1916;
-      --card:#211F1B;
-      --ink:#F5F2EB;
-      --ink-soft:#CCC5B8;
-      --ink-faint:#9C9485;
-      --gold:#D4AF67;
-      --gold-deep:#E2C485;
+      --bg:#171410;
+      --bg-soft:#1F1B15;
+      --card:#211C16;
+      --ink:#EDE6D6;
+      --ink-soft:#D4CBBC;
+      --gold-btn:#E5BE72;
+      --gold-btn-text:#171410;
+      --ink-faint:#B5A894;
+      --gold:#E5BE72;
+      --gold-deep:#F0CE8A;
       --gold-soft:#2E2718;
-      --line:#2E2A23;
+      --line:#37301F;
       --shadow:0 10px 30px rgba(0,0,0,.45);
     }}
   }}
@@ -472,7 +485,7 @@ def render_blog_index(articles):
   .brand span{{color:var(--gold)}}
   .nav-links{{display:flex;gap:22px;align-items:center;font-size:15px}}
   .nav-links a:hover{{color:var(--gold)}}
-  .btn{{display:inline-flex;align-items:center;padding:10px 22px;border-radius:var(--radius);background:var(--gold);color:#fff!important;font-weight:600;font-size:15px}}
+  .btn{{display:inline-flex;align-items:center;padding:10px 22px;border-radius:var(--radius);background:var(--gold-btn);color:var(--gold-btn-text)!important;font-weight:600;font-size:15px}}
   .btn:hover{{background:var(--gold-deep)}}
   
   .blog-head{{padding:60px 0 40px;text-align:center;max-width:720px;margin:0 auto}}

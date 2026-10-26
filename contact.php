@@ -223,31 +223,31 @@ $html_content = '<!DOCTYPE html>
             <td style="padding:28px 32px;">
               <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:24px;">
                 <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;width:35%;color:#64748b;font-size:13.5px;font-weight:600;">👤 Naam:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;width:35%;color:#475569;font-size:13.5px;font-weight:600;">👤 Naam:</td>
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#0f172a;font-size:14.5px;font-weight:700;">' . htmlspecialchars($name) . '</td>
                 </tr>
                 <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">✉️ E-mailadres:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#475569;font-size:13.5px;font-weight:600;">✉️ E-mailadres:</td>
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><a href="mailto:' . htmlspecialchars($email) . '" style="color:#2563eb;text-decoration:underline;font-size:14px;font-weight:600;">' . htmlspecialchars($email) . '</a></td>
                 </tr>
                 <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">🌐 Webshop Link:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#475569;font-size:13.5px;font-weight:600;">🌐 Webshop Link:</td>
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><a href="' . htmlspecialchars($website) . '" target="_blank" style="color:#dca10d;text-decoration:underline;font-size:14px;font-weight:600;">' . htmlspecialchars($website) . '</a></td>
                 </tr>
                 <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">⚡ Dienst / Vraag:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#475569;font-size:13.5px;font-weight:600;">⚡ Dienst / Vraag:</td>
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="background-color:#e0f2fe;color:#0369a1;padding:3px 8px;border-radius:4px;font-size:13px;font-weight:600;">' . htmlspecialchars($problem_type) . '</span></td>
                 </tr>
                 ' . ($lead_type !== '3_minute_video_audit' ? '
                 <tr>
-                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">💰 Indicatie Budget:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#475569;font-size:13.5px;font-weight:600;">💰 Indicatie Budget:</td>
                   <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="background-color:#fef3c7;color:#92400e;padding:3px 8px;border-radius:4px;font-size:13px;font-weight:700;">' . htmlspecialchars($budget) . '</span></td>
                 </tr>' : '') . '
               </table>
 
               <!-- Message Box -->
               <div style="background-color:#f8fafc;border-left:4px solid #dca10d;border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:16px;">
-                <div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">
+                <div style="font-size:12px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">
                   💬 Omschrijving van het probleem:
                 </div>
                 <div style="font-size:14.5px;line-height:1.65;color:#1e293b;white-space:pre-wrap;">' . (!empty($message) ? nl2br(htmlspecialchars($message)) : '<em>(Geen extra opmerkingen ingevuld — URL ingediend voor audit)</em>') . '</div>
@@ -261,7 +261,7 @@ $html_content = '<!DOCTYPE html>
             <td style="background-color:#f8fafc;padding:16px 32px;font-size:11.5px;color:#94a3b8;line-height:1.6;border-top:1px solid #e2e8f0;">
               Ontvangen: ' . date('d M Y, H:i:s T') . ' · IP: ' . htmlspecialchars($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . '<br>
               Browser: ' . htmlspecialchars(substr($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown', 0, 100)) . '<br>
-              Bron: <a href="https://jaylakum.com" style="color:#64748b;text-decoration:none;">jaylakum.com</a>
+              Bron: <a href="https://jaylakum.com" style="color:#475569;text-decoration:none;">jaylakum.com</a>
             </td>
           </tr>
 
@@ -349,8 +349,8 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
                   </td>
                   <td style="vertical-align:top;line-height:1.45;">
                     <strong style="color:#0f172a;font-size:15px;display:block;">Jay Lakum</strong>
-                    <span style="font-size:13px;color:#64748b;">Senior E-Commerce &amp; Speed Specialist</span><br>
-                    <a href="https://jaylakum.com/nl/" style="font-size:13px;color:#dca10d;text-decoration:none;font-weight:600;">jaylakum.com/nl/</a> &middot; <a href="mailto:jay@jaylakum.com" style="font-size:13px;color:#64748b;text-decoration:none;">jay@jaylakum.com</a>
+                    <span style="font-size:13px;color:#475569;">Senior E-Commerce &amp; Speed Specialist</span><br>
+                    <a href="https://jaylakum.com/nl/" style="font-size:13px;color:#dca10d;text-decoration:none;font-weight:600;">jaylakum.com/nl/</a> &middot; <a href="mailto:jay@jaylakum.com" style="font-size:13px;color:#475569;text-decoration:none;">jay@jaylakum.com</a>
                   </td>
                 </tr>
               </table>

@@ -2,6 +2,11 @@ DirectoryIndex index.php index.html
 
 AddDefaultCharset UTF-8
 
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^blog/nederland-heeft-nu-ook-een-dopaminesite-ni/?$ /blog/webshop-klaarmaken-feestdagen/ [R=301,L]
+</IfModule>
+
 <IfModule mod_mime.c>
     AddType video/mp4 .mp4
     AddType image/svg+xml .svg .svgz

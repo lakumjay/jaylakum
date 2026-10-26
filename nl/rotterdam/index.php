@@ -167,10 +167,12 @@
     --bg-soft:#F3EEE3;
     --card:#FFFFFF;
     --ink:#1C1A17;
-    --ink-soft:#4A463F;
-    --ink-faint:#6E6759;
-    --gold:#A98548;
-    --gold-deep:#8A6C33;
+    --ink-soft:#423E37;
+    --ink-faint:#595347;
+    --gold:#684B1B;
+    --gold-deep:#553D16;
+    --gold-btn:#745218;
+    --gold-btn-text:#FFFFFF;
     --gold-soft:#EFE6D2;
     --line:#E3DCCB;
     --line-strong:#CFC4A6;
@@ -185,15 +187,18 @@
       --bg-soft:#1F1B15;
       --card:#211C16;
       --ink:#EDE6D6;
-      --ink-soft:#CFC6B2;
-      --ink-faint:#A99E86;
-      --gold:#C9A45C;
-      --gold-deep:#C9A45C;
+      --ink-soft:#D4CBBC;
+      --ink-faint:#B5A894;
+      --gold:#E5BE72;
+      --gold-deep:#F0CE8A;
+      --gold-btn:#E5BE72;
+      --gold-btn-text:#171410;
       --gold-soft:#2C2517;
       --line:#37301F;
       --line-strong:#4A4028;
       --shadow:0 10px 30px rgba(0,0,0,.45);
     }
+  @media (prefers-color-scheme: dark){ .btn{color:#171410!important} }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -210,7 +215,7 @@
     display:inline-flex;align-items:center;gap:8px;
     font-family:var(--sans);font-weight:600;font-size:16px;
     padding:13px 26px;border-radius:999px;border:1px solid var(--gold);
-    background:var(--gold);color:#FFF;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
+    background:var(--gold-btn, #745218);color:#FFF;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
   }
   .btn:hover{background:var(--gold-deep);border-color:var(--gold-deep);text-decoration:none;transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
@@ -275,7 +280,7 @@
     background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:12px;
     padding:26px;text-align:center;margin-top:28px;
   }
-  .calc-loss-val{font-size:clamp(32px,5vw,46px);font-weight:800;color:#e74c3c;font-family:var(--serif);margin:6px 0}
+  .calc-loss-val{font-size:clamp(32px,5vw,46px);font-weight:800;color:#b91c1c;font-family:var(--serif);margin:6px 0}
 
   /* FAQ Accordion */
   .faq-wrap{max-width:780px;margin:0 auto}
@@ -410,7 +415,7 @@
             <span>Maandelijkse Webshop Bezoekers</span>
             <b id="lblVisitors" style="color:var(--gold-deep)">15.000 bezoekers</b>
           </label>
-          <input type="range" id="rngVisitors" min="1000" max="100000" step="1000" value="15000" oninput="updateDutchCalc()">
+          <input type="range" id="rngVisitors" aria-label="Aantal maandelijkse bezoekers" min="1000" max="100000" step="1000" value="15000" oninput="updateDutchCalc()">
         </div>
 
         <div class="calc-slider-group">
@@ -418,15 +423,15 @@
             <span>Gemiddelde Orderwaarde (AOV in €)</span>
             <b id="lblAov" style="color:var(--gold-deep)">€65</b>
           </label>
-          <input type="range" id="rngAov" min="15" max="300" step="5" value="65" oninput="updateDutchCalc()">
+          <input type="range" id="rngAov" aria-label="Gemiddelde orderwaarde" min="15" max="300" step="5" value="65" oninput="updateDutchCalc()">
         </div>
 
         <div class="calc-slider-group">
           <label>
             <span>Huidige Laadtijd op Smartphone</span>
-            <b id="lblSpeed" style="color:#e74c3c">4.2 seconden (Traag)</b>
+            <b id="lblSpeed" style="color:#b91c1c">4.2 seconden (Traag)</b>
           </label>
-          <input type="range" id="rngSpeed" min="1.5" max="7.0" step="0.1" value="4.2" oninput="updateDutchCalc()">
+          <input type="range" id="rngSpeed" aria-label="Huidige mobiele laadtijd" min="1.5" max="7.0" step="0.1" value="4.2" oninput="updateDutchCalc()">
         </div>
 
         <div class="calc-result-card">
@@ -567,19 +572,19 @@
             <input id="nl-ts" name="_ts_token" type="hidden" value="" />
           </div>
           <div>
-            <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Jouw Naam</label>
+            <label for="nl-name" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Jouw Naam</label>
             <input type="text" id="nl-name" name="name" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
           </div>
           <div>
-            <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">E-mailadres</label>
+            <label for="nl-email" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">E-mailadres</label>
             <input type="email" id="nl-email" name="email" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
           </div>
           <div>
-            <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Webshop URL (Website Link)</label>
+            <label for="nl-url" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Webshop URL (Website Link)</label>
             <input type="url" id="nl-url" name="website" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
           </div>
           <div>
-            <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Waar heb je hulp bij nodig?</label>
+            <label for="nl-service" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Waar heb je hulp bij nodig?</label>
             <select id="nl-service" name="problem_type" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px">
               <option value="Trage Webshop Versnellen (Shopify/WooCommerce)">⚡ Trage Webshop Versnellen (&lt;1.5s Laadtijd)</option>
               <option value="Mollie & iDEAL Checkout Problemen">🐛 Mollie & iDEAL Checkout Fouten Oplossen</option>
@@ -590,7 +595,7 @@
             </select>
           </div>
           <div>
-            <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Geschat Projectbudget</label>
+            <label for="nl-budget" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Geschat Projectbudget</label>
             <select id="nl-budget" name="budget" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px">
               <option value="€300 - €750 (Snelle fix / Snelheid boost)">€300 - €750 — Snelle fix / Snelheid boost</option>
               <option value="€750 - €1.500 (Standaard optimalisatie & fixes)" selected>€750 - €1.500 — Standaard optimalisatie & fixes</option>
@@ -600,7 +605,7 @@
             </select>
           </div>
           <div>
-            <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Korte omschrijving van het probleem</label>
+            <label for="nl-msg" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Korte omschrijving van het probleem</label>
             <textarea id="nl-msg" name="message" rows="4" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder=""></textarea>
           </div>
           <!-- Cloudflare Turnstile Placeholder -->
@@ -761,7 +766,7 @@ document.addEventListener('DOMContentLoaded', function(){
           status.style.display = 'block';
           status.style.background = 'rgba(46, 204, 113, 0.15)';
           status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
-          status.style.color = '#2ecc71';
+          status.style.color = '#166534';
           status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24 uur contact met je op met een gratis mini-audit.';
         }
         if (btn) btn.textContent = 'Succesvol Verzonden!';
