@@ -571,7 +571,9 @@
       <a href="#home" data-nav="home">Home</a>
       <a href="#services" data-nav="services">Services</a>
       <a href="#work" data-nav="work">Work</a>
+      <a href="/case-study/">Case Study</a>
       <a href="#watch" data-nav="watch">Watch</a>
+      <a href="/case-study/">Case Study</a>
       <a href="/blog/">Blog</a>
       <a href="/nl/" class="lang-toggle-btn" title="Nederlandse versie">🇳🇱 NL</a>
       <a href="#free-video-audit" class="btn nav-cta">Free Mini-Audit</a>
@@ -732,7 +734,8 @@
             <p style="margin:0;font-size:14.5px;color:var(--gold-deep);font-weight:600">
               🎯 <strong>First client?</strong> Your store's optimization will be personally handled with the same step-by-step rigor and become our next verified case study.
             </p>
-            <a href="#free-video-audit" class="btn" style="padding:10px 20px;font-size:14px">Get Your Free 3-Min Audit →</a>
+            <a href="/case-study/" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;background:var(--card)">Read Full Technical Breakdown &rarr;</a>
+            <a href="#free-video-audit" class="btn" style="padding:10px 20px;font-size:14px">Get Your Free 3-Min Audit &rarr;</a>
           </div>
         </div>
       </div>
@@ -1346,6 +1349,7 @@
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#watch">Watch</a>
+      <a href="/case-study/">Case Study</a>
       <a href="/blog/">Blog</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>

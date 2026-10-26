@@ -379,6 +379,7 @@ def render_article_page(article, all_articles):
     <div class="foot-nav">
       <a href="/#services">Services</a>
       <a href="/#work">Work</a>
+      <a href="/case-study/">Case Study</a>
       <a href="/blog/">All Articles</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>
@@ -558,6 +559,7 @@ def render_blog_index(articles):
     <div class="foot-nav">
       <a href="/#services">Services</a>
       <a href="/#work">Work</a>
+      <a href="/case-study/">Case Study</a>
       <a href="/blog/">All Articles</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>

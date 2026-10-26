@@ -387,6 +387,7 @@
     <a href="/nl/" class="brand">Jay <span>Lakum</span></a>
     <div class="nav-links">
       <a href="#diensten">Diensten</a>
+      <a href="/nl/case-study/">Case Study</a>
       <a href="#calculator">Omzet Calculator</a>
       <a href="#ideal-fix">iDEAL & Mollie</a>
       <a href="#faq">Veelgestelde Vragen</a>
