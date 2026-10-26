@@ -46,4 +46,49 @@
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://jaylakum.com/blog/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/webshop-klaarmaken-feestdagen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/why-is-my-shopify-store-so-slow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/how-to-fix-slow-woocommerce-store-practical-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/5-wordpress-plugin-conflicts-that-break-sites-and-their-fixes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>

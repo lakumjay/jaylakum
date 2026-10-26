@@ -284,12 +284,32 @@ def update_sitemap(sitemap_path, slug):
     with open(sitemap_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    if f"#blog/{slug}" in content:
+    blog_url = f"https://jaylakum.com/blog/{slug}/"
+    if blog_url in content:
         return True
 
-    # Note: Google Sitemaps do not support URL fragments with '#'.
-    # Articles are dynamically rendered via SPA hash router in index.html,
-    # so sitemap points to clean crawlable HTML documents.
+    entry = f"""  <url>
+    <loc>{blog_url}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+</urlset>"""
+    new_content = content.replace("</urlset>", entry)
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write(new_content)
+    print(f"✓ Added {blog_url} to sitemap.xml")
+    
+    # Also trigger static blog builder
+    try:
+        import subprocess
+        script_dir = os.path.dirname(os.path.abspath(sitemap_path))
+        builder = os.path.join(script_dir, "build_static_blog.py")
+        if os.path.exists(builder):
+            subprocess.run(["python3", builder], check=False)
+            print("✓ Regenerated standalone static blog pages")
+    except Exception as e:
+        print(f"Notice on static blog builder: {e}")
+        
     return True
 
 def main():
