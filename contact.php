@@ -34,7 +34,7 @@ if (!empty($honeypot)) {
 // ==========================================
 $form_time = intval($json['_ts_token'] ?? $_POST['_ts_token'] ?? 0);
 $now = time();
-if ($form_time > 0 && ($now - $form_time < 3)) {
+if ($form_time > 0 && ($now - $form_time >= 0) && ($now - $form_time < 1)) {
     // Submitted in less than 3 seconds (impossible for a human)
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Submission too fast. Please take your time to fill the form.']);

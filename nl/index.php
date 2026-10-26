@@ -302,7 +302,6 @@
     .contact-box{padding:26px}
   }
 </style>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -733,56 +732,178 @@ function updateDutchCalc(){
 }
 updateDutchCalc();
 
-// Contact Form Handler
+// Contact Form & Video Audit Handlers
+function getContactEndpoint() {
+  var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  if (isLocal && window.location.pathname.indexOf('/jaylakum') !== -1) {
+    return '/jaylakum/contact.php';
+  }
+  return '/contact.php';
+}
+
 document.addEventListener('DOMContentLoaded', function(){
   var ts = document.getElementById('nl-ts');
   if (ts) ts.value = Math.floor(Date.now() / 1000);
+
   var form = document.getElementById('dutchContactForm');
   if (form) {
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var hp = document.getElementById('nl-hp').value;
+      var hp = document.getElementById('nl-hp') ? document.getElementById('nl-hp').value : '';
       var btn = document.getElementById('nl-submit-btn');
       var status = document.getElementById('nl-status-msg');
+      var origText = btn ? btn.textContent : '';
+
       if (hp && hp.trim() !== '') {
         form.reset();
-        btn.textContent = 'Verzonden!';
+        if (btn) btn.textContent = 'Verzonden!';
         return;
       }
-      btn.textContent = 'Bezig met verzenden...';
-      btn.disabled = true;
+      if (btn) {
+        btn.textContent = 'Bezig met verzenden...';
+        btn.disabled = true;
+      }
+      if (status) status.style.display = 'none';
+
       var payload = {
-        name: document.getElementById('nl-name').value,
-        email: document.getElementById('nl-email').value,
-        website: document.getElementById('nl-url').value,
-        problem_type: document.getElementById('nl-service').value,
-        budget: document.getElementById('nl-budget').value,
-        message: document.getElementById('nl-msg').value,
+        name: document.getElementById('nl-name') ? document.getElementById('nl-name').value : '',
+        email: document.getElementById('nl-email') ? document.getElementById('nl-email').value : '',
+        website: document.getElementById('nl-url') ? document.getElementById('nl-url').value : '',
+        problem_type: document.getElementById('nl-service') ? document.getElementById('nl-service').value : '',
+        budget: document.getElementById('nl-budget') ? document.getElementById('nl-budget').value : 'Not Specified',
+        message: document.getElementById('nl-msg') ? document.getElementById('nl-msg').value : '',
         _hp_company_website_verify: hp,
-        'g-recaptcha-response': (typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : ''),
         _ts_token: ts ? ts.value : ''
       };
-      fetch('../contact.php', {
+
+      function showDutchSuccess(){
+        if (status) {
+          status.style.display = 'block';
+          status.style.background = 'rgba(46, 204, 113, 0.15)';
+          status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
+          status.style.color = '#2ecc71';
+          status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24 uur contact met je op met een gratis mini-audit.';
+        }
+        if (btn) btn.textContent = 'Succesvol Verzonden!';
+        form.reset();
+        setTimeout(function(){
+          if (btn) {
+            btn.textContent = origText;
+            btn.disabled = false;
+          }
+        }, 5000);
+      }
+
+      function tryDutchFallback(){
+        fetch('https://formsubmit.co/ajax/lakumjay2000@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(function(r){ return r.json(); })
+        .then(function(){ showDutchSuccess(); })
+        .catch(function(){ form.submit(); });
+      }
+
+      fetch(getContactEndpoint(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       })
-      .then(function(r){ return r.json(); })
-      .then(function(res){
-        status.style.display = 'block';
-        status.style.background = 'rgba(46, 204, 113, 0.15)';
-        status.style.color = '#2ecc71';
-        status.innerHTML = '<strong>✓ Aanvraag succesvol verzonden!</strong> Ik neem binnen 24 uur contact met je op met een gratis mini-audit.';
-        btn.textContent = 'Succesvol Verzonden!';
-        form.reset();
+      .then(function(r){
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
       })
-      .catch(function(err){
-        status.style.display = 'block';
-        status.style.background = 'rgba(231, 76, 60, 0.15)';
-        status.style.color = '#e74c3c';
-        status.innerHTML = 'Er ging iets mis. Stuur gerust direct een e-mail naar <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>.';
-        btn.textContent = 'Verstuur Aanvraag →';
-        btn.disabled = false;
+      .then(function(res){
+        if (res && res.success) {
+          showDutchSuccess();
+        } else {
+          tryDutchFallback();
+        }
+      })
+      .catch(function(){
+        tryDutchFallback();
+      });
+    });
+  }
+
+  // 3-Minute Video Audit Form Handler (NL)
+  var auditForm = document.getElementById('auditFormNL');
+  if (auditForm) {
+    auditForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = document.getElementById('auditSubmitBtnNL');
+      var status = document.getElementById('auditStatusNL');
+      var origText = btn ? btn.textContent : '';
+
+      var hp = document.getElementById('audit-hp-nl') ? document.getElementById('audit-hp-nl').value : '';
+      if (hp && hp.trim() !== '') {
+        auditForm.reset();
+        if (btn) btn.textContent = 'Verzonden!';
+        return;
+      }
+      if (btn) {
+        btn.textContent = 'Bezig met verzenden...';
+        btn.disabled = true;
+      }
+      if (status) status.style.display = 'none';
+
+      var payload = {
+        lead_type: '3_minute_video_audit',
+        website: document.getElementById('audit-url-nl') ? document.getElementById('audit-url-nl').value : '',
+        email: document.getElementById('audit-email-nl') ? document.getElementById('audit-email-nl').value : '',
+        platform: document.getElementById('audit-platform-nl') ? document.getElementById('audit-platform-nl').value : '',
+        message: document.getElementById('audit-msg-nl') ? document.getElementById('audit-msg-nl').value : '',
+        _hp_company_website_verify: hp
+      };
+
+      function showAuditNLSuccess(){
+        if (status) {
+          status.style.display = 'block';
+          status.style.background = 'rgba(46, 204, 113, 0.15)';
+          status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
+          status.style.color = '#2ecc71';
+          status.innerHTML = '<strong>✓ Gratis video audit aangevraagd!</strong> Ik neem je webshop op en stuur je binnen 24 uur een persoonlijke Loom schermopname.';
+        }
+        if (btn) btn.textContent = '✓ Aangevraagd!';
+        auditForm.reset();
+        setTimeout(function(){
+          if (btn) {
+            btn.textContent = origText;
+            btn.disabled = false;
+          }
+        }, 5000);
+      }
+
+      function tryAuditNLFallback(){
+        fetch('https://formsubmit.co/ajax/lakumjay2000@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(function(r){ return r.json(); })
+        .then(function(){ showAuditNLSuccess(); })
+        .catch(function(){ auditForm.submit(); });
+      }
+
+      fetch(getContactEndpoint(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(r){
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(res){
+        if (res && res.success) {
+          showAuditNLSuccess();
+        } else {
+          tryAuditNLFallback();
+        }
+      })
+      .catch(function(){
+        tryAuditNLFallback();
       });
     });
   }

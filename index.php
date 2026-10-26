@@ -474,7 +474,6 @@
     .cta-block{padding:40px 24px}
   }
 </style>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -1463,10 +1462,17 @@ document.getElementById('burger').addEventListener('click', function(){
   this.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
 
-/* ---------- Contact Form Handler ---------- */
+/* ---------- Contact Form & Video Audit Handlers ---------- */
+function getContactEndpoint() {
+  var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  if (isLocal && window.location.pathname.indexOf('/jaylakum') !== -1) {
+    return '/jaylakum/contact.php';
+  }
+  return '/contact.php';
+}
+
 var contactForm = document.getElementById('contactForm');
 if (contactForm){
-  // Set anti-spam timestamp token on load
   var tsField = document.getElementById('f-ts');
   if (tsField) tsField.value = Math.floor(Date.now() / 1000);
 
@@ -1474,44 +1480,47 @@ if (contactForm){
     e.preventDefault();
     var btn = document.getElementById('contactSubmitBtn');
     var status = document.getElementById('formStatusMsg');
-    var origText = btn.textContent;
+    var origText = btn ? btn.textContent : '';
 
-    // Check honeypot immediately
     var hpValue = document.getElementById('f-hp') ? document.getElementById('f-hp').value : '';
     if (hpValue && hpValue.trim() !== ''){
-      // Bot trapped! Silently pretend success
       contactForm.reset();
-      btn.textContent = 'Sent Successfully!';
+      if (btn) btn.textContent = 'Sent Successfully!';
       return;
     }
 
-    btn.textContent = 'Sending your requirement…';
-    btn.disabled = true;
-    status.style.display = 'none';
+    if (btn) {
+      btn.textContent = 'Sending your requirement…';
+      btn.disabled = true;
+    }
+    if (status) status.style.display = 'none';
 
     var data = {
-      name: document.getElementById('f-name').value,
-      email: document.getElementById('f-email').value,
-      website: document.getElementById('f-url').value,
-      problem_type: document.getElementById('f-type').value,
+      name: document.getElementById('f-name') ? document.getElementById('f-name').value : '',
+      email: document.getElementById('f-email') ? document.getElementById('f-email').value : '',
+      website: document.getElementById('f-url') ? document.getElementById('f-url').value : '',
+      problem_type: document.getElementById('f-type') ? document.getElementById('f-type').value : '',
       budget: document.getElementById('f-budget') ? document.getElementById('f-budget').value : 'Not Specified',
-      message: document.getElementById('f-msg').value,
+      message: document.getElementById('f-msg') ? document.getElementById('f-msg').value : '',
       _hp_company_website_verify: hpValue,
-      'g-recaptcha-response': (typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : ''),
       _ts_token: tsField ? tsField.value : ''
     };
 
     function showSuccess(msg){
-      status.style.display = 'block';
-      status.style.background = 'rgba(46, 204, 113, 0.15)';
-      status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
-      status.style.color = '#2ecc71';
-      status.innerHTML = '<strong>✓ Requirement Sent!</strong> ' + (msg || 'Your message has been sent directly to Jay (lakumjay2000@gmail.com). I reply within 24 hours with a free mini-audit of your store.');
-      btn.textContent = 'Sent Successfully!';
+      if (status) {
+        status.style.display = 'block';
+        status.style.background = 'rgba(46, 204, 113, 0.15)';
+        status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
+        status.style.color = '#2ecc71';
+        status.innerHTML = '<strong>✓ Requirement Sent!</strong> ' + (msg || 'Your message has been sent directly to Jay (lakumjay2000@gmail.com). I reply within 24 hours with a free mini-audit of your store.');
+      }
+      if (btn) btn.textContent = 'Sent Successfully!';
       contactForm.reset();
       setTimeout(function(){
-        btn.textContent = origText;
-        btn.disabled = false;
+        if (btn) {
+          btn.textContent = origText;
+          btn.disabled = false;
+        }
       }, 5000);
     }
 
@@ -1522,15 +1531,15 @@ if (contactForm){
         body: JSON.stringify(data)
       })
       .then(function(res){ return res.json(); })
-      .then(function(json){
+      .then(function(){
         showSuccess('Thank you! Your requirement has been sent directly to Jay (lakumjay2000@gmail.com).');
       })
-      .catch(function(err){
+      .catch(function(){
         contactForm.submit();
       });
     }
 
-    fetch('contact.php', {
+    fetch(getContactEndpoint(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -1548,6 +1557,87 @@ if (contactForm){
     })
     .catch(function(){
       tryFormSubmitCo();
+    });
+  });
+}
+
+var auditFormEN = document.getElementById('auditFormEN');
+if (auditFormEN){
+  auditFormEN.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('auditSubmitBtnEN');
+    var status = document.getElementById('auditStatusEN');
+    var origText = btn ? btn.textContent : '';
+
+    var hp = document.getElementById('audit-hp-en') ? document.getElementById('audit-hp-en').value : '';
+    if (hp && hp.trim() !== ''){
+      auditFormEN.reset();
+      if (btn) btn.textContent = 'Sent!';
+      return;
+    }
+
+    if (btn) {
+      btn.textContent = 'Requesting Video Audit…';
+      btn.disabled = true;
+    }
+    if (status) status.style.display = 'none';
+
+    var payload = {
+      lead_type: '3_minute_video_audit',
+      website: document.getElementById('audit-url-en') ? document.getElementById('audit-url-en').value : '',
+      email: document.getElementById('audit-email-en') ? document.getElementById('audit-email-en').value : '',
+      platform: document.getElementById('audit-platform-en') ? document.getElementById('audit-platform-en').value : '',
+      message: document.getElementById('audit-msg-en') ? document.getElementById('audit-msg-en').value : '',
+      _hp_company_website_verify: hp
+    };
+
+    function showAuditSuccess(){
+      if (status) {
+        status.style.display = 'block';
+        status.style.background = 'rgba(46, 204, 113, 0.15)';
+        status.style.border = '1px solid rgba(46, 204, 113, 0.4)';
+        status.style.color = '#2ecc71';
+        status.innerHTML = '<strong>✓ Video Audit Requested!</strong> I will record and email your 3-minute Loom breakdown within 24 hours.';
+      }
+      if (btn) btn.textContent = '✓ Requested Successfully!';
+      auditFormEN.reset();
+      setTimeout(function(){
+        if (btn) {
+          btn.textContent = origText;
+          btn.disabled = false;
+        }
+      }, 5000);
+    }
+
+    function tryAuditFallback(){
+      fetch('https://formsubmit.co/ajax/lakumjay2000@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(){ showAuditSuccess(); })
+      .catch(function(){ auditFormEN.submit(); });
+    }
+
+    fetch(getContactEndpoint(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(json){
+      if (json && json.success){
+        showAuditSuccess();
+      } else {
+        tryAuditFallback();
+      }
+    })
+    .catch(function(){
+      tryAuditFallback();
     });
   });
 }
