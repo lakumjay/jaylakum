@@ -107,6 +107,18 @@
     
         <article class="card" style="display:flex;flex-direction:column;justify-content:space-between">
           <div>
+            <span class="p-cat">E-Commerce · Nederland</span>
+            <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/webshop-klaarmaken-feestdagen/">Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes</a></h2>
+            <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">Met Black Friday en de decemberdrukte voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor.</p>
+          </div>
+          <div>
+            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:10px">October 2026 · 4 min leestijd</p>
+            <a class="more" href="/blog/webshop-klaarmaken-feestdagen/" style="font-size:15px;font-weight:600;color:var(--gold)">Read article →</a>
+          </div>
+        </article>
+        
+        <article class="card" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
             <span class="p-cat">WooCommerce &middot; iDEAL &amp; Mollie</span>
             <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/mollie-ideal-checkout-storing-oplossen/">Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?</a></h2>
             <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op.</p>

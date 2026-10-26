@@ -248,6 +248,18 @@
         
         <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
           <div>
+            <span class="p-cat">E-Commerce · Nederland</span>
+            <h3 style="font-size:18px;margin:8px 0"><a href="/blog/webshop-klaarmaken-feestdagen/">Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes</a></h3>
+            <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">Met Black Friday en de decemberdrukte voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende c...</p>
+          </div>
+          <div>
+            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:8px">October 2026 · 4 min leestijd</p>
+            <a class="more" href="/blog/webshop-klaarmaken-feestdagen/" style="font-size:14px;font-weight:600;color:var(--gold)">Read article →</a>
+          </div>
+        </article>
+        
+        <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
             <span class="p-cat">WooCommerce &middot; iDEAL &amp; Mollie</span>
             <h3 style="font-size:18px;margin:8px 0"><a href="/blog/mollie-ideal-checkout-storing-oplossen/">Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?</a></h3>
             <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaa...</p>
@@ -267,18 +279,6 @@
           <div>
             <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:8px">October 2026 · 4 min leestijd</p>
             <a class="more" href="/blog/webshop-klaarmaken-feestdagen/" style="font-size:14px;font-weight:600;color:var(--gold)">Read article →</a>
-          </div>
-        </article>
-        
-        <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <span class="p-cat">Shopify · Speed</span>
-            <h3 style="font-size:18px;margin:8px 0"><a href="/blog/why-is-my-shopify-store-so-slow/">Why Is My Shopify Store So Slow? 5 Fixes That Actually Work</a></h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">Shopify itself is fast — so why does your store crawl? The five causes behind almost every slow Shopify store, and how t...</p>
-          </div>
-          <div>
-            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:8px">October 2026 · 5 min read</p>
-            <a class="more" href="/blog/why-is-my-shopify-store-so-slow/" style="font-size:14px;font-weight:600;color:var(--gold)">Read article →</a>
           </div>
         </article>
         
