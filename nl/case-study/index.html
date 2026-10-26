@@ -301,7 +301,7 @@
       <span class="tag">WIL JIJ DEZELFDE RESULTATEN VOOR JOUW WEBWINKEL?</span>
       <h2>Vraag Een Gratis 3-Minuten Video Audit Aan</h2>
       <p>Ik bekijk je Shopify of WooCommerce webshop persoonlijk, neem een korte video op waarin ik je grootste knelpunten aanwijs, en bereken hoeveel snelheid en conversie je kunt winnen. 100% vrijblijvend.</p>
-      <a href="/nl/#gratis-audit" class="btn" style="font-size:16px;padding:14px 32px">Vraag Jouw Gratis Video Audit Aan &rarr;</a>
+      <a href="/nl/#gratis-audit" class="btn" style="font-size:16px;padding:10px 18px 32px">Vraag Jouw Gratis Video Audit Aan &rarr;</a>
     </div>
   </article>
 </main>

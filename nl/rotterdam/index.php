@@ -216,8 +216,8 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    font-family:var(--sans);font-weight:600;font-size:16px;
-    padding:13px 26px;border-radius:999px;border:1px solid var(--gold);
+    font-family:var(--sans);font-weight:600;font-size:14px;
+    padding:9px 18px;border-radius:999px;border:1px solid var(--gold);
     background:var(--gold-btn, #745218);color:#FFF;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
   }
   .nav-links a.btn, .nav-links a.nav-cta, a.btn{color:#FFFFFF!important;background:var(--gold-btn, #745218)}
@@ -313,7 +313,7 @@
   details.faq-item{border-bottom:1px solid var(--line);padding:8px 0}
   details.faq-item summary{
     cursor:pointer;font-family:var(--serif);font-size:20px;font-weight:600;
-    padding:14px 28px 14px 0;list-style:none;position:relative;color:var(--ink);
+    padding:10px 20px 14px 0;list-style:none;position:relative;color:var(--ink);
   }
   details.faq-item summary::-webkit-details-marker{display:none}
   details.faq-item summary::after{
@@ -479,7 +479,7 @@
           <div style="font-size:12.5px;color:var(--ink-faint);line-height:1.55;margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;background:rgba(0,0,0,0.03);padding:10px 14px;border-radius:8px">
             📊 <b>Methodologie &amp; Bronnen:</b> Deze berekening is een indicatieve schatting gebaseerd op het benchmarkmodel van Google / SOASTA (gemiddeld ~7% conversieverlies per seconde mobiele vertraging) en Deloitte Digital (<i>Milliseconds Make Millions</i>). Werkelijke resultaten variëren per branche, type producten en doelgroep.
           </div>
-          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:16px;padding:14px 28px">⚡ Wil je dit omzetverlies stoppen? Vraag een Gratis 3-Minuten Video Audit aan →</a>
+          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:16px;padding:10px 20px">⚡ Wil je dit omzetverlies stoppen? Vraag een Gratis 3-Minuten Video Audit aan →</a>
         </div>
       </div>
     </div>
@@ -647,7 +647,9 @@
             <textarea id="nl-msg" name="message" rows="4" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder=""></textarea>
           </div>
           <!-- Cloudflare Turnstile Placeholder -->
-          <button type="submit" id="nl-submit-btn" class="btn" style="width:100%;justify-content:center;padding:14px">Vraag Vrijblijvende Offerte Aan (Binnen 24u Reactie) →</button>
+          <div style="text-align:center;margin-top:14px">
+            <button type="submit" id="nl-submit-btn" class="btn" style="padding:10px 22px;font-size:14px">Verstuur Aanvraag (Reactie binnen 24u) &rarr;</button>
+          </div>
           <div id="nl-status-msg" style="display:none;padding:12px;border-radius:8px;font-size:14px;line-height:1.5;"></div>
         </form>
         <div style="text-align:center;margin-top:18px;font-size:14px;color:var(--ink-faint)">

@@ -154,8 +154,8 @@
   mark{background:linear-gradient(transparent 62%, var(--gold-soft) 62%);color:inherit;padding:0 .08em}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    font-family:var(--sans);font-weight:600;font-size:16px;
-    padding:13px 26px;border-radius:999px;border:1px solid var(--gold);
+    font-family:var(--sans);font-weight:600;font-size:14px;
+    padding:9px 18px;border-radius:999px;border:1px solid var(--gold);
     background:var(--gold-btn, #745218);color:#FFF;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
   }
   .btn:hover{background:var(--gold-deep);border-color:var(--gold-deep);text-decoration:none;transform:translateY(-1px)}
@@ -331,7 +331,7 @@
   details.faq-item{border-bottom:1px solid var(--line);padding:6px 0}
   details.faq-item summary{
     cursor:pointer;font-family:var(--serif);font-size:19px;font-weight:600;
-    padding:14px 28px 14px 0;list-style:none;position:relative;color:var(--ink);
+    padding:10px 20px 14px 0;list-style:none;position:relative;color:var(--ink);
   }
   details.faq-item summary::-webkit-details-marker{display:none}
   details.faq-item summary::after{
@@ -552,10 +552,14 @@
     }
     #auditSubmitBtnEN, #auditSubmitBtnNL, #contactSubmitBtn, #nl-submit-btn {
       width:100% !important;
-      padding:14px 16px !important;
-      font-size:15px !important;
+      max-width:320px !important;
+      margin:0 auto !important;
+      display:flex !important;
+      justify-content:center !important;
+      padding:10px 18px !important;
+      font-size:14px !important;
       font-weight:700 !important;
-      white-space:normal !important;
+      border-radius:8px !important;
       text-align:center !important;
     }
   }
@@ -731,7 +735,7 @@
               <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile PageSpeed score leaped from 38 to 96. Mobile checkout completion jumped by +34% within 30 days. Tested on staging with zero live store downtime.</p>
             </div>
           </div>
-          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:14px 18px;border-radius:10px">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:10px 18px 18px;border-radius:10px">
             <p style="margin:0;font-size:14.5px;color:var(--gold-deep);font-weight:600">
               🎯 <strong>First client?</strong> Your store's optimization will be personally handled with the same step-by-step rigor and become our next verified case study.
             </p>
@@ -822,9 +826,11 @@
 
             <div id="auditStatusEN" style="display:none;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5"></div>
 
-            <button type="submit" id="auditSubmitBtnEN" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:14px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
-              🎥 Get My Free Video Audit Within 24-48h &rarr;
-            </button>
+            <div style="text-align:center;margin-top:14px">
+              <button type="submit" id="auditSubmitBtnEN" class="btn" style="padding:10px 22px;font-size:14px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
+                🎥 Request Free Video Audit &rarr;
+              </button>
+            </div>
 
             <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
               🔒 Zero spam, no unsolicited sales calls. You get a direct, honest technical breakdown from a developer.
@@ -861,7 +867,7 @@
               <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Your project will become our next verified case study with complete before/after metrics.</p>
             </div>
           </div>
-          <a href="#free-video-audit" class="btn" style="font-size:15px;padding:12px 28px">Get Your Free 3-Minute Video Audit &rarr;</a>
+          <a href="#free-video-audit" class="btn" style="font-size:15px;padding:10px 20px">Get Your Free 3-Minute Video Audit &rarr;</a>
         </div>
       </div>
     </div>
@@ -894,7 +900,7 @@
                 <li>✓ 14 days warranty on the fix</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-sizing:border-box">Fix My Checkout Bug &rarr;</a>
+            <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;box-sizing:border-box">Fix Checkout Bug &rarr;</a>
           </div>
 
           <!-- Package 2 (Featured) -->
@@ -916,7 +922,7 @@
                 <li>✓ 30 days regression guarantee</li>
               </ul>
             </div>
-            <a href="#free-video-audit" class="btn" style="width:100%;justify-content:center;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;box-sizing:border-box">Get Free Speed Audit &rarr;</a>
+            <a href="#free-video-audit" class="btn" style="width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;box-sizing:border-box">Free Video Audit &rarr;</a>
           </div>
 
           <!-- Package 3 -->
@@ -935,7 +941,7 @@
                 <li>✓ Staging demo before you pay final balance</li>
               </ul>
             </div>
-            <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;box-sizing:border-box">Discuss My Redesign &rarr;</a>
+            <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;box-sizing:border-box">Discuss Redesign &rarr;</a>
           </div>
         </div>
       </div>
@@ -1002,10 +1008,10 @@
           </article>
         </div>
         <div style="text-align:center;margin-top:24px">
-          <a class="btn" href="/blog/" style="font-size:15px;padding:12px 28px">View all 10 engineering guides &rarr;</a>
+          <a class="btn" href="/blog/" style="font-size:15px;padding:10px 20px">View all 10 engineering guides &rarr;</a>
         </div>
         <div style="text-align:center;margin-top:28px">
-          <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:12px 28px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff">
+          <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:10px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff">
             Explore All 10 Practical Guides &amp; Case Studies &rarr;
           </a>
         </div>

@@ -301,7 +301,7 @@
       <span class="tag">READY TO SPEED UP YOUR WEBSHOP?</span>
       <h2>Get a Free 3-Minute Video Audit of Your Store</h2>
       <p>I will personally review your Shopify or WooCommerce store, record a 3-minute Loom video breaking down your top bottlenecks, and calculate your exact speed improvement potential. No obligations.</p>
-      <a href="/#free-video-audit" class="btn" style="font-size:16px;padding:14px 32px">Request Your Free Free Video Audit &rarr;</a>
+      <a href="/#free-video-audit" class="btn" style="font-size:16px;padding:10px 18px 32px">Request Your Free Free Video Audit &rarr;</a>
     </div>
   </article>
 </main>

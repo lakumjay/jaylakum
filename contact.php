@@ -204,7 +204,7 @@ $html_content = '<!DOCTYPE html>
 
           <!-- Quick Action Buttons -->
           <tr>
-            <td style="background-color:#fafafa;padding:14px 32px;border-bottom:1px solid #f0f0f0;">
+            <td style="background-color:#fafafa;padding:10px 18px 32px;border-bottom:1px solid #f0f0f0;">
               <table role="presentation" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td style="padding-right:12px;">
@@ -325,7 +325,7 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 Bedankt voor je bericht! Ik heb je aanvraag voor ' . (!empty($website) ? '<strong>' . htmlspecialchars($website) . '</strong>' : 'jouw webwinkel') . ' in goede orde ontvangen.
               </p>
 
-              <div style="background-color:#f1f5f9;border-left:4px solid #dca10d;padding:14px 18px;border-radius:0 8px 8px 0;margin:18px 0;">
+              <div style="background-color:#f1f5f9;border-left:4px solid #dca10d;padding:10px 18px 18px;border-radius:0 8px 8px 0;margin:18px 0;">
                 <p style="margin:0 0 6px;font-weight:700;color:#0f172a;font-size:14px;">Wat gebeurt er nu?</p>
                 <p style="margin:0;font-size:14px;color:#475569;">
                   Ik neem je webshop persoonlijk onder de loep en stuur je <strong>binnen 24 uur</strong> een ' . ($lead_type === '3_minute_video_audit' ? 'persoonlijke 3-minuten Loom video audit' : 'Gratis 3-Minuten Video Audit en vaste prijsopgave vooraf') . '.
@@ -359,7 +359,7 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
           </tr>
 
           <tr>
-            <td style="background-color:#f8fafc;padding:14px 30px;font-size:11.5px;color:#94a3b8;border-top:1px solid #e2e8f0;text-align:center;">
+            <td style="background-color:#f8fafc;padding:10px 18px 30px;font-size:11.5px;color:#94a3b8;border-top:1px solid #e2e8f0;text-align:center;">
               Dit is een geautomatiseerde ontvangstbevestiging van je aanvraag op jaylakum.com.
             </td>
           </tr>
