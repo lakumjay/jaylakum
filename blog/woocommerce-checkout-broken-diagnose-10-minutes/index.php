@@ -140,14 +140,15 @@
   .brand span{color:var(--gold)}
   .nav-links{display:flex;gap:22px;align-items:center;font-size:15px}
   .nav-links a:hover{color:var(--gold)}
+  .nav-links a.btn{color:var(--gold-btn-text)!important;background:var(--gold-btn)}
   .btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
     padding:10px 22px;
     border-radius:var(--radius);
-    background:var(--gold);
-    color:#fff!important;
+    background:var(--gold-btn);
+    color:var(--gold-btn-text)!important;
     font-weight:600;
     font-size:15px;
     transition:background .2s;

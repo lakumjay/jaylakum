@@ -219,6 +219,29 @@
     padding:13px 26px;border-radius:999px;border:1px solid var(--gold);
     background:var(--gold-btn, #745218);color:#FFF;cursor:pointer;transition:background .2s,border-color .2s,transform .15s;
   }
+  .nav-links a.btn, .nav-links a.nav-cta, a.btn{color:#FFFFFF!important;background:var(--gold-btn, #745218)}
+  .nav-links a.btn:hover, .nav-links a.nav-cta:hover{background:var(--gold-deep, #553D16);color:#FFFFFF!important}
+  @media (prefers-color-scheme: dark){
+    .nav-links a.btn, .nav-links a.nav-cta, a.btn{color:#171410!important;background:var(--gold-btn, #E5BE72)}
+    .nav-links a.btn:hover, .nav-links a.nav-cta:hover{background:var(--gold-deep, #F0CE8A);color:#171410!important}
+  }
+  .lang-toggle-btn{
+    display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:999px;
+    border:1.5px solid var(--gold);color:var(--ink)!important;font-weight:700;font-size:13.5px;
+    background:var(--gold-soft);text-decoration:none!important;transition:transform .15s,background .2s;
+  }
+  .lang-toggle-btn:hover{transform:translateY(-1px);background:var(--card)}
+  .sticky-mobile-bar{display:none}
+  @media (max-width: 720px){
+    .sticky-mobile-bar{
+      display:flex;gap:8px;position:fixed;left:12px;right:12px;
+      bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;
+      box-shadow:0 10px 30px rgba(0,0,0,0.22);border-radius:999px;
+      background:var(--card);padding:6px;border:1px solid var(--line-strong);
+    }
+    .sticky-btn-audit{flex:1.3;justify-content:center;padding:10px 14px!important;font-size:14px!important;white-space:nowrap}
+    .sticky-btn-mail{flex:0.9;justify-content:center;padding:10px 14px!important;font-size:14px!important;white-space:nowrap}
+  }
   .btn:hover{background:var(--gold-deep);border-color:var(--gold-deep);text-decoration:none;transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
   .btn-ghost:hover{background:var(--bg-soft);border-color:var(--gold);color:var(--ink)}
@@ -367,8 +390,8 @@
       <a href="#calculator">Omzet Calculator</a>
       <a href="#ideal-fix">iDEAL & Mollie</a>
       <a href="#faq">Veelgestelde Vragen</a>
-      <a href="#contact" class="btn btn-ghost" style="padding:7px 16px;font-size:14px">Offerte Aanvragen</a>
-      <a href="/" class="lang-switch" title="Switch to English">🇬🇧 EN</a>
+      <a href="/" class="lang-toggle-btn" title="Switch to English">🇬🇧 EN</a>
+      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Mini-Audit</a>
     </div>
   </div>
 </header>
@@ -448,7 +471,7 @@
           <div style="font-size:12.5px;color:var(--ink-faint);line-height:1.55;margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;background:rgba(0,0,0,0.03);padding:10px 14px;border-radius:8px">
             📊 <b>Methodologie &amp; Bronnen:</b> Deze berekening is een indicatieve schatting gebaseerd op het benchmarkmodel van Google / SOASTA (gemiddeld ~7% conversieverlies per seconde mobiele vertraging) en Deloitte Digital (<i>Milliseconds Make Millions</i>). Werkelijke resultaten variëren per branche, type producten en doelgroep.
           </div>
-          <a href="#contact" class="btn" style="background:#27ae60;border-color:#27ae60">Stop Dit Verlies — Vraag Een Vaste Prijs Snelheidsfix Aan →</a>
+          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:16px;padding:14px 28px">⚡ Wil je dit omzetverlies stoppen? Vraag een gratis mini-audit aan →</a>
         </div>
       </div>
     </div>
@@ -1116,5 +1139,10 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
+<!-- Mobile Sticky Dual Bar -->
+<div class="sticky-mobile-bar" id="stickyMobileBar">
+  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Mini-Audit</a>
+  <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ E-mail</a>
+</div>
 </body>
 </html>
