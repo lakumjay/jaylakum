@@ -1015,8 +1015,7 @@
             </div>
             <!-- Optional Cloudflare Turnstile Free Anti-Bot Widget container -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAAx_PLACEHOLDER_KEY" data-theme="auto" style="margin-bottom:12px"></div>
-            <div class="g-recaptcha" data-sitekey="6LdWFgluAAAAABNJxy864jQVCCq-9JzdpJizcnWS" style="margin-bottom:12px"></div>
-            <button class="btn" id="contactSubmitBtn" type="submit" style="justify-content:center">Send my requirement</button>
+              <button class="btn" id="contactSubmitBtn" type="submit" style="justify-content:center">Send my requirement</button>
             <div id="formStatusMsg" style="display:none;margin-top:14px;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5;"></div>
             <p class="form-note">🛡️ Protected against spam. Your message goes straight to my personal inbox. Fixed price quote within 24 hours.</p>
           </form>
