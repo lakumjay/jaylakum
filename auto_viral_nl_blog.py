@@ -180,26 +180,33 @@ def generate_article_with_gemini(api_key, news_item):
     """
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
     
-    prompt = f"""Je bent Jay Lakum, een freelance Shopify en WordPress/WooCommerce performance specialist die webwinkels versnelt, repareert en herontwerpt in Nederland (Amsterdam, Rotterdam, Utrecht, Den Haag).
+    prompt = f"""Je bent Jay Lakum, een freelance senior Shopify en WordPress/WooCommerce developer voor modemerken en webwinkels in Nederland.
 
-Er is actueel nieuws in de Nederlandse e-commerce sector:
-Titel: "{news_item['title']}"
+Er is een actueel onderwerp/trend in het Nederlandse e-commerce nieuws:
+Onderwerp: "{news_item['title']}"
 
-Schrijf vanuit jouw perspectief als senior e-commerce developer een diepgaand, technisch en uiterst waardevol Nederlands blogartikel voor webwinkeliers.
-Leg uit wat deze actuele trend/gebeurtenis betekent voor Nederlandse webshops, welke technische uitdagingen er spelen (denk aan serverdruk, mobiele laadtijden, checkout fouten met iDEAL/Mollie, PHP updates of conversieverlies), en geef 4 concrete stappen om hun webwinkel hierop voor te bereiden.
+BELANGRIJKE RICHTLIJNEN (100% Origineel & Ethisch White-Hat):
+- KOPIEER OF 'SPIN' NOOIT andermans tekst. Gebruik dit onderwerp UITSLUITEND als inspiratie voor een nieuw, origineel en technisch diepgaand artikel.
+- Schrijf een 100% zelfgeschreven gids vanuit jouw perspectief als ervaren e-commerce programmeur.
+- Titel: Gebruik een nieuwsgierigmakende, probleemgerichte vraagstijl (bijv. "Wero komt eraan: moet jouw checkout nu al veranderen?", of "Mollie iDEAL betaling mislukt: waar zit de fout in je code?").
+- Structuur van de body (HTML met <h2>, <h3>, <p>, <ul>, <li>, <code>):
+  1. <h2>1. De Aanleiding: Wat Gebeurt er in de Markt?</h2> (Korte duiding van de trend en bronvermelding).
+  2. <h2>2. Wat Betekent Dit Voor Nederlandse Webshops?</h2> (Eerlijke analyse van laadtijd, conversieverlies of checkout risico's).
+  3. <h2>3. Praktische Checklist Voor Webwinkeliers</h2> (4 concrete technische stappen: caching, staging testen, database optimalisatie, webhook validatie).
+  4. <h2>4. Veelgemaakte Fouten Om Te Vermijden</h2> (Foutieve instellingen, onnodige plugins).
+  5. <h2>Hulp Nodig Bij Jouw Webshop?</h2> (Conclusie met interne links naar <a href="/nl/">onze Nederlandse hoofdpagina</a> en <a href="/nl/amsterdam/">Amsterdamse boetiek expertise</a>, plus een uitnodiging voor een gratis mini-audit).
 
-Doelgroep: Nederlandse webwinkeliers en founders van online modemerken & beauty stores.
-Toon: Kalm, deskundig, praktisch, nuchter en eerlijk.
+Doelgroep: Nederlandse webwinkeliers en founders. Toon: Kalm, nuchter, deskundig, behulpzaam en praktisch.
 
-Geef je reactie strikt als JSON object:
+Lever je reactie strikt als JSON object:
 {{
-  "slug": "korte-slug-onder-45-tekens-in-het-nederlands",
-  "title": "Aantrekkelijke Nederlandse kop voor hoge CTR en Google ranking",
-  "category": "E-Commerce Nederland",
+  "slug": "korte-vraag-slug-onder-45-tekens",
+  "title": "Aansprekende vraag-titel in het Nederlands",
+  "category": "E-Commerce Gids · Nederland",
   "read": "4 min leestijd",
-  "imageAlt": "Illustratie van webshop optimalisatie en checkout prestaties",
-  "excerpt": "Korte 2-zinnen samenvatting van het actuele probleem en de directe technische winst voor de webwinkelier.",
-  "body": "HTML string met <h2>, <h3>, <p>, <strong>, <code>, <ul>, <li> tags. Bevat 4 diepgaande technische secties en eindigt met een Call To Action om via jaylakum.com/nl/ een gratis mini-audit aan te vragen."
+  "imageAlt": "Illustratie van e-commerce architectuur en snelheid",
+  "excerpt": "Twee krachtige zinnen die het probleem en de directe winst voor de webwinkelier samenvatten.",
+  "body": "Volledige HTML inhoud volgens bovenstaande 5-delige structuur inclusief interne links."
 }}
 
 Antwoord UITSLUITEND met geldige JSON.
