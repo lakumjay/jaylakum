@@ -45,7 +45,7 @@ if ($form_time > 0 && ($now - $form_time < 3)) {
 // 🛡️ ANTI-SPAM LAYER 3: Google reCAPTCHA / Cloudflare Turnstile Support
 // ==========================================
 $recaptcha_token  = trim($json['g-recaptcha-response'] ?? $_POST['g-recaptcha-response'] ?? '');
-$recaptcha_secret = getenv('RECAPTCHA_SECRET_KEY') ?: '';
+$recaptcha_secret = getenv('RECAPTCHA_SECRET_KEY') ?: '6LdWFgluAAAAAIWLGOoAQy_fRCviHgqDh1sYh1eS';
 
 if (!empty($recaptcha_secret) && !empty($recaptcha_token)) {
     $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -54,9 +54,23 @@ if (!empty($recaptcha_secret) && !empty($recaptcha_token)) {
         'response' => $recaptcha_token,
         'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
     ]);
-    $opts = ['http' => ['method' => 'POST', 'header' => "Content-type: application/x-www-form-urlencoded\r\n", 'content' => $post_data, 'timeout' => 5]];
-    $ctx = stream_context_create($opts);
-    $verify_res = @file_get_contents($verify_url, false, $ctx);
+    $verify_res = false;
+    if (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $verify_url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 6);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $verify_res = curl_exec($ch);
+        curl_close($ch);
+    }
+    if (!$verify_res) {
+        $opts = ['http' => ['method' => 'POST', 'header' => "Content-type: application/x-www-form-urlencoded\r\n", 'content' => $post_data, 'timeout' => 5]];
+        $ctx = stream_context_create($opts);
+        $verify_res = @file_get_contents($verify_url, false, $ctx);
+    }
     if ($verify_res) {
         $res_data = json_decode($verify_res, true);
         if (!$res_data['success']) {

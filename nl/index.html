@@ -302,6 +302,7 @@
     .contact-box{padding:26px}
   }
 </style>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -624,7 +625,7 @@
             <textarea id="nl-msg" name="message" rows="4" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder=""></textarea>
           </div>
           <!-- Cloudflare Turnstile Placeholder -->
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAAx_PLACEHOLDER_KEY" data-theme="auto" style="margin-bottom:8px"></div>
+          <div class="g-recaptcha" data-sitekey="6LdWFgluAAAAABNJxy864jQVCCq-9JzdpJizcnWS" style="margin-bottom:12px"></div>
           <button type="submit" id="nl-submit-btn" class="btn" style="width:100%;justify-content:center;padding:14px">Vraag Vrijblijvende Offerte Aan (Binnen 24u Reactie) →</button>
           <div id="nl-status-msg" style="display:none;padding:12px;border-radius:8px;font-size:14px;line-height:1.5;"></div>
         </form>
@@ -759,6 +760,7 @@ document.addEventListener('DOMContentLoaded', function(){
         budget: document.getElementById('nl-budget').value,
         message: document.getElementById('nl-msg').value,
         _hp_company_website_verify: hp,
+        'g-recaptcha-response': (typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : ''),
         _ts_token: ts ? ts.value : ''
       };
       fetch('../contact.php', {
