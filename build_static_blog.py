@@ -79,6 +79,9 @@ def render_article_page(article, all_articles):
         related_html += f"""
         <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
           <div>
+            <a href="/blog/{r_slug}/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:12px;background:var(--bg-soft)">
+              <img src="{r.get('image', '/favicon.svg')}" alt="{r.get('imageAlt', r['title'])}" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;" loading="lazy" />
+            </a>
             <span class="p-cat">{r['category']}</span>
             <h3 style="font-size:18px;margin:8px 0"><a href="/blog/{r_slug}/">{r['title']}</a></h3>
             <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">{r['excerpt'][:120]}...</p>
@@ -390,6 +393,9 @@ def render_blog_index(articles):
         cards_html += f"""
         <article class="card" style="display:flex;flex-direction:column;justify-content:space-between">
           <div>
+            <a href="/blog/{slug}/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:14px;background:var(--bg-soft)">
+              <img src="{a.get('image', '/favicon.svg')}" alt="{a.get('imageAlt', a['title'])}" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;transition:transform .2s ease;" loading="lazy" />
+            </a>
             <span class="p-cat">{a['category']}</span>
             <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/{slug}/">{a['title']}</a></h2>
             <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">{a['excerpt']}</p>

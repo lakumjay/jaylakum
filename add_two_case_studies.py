@@ -69,7 +69,7 @@ ARTICLES_TO_ADD = [
 <p>Het is een van de meest frustrerende scenario's voor Nederlandse webwinkeliers: een klant kiest voor iDEAL (of Wero), autoriseert de betaling in de bank-app, het geld wordt afgeschreven, maar in WooCommerce blijft de orderstatus op <em>'In afwachting van betaling'</em> staan. De klant denkt dat de bestelling mislukt is en plaatst hem dubbel, of stuurt boos een e-mail naar de klantenservice.</p>
 
 <h2>De Echte Technische Oorzaak: Webhook Timeouts</h2>
-<p>In 90% van de gevallen ligt de schuld niet bij Mollie of de bank, maar bij server-side caching en trage webhook afhandeling:</p>
+<p>In de praktijk zien we dat de oorzaak vrijwel altijd bij server-side caching of trage webhook afhandeling ligt, en zelden bij Mollie of de bank zelf:</p>
 <ul>
   <li><strong>Agressieve Page Caching:</strong> Wanneer caching plugins (zoals WP Rocket, LiteSpeed Cache of Cloudflare) het endpoint <code>/?wc-api=WC_Gateway_Mollie</code> cachen, stuurt je server een verouderde HTTP 200 header terug zónder het PHP script uit te voeren. Mollie krijgt geen statusupdate binnen.</li>
   <li><strong>Synchronous Webhook Execution:</strong> Bij het ontvangen van de webhook probeert je webshop direct voorraad bij te werken, factuur-PDF's te genereren en drie bevestigingsmails te versturen. Als dit langer dan 10 seconden duurt, gooit Mollie een HTTP 504 Gateway Timeout en wordt de order niet gevalideerd.</li>
