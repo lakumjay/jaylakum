@@ -194,7 +194,18 @@ BELANGRIJKE RICHTLIJNEN (100% Origineel & Ethisch White-Hat):
   2. <h2>2. Wat Betekent Dit Voor Nederlandse Webshops?</h2> (Eerlijke analyse van laadtijd, conversieverlies of checkout risico's).
   3. <h2>3. Praktische Checklist Voor Webwinkeliers</h2> (4 concrete technische stappen: caching, staging testen, database optimalisatie, webhook validatie).
   4. <h2>4. Veelgemaakte Fouten Om Te Vermijden</h2> (Foutieve instellingen, onnodige plugins).
-  5. <h2>Hulp Nodig Bij Jouw Webshop?</h2> (Conclusie met interne links naar <a href="/nl/">onze Nederlandse hoofdpagina</a> en <a href="/nl/amsterdam/">Amsterdamse boetiek expertise</a>, plus een uitnodiging voor een gratis mini-audit).
+  5. <h2>Hulp Nodig Bij Jouw Webshop?</h2> (Conclusie met CTA voor een gratis mini-audit).
+
+STRIKTE INTERNE LINKING REGEL (Voorkom link-verwatering):
+Plaats in het gehele artikel EXACT TWEE interne links (nooit meer):
+1. Exact 1 link naar de hoofdpagina: <a href="/nl/">Shopify & WooCommerce Specialist Nederland</a>
+2. Exact 1 link naar MAXIMAAL ÉÉN relevant city-page die inhoudelijk past bij het artikel:
+   - Als het artikel over fashion/design/boutiques gaat: <a href="/nl/amsterdam/">Shopify Specialist Amsterdam</a>
+   - Als het over retail/voorraad/ERP gaat: <a href="/nl/rotterdam/">Shopify Specialist Rotterdam</a>
+   - Als het over conversie/snelheid gaat: <a href="/nl/utrecht/">Shopify Specialist Utrecht</a>
+   - Als het over betalingen/AVG gaat: <a href="/nl/den-haag/">Shopify Specialist Den Haag</a>
+   - Als het over tech/gadgets gaat: <a href="/nl/eindhoven/">Shopify Specialist Eindhoven</a>
+WAARSCHUWING: Link NOOIT naar alle steden tegelijk. Slechts één relevante stad per artikel.
 
 Doelgroep: Nederlandse webwinkeliers en founders. Toon: Kalm, nuchter, deskundig, behulpzaam en praktisch.
 
