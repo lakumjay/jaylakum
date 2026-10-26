@@ -425,11 +425,11 @@
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
             <div>
               <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
-              <input type="url" id="audit-url-nl" name="website" required placeholder="https://jouwwinkel.nl" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              <input type="url" id="audit-url-nl" name="website" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
             </div>
             <div>
               <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">E-mailadres (voor de videolink) *</label>
-              <input type="email" id="audit-email-nl" name="email" required placeholder="jouw@bedrijf.nl" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              <input type="email" id="audit-email-nl" name="email" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
             </div>
           </div>
 
@@ -444,7 +444,7 @@
             </div>
             <div>
               <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Grootste Frustratie (Optioneel)</label>
-              <input type="text" id="audit-msg-nl" name="message" placeholder="bijv. Haperende iDEAL betaling, trage checkout" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              <input type="text" id="audit-msg-nl" name="message" placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
             </div>
           </div>
 
@@ -588,15 +588,15 @@
           </div>
           <div>
             <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Jouw Naam</label>
-            <input type="text" id="nl-name" name="name" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="bijv. Pieter de Jong">
+            <input type="text" id="nl-name" name="name" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
           </div>
           <div>
             <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">E-mailadres</label>
-            <input type="email" id="nl-email" name="email" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="pieter@jouwwinkel.nl">
+            <input type="email" id="nl-email" name="email" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
           </div>
           <div>
             <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Webshop URL (Website Link)</label>
-            <input type="url" id="nl-url" name="website" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="https://jouwwinkel.nl">
+            <input type="url" id="nl-url" name="website" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
           </div>
           <div>
             <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Waar heb je hulp bij nodig?</label>
@@ -606,6 +606,7 @@
               <option value="Boutique Webshop Redesign">🎨 Boutique Webshop Redesign & Conversie</option>
               <option value="Core Web Vitals & Google Posities">📈 Core Web Vitals & Technische SEO Optimalisatie</option>
               <option value="Maatwerk Technische Hulp">🔧 Maatwerk Technische Oplossing</option>
+              <option value="Anders / Overig (Geef toelichting)">💬 Anders / Overig (Geef toelichting)</option>
             </select>
           </div>
           <div>
@@ -620,7 +621,7 @@
           </div>
           <div>
             <label style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Korte omschrijving van het probleem</label>
-            <textarea id="nl-msg" name="message" rows="4" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="Wat gebeurt er precies, sinds wanneer, en wat heb je zelf al geprobeerd?"></textarea>
+            <textarea id="nl-msg" name="message" rows="4" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder=""></textarea>
           </div>
           <!-- Cloudflare Turnstile Placeholder -->
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAAx_PLACEHOLDER_KEY" data-theme="auto" style="margin-bottom:8px"></div>

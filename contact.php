@@ -42,10 +42,33 @@ if ($form_time > 0 && ($now - $form_time < 3)) {
 }
 
 // ==========================================
-// 🛡️ ANTI-SPAM LAYER 3: Cloudflare Turnstile / reCAPTCHA Support (Optional Free API Key)
+// 🛡️ ANTI-SPAM LAYER 3: Google reCAPTCHA / Cloudflare Turnstile Support
 // ==========================================
-$turnstile_token = trim($json['cf-turnstile-response'] ?? $_POST['cf-turnstile-response'] ?? '');
-$turnstile_secret = getenv('TURNSTILE_SECRET_KEY') ?: ''; // Optional: set in cPanel environment if Turnstile used
+$recaptcha_token  = trim($json['g-recaptcha-response'] ?? $_POST['g-recaptcha-response'] ?? '');
+$recaptcha_secret = getenv('RECAPTCHA_SECRET_KEY') ?: '';
+
+if (!empty($recaptcha_secret) && !empty($recaptcha_token)) {
+    $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $post_data = http_build_query([
+        'secret' => $recaptcha_secret,
+        'response' => $recaptcha_token,
+        'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+    ]);
+    $opts = ['http' => ['method' => 'POST', 'header' => "Content-type: application/x-www-form-urlencoded\r\n", 'content' => $post_data, 'timeout' => 5]];
+    $ctx = stream_context_create($opts);
+    $verify_res = @file_get_contents($verify_url, false, $ctx);
+    if ($verify_res) {
+        $res_data = json_decode($verify_res, true);
+        if (!$res_data['success']) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Google reCAPTCHA verification failed. Please try again.']);
+            exit;
+        }
+    }
+}
+
+$turnstile_token  = trim($json['cf-turnstile-response'] ?? $_POST['cf-turnstile-response'] ?? '');
+$turnstile_secret = getenv('TURNSTILE_SECRET_KEY') ?: '';
 
 if (!empty($turnstile_secret) && !empty($turnstile_token)) {
     $verify_url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -127,28 +150,124 @@ if ($lead_type === '3_minute_video_audit') {
     $subject = "🔥 [Webshop Lead] $problem_type — Budget: $budget ($name)";
 }
 
-$email_content = "Hello Jay,\n\n"
-               . "You have received a new verified client requirement from your website (jaylakum.com):\n\n"
-               . "==================================================\n"
-               . "Client Name:   $name\n"
-               . "Client Email:  $email\n"
-               . "Website URL:   $website\n"
-               . "Service Need:  $problem_type\n"
-               . "Client Budget: $budget\n"
-               . "==================================================\n\n"
-               . "Client Message / Store Problem:\n$message\n\n"
-               . "--------------------------------------------------\n"
-               . "Date:       " . date('r') . "\n"
-               . "Client IP:  " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . "\n"
-               . "User Agent: " . ($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown') . "\n";
+$lead_title  = ($lead_type === '3_minute_video_audit') ? '🎥 Nieuwe 3-Minuten Video Audit Aanvraag' : '🔥 Nieuwe Klantaanvraag (jaylakum.com)';
+$badge_color = ($lead_type === '3_minute_video_audit') ? '#2e7d32' : '#dca10d';
+$badge_bg    = ($lead_type === '3_minute_video_audit') ? '#e8f5e9' : '#fff8e7';
 
-$headers  = "From: Jay Lakum Website <leads@jaylakum.com>\r\n";
+$html_content = '<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>' . htmlspecialchars($subject) . '</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;color:#1e293b;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color:#f1f5f9;padding:32px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width:600px;background-color:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.06);border:1px solid #e2e8f0;">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background:linear-gradient(135deg, #18181b 0%, #27272a 100%);padding:28px 32px;text-align:left;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <span style="display:inline-block;background-color:' . $badge_bg . ';color:' . $badge_color . ';font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;padding:4px 10px;border-radius:20px;margin-bottom:8px;">
+                      ' . htmlspecialchars($lead_title) . '
+                    </span>
+                    <h1 style="margin:6px 0 0;color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.4px;">
+                      Lead van ' . htmlspecialchars($name) . '
+                    </h1>
+                  </td>
+                  <td align="right" valign="middle" style="width:60px;">
+                    <div style="background-color:#dca10d;color:#ffffff;font-size:18px;font-weight:800;width:44px;height:44px;border-radius:50%;text-align:center;line-height:44px;">JL</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Quick Action Buttons -->
+          <tr>
+            <td style="background-color:#fafafa;padding:14px 32px;border-bottom:1px solid #f0f0f0;">
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td style="padding-right:12px;">
+                    <a href="mailto:' . htmlspecialchars($email) . '?subject=Re:%20Jouw%20aanvraag%20op%20jaylakum.com" style="display:inline-block;background-color:#dca10d;color:#ffffff;text-decoration:none;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;">
+                      ✉️ Reply Direct
+                    </a>
+                  </td>
+                  ' . (!empty($website) ? '<td><a href="' . htmlspecialchars($website) . '" target="_blank" style="display:inline-block;background-color:#ffffff;color:#475569;border:1px solid #cbd5e1;text-decoration:none;font-size:13px;font-weight:600;padding:9px 15px;border-radius:6px;">🌐 Open Webshop</a></td>' : '') . '
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Lead Details Table -->
+          <tr>
+            <td style="padding:28px 32px;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:24px;">
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;width:35%;color:#64748b;font-size:13.5px;font-weight:600;">👤 Naam:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#0f172a;font-size:14.5px;font-weight:700;">' . htmlspecialchars($name) . '</td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">✉️ E-mailadres:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><a href="mailto:' . htmlspecialchars($email) . '" style="color:#2563eb;text-decoration:underline;font-size:14px;font-weight:600;">' . htmlspecialchars($email) . '</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">🌐 Webshop Link:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><a href="' . htmlspecialchars($website) . '" target="_blank" style="color:#dca10d;text-decoration:underline;font-size:14px;font-weight:600;">' . htmlspecialchars($website) . '</a></td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">⚡ Dienst / Vraag:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="background-color:#e0f2fe;color:#0369a1;padding:3px 8px;border-radius:4px;font-size:13px;font-weight:600;">' . htmlspecialchars($problem_type) . '</span></td>
+                </tr>
+                ' . ($lead_type !== '3_minute_video_audit' ? '
+                <tr>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:13.5px;font-weight:600;">💰 Indicatie Budget:</td>
+                  <td style="padding:10px 0;border-bottom:1px solid #f1f5f9;"><span style="background-color:#fef3c7;color:#92400e;padding:3px 8px;border-radius:4px;font-size:13px;font-weight:700;">' . htmlspecialchars($budget) . '</span></td>
+                </tr>' : '') . '
+              </table>
+
+              <!-- Message Box -->
+              <div style="background-color:#f8fafc;border-left:4px solid #dca10d;border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:16px;">
+                <div style="font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">
+                  💬 Omschrijving van het probleem:
+                </div>
+                <div style="font-size:14.5px;line-height:1.65;color:#1e293b;white-space:pre-wrap;">' . (!empty($message) ? nl2br(htmlspecialchars($message)) : '<em>(Geen extra opmerkingen ingevuld — URL ingediend voor audit)</em>') . '</div>
+              </div>
+
+            </td>
+          </tr>
+
+          <!-- Footer Info -->
+          <tr>
+            <td style="background-color:#f8fafc;padding:16px 32px;font-size:11.5px;color:#94a3b8;line-height:1.6;border-top:1px solid #e2e8f0;">
+              Ontvangen: ' . date('d M Y, H:i:s T') . ' · IP: ' . htmlspecialchars($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . '<br>
+              Browser: ' . htmlspecialchars(substr($_SERVER['HTTP_USER_AGENT'] ?? 'Unknown', 0, 100)) . '<br>
+              Bron: <a href="https://jaylakum.com" style="color:#64748b;text-decoration:none;">jaylakum.com</a>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>';
+
+$headers  = "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+$headers .= "From: Jay Lakum Website <leads@jaylakum.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-$sent = @mail($to, $subject, $email_content, $headers);
+$sent = @mail($to, $subject, $html_content, $headers);
 
 echo json_encode([
     'success' => true,
     'message' => 'Your requirement has been sent successfully! Jay will review your store and reply within 24 hours with an audit & quote.'
 ]);
+

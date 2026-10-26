@@ -473,10 +473,28 @@ def render_blog_index(articles):
   .blog-head h1{{font-family:var(--serif);font-size:clamp(32px,4.5vw,46px);margin:0 0 16px;line-height:1.2}}
   .blog-head p{{font-size:18px;color:var(--ink-soft);margin:0}}
   
-  .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;padding-bottom:80px}}
+  .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;padding-bottom:40px}}
   .card{{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;transition:transform .2s,box-shadow .2s}}
   .card:hover{{transform:translateY(-3px);box-shadow:var(--shadow)}}
   .p-cat{{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:4px 10px;border-radius:6px;display:inline-block}}
+
+  .pagination-wrap{{display:flex;justify-content:center;align-items:center;gap:8px;margin:20px 0 80px;}}
+  .page-btn{{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:42px;height:42px;padding:0 16px;border-radius:8px;
+    background:var(--card);border:1px solid var(--line);
+    color:var(--ink);font-weight:600;font-size:14.5px;cursor:pointer;
+    transition:all .15s ease;
+  }}
+  .page-btn:hover:not(:disabled){{
+    border-color:var(--gold);color:var(--gold);transform:translateY(-1px);
+  }}
+  .page-btn.active{{
+    background:var(--gold);border-color:var(--gold);color:#fff!important;pointer-events:none;
+  }}
+  .page-btn:disabled{{
+    opacity:.35;cursor:not-allowed;
+  }}
   
   footer.site{{background:var(--bg-soft);border-top:1px solid var(--line);padding:40px 0 60px;font-size:14px;color:var(--ink-faint)}}
   .foot-nav{{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:16px}}
@@ -506,9 +524,11 @@ def render_blog_index(articles):
     <p>Field-tested technical guides on Shopify and WooCommerce performance, checkout repairs, Core Web Vitals, and conversion optimization.</p>
   </div>
 
-  <div class="grid">
+  <div class="grid" id="blogGrid">
     {cards_html}
   </div>
+
+  <div id="blogPagination" class="pagination-wrap"></div>
 </main>
 
 <footer class="site">
@@ -529,9 +549,75 @@ def render_blog_index(articles):
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){{
+  var grid = document.getElementById('blogGrid');
+  if (!grid) return;
+  var cards = Array.from(grid.querySelectorAll('.card'));
+  var perPage = 6;
+  var totalPages = Math.ceil(cards.length / perPage);
+  var paginationContainer = document.getElementById('blogPagination');
+
+  if (totalPages <= 1) {{
+    if (paginationContainer) paginationContainer.style.display = 'none';
+    return;
+  }}
+
+  var currentPage = 1;
+
+  function showPage(p) {{
+    currentPage = p;
+    var start = (p - 1) * perPage;
+    var end = start + perPage;
+
+    cards.forEach(function(card, idx){{
+      if (idx >= start && idx < end) {{
+        card.style.display = 'flex';
+      }} else {{
+        card.style.display = 'none';
+      }}
+    }});
+
+    renderPagination();
+    if (p > 1) {{
+      grid.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+    }}
+  }}
+
+  function renderPagination() {{
+    paginationContainer.innerHTML = '';
+
+    var prevBtn = document.createElement('button');
+    prevBtn.className = 'page-btn';
+    prevBtn.innerHTML = '&larr; Prev';
+    prevBtn.disabled = (currentPage === 1);
+    prevBtn.onclick = function(){{ showPage(currentPage - 1); }};
+    paginationContainer.appendChild(prevBtn);
+
+    for (var i = 1; i <= totalPages; i++) {{
+      (function(pageIdx){{
+        var btn = document.createElement('button');
+        btn.className = 'page-btn' + (pageIdx === currentPage ? ' active' : '');
+        btn.textContent = pageIdx;
+        btn.onclick = function(){{ showPage(pageIdx); }};
+        paginationContainer.appendChild(btn);
+      }})(i);
+    }}
+
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'page-btn';
+    nextBtn.innerHTML = 'Next &rarr;';
+    nextBtn.disabled = (currentPage === totalPages);
+    nextBtn.onclick = function(){{ showPage(currentPage + 1); }};
+    paginationContainer.appendChild(nextBtn);
+  }}
+
+  showPage(1);
+}});
+</script>
+
 </body>
-</html>
-"""
+</html>"""
     return html
 
 def main():

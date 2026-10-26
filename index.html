@@ -643,11 +643,11 @@
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
               <div>
                 <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
-                <input type="url" id="audit-url-en" name="website" required placeholder="https://yourstore.com" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+                <input type="url" id="audit-url-en" name="website" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
               </div>
               <div>
                 <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Your Email (for video link) *</label>
-                <input type="email" id="audit-email-en" name="email" required placeholder="you@yourstore.com" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+                <input type="email" id="audit-email-en" name="email" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
               </div>
             </div>
 
@@ -662,7 +662,7 @@
               </div>
               <div>
                 <label style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Main Concern (Optional)</label>
-                <input type="text" id="audit-msg-en" name="message" placeholder="e.g. Slow mobile PageSpeed, high cart abandonment" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+                <input type="text" id="audit-msg-en" name="message" placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
               </div>
             </div>
 
@@ -985,7 +985,7 @@
             </div>
             <div class="field">
               <label for="f-url">Your website URL</label>
-              <input id="f-url" name="website" type="url" placeholder="https://yourstore.com" required />
+              <input id="f-url" name="website" type="url" placeholder="" required />
             </div>
             <div class="field">
               <label for="f-type">What do you need help with?</label>
@@ -1010,7 +1010,7 @@
             </div>
             <div class="field">
               <label for="f-msg">Tell me about the problem / requirement</label>
-              <textarea id="f-msg" name="message" placeholder="What's happening, when did it start, and what have you tried?" required></textarea>
+              <textarea id="f-msg" name="message" placeholder="" required></textarea>
             </div>
             <!-- Optional Cloudflare Turnstile Free Anti-Bot Widget container -->
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAAx_PLACEHOLDER_KEY" data-theme="auto" style="margin-bottom:12px"></div>
