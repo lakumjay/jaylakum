@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="favicon.svg" />
 
 <!-- Primary SEO Meta -->
-<title>Jay lakum — Shopify &amp; WordPress Developer for EU &amp; UK Webshops</title>
+<title>Jay Lakum — Shopify &amp; WordPress Developer for EU &amp; UK Webshops</title>
 <meta name="description" content="I fix &amp; speed up Shopify and WordPress webshops for fashion &amp; beauty stores in Europe and the UK. Speed optimization, bug fixes and redesigns — fixed quote upfront, async-first." />
 <meta name="keywords" content="Shopify speed optimization UK, WooCommerce speed optimization Netherlands, Shopify bug fixer London, freelance ecommerce developer, Core Web Vitals Shopify, iDEAL WooCommerce developer Amsterdam, webshop redesign fashion" />
 <meta name="author" content="Jay Lakum" />
@@ -36,8 +36,8 @@
 <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaylakum.com/" />
-<meta property="og:site_name" content="Jay lakum — India Coders" />
-<meta property="og:title" content="Jay lakum — I fix &amp; speed up Shopify and WordPress webshops" />
+<meta property="og:site_name" content="Jay Lakum — India Coders" />
+<meta property="og:title" content="Jay Lakum — I fix &amp; speed up Shopify and WordPress webshops" />
 <meta property="og:description" content="Speed optimization, bug fixes and redesigns for EU &amp; UK fashion &amp; beauty webshops. Fixed quote upfront. Based in India, async-first." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 <meta property="og:image:width" content="1200" />
@@ -48,7 +48,7 @@
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="https://jaylakum.com/" />
-<meta name="twitter:title" content="Jay lakum — Shopify &amp; WordPress Developer for EU &amp; UK Stores" />
+<meta name="twitter:title" content="Jay Lakum — Shopify &amp; WordPress Developer for EU &amp; UK Stores" />
 <meta name="twitter:description" content="Speed optimization, checkout bug fixes and high-converting redesigns for European online stores." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 <meta name="twitter:creator" content="@jaylakum" />
@@ -80,7 +80,7 @@
     {
       "@type": "ProfessionalService",
       "@id": "https://jaylakum.com/#service",
-      "name": "Jay lakum — India Coders",
+      "name": "Jay Lakum — India Coders",
       "description": "Specialist in Shopify and WordPress webshop speed optimization, bug fixes and redesigns for EU and UK stores.",
       "email": "jay@jaylakum.com",
       "url": "https://jaylakum.com/",
@@ -571,12 +571,10 @@
       <a href="#home" data-nav="home">Home</a>
       <a href="#services" data-nav="services">Services</a>
       <a href="#work" data-nav="work">Work</a>
-      <a href="/case-study/">Case Study</a>
       <a href="#watch" data-nav="watch">Watch</a>
-      <a href="/case-study/">Case Study</a>
       <a href="/blog/">Blog</a>
       <a href="/nl/" class="lang-toggle-btn" title="Nederlandse versie">🇳🇱 NL</a>
-      <a href="#free-video-audit" class="btn nav-cta">Free Mini-Audit</a>
+      <a href="#free-video-audit" class="btn nav-cta">Free Video Audit</a>
     </nav>
   </div>
 </header>
@@ -587,11 +585,11 @@
     <div class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Jay lakum · India Coders</p>
+          <p class="eyebrow">Jay Lakum · India Coders</p>
           <h1>Slow shop? Broken checkout? <span class="gold">I fix &amp; speed up</span> Shopify and WordPress stores.</h1>
           <p class="sub">Slow pages and broken checkouts quietly cost small stores sales every day. I find what's holding your shop back, fix it properly, and tell you the price <strong>before</strong> I start — no surprises, no hourly billing.</p>
           <div class="hero-ctas">
-            <a class="btn" href="#free-video-audit">⚡ Free Mini-Audit — Send Shop URL</a>
+            <a class="btn" href="#free-video-audit">⚡ Free Video Audit — Send Shop URL</a>
             <a class="btn btn-ghost" href="#work">See 3 Live Projects</a>
           </div>
           <div class="trust-strip-hero">
@@ -639,8 +637,203 @@
       </div>
     </div>
 
+    <div class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What I can do for your store</h2>
+          <p>Three focused services for Shopify and WordPress/WooCommerce shops. Every job starts with a free mini-audit and a fixed written quote.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Fixed quote upfront</span>
+            <h3>Speed Optimization</h3>
+            <p>Your store loads slowly, customers leave before the page even opens. I find what's dragging it down — oversized images, heavy apps, bloated themes — and make it fast on mobile and desktop.</p>
+            <a class="more" href="#services">See what's included →</a>
+          </article>
+          <article class="card">
+            <span class="tag">Fixed quote upfront</span>
+            <h3>Bug Fixes</h3>
+            <p>Checkout errors, broken layouts, a plugin update that took the shop down. Send me the problem, I reproduce it, explain the cause in plain words, and fix it on a staging copy first.</p>
+            <a class="more" href="#services">See what's included →</a>
+          </article>
+          <article class="card">
+            <span class="tag">Fixed quote upfront</span>
+            <h3>Redesigns</h3>
+            <p>Your products are good but the store looks dated or is hard to use on a phone. I redesign the pages that matter most — home, product, cart — so the shop feels as premium as what you sell.</p>
+            <a class="more" href="#services">See what's included →</a>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-soft">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recent work</h2>
+          <p>Real projects, live right now. Click through and look at them yourself — that's the most honest portfolio there is.</p>
+        </div>
+                <div class="grid-3" id="homeWork">
+          <article class="card work-card">
+            <figure class="card-media">
+              <img src="/gecko-preview.webp" alt="Gecko Monaco Shopify store" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
+            </figure>
+            <div class="w-top"><span class="tag">Shopify · Fashion &amp; Leather</span></div>
+            <h3><a href="https://geckomonaco.com/" target="_blank" rel="noopener">Gecko Monaco</a></h3>
+            <p>Luxury leather goods brand on Shopify. Cleaned theme liquid, optimised imagery and achieved a sub-1.5s mobile experience.</p>
+            <a class="visit" href="https://geckomonaco.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
+          </article>
+          <article class="card work-card">
+            <figure class="card-media">
+              <img src="/opulentt-preview.webp" alt="Opulentt Fragrances Shopify store" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
+            </figure>
+            <div class="w-top"><span class="tag">Shopify · Fragrance &amp; Beauty</span></div>
+            <h3><a href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Opulentt Fragrances</a></h3>
+            <p>High-end perfume brand. Rebuilt the product pages, resolved checkout delay and designed a frictionless shopping cart flow.</p>
+            <a class="visit" href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
+          </article>
+          <article class="card work-card">
+            <figure class="card-media">
+              <img src="/postcraftai-preview.webp" alt="PostCraftAI SaaS landing page" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
+            </figure>
+            <div class="w-top"><span class="tag">Custom Web App · PHP/Laravel</span></div>
+            <h3><a href="https://postcraftai.com/" target="_blank" rel="noopener">PostCraftAI</a></h3>
+            <p>Content generation tool. Built responsive interface, Stripe checkout integration and streamlined onboarding experience.</p>
+            <a class="visit" href="https://postcraftai.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
+          </article>
+        </div>
+        <p style="margin-top:26px"><a href="#work" style="font-weight:600">More about each project →</a></p>
+        <!-- Verified Case Study Teaser -->
+        <div class="case-study-box" style="margin-top:36px;background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:32px 28px;box-shadow:var(--shadow)">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:16px">
+            <div>
+              <span class="tag" style="margin-bottom:8px">VERIFIED CASE STUDY</span>
+              <h3 style="font-size:23px;margin:0">Fashion Boutique: 6.1s → 2.2s Mobile LCP (+34% Checkout Conversion)</h3>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:700">Before / After</div>
+              <div style="font-family:var(--serif);font-size:22px;font-weight:800;color:var(--gold-deep)">6.1s ➔ 2.2s</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:22px">
+            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:#991b1b;margin-bottom:6px">1. THE PROBLEM</div>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Store lost 60%+ mobile traffic before product images finished rendering. 9 abandoned Shopify apps left 140KB of ghost JavaScript blocking the main thread.</p>
+            </div>
+            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">2. THE FIX</div>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Isolated and stripped all ghost app code, converted product hero imagery to responsive WebP with explicit aspect-ratios, deferred non-critical tracking.</p>
+            </div>
+            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:6px">3. THE RESULT</div>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile PageSpeed score leaped from 38 to 96. Mobile checkout completion jumped by +34% within 30 days. Tested on staging with zero live store downtime.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:14px 18px;border-radius:10px">
+            <p style="margin:0;font-size:14.5px;color:var(--gold-deep);font-weight:600">
+              🎯 <strong>First client?</strong> Your store's optimization will be personally handled with the same step-by-step rigor and become our next verified case study.
+            </p>
+            <a href="#free-video-audit" class="btn" style="padding:10px 20px;font-size:14px">Get Your Free 3-Minute Video Audit →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How working with me goes</h2>
+          <p>No calls you have to schedule your day around. Everything in writing, in your inbox, step by step.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <p class="n">STEP 1</p>
+            <h3>Free 3-Minute Video Audit</h3>
+            <p>You send me your shop's URL. I check its speed, mobile layout and checkout, and reply with what I found — free, no obligation.</p>
+          </div>
+          <div class="step">
+            <p class="n">STEP 2</p>
+            <h3>Written scope</h3>
+            <p>You get a short written plan: exactly what I'll fix, what it costs as one fixed price, and how long it takes. Nothing starts until you approve it.</p>
+          </div>
+          <div class="step">
+            <p class="n">STEP 3</p>
+            <h3>Fix &amp; test on staging</h3>
+            <p>I work on a staging copy first, so your live store keeps selling. You see the result and test it before anything goes live.</p>
+          </div>
+          <div class="step">
+            <p class="n">STEP 4</p>
+            <h3>Pay on delivery &amp; support</h3>
+            <p>Only when the work is live and you're happy do you pay. After that I stay available for questions and small follow-ups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free 3-Minute Video Audit Lead Magnet -->
+    <div id="free-video-audit" class="section" style="background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap">
+        <div class="audit-card-box">
+          <div class="audit-top-badge">
+            ⚡ 100% Free &middot; No Obligation
+          </div>
+          <div style="text-align:center;margin-top:6px;margin-bottom:24px">
+            <p class="eyebrow" style="margin-bottom:8px">Free Video Audit &middot; Within 24 Hours</p>
+            <h2 style="font-size:clamp(23px,3.6vw,32px);margin-bottom:10px">Get A Free 3-Minute Video Audit Of Your Store</h2>
+            <p style="color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:660px;margin:0 auto">
+              Wondering why your store feels slow or why visitors drop off at checkout? Drop your URL below. Within 24 hours, I'll record and email you a personalized 3-minute Loom walkthrough detailing your biggest mobile speed leaks and quick fixes.
+            </p>
+          </div>
+
+          <form id="auditFormEN" action="contact.php" method="POST" style="display:flex;flex-direction:column;gap:16px">
+            <div style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden">
+              <label for="audit-hp-en">Leave empty</label>
+              <input id="audit-hp-en" name="_hp_company_website_verify" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <input type="hidden" name="lead_type" value="3_minute_video_audit" />
+
+            <div class="audit-grid-row">
+              <div>
+                <label for="audit-url-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Webshop URL *</label>
+                <input type="url" id="audit-url-en" name="website" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              </div>
+              <div>
+                <label for="audit-email-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Your Email (for video link) *</label>
+                <input type="email" id="audit-email-en" name="email" required placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              </div>
+            </div>
+
+            <div class="audit-grid-row">
+              <div>
+                <label for="audit-platform-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Platform</label>
+                <select id="audit-platform-en" name="platform" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+                  <option value="Shopify">Shopify</option>
+                  <option value="WooCommerce">WooCommerce / WordPress</option>
+                  <option value="Other / Custom">Other Platform / Custom</option>
+                </select>
+              </div>
+              <div>
+                <label for="audit-msg-en" style="display:block;font-weight:600;font-size:14px;margin-bottom:6px">Main Concern (Optional)</label>
+                <input type="text" id="audit-msg-en" name="message" placeholder="" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:var(--bg);box-sizing:border-box">
+              </div>
+            </div>
+
+            <div id="auditStatusEN" style="display:none;padding:12px 16px;border-radius:8px;font-size:14px;line-height:1.5"></div>
+
+            <button type="submit" id="auditSubmitBtnEN" class="btn" style="width:100%;justify-content:center;font-size:16px;padding:14px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
+              🎥 Get My Free Video Audit Within 24-48h &rarr;
+            </button>
+
+            <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
+              🔒 Zero spam, no unsolicited sales calls. You get a direct, honest technical breakdown from a developer.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
         <!-- Honest Work & First Client Guarantee (Replaces Unverified Reviews) -->
-    <div class="section" style="border-bottom:1px solid var(--line);background:var(--bg)">
+    <div class="section" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg);padding:72px 0">
       <div class="wrap">
         <div style="background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:44px 32px;box-shadow:var(--shadow);max-width:880px;margin:0 auto;text-align:center">
           <span class="tag" style="margin-bottom:14px">HONEST WORK &middot; NO FAKE REVIEWS</span>
@@ -665,10 +858,8 @@
               <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Your project will become our next verified case study with complete before/after metrics.</p>
             </div>
           </div>
-          <a href="#free-video-audit" class="btn" style="font-size:15px;padding:12px 28px">Get Your Free 3-Min Audit &rarr;</a>
+          <a href="#free-video-audit" class="btn" style="font-size:15px;padding:12px 28px">Get Your Free 3-Minute Video Audit &rarr;</a>
         </div>
-      </div>
-    </div>
       </div>
     </div>
 
@@ -677,7 +868,7 @@
       <div class="wrap">
         <div style="text-align:center;max-width:680px;margin:0 auto 44px">
           <p class="eyebrow" style="margin-bottom:8px">TRANSPARENT PRICING &middot; NO SURPRISES</p>
-          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Clear Investment, Guaranteed Outcome</h2>
+          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Transparent Investment &middot; Guaranteed Scope (Binnen Schriftelijke Scope)</h2>
           <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
             No vague hourly billing or runaway invoices. Every project has a written scope, a fixed quote upfront, and testing on staging before going live.
           </p>
@@ -754,7 +945,7 @@
           <div class="section-head" style="margin-bottom:20px">
             <h2>A little about me</h2>
           </div>
-          <p>I'm Jay lakum, a web developer with <span style="font-weight:600;color:var(--gold-deep)">5 years of experience</span> across Laravel, PHP, WordPress, WooCommerce and Shopify. I work from India as part of <strong>India Coders</strong>, a small development team — so when a project needs more hands, they're already here.</p>
+          <p>I'm Jay Lakum, a web developer with <span style="font-weight:600;color:var(--gold-deep)">5 years of experience</span> across Laravel, PHP, WordPress, WooCommerce and Shopify. I work from India as part of <strong>India Coders</strong>, a small development team — so when a project needs more hands, they're already here.</p>
           <p>I work <span style="font-weight:600;color:var(--gold-deep)">async-first</span>: clear written updates, screenshots and short notes instead of endless meetings. When a call genuinely helps, a member of my team joins it with you. You always know what's happening with your store, and you never pay for time — only for finished work.</p>
           <p>My focus is small fashion and beauty webshops in Europe and the UK: stores where the owner is close to the business and a faster, more reliable shop makes a real difference.</p>
         </div>
@@ -1106,12 +1297,11 @@
 
 <footer class="site">
   <div class="wrap foot">
-    <p>© 2026 Jay lakum · India Coders — Shopify &amp; WordPress webshop developer</p>
+    <p>© 2026 Jay Lakum · India Coders — Shopify &amp; WordPress webshop developer</p>
     <nav aria-label="Footer navigation">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#watch">Watch</a>
-      <a href="/case-study/">Case Study</a>
       <a href="/blog/">Blog</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>
@@ -1119,6 +1309,8 @@
       <a href="/nl/utrecht/">Utrecht</a>
       <a href="/nl/den-haag/">Den Haag</a>
       <a href="/nl/eindhoven/">Eindhoven</a>
+      <a href="/case-study/">Case Study</a>
+      <a href="/privacy/">Privacy Policy</a>
       <a href="#contact">Contact</a>
       <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
     </nav>
@@ -1127,7 +1319,7 @@
 
 <!-- Mobile Sticky Dual Bar -->
 <div class="sticky-mobile-bar" id="stickyMobileBar">
-  <a class="btn sticky-btn-audit" href="#free-video-audit">⚡ Free Mini-Audit</a>
+  <a class="btn sticky-btn-audit" href="#free-video-audit">⚡ Free Video Audit</a>
   <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ Email</a>
 </div>
 
@@ -1231,25 +1423,25 @@ if (hbg) {
 
 /* ---------- SEO per view ---------- */
 var META = {
-  home:     { title: "Jay lakum — Shopify & WordPress Developer for EU & UK Webshops",
+  home:     { title: "Jay Lakum — Shopify & WordPress Developer for EU & UK Webshops",
               desc: "I fix & speed up Shopify and WordPress webshops for fashion & beauty stores in Europe and the UK. Speed optimization, bug fixes and redesigns — fixed quote upfront, async-first." },
-  services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay lakum",
-              desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free mini-audit, written scope, fixed price, pay on delivery." },
-  work:     { title: "Work — Real Live Projects | Jay lakum",
+  services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay Lakum",
+              desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free 3-Minute Video Audit, written scope, fixed price, pay on delivery." },
+  work:     { title: "Work — Real Live Projects | Jay Lakum",
               desc: "Real, live projects: Gecko Monaco (Shopify leather goods), Opulentt Fragrances (brand website) and PostCraftAI (AI web app). Click through and see them yourself." },
-  watch:    { title: "Watch — A Quick Look at the Problems I Fix | Jay lakum",
-              desc: "Watch a short vertical reel introducing the Shopify and WordPress speed, bug-fix and redesign problems Jay lakum solves for webshops." },
-  blog:     { title: "Blog — Faster, Healthier Webshops | Jay lakum",
+  watch:    { title: "Watch — A Quick Look at the Problems I Fix | Jay Lakum",
+              desc: "Watch a short vertical reel introducing the Shopify and WordPress speed, bug-fix and redesign problems Jay Lakum solves for webshops." },
+  blog:     { title: "Blog — Faster, Healthier Webshops | Jay Lakum",
               desc: "Practical guides for Shopify and WooCommerce owners: fixing slow stores, diagnosing checkout errors and the mobile mistakes that cost sales." },
-  contact:  { title: "Contact — Tell Me About Your Store's Problem | Jay lakum",
-              desc: "Send your store's URL and the problem you're facing. Free mini-audit, fixed quote, reply within 24 hours. Email: jay@jaylakum.com." }
+  contact:  { title: "Contact — Tell Me About Your Store's Problem | Jay Lakum",
+              desc: "Send your store's URL and the problem you're facing. Free 3-Minute Video Audit, fixed quote, reply within 24 hours. Email: jay@jaylakum.com." }
 };
 var descEl = document.querySelector('meta[name="description"]');
 
 function setMeta(view, article){
   var m;
   if (view === 'article' && article){
-    m = { title: article.title + " | Jay lakum", desc: article.excerpt };
+    m = { title: article.title + " | Jay Lakum", desc: article.excerpt };
   } else {
     m = META[view] || META.home;
   }
@@ -1284,7 +1476,7 @@ function route(){
   if (view === 'article' && article){
     document.getElementById('articleContent').innerHTML =
       '<h1>' + article.title + '</h1>' +
-      '<p class="article-meta">' + article.category + ' · ' + article.date + ' · ' + article.read + ' · by Jay lakum</p>' +
+      '<p class="article-meta">' + article.category + ' · ' + article.date + ' · ' + article.read + ' · by Jay Lakum</p>' +
       '<img class="article-hero" src="' + article.image + '" alt="' + article.imageAlt + '" />' +
       '<div class="article-body">' + article.body + '</div>' +
       '<div class="article-cta"><p>Need this fixed on your store?</p>' +

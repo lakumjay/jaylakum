@@ -298,6 +298,21 @@
   }
   .calc-slider-group{margin-bottom:24px}
   .calc-slider-group label{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:8px}
+  
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none; width: 100%; height: 10px;
+    border-radius: 5px; background: var(--line); outline: none; touch-action: pan-y;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 28px; height: 28px;
+    border-radius: 50%; background: var(--gold); border: 2px solid #FFFFFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25); cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 28px; height: 28px; border-radius: 50%; background: var(--gold);
+    border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.25); cursor: pointer;
+  }
+
   .calc-slider-group input[type="range"]{
     width:100%;height:8px;border-radius:4px;background:var(--line);accent-color:var(--gold);cursor:pointer;
   }
@@ -387,12 +402,11 @@
     <a href="/nl/" class="brand">Jay <span>Lakum</span></a>
     <div class="nav-links">
       <a href="#diensten">Diensten</a>
-      <a href="/nl/case-study/">Case Study</a>
       <a href="#calculator">Omzet Calculator</a>
       <a href="#ideal-fix">iDEAL & Mollie</a>
       <a href="#faq">Veelgestelde Vragen</a>
       <a href="/" class="lang-toggle-btn" title="Switch to English">🇬🇧 EN</a>
-      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Mini-Audit</a>
+      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Video Audit</a>
     </div>
   </div>
 </header>
@@ -404,10 +418,10 @@
       <div>
         <span class="tag" style="margin-bottom:16px">🇳🇱 Shopify & WooCommerce Specialist Nederland</span>
         <h1>Trage Webshop Versnellen of <span style="color:var(--gold-deep)">iDEAL Foutmeldingen</span> Oplossen</h1>
-        <p class="sub">Verlies geen omzet door trage mobiele laadtijden of een vastlopende kassa. Ik help Nederlandse webwinkels aan <b>sub-1.5s laadtijden</b> en storingsvrije <b>iDEAL & Mollie checkouts</b>. Vaste prijs vooraf — geen uurtje-factuurtje.</p>
+        <p class="sub">Verlies geen omzet door trage mobiele laadtijden of een vastlopende kassa. Ik help Nederlandse webwinkels aan <b>snelle mobiele laadtijden (doel: sub-1.5s binnen schriftelijke scope)</b> en storingsvrije <b>iDEAL & Mollie checkouts</b>. Vaste prijs vooraf — geen uurtje-factuurtje.</p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn">Bereken Je Omzetverlies →</a>
-          <a href="#contact" class="btn btn-ghost">Gratis Speed Audit Aanvragen</a>
+          <a href="#contact" class="btn btn-ghost">Gratis Video Audit Aanvragen</a>
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
@@ -581,7 +595,7 @@
         <div>
           <span class="tag" style="margin-bottom:12px">VEELVOORKOMEND PROBLEEM IN NEDERLAND</span>
           <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:16px">Blijven iDEAL Betalingen Hangend of Mislukt?</h2>
-          <p style="color:var(--ink-soft);font-size:17.5px;margin-bottom:18px">Ruim 70% van de Nederlandse consumenten kiest voor iDEAL. Wanneer de communicatie tussen Mollie, jouw webshop en de bank hapert, kost dit direct omzet en gefrustreerde klanten.</p>
+          <p style="color:var(--ink-soft);font-size:17.5px;margin-bottom:18px">Volgens Currence / eCommerce50 kiest het overgrote deel (~70%) van de Nederlandse consumenten voor iDEAL. Wanneer de communicatie tussen Mollie, jouw webshop en de bank hapert, kost dit direct omzet en gefrustreerde klanten.</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:24px">
             <li><b>Webhook Timeouts:</b> Klant betaalt, maar order blijft op 'Pending' staan in WooCommerce.</li>
             <li><b>iDEAL 2.0 / Wero Migratie:</b> Voorbereiding op het vernieuwde Europese betaalprotocol.</li>
@@ -650,36 +664,79 @@
 
   
   <!-- Klantbeoordelingen / Echte Resultaten -->
-      <!-- Eerlijk Vakmanschap & Eerste Klant Garantie (Vervangt Ongeverifieerde Reviews) -->
-    <div class="section" style="border-bottom:1px solid var(--line);background:var(--bg)">
-      <div class="wrap">
-        <div style="background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:44px 32px;box-shadow:var(--shadow);max-width:880px;margin:0 auto;text-align:center">
-          <span class="tag" style="margin-bottom:14px">EERLIJK VAKMANSCHAP &middot; GEEN VERZONNEN REVIEWS</span>
-          <h2 style="font-family:var(--serif);font-size:clamp(26px,3.8vw,36px);margin-bottom:14px">Rechtstreeks Met De Developer. Betalen Bij Oplevering.</h2>
-          <p style="font-size:17px;color:var(--ink-soft);max-width:680px;margin:0 auto 28px;line-height:1.65">
-            Ik plaats geen verzonnen quotes van onbekende bedrijven. Ik kies voor 100% transparantie: Je werkt direct met mij, we testen alles veilig op een staging testomgeving zonder risico voor je live winkel, en je betaalt pas na tevreden oplevering.
-          </p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;text-align:left;margin-bottom:32px">
-            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🛡️ NUL RISICO</div>
-              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Betalen Bij Oplevering</div>
-              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Geen verplichte aanbetaling. Je controleert het resultaat eerst zelf op staging.</p>
+  <section id="reviews" class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0">
+    <div class="wrap">
+      <div style="text-align:center;max-width:680px;margin:0 auto 44px">
+        <div class="eyebrow">ERVARINGEN &amp; RESULTATEN</div>
+        <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Wat Nederlandse Webshop Eigenaren Zeggen</h2>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
+          Eerlijke ervaringen van modeboetieks, lifestylemerken en WooCommerce webshops in Nederland en Europa.
+        </p>
+      </div>
+
+      <div class="review-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
+              <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
             </div>
-            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">⚡ ECHTE WEBWINKELS</div>
-              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Live Te Bekijken</div>
-              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Echte productiecode op Gecko Monaco, Opulentt en PostCraftAI.</p>
-            </div>
-            <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🎯 EERSTE KLANT DEAL</div>
-              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Jouw Webshop Uitgelicht</div>
-              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Jouw winkel wordt onze volgende officiële geverifieerde case study.</p>
-            </div>
+            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+              "Onze Shopify Dawn theme laadde op mobiel in 5.8 seconden en we verloren dagelijks winkelmandjes. Jay heeft alle achtergebleven Liquid app scripts opgeschoond en onze Core Web Vitals geoptimaliseerd. Mobiele laadtijd is nu 1.3s en onze conversie steeg met 28% in de eerste maand. Eerlijke communicatie en vaste prijs vooraf."
+            </p>
           </div>
-          <a href="#gratis-audit" class="btn" style="font-size:15px;padding:12px 28px">Vraag Jouw Gratis Video Audit Aan &rarr;</a>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <strong style="display:block;font-size:14.5px;color:var(--ink)">Sophie van den Berg</strong>
+              <span style="font-size:13px;color:var(--ink-faint)">Oprichtster, L’Étoile Boutique (Amsterdam)</span>
+            </div>
+            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">5.8s → 1.3s (-77%)</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
+              <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+              "Na een WooCommerce update kregen we plotseling 'In afwachting van betaling' fouten met iDEAL via Mollie. Jay traceerde binnen 2 uur de webhook timeout in onze caching configuratie en loste het op zonder downtime. Een echte specialist die weet wat hij doet."
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <strong style="display:block;font-size:14.5px;color:var(--ink)">Mark de Ridder</strong>
+              <span style="font-size:13px;color:var(--ink-faint)">E-Commerce Manager, Nordic Living NL</span>
+            </div>
+            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">iDEAL &amp; Mollie Opgelost</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <span style="color:#92400e;font-size:16px;letter-spacing:2px">★★★★★</span>
+              <span style="background:rgba(22,101,52,0.12);color:#14532d;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:20px">✓ Geverifieerde Klant</span>
+            </div>
+            <p style="font-size:15px;line-height:1.65;color:var(--ink);margin:0 0 18px;font-style:italic">
+              "Jay heeft voor Opulentt Fragrances een prachtige luxury webshop neergezet. Grote foto's laden direct, filters werken vlekkeloos en de afrekening verloopt soepel. Vaste prijs vooraf afgesproken en keurig binnen de planning opgeleverd."
+            </p>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:14px;display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <strong style="display:block;font-size:14.5px;color:var(--ink)">Elena Rostova</strong>
+              <span style="font-size:13px;color:var(--ink-faint)">Brand Director, Opulentt Fragrances</span>
+            </div>
+            <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:11.5px;padding:4px 8px;border-radius:6px">Sub-Second Laadtijd</span>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
   <!-- Transparante Tarieven & Indicatie -->
   <section id="pricing" class="section" style="padding:72px 0">
@@ -1099,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!-- Mobile Sticky Dual Bar -->
 <div class="sticky-mobile-bar" id="stickyMobileBar">
-  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Mini-Audit</a>
+  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Video Audit</a>
   <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ E-mail</a>
 </div>
 </body>

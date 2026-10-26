@@ -360,13 +360,25 @@
       <a href="#ideal-fix">iDEAL & Mollie</a>
       <a href="#faq">Veelgestelde Vragen</a>
       <a href="/" class="lang-toggle-btn" title="Switch to English">🇬🇧 EN</a>
-      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Mini-Audit</a>
+      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Video Audit</a>
     </div>
   </div>
 </header>
 
 <main>
   <!-- Hero Section -->
+
+    <!-- Unieke Lokale Specialisatie (Amsterdam) -->
+    <div class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 0">
+      <div class="wrap">
+        <div style="background:var(--card);border-left:5px solid var(--gold);border-radius:12px;padding:32px;box-shadow:var(--shadow)">
+          <span class="tag" style="margin-bottom:10px">Amsterdam Fashion & Lifestyle</span>
+          <h3 style="font-family:var(--serif);font-size:24px;margin:0 0 12px">Shopify Fashion & Boutique Optimalisatie in Amsterdam</h3>
+          <p style="font-size:16.5px;color:var(--ink-soft);line-height:1.65;margin:0">Amsterdamse modemerken en boetieks draaien vaak op zware Prestige- of Dawn-thema’s met veel visuele media. Wij optimaliseren specifiek voor snelle mobiele weergave in drukke winkelstraten (Negen Straatjes, De Pijp) en soepele multi-valuta checkouts voor internationale shoppers.</p>
+        </div>
+      </div>
+    </div>
+
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
@@ -839,7 +851,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!-- Mobile Sticky Dual Bar -->
 <div class="sticky-mobile-bar" id="stickyMobileBar">
-  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Mini-Audit</a>
+  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Video Audit</a>
   <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ E-mail</a>
 </div>
 </body>

@@ -360,13 +360,25 @@
       <a href="#ideal-fix">iDEAL & Mollie</a>
       <a href="#faq">Veelgestelde Vragen</a>
       <a href="/" class="lang-toggle-btn" title="Switch to English">🇬🇧 EN</a>
-      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Mini-Audit</a>
+      <a href="#gratis-audit" class="btn nav-cta" style="padding:8px 18px;font-size:14px">Gratis Video Audit</a>
     </div>
   </div>
 </header>
 
 <main>
   <!-- Hero Section -->
+
+    <!-- Unieke Lokale Specialisatie (Utrecht) -->
+    <div class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 0">
+      <div class="wrap">
+        <div style="background:var(--card);border-left:5px solid var(--gold);border-radius:12px;padding:32px;box-shadow:var(--shadow)">
+          <span class="tag" style="margin-bottom:10px">Utrecht Green & Fast</span>
+          <h3 style="font-family:var(--serif);font-size:24px;margin:0 0 12px">Duurzame Webshops & Green Core Web Vitals in Utrecht</h3>
+          <p style="font-size:16.5px;color:var(--ink-soft);line-height:1.65;margin:0">Utrechtse webshops lopen voorop in duurzaamheid en efficiëntie. Wij hosten op Nederlandse cloud VPS met TTFB < 200ms en garanderen strikte Google Core Web Vitals: LCP < 2.2s en CLS < 0.1 voor een minimale digitale CO2-voetafdruk.</p>
+        </div>
+      </div>
+    </div>
+
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
@@ -414,7 +426,7 @@
         </div>
         <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
           <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">⚡ Mijn Technische Oplossing</strong>
-          <p style="margin:0">Een klant die moet wachten op trage banners of haperende JavaScript scripts verlaat je kassa direct voor een concurrent. Door CSS te stroomlijnen, moderne WebP/AVIF beeldcompressie toe te passen en server caching haarscherp in te stellen, streven we naar groene Core Web Vitals op mobiel (LCP &lt; 2.0s, CLS 0, INP &lt; 200ms, binnen overeengekomen scope).</p>
+          <p style="margin:0">Een klant die moet wachten op trage banners of haperende JavaScript scripts verlaat je kassa direct voor een concurrent. Door CSS te stroomlijnen, moderne WebP/AVIF beeldcompressie toe te passen en server caching haarscherp in te stellen, streven we naar groene Core Web Vitals op mobiel (LCP &lt; 2.0s, CLS < 0.1, INP &lt; 200ms, binnen overeengekomen scope).</p>
         </div>
       </div>
       <div style="margin-top:20px;padding:18px 24px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
@@ -839,7 +851,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <!-- Mobile Sticky Dual Bar -->
 <div class="sticky-mobile-bar" id="stickyMobileBar">
-  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Mini-Audit</a>
+  <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Video Audit</a>
   <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ E-mail</a>
 </div>
 </body>

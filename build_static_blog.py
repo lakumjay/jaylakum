@@ -380,6 +380,7 @@ def render_article_page(article, all_articles):
       <a href="/#services">Services</a>
       <a href="/#work">Work</a>
       <a href="/case-study/">Case Study</a>
+      <a href="/privacy/">Privacy Policy</a>
       <a href="/blog/">All Articles</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>
@@ -407,7 +408,10 @@ def render_blog_index(articles):
             <a href="/blog/{slug}/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:14px;background:var(--bg-soft)">
               <img src="{a.get('image', '/favicon.svg')}" alt="{a.get('imageAlt', a['title'])}" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;transition:transform .2s ease;" loading="lazy" />
             </a>
-            <span class="p-cat">{a['category']}</span>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+              <span class="p-cat">{a['category']}</span>
+              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">{'🇳🇱 NL' if any(w in slug for w in ['mollie', 'shopify-apps-vertragen', 'webshop-klaarmaken', 'nederland']) else '🇬🇧 EN'}</span>
+            </div>
             <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/{slug}/">{a['title']}</a></h2>
             <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">{a['excerpt']}</p>
           </div>
@@ -560,6 +564,7 @@ def render_blog_index(articles):
       <a href="/#services">Services</a>
       <a href="/#work">Work</a>
       <a href="/case-study/">Case Study</a>
+      <a href="/privacy/">Privacy Policy</a>
       <a href="/blog/">All Articles</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>
