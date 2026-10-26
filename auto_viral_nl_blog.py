@@ -389,7 +389,7 @@ def auto_git_push_and_package(article_title):
     # 1. Rebuild ready-to-upload zip package
     try:
         zip_path = os.path.join(xampp_path, "jaylakum-nl-all-cities-seo.zip")
-        cmd = ["zip", "-rq", zip_path, "index.html", "sitemap.xml", "robots.txt", ".htaccess", "auto_viral_nl_blog.py", "build_static_blog.py", "nl/", "blog/"]
+        cmd = ["zip", "-rq", zip_path, "index.php", "index.html", "contact.php", "sitemap.xml", "robots.txt", ".htaccess", "auto_viral_nl_blog.py", "build_static_blog.py", "nl/", "blog/"]
         subprocess.run(cmd, cwd=xampp_path, check=False)
         print(f"📦 Updated deployment package: {zip_path}")
     except Exception as e:

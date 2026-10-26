@@ -88,6 +88,14 @@ def render_article_page(article, all_articles):
     canonical_url = f"{BASE_URL}/blog/{canonical_slug}/"
     escaped_title = title.replace('"', '&quot;')
     escaped_excerpt = excerpt.replace('"', '&quot;')
+    if is_dutch:
+        hreflang_tags = f"""<link rel="alternate" hreflang="nl-NL" href="{canonical_url}" />
+<link rel="alternate" hreflang="nl" href="{canonical_url}" />
+<link rel="alternate" hreflang="x-default" href="{canonical_url}" />"""
+    else:
+        hreflang_tags = f"""<link rel="alternate" hreflang="en" href="{canonical_url}" />
+<link rel="alternate" hreflang="x-default" href="{canonical_url}" />"""
+
 
 
     cta_heading = "Hulp nodig bij jouw webshop?" if is_dutch else "Need this fixed on your store?"
@@ -105,6 +113,7 @@ def render_article_page(article, all_articles):
 <meta name="description" content="{excerpt}" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="{canonical_url}" />
+{hreflang_tags}
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -324,7 +333,7 @@ def render_article_page(article, all_articles):
     <h1>{title}</h1>
     <p class="article-meta">{date_str} · {read_str} · by Jay Lakum, Senior Webshop & Performance Specialist</p>
 
-    <img class="article-hero" src="{image}" alt="{image_alt}" loading="eager" />
+    <img class="article-hero" src="{image}" alt="{image_alt}" width="800" height="450" style="aspect-ratio:16/9;width:100%;height:auto;" loading="eager" />
 
     <div class="article-body">
       {body}
@@ -529,6 +538,8 @@ def main():
     index_html = render_blog_index(articles)
     with open(os.path.join(BLOG_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(index_html)
+    with open(os.path.join(BLOG_DIR, "index.php"), "w", encoding="utf-8") as f:
+        f.write(index_html)
     print(f"✓ Created {os.path.join(BLOG_DIR, 'index.html')}")
     
     generated_slugs = []
@@ -544,6 +555,8 @@ def main():
             os.makedirs(art_dir, exist_ok=True)
             art_html = render_article_page(article, articles)
             with open(os.path.join(art_dir, "index.html"), "w", encoding="utf-8") as f:
+                f.write(art_html)
+            with open(os.path.join(art_dir, "index.php"), "w", encoding="utf-8") as f:
                 f.write(art_html)
             print(f"✓ Created /blog/{s}/index.html")
             if s not in generated_slugs:

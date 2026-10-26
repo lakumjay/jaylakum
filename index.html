@@ -16,6 +16,10 @@
 <meta name="keywords" content="Shopify speed optimization UK, WooCommerce speed optimization Netherlands, Shopify bug fixer London, freelance ecommerce developer, Core Web Vitals Shopify, iDEAL WooCommerce developer Amsterdam, webshop redesign fashion" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
+<link rel="alternate" hreflang="en" href="https://jaylakum.com/" />
+<link rel="alternate" hreflang="nl-NL" href="https://jaylakum.com/nl/" />
+<link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/" />
+<link rel="alternate" hreflang="x-default" href="https://jaylakum.com/" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jaylakum.com/sitemap.xml" />
 
 <!-- Robots & Search Engine Directives -->
@@ -310,7 +314,7 @@
 
   /* ---------- Services page ---------- */
   .page-head{padding:64px 0 10px}
-  .page-head h1{font-size:clamp(32px,4.6vw,46px);margin-bottom:14px;max-width:720px}
+  .page-head h1, .page-head h2{font-size:clamp(32px,4.6vw,46px);margin-bottom:14px;max-width:720px;line-height:1.2;font-family:var(--serif);font-weight:700}
   .page-head p{color:var(--ink-soft);font-size:18.5px;max-width:640px;margin:0}
   .service-block{
     display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;padding:52px 0;
@@ -719,7 +723,7 @@
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Services</p>
-        <h1>Speed, bug fixes &amp; redesigns for webshops</h1>
+        <h2>Speed, bug fixes &amp; redesigns for webshops</h2>
         <p>Three services, one way of working: free mini-audit first, then a written scope with a <strong>fixed price</strong>, work done on staging, and payment only on delivery.</p>
       </div>
 
@@ -799,7 +803,7 @@
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Work</p>
-        <h1>Real projects, live on the web</h1>
+        <h2>Real projects, live on the web</h2>
         <p>Every project below is online right now. I'd rather show you three real, working sites than a gallery of screenshots you can't verify. Click through and judge the work yourself.</p>
       </div>
       <div class="grid-3" id="workGrid" style="padding:34px 0 30px"></div>
@@ -819,7 +823,7 @@
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Watch</p>
-        <h1>A quick look at the problems I fix</h1>
+        <h2>A quick look at the problems I fix</h2>
         <p>This short vertical reel is a fast introduction to the work: slow pages, broken journeys and stores that deserve a better first impression.</p>
       </div>
       <div class="watch-grid">
@@ -854,7 +858,7 @@
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Blog</p>
-        <h1>Notes on faster, healthier webshops</h1>
+        <h2>Notes on faster, healthier webshops</h2>
         <p>Practical guides for Shopify and WooCommerce store owners — the same checks and fixes I use on client stores, written so you can follow along yourself.</p>
       </div>
       <div class="blog-grid" id="blogGrid" style="padding:34px 0 84px">
@@ -896,7 +900,7 @@
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Contact</p>
-        <h1>Tell me about your store's problem</h1>
+        <h2>Tell me about your store's problem</h2>
         <p>Fill in the form, or just email me directly — whichever is easier. <strong>I reply within 24 hours</strong> with first thoughts and, if it fits, a free mini-audit of your store.</p>
       </div>
       <div class="contact-grid">
@@ -1242,7 +1246,7 @@ var ARTICLES = [
 /* ---------- Render: work cards ---------- */
 function workCard(p){
   return '<article class="card work-card">' +
-    '<figure class="card-media"><img src="' + p.image + '" alt="' + p.imageAlt + '" loading="lazy" /></figure>' +
+    '<figure class="card-media"><img src="' + p.image + '" alt="' + p.imageAlt + '" width="800" height="480" style="aspect-ratio:16/9;width:100%;height:auto;" loading="lazy" /></figure>' +
     '<div class="w-top"><span class="tag">' + p.tag + '</span></div>' +
     '<h3><a href="' + p.url + '" target="_blank" rel="noopener">' + p.name + '</a></h3>' +
     '<p>' + p.desc + '</p>' +
@@ -1256,7 +1260,7 @@ document.getElementById('workGrid').innerHTML = PROJECTS.map(workCard).join('');
 function renderArticleCard(a){
   var slug = (a.slug === 'nederland-heeft-nu-ook-een-dopaminesite-ni') ? 'webshop-klaarmaken-feestdagen' : a.slug;
   return '<article class="card post-card">' +
-    '<figure class="card-media"><img src="' + a.image + '" alt="' + a.imageAlt + '" loading="lazy" /></figure>' +
+    '<figure class="card-media"><img src="' + a.image + '" alt="' + a.imageAlt + '" width="800" height="480" style="aspect-ratio:16/9;width:100%;height:auto;" loading="lazy" /></figure>' +
     '<span class="p-cat">' + a.category + '</span>' +
     '<h3><a href="/blog/' + slug + '/">' + a.title + '</a></h3>' +
     '<p>' + a.excerpt + '</p>' +
