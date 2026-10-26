@@ -29,12 +29,18 @@ def get_articles_data():
     end_rel = sub.find("];")
     js_code = sub[:end_rel+2]
     
-    # Run node to evaluate and output JSON cleanly
+    # Write to temp file and run node to evaluate and output JSON cleanly
     import subprocess
-    cmd = f'node -e \'{js_code}; console.log(JSON.stringify(ARTICLES));\''
-    res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    tmp_js = "/tmp/parse_articles.js"
+    with open(tmp_js, "w", encoding="utf-8") as tf:
+        tf.write(js_code + "\nconsole.log(JSON.stringify(ARTICLES));\n")
+    
+    res = subprocess.run(["node", tmp_js], capture_output=True, text=True)
     if res.returncode == 0 and res.stdout.strip():
-        return json.loads(res.stdout.strip())
+        data = json.loads(res.stdout.strip())
+        with open("/tmp/articles.json", "w", encoding="utf-8") as jf:
+            json.dump(data, jf, indent=2)
+        return data
         
     if os.path.exists("/tmp/articles.json"):
         with open("/tmp/articles.json", "r", encoding="utf-8") as f:

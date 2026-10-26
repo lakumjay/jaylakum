@@ -91,4 +91,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>

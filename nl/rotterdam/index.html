@@ -18,8 +18,6 @@
 <link rel="canonical" href="https://jaylakum.com/nl/rotterdam/" />
 <link rel="alternate" hreflang="nl-NL" href="https://jaylakum.com/nl/rotterdam/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/rotterdam/" />
-<link rel="alternate" hreflang="en" href="https://jaylakum.com/" />
-<link rel="alternate" hreflang="x-default" href="https://jaylakum.com/" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jaylakum.com/sitemap.xml" />
 
 <!-- Geo Meta Tags for Google.nl -->
