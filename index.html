@@ -78,7 +78,8 @@
       "url": "https://jaylakum.com/",
       "email": "jay@jaylakum.com",
       "sameAs": [
-        "https://github.com/lakumjay"
+        "https://github.com/lakumjay",
+        "https://www.linkedin.com/in/lakum-jay/"
       ]
     },
     {

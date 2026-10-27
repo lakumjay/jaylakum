@@ -59,7 +59,11 @@
       "name": "Jay Lakum",
       "jobTitle": "Freelance Shopify & WooCommerce Performance Specialist",
       "url": "https://jaylakum.com/nl/amsterdam/",
-      "email": "jay@jaylakum.com"
+      "email": "jay@jaylakum.com",
+      "sameAs": [
+        "https://github.com/lakumjay",
+        "https://www.linkedin.com/in/lakum-jay/"
+      ]
     },
     {
       "@type": ["ProfessionalService", "LocalBusiness"],
