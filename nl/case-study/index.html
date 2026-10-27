@@ -292,7 +292,7 @@
       </ul>
 
       <div class="highlight-box" style="background:var(--gold-soft);border-left-color:var(--gold-deep)">
-        <strong>Eerste Klant Garantie:</strong> Geen dure accountmanagers of vage uurtarieven. Je werkt rechtstreeks met de developer. Vaste prijs vooraf, veilige werkwijze op staging en betalen bij tevreden oplevering.
+        <strong>Gegarandeerde Werkwijze op Staging:</strong> Geen dure accountmanagers of vage uurtarieven. Je werkt rechtstreeks met de developer. Vaste prijs vooraf, veilige werkwijze op staging en betalen bij tevreden oplevering.
       </div>
     </div>
 

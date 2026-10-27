@@ -673,67 +673,29 @@
   </section>
 
   <!-- Contact Form -->
+    <!-- Closing Direct CTA (Replaces Redundant Secondary Form) -->
   <section id="contact" class="section">
     <div class="wrap">
-      <div class="contact-box">
-        <div style="text-align:center;margin-bottom:24px">
-          <div class="eyebrow">Gratis 3-Minuten Video Audit & OFFERTE</div>
-          <h2>Vertel Me Over Jouw Webwinkel</h2>
-          <p style="color:var(--ink-soft);font-size:16px">Stuur je webshop URL mee. Binnen 24 uur ontvang je een Gratis 3-Minuten Video Audit en een vaste prijsopgave.</p>
+      <div class="contact-box" style="text-align:center;padding:48px 32px">
+        <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; AMSTERDAM</div>
+        <h2 style="font-size:clamp(26px,4vw,34px);margin:0 0 14px">Klaar Om Jouw Webwinkel Te Versnellen?</h2>
+        <p style="color:var(--ink-soft);font-size:16.5px;max-width:620px;margin:0 auto 28px;line-height:1.6">
+          Geen accountmanagers, geen uurtje-factuurtje en geen risico. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
+        </p>
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;align-items:center">
+          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
+            ⚡ Vraag Jouw Gratis Video Audit Aan →
+          </a>
+          <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#25D366;border-color:rgba(37,211,102,0.4);font-size:15px;padding:12px 20px">
+            💬 WhatsApp: +91 6353116138
+          </a>
+          <a href="mailto:jay@jaylakum.com" class="btn btn-ghost" style="font-size:15px;padding:12px 20px">
+            ✉️ jay@jaylakum.com
+          </a>
         </div>
-        <form id="dutchContactForm" action="../../contact.php" method="POST" style="display:flex;flex-direction:column;gap:16px">
-          <!-- Anti-Spam Honeypot Trap -->
-          <div style="opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden">
-            <label for="nl-hp">Laat dit veld leeg</label>
-            <input id="nl-hp" name="_hp_company_website_verify" type="text" tabindex="-1" autocomplete="off" />
-            <input id="nl-ts" name="_ts_token" type="hidden" value="" />
-          </div>
-          <div>
-            <label for="nl-name" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Jouw Naam</label>
-            <input type="text" id="nl-name" name="name" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
-          </div>
-          <div>
-            <label for="nl-email" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">E-mailadres</label>
-            <input type="email" id="nl-email" name="email" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
-          </div>
-          <div>
-            <label for="nl-url" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Webshop URL (Website Link)</label>
-            <input type="url" id="nl-url" name="website" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder="">
-          </div>
-          <div>
-            <label for="nl-service" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Waar heb je hulp bij nodig?</label>
-            <select id="nl-service" name="problem_type" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px">
-              <option value="Trage Webshop Versnellen (Shopify/WooCommerce)">⚡ Trage Webshop Versnellen (&lt;1.5s Laadtijd)</option>
-              <option value="Mollie & iDEAL Checkout Problemen">🐛 Mollie & iDEAL Checkout Fouten Oplossen</option>
-              <option value="Boutique Webshop Redesign">🎨 Boutique Webshop Redesign & Conversie</option>
-              <option value="Core Web Vitals & Google Posities">📈 Core Web Vitals & Technische SEO Optimalisatie</option>
-              <option value="Maatwerk Technische Hulp">🔧 Maatwerk Technische Oplossing</option>
-              <option value="Anders / Overig (Geef toelichting)">💬 Anders / Overig (Geef toelichting)</option>
-            </select>
-          </div>
-          <div>
-            <label for="nl-budget" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Geschat Projectbudget</label>
-            <select id="nl-budget" name="budget" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px">
-              <option value="€300 - €750 (Snelle fix / Snelheid boost)">€300 - €750 — Snelle fix / Snelheid boost</option>
-              <option value="€750 - €1.500 (Standaard optimalisatie & fixes)" selected>€750 - €1.500 — Standaard optimalisatie & fixes</option>
-              <option value="€1.500 - €3.000 (Complete webshop / redesign)">€1.500 - €3.000 — Complete webshop / redesign</option>
-              <option value="€3.000+ (Grote custom webshop / enterprise)">€3.000+ — Grote custom webshop / enterprise</option>
-              <option value="Flexibel / Open voor offerte">Flexibel / Open voor offerte</option>
-            </select>
-          </div>
-          <div>
-            <label for="nl-msg" style="display:block;font-weight:600;margin-bottom:6px;font-size:14px">Korte omschrijving van het probleem</label>
-            <textarea id="nl-msg" name="message" rows="4" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:16px" placeholder=""></textarea>
-          </div>
-          <!-- Cloudflare Turnstile Placeholder -->
-          <div style="text-align:center;margin-top:14px">
-            <button type="submit" id="nl-submit-btn" class="btn" style="padding:10px 22px;font-size:14px">Verstuur Aanvraag (Reactie binnen 24u) &rarr;</button>
-          </div>
-          <div id="nl-status-msg" style="display:none;padding:12px;border-radius:8px;font-size:14px;line-height:1.5;"></div>
-        </form>
-        <div style="text-align:center;margin-top:18px;font-size:14px;color:var(--ink-faint)">
-          Liever direct e-mailen of WhatsAppen? Stuur je winkel link naar <a href="mailto:jay@jaylakum.com"><b>jay@jaylakum.com</b></a> of <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" style="color:#25D366;font-weight:700">💬 Direct WhatsApp (+91 6353116138)</a>
-        </div>
+        <p style="margin:22px 0 0;font-size:13.5px;color:var(--ink-faint)">
+          Reactie binnen 24 uur &middot; Vaste prijsopgave &middot; 100% Betalen bij oplevering
+        </p>
       </div>
     </div>
   </section>

@@ -841,7 +841,7 @@
           </div>
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:10px 18px 18px;border-radius:10px">
             <p style="margin:0;font-size:14.5px;color:var(--gold-deep);font-weight:600">
-              🎯 <strong>First client?</strong> Your store's optimization will be personally handled with the same step-by-step rigor and become our next verified case study.
+              🎯 <strong>Want these results for your store?</strong> Request a Free 3-Minute Video Audit showing your exact mobile speed bottlenecks and conversion potential.
             </p>
             <a href="#free-video-audit" class="btn" style="padding:10px 20px;font-size:14px">Get Your Free 3-Minute Video Audit →</a>
           </div>
@@ -966,9 +966,9 @@
               <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Real code running in production on Gecko Monaco, Opulentt, and PostCraftAI.</p>
             </div>
             <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
-              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🎯 FIRST CLIENT SPECIAL</div>
-              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Your Store Featured</div>
-              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Your project will become our next verified case study with complete before/after metrics.</p>
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🔒 100% RISK-FREE</div>
+              <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Pay on Verified Delivery</div>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Every speed sprint and bug fix is tested on staging and verified with live before/after Lighthouse recordings before you pay a single euro.</p>
             </div>
           </div>
           <a href="#free-video-audit" class="btn" style="font-size:15px;padding:10px 20px">Get Your Free 3-Minute Video Audit &rarr;</a>
@@ -981,7 +981,7 @@
       <div class="wrap">
         <div style="text-align:center;max-width:680px;margin:0 auto 44px">
           <p class="eyebrow" style="margin-bottom:8px">TRANSPARENT PRICING &middot; NO SURPRISES</p>
-          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Transparent Investment &middot; Guaranteed Scope (Binnen Schriftelijke Scope)</h2>
+          <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Transparent Investment &middot; Guaranteed Scope (Within Written Project Scope)</h2>
           <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
             No vague hourly billing or runaway invoices. Every project has a written scope, a fixed quote upfront, and testing on staging before going live.
           </p>
@@ -1001,6 +1001,7 @@
                 <li>✓ Root-cause diagnosis within 4 hours</li>
                 <li>✓ Tested safely on staging first</li>
                 <li>✓ No live shopping interruption</li>
+                <li>✓ 100% Pay on delivery (0 upfront deposit)</li>
                 <li>✓ 14 days warranty on the fix</li>
               </ul>
             </div>
@@ -1020,9 +1021,10 @@
                 Full technical code audit, removal of app ghost-scripts, image compression, CSS/JS minification, and LCP/CLS optimization for mobile.
               </p>
               <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
-                <li>✓ Target sub-1.5s mobile load time</li>
+                <li>✓ Sub-2.5s mobile LCP (passing Google Core Web Vitals)</li>
                 <li>✓ Complete Liquid / PHP script cleanup</li>
                 <li>✓ Green Core Web Vitals (LCP, CLS, INP)</li>
+                <li>✓ 100% Pay on delivery after staging verification</li>
                 <li>✓ 30 days regression guarantee</li>
               </ul>
             </div>
@@ -1042,7 +1044,7 @@
                 <li>✓ High-end typography &amp; mobile UX</li>
                 <li>✓ Built directly in Online Store 2.0 / WooCommerce</li>
                 <li>✓ Conversion-focused product &amp; cart flows</li>
-                <li>✓ Staging demo before you pay final balance</li>
+                <li>✓ Milestone terms: 50% start / 50% on verified staging delivery</li>
               </ul>
             </div>
             <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;box-sizing:border-box">Discuss Redesign &rarr;</a>
@@ -1094,25 +1096,25 @@
         </div>
         <div class="blog-grid" id="homeBlogGrid" style="padding:20px 0 30px">
           <article class="card post-card">
-            <span class="p-cat">WooCommerce · iDEAL &amp; Mollie</span>
-            <h3><a href="/blog/mollie-ideal-checkout-storing-oplossen/">Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?</a></h3>
-            <p>Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op.</p>
-            <p class="post-meta">October 2026 · 4 min leestijd</p>
-            <a class="more" href="/blog/mollie-ideal-checkout-storing-oplossen/">Read the article →</a>
+            <span class="p-cat">Shopify · Speed &amp; Mobile</span>
+            <h3><a href="/blog/why-is-my-shopify-store-so-slow/">Why Is My Shopify Store So Slow? 5 Fixes That Actually Work</a></h3>
+            <p>Every app installed, uncompressed image, and heavy theme script eats into your mobile conversion rate. Here are the 5 high-impact fixes that actually move the needle.</p>
+            <p class="post-meta">October 2026 · 4 min read</p>
+            <a class="more" href="/blog/why-is-my-shopify-store-so-slow/">Read the article →</a>
           </article>
           <article class="card post-card">
-            <span class="p-cat">Shopify · Liquid &amp; Snelheid</span>
-            <h3><a href="/blog/shopify-apps-vertragen-webshop-liquid-opruimen/">5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt)</a></h3>
-            <p>Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont.</p>
-            <p class="post-meta">October 2026 · 5 min leestijd</p>
-            <a class="more" href="/blog/shopify-apps-vertragen-webshop-liquid-opruimen/">Read the article →</a>
+            <span class="p-cat">WooCommerce · Checkout Diagnostics</span>
+            <h3><a href="/blog/woocommerce-checkout-broken-diagnose-10-minutes/">WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes</a></h3>
+            <p>Step-by-step developer checklist to pinpoint why carts stall, AJAX spinners hang, and payment gateways fail on WooCommerce.</p>
+            <p class="post-meta">October 2026 · 5 min read</p>
+            <a class="more" href="/blog/woocommerce-checkout-broken-diagnose-10-minutes/">Read the article →</a>
           </article>
           <article class="card post-card">
-            <span class="p-cat">E-Commerce · Nederland</span>
-            <h3><a href="/blog/webshop-klaarmaken-feestdagen/">Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout &amp; Snelheid Fixes</a></h3>
-            <p>Met Black Friday en de feestdagen voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor.</p>
-            <p class="post-meta">October 2026 · 4 min leestijd</p>
-            <a class="more" href="/blog/webshop-klaarmaken-feestdagen/">Read the article →</a>
+            <span class="p-cat">WooCommerce · Performance &amp; Core Web Vitals</span>
+            <h3><a href="/blog/how-to-fix-slow-woocommerce-store-practical-checklist/">How to Fix a Slow WooCommerce Store: A Practical Checklist</a></h3>
+            <p>From server response time (TTFB) to cart fragments and database bloat — a developer-grade checklist to speed up your store.</p>
+            <p class="post-meta">October 2026 · 6 min read</p>
+            <a class="more" href="/blog/how-to-fix-slow-woocommerce-store-practical-checklist/">Read the article →</a>
           </article>
         </div>
         <div style="text-align:center;margin-top:28px">
