@@ -64,7 +64,8 @@
       "email": "jay@jaylakum.com",
       "sameAs": [
         "https://github.com/lakumjay",
-        "https://www.linkedin.com/in/lakum-jay/"
+        "https://www.linkedin.com/in/lakum-jay/",
+        "https://dev.to/lakum_jay"
       ]
     },
     {
@@ -978,6 +979,7 @@
         <p style="margin:0 0 6px">Email: <a href="mailto:jay@jaylakum.com"><b>jay@jaylakum.com</b></a></p>
         <p style="margin:0 0 6px"><a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" style="color:#25D366;font-weight:600">💬 WhatsApp: +91 6353116138</a></p>
         <p style="margin:0 0 6px"><a href="/nl/">Nederlands (NL)</a> &middot; <a href="/">English (Global)</a></p>
+        <p style="margin:0 0 6px"><a href="https://www.linkedin.com/in/lakum-jay/" target="_blank" rel="noopener me">LinkedIn</a> &middot; <a href="https://github.com/lakumjay" target="_blank" rel="noopener me">GitHub</a> &middot; <a href="https://dev.to/lakum_jay" target="_blank" rel="noopener me">DEV.to</a></p>
         <p style="margin:0">Betaalmethoden: iDEAL, SEPA, Mollie, Creditcard</p>
       </div>
     </div>

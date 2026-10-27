@@ -79,7 +79,8 @@
       "email": "jay@jaylakum.com",
       "sameAs": [
         "https://github.com/lakumjay",
-        "https://www.linkedin.com/in/lakum-jay/"
+        "https://www.linkedin.com/in/lakum-jay/",
+        "https://dev.to/lakum_jay"
       ]
     },
     {
@@ -1068,7 +1069,11 @@
             <div><dt>Team</dt><dd>India Coders — small dev team</dd></div>
             <div><dt>Working style</dt><dd>Async-first, everything in writing</dd></div>
             <div><dt>Clients</dt><dd>EU &amp; UK webshop owners</dd></div>
-            <div><dt>Contact</dt><dd><a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a></dd></div>
+            <div><dt>Contact</dt><dd><a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
+      <a href="https://wa.me/916353116138?text=Hi%20Jay,%20I%20need%20help%20with%20my%20webshop%20speed" target="_blank" rel="noopener" style="color:#25D366;font-weight:600">💬 WhatsApp</a>
+      <a href="https://www.linkedin.com/in/lakum-jay/" target="_blank" rel="noopener me">LinkedIn</a>
+      <a href="https://github.com/lakumjay" target="_blank" rel="noopener me">GitHub</a>
+      <a href="https://dev.to/lakum_jay" target="_blank" rel="noopener me">DEV.to</a></dd></div>
           </dl>
         </aside>
       </div>
@@ -1437,6 +1442,10 @@
       <a href="/privacy/">Privacy Policy</a>
       <a href="#contact">Contact</a>
       <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
+      <a href="https://wa.me/916353116138?text=Hi%20Jay,%20I%20need%20help%20with%20my%20webshop%20speed" target="_blank" rel="noopener" style="color:#25D366;font-weight:600">💬 WhatsApp</a>
+      <a href="https://www.linkedin.com/in/lakum-jay/" target="_blank" rel="noopener me">LinkedIn</a>
+      <a href="https://github.com/lakumjay" target="_blank" rel="noopener me">GitHub</a>
+      <a href="https://dev.to/lakum_jay" target="_blank" rel="noopener me">DEV.to</a>
     </nav>
   </div>
 </footer>
