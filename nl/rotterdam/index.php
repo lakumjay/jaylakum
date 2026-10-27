@@ -32,9 +32,9 @@
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://jaylakum.com/nl/" />
+<meta property="og:url" content="https://jaylakum.com/nl/rotterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
-<meta property="og:title" content="Shopify & WooCommerce Specialist Nederland — iDEAL & Snelheid" />
+<meta property="og:title" content="Shopify Specialist Rotterdam — Freelance Webshop Developer & B2B | Jay Lakum" />
 <meta property="og:description" content="Trage webshops versnellen, Mollie/iDEAL checkout reparaties en conversie-optimalisatie voor Nederlandse webwinkels. Vaste prijs vooraf." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 <meta property="og:locale" content="nl_NL" />
