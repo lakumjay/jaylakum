@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta -->
-<title>Jay Lakum — Shopify &amp; WordPress Developer for EU &amp; UK Webshops</title>
-<meta name="description" content="I fix &amp; speed up Shopify and WordPress webshops for fashion &amp; beauty stores in Europe and the UK. Speed optimization, bug fixes and redesigns — fixed quote upfront, async-first." />
+<title>⚡ Fix Shopify &amp; WooCommerce Speed in 24h | Jay Lakum</title>
+<meta name="description" content="Sub-2s mobile speed &amp; checkout bug fixes for European Shopify &amp; WooCommerce webshops. Fixed quote upfront, no hourly surprises. Fast 24-48h turnaround." />
 <meta name="keywords" content="Shopify speed optimization UK, WooCommerce speed optimization Netherlands, Shopify bug fixer London, freelance ecommerce developer, Core Web Vitals Shopify, iDEAL WooCommerce developer Amsterdam, webshop redesign fashion" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
@@ -566,6 +566,39 @@
   }
 
 </style>
+<!-- Google Rich FAQ Schema for Search Snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hoe snel kan een trage Shopify of WooCommerce webshop versneld worden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De meeste snelheidsproblemen, render-blocking scripts en ongebruikte app-resten worden binnen 24 tot 48 uur opgelost op een veilige staging omgeving, zonder live onderbreking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat kost het repareren van een haperende checkout of iDEAL/Mollie fout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ik werk uitsluitend met een vaste prijs vooraf (fixed quote upfront). Geen onverwachte uurtarieven of nacalculaties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werk je rechtstreeks op de live webshop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee, alle aanpassingen, code-opschoning en checkout tests worden eerst grondig getest op een staging/duplicaat omgeving voordat ze worden uitgerold."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1297,9 +1330,18 @@
           </form>
         </div>
         <div class="contact-side">
-          <h2>Prefer plain email?</h2>
+          <h2>Prefer plain email or WhatsApp?</h2>
           <p>Forms aren't for everyone. Email me directly with your store's URL and a line about what's wrong:</p>
           <a class="big-mail" href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
+          
+          <div style="margin:20px 0;padding:16px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px">
+            <p style="margin:0 0 10px;font-weight:600;color:var(--ink);font-size:15px">💬 Need faster answers? Message directly on WhatsApp:</p>
+            <a class="btn" href="https://wa.me/916353116138?text=Hi%20Jay,%20I%20need%20help%20with%20my%20webshop%20speed" target="_blank" rel="noopener" style="background:#25D366;color:#FFFFFF!important;display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:9px 18px;font-size:14px;border:none">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.11.82.83-3.03-.19-.3a8.217 8.217 0 0 1-1.26-4.49c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.32z"/></svg>
+              Chat on WhatsApp: +91 6353116138
+            </a>
+          </div>
+
           <p class="reply-note"><span class="tick">✓</span><span><strong>I reply within 24 hours</strong> — usually with a Free 3-Minute Video Audit of your store and honest first thoughts, whether you hire me or not.</span></p>
           <p class="reply-note"><span class="tick">✓</span><span><strong>Async-first:</strong> everything in writing, so you can read and decide in your own time. If a call would help, a member of my team will join it.</span></p>
         </div>
@@ -1333,7 +1375,7 @@
 <!-- Mobile Sticky Dual Bar -->
 <div class="sticky-mobile-bar" id="stickyMobileBar">
   <a class="btn sticky-btn-audit" href="#free-video-audit">⚡ Free Video Audit</a>
-  <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ Email</a>
+  <a class="btn btn-ghost sticky-btn-mail" href="https://wa.me/916353116138?text=Hi%20Jay,%20I%20need%20help%20with%20my%20webshop%20speed" target="_blank" rel="noopener" style="color:#25D366;border-color:rgba(37,211,102,0.4)">💬 WhatsApp</a>
 </div>
 
 <script>
@@ -1436,8 +1478,8 @@ if (hbg) {
 
 /* ---------- SEO per view ---------- */
 var META = {
-  home:     { title: "Jay Lakum — Shopify & WordPress Developer for EU & UK Webshops",
-              desc: "I fix & speed up Shopify and WordPress webshops for fashion & beauty stores in Europe and the UK. Speed optimization, bug fixes and redesigns — fixed quote upfront, async-first." },
+  home:     { title: "⚡ Fix Shopify & WooCommerce Speed in 24h | Jay Lakum",
+              desc: "Sub-2s mobile speed & checkout bug fixes for European Shopify & WooCommerce webshops. Fixed quote upfront, no hourly surprises. Fast 24-48h turnaround." },
   services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay Lakum",
               desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free 3-Minute Video Audit, written scope, fixed price, pay on delivery." },
   work:     { title: "Work — Real Live Projects | Jay Lakum",

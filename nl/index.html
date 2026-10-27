@@ -839,7 +839,7 @@
           <div id="nl-status-msg" style="display:none;padding:12px;border-radius:8px;font-size:14px;line-height:1.5;"></div>
         </form>
         <div style="text-align:center;margin-top:18px;font-size:14px;color:var(--ink-faint)">
-          Liever direct e-mailen? Stuur je winkel link naar <a href="mailto:jay@jaylakum.com"><b>jay@jaylakum.com</b></a>
+          Liever direct e-mailen of WhatsAppen? Stuur je winkel link naar <a href="mailto:jay@jaylakum.com"><b>jay@jaylakum.com</b></a> of <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" style="color:#25D366;font-weight:700">💬 Direct WhatsApp (+91 6353116138)</a>
         </div>
       </div>
     </div>
@@ -904,6 +904,7 @@
       <div style="flex:1;min-width:200px">
         <strong style="color:var(--ink);display:block;margin-bottom:8px">Contact & Info</strong>
         <p style="margin:0 0 6px">Email: <a href="mailto:jay@jaylakum.com"><b>jay@jaylakum.com</b></a></p>
+        <p style="margin:0 0 6px"><a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" style="color:#25D366;font-weight:600">💬 WhatsApp: +91 6353116138</a></p>
         <p style="margin:0 0 6px"><a href="/nl/">Nederlands (NL)</a> &middot; <a href="/">English (Global)</a></p>
         <p style="margin:0">Betaalmethoden: iDEAL, SEPA, Mollie, Creditcard</p>
       </div>
@@ -1124,7 +1125,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <!-- Mobile Sticky Dual Bar -->
 <div class="sticky-mobile-bar" id="stickyMobileBar">
   <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Video Audit</a>
-  <a class="btn btn-ghost sticky-btn-mail" href="mailto:jay@jaylakum.com">✉️ E-mail</a>
+  <a class="btn btn-ghost sticky-btn-mail" href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" style="color:#25D366;border-color:rgba(37,211,102,0.4)">💬 WhatsApp</a>
 </div>
 </body>
 </html>
