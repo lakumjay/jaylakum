@@ -68,8 +68,56 @@
   .nav-links{display:flex;gap:22px;align-items:center;font-size:15px}
   .nav-links a:hover{color:var(--gold)}
   .nav-links a.btn{color:var(--gold-btn-text)!important;background:var(--gold-btn)}
-  .btn{display:inline-flex;align-items:center;padding:10px 22px;border-radius:var(--radius);background:var(--gold-btn);color:var(--gold-btn-text)!important;font-weight:600;font-size:15px}
-  .btn:hover{background:var(--gold-deep)}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 22px;
+    border-radius:999px;
+    border:1.5px solid var(--gold);
+    background:var(--gold-btn, #E5BE72);
+    color:var(--gold-btn-text, #171410)!important;
+    font-weight:700;
+    font-size:14.5px;
+    text-decoration:none!important;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+    transition:transform .15s cubic-bezier(0.4,0,0.2,1),box-shadow .2s ease,background .2s ease,border-color .2s ease;
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    background:var(--gold-deep, #F0CE8A)!important;
+    border-color:var(--gold-deep, #F0CE8A)!important;
+    color:var(--gold-btn-text, #171410)!important;
+    box-shadow:0 8px 24px rgba(229,190,114,0.4)!important;
+    text-decoration:none!important;
+  }
+  .btn:active{
+    transform:translateY(1.5px) scale(0.98)!important;
+    box-shadow:0 2px 6px rgba(0,0,0,0.3)!important;
+    transition-duration:0.04s!important;
+  }
+  .btn-ghost, .btn-outline{
+    background:transparent!important;
+    border:1.5px solid var(--line-strong, #4A4028)!important;
+    color:var(--ink, #EDE6D6)!important;
+    box-shadow:none!important;
+  }
+  .btn-ghost:hover, .btn-outline:hover{
+    background:var(--gold-soft, #2C2517)!important;
+    border-color:var(--gold, #E5BE72)!important;
+    color:var(--gold, #E5BE72)!important;
+    box-shadow:0 6px 20px rgba(229,190,114,0.25)!important;
+    transform:translateY(-2px);
+  }
+  .btn-ghost:active, .btn-outline:active{
+    transform:translateY(1.5px) scale(0.98)!important;
+    box-shadow:0 1px 4px rgba(0,0,0,0.2)!important;
+    transition-duration:0.04s!important;
+  }
   
   .blog-head{padding:60px 0 40px;text-align:center;max-width:720px;margin:0 auto}
   .blog-head h1{font-family:var(--serif);font-size:clamp(32px,4.5vw,46px);margin:0 0 16px;line-height:1.2}
@@ -101,102 +149,6 @@
   footer.site{background:var(--bg-soft);border-top:1px solid var(--line);padding:40px 0 60px;font-size:14px;color:var(--ink-faint)}
   .foot-nav{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:16px}
   .foot-nav a:hover{color:var(--gold)}
-
-  /* ============================================================
-     PREMIUM BUTTON SYSTEM: High Contrast, Tactile Press, Rich Hover
-     ============================================================ */
-  .btn, a.btn, button.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-family: var(--sans);
-    font-weight: 700;
-    font-size: 14.5px;
-    line-height: 1.2;
-    padding: 10px 22px;
-    border-radius: 999px;
-    border: 1.5px solid var(--gold);
-    background: var(--gold-btn, #E5BE72);
-    color: var(--gold-btn-text, #171410) !important;
-    text-decoration: none !important;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-                box-shadow 0.2s ease,
-                background 0.2s ease,
-                border-color 0.2s ease,
-                color 0.2s ease;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-  }
-
-  /* Hover State: Smooth lift + warm golden glow */
-  .btn:hover, a.btn:hover, button.btn:hover {
-    transform: translateY(-2px);
-    background: var(--gold-deep, #F0CE8A) !important;
-    border-color: var(--gold-deep, #F0CE8A) !important;
-    color: var(--gold-btn-text, #171410) !important;
-    box-shadow: 0 8px 24px rgba(229, 190, 114, 0.4) !important;
-    text-decoration: none !important;
-  }
-
-  /* Active / Click State: Tactile depression feedback (User feels button pressed!) */
-  .btn:active, a.btn:active, button.btn:active {
-    transform: translateY(1.5px) scale(0.98) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-    transition-duration: 0.04s !important;
-  }
-
-  /* Focus Visible for Accessibility */
-  .btn:focus-visible, a.btn:focus-visible, button.btn:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-  }
-
-  /* Ghost / Secondary Button (e.g., 'See 3 Live Projects') - Crystal Clear Contrast */
-  .btn-ghost, a.btn-ghost, a.btn.btn-ghost,
-  .btn-outline, a.btn-outline, a.btn.btn-outline {
-    background: transparent !important;
-    border: 1.5px solid var(--line-strong, #4A4028) !important;
-    color: var(--ink, #EDE6D6) !important;
-    box-shadow: none !important;
-  }
-
-  /* Ghost Hover State */
-  .btn-ghost:hover, a.btn-ghost:hover, a.btn.btn-ghost:hover,
-  .btn-outline:hover, a.btn-outline:hover, a.btn.btn-outline:hover {
-    background: var(--gold-soft, #2C2517) !important;
-    border-color: var(--gold, #E5BE72) !important;
-    color: var(--gold, #E5BE72) !important;
-    box-shadow: 0 6px 20px rgba(229, 190, 114, 0.25) !important;
-    transform: translateY(-2px);
-  }
-
-  /* Ghost Active State */
-  .btn-ghost:active, a.btn-ghost:active, a.btn.btn-ghost:active,
-  .btn-outline:active, a.btn-outline:active, a.btn.btn-outline:active {
-    transform: translateY(1.5px) scale(0.98) !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) !important;
-    transition-duration: 0.04s !important;
-  }
-
-  /* WhatsApp Floating & Header Buttons */
-  a[href*="wa.me"].btn, .whatsapp-btn {
-    background: #25D366 !important;
-    border-color: #25D366 !important;
-    color: #FFFFFF !important;
-  }
-  a[href*="wa.me"].btn:hover, .whatsapp-btn:hover {
-    background: #20ba59 !important;
-    border-color: #20ba59 !important;
-    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4) !important;
-  }
-  a[href*="wa.me"].btn:active, .whatsapp-btn:active {
-    transform: translateY(1.5px) scale(0.98) !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
-  }
-
 </style>
 </head>
 <body>

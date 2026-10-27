@@ -593,14 +593,14 @@
       <div>
         <span class="tag" style="margin-bottom:16px">🇳🇱 Shopify & WooCommerce Specialist Nederland</span>
         <h1>Trage Webshop Versnellen of <span style="color:var(--gold-deep)">iDEAL Foutmeldingen</span> Oplossen</h1>
-        <p class="sub">Verlies geen omzet door trage mobiele laadtijden of een vastlopende kassa. Ik help Nederlandse webwinkels aan <b>snelle mobiele laadtijden (doel: sub-1.5s binnen schriftelijke scope)</b> en storingsvrije <b>iDEAL & Mollie checkouts</b>. Vaste prijs vooraf — geen uurtje-factuurtje.</p>
+        <p class="sub">Verlies geen omzet door trage mobiele laadtijden of een vastlopende kassa. Ik help Nederlandse webwinkels aan <b>snelle mobiele laadtijden (doel: sub-2.5s LCP conform Core Web Vitals)</b> en storingsvrije <b>iDEAL & Mollie checkouts</b>. Vaste prijs vooraf — geen uurtje-factuurtje.</p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn">Bereken Je Omzetverlies →</a>
           <a href="#contact" class="btn btn-ghost">Gratis Video Audit Aanvragen</a>
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (doel: sub-1.5s binnen schriftelijke scope)</span><span class="dot"></span>
+          <span>✓ Meetbare versnelling (doel: sub-2.5s LCP conform Core Web Vitals)</span><span class="dot"></span>
           <span>✓ Betalen bij oplevering</span><span class="dot"></span>
           <span>✓ iDEAL 2.0 & Mollie gereed</span>
         </div>
@@ -624,6 +624,21 @@
   <section id="calculator" class="section">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin:0 auto 36px">
+        <!-- 3-Stappen Duidelijkheid (Zero Risico) -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0;text-align:left">
+          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
+            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 1: STUUR JE WEBSHOP LINK</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Vul hieronder je webshop URL in. Geen inloggegevens of creditcard vereist.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
+            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 2: 3-MIN VIDEO AUDIT</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Binnen 24 uur ontvang je een persoonlijke Loom video analyse en vaste prijsopgave.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
+            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 3: BETALEN BIJ OPLEVERING</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Aanpassingen worden eerst op een testomgeving getest. Pas betalen na tevreden goedkeuring.</p>
+          </div>
+        </div>
         <div class="eyebrow">INTERACTIEVE TOOL VOOR WEBWINKELS</div>
         <h2>Bereken Je Potentiële Omzetverlies door Mobiele Vertraging</h2>
         <p>Onderzoek van Google &amp; Deloitte toont aan dat mobiele vertraging directe conversie kost. Bereken hier een realistische, indicatieve schatting voor jouw webshop:</p>
@@ -802,11 +817,34 @@
   <section id="faq" class="section section-soft">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin:0 auto 36px">
+        <!-- 3-Stappen Duidelijkheid (Zero Risico) -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0;text-align:left">
+          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
+            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 1: STUUR JE WEBSHOP LINK</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Vul hieronder je webshop URL in. Geen inloggegevens of creditcard vereist.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
+            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 2: 3-MIN VIDEO AUDIT</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Binnen 24 uur ontvang je een persoonlijke Loom video analyse en vaste prijsopgave.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
+            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 3: BETALEN BIJ OPLEVERING</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Aanpassingen worden eerst op een testomgeving getest. Pas betalen na tevreden goedkeuring.</p>
+          </div>
+        </div>
         <div class="eyebrow">VEELGESTELDE VRAGEN</div>
         <h2>Vragen Die Nederlandse Ondernemers Vaak Stellen</h2>
       </div>
 
       <div class="faq-wrap">
+          <details class="faq-item">
+            <summary>Je werkt vanuit India — hoe verloopt de communicatie en het tijdsverschil?</summary>
+            <p>Ik werk async-first voor Nederlandse webwinkels: duidelijke schriftelijke updates, screenshots en korte Loom video's via e-mail of WhatsApp. Mijn werktijden overlappen ruimschoots met de Nederlandse kantoortijden (CET). Mocht een video-call gewenst zijn, dan plannen we direct een Google Meet in. Je betaalt nooit voor accountmanagers of overleg-uren — alleen voor geteste resultaten op een veilige staging server.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Hoe kan ik je professionele achtergrond en identiteit verifiëren?</summary>
+            <p>Mijn professionele profiel en technische achtergrond kun je direct openbaar bekijken op <a href="https://www.linkedin.com/in/lakum-jay/" target="_blank" rel="noopener me" style="color:var(--gold);font-weight:600">LinkedIn</a>, <a href="https://github.com/lakumjay" target="_blank" rel="noopener me" style="color:var(--gold);font-weight:600">GitHub</a> en <a href="https://dev.to/lakum_jay" target="_blank" rel="noopener me" style="color:var(--gold);font-weight:600">DEV.to</a>. Bovendien loop je nul financieel risico dankzij 100% betaling bij tevreden oplevering op staging.</p>
+          </details>
         <details class="faq-item">
           <summary>Wat kost een Shopify developer of webshop versnellen in Nederland?</summary>
           <p>Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met <strong>één vaste totaalprijs</strong>. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken.</p>

@@ -778,9 +778,9 @@
       <a href="#home" data-nav="home">Home</a>
       <a href="#services" data-nav="services">Services</a>
       <a href="#work" data-nav="work">Work</a>
-      <a href="#watch" data-nav="watch">Watch</a>
+      <a href="#watch" data-nav="watch">Sample Demo</a>
       <a href="/blog/">Blog</a>
-      <a href="/nl/" class="lang-toggle-btn" title="Nederlandse versie">🇳🇱 NL</a>
+      <a href="/nl/" class="lang-toggle-btn" title="Nederlandse versie">🇳🇱 Nederlands</a>
       <a href="#free-video-audit" class="btn nav-cta">Free Video Audit</a>
     </nav>
   </div>
@@ -886,7 +886,8 @@
             </figure>
             <div class="w-top"><span class="tag">Shopify · Fashion &amp; Leather</span></div>
             <h3><a href="https://geckomonaco.com/" target="_blank" rel="noopener">Gecko Monaco</a></h3>
-            <p>Luxury leather goods brand on Shopify. Cleaned theme liquid, optimised imagery and delivered a smooth, fast mobile shopping experience.</p>
+            <p>Luxury leather goods brand on Shopify. Cleaned unused Liquid theme code, compressed product assets, and streamlined mobile navigation.</p>
+            <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Theme Liquid optimization &amp; mobile speed engineering by Jay Lakum (India Coders)</div>
             <a class="visit" href="https://geckomonaco.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
           </article>
           <article class="card work-card">
@@ -896,6 +897,7 @@
             <div class="w-top"><span class="tag">Shopify · Fragrance &amp; Beauty</span></div>
             <h3><a href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Opulentt Fragrances</a></h3>
             <p>High-end perfume brand. Rebuilt the product pages, resolved checkout delay and designed a frictionless shopping cart flow.</p>
+            <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Custom Shopify product templates &amp; checkout tuning by Jay Lakum</div>
             <a class="visit" href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
           </article>
           <article class="card work-card">
@@ -905,6 +907,7 @@
             <div class="w-top"><span class="tag">Custom Web App · PHP/Laravel</span></div>
             <h3><a href="https://postcraftai.com/" target="_blank" rel="noopener">PostCraftAI</a></h3>
             <p>Content generation tool. Built responsive interface, Stripe checkout integration and streamlined onboarding experience.</p>
+            <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Full-stack SaaS engineering (PHP/Laravel &amp; Stripe) — In-house product built by our team</div>
             <a class="visit" href="https://postcraftai.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
           </article>
         </div>
@@ -1145,6 +1148,18 @@
             </div>
             <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;box-sizing:border-box">Discuss Redesign &rarr;</a>
           </div>
+                <!-- Scope Guarantee Explanation (No Loopholes) -->
+        <div style="margin-top:32px;padding:24px 28px;background:var(--card);border:1.5px solid var(--line-strong);border-radius:14px;text-align:left">
+          <strong style="color:var(--gold-deep);font-size:16px;display:block;margin-bottom:6px">📋 What Does "Written Scope" Mean? (Total Transparency, No Loopholes)</strong>
+          <p style="margin:0 0 12px;font-size:14.5px;color:var(--ink-soft);line-height:1.6">
+            Before we touch a single line of code, we specify in writing the exact list of pages, bottlenecks, and measurable targets (e.g. sub-2.5s mobile LCP or fixing Mollie webhook drops). If we do not achieve the agreed outcome on staging, you do not pay a single euro.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13.5px;color:var(--ink);font-weight:600">
+            <span>🛡️ 14 Days Bug-Fix Warranty</span>
+            <span>🔄 30 Days Regression Protection</span>
+            <span>⚡ 100% Staging Verification Before Payment</span>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1227,6 +1242,14 @@
           <h2>Questions store owners ask me</h2>
         </div>
         <div class="faq">
+          <details class="faq-item">
+            <summary>You are based in India — how does communication and working across time zones work?</summary>
+            <p>I work async-first with European & UK store owners: you receive clear written updates, screenshots, and concise Loom screen recordings without having to sit through endless meetings. Our working hours overlap with Central European Time (CET). If an urgent discussion or video call is ever needed, we hop on Google Meet directly. You never pay for account managers or hourly retainers — only for verified results delivered safely on staging.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can I verify your professional identity and development background?</summary>
+            <p>You can inspect my verified public engineering work and professional profiles directly on <a href="https://www.linkedin.com/in/lakum-jay/" target="_blank" rel="noopener me" style="color:var(--gold);font-weight:600">LinkedIn</a>, <a href="https://github.com/lakumjay" target="_blank" rel="noopener me" style="color:var(--gold);font-weight:600">GitHub</a>, and technical writeups on <a href="https://dev.to/lakum_jay" target="_blank" rel="noopener me" style="color:var(--gold);font-weight:600">DEV.to</a>. In addition, you work with fixed deliverables and pay 100% on delivery after you test on staging, which completely protects your business.</p>
+          </details>
           <details class="faq-item">
             <summary>How long does a fix take?</summary>
             <p>It depends on the problem, and I'll always tell you upfront. A single bug fix is usually a matter of days once I've reproduced the issue; a full speed optimisation or a redesign of your key pages takes longer, and you'll get a written timeline with your quote before anything starts. If something turns out bigger than expected, I tell you before doing extra work — never after.</p>
@@ -1469,7 +1492,7 @@
             <div class="field">
               <label for="f-type">What do you need help with?</label>
               <select id="f-type" name="problem_type" required>
-                <option value="Speed optimization (Sub-1.5s Load Time)">⚡ Speed optimization (Sub-1.5s Mobile Load Time)</option>
+                <option value="Speed optimization (Sub-2.5s LCP Core Web Vitals)">⚡ Speed optimization (Sub-2.5s LCP Core Web Vitals)</option>
                 <option value="Checkout & Payment Bug Fixes (iDEAL, Mollie, Stripe)">🐛 Checkout & Payment Bug Fixes (iDEAL, Mollie, Stripe)</option>
                 <option value="Boutique Webshop Redesign (Shopify / WooCommerce)">🎨 Boutique Webshop Redesign (Shopify / WooCommerce)</option>
                 <option value="Build New Webshop / Store from Scratch">🚀 Build New Webshop / Store from Scratch</option>
@@ -1477,16 +1500,7 @@
                 <option value="Other / Custom Technical Solution">🔧 Other / Custom Technical Solution</option>
               </select>
             </div>
-            <div class="field">
-              <label for="f-budget">Project Budget Range</label>
-              <select id="f-budget" name="budget" required>
-                <option value="€300 - €750 ($350 - $800) — Quick Fix / Speed Boost">€300 - €750 ($350 - $800) — Quick Fix / Speed Boost</option>
-                <option value="€750 - €1,500 ($800 - $1,600) — Standard Fixes & Optimizations" selected>€750 - €1,500 ($800 - $1,600) — Standard Fixes & Optimizations</option>
-                <option value="€1,500 - €3,000 ($1,600 - $3,300) — Complete Redesign / New Store">€1,500 - €3,000 ($1,600 - $3,300) — Complete Redesign / New Store</option>
-                <option value="€3,000+ ($3,300+) — Enterprise Custom Webshop">€3,000+ ($3,300+) — Enterprise Custom Webshop</option>
-                <option value="Flexible / Open to Quote based on Scope">Flexible / Open to Quote based on Scope</option>
-              </select>
-            </div>
+
             <div class="field">
               <label for="f-msg">Tell me about the problem / requirement</label>
               <textarea id="f-msg" name="message" placeholder="" required></textarea>
@@ -1525,7 +1539,7 @@
     <nav aria-label="Footer navigation">
       <a href="#services">Services</a>
       <a href="#work">Work</a>
-      <a href="#watch">Watch</a>
+      <a href="#watch">Sample Demo</a>
       <a href="/blog/">Blog</a>
       <a href="/nl/" style="color:var(--gold);font-weight:600">Nederlands (NL)</a>
       <a href="/nl/amsterdam/">Amsterdam</a>

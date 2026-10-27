@@ -146,15 +146,52 @@
     display:inline-flex;
     align-items:center;
     justify-content:center;
+    gap:8px;
     padding:10px 22px;
-    border-radius:var(--radius);
-    background:var(--gold-btn);
-    color:var(--gold-btn-text)!important;
-    font-weight:600;
-    font-size:15px;
-    transition:background .2s;
+    border-radius:999px;
+    border:1.5px solid var(--gold);
+    background:var(--gold-btn, #E5BE72);
+    color:var(--gold-btn-text, #171410)!important;
+    font-weight:700;
+    font-size:14.5px;
+    text-decoration:none!important;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,0.12);
+    transition:transform .15s cubic-bezier(0.4,0,0.2,1),box-shadow .2s ease,background .2s ease,border-color .2s ease;
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
   }
-  .btn:hover{background:var(--gold-deep)}
+  .btn:hover{
+    transform:translateY(-2px);
+    background:var(--gold-deep, #F0CE8A)!important;
+    border-color:var(--gold-deep, #F0CE8A)!important;
+    color:var(--gold-btn-text, #171410)!important;
+    box-shadow:0 8px 24px rgba(229,190,114,0.4)!important;
+    text-decoration:none!important;
+  }
+  .btn:active{
+    transform:translateY(1.5px) scale(0.98)!important;
+    box-shadow:0 2px 6px rgba(0,0,0,0.3)!important;
+    transition-duration:0.04s!important;
+  }
+  .btn-ghost, .btn-outline{
+    background:transparent!important;
+    border:1.5px solid var(--line-strong, #4A4028)!important;
+    color:var(--ink, #EDE6D6)!important;
+    box-shadow:none!important;
+  }
+  .btn-ghost:hover, .btn-outline:hover{
+    background:var(--gold-soft, #2C2517)!important;
+    border-color:var(--gold, #E5BE72)!important;
+    color:var(--gold, #E5BE72)!important;
+    box-shadow:0 6px 20px rgba(229,190,114,0.25)!important;
+    transform:translateY(-2px);
+  }
+  .btn-ghost:active, .btn-outline:active{
+    transform:translateY(1.5px) scale(0.98)!important;
+    box-shadow:0 1px 4px rgba(0,0,0,0.2)!important;
+    transition-duration:0.04s!important;
+  }
   
   /* Article Container */
   .article-wrap{max-width:820px;margin:0 auto;padding:48px 24px 80px}

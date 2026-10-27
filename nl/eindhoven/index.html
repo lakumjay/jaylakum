@@ -562,7 +562,7 @@
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (doel: sub-1.5s binnen schriftelijke scope)</span><span class="dot"></span>
+          <span>✓ Meetbare versnelling (doel: sub-2.5s LCP conform Core Web Vitals)</span><span class="dot"></span>
           <span>✓ Betalen bij oplevering</span><span class="dot"></span>
           <span>✓ iDEAL 2.0 & Mollie gereed</span>
         </div>
@@ -613,50 +613,17 @@
     </div>
   </section>
 
-  <!-- Interactive Revenue Loss Calculator (Viral Traffic Magnet) -->
-  <section id="calculator" class="section">
-    <div class="wrap">
-      <div class="section-head" style="text-align:center;margin:0 auto 36px">
-        <div class="eyebrow">INTERACTIEVE TOOL VOOR WEBWINKELS</div>
-        <h2>Bereken Je Potentiële Omzetverlies door Mobiele Vertraging</h2>
-        <p>Onderzoek van Google &amp; Deloitte toont aan dat mobiele vertraging directe conversie kost. Bereken hier een realistische, indicatieve schatting voor jouw webshop:</p>
-      </div>
-
-      <div class="calc-box">
-        <div class="calc-slider-group">
-          <label>
-            <span>Maandelijkse Webshop Bezoekers</span>
-            <b id="lblVisitors" style="color:var(--gold-deep)">15.000 bezoekers</b>
-          </label>
-          <input type="range" id="rngVisitors" aria-label="Aantal maandelijkse bezoekers" min="1000" max="100000" step="1000" value="15000" oninput="updateDutchCalc()">
-        </div>
-
-        <div class="calc-slider-group">
-          <label>
-            <span>Gemiddelde Orderwaarde (AOV in €)</span>
-            <b id="lblAov" style="color:var(--gold-deep)">€65</b>
-          </label>
-          <input type="range" id="rngAov" aria-label="Gemiddelde orderwaarde" min="15" max="300" step="5" value="65" oninput="updateDutchCalc()">
-        </div>
-
-        <div class="calc-slider-group">
-          <label>
-            <span>Huidige Laadtijd op Smartphone</span>
-            <b id="lblSpeed" style="color:#b91c1c">4.2 seconden (Traag)</b>
-          </label>
-          <input type="range" id="rngSpeed" aria-label="Huidige mobiele laadtijd" min="1.5" max="7.0" step="0.1" value="4.2" oninput="updateDutchCalc()">
-        </div>
-
-        <div class="calc-result-card">
-          <span class="eyebrow" style="margin-bottom:4px;color:#c0392b">INDICATIEVE SCHATTING OMZETVERLIES</span>
-          <div class="calc-loss-val" id="calcLossVal">€1.720 / maand</div>
-          <p style="color:var(--ink-soft);font-size:15px;margin:6px 0 16px" id="calcYearlyNote">Geschat verlies op jaarbasis: <b>€20.640</b> aan potentiële bestellingen die wegklikken.</p>
-          <div style="font-size:12.5px;color:var(--ink-faint);line-height:1.55;margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;background:rgba(0,0,0,0.03);padding:10px 14px;border-radius:8px">
-            📊 <b>Methodologie &amp; Bronnen:</b> Deze berekening is een indicatieve schatting gebaseerd op het benchmarkmodel van Google / SOASTA (gemiddeld ~7% conversieverlies per seconde mobiele vertraging) en Deloitte Digital (<i>Milliseconds Make Millions</i>). Werkelijke resultaten variëren per branche, type producten en doelgroep.
-          </div>
-          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:16px;padding:10px 20px">⚡ Wil je dit omzetverlies stoppen? Vraag een Gratis 3-Minuten Video Audit aan →</a>
-        </div>
-      </div>
+  <!-- Interactieve Omzetverlies Calculator Teaser -->
+  <section class="section section-soft" style="padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap" style="text-align:center">
+      <div class="eyebrow" style="margin-bottom:8px">BEREKEN JE POTENTIËLE OMZETVERLIES</div>
+      <h3 style="font-size:24px;margin:0 0 10px">Benieuwd Hoeveel Omzet Mobiele Vertraging Jou Kost?</h3>
+      <p style="color:var(--ink-soft);font-size:16px;max-width:640px;margin:0 auto 22px;line-height:1.6">
+        Gebruik onze interactieve omzetverlies-calculator om op basis van jouw maandelijkse bezoekers en gemiddelde orderwaarde (AOV) direct het verlies door trage laadtijden te berekenen.
+      </p>
+      <a href="/nl/#calculator" class="btn btn-outline" style="font-size:15px;padding:11px 24px">
+        📊 Open De Interactieve Calculator Op De Hoofdpagina &rarr;
+      </a>
     </div>
   </section>
 
