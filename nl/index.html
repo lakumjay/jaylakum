@@ -6,12 +6,13 @@
 <meta name="color-scheme" content="light dark" />
 
 <!-- Favicon & Touch Icons -->
-<link rel=icon type=image/x-icon href=/favicon.ico />
-<link rel=icon type=image/png sizes=48x48 href=/favicon-48x48.png />
-<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png />
-<link rel=icon type=image/png sizes=192x192 href=/favicon-192x192.png />
-<link rel=icon type=image/svg+xml href=/favicon.svg />
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>Shopify & WooCommerce Specialist Nederland — iDEAL & Snelheid Optimalisatie | Jay Lakum</title>
