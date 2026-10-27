@@ -1,7 +1,16 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+$allowed_origins = [
+    'https://jaylakum.com',
+    'https://www.jaylakum.com',
+    'http://localhost',
+    'http://127.0.0.1'
+];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins, true)) {
+    header("Access-Control-Allow-Origin: $origin");
+}
 header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
 header('Content-Type: application/json; charset=UTF-8');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -18,6 +27,42 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Receive form-data or JSON payload
 $raw = file_get_contents('php://input');
 $json = json_decode($raw, true);
+
+// ==========================================
+// 🛡️ ANTI-ABUSE: IP-Based Rate Limiting
+// ==========================================
+$client_ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+$ip_hash = md5($client_ip);
+$rate_limit_dir = sys_get_temp_dir() . '/jl_rate_limits';
+if (!is_dir($rate_limit_dir)) {
+    @mkdir($rate_limit_dir, 0755, true);
+}
+$rate_file = $rate_limit_dir . '/ip_' . $ip_hash . '.json';
+$rate_data = ['count' => 0, 'first_time' => time()];
+if (file_exists($rate_file)) {
+    $raw_rate = @file_get_contents($rate_file);
+    if ($raw_rate) {
+        $parsed = json_decode($raw_rate, true);
+        if (is_array($parsed)) {
+            $rate_data = $parsed;
+        }
+    }
+}
+if (time() - ($rate_data['first_time'] ?? 0) > 3600) {
+    $rate_data = ['count' => 1, 'first_time' => time()];
+} else {
+    $rate_data['count'] = ($rate_data['count'] ?? 0) + 1;
+}
+@file_put_contents($rate_file, json_encode($rate_data), LOCK_EX);
+
+if ($rate_data['count'] > 5) {
+    http_response_code(429);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Too many requests from your IP. Please try again later.'
+    ]);
+    exit;
+}
 
 // ==========================================
 // 🛡️ ANTI-SPAM LAYER 1: Honeypot Trap
@@ -45,7 +90,7 @@ if ($form_time > 0 && ($now - $form_time >= 0) && ($now - $form_time < 1)) {
 // 🛡️ ANTI-SPAM LAYER 3: Google reCAPTCHA / Cloudflare Turnstile Support
 // ==========================================
 $recaptcha_token  = trim($json['g-recaptcha-response'] ?? $_POST['g-recaptcha-response'] ?? '');
-$recaptcha_secret = getenv('RECAPTCHA_SECRET_KEY') ?: '6LdWFgluAAAAAIWLGOoAQy_fRCviHgqDh1sYh1eS';
+$recaptcha_secret = getenv('RECAPTCHA_SECRET_KEY') ?: '';
 
 if (!empty($recaptcha_secret) && !empty($recaptcha_token)) {
     $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -62,7 +107,8 @@ if (!empty($recaptcha_secret) && !empty($recaptcha_token)) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 6);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         $verify_res = curl_exec($ch);
         curl_close($ch);
     }
@@ -104,19 +150,24 @@ if (!empty($turnstile_secret) && !empty($turnstile_token)) {
     }
 }
 
+// Helper to sanitize headers against CRLF injection
+function clean_header_val($val) {
+    return trim(str_replace(["\r", "\n", "%0a", "%0d"], '', (string)$val));
+}
+
 // ==========================================
 // Form Data Sanitization
 // ==========================================
-$lead_type    = strip_tags(trim($json['lead_type'] ?? $_POST['lead_type'] ?? 'contact_form'));
-$name         = strip_tags(trim($json['name'] ?? $_POST['name'] ?? ''));
+$lead_type    = clean_header_val(strip_tags(trim($json['lead_type'] ?? $_POST['lead_type'] ?? 'contact_form')));
+$name         = clean_header_val(strip_tags(trim($json['name'] ?? $_POST['name'] ?? '')));
 if (empty($name) && $lead_type === '3_minute_video_audit') {
     $name = 'Webshop Eigenaar (Video Audit)';
 }
-$email        = filter_var(trim($json['email'] ?? $_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
-$website      = filter_var(trim($json['website'] ?? $_POST['website'] ?? ''), FILTER_SANITIZE_URL);
-$platform     = strip_tags(trim($json['platform'] ?? $_POST['platform'] ?? ''));
-$problem_type = strip_tags(trim($json['problem_type'] ?? $_POST['problem_type'] ?? ($lead_type === '3_minute_video_audit' ? "Gratis 3-Minuten Video Audit ($platform)" : 'General Inquiry')));
-$budget       = strip_tags(trim($json['budget'] ?? $_POST['budget'] ?? 'Not Specified'));
+$email        = clean_header_val(filter_var(trim($json['email'] ?? $_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL));
+$website      = clean_header_val(filter_var(trim($json['website'] ?? $_POST['website'] ?? ''), FILTER_SANITIZE_URL));
+$platform     = clean_header_val(strip_tags(trim($json['platform'] ?? $_POST['platform'] ?? '')));
+$problem_type = clean_header_val(strip_tags(trim($json['problem_type'] ?? $_POST['problem_type'] ?? ($lead_type === '3_minute_video_audit' ? "Gratis 3-Minuten Video Audit ($platform)" : 'General Inquiry'))));
+$budget       = clean_header_val(strip_tags(trim($json['budget'] ?? $_POST['budget'] ?? 'Not Specified')));
 $message      = strip_tags(trim($json['message'] ?? $_POST['message'] ?? ''));
 
 // ==========================================
@@ -159,9 +210,9 @@ if (empty($name)) {
 // ==========================================
 $to = 'lakumjay2000@gmail.com';
 if ($lead_type === '3_minute_video_audit') {
-    $subject = "🎥 [Video Audit Request] $platform: $website ($email)";
+    $subject = clean_header_val("🎥 [Video Audit Request] $platform: $website ($email)");
 } else {
-    $subject = "🔥 [Webshop Lead] $problem_type — Budget: $budget ($name)";
+    $subject = clean_header_val("🔥 [Webshop Lead] $problem_type — Budget: $budget ($name)");
 }
 
 $lead_title  = ($lead_type === '3_minute_video_audit') ? '🎥 Nieuwe 3-Minuten Video Audit Aanvraag' : '🔥 Nieuwe Klantaanvraag (jaylakum.com)';
@@ -276,7 +327,7 @@ $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 $headers .= "From: Jay Lakum Website <leads@jaylakum.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
+$headers .= "X-Mailer: JayLakumMailer/1.0";
 
 $sent = @mail($to, $subject, $html_content, $headers);
 
@@ -375,7 +426,7 @@ if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $client_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $client_headers .= "From: Jay Lakum <jay@jaylakum.com>\r\n";
     $client_headers .= "Reply-To: jay@jaylakum.com\r\n";
-    $client_headers .= "X-Mailer: PHP/" . phpversion();
+    $client_headers .= "X-Mailer: JayLakumMailer/1.0";
 
     @mail($email, $client_subject, $client_html, $client_headers);
 }
@@ -395,7 +446,18 @@ if ($is_ajax) {
 }
 
 // Native browser POST response (clean responsive confirmation page)
-$referer = $_SERVER['HTTP_REFERER'] ?? '/';
+$raw_referer = $_SERVER['HTTP_REFERER'] ?? '/';
+$referer = '/';
+if (!empty($raw_referer)) {
+    $parsed_ref = parse_url($raw_referer);
+    if (isset($parsed_ref['host'])) {
+        if (in_array(strtolower($parsed_ref['host']), ['jaylakum.com', 'www.jaylakum.com', 'localhost'], true)) {
+            $referer = $raw_referer;
+        }
+    } elseif (strpos($raw_referer, '/') === 0) {
+        $referer = $raw_referer;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="nl">
