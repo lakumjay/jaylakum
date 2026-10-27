@@ -270,7 +270,7 @@
 
       <p><span class="step-pill">STEP 3</span> <strong>Next-Gen WebP Imagery & Responsive Breakpoints</strong></p>
       <p>
-        All hero banners and catalog imagery were converted to modern WebP with explicit width/height dimensions. We implemented native <code>srcset</code> attributes so mobile smartphones only fetch 400px wide assets instead of bloated 2400px desktop renders. This eliminated <strong>Cumulative Layout Shift (CLS: 0.00)</strong> completely.
+        All hero banners and catalog imagery were converted to modern WebP with explicit width/height dimensions. We implemented native <code>srcset</code> attributes so mobile smartphones only fetch 400px wide assets instead of bloated 2400px desktop renders. This reduced <strong>Cumulative Layout Shift (CLS: 0.01 — well below Google's 0.10 'Good' threshold)</strong>.
       </p>
 
       <p><span class="step-pill">STEP 4</span> <strong>Checkout & Payment Gateway Streamlining</strong></p>

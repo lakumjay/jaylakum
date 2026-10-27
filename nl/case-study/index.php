@@ -270,7 +270,7 @@
 
       <p><span class="step-pill">STAP 3</span> <strong>WebP Afbeeldingen &amp; Responsive Formaten</strong></p>
       <p>
-        Alle afbeeldingen werden omgezet naar geoptimaliseerd WebP-formaat met vaste afmetingen. Mobiele telefoons laden nu een compacte 400px versie in plaats van een zware 2400px desktopafbeelding. De layout shift (CLS) daalde hierdoor naar <strong>0.00</strong>.
+        Alle afbeeldingen werden omgezet naar geoptimaliseerd WebP-formaat met vaste afmetingen. Mobiele telefoons laden nu een compacte 400px versie in plaats van een zware 2400px desktopafbeelding. De layout shift (CLS) daalde hierdoor naar <strong>0.01 (ruim onder de Google-drempel van 0.10)</strong>.
       </p>
 
       <p><span class="step-pill">STAP 4</span> <strong>iDEAL &amp; Kassa-afhandeling Controleren</strong></p>

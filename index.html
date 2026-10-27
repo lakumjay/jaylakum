@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta -->
-<title>⚡ Fix Shopify &amp; WooCommerce Speed in 24h | Jay Lakum</title>
-<meta name="description" content="Sub-2s mobile speed &amp; checkout bug fixes for European Shopify &amp; WooCommerce webshops. Fixed quote upfront, no hourly surprises. Fast 24-48h turnaround." />
+<title>⚡ Shopify &amp; WooCommerce Bug Fixes (24h) &amp; Speed Sprints | Jay Lakum</title>
+<meta name="description" content="Emergency checkout &amp; bug fixes within 24-48h. Comprehensive mobile speed sprints in 3-5 days for EU webshops. Fixed quote upfront, pay on delivery." />
 <meta name="keywords" content="Shopify speed optimization UK, WooCommerce speed optimization Netherlands, Shopify bug fixer London, freelance ecommerce developer, Core Web Vitals Shopify, iDEAL WooCommerce developer Amsterdam, webshop redesign fashion" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
@@ -1115,12 +1115,9 @@
             <a class="more" href="/blog/webshop-klaarmaken-feestdagen/">Read the article →</a>
           </article>
         </div>
-        <div style="text-align:center;margin-top:24px">
-          <a class="btn" href="/blog/" style="font-size:15px;padding:10px 20px">View all 10 engineering guides &rarr;</a>
-        </div>
         <div style="text-align:center;margin-top:28px">
-          <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:10px 20px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff">
-            Explore All 10 Practical Guides &amp; Case Studies &rarr;
+          <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:12px 24px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;border-radius:8px">
+            Explore All 11 Practical Guides &amp; Case Studies &rarr;
           </a>
         </div>
       </div>
@@ -1556,8 +1553,8 @@ if (hbg) {
 
 /* ---------- SEO per view ---------- */
 var META = {
-  home:     { title: "⚡ Fix Shopify & WooCommerce Speed in 24h | Jay Lakum",
-              desc: "Sub-2s mobile speed & checkout bug fixes for European Shopify & WooCommerce webshops. Fixed quote upfront, no hourly surprises. Fast 24-48h turnaround." },
+  home:     { title: "⚡ Shopify & WooCommerce Bug Fixes (24h) & Speed Sprints | Jay Lakum",
+              desc: "Emergency checkout & bug fixes within 24-48h. Comprehensive mobile speed sprints in 3-5 days for EU webshops. Fixed quote upfront, pay on delivery." },
   services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay Lakum",
               desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free 3-Minute Video Audit, written scope, fixed price, pay on delivery." },
   work:     { title: "Work — Real Live Projects | Jay Lakum",
