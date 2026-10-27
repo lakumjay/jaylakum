@@ -401,6 +401,74 @@
     }
   }
 
+
+  /* Floating Sticky WhatsApp Highlight Button */
+  .whatsapp-float{
+    position:fixed;
+    bottom:28px;
+    right:28px;
+    z-index:999;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#25D366;
+    color:#FFFFFF!important;
+    padding:10px 20px 10px 14px;
+    border-radius:999px;
+    font-size:14.5px;
+    font-weight:700;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    text-decoration:none!important;
+    box-shadow:0 8px 24px rgba(37,211,102,.45),0 2px 8px rgba(0,0,0,.18);
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .whatsapp-float:hover{
+    transform:scale(1.05) translateY(-2px);
+    box-shadow:0 12px 30px rgba(37,211,102,.6),0 4px 12px rgba(0,0,0,.22);
+    color:#FFFFFF!important;
+  }
+  .whatsapp-float svg{
+    width:24px;
+    height:24px;
+    flex-shrink:0;
+    fill:#FFFFFF;
+  }
+  .whatsapp-float .wa-pulse{
+    position:absolute;
+    inset:-3px;
+    border-radius:999px;
+    border:2px solid #25D366;
+    animation:waPulse 2.4s infinite ease-out;
+    pointer-events:none;
+  }
+  @keyframes waPulse{
+    0%{transform:scale(1);opacity:.8}
+    70%{transform:scale(1.12,1.25);opacity:0}
+    100%{transform:scale(1.12,1.25);opacity:0}
+  }
+  @media(max-width:720px){
+    .whatsapp-float{
+      bottom:76px;
+      right:16px;
+      padding:0;
+      width:52px;
+      height:52px;
+      justify-content:center;
+      border-radius:50%;
+    }
+    .whatsapp-float .wa-text{display:none}
+    .whatsapp-float svg{width:28px;height:28px}
+    .whatsapp-float .wa-pulse{
+      inset:-4px;
+      border-radius:50%;
+    }
+    @keyframes waPulse{
+      0%{transform:scale(1);opacity:.8}
+      70%{transform:scale(1.25);opacity:0}
+      100%{transform:scale(1.25);opacity:0}
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -623,7 +691,7 @@
               <li><b>Testtransactie:</b> Uitvoeren van een gecontroleerde live testtransactie ter verificatie.</li>
               <li><b>Heldere Rapportage:</b> Exact weten wat de oorzaak was zodat het nooit meer terugkomt.</li>
             </ol>
-            <div class="tag" style="background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7">Resultaatgarantie op basis van vooraf overeengekomen schriftelijke scope</div>
+            <div class="tag" style="background:var(--gold-soft);color:var(--ink);border:1px solid var(--line-strong);font-weight:600">🛡️ Resultaatgarantie op basis van vooraf overeengekomen schriftelijke scope</div>
           </div>
         </div>
       </div>
@@ -1127,5 +1195,12 @@ document.addEventListener('DOMContentLoaded', function(){
   <a class="btn sticky-btn-audit" href="#gratis-audit">⚡ Gratis Video Audit</a>
   <a class="btn btn-ghost sticky-btn-mail" href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" style="color:#25D366;border-color:rgba(37,211,102,0.4)">💬 WhatsApp</a>
 </div>
+<!-- Floating Sticky WhatsApp Highlight Button -->
+<a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat direct via WhatsApp" title="Chat direct via WhatsApp">
+  <span class="wa-pulse"></span>
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84a8.19 8.19 0 0 1-5.82 2.41h-.01c-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.11.82.83-3.03-.19-.3a8.217 8.217 0 0 1-1.26-4.49c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.07-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.12-.22-.19-.47-.32z"/></svg>
+  <span class="wa-text">WhatsApp</span>
+</a>
+
 </body>
 </html>
