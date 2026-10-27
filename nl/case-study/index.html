@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Case Study: Webshop Snelheid van 6.1s naar 2.2s (+34% Conversie) | Jay Lakum</title>
-<meta name="description" content="Stap-voor-stap technische case study: Hoe we 140KB aan achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en conversie met +34% verhoogden." />
+<meta name="description" content="Stap-voor-stap technische case study: Hoe we achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en conversie met +34% verhoogden." />
 <link rel="canonical" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
@@ -211,7 +211,7 @@
     <span class="tag">GEVERIFIEERDE CASE STUDY &middot; WEBSHOP SNELHEID</span>
     <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s (+34% Conversie)</h1>
     <p class="case-summary">
-      Een Europese mode- en accessoires webshop verloor waardevolle mobiele bestellingen door trage laadtijden aan een trage laadpagina. Hier is het exacte stappenplan waarmee we 140KB aan achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
+      Een Europese mode- en accessoires webshop verloor waardevolle mobiele bestellingen door trage laadtijden aan een trage laadpagina. Hier is het exacte stappenplan waarmee we achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
     </p>
 
     <!-- Metrics Highlights -->
@@ -316,6 +316,7 @@
       <a href="/blog/">Kennisbank</a>
       <a href="/nl/amsterdam/">Amsterdam</a>
       <a href="/nl/rotterdam/">Rotterdam</a>
+      <a href="/privacy/">Privacybeleid</a>
       <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
     </div>
   </div>

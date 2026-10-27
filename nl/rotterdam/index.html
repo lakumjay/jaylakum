@@ -150,10 +150,10 @@
         },
         {
           "@type": "Question",
-          "name": "Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?",
+          "name": "Waarom kies ik voor Jay Lakum en niet een log Rotterdams e-commerce bureau?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "Grote bureaus in de Maasstad hebben vaak lange doorlooptijden, meerdere managementlagen en hoge uurtarieven. Rotterdamse ondernemers houden van duidelijkheid: je communiceert direct met de programmeur die aan je code werkt. Je krijgt vooraf een vaste prijs, een heldere scope en een veilige staging oplevering."
           }
         },
         {
@@ -305,9 +305,7 @@
   }
   .calc-slider-group{margin-bottom:24px}
   .calc-slider-group label{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:8px}
-  .calc-slider-group input[type="range"]{
-    width:100%;height:8px;border-radius:4px;background:var(--line);accent-color:var(--gold);cursor:pointer;
-  }
+  /* mobile-optimized range thumb active */
   .calc-result-card{
     background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:12px;
     padding:26px;text-align:center;margin-top:28px;
@@ -476,11 +474,11 @@
       <div>
         <div class="card" style="border-left:4px solid var(--gold)">
           <div class="eyebrow" style="margin-bottom:10px">VOOR NEDERLANDSE WEBSHOPS</div>
-          <h3 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Bureau, Wel Topkwaliteit</h3>
-          <p>Veel Nederlandse webdesignbureaus rekenen €95 tot €150 per uur voor basisaanpassingen. Als freelance developer werk ik direct met de eigenaar, zonder accountmanagers of overhead:</p>
+          <h3 style="font-size:24px;margin-bottom:14px">Directe Rotterdamse Aanpak: Niet Lullen, Maar Poetsen</h3>
+          <p>Geen log bureau met dure accountmanagers of eindeloze vergaderingen. In Rotterdam draait het om no-nonsense resultaat en webwinkels die snel en stabiel converteren:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
-            <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile (binnen schriftelijke scope).</li>
-            <li><b>Mollie & iDEAL Specialist:</b> Geen mislukte transacties meer.</li>
+            <li><b>Core Web Vitals Focus:</b> Snelle mobiele laadtijden (doel: sub-1.5s binnen schriftelijke scope).</li>
+            <li><b>ERP, PostNL & Mollie Expert:</b> Probleemloze synchronisatie en orderverwerking zonder haperingen.</li>
             <li><b>Veilig op Staging:</b> Je live webshop blijft 100% online verkopen.</li>
           </ul>
         </div>
@@ -506,8 +504,15 @@
           <p style="margin:0">Als je WooCommerce of Shopify webshop tijdens piekuren of marketingcampagnes vastloopt bij het verwerken van bestellingen, kost dat direct omzet en klantvertrouwen. Ik optimaliseer database queries, herstel vastlopende Mollie webhook verzoeken en richt de checkout flow in op maximale stabiliteit en snelle laadtijden (gericht op sub-1.5s binnen overeengekomen scope) ook bij piekverkeer.</p>
         </div>
       </div>
-      <div style="margin-top:20px;padding:18px 24px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-        <p style="margin:0;font-size:16px;color:var(--ink)">🤝 <b>Directe Samenwerking:</b> Transparant en betrouwbaar: we leggen vooraf vast wat er moet gebeuren tegen één vaste prijs. Geen onverwachte nacalculaties, maar een webshop die gebouwd is om soepel mee te schalen met je Rotterdamse groeiambities.</p>
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">📦 Praktijkvoorbeeld Rotterdam & Rijnmond B2B/Wholesale:</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor een groothandel in de Spaanse Polder bleef de winkelwagen haperen door synchrone PostNL tariefberekeningen en Exact Online voorraadchecks. Door transient caching en asynchrone orderverwerking daalde de winkelwagen-laadtijd van 3.9s naar 0.8s.</p>
+        </div>
+        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Vaste prijs vooraf, staging omgeving voor veilige testen en betalen bij oplevering. Geen nacalculatie of uurtje-factuurtje.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -655,9 +660,9 @@
         </details>
 
         <details class="faq-item">
-          <summary>Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?</summary>
-          <p>Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij mij heb je direct contact met de developer die het werk zelf uitvoert. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
-        </details>
+            <summary>Waarom kies ik voor Jay Lakum en niet een log Rotterdams e-commerce bureau?</summary>
+            <p>Grote bureaus in de Maasstad hebben vaak lange doorlooptijden, meerdere managementlagen en hoge uurtarieven. Rotterdamse ondernemers houden van duidelijkheid: je communiceert direct met de programmeur die aan je code werkt. Je krijgt vooraf een vaste prijs, een heldere scope en een veilige staging oplevering.</p>
+          </details>
 
         <details class="faq-item">
           <summary>Hoe snel kan mijn webshop versneld of gerepareerd worden?</summary>
@@ -799,7 +804,7 @@
       </div>
     </div>
     <div style="border-top:1px solid var(--line);padding-top:20px;text-align:center">
-      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa.</p>
+      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa. &middot; <a href="/privacy/" style="color:var(--ink-soft);text-decoration:underline">Privacybeleid</a> &middot; <a href="/nl/case-study/" style="color:var(--ink-soft);text-decoration:underline">Case Study</a></p>
     </div>
   </div>
 </footer>

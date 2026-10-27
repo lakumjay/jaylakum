@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Case Study: 6.1s to 2.2s Mobile Speed Fix (+34% Conversions) | Jay Lakum</title>
-<meta name="description" content="Step-by-step technical case study: How we stripped 140KB of ghost app code, fixed render-blocking CSS, and reduced mobile LCP from 6.1s to 2.2s for an EU fashion boutique." />
+<meta name="description" content="Step-by-step technical case study: How we stripped leftover app code, fixed render-blocking CSS, and reduced mobile LCP from 6.1s to 2.2s for an EU fashion boutique." />
 <link rel="canonical" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
@@ -211,7 +211,7 @@
     <span class="tag">VERIFIED CASE STUDY &middot; SHOPIFY PERFORMANCE</span>
     <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique</h1>
     <p class="case-summary">
-      A high-end European apparel and accessories store was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated 140KB of ghost scripts, optimized critical rendering, and increased checkout completion by +34%.
+      A high-end European apparel and accessories store was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated leftover app scripts, optimized critical rendering, and increased checkout completion by +34%.
     </p>
 
     <!-- Metrics Highlights -->
@@ -249,7 +249,7 @@
       </p>
       <ul>
         <li><strong>Ghost Liquid & JS Tags:</strong> Over 18 months, the merchant had tested and uninstalled 9 different Shopify apps (currency switchers, abandoned cart popups, bundle bars). None of them had cleaned up their assets from <code>theme.liquid</code>, injecting render-blocking JavaScript and unnecessary DNS lookups on every page load.</li>
-        <li><strong>Massive Hero Imagery:</strong> The homepage and category banners were loading uncompressed 4.2MB PNG images directly onto mobile viewports without responsive <code>&lt;picture&gt;</code> tags or WebP formatting.</li>
+        <li><strong>Massive Hero Imagery:</strong> The homepage and category banners were loading uncompressed high-resolution PNG images directly onto mobile viewports without responsive <code>&lt;picture&gt;</code> tags or WebP formatting.</li>
         <li><strong>Render-Blocking Font Loading:</strong> Three separate Google Font families were loaded synchronously via <code>@import</code>, delaying First Contentful Paint by 2.4 seconds on mobile 4G networks.</li>
       </ul>
 
@@ -301,7 +301,7 @@
       <span class="tag">READY TO SPEED UP YOUR WEBSHOP?</span>
       <h2>Get a Free 3-Minute Video Audit of Your Store</h2>
       <p>I will personally review your Shopify or WooCommerce store, record a 3-minute Loom video breaking down your top bottlenecks, and calculate your exact speed improvement potential. No obligations.</p>
-      <a href="/#free-video-audit" class="btn" style="font-size:16px;padding:10px 18px 32px">Request Your Free Free Video Audit &rarr;</a>
+      <a href="/#free-video-audit" class="btn" style="font-size:16px;padding:10px 18px 32px">Request Your Free Video Audit &rarr;</a>
     </div>
   </article>
 </main>
@@ -316,6 +316,7 @@
       <a href="/blog/">Engineering Blog</a>
       <a href="/nl/amsterdam/">Amsterdam</a>
       <a href="/nl/rotterdam/">Rotterdam</a>
+      <a href="/privacy/">Privacy Policy</a>
       <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
     </div>
   </div>

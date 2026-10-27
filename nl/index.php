@@ -322,9 +322,7 @@
     border: 2px solid #FFFFFF; box-shadow: 0 2px 6px rgba(0,0,0,0.25); cursor: pointer;
   }
 
-  .calc-slider-group input[type="range"]{
-    width:100%;height:8px;border-radius:4px;background:var(--line);accent-color:var(--gold);cursor:pointer;
-  }
+  /* mobile-optimized range thumb active */
   .calc-result-card{
     background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:12px;
     padding:26px;text-align:center;margin-top:28px;
@@ -984,7 +982,7 @@
       </div>
     </div>
     <div style="border-top:1px solid var(--line);padding-top:20px;text-align:center">
-      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa.</p>
+      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa. &middot; <a href="/privacy/" style="color:var(--ink-soft);text-decoration:underline">Privacybeleid</a> &middot; <a href="/nl/case-study/" style="color:var(--ink-soft);text-decoration:underline">Case Study</a></p>
     </div>
   </div>
 </footer>

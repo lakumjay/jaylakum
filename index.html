@@ -790,7 +790,7 @@
             </figure>
             <div class="w-top"><span class="tag">Shopify · Fashion &amp; Leather</span></div>
             <h3><a href="https://geckomonaco.com/" target="_blank" rel="noopener">Gecko Monaco</a></h3>
-            <p>Luxury leather goods brand on Shopify. Cleaned theme liquid, optimised imagery and achieved a sub-1.5s mobile experience.</p>
+            <p>Luxury leather goods brand on Shopify. Cleaned theme liquid, optimised imagery and delivered a smooth, fast mobile shopping experience.</p>
             <a class="visit" href="https://geckomonaco.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
           </article>
           <article class="card work-card">
@@ -828,7 +828,7 @@
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:22px">
             <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:700;color:#991b1b;margin-bottom:6px">1. THE PROBLEM</div>
-              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Store lost 60%+ mobile traffic before product images finished rendering. 9 abandoned Shopify apps left 140KB of ghost JavaScript blocking the main thread.</p>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">High mobile bounce rate before product images finished rendering. abandoned Shopify apps left leftover JavaScript blocking the main thread.</p>
             </div>
             <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">2. THE FIX</div>
@@ -836,7 +836,7 @@
             </div>
             <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:6px">3. THE RESULT</div>
-              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile PageSpeed score leaped from 38 to 96. Mobile checkout completion jumped by +34% within 30 days. Tested on staging with zero live store downtime.</p>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile checkout completion jumped by +34% within 30 days. Tested on staging with zero live store downtime.</p>
             </div>
           </div>
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:10px 18px 18px;border-radius:10px">
@@ -1036,7 +1036,7 @@
               <h3 style="font-size:20px;margin:0 0 10px">Boutique Webshop Redesign</h3>
               <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€1,490 – €2,800 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ fixed quote</span></div>
               <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
-                Turn your store into a fast, premium converting brand destination. Custom sections, frictionless checkout, and sub-second page switching.
+                Turn your store into a fast, premium converting brand destination. Custom sections, frictionless checkout, and fast, seamless page switching.
               </p>
               <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;line-height:1.8;color:var(--ink)">
                 <li>✓ High-end typography &amp; mobile UX</li>
@@ -1117,7 +1117,7 @@
         </div>
         <div style="text-align:center;margin-top:28px">
           <a href="/blog/" class="btn" style="display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:12px 24px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;border-radius:8px">
-            Explore All 11 Practical Guides &amp; Case Studies &rarr;
+            Explore All Practical Guides &amp; Case Studies &rarr;
           </a>
         </div>
       </div>

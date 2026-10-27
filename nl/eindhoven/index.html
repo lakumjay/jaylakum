@@ -150,10 +150,10 @@
         },
         {
           "@type": "Question",
-          "name": "Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?",
+          "name": "Waarom kies ik voor Jay Lakum en niet een agency in Brainport Eindhoven?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "In de hightech regio Eindhoven wil je geen wollige marketingpraatjes maar concrete code-optimalisatie: vermindering van Total Blocking Time, opschonen van overtollige scripts en herstel van trage API-koppelingen. Ik bied die diepe technische expertise direct, flexibel en met betaling pas bij oplevering."
           }
         },
         {
@@ -305,9 +305,7 @@
   }
   .calc-slider-group{margin-bottom:24px}
   .calc-slider-group label{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:8px}
-  .calc-slider-group input[type="range"]{
-    width:100%;height:8px;border-radius:4px;background:var(--line);accent-color:var(--gold);cursor:pointer;
-  }
+  /* mobile-optimized range thumb active */
   .calc-result-card{
     background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:12px;
     padding:26px;text-align:center;margin-top:28px;
@@ -476,12 +474,12 @@
       <div>
         <div class="card" style="border-left:4px solid var(--gold)">
           <div class="eyebrow" style="margin-bottom:10px">VOOR NEDERLANDSE WEBSHOPS</div>
-          <h3 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Bureau, Wel Topkwaliteit</h3>
-          <p>Veel Nederlandse webdesignbureaus rekenen €95 tot €150 per uur voor basisaanpassingen. Als freelance developer werk ik direct met de eigenaar, zonder accountmanagers of overhead:</p>
+          <h3 style="font-size:24px;margin-bottom:14px">High-Tech Webshop Prestaties Zonder Trage Bureau-Lagen</h3>
+          <p>In de Brainport regio Eindhoven verwachten klanten feilloze digitale ervaringen. Als technische specialist optimaliseer ik zware JavaScript-frameworks en complexe webshops:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
-            <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile (binnen schriftelijke scope).</li>
-            <li><b>Mollie & iDEAL Specialist:</b> Geen mislukte transacties meer.</li>
-            <li><b>Veilig op Staging:</b> Je live webshop blijft 100% online verkopen.</li>
+            <li><b>Core Web Vitals Focus:</b> Technische optimalisatie van scripts, apps en zware thema's.</li>
+            <li><b>Complexe Filters & Configuraties:</b> Snelle interacties zonder vastlopers.</li>
+            <li><b>Veilig op Staging:</b> Zorgeloze updates en implementaties.</li>
           </ul>
         </div>
       </div>
@@ -506,8 +504,15 @@
           <p style="margin:0">Ik help Eindhovense tech- en e-commerce bedrijven met geavanceerde frontend functionaliteiten: interactieve productconfiguratoren, custom filters, headless Shopify Storefront API koppelingen en razendsnelle Time to First Byte (TTFB).</p>
         </div>
       </div>
-      <div style="margin-top:20px;padding:18px 24px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-        <p style="margin:0;font-size:16px;color:var(--ink)">🤝 <b>Directe Samenwerking:</b> Geen standaard templates die iedereen al gebruikt, maar schone, modulaire code die meegroeit met je technologische innovaties. Vaste projectprijzen, directe communicatie met de programmeur en binnen 24-48 uur antwoord.</p>
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">⚙️ Praktijkvoorbeeld Brainport Tech Retail:</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Een tech-hardware webwinkel in Eindhoven met complexe productvarianten en 3D-renders had last van hoge Total Blocking Time (TBT > 1200ms). Door code splitting, deferring van non-critical scripts en caching van facet-filters daalde TBT naar < 150ms.</p>
+        </div>
+        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Vaste prijs vooraf, staging omgeving voor veilige testen en betalen bij oplevering. Geen nacalculatie of uurtje-factuurtje.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -655,9 +660,9 @@
         </details>
 
         <details class="faq-item">
-          <summary>Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?</summary>
-          <p>Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij mij heb je direct contact met de developer die het werk zelf uitvoert. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
-        </details>
+            <summary>Waarom kies ik voor Jay Lakum en niet een agency in Brainport Eindhoven?</summary>
+            <p>In de hightech regio Eindhoven wil je geen wollige marketingpraatjes maar concrete code-optimalisatie: vermindering van Total Blocking Time, opschonen van overtollige scripts en herstel van trage API-koppelingen. Ik bied die diepe technische expertise direct, flexibel en met betaling pas bij oplevering.</p>
+          </details>
 
         <details class="faq-item">
           <summary>Hoe snel kan mijn webshop versneld of gerepareerd worden?</summary>
@@ -799,7 +804,7 @@
       </div>
     </div>
     <div style="border-top:1px solid var(--line);padding-top:20px;text-align:center">
-      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa.</p>
+      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa. &middot; <a href="/privacy/" style="color:var(--ink-soft);text-decoration:underline">Privacybeleid</a> &middot; <a href="/nl/case-study/" style="color:var(--ink-soft);text-decoration:underline">Case Study</a></p>
     </div>
   </div>
 </footer>

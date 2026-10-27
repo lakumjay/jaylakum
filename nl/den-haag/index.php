@@ -150,10 +150,10 @@
         },
         {
           "@type": "Question",
-          "name": "Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?",
+          "name": "Waarom kies ik voor Jay Lakum en niet een bureau in Den Haag of het Westland?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "Haagse en Westlandse retailers hebben behoefte aan snelle schakeltijden en robuuste techniek voor zowel consumenten als B2B-klanten. In plaats van wekenlange offerte-trajecten bij een traditioneel bureau, analyseer ik je webshop binnen 24 uur en werk ik op basis van duidelijke garanties en vaste deliverables."
           }
         },
         {
@@ -305,9 +305,7 @@
   }
   .calc-slider-group{margin-bottom:24px}
   .calc-slider-group label{display:flex;justify-content:space-between;font-weight:600;font-size:15px;margin-bottom:8px}
-  .calc-slider-group input[type="range"]{
-    width:100%;height:8px;border-radius:4px;background:var(--line);accent-color:var(--gold);cursor:pointer;
-  }
+  /* mobile-optimized range thumb active */
   .calc-result-card{
     background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:12px;
     padding:26px;text-align:center;margin-top:28px;
@@ -476,12 +474,12 @@
       <div>
         <div class="card" style="border-left:4px solid var(--gold)">
           <div class="eyebrow" style="margin-bottom:10px">VOOR NEDERLANDSE WEBSHOPS</div>
-          <h3 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Bureau, Wel Topkwaliteit</h3>
-          <p>Veel Nederlandse webdesignbureaus rekenen €95 tot €150 per uur voor basisaanpassingen. Als freelance developer werk ik direct met de eigenaar, zonder accountmanagers of overhead:</p>
+          <h3 style="font-size:24px;margin-bottom:14px">Betrouwbare E-Commerce Ontwikkeling Zonder Bureau-Overhead</h3>
+          <p>Voor webshops in de Haagse regio en het Westland telt betrouwbaarheid, meertalige conversie en veilige betalingsafhandeling. Direct contact met de developer die het bouwt:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
-            <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile (binnen schriftelijke scope).</li>
-            <li><b>Mollie & iDEAL Specialist:</b> Geen mislukte transacties meer.</li>
-            <li><b>Veilig op Staging:</b> Je live webshop blijft 100% online verkopen.</li>
+            <li><b>Core Web Vitals Focus:</b> Hoge mobiele snelheid voor zowel lokale als internationale kopers.</li>
+            <li><b>Mollie, iDEAL & Bancontact:</b> Naadloze checkout voor de hele Benelux.</li>
+            <li><b>Veilig op Staging:</b> Volledig getest op een afgeschermde testomgeving.</li>
           </ul>
         </div>
       </div>
@@ -506,8 +504,15 @@
           <p style="margin:0">Veel webwinkeliers ervaren onverklaarbare drop-offs bij de kassa: klanten die proberen te betalen met iDEAL of Bancontact, maar vastlopen op een blanco scherm of een timeout foutmelding. Ik duik diep in de API-logs van Mollie, Stripe en WooCommerce om checkout bottlenecks permanent te verhelpen.</p>
         </div>
       </div>
-      <div style="margin-top:20px;padding:18px 24px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-        <p style="margin:0;font-size:16px;color:var(--ink)">🤝 <b>Directe Samenwerking:</b> Jouw klanten verwachten een vlekkeloze, veilige winkelervaring. Ik zorg voor waterdichte security headers, geoptimaliseerde cookie-handling en een afrekenproces dat zonder enige hapering converteert.</p>
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🏛️ Praktijkvoorbeeld Haags & Westlands E-Commerce:</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor een internationale speciaalzaak in Den Haag met klanten in heel Europa zorgde een herinrichting van de meertalige Mollie checkout (iDEAL + Bancontact) en het oplossen van JavaScript-conflicten voor een 100% succesvolle orderverwerking zonder spookorders.</p>
+        </div>
+        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Vaste prijs vooraf, staging omgeving voor veilige testen en betalen bij oplevering. Geen nacalculatie of uurtje-factuurtje.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -655,9 +660,9 @@
         </details>
 
         <details class="faq-item">
-          <summary>Waarom kies ik voor Jay Lakum en niet een lokaal Amsterdams bureau?</summary>
-          <p>Grote bureaus hebben kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij mij heb je direct contact met de developer die het werk zelf uitvoert. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
-        </details>
+            <summary>Waarom kies ik voor Jay Lakum en niet een bureau in Den Haag of het Westland?</summary>
+            <p>Haagse en Westlandse retailers hebben behoefte aan snelle schakeltijden en robuuste techniek voor zowel consumenten als B2B-klanten. In plaats van wekenlange offerte-trajecten bij een traditioneel bureau, analyseer ik je webshop binnen 24 uur en werk ik op basis van duidelijke garanties en vaste deliverables.</p>
+          </details>
 
         <details class="faq-item">
           <summary>Hoe snel kan mijn webshop versneld of gerepareerd worden?</summary>
@@ -799,7 +804,7 @@
       </div>
     </div>
     <div style="border-top:1px solid var(--line);padding-top:20px;text-align:center">
-      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa.</p>
+      <p>© 2026 Jay Lakum &middot; E-Commerce Performance Specialist voor Nederland & Europa. &middot; <a href="/privacy/" style="color:var(--ink-soft);text-decoration:underline">Privacybeleid</a> &middot; <a href="/nl/case-study/" style="color:var(--ink-soft);text-decoration:underline">Case Study</a></p>
     </div>
   </div>
 </footer>

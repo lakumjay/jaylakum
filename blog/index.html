@@ -8,13 +8,7 @@
 <link rel="canonical" href="https://jaylakum.com/blog/" />
 
 <!-- Favicon -->
-<!-- Favicon & Touch Icons -->
-<link rel=icon type=image/x-icon href=/favicon.ico />
-<link rel=icon type=image/png sizes=48x48 href=/favicon-48x48.png />
-<link rel=icon type=image/png sizes=96x96 href=/favicon-96x96.png />
-<link rel=icon type=image/png sizes=192x192 href=/favicon-192x192.png />
-<link rel=icon type=image/svg+xml href=/favicon.svg />
-<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/favicon.svg" />
 
@@ -113,7 +107,7 @@
 
 <header class="site">
   <div class="wrap head-row">
-    <a class="brand" href="/" style="display:inline-flex;align-items:center;gap:8px;"><img src="/favicon.svg" alt="Jay Lakum Logo" width="28" height="28" style="width:28px;height:28px;border-radius:6px;display:inline-block;" /><span>Jay <span>Lakum</span></span></a>
+    <a class="brand" href="/">Jay <span>lakum</span></a>
     <nav class="nav-links">
       <a href="/#home">Home</a>
       <a href="/#services">Services</a>
@@ -134,6 +128,24 @@
 
   <div class="grid" id="blogGrid">
     
+        <article class="card" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <a href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:14px;background:var(--bg-soft)">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGRHcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNENEFGNjciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQTk4NTQ4Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgZmlsbD0idXJsKCNiZykiLz4KICA8ZyBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSI+CiAgICA8bGluZSB4MT0iMCIgeTE9IjkwIiB4Mj0iODAwIiB5Mj0iOTAiLz4KICAgIDxsaW5lIHgxPSIwIiB5MT0iMTgwIiB4Mj0iODAwIiB5Mj0iMTgwIi8+CiAgICA8bGluZSB4MT0iMCIgeTE9IjI3MCIgeDI9IjgwMCIgeTI9IjI3MCIvPgogICAgPGxpbmUgeDE9IjAiIHkxPSIzNjAiIHgyPSI4MDAiIHkyPSIzNjAiLz4KICAgIDxsaW5lIHgxPSIxNjAiIHkxPSIwIiB4Mj0iMTYwIiB5Mj0iNDUwIi8+CiAgICA8bGluZSB4MT0iMzIwIiB5MT0iMCIgeDI9IjMyMCIgeTI9IjQ1MCIvPgogICAgPGxpbmUgeDE9IjQ4MCIgeTE9IjAiIHgyPSI0ODAiIHkyPSI0NTAiLz4KICAgIDxsaW5lIHgxPSI2NDAiIHkxPSIwIiB4Mj0iNjQwIiB5Mj0iNDUwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjcwIiB5PSI3MCIgd2lkdGg9IjY2MCIgaGVpZ2h0PSIzMTAiIHJ4PSIxNCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxyZWN0IHg9IjExMCIgeT0iMTIwIiB3aWR0aD0iMTk1IiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgyMTIsMTc1LDEwMywwLjEyKSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsMTAzLDAuMykiIHN0cm9rZS13aWR0aD0iMSIvPgogIDx0ZXh0IHg9IjEyNSIgeT0iMTQzIiBmaWxsPSIjRDRBRjY3IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSIxIj5MT0dJU1RJRUsgJmFtcDsgRVJQPC90ZXh0PgogIDxyZWN0IHg9IjMxNSIgeT0iMTIwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjM2IiByeD0iNiIgZmlsbD0icmdiYSgxNiwxODUsMTI5LDAuMTIpIiBzdHJva2U9InJnYmEoMTYsMTg1LDEyOSwwLjMpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSIzMzAiIHk9IjE0MyIgZmlsbD0iIzEwQjk4MSIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNzAwIiBsZXR0ZXItc3BhY2luZz0iMC41Ij7inJMgUE9TVE5MICZhbXA7IEVYQUNUIE9OTElORTwvdGV4dD4KICA8dGV4dCB4PSIxMTAiIHk9IjIxMCIgZmlsbD0iI0Y1RjJFQiIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjUiIGZvbnQtd2VpZ2h0PSI3MDAiPlRyYWdlIFdvb0NvbW1lcmNlIFdpbmtlbHdhZ2VuIEZpeGVuPC90ZXh0PgogIDx0ZXh0IHg9IjExMCIgeT0iMjUwIiBmaWxsPSIjOUM5NDg1IiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiPlBvc3ROTCAmYW1wOyBFeGFjdCBPbmxpbmUga25lbHB1bnRlbiBpbiBSb3R0ZXJkYW0gZS1jb21tZXJjZSDCtyBKYXkgTGFrdW08L3RleHQ+CiAgPGxpbmUgeDE9IjExMCIgeTE9IjI5MCIgeDI9IjY5MCIgeTI9IjI5MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8dGV4dCB4PSIxMTAiIHk9IjMzMCIgZmlsbD0idXJsKCNnb2xkR3JhZCkiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjYwMCI+4pyTIFZhc3RlIHByaWpzIHZvb3JhZiAmbWlkZG90OyBEaXJlY3QgY29udGFjdCBtZXQgZGV2ZWxvcGVyICZtaWRkb3Q7IEdlZW4gdXVydGplLWZhY3R1dXJ0amU8L3RleHQ+Cjwvc3ZnPg==" alt="Trage WooCommerce winkelwagen versnellen met PostNL en Exact Online koppelingen" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;transition:transform .2s ease;" loading="lazy" />
+            </a>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+              <span class="p-cat">WooCommerce &middot; PostNL &amp; ERP Integraties</span>
+              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">🇬🇧 EN</span>
+            </div>
+            <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/">Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond</a></h2>
+            <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op.</p>
+          </div>
+          <div>
+            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:10px">October 2026 · 5 min leestijd</p>
+            <a class="more" href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" style="font-size:15px;font-weight:600;color:var(--gold)">Read article →</a>
+          </div>
+        </article>
+        
         <article class="card" style="display:flex;flex-direction:column;justify-content:space-between">
           <div>
             <a href="/blog/webshop-klaarmaken-feestdagen/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:14px;background:var(--bg-soft)">
