@@ -63,7 +63,7 @@ def render_article_page(article, all_articles):
     excerpt = article.get("excerpt", "")
     body = article.get("body", "")
     
-    is_dutch = "Nederland" in category or "nederland" in slug or "webshop-klaarmaken" in slug
+    is_dutch = any(w in slug for w in ["mollie", "shopify-apps-vertragen", "webshop-klaarmaken", "nederland", "trage", "postnl", "winkelwagen"]) or any(w in category.lower() for w in ["nederland", "ideal", "mollie", "postnl"])
     lang = "nl-NL" if is_dutch else "en"
     
     # Internal linking check for Dutch article
@@ -410,7 +410,7 @@ def render_blog_index(articles):
             </a>
             <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
               <span class="p-cat">{a['category']}</span>
-              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">{'🇳🇱 NL' if any(w in slug for w in ['mollie', 'shopify-apps-vertragen', 'webshop-klaarmaken', 'nederland']) else '🇬🇧 EN'}</span>
+              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">{'🇳🇱 NL' if (any(w in slug for w in ['mollie', 'shopify-apps-vertragen', 'webshop-klaarmaken', 'nederland', 'trage', 'postnl', 'winkelwagen']) or any(w in a.get('category','').lower() for w in ['nederland', 'ideal', 'mollie', 'postnl'])) else '🇬🇧 EN'}</span>
             </div>
             <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/{slug}/">{a['title']}</a></h2>
             <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">{a['excerpt']}</p>
