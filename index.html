@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta -->
-<title>⚡ Shopify &amp; WooCommerce Bug Fixes (24h) &amp; Speed Sprints | Jay Lakum</title>
-<meta name="description" content="Emergency checkout &amp; bug fixes within 24-48h. Comprehensive mobile speed sprints in 3-5 days for EU webshops. Fixed quote upfront, pay on delivery." />
+<title>Freelance Shopify &amp; WooCommerce Developer Netherlands | Speed &amp; Bug Fixes — Jay Lakum</title>
+<meta name="description" content="Freelance Shopify developer &amp; WooCommerce bug fix expert in the Netherlands &amp; Europe. Mobile speed sprints (&lt;2.5s LCP) and acute checkout fixes (within 24-48h within written scope). Pay on delivery." />
 <meta name="keywords" content="Shopify speed optimization UK, WooCommerce speed optimization Netherlands, Shopify bug fixer London, freelance ecommerce developer, Core Web Vitals Shopify, iDEAL WooCommerce developer Amsterdam, webshop redesign fashion" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
