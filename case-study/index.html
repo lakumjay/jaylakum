@@ -287,7 +287,7 @@
       </p>
       <ul>
         <li><strong>+34% increase in completed mobile checkouts</strong> from paid traffic.</li>
-        <li><strong>PageSpeed mobile score rose to 96/100</strong>, permanently passing Google Core Web Vitals.</li>
+        <li><strong>Mobile performance permanently passed Google Core Web Vitals</strong> (achieving 'Good' ratings for LCP and CLS).</li>
         <li><strong>Lower customer support inquiries</strong> regarding slow cart loading or failed transactions.</li>
       </ul>
 

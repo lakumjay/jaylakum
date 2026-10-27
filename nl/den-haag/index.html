@@ -506,8 +506,8 @@
       </div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🏛️ Praktijkvoorbeeld Haags & Westlands E-Commerce:</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor een internationale speciaalzaak in Den Haag met klanten in heel Europa zorgde een herinrichting van de meertalige Mollie checkout (iDEAL + Bancontact) en het oplossen van JavaScript-conflicten voor een 100% succesvolle orderverwerking zonder spookorders.</p>
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🏛️ Typisch Scenario & Aanpak: Haags & Westlands E-Commerce</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor retailers en internationale speciaalzaken in de regio Den Haag en het Westland lossen we JavaScript-conflicten in de kassa op en stroomlijnen we de meertalige checkout (iDEAL + Bancontact). Zo worden bestellingen direct en foutloos geregistreerd.</p>
         </div>
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
           <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>

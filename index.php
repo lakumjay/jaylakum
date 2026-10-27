@@ -936,8 +936,8 @@
               </button>
             </div>
 
-            <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
-              🔒 Zero spam, no unsolicited sales calls. You get a direct, honest technical breakdown from a developer.
+            <p style="text-align:center;font-size:12.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.5">
+              🔒 <b>100% Privacy Assured:</b> Your store URL &amp; email are strictly used to record your 3-minute video audit and prepare your quote. Zero spam, never shared. Read our <a href="/privacy/" style="color:var(--ink);text-decoration:underline">Privacy Policy</a>.
             </p>
           </form>
         </div>
@@ -1548,15 +1548,12 @@ function renderArticleCard(a){
     '</article>';
 }
 document.getElementById('blogGrid').innerHTML = ARTICLES.map(renderArticleCard).join('');
-var hbg = document.getElementById('homeBlogGrid');
-if (hbg) {
-  hbg.innerHTML = ARTICLES.slice(0, 3).map(renderArticleCard).join('');
-}
+// homeBlogGrid preserves server-rendered English cards on homepage
 
 /* ---------- SEO per view ---------- */
 var META = {
-  home:     { title: "⚡ Shopify & WooCommerce Bug Fixes (24h) & Speed Sprints | Jay Lakum",
-              desc: "Emergency checkout & bug fixes within 24-48h. Comprehensive mobile speed sprints in 3-5 days for EU webshops. Fixed quote upfront, pay on delivery." },
+  home:     { title: "Freelance Shopify & WooCommerce Developer Netherlands | Speed & Bug Fixes — Jay Lakum",
+              desc: "Freelance Shopify developer & WooCommerce bug fix expert in the Netherlands & Europe. Mobile speed sprints (<2.5s LCP) and acute checkout fixes (within 24-48h within written scope). Pay on delivery." },
   services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay Lakum",
               desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free 3-Minute Video Audit, written scope, fixed price, pay on delivery." },
   work:     { title: "Work — Real Live Projects | Jay Lakum",

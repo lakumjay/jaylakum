@@ -506,8 +506,8 @@
       </div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">⚙️ Praktijkvoorbeeld Brainport Tech Retail:</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Een tech-hardware webwinkel in Eindhoven met complexe productvarianten en 3D-renders had last van hoge Total Blocking Time (TBT > 1200ms). Door code splitting, deferring van non-critical scripts en caching van facet-filters daalde TBT naar < 150ms.</p>
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">⚙️ Typisch Scenario & Aanpak: Brainport Tech Retail & Complexe Webshops</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor webwinkels in technische consumentenproducten en hardware met filters en zware scripts minimaliseren we Total Blocking Time (TBT). We splitsen JavaScript-bundels op en stellen niet-kritieke scripts uit voor een directe, responsieve mobiele ervaring.</p>
         </div>
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
           <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>

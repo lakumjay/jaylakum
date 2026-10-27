@@ -625,11 +625,12 @@
             <button type="submit" id="auditSubmitBtnNL" class="btn" style="padding:10px 22px;font-size:14px;background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;cursor:pointer">
               🎥 Gratis Video Audit Aanvragen &rarr;
             </button>
+            <p style="text-align:center;font-size:12.5px;color:var(--ink-soft);margin:10px 0 0;line-height:1.5">
+              🔒 <b>100% Privacygarantie:</b> Je webshop URL en e-mailadres worden uitsluitend gebruikt om je persoonlijke 3-minuten video audit en offerte te sturen. Geen spam, nooit gedeeld. Bekijk ons <a href="/privacy/" style="color:var(--ink);text-decoration:underline">Privacybeleid</a>.
+            </p>
           </div>
 
-          <p style="text-align:center;font-size:12.5px;color:var(--ink-faint);margin:0">
-            🔒 Geen spam, geen telefoontjes. Binnen 24 uur een eerlijke technische analyse van een ervaren developer.
-          </p>
+
         </form>
       </div>
     </div>
@@ -744,7 +745,7 @@
   </section>
 
   
-  <!-- Eerlijk Vakmanschap & Eerste Klant Garantie (Vervangt Ongeverifieerde Reviews) -->
+  <!-- Eerlijk Vakmanschap & Risicovrije Werkwijze (Vervangt Ongeverifieerde Reviews) -->
   <section id="reviews" class="section" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg);padding:72px 0">
     <div class="wrap">
       <div style="background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:44px 32px;box-shadow:var(--shadow);max-width:880px;margin:0 auto;text-align:center">
@@ -765,9 +766,9 @@
             <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Echte productiecode op Gecko Monaco, Opulentt en PostCraftAI.</p>
           </div>
           <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🎯 EERSTE KLANT DEAL</div>
-            <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Jouw Webshop Uitgelicht</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Jouw winkel wordt onze volgende officiële geverifieerde case study.</p>
+            <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🔒 100% RISICOVRIJ</div>
+            <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Betalen bij Oplevering</div>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Elke optimalisatie wordt uitgevoerd op een veilige testomgeving en geverifieerd voordat je betaalt.</p>
           </div>
         </div>
         <a href="#gratis-audit" class="btn" style="font-size:15px;padding:10px 20px">Vraag Jouw Gratis Video Audit Aan &rarr;</a>

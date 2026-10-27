@@ -506,8 +506,8 @@
       </div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🛍️ Praktijkvoorbeeld Amsterdamse Mode & Lifestyle:</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor een boetiekmerk aan de Negen Straatjes leidde het opschonen van 140KB aan ongebruikte app-scripts (Klaviyo popups, verlopen review apps en tracking pixels) tot een mobiele LCP-daling van 4.8s naar 1.4s, waardoor de checkout-drop-off met 28% afnam.</p>
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🛍️ Typisch Scenario & Aanpak: Amsterdamse Mode & Lifestyle</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor mode- en lifestyleboetieks met zware lookbooks en marketing-apps (zoals Klaviyo popups en tracking pixels) richten we ons op het opschonen van achtergebleven Liquid code en het comprimeren van productafbeeldingen naar WebP. Resultaat: een soepel renderende storefront die voldoet aan Google Core Web Vitals zonder kwaliteitsverlies.</p>
         </div>
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
           <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>

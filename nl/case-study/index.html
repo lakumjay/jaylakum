@@ -287,7 +287,7 @@
       </p>
       <ul>
         <li><strong>+34% stijging in voltooide mobiele bestellingen</strong> uit betaald verkeer.</li>
-        <li><strong>Google PageSpeed score steeg naar 96/100</strong>, met 100% groene Core Web Vitals.</li>
+        <li><strong>Mobiele prestaties behaalden permanent groene Google Core Web Vitals</strong> (met 'Goed' scores voor LCP en CLS).</li>
         <li><strong>Minder klantvragen</strong> over trage kassa's of vastlopende winkelwagens.</li>
       </ul>
 

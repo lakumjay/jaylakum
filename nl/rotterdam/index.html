@@ -506,8 +506,8 @@
       </div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">📦 Praktijkvoorbeeld Rotterdam & Rijnmond B2B/Wholesale:</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor een groothandel in de Spaanse Polder bleef de winkelwagen haperen door synchrone PostNL tariefberekeningen en Exact Online voorraadchecks. Door transient caching en asynchrone orderverwerking daalde de winkelwagen-laadtijd van 3.9s naar 0.8s.</p>
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">📦 Typisch Scenario & Aanpak: Rotterdam & Rijnmond B2B / Wholesale</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor groothandels en webwinkels met grote catalogi optimaliseren we vertragende database-verzoeken en synchronisatie met PostNL en Exact Online. Door verzendtarieven slim te cachen en ERP-koppelingen asynchroon via de background queue te verwerken, reageert de winkelwagen direct en zonder haperingen.</p>
         </div>
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
           <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>

@@ -506,8 +506,8 @@
       </div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🌱 Praktijkvoorbeeld Midden-Nederland D2C:</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Een duurzaam D2C lifestylemerk in Utrecht verloor conversies tijdens piekmomenten door een trage mobiele productpagina. Met server-side caching, geoptimaliseerde WebP varianten en een gestroomlijnde iDEAL 2.0 flow steeg de mobiele PageSpeed van 42 naar 94.</p>
+          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🌱 Typisch Scenario & Aanpak: Utrechtse D2C Merken & Omnichannel</p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor snelgroeiende D2C-merken met piekmomenten tijdens productlanceringen elimineren we server-side bottlenecks (TTFB) en richten we betrouwbare caching in. Hierdoor blijft de mobiele winkelervaring stabiel en responsief, zelfs tijdens piekbelasting.</p>
         </div>
         <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
           <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>
