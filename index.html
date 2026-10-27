@@ -570,7 +570,7 @@
 
 <header class="site">
   <div class="wrap nav">
-    <a class="brand" href="#home">Jay <span>Lakum</span></a>
+    <a class="brand" href="#home" style="display:inline-flex;align-items:center;gap:8px;"><img src="/favicon.svg" alt="Jay Lakum Logo" width="28" height="28" style="width:28px;height:28px;border-radius:6px;display:inline-block;" /><span>Jay <span>Lakum</span></span></a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
     </button>

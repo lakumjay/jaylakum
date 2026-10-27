@@ -219,7 +219,7 @@
 
 <header class="site">
   <div class="wrap head-row">
-    <a class="brand" href="/">Jay <span>lakum</span></a>
+    <a class="brand" href="/" style="display:inline-flex;align-items:center;gap:8px;"><img src="/favicon.svg" alt="Jay Lakum Logo" width="28" height="28" style="width:28px;height:28px;border-radius:6px;display:inline-block;" /><span>Jay <span>Lakum</span></span></a>
     <nav class="nav-links">
       <a href="/#home">Home</a>
       <a href="/#services">Services</a>
