@@ -120,7 +120,7 @@
         },
         {
           "@type": "Question",
-          "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",
+          "name": "Wat kost een Shopify developer of webshop versnellen in Nederland?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met één vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
@@ -160,7 +160,7 @@
         },
         {
           "@type": "Question",
-          "name": "Hoe snel kan mijn webshop versneld of gerepareerd worden?",
+          "name": "Bied je een webshop spoed reparatie voor acute checkout fouten binnen 24 uur?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Acute bug fixes en iDEAL haperingen worden meestal binnen 24 tot 48 uur opgelost. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
@@ -711,7 +711,7 @@
 
       <div class="faq-wrap">
         <details class="faq-item">
-          <summary>Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?</summary>
+          <summary>Wat kost een Shopify developer of webshop versnellen in Nederland?</summary>
           <p>Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met <strong>één vaste totaalprijs</strong>. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken.</p>
         </details>
 
@@ -736,7 +736,7 @@
         </details>
 
         <details class="faq-item">
-          <summary>Hoe snel kan mijn webshop versneld of gerepareerd worden?</summary>
+          <summary>Bied je een webshop spoed reparatie voor acute checkout fouten binnen 24 uur?</summary>
           <p>Acute bug fixes en iDEAL haperingen los ik meestal binnen 24 tot 48 uur op. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen.</p>
         </details>
       </div>
