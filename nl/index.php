@@ -16,7 +16,7 @@
 
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>Shopify &amp; WooCommerce Specialist Nederland | Jay Lakum</title>
-<meta name="description" content="Trage webshop versnellen of Mollie iDEAL checkout storing oplossen? Freelance Shopify &amp; WooCommerce specialist Nederland. Snelle LCP &amp; betalen bij oplevering." />
+<meta name="description" content="Trage webshop versnellen of Mollie iDEAL checkout storing oplossen? Freelance Shopify &amp; WooCommerce specialist Nederland. Mobiele laadtijden onder 2,5 seconden &amp; 100% betalen bij oplevering." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL storing, Core Web Vitals webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop versnellen Rotterdam" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/" />

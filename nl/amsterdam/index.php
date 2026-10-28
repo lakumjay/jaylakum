@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>Shopify &amp; WooCommerce Specialist Amsterdam | Jay Lakum</title>
-<meta name="description" content="Trage Shopify of WooCommerce webshop in Amsterdam? Freelance specialist voor mode, beauty &amp; retail. Snelle sub-2.5s LCP, Mollie iDEAL en no-cure-no-pay." />
+<title>WooCommerce Developer Amsterdam | Shopify Specialist — Jay Lakum</title>
+<meta name="description" content="Trage Shopify of WooCommerce webshop in Amsterdam? Freelance developer voor mobiele laadtijden onder 2,5 seconden en acute checkout fixes. Betalen bij oplevering." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />

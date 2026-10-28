@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Case Study: Webshop Snelheid van 6.1s naar 2.2s (+34% Conversie) | Jay Lakum</title>
-<meta name="description" content="Stap-voor-stap technische case study: Hoe we achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en conversie met +34% verhoogden." />
+<title>Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd) | Jay Lakum</title>
+<meta name="description" content="Stap-voor-stap technische case study: Hoe we achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en Core Web Vitals groen kregen." />
 <link rel="canonical" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/nl/case-study/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Case Study: Webshop Snelheid van 6.1s naar 2.2s (+34% Conversie)" />
+<meta property="og:title" content="Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd)" />
 <meta property="og:description" content="Echte resultaten: Hoe we een mode webshop versnelden naar 2.2s en omzetverlies stopten zonder live downtime." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
@@ -305,7 +305,7 @@
 
   <article class="case-header">
     <span class="tag">GEVERIFIEERDE CASE STUDY &middot; WEBSHOP SNELHEID</span>
-    <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s (+34% Conversie)</h1>
+    <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s (Core Web Vitals Geslaagd)</h1>
     <p class="case-summary">
       Een Europese mode- en accessoires webshop verloor waardevolle mobiele bestellingen door trage laadtijden aan een trage laadpagina. Hier is het exacte stappenplan waarmee we achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
     </p>
@@ -329,7 +329,7 @@
       </div>
       <div class="metric-card">
         <div class="metric-label">Mobiele Conversie</div>
-        <div class="metric-val">+34%</div>
+        <div class="metric-val">&lt;2.5s</div>
         <div class="metric-note">Gemeten over 30 Dagen</div>
       </div>
     </div>
@@ -382,7 +382,7 @@
         In de 30 dagen daarna zag de webshop:
       </p>
       <ul>
-        <li><strong>+34% stijging in voltooide mobiele bestellingen</strong> uit betaald verkeer.</li>
+        <li><strong>Mobiele laadtijd met 64% verlaagd</strong>, waarmee de winkel ruim binnen de Google Core Web Vitals norm valt.</li>
         <li><strong>Mobiele prestaties behaalden permanent groene Google Core Web Vitals</strong> (met 'Goed' scores voor LCP en CLS).</li>
         <li><strong>Minder klantvragen</strong> over trage kassa's of vastlopende winkelwagens.</li>
       </ul>

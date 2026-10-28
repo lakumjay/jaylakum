@@ -16,7 +16,7 @@
 
 <!-- Primary SEO Meta -->
 <title>Shopify &amp; WooCommerce Developer Netherlands | Jay Lakum</title>
-<meta name="description" content="Freelance Shopify &amp; WooCommerce developer in the Netherlands. Sub-2.5s LCP speed sprints and 24-48h checkout bug fixes. Pay 100% on verified delivery." />
+<meta name="description" content="Freelance Shopify &amp; WooCommerce developer in the Netherlands. Pages that load in under 2.5 seconds and 24-48h checkout bug fixes. Pay 100% on verified delivery." />
 <meta name="keywords" content="Shopify developer Netherlands, WooCommerce specialist Amsterdam, Shopify speed optimization, webshop versnellen, WooCommerce checkout fix, freelance ecommerce developer" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
@@ -914,7 +914,7 @@
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:16px">
             <div>
               <span class="tag" style="margin-bottom:8px">VERIFIED CASE STUDY</span>
-              <h3 style="font-size:23px;margin:0">Fashion Boutique: 6.1s → 2.2s Mobile LCP (+34% Checkout Conversion)</h3>
+              <h3 style="font-size:23px;margin:0">Fashion Boutique: 6.1s → 2.2s Mobile LCP (Clean Core Web Vitals)</h3>
             </div>
             <div style="text-align:right">
               <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:700">Before / After</div>
@@ -932,7 +932,7 @@
             </div>
             <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:6px">3. THE RESULT</div>
-              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile checkout completion jumped by +34% within 30 days. Tested on staging with zero live store downtime.</p>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Mobile LCP dropped from 6.1s to 2.2s. Tested safely on staging with zero live store downtime.</p>
             </div>
           </div>
           <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:10px 18px 18px;border-radius:10px">

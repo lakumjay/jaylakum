@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Case Study: 6.1s to 2.2s Mobile Speed Fix (+34% Conversions) | Jay Lakum</title>
+<title>Case Study: 6.1s to 2.2s Mobile Speed Fix (Core Web Vitals Pass) | Jay Lakum</title>
 <meta name="description" content="Step-by-step technical case study: How we stripped leftover app code, fixed render-blocking CSS, and reduced mobile LCP from 6.1s to 2.2s for an EU fashion boutique." />
 <link rel="canonical" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
@@ -21,7 +21,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/case-study/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Case Study: 6.1s to 2.2s Mobile Speed Fix (+34% Conversions)" />
+<meta property="og:title" content="Case Study: 6.1s to 2.2s Mobile Speed Fix (Core Web Vitals Pass)" />
 <meta property="og:description" content="Step-by-step technical breakdown: How we stripped orphan app scripts and slashed mobile load time from 6.1s to 2.2s without downtime." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
@@ -307,7 +307,7 @@
     <span class="tag">VERIFIED CASE STUDY &middot; SHOPIFY PERFORMANCE</span>
     <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique</h1>
     <p class="case-summary">
-      A high-end European apparel and accessories store was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated leftover app scripts, optimized critical rendering, and increased checkout completion by +34%.
+      A high-end European apparel and accessories store was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated leftover app scripts, optimized critical rendering, and passed Google Core Web Vitals.
     </p>
 
     <!-- Metrics Highlights -->
@@ -329,7 +329,7 @@
       </div>
       <div class="metric-card">
         <div class="metric-label">Mobile Conversion</div>
-        <div class="metric-val">+34%</div>
+        <div class="metric-val">&lt;2.5s</div>
         <div class="metric-note">Measured over 30 Days</div>
       </div>
     </div>
@@ -382,7 +382,7 @@
         Over the subsequent 30-day tracking window, the store recorded:
       </p>
       <ul>
-        <li><strong>+34% increase in completed mobile checkouts</strong> from paid traffic.</li>
+        <li><strong>Mobile load times reduced by 64%</strong>, permanently passing Google Core Web Vitals.</li>
         <li><strong>Mobile performance permanently passed Google Core Web Vitals</strong> (achieving 'Good' ratings for LCP and CLS).</li>
         <li><strong>Lower customer support inquiries</strong> regarding slow cart loading or failed transactions.</li>
       </ul>

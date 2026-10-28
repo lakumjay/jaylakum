@@ -16,7 +16,7 @@
 
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>Shopify &amp; WooCommerce Specialist Utrecht | Jay Lakum</title>
-<meta name="description" content="Shopify &amp; WooCommerce webshop versnellen in Utrecht? Freelance specialist voor D2C en omnichannel merken. Sub-2.5s LCP en meetbare conversieverbetering." />
+<meta name="description" content="Shopify &amp; WooCommerce webshop versnellen in Utrecht? Freelance specialist voor D2C en omnichannel merken. laadtijden onder 2,5 seconden en meetbare conversieverbetering." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/utrecht/" />
@@ -562,7 +562,7 @@
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (doel: sub-2.5s LCP conform Core Web Vitals)</span><span class="dot"></span>
+          <span>✓ Meetbare versnelling (doel: laadtijden onder 2,5 seconden conform Core Web Vitals)</span><span class="dot"></span>
           <span>✓ Betalen bij oplevering</span><span class="dot"></span>
           <span>✓ iDEAL 2.0 & Mollie gereed</span>
         </div>

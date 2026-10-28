@@ -562,7 +562,7 @@
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (doel: sub-2.5s LCP conform Core Web Vitals)</span><span class="dot"></span>
+          <span>✓ Meetbare versnelling (doel: laadtijden onder 2,5 seconden conform Core Web Vitals)</span><span class="dot"></span>
           <span>✓ Betalen bij oplevering</span><span class="dot"></span>
           <span>✓ iDEAL 2.0 & Mollie gereed</span>
         </div>
@@ -573,7 +573,7 @@
           <h3 style="font-size:24px;margin-bottom:14px">Directe Rotterdamse Aanpak: Niet Lullen, Maar Poetsen</h3>
           <p>Geen log bureau met dure accountmanagers of eindeloze vergaderingen. In Rotterdam draait het om no-nonsense resultaat en webwinkels die snel en stabiel converteren:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
-            <li><b>Core Web Vitals Focus:</b> Snelle mobiele laadtijden (doel: sub-2.5s LCP conform Core Web Vitals).</li>
+            <li><b>Core Web Vitals Focus:</b> Snelle mobiele laadtijden (doel: laadtijden onder 2,5 seconden conform Core Web Vitals).</li>
             <li><b>ERP, PostNL & Mollie Expert:</b> Probleemloze synchronisatie en orderverwerking zonder haperingen.</li>
             <li><b>Veilig op Staging:</b> Je live webshop blijft 100% online verkopen.</li>
           </ul>
@@ -597,7 +597,7 @@
         </div>
         <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
           <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">⚡ Mijn Technische Oplossing</strong>
-          <p style="margin:0">Als je WooCommerce of Shopify webshop tijdens piekuren of marketingcampagnes vastloopt bij het verwerken van bestellingen, kost dat direct omzet en klantvertrouwen. Ik optimaliseer database queries, herstel vastlopende Mollie webhook verzoeken en richt de checkout flow in op maximale stabiliteit en snelle laadtijden (gericht op sub-2.5s LCP binnen overeengekomen scope) ook bij piekverkeer.</p>
+          <p style="margin:0">Als je WooCommerce of Shopify webshop tijdens piekuren of marketingcampagnes vastloopt bij het verwerken van bestellingen, kost dat direct omzet en klantvertrouwen. Ik optimaliseer database queries, herstel vastlopende Mollie webhook verzoeken en richt de checkout flow in op maximale stabiliteit en snelle laadtijden (gericht op laadtijden onder 2,5 seconden binnen overeengekomen scope) ook bij piekverkeer.</p>
         </div>
       </div>
       <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
