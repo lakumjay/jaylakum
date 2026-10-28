@@ -877,7 +877,7 @@
           <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
             <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">⚡ ECHTE WEBWINKELS</div>
             <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Live Te Bekijken</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Echte productiecode op Gecko Monaco, Opulentt en PostCraftAI.</p>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Echte productiecode op Gecko Monaco, Opulentt en Nordic Apparel &amp; Accessories (Fashion Boutique).</p>
           </div>
           <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
             <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🔒 100% RISICOVRIJ</div>

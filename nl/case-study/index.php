@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd)" />
 <meta property="og:description" content="Echte resultaten: Hoe we een mode webshop versnelden naar 2.2s en omzetverlies stopten zonder live downtime." />
-<meta property="og:image" content="https://jaylakum.com/og-image.svg" />
+<meta property="og:image" content="https://jaylakum.com/og-image.png" />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -34,7 +34,7 @@
       "@type": "Article",
       "@id": "https://jaylakum.com/nl/case-study/#article",
       "headline": "Hoe we de mobiele laadtijd van een kledingwebshop verlaagden van 6.1s naar 2.2s",
-      "description": "Technische case study over Shopify & WooCommerce snelheid optimalisatie en conversieverbetering.",
+      "description": "Technische case study over Shopify & WooCommerce mobiele snelheidsoptimalisatie en Core Web Vitals.",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",

@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>WooCommerce Developer Amsterdam | Shopify Specialist — Jay Lakum</title>
+<title>WooCommerce Developer Amsterdam | Shopify Dev — Jay Lakum</title>
 <meta name="description" content="Trage Shopify of WooCommerce webshop in Amsterdam? Freelance developer voor mobiele laadtijden onder 2,5 seconden en acute checkout fixes. Betalen bij oplevering." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
@@ -102,18 +102,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",
+          "name": "Hoe werken de vaste prijzen en de resultaatgarantie ('Geen oplossing, geen factuur')?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met één vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hoe werkt de resultaatgarantie ('Geen oplossing, geen factuur') precies?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We leggen vooraf in een duidelijke schriftelijke scope vast wat het meetbare doel is (bijvoorbeeld: 'Mollie webhook herstellen zodat bestellingen direct op Voltooid springen' of 'Mobile LCP onder 2.0s brengen op Google PageSpeed'). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig."
+            "text": "Voordat ik code aanpas, ontvang je een schriftelijke offerte met één vaste totaalprijs en heldere scope. Behaal ik het vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Betaling pas na verificatie op staging."
           }
         },
         {
@@ -729,13 +721,8 @@
 
       <div class="faq-wrap">
         <details class="faq-item">
-          <summary>Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?</summary>
-          <p>Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met <strong>één vaste totaalprijs</strong>. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Hoe werkt de resultaatgarantie ("Geen oplossing, geen factuur") precies?</summary>
-          <p>We leggen vooraf in een duidelijke <strong>schriftelijke scope</strong> vast wat het meetbare doel is (bijvoorbeeld: 'Mollie webhook herstellen zodat bestellingen direct op Voltooid springen' of 'Mobile LCP onder 2.0s brengen op Google PageSpeed'). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Zo loop je als ondernemer geen enkel financieel risico, en is de opdracht voor beide partijen 100% transparant.</p>
+          <summary>Hoe werken de vaste prijzen en de resultaatgarantie ("Geen oplossing, geen factuur")?</summary>
+          <p>Voordat ik ook maar één regel code aanpas, ontvang je een schriftelijke offerte met <strong>één vaste totaalprijs</strong> en een heldere scope. Is de klus achteraf complexer? Dat is mijn risico, niet het jouwe. Behaal ik het vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Je betaalt pas na tevreden oplevering en verificatie op staging.</p>
         </details>
 
         <details class="faq-item">

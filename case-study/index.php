@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Case Study: 6.1s to 2.2s Mobile Speed Fix (Core Web Vitals Pass)" />
 <meta property="og:description" content="Step-by-step technical breakdown: How we stripped orphan app scripts and slashed mobile load time from 6.1s to 2.2s without downtime." />
-<meta property="og:image" content="https://jaylakum.com/og-image.svg" />
+<meta property="og:image" content="https://jaylakum.com/og-image.png" />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -34,7 +34,7 @@
       "@type": "Article",
       "@id": "https://jaylakum.com/case-study/#article",
       "headline": "How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique",
-      "description": "Step-by-step engineering case study on Shopify & WooCommerce performance optimization and checkout conversion recovery.",
+      "description": "Step-by-step engineering case study on Shopify & WooCommerce mobile speed optimization and Core Web Vitals.",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",
