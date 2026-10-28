@@ -1,0 +1,52 @@
+# Jay Lakum — Freelance Shopify & WooCommerce Performance Developer
+
+> Independent senior e-commerce developer specializing in mobile page speed optimization, Core Web Vitals, and checkout debugging for webshops in the Netherlands and Europe.
+
+## Overview
+- **Name:** Jay Lakum
+- **Role:** Freelance Shopify & WooCommerce Specialist
+- **Website:** https://jaylakum.com/
+- **Dutch Portal:** https://jaylakum.com/nl/
+- **Target Market:** Netherlands (Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven) and Europe
+- **Work Model:** Direct developer collaboration, async-first (Loom/WhatsApp/Email), 100% Pay on Delivery after staging verification, no hourly billing surprises.
+
+## Core Specializations
+1. **Mobile Speed & Core Web Vitals Sprint:**
+   - Reducing Largest Contentful Paint (LCP) to under 2.5 seconds on real mobile 4G/5G connections.
+   - Eliminating Cumulative Layout Shift (CLS) and optimizing Interaction to Next Paint (INP).
+   - Stripping orphan/leftover Shopify Liquid scripts and unused JavaScript plugins.
+   - Next-gen WebP/AVIF image compression and responsive srcset implementation.
+
+2. **Checkout & Payment Troubleshooting (iDEAL / Mollie):**
+   - Resolving Mollie and iDEAL webhook failures, drop-offs, and stuck order statuses.
+   - Fixing slow WooCommerce cart and AJAX checkout hangs.
+   - Diagnosing carrier and ERP plugin latency (PostNL, DHL, Exact Online).
+
+3. **Boutique Webshop Redesign & High-Performance Architecture:**
+   - Bespoke Shopify Online Store 2.0 and WooCommerce block theme development.
+   - Clean, lightweight code without bloated page builders.
+
+## Verified Client Case Studies
+- **Nordic Apparel & Accessories (Fashion Boutique):** Reduced mobile LCP from 6.1s to 2.2s (-64% load time reduction), passed Google Core Web Vitals, and eliminated 140KB of ghost app scripts. URL: https://jaylakum.com/case-study/
+- **Gecko Monaco:** Shopify luxury leather goods storefront performance.
+- **Opulentt:** High-converting boutique fragrance webshop.
+
+## Transparent Fixed Pricing (Zero Hourly Surprises)
+- **Acute Bug Fix & Checkout Repair:** €290 – €450 (24–48h delivery, root-cause patch on staging).
+- **Core Web Vitals Speed Sprint:** €690 – €950 (3–5 days, sub-2.5s mobile LCP guarantee).
+- **Boutique Redesign & Architecture:** €1,490 – €2,800+ (2–3 weeks, 50% kick-off / 50% on approval).
+
+## Key Technical Guides & Documentation
+- [How to Fix WooCommerce Checkout Error](https://jaylakum.com/blog/how-to-fix-woocommerce-checkout-error/)
+- [Waarom is mijn WooCommerce Checkout Traag?](https://jaylakum.com/blog/waarom-is-mijn-woocommerce-checkout-traag/)
+- [Wat Kost het Versnellen van een Webshop?](https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/)
+- [Why Is My Shopify Store So Slow? 5 Fixes](https://jaylakum.com/blog/why-is-my-shopify-store-so-slow/)
+- [Mollie iDEAL Checkout Storing Oplossen](https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/)
+- [Trage WooCommerce Winkelwagen door PostNL & Exact Online](https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/)
+
+## Official Profiles & Verification
+- LinkedIn: https://www.linkedin.com/in/lakum-jay/
+- GitHub: https://github.com/lakumjay
+- DEV.to: https://dev.to/lakum_jay
+- Contact Email: jay@jaylakum.com
+- Free Video Audit: https://jaylakum.com/#free-video-audit / https://jaylakum.com/nl/#gratis-audit
