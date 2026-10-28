@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>Shopify & WooCommerce Specialist Nederland — iDEAL & Snelheid Optimalisatie | Jay Lakum</title>
-<meta name="description" content="Trage webshop versnellen of Mollie & iDEAL checkout fouten oplossen in Nederland? Freelance Shopify & WooCommerce specialist. Laadtijd <1.5s & Vaste prijs vooraf." />
-<meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
+<title>Shopify &amp; WooCommerce Specialist Nederland | Jay Lakum</title>
+<meta name="description" content="Trage webshop versnellen of Mollie iDEAL checkout storing oplossen? Freelance Shopify &amp; WooCommerce specialist Nederland. Snelle LCP &amp; betalen bij oplevering." />
+<meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL storing, Core Web Vitals webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop versnellen Rotterdam" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/" />
 <link rel="alternate" hreflang="nl-NL" href="https://jaylakum.com/nl/" />
@@ -38,7 +38,7 @@
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
 <meta property="og:title" content="Shopify & WooCommerce Specialist Nederland — iDEAL & Snelheid" />
 <meta property="og:description" content="Trage webshops versnellen, Mollie/iDEAL checkout reparaties en conversie-optimalisatie voor Nederlandse webwinkels. Vaste prijs vooraf." />
-<meta property="og:image" content="https://jaylakum.com/og-image.svg" />
+<meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
 <!-- Structured Data (JSON-LD) for Google Netherlands Local/Professional Service + FAQ Schema -->

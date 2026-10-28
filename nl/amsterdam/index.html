@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>Shopify Specialist Amsterdam — Freelance Webshop Developer & Snelheid | Jay Lakum</title>
-<meta name="description" content="Trage Shopify of WooCommerce webwinkel in Amsterdam? Freelance developer voor mode, beauty & boutique merken. Snelle laadtijd <1.5s, iDEAL & vaste prijs." />
+<title>Shopify &amp; WooCommerce Specialist Amsterdam | Jay Lakum</title>
+<meta name="description" content="Trage Shopify of WooCommerce webshop in Amsterdam? Freelance specialist voor mode, beauty &amp; retail. Snelle sub-2.5s LCP, Mollie iDEAL en no-cure-no-pay." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />
@@ -36,7 +36,7 @@
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
 <meta property="og:title" content="Shopify Specialist Amsterdam — Freelance Webshop Developer | Jay Lakum" />
 <meta property="og:description" content="Trage webshops versnellen, Mollie/iDEAL checkout reparaties en conversie-optimalisatie voor Nederlandse webwinkels. Vaste prijs vooraf." />
-<meta property="og:image" content="https://jaylakum.com/og-image.svg" />
+<meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
 <!-- Structured Data (JSON-LD) for Google Netherlands Local/Professional Service + FAQ Schema -->
@@ -799,6 +799,35 @@
       </div>
     </div>
   </section>
+
+  <!-- Gerelateerde Handleidingen & Casestudies -->
+  <section class="section" style="padding:48px 0;background:var(--bg)">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px">
+        <div class="eyebrow">TECHNISCHE KENNISBANK</div>
+        <h3 style="font-size:24px;margin:0 0 8px">Gerelateerde Technische Kennis &amp; Handleidingen</h3>
+        <p style="color:var(--ink-soft);font-size:15px;margin:0">Lees praktische oplossingen voor veelvoorkomende e-commerce knelpunten:</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+        <a href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
+          <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">WooCommerce · Logistiek</span>
+          <h4 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Trage WooCommerce Winkelwagen door PostNL &amp; Exact Online Oplossen &rarr;</h4>
+          <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Hoe je trage checkout API-vertragingen isoleert en winkelwagens weer soepel laat laden.</p>
+        </a>
+        <a href="/blog/mollie-ideal-checkout-storing-oplossen/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
+          <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">iDEAL · Betalingen</span>
+          <h4 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Mollie &amp; iDEAL Checkout Storing Oplossen: 10-Minuten Gids &rarr;</h4>
+          <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Webhook drops, mislukte status-updates en checkout bevriezingen systematisch verhelpen.</p>
+        </a>
+        <a href="/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
+          <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">Shopify · Performance</span>
+          <h4 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Shopify Apps Vertragen Webshop: Oude Liquid Scripts Opruimen &rarr;</h4>
+          <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Verwijder 'ghost apps' en overbodige tracking scripts voor een directe sprong in Core Web Vitals.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer style="padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-faint);background:var(--bg-soft)">

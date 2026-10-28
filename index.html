@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Primary SEO Meta -->
-<title>Freelance Shopify &amp; WooCommerce Developer Netherlands | Speed &amp; Bug Fixes — Jay Lakum</title>
-<meta name="description" content="Freelance Shopify developer &amp; WooCommerce bug fix expert in the Netherlands &amp; Europe. Mobile speed sprints (&lt;2.5s LCP) and acute checkout fixes (within 24-48h within written scope). Pay on delivery." />
-<meta name="keywords" content="Shopify speed optimization UK, WooCommerce speed optimization Netherlands, Shopify bug fixer London, freelance ecommerce developer, Core Web Vitals Shopify, iDEAL WooCommerce developer Amsterdam, webshop redesign fashion" />
+<title>Shopify &amp; WooCommerce Developer Netherlands | Jay Lakum</title>
+<meta name="description" content="Freelance Shopify &amp; WooCommerce developer in the Netherlands. Sub-2.5s LCP speed sprints and 24-48h checkout bug fixes. Pay 100% on verified delivery." />
+<meta name="keywords" content="Shopify developer Netherlands, WooCommerce specialist Amsterdam, Shopify speed optimization, webshop versnellen, WooCommerce checkout fix, freelance ecommerce developer" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/" />
@@ -30,9 +30,6 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
-<!-- Google Search Console Verification (Replace value with your GSC token if different) -->
-<meta name="google-site-verification" content="GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" />
-
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#171410" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#FAF7F1" media="(prefers-color-scheme: light)" />
@@ -43,7 +40,7 @@
 <meta property="og:site_name" content="Jay Lakum — India Coders" />
 <meta property="og:title" content="Jay Lakum — I fix &amp; speed up Shopify and WordPress webshops" />
 <meta property="og:description" content="Speed optimization, bug fixes and redesigns for EU &amp; UK fashion &amp; beauty webshops. Fixed quote upfront. Based in India, async-first." />
-<meta property="og:image" content="https://jaylakum.com/og-image.svg" />
+<meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Jay Lakum — Shopify &amp; WordPress Performance Engineer for UK &amp; EU Webshops" />
@@ -54,7 +51,7 @@
 <meta name="twitter:url" content="https://jaylakum.com/" />
 <meta name="twitter:title" content="Jay Lakum — Shopify &amp; WordPress Developer for EU &amp; UK Stores" />
 <meta name="twitter:description" content="Speed optimization, checkout bug fixes and high-converting redesigns for European online stores." />
-<meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 <meta name="twitter:creator" content="@jaylakum" />
 
 <!-- Structured Data (JSON-LD) for Google Rich Snippets -->
@@ -1143,7 +1140,7 @@
                 <li>✓ High-end typography &amp; mobile UX</li>
                 <li>✓ Built directly in Online Store 2.0 / WooCommerce</li>
                 <li>✓ Conversion-focused product &amp; cart flows</li>
-                <li>✓ Milestone terms: 50% start / 50% on verified staging delivery</li>
+                <li>✓ Staged delivery: 50% kick-off / 50% after you test &amp; approve on staging</li>
               </ul>
             </div>
             <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;padding:9px 14px;font-size:13.5px;box-sizing:border-box">Discuss Redesign &rarr;</a>
@@ -1428,24 +1425,24 @@
       <div class="blog-grid" id="blogGrid" style="padding:34px 0 84px">
         <article class="card post-card">
           <span class="p-cat">E-Commerce · Nederland</span>
-          <h3><a href="#blog/nederland-heeft-nu-ook-een-dopaminesite-ni">Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout &amp; Snelheid Fixes</a></h3>
+          <h3><a href="/blog/webshop-klaarmaken-feestdagen/">Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout &amp; Snelheid Fixes</a></h3>
           <p>Met Black Friday en de feestdagen voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor.</p>
           <p class="post-meta">October 2026 · 4 min leestijd</p>
-          <a class="more" href="#blog/nederland-heeft-nu-ook-een-dopaminesite-ni">Read the article →</a>
+          <a class="more" href="/blog/webshop-klaarmaken-feestdagen/">Read the article →</a>
         </article>
         <article class="card post-card">
           <span class="p-cat">Shopify · Speed</span>
-          <h3><a href="#blog/why-is-my-shopify-store-so-slow">Why Is My Shopify Store So Slow? 5 Fixes That Actually Work</a></h3>
+          <h3><a href="/blog/why-is-my-shopify-store-so-slow/">Why Is My Shopify Store So Slow? 5 Fixes That Actually Work</a></h3>
           <p>Shopify itself is fast — so why does your store crawl? The five causes behind almost every slow Shopify store, and how to fix each one.</p>
           <p class="post-meta">October 2026 · 5 min read</p>
-          <a class="more" href="#blog/why-is-my-shopify-store-so-slow">Read the article →</a>
+          <a class="more" href="/blog/why-is-my-shopify-store-so-slow/">Read the article →</a>
         </article>
         <article class="card post-card">
           <span class="p-cat">WooCommerce · Bug fixes</span>
-          <h3><a href="#blog/woocommerce-checkout-broken-diagnose-10-minutes">WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes</a></h3>
+          <h3><a href="/blog/woocommerce-checkout-broken-diagnose-10-minutes/">WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes</a></h3>
           <p>A customer reaches your checkout, hits an error and leaves. How to isolate whether it is Mollie, a plugin conflict or your theme in under ten minutes.</p>
           <p class="post-meta">October 2026 · 5 min read</p>
-          <a class="more" href="#blog/woocommerce-checkout-broken-diagnose-10-minutes">Read the article →</a>
+          <a class="more" href="/blog/woocommerce-checkout-broken-diagnose-10-minutes/">Read the article →</a>
         </article>
       </div>
     </div>
