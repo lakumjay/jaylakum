@@ -110,4 +110,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://jaylakum.com/blog/waarom-is-mijn-woocommerce-checkout-traag/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/how-to-fix-woocommerce-checkout-error/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

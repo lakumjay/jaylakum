@@ -796,6 +796,24 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155856.7649514755!2d4.763878036069927!3d52.3702157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600db4cbdd057d3!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl">
           </iframe>
         </div>
+
+        <!-- Extra Amsterdam Localized FAQs -->
+        <details class="faq-item">
+          <summary>Waarom presteert onze Amsterdamse modewebshop traag op mobiel ondanks snelle kantoor-wifi?</summary>
+          <p>Veel modemerken in de Amsterdamse Negen Straatjes en Oud-Zuid testen hun webwinkel op snelle kantoor-glasvezel met high-end MacBooks. Je echte klanten lopen echter door de stad met een 4G/5G-verbinding op hun smartphone. Zware lookbook-fotografie, retina-banners en dynamische carousels blazen de paginagrootte op tot meer dan 8MB. Zonder compressie en responsive afbeeldingsschaling (WebP/AVIF) leidt dit direct tot 6+ seconden laadtijd en een hoge bounce rate.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Bieden jullie ondersteuning voor lokale bezorgdiensten in Amsterdam (zoals Fietskoeriers, Trunkrs of PostNL)?</summary>
+          <p>Jazeker. Lokale bezorgopties zijn in Amsterdam essentieel voor next-day en same-day delivery. Wij zorgen ervoor dat checkout-plugins voor Trunkrs, Fietskoeriers en PostNL asynchroon communiceren via transient caching, zodat het ophalen van bezorgmomenten de kassa niet vertraagt.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hoe gaan we om met meertaligheid en buitenlandse toeristen of expats die in Amsterdam bestellen?</summary>
+          <p>Amsterdam heeft een groot internationaal publiek. Wij optimaliseren meertalige setups (zoals Shopify Markets of WPML/Polylang voor WooCommerce) zodat taal- en valutaswitchers geen zware redirects veroorzaken en iDEAL, Creditcard en Bancontact naadloos worden gepresenteerd op basis van de taal van de bezoeker.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Werken jullie samen met lokale Amsterdamse bureaus of interne marketingteams?</summary>
+          <p>Regelmatig. Lokale marketing- en designbureaus in Amsterdam zijn ijzersterk in branding en Meta-advertenties, maar missen vaak de diepgaande technische capaciteit voor backend profiling en Core Web Vitals optimalisatie. Wij fungeren als technische partner achter de schermen op projectbasis of per sprint.</p>
+        </details>
       </div>
     </div>
   </section>
