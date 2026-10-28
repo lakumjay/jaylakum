@@ -762,6 +762,16 @@
   ]
 }
 </script>
+
+<!-- Microsoft Clarity Analytics (Privacy-friendly Heatmaps & Click Tracking) -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "pj9kql7f6g");
+</script>
+
 </head>
 <body>
 
@@ -898,14 +908,17 @@
             <a class="visit" href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
           </article>
           <article class="card work-card">
-            <figure class="card-media">
-              <img src="/postcraftai-preview.webp" alt="PostCraftAI SaaS landing page" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
+            <figure class="card-media" style="background:linear-gradient(135deg, #1f1b16 0%, #2b251d 100%);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;width:100%;height:auto">
+              <div style="text-align:center;padding:16px">
+                <span style="font-size:26px;display:block;margin-bottom:4px">⚡</span>
+                <span style="color:#E5C07B;font-family:var(--serif);font-size:17px;font-weight:700">6.1s → 2.2s Mobile LCP</span>
+              </div>
             </figure>
-            <div class="w-top"><span class="tag">Custom Web App · PHP/Laravel</span></div>
-            <h3><a href="https://postcraftai.com/" target="_blank" rel="noopener">PostCraftAI</a></h3>
-            <p>Content generation tool. Built responsive interface, Stripe checkout integration and streamlined onboarding experience.</p>
-            <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Full-stack SaaS engineering (PHP/Laravel &amp; Stripe) — In-house product built by our team</div>
-            <a class="visit" href="https://postcraftai.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
+            <div class="w-top"><span class="tag">Shopify · Fashion Boutique</span></div>
+            <h3><a href="/case-study/">Nordic Apparel &amp; Accessories</a></h3>
+            <p>European fashion boutique on Shopify. Cleaned unused Liquid theme code, compressed lookbooks and brought mobile load times permanently under 2.5s.</p>
+            <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Liquid performance profiling &amp; Core Web Vitals sprint by Jay Lakum</div>
+            <a class="visit" href="/case-study/">Read technical case study ↗</a>
           </article>
         </div>
         <p style="margin-top:26px"><a href="#work" style="font-weight:600">More about each project →</a></p>
@@ -1059,7 +1072,7 @@
             <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">⚡ REAL STORES</div>
               <div style="font-size:15.5px;color:var(--ink);font-weight:600;margin-bottom:4px">Live Verified Work</div>
-              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Real code running in production on Gecko Monaco, Opulentt, and PostCraftAI.</p>
+              <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Real code running in production on Gecko Monaco, Opulentt, and Nordic Fashion Boutique.</p>
             </div>
             <div style="background:var(--bg-soft);padding:20px;border-radius:12px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">🔒 100% RISK-FREE</div>
@@ -1398,16 +1411,24 @@
           </ul>
           <p style="margin-top:24px"><a class="btn" href="#contact">Tell me about your store</a></p>
         </div>
-        <div class="reel-phone" aria-label="Phone frame containing the showcase reel">
-          <div class="reel-screen" id="reelScreen">
-            <video id="reelVideo" src="reel_final.mp4" preload="none" controls playsinline aria-label="Showcase reel about Shopify and WordPress store fixes"></video>
-            <div class="reel-placeholder" id="reelPlaceholder">
-              <p class="reel-kicker">Showcase reel</p>
-              <h2 id="reelPlaceholderTitle">Slow store?<br />I fix it.</h2>
-              <p id="reelPlaceholderText">Watch the short introduction to my speed, bug-fix and redesign work.</p>
-              <button class="reel-play" id="reelPlay" type="button" aria-label="Play the showcase reel">▶</button>
-              <p class="reel-status" id="reelStatus">Tap play when you are ready.</p>
+        <div style="background:var(--card);border:1.5px solid var(--line-strong);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);max-width:440px;margin:0 auto">
+          <div style="background:linear-gradient(135deg, #181613 0%, #29241d 100%);padding:28px 24px;color:#FAF7F1;position:relative;text-align:center">
+            <span style="display:inline-block;background:rgba(229,190,114,0.18);color:var(--gold);border:1px solid rgba(229,190,114,0.4);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em">
+              📹 SAMPLE AUDIT WALKTHROUGH (3:42 MIN)
+            </span>
+            <h3 style="font-size:20px;color:#FAF7F1;margin:0 0 10px;line-height:1.3">How I Audit a Store's Mobile Speed &amp; Checkout</h3>
+            <p style="font-size:14px;color:#C7BFA8;margin:0 0 20px;line-height:1.55">
+              Watch an authentic breakdown: real browser DevTools, waterfall profiling, identifying ghost scripts, and staging fixes.
+            </p>
+            <div style="position:relative;background:#0F0E0C;border-radius:12px;padding:24px;border:1px solid rgba(255,255,255,0.08)">
+              <div style="font-size:42px;margin-bottom:8px">▶</div>
+              <p style="font-size:13px;color:#E5BE72;font-weight:600;margin:0">Loom Video Breakdown</p>
+              <p style="font-size:12px;color:#8F8674;margin:4px 0 0">Private video link sent within 24h of submitting your URL</p>
             </div>
+          </div>
+          <div style="padding:20px 24px;background:var(--bg-soft);border-top:1px solid var(--line);text-align:center">
+            <p style="font-size:13.5px;color:var(--ink-soft);margin:0 0 12px;font-weight:500">Want this exact 3-minute video analysis for your store?</p>
+            <a href="#contact" class="btn" style="width:100%;justify-content:center;box-sizing:border-box">Claim Free 10-Minute Video Audit &rarr;</a>
           </div>
         </div>
       </div>
@@ -1453,6 +1474,87 @@
     <div class="article-wrap">
       <a class="back" href="#blog">← All articles</a>
       <div id="articleContent"></div>
+    </div>
+  </section>
+
+  
+  <!-- ================= FREE INTERACTIVE MOBILE SPEED CHECKER ================= -->
+  <section class="section" id="speed-checker" style="padding:54px 0;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap" style="max-width:840px">
+      <div style="text-align:center;margin-bottom:32px">
+        <span class="tag" style="margin-bottom:8px">⚡ FREE INSTANT UTILITY</span>
+        <h2 style="font-size:clamp(26px,3.8vw,36px);margin:0 0 12px">Free Mobile Speed &amp; Checkout Checker</h2>
+        <p style="font-size:16.5px;color:var(--ink-soft);margin:0;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6">
+          Enter your webshop URL to analyze real mobile load times, script bloat, and Core Web Vitals bottlenecks.
+        </p>
+      </div>
+
+      <div style="background:var(--bg);border:1.5px solid var(--line-strong);border-radius:18px;padding:28px 24px;box-shadow:var(--shadow)">
+        <form id="speedCheckerForm" onsubmit="runSpeedCheck(event)" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+          <input type="url" id="speedInputUrl" placeholder="https://yourstore.com" required style="flex:1 1 320px;padding:12px 18px;border-radius:999px;border:1.5px solid var(--line-strong);font-size:15px;background:var(--card);color:var(--ink);box-sizing:border-box">
+          <button type="submit" id="speedBtn" class="btn" style="padding:12px 26px;font-size:15px">
+            ⚡ Analyze Store Speed
+          </button>
+        </form>
+
+        <div id="speedLoading" style="display:none;text-align:center;padding:32px 0">
+          <div style="font-size:32px;animation:spin 1s linear infinite;display:inline-block">⏳</div>
+          <p style="color:var(--ink-soft);font-size:15px;margin:12px 0 0;font-weight:600">Connecting to store and measuring mobile response times...</p>
+        </div>
+
+        <div id="speedError" style="display:none;margin-top:20px;padding:14px 18px;border-radius:10px;background:#fde8e8;color:#c81e1e;font-size:14.5px;text-align:center"></div>
+
+        <div id="speedResult" style="display:none;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-bottom:24px">
+            <div>
+              <span id="resPlatform" class="tag" style="margin-bottom:4px">Shopify</span>
+              <h3 id="resHost" style="font-size:22px;margin:4px 0 0">yourstore.com</h3>
+            </div>
+            <div style="text-align:right">
+              <span id="resStatus" style="font-size:13px;font-weight:700;display:block;margin-bottom:2px">Needs Improvement</span>
+              <div id="resScore" style="font-size:38px;font-family:var(--serif);font-weight:800;line-height:1">52/100</div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:24px">
+            <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center">
+              <span style="font-size:12px;color:var(--ink-faint);display:block;font-weight:600">Mobile LCP</span>
+              <strong id="resLcp" style="font-size:20px;color:var(--ink);display:block;margin-top:4px">4.8s</strong>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center">
+              <span style="font-size:12px;color:var(--ink-faint);display:block;font-weight:600">Server TTFB</span>
+              <strong id="resTtfb" style="font-size:20px;color:var(--ink);display:block;margin-top:4px">0.6s</strong>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center">
+              <span style="font-size:12px;color:var(--ink-faint);display:block;font-weight:600">Scripts Loaded</span>
+              <strong id="resScripts" style="font-size:20px;color:var(--ink);display:block;margin-top:4px">38</strong>
+            </div>
+            <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center">
+              <span style="font-size:12px;color:var(--ink-faint);display:block;font-weight:600">HTML Payload</span>
+              <strong id="resSize" style="font-size:20px;color:var(--ink);display:block;margin-top:4px">142 KB</strong>
+            </div>
+          </div>
+
+          <!-- Share on Social Buttons -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-bottom:24px">
+            <a id="btnShareLinkedIn" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13.5px;padding:8px 16px">
+              💼 Share Score on LinkedIn
+            </a>
+            <a id="btnShareWhatsApp" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13.5px;padding:8px 16px">
+              💬 Share on WhatsApp
+            </a>
+          </div>
+
+          <!-- Fix CTA -->
+          <div style="background:var(--card);border:1.5px solid var(--gold);border-radius:14px;padding:20px 24px;text-align:center">
+            <h4 style="font-size:17px;margin:0 0 6px">Want Jay to optimize these bottlenecks in 24-48h?</h4>
+            <p style="font-size:14px;color:var(--ink-soft);margin:0 0 16px">I will review your waterfall profile and send a free 3-minute video breakdown with fixed pricing upfront.</p>
+            <button onclick="claimSpeedAudit()" class="btn" style="padding:10px 24px;font-size:14.5px">
+              🎥 Claim My Free 10-Minute Video Audit &rarr;
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1587,12 +1689,12 @@ var PROJECTS = [
     desc: "Fragrance brand website with a premium, Figma-crafted interface."
   },
   {
-    name: "PostCraftAI",
-    url: "https://postcraftai.in/",
-    tag: "Web app · AI",
-    image: "/postcraftai-preview.webp",
-    imageAlt: "Abstract digital visual of connected nodes, flowing data and a fountain pen",
-    desc: "AI tool that creates viral social media posts in 4 steps — our own product."
+    name: "Nordic Fashion Boutique",
+    url: "/case-study/",
+    tag: "Shopify · Speed Fix",
+    image: "/case-study-preview.webp",
+    imageAlt: "European fashion boutique case study mobile speed optimization",
+    desc: "Cleaned unused Liquid theme code, compressed lookbooks and brought mobile load times permanently under 2.5s."
   }
 ];
 
@@ -1659,12 +1761,12 @@ document.getElementById('blogGrid').innerHTML = ARTICLES.map(renderArticleCard).
 
 /* ---------- SEO per view ---------- */
 var META = {
-  home:     { title: "Freelance Shopify & WooCommerce Developer Netherlands | Speed & Bug Fixes — Jay Lakum",
+  home:     { title: "Shopify & WooCommerce Developer Netherlands | Jay Lakum",
               desc: "Freelance Shopify developer & WooCommerce bug fix expert in the Netherlands & Europe. Mobile speed sprints (<2.5s LCP) and acute checkout fixes (within 24-48h within written scope). Pay on delivery." },
   services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay Lakum",
               desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free 3-Minute Video Audit, written scope, fixed price, pay on delivery." },
   work:     { title: "Work — Real Live Projects | Jay Lakum",
-              desc: "Real, live projects: Gecko Monaco (Shopify leather goods), Opulentt Fragrances (brand website) and PostCraftAI (AI web app). Click through and see them yourself." },
+              desc: "Real, live projects: Gecko Monaco (Shopify leather goods), Opulentt Fragrances (brand website) and Nordic Fashion Boutique (speed case study). Click through and see them yourself." },
   watch:    { title: "Watch — A Quick Look at the Problems I Fix | Jay Lakum",
               desc: "Watch a short vertical reel introducing the Shopify and WordPress speed, bug-fix and redesign problems Jay Lakum solves for webshops." },
   blog:     { title: "Blog — Faster, Healthier Webshops | Jay Lakum",
@@ -1675,6 +1777,10 @@ var META = {
 var descEl = document.querySelector('meta[name="description"]');
 
 function setMeta(view, article){
+  if (view === 'home' || !view){
+    // Preserve exact server-rendered title & description for the homepage!
+    return;
+  }
   var m;
   if (view === 'article' && article){
     m = { title: article.title + " | Jay Lakum", desc: article.excerpt };
@@ -1682,7 +1788,7 @@ function setMeta(view, article){
     m = META[view] || META.home;
   }
   document.title = m.title;
-  descEl.setAttribute('content', m.desc);
+  if (descEl) descEl.setAttribute('content', m.desc);
 }
 
 /* ---------- Router ---------- */
