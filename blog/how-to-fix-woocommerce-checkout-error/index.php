@@ -244,6 +244,16 @@
   footer.site{background:var(--bg-soft);border-top:1px solid var(--line);padding:40px 0 60px;font-size:14px;color:var(--ink-faint)}
   .foot-nav{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:16px}
   .foot-nav a:hover{color:var(--gold)}
+
+  /* Mobile Navigation Fit (Zero Horizontal Overflow) */
+  @media (max-width: 768px) {
+    .nav, .head-row { gap: 8px !important; }
+    .nav-links { gap: 8px !important; }
+    .nav-links a:not(.lang-toggle-btn):not(.nav-cta):not([href*="audit"]):not([href*="contact"]) { display: none !important; }
+    .nav-links .btn, .nav-links .nav-cta { padding: 6px 12px !important; font-size: 12.5px !important; white-space: nowrap !important; }
+    .lang-toggle-btn { padding: 4px 10px !important; font-size: 12px !important; }
+  }
+
 </style>
 </head>
 <body>

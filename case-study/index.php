@@ -281,6 +281,22 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
   }
 
+
+  /* Mobile Navigation Fit (Zero Horizontal Overflow) */
+  @media (max-width: 768px) {
+    .nav, .head-row { gap: 8px !important; }
+    .nav-links { gap: 8px !important; }
+    .nav-links a:not(.lang-toggle-btn):not(.nav-cta):not([href*="audit"]):not([href*="contact"]) { display: none !important; }
+    .nav-links .btn, .nav-links .nav-cta { padding: 6px 12px !important; font-size: 12.5px !important; white-space: nowrap !important; }
+    .lang-toggle-btn { padding: 4px 10px !important; font-size: 12px !important; }
+  }
+
+
+  @media (max-width: 480px) {
+    .nav { padding: 0 12px !important; }
+    .nav-links .btn { font-size: 11.5px !important; padding: 5px 9px !important; letter-spacing: 0 !important; }
+  }
+
 </style>
 </head>
 <body>

@@ -149,6 +149,16 @@
   footer.site{background:var(--bg-soft);border-top:1px solid var(--line);padding:40px 0 60px;font-size:14px;color:var(--ink-faint)}
   .foot-nav{display:flex;flex-wrap:wrap;gap:16px 24px;margin-top:16px}
   .foot-nav a:hover{color:var(--gold)}
+
+  /* Mobile Navigation Fit (Zero Horizontal Overflow) */
+  @media (max-width: 768px) {
+    .nav, .head-row { gap: 8px !important; }
+    .nav-links { gap: 8px !important; }
+    .nav-links a:not(.lang-toggle-btn):not(.nav-cta):not([href*="audit"]):not([href*="contact"]) { display: none !important; }
+    .nav-links .btn, .nav-links .nav-cta { padding: 6px 12px !important; font-size: 12.5px !important; white-space: nowrap !important; }
+    .lang-toggle-btn { padding: 4px 10px !important; font-size: 12px !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -183,7 +193,7 @@
             </a>
             <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
               <span class="p-cat">E-Commerce · Tarieven & ROI</span>
-              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">🇬🇧 EN</span>
+              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">🇳🇱 NL</span>
             </div>
             <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/wat-kost-webshop-versnellen-kosten-overzicht/">Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids</a></h2>
             <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bureauprijzen, wat je krijgt voor je geld, en hoe snel een snellere mobiele laadtijd zichzelf terugverdient.</p>
@@ -219,7 +229,7 @@
             </a>
             <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
               <span class="p-cat">WooCommerce · Checkout</span>
-              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">🇬🇧 EN</span>
+              <span style="font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--bg-soft);border:1px solid var(--line);color:var(--ink-soft)">🇳🇱 NL</span>
             </div>
             <h2 style="font-size:20px;margin:10px 0;line-height:1.3;font-family:var(--serif)"><a href="/blog/waarom-is-mijn-woocommerce-checkout-traag/">Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen</a></h2>
             <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:16px">Wanneer een klant op 'Afrekenen' klikt en 4 tot 8 seconden moet wachten, haakt 40% geruisloos af. Dit zijn de 7 meest voorkomende technische oorzaken in WooCommerce en hoe je ze binnen 24 uur oplost.</p>

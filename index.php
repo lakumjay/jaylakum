@@ -908,11 +908,8 @@
             <a class="visit" href="https://opulenttfragrances.com/" target="_blank" rel="noopener">Visit the live site ↗</a>
           </article>
           <article class="card work-card">
-            <figure class="card-media" style="background:linear-gradient(135deg, #1f1b16 0%, #2b251d 100%);display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;width:100%;height:auto">
-              <div style="text-align:center;padding:16px">
-                <span style="font-size:26px;display:block;margin-bottom:4px">⚡</span>
-                <span style="color:#E5C07B;font-family:var(--serif);font-size:17px;font-weight:700">6.1s → 2.2s Mobile LCP</span>
-              </div>
+            <figure class="card-media">
+              <img src="/case-study-preview.webp" alt="Nordic Apparel &amp; Accessories Shopify case study" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
             </figure>
             <div class="w-top"><span class="tag">Shopify · Fashion Boutique</span></div>
             <h3><a href="/case-study/">Nordic Apparel &amp; Accessories</a></h3>
