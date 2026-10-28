@@ -747,7 +747,7 @@
 
   <!-- Contact Form -->
     <!-- Closing Direct CTA (Replaces Redundant Secondary Form) -->
-  <section id="contact" class="section">
+  <section id="contact" class="section"><span id="gratis-audit" style="display:block;position:relative;top:-70px;visibility:hidden"></span>
     <div class="wrap">
       <div class="contact-box" style="text-align:center;padding:48px 32px">
         <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; DEN-HAAG</div>
@@ -756,7 +756,7 @@
           Geen accountmanagers, geen uurtje-factuurtje en geen risico. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
         </p>
         <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;align-items:center">
-          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
+          <a href="/nl/#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
             ⚡ Vraag Jouw Gratis Video Audit Aan →
           </a>
           <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#25D366;border-color:rgba(37,211,102,0.4);font-size:15px;padding:12px 20px">

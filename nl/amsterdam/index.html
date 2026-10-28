@@ -102,22 +102,6 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wat kost een Shopify speed optimalisatie voor een winkel in Amsterdam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Voor Amsterdamse boutique- en modemerken werk ik met vaste projectprijzen vooraf. Na een kosteloze inspectie van je Liquid thema en app-scripts ontvang je een transparante offerte. Betaling volgt pas na oplevering op staging."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hoe snel kan een trage Shopify store in Amsterdam geoptimaliseerd worden?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Acute checkout bugs of haperende Mollie iDEAL koppelingen worden binnen 24 tot 48 uur verholpen. Een complete Core Web Vitals optimalisatie duurt gemiddeld 3 tot 5 werkdagen inclusief grondige metingen."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -129,7 +113,7 @@
           "name": "Hoe werkt de resultaatgarantie ('Geen oplossing, geen factuur') precies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We leggen vooraf in een duidelijke schriftelijke scope vast wat het meetbare doel is (bijvoorbeeld: Mollie webhook herstellen zodat bestellingen direct op Voltooid springen of Mobile LCP onder 2.0s brengen op Google PageSpeed). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig."
+            "text": "We leggen vooraf in een duidelijke schriftelijke scope vast wat het meetbare doel is (bijvoorbeeld: 'Mollie webhook herstellen zodat bestellingen direct op Voltooid springen' of 'Mobile LCP onder 2.0s brengen op Google PageSpeed'). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig."
           }
         },
         {
@@ -137,7 +121,7 @@
           "name": "Komt mijn webshop hiermee direct op nummer 1 in Google.nl?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wat deze optimalisatie doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
+            "text": "Wat deze optimalisatie wél doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
           }
         },
         {
@@ -145,7 +129,7 @@
           "name": "Moet mijn webwinkel offline tijdens de optimalisatie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen."
+            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen. Pas na jouw goedkeuring zetten we de wijzigingen live."
           }
         },
         {
@@ -153,7 +137,7 @@
           "name": "Waarom kies ik voor Jay Lakum en niet een bureau aan de Amsterdamse Herengracht of Keizersgracht?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak hoge bedragen rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
           }
         },
         {
@@ -161,7 +145,39 @@
           "name": "Hoe snel kan mijn webshop versneld of gerepareerd worden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Acute bug fixes en iDEAL haperingen worden meestal binnen 24 tot 48 uur opgelost. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
+            "text": "Acute bug fixes en iDEAL haperingen los ik meestal binnen 24 tot 48 uur op. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom presteert onze Amsterdamse modewebshop traag op mobiel ondanks snelle kantoor-wifi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Veel modemerken in de Amsterdamse Negen Straatjes en Oud-Zuid testen hun webwinkel op snelle kantoor-glasvezel. Echte klanten lopen echter door de stad met een 4G/5G-verbinding. Zware lookbook-fotografie en dynamische carousels blazen de paginagrootte op. Zonder compressie en responsive afbeeldingsschaling leidt dit direct tot 6+ seconden laadtijd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bieden jullie ondersteuning voor lokale bezorgdiensten in Amsterdam (zoals Fietskoeriers, Trunkrs of PostNL)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jazeker. Wij zorgen ervoor dat checkout-plugins voor Trunkrs, Fietskoeriers en PostNL asynchroon communiceren via transient caching, zodat het ophalen van bezorgmomenten de kassa niet vertraagt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe gaan we om met meertaligheid en buitenlandse toeristen of expats die in Amsterdam bestellen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Amsterdam heeft een groot internationaal publiek. Wij optimaliseren meertalige setups (zoals Shopify Markets of WPML/Polylang voor WooCommerce) zodat taal- en valutaswitchers geen zware redirects veroorzaken en iDEAL, Creditcard en Bancontact naadloos worden gepresenteerd."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werken jullie samen met lokale Amsterdamse bureaus of interne marketingteams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Regelmatig. Lokale marketing- en designbureaus in Amsterdam zijn ijzersterk in branding en ads, maar missen vaak de diepgaande technische capaciteit voor backend profiling en Core Web Vitals. Wij fungeren als technische partner achter de schermen."
           }
         }
       ]
@@ -741,13 +757,30 @@
           <summary>Hoe snel kan mijn webshop versneld of gerepareerd worden?</summary>
           <p>Acute bug fixes en iDEAL haperingen los ik meestal binnen 24 tot 48 uur op. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen.</p>
         </details>
+
+        <details class="faq-item">
+          <summary>Waarom presteert onze Amsterdamse modewebshop traag op mobiel ondanks snelle kantoor-wifi?</summary>
+          <p>Veel modemerken in de Amsterdamse Negen Straatjes en Oud-Zuid testen hun webwinkel op snelle kantoor-glasvezel met high-end MacBooks. Je echte klanten lopen echter door de stad met een 4G/5G-verbinding op hun smartphone. Zware lookbook-fotografie, retina-banners en dynamische carousels blazen de paginagrootte op tot meer dan 8MB. Zonder compressie en responsive afbeeldingsschaling (WebP/AVIF) leidt dit direct tot 6+ seconden laadtijd en een hoge bounce rate.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Bieden jullie ondersteuning voor lokale bezorgdiensten in Amsterdam (zoals Fietskoeriers, Trunkrs of PostNL)?</summary>
+          <p>Jazeker. Lokale bezorgopties zijn in Amsterdam essentieel voor next-day en same-day delivery. Wij zorgen ervoor dat checkout-plugins voor Trunkrs, Fietskoeriers en PostNL asynchroon communiceren via transient caching, zodat het ophalen van bezorgmomenten de kassa niet vertraagt.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Hoe gaan we om met meertaligheid en buitenlandse toeristen of expats die in Amsterdam bestellen?</summary>
+          <p>Amsterdam heeft een groot internationaal publiek. Wij optimaliseren meertalige setups (zoals Shopify Markets of WPML/Polylang voor WooCommerce) zodat taal- en valutaswitchers geen zware redirects veroorzaken en iDEAL, Creditcard en Bancontact naadloos worden gepresenteerd op basis van de taal van de bezoeker.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Werken jullie samen met lokale Amsterdamse bureaus of interne marketingteams?</summary>
+          <p>Regelmatig. Lokale marketing- en designbureaus in Amsterdam zijn ijzersterk in branding en Meta-advertenties, maar missen vaak de diepgaande technische capaciteit voor backend profiling en Core Web Vitals optimalisatie. Wij fungeren als technische partner achter de schermen op projectbasis of per sprint.</p>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- Contact Form -->
     <!-- Closing Direct CTA (Replaces Redundant Secondary Form) -->
-  <section id="contact" class="section">
+  <section id="contact" class="section"><span id="gratis-audit" style="display:block;position:relative;top:-70px;visibility:hidden"></span>
     <div class="wrap">
       <div class="contact-box" style="text-align:center;padding:48px 32px">
         <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; AMSTERDAM</div>
@@ -756,7 +789,7 @@
           Geen accountmanagers, geen uurtje-factuurtje en geen risico. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
         </p>
         <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;align-items:center">
-          <a href="#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
+          <a href="/nl/#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
             ⚡ Vraag Jouw Gratis Video Audit Aan →
           </a>
           <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20webshop" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#25D366;border-color:rgba(37,211,102,0.4);font-size:15px;padding:12px 20px">
@@ -807,23 +840,7 @@
           </iframe>
         </div>
 
-        <!-- Extra Amsterdam Localized FAQs -->
-        <details class="faq-item">
-          <summary>Waarom presteert onze Amsterdamse modewebshop traag op mobiel ondanks snelle kantoor-wifi?</summary>
-          <p>Veel modemerken in de Amsterdamse Negen Straatjes en Oud-Zuid testen hun webwinkel op snelle kantoor-glasvezel met high-end MacBooks. Je echte klanten lopen echter door de stad met een 4G/5G-verbinding op hun smartphone. Zware lookbook-fotografie, retina-banners en dynamische carousels blazen de paginagrootte op tot meer dan 8MB. Zonder compressie en responsive afbeeldingsschaling (WebP/AVIF) leidt dit direct tot 6+ seconden laadtijd en een hoge bounce rate.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Bieden jullie ondersteuning voor lokale bezorgdiensten in Amsterdam (zoals Fietskoeriers, Trunkrs of PostNL)?</summary>
-          <p>Jazeker. Lokale bezorgopties zijn in Amsterdam essentieel voor next-day en same-day delivery. Wij zorgen ervoor dat checkout-plugins voor Trunkrs, Fietskoeriers en PostNL asynchroon communiceren via transient caching, zodat het ophalen van bezorgmomenten de kassa niet vertraagt.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Hoe gaan we om met meertaligheid en buitenlandse toeristen of expats die in Amsterdam bestellen?</summary>
-          <p>Amsterdam heeft een groot internationaal publiek. Wij optimaliseren meertalige setups (zoals Shopify Markets of WPML/Polylang voor WooCommerce) zodat taal- en valutaswitchers geen zware redirects veroorzaken en iDEAL, Creditcard en Bancontact naadloos worden gepresenteerd op basis van de taal van de bezoeker.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Werken jullie samen met lokale Amsterdamse bureaus of interne marketingteams?</summary>
-          <p>Regelmatig. Lokale marketing- en designbureaus in Amsterdam zijn ijzersterk in branding en Meta-advertenties, maar missen vaak de diepgaande technische capaciteit voor backend profiling en Core Web Vitals optimalisatie. Wij fungeren als technische partner achter de schermen op projectbasis of per sprint.</p>
-        </details>
+
       </div>
     </div>
   </section>

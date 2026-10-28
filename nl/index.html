@@ -634,21 +634,6 @@
   <section id="calculator" class="section">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin:0 auto 36px">
-        <!-- 3-Stappen Duidelijkheid (Zero Risico) -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0;text-align:left">
-          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 1: STUUR JE WEBSHOP LINK</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Vul hieronder je webshop URL in. Geen inloggegevens of creditcard vereist.</p>
-          </div>
-          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 2: 3-MIN VIDEO AUDIT</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Binnen 24 uur ontvang je een persoonlijke Loom video analyse en vaste prijsopgave.</p>
-          </div>
-          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 3: BETALEN BIJ OPLEVERING</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Aanpassingen worden eerst op een testomgeving getest. Pas betalen na tevreden goedkeuring.</p>
-          </div>
-        </div>
         <div class="eyebrow">INTERACTIEVE TOOL VOOR WEBWINKELS</div>
         <h2>Bereken Je Potentiële Omzetverlies door Mobiele Vertraging</h2>
         <p>Onderzoek van Google &amp; Deloitte toont aan dat mobiele vertraging directe conversie kost. Bereken hier een realistische, indicatieve schatting voor jouw webshop:</p>
@@ -681,8 +666,8 @@
 
         <div class="calc-result-card">
           <span class="eyebrow" style="margin-bottom:4px;color:#c0392b">INDICATIEVE SCHATTING OMZETVERLIES</span>
-          <div class="calc-loss-val" id="calcLossVal">€1.720 / maand</div>
-          <p style="color:var(--ink-soft);font-size:15px;margin:6px 0 16px" id="calcYearlyNote">Geschat verlies op jaarbasis: <b>€20.640</b> aan potentiële bestellingen die wegklikken.</p>
+          <div class="calc-loss-val" id="calcLossVal">€3.817 / maand</div>
+          <p style="color:var(--ink-soft);font-size:15px;margin:6px 0 16px" id="calcYearlyNote">Dat is ruim <b>€45.804 per jaar</b> dat je misloopt aan bezoekers die wegklikken.</p>
           <div style="font-size:12.5px;color:var(--ink-faint);line-height:1.55;margin-bottom:20px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;background:rgba(0,0,0,0.03);padding:10px 14px;border-radius:8px">
             📊 <b>Methodologie &amp; Bronnen:</b> Deze berekening is een indicatieve schatting gebaseerd op het benchmarkmodel van Google / SOASTA (gemiddeld ~7% conversieverlies per seconde mobiele vertraging) en Deloitte Digital (<i>Milliseconds Make Millions</i>). Werkelijke resultaten variëren per branche, type producten en doelgroep.
           </div>
@@ -827,21 +812,6 @@
   <section id="faq" class="section section-soft">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin:0 auto 36px">
-        <!-- 3-Stappen Duidelijkheid (Zero Risico) -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:28px 0;text-align:left">
-          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 1: STUUR JE WEBSHOP LINK</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Vul hieronder je webshop URL in. Geen inloggegevens of creditcard vereist.</p>
-          </div>
-          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 2: 3-MIN VIDEO AUDIT</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Binnen 24 uur ontvang je een persoonlijke Loom video analyse en vaste prijsopgave.</p>
-          </div>
-          <div style="background:var(--bg-soft);padding:18px 20px;border-radius:12px;border:1px solid var(--line)">
-            <div style="font-size:12px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">STAP 3: BETALEN BIJ OPLEVERING</div>
-            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Aanpassingen worden eerst op een testomgeving getest. Pas betalen na tevreden goedkeuring.</p>
-          </div>
-        </div>
         <div class="eyebrow">VEELGESTELDE VRAGEN</div>
         <h2>Vragen Die Nederlandse Ondernemers Vaak Stellen</h2>
       </div>
@@ -924,7 +894,7 @@
   <section id="pricing" class="section" style="padding:72px 0">
     <div class="wrap">
       <div style="text-align:center;max-width:680px;margin:0 auto 44px">
-        <div class="eyebrow">TRANSPARANTE TARIEVEN &middot; GEEN VERASSINGEN</div>
+        <div class="eyebrow">TRANSPARANTE TARIEVEN &middot; GEEN VERRASSINGEN</div>
         <h2 style="font-size:clamp(24px,3.8vw,34px);margin-bottom:12px">Transparante Investering &middot; Gegarandeerde Scope (Binnen Schriftelijke Scope)</h2>
         <p style="color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0">
           Geen uurtje-factuurtje of vage nacalculaties. Altijd een vaste projectprijs vooraf, schriftelijke scope en testen op een staging omgeving.

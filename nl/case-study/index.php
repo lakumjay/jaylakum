@@ -316,14 +316,14 @@
 
 <main class="wrap">
   <nav class="breadcrumbs" aria-label="Kruimelpad">
-    <a href="/nl/">Home</a> &rsaquo; <span>Case Study: Snelheid & Conversie</span>
+    <a href="/nl/">Home</a> &rsaquo; <span>Case Study: Nordic Apparel &amp; Accessories (Fashion Boutique)</span>
   </nav>
 
   <article class="case-header">
     <span class="tag">GEVERIFIEERDE CASE STUDY &middot; WEBSHOP SNELHEID</span>
-    <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s (Core Web Vitals Geslaagd)</h1>
+    <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s voor Nordic Apparel &amp; Accessories (Fashion Boutique)</h1>
     <p class="case-summary">
-      Een Europese mode- en accessoires webshop verloor waardevolle mobiele bestellingen door trage laadtijden aan een trage laadpagina. Hier is het exacte stappenplan waarmee we achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
+      Nordic Apparel & Accessories (Mode & Accessoires Boutique — Geanonimiseerde Case Study) verloor waardevolle mobiele bestellingen door trage laadtijden. Hier is het exacte stappenplan waarmee we achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en winkelwagenuitval aanzienlijk terugdrongen.
     </p>
 
     <!-- Metrics Highlights -->
@@ -344,9 +344,9 @@
         <div class="metric-note">Minder Afhakers bij Kassa</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Mobiele Conversie</div>
+        <div class="metric-label">Speed Index (Mobiel)</div>
         <div class="metric-val">&lt;2.5s</div>
-        <div class="metric-note">Gemeten over 30 Dagen</div>
+        <div class="metric-note">Voldoet aan Google Norm</div>
       </div>
     </div>
 

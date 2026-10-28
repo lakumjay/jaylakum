@@ -260,7 +260,7 @@
 
 <header class="site">
   <div class="wrap head-row">
-    <a class="brand" href="/">Jay <span>lakum</span></a>
+    <a class="brand" href="/">Jay <span>Lakum</span></a>
     <nav class="nav-links">
       <a href="/#home">Home</a>
       <a href="/#services">Services</a>
@@ -295,14 +295,14 @@
 
 <h2>De 3 Typen Optimalisatie &amp; Wat Ze Kosten</h2>
 
-<h3>1. Acute Bugfix of Single Knelpunt Oplossen (€150 – €350)</h3>
+<h3>1. Acute Bugfix of Single Knelpunt Oplossen (€290 – €450)</h3>
 <p>Ideaal wanneer je webshop over het algemeen redelijk draait, maar één specifiek onderdeel traag is — bijvoorbeeld een haperende winkelwagen, een trage filter op de collectiepagina, of een conflict met de Mollie betaalmodule.</p>
 <ul>
   <li><strong>Doorlooptijd:</strong> 24 tot 48 uur.</li>
   <li><strong>Wat je krijgt:</strong> Isolatie van de fout, patch op staging, en veilige livegang.</li>
 </ul>
 
-<h3>2. Volledige Core Web Vitals &amp; Mobile Speed Sprint (€650 – €1.400)</h3>
+<h3>2. Volledige Core Web Vitals &amp; Mobile Speed Sprint (€690 – €950)</h3>
 <p>Een grondige technische revisie van je gehele webshop (Shopify of WooCommerce). Dit pakt de fundamentele bottlenecks aan:</p>
 <ul>
   <li>Ongebruikte JavaScripts en legacy Liquid/PHP scripts opruimen.</li>
@@ -312,7 +312,7 @@
   <li>Database optimalisatie en object caching configuratie.</li>
 </ul>
 
-<h3>3. Maatwerk Redesign &amp; Conversie-Architectuur (€2.500+)</h3>
+<h3>3. Maatwerk Redesign &amp; Conversie-Architectuur (€1.490 – €2.800+)</h3>
 <p>Wanneer de technische basis van je thema zo verouderd is dat pleisters plakken geen zin meer heeft. Hierbij wordt je webwinkel herbouwd in moderne Shopify Online Store 2.0 of lichtgewicht WooCommerce blokken met focus op mobiele conversie.</p>
 
 <hr>

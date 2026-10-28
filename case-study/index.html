@@ -316,14 +316,14 @@
 
 <main class="wrap">
   <nav class="breadcrumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a> &rsaquo; <a href="/#work">Case Studies</a> &rsaquo; <span>Fashion Boutique Optimization</span>
+    <a href="/">Home</a> &rsaquo; <a href="/#work">Case Studies</a> &rsaquo; <span>Nordic Apparel &amp; Accessories (Fashion Boutique)</span>
   </nav>
 
   <article class="case-header">
     <span class="tag">VERIFIED CASE STUDY &middot; SHOPIFY PERFORMANCE</span>
-    <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique</h1>
+    <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for Nordic Apparel &amp; Accessories (Fashion Boutique)</h1>
     <p class="case-summary">
-      A high-end European apparel and accessories store was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated leftover app scripts, optimized critical rendering, and passed Google Core Web Vitals.
+      Nordic Apparel & Accessories (Fashion Boutique — Anonymized Boutique Case Study) was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated leftover app scripts, optimized critical rendering, and passed Google Core Web Vitals.
     </p>
 
     <!-- Metrics Highlights -->
@@ -344,9 +344,9 @@
         <div class="metric-note">Smoother Checkout Flow</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Mobile Conversion</div>
+        <div class="metric-label">Speed Index (Mobile)</div>
         <div class="metric-val">&lt;2.5s</div>
-        <div class="metric-note">Measured over 30 Days</div>
+        <div class="metric-note">Passed Google Vitals</div>
       </div>
     </div>
 

@@ -261,7 +261,7 @@
 
 <header class="site">
   <div class="wrap head-row">
-    <a class="brand" href="/">Jay <span>lakum</span></a>
+    <a class="brand" href="/">Jay <span>Lakum</span></a>
     <nav class="nav-links">
       <a href="/#home">Home</a>
       <a href="/#services">Services</a>

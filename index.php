@@ -912,7 +912,7 @@
               <img src="/case-study-preview.webp" alt="Nordic Apparel &amp; Accessories Shopify case study" width="384" height="216" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover" loading="lazy" />
             </figure>
             <div class="w-top"><span class="tag">Shopify · Fashion Boutique</span></div>
-            <h3><a href="/case-study/">Nordic Apparel &amp; Accessories</a></h3>
+            <h3><a href="/case-study/">Nordic Apparel &amp; Accessories (Fashion Boutique)</a></h3>
             <p>European fashion boutique on Shopify. Cleaned unused Liquid theme code, compressed lookbooks and brought mobile load times permanently under 2.5s.</p>
             <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Liquid performance profiling &amp; Core Web Vitals sprint by Jay Lakum</div>
             <a class="visit" href="/case-study/">Read technical case study ↗</a>
@@ -1217,7 +1217,7 @@
             <span class="p-cat">Shopify · Speed &amp; Mobile</span>
             <h3><a href="/blog/why-is-my-shopify-store-so-slow/">Why Is My Shopify Store So Slow? 5 Fixes That Actually Work</a></h3>
             <p>Every app installed, uncompressed image, and heavy theme script eats into your mobile conversion rate. Here are the 5 high-impact fixes that actually move the needle.</p>
-            <p class="post-meta">October 2026 · 4 min read</p>
+            <p class="post-meta">October 2026 · 5 min read</p>
             <a class="more" href="/blog/why-is-my-shopify-store-so-slow/">Read the article →</a>
           </article>
           <article class="card post-card">
