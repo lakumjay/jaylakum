@@ -27,7 +27,7 @@
    - Clean, lightweight code without bloated page builders.
 
 ## Verified Client Case Studies
-- **Nordic Apparel & Accessories (Fashion Boutique):** Reduced mobile LCP from 6.1s to 2.2s (-64% load time reduction), passed Google Core Web Vitals, and eliminated 140KB of ghost app scripts. URL: https://jaylakum.com/case-study/
+- **Nordic Apparel & Accessories (Fashion Boutique):** Reduced mobile LCP from 6.1s to 2.2s (-64% load time reduction), passed Google Core Web Vitals, and eliminated leftover ghost app scripts. URL: https://jaylakum.com/case-study/
 - **Gecko Monaco:** Shopify luxury leather goods storefront performance.
 - **Opulentt:** High-converting boutique fragrance webshop.
 
