@@ -9,7 +9,7 @@ en_html = """<!doctype html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Case Study: 6.1s to 2.2s Mobile Speed Fix (+34% Conversions) | Jay Lakum</title>
-<meta name="description" content="Step-by-step technical case study: How we stripped 140KB of ghost app code, fixed render-blocking CSS, and reduced mobile LCP from 6.1s to 2.2s for an EU fashion boutique." />
+<meta name="description" content="Step-by-step technical case study: How we stripped ghost app code, fixed render-blocking CSS, and reduced mobile LCP from 6.1s to 2.2s for an EU fashion boutique." />
 <link rel="canonical" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
@@ -33,7 +33,7 @@ en_html = """<!doctype html>
       "@type": "Article",
       "@id": "https://jaylakum.com/case-study/#article",
       "headline": "How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique",
-      "description": "Step-by-step engineering case study on Shopify & WooCommerce performance optimization and checkout conversion recovery.",
+      "description": "Step-by-step engineering case study on Shopify & WooCommerce mobile speed optimization and Core Web Vitals.",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",
@@ -210,7 +210,7 @@ en_html = """<!doctype html>
     <span class="tag">VERIFIED CASE STUDY &middot; SHOPIFY PERFORMANCE</span>
     <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for an EU Fashion Boutique</h1>
     <p class="case-summary">
-      A high-end European apparel and accessories store was losing over half its mobile traffic to sluggish loading screens. Here is the exact technical breakdown of how we eliminated 140KB of ghost scripts, optimized critical rendering, and increased checkout completion by +34%.
+      A high-end European apparel and accessories store was losing over half its mobile traffic to sluggish loading screens. Here is the exact technical breakdown of how we eliminated ghost app scripts, optimized critical rendering, and passed Google Core Web Vitals.
     </p>
 
     <!-- Metrics Highlights -->
@@ -247,7 +247,7 @@ en_html = """<!doctype html>
         A Chrome DevTools performance trace and WebPageTest profile revealed severe main-thread congestion:
       </p>
       <ul>
-        <li><strong>Ghost Liquid & JS Tags:</strong> Over 18 months, the merchant had tested and uninstalled 9 different Shopify apps (currency switchers, abandoned cart popups, bundle bars). None of them had cleaned up their assets from <code>theme.liquid</code>, injecting 140KB of blocking JavaScript and broken DNS preconnects on every page load.</li>
+        <li><strong>Ghost Liquid & JS Tags:</strong> Over 18 months, the merchant had tested and uninstalled 9 different Shopify apps (currency switchers, abandoned cart popups, bundle bars). None of them had cleaned up their assets from <code>theme.liquid</code>, injecting render-blocking JavaScript and broken DNS preconnects on every page load.</li>
         <li><strong>Massive Hero Imagery:</strong> The homepage and category banners were loading uncompressed 4.2MB PNG images directly onto mobile viewports without responsive <code>&lt;picture&gt;</code> tags or WebP formatting.</li>
         <li><strong>Render-Blocking Font Loading:</strong> Three separate Google Font families were loaded synchronously via <code>@import</code>, delaying First Contentful Paint by 2.4 seconds on mobile 4G networks.</li>
       </ul>
@@ -330,7 +330,7 @@ nl_html = """<!doctype html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Case Study: Webshop Snelheid van 6.1s naar 2.2s (+34% Conversie) | Jay Lakum</title>
-<meta name="description" content="Stap-voor-stap technische case study: Hoe we 140KB aan achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en conversie met +34% verhoogden." />
+<meta name="description" content="Stap-voor-stap technische case study: Hoe we achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en Core Web Vitals groen kregen." />
 <link rel="canonical" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
@@ -354,7 +354,7 @@ nl_html = """<!doctype html>
       "@type": "Article",
       "@id": "https://jaylakum.com/nl/case-study/#article",
       "headline": "Hoe we de mobiele laadtijd van een kledingwebshop verlaagden van 6.1s naar 2.2s",
-      "description": "Technische case study over Shopify & WooCommerce snelheid optimalisatie en conversieverbetering.",
+      "description": "Technische case study over Shopify & WooCommerce mobiele snelheidsoptimalisatie en Core Web Vitals.",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",
@@ -531,7 +531,7 @@ nl_html = """<!doctype html>
     <span class="tag">GEVERIFIEERDE CASE STUDY &middot; WEBSHOP SNELHEID</span>
     <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s (+34% Conversie)</h1>
     <p class="case-summary">
-      Een Europese mode- en accessoires webshop verloor meer dan de helft van haar mobiele bezoekers aan een trage laadpagina. Hier is het exacte stappenplan waarmee we 140KB aan achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en het aantal voltooide bestellingen met +34% lieten stijgen.
+      Een Europese mode- en accessoires webshop verloor meer dan de helft van haar mobiele bezoekers aan een trage laadpagina. Hier is het exacte stappenplan waarmee we achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en winkelwagenuitval aanzienlijk terugdrongen.
     </p>
 
     <!-- Metrics Highlights -->
@@ -568,7 +568,7 @@ nl_html = """<!doctype html>
         Uit een diepgaande analyse met Chrome DevTools en Google Lighthouse kwamen drie grote knelpunten naar voren:
       </p>
       <ul>
-        <li><strong>Achtergebleven 'Spookcode':</strong> In anderhalf jaar tijd had de webshop 9 verschillende apps geïnstalleerd en weer verwijderd (bundel apps, currency switchers, popups). Geen van deze apps had de tracking-scripts netjes verwijderd uit <code>theme.liquid</code>, waardoor er bij elk paginabezoek 140KB aan dode JavaScript werd ingeladen.</li>
+        <li><strong>Achtergebleven 'Spookcode':</strong> In anderhalf jaar tijd had de webshop 9 verschillende apps geïnstalleerd en weer verwijderd (bundel apps, currency switchers, popups). Geen van deze apps had de tracking-scripts netjes verwijderd uit <code>theme.liquid</code>, waardoor er bij elk paginabezoek vertragende dode JavaScript werd ingeladen.</li>
         <li><strong>Niet-geoptimaliseerde Banners:</strong> De homepage en categoriebanners bestonden uit zware PNG-bestanden van ruim 4MB, zonder WebP-formaat of responsive <code>&lt;picture&gt;</code> tags voor telefoons.</li>
         <li><strong>Blokkerende Externe Lettertypen:</strong> Drie verschillende lettertypen werden synchroon via externe servers ingeladen, wat voor 2.4 seconden wit scherm zorgde op 4G-verbindingen.</li>
       </ul>
