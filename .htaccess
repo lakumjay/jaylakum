@@ -1,7 +1,33 @@
-# Disable directory browsing
+# ============================================================
+# 1. DIRECTORY SECURITY & DEFAULT CHARSET
+# ============================================================
 Options -Indexes
+DirectoryIndex index.php index.html
+AddDefaultCharset UTF-8
 
-# Security Headers
+# ============================================================
+# 2. CANONICAL 301 REDIRECTS & URL RULES (SINGLE-HOP)
+# ============================================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # A. Force www to non-www (Single Hop seedha HTTPS par)
+    RewriteCond %{HTTP_HOST} ^www\.jaylakum\.com$ [NC]
+    RewriteRule ^(.*)$ https://jaylakum.com/$1 [R=301,L]
+
+    # B. Force HTTP to HTTPS (Non-www ke liye Single Hop)
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://jaylakum.com/$1 [R=301,L]
+
+    # C. Legacy URL Redirects
+    RewriteRule ^blog/nederland-heeft-nu-ook-een-dopaminesite-ni/?$ /blog/webshop-klaarmaken-feestdagen/ [R=301,L]
+</IfModule>
+
+# ============================================================
+# 3. HTTP SECURITY HEADERS
+# ============================================================
 <IfModule mod_headers.c>
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-Content-Type-Options "nosniff"
@@ -9,32 +35,18 @@ Options -Indexes
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-DirectoryIndex index.php index.html
-
-AddDefaultCharset UTF-8
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
-    # 1. Force www to non-www (301 Permanent Redirect)
-    RewriteCond %{HTTP_HOST} ^www\.jaylakum\.com$ [NC]
-    RewriteRule ^(.*)$ https://jaylakum.com/$1 [L,R=301]
-
-    # 2. Force HTTP to HTTPS (301 Permanent Redirect)
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule ^(.*)$ https://jaylakum.com/$1 [L,R=301]
-
-    # 3. Legacy URL Redirects
-    RewriteRule ^blog/nederland-heeft-nu-ook-een-dopaminesite-ni/?$ /blog/webshop-klaarmaken-feestdagen/ [R=301,L]
-</IfModule>
-
+# ============================================================
+# 4. MIME TYPES CONFIGURATION
+# ============================================================
 <IfModule mod_mime.c>
     AddType video/mp4 .mp4
     AddType image/svg+xml .svg .svgz
     AddType application/xml .xml
 </IfModule>
 
+# ============================================================
+# 5. BROWSER CACHING (EXPIRES HEADERS)
+# ============================================================
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 month"
@@ -44,6 +56,9 @@ AddDefaultCharset UTF-8
     ExpiresByType video/mp4 "access plus 1 year"
 </IfModule>
 
+# ============================================================
+# 6. SITEMAP & ROBOTS NO-CACHE (Google Always Gets Fresh)
+# ============================================================
 <IfModule mod_headers.c>
     <FilesMatch "^(sitemap\.xml|robots\.txt)$">
         Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
