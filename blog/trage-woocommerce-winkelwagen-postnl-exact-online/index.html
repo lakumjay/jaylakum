@@ -24,13 +24,13 @@
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond" />
 <meta property="og:description" content="Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op." />
-<meta property="og:image" content="https://jaylakum.com/og-image.svg" />
+<meta property="og:image" content="https://jaylakum.com/blog-og-trage-woocommerce-winkelwagen.png" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond" />
 <meta name="twitter:description" content="Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op." />
-<meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
+<meta name="twitter:image" content="https://jaylakum.com/blog-og-trage-woocommerce-winkelwagen.png" />
 
 <!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json">
