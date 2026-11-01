@@ -8,6 +8,8 @@
 <!-- Favicon & Touch Icons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -17,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>WooCommerce Developer Amsterdam | Shopify Dev — Jay Lakum</title>
-<meta name="description" content="Trage Shopify of WooCommerce webshop in Amsterdam? Freelance developer voor mobiele laadtijden onder 2,5 seconden en acute checkout fixes. Betalen bij oplevering." />
+<title>Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum</title>
+<meta name="description" content="Freelance WooCommerce specialist in Amsterdam nodig? Sub-2.0s mobiele laadtijd, Mollie/iDEAL &amp; PostNL checkout fixes binnen 24–48u. 100% vaste prijs &amp; betalen bij oplevering." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />
@@ -30,13 +32,12 @@
 <meta name="geo.region" content="NL" />
 <meta name="geo.placename" content="Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven, Nederland" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaylakum.com/nl/amsterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
-<meta property="og:title" content="Shopify Specialist Amsterdam — Freelance Webshop Developer | Jay Lakum" />
+<meta property="og:title" content="Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum" />
 <meta property="og:description" content="Trage webshops versnellen, Mollie/iDEAL checkout reparaties en conversie-optimalisatie voor Nederlandse webwinkels. Vaste prijs vooraf." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
@@ -574,8 +575,8 @@
     <div class="wrap hero-grid">
       <div>
         <span class="tag" style="margin-bottom:16px">🇳🇱 Shopify & WooCommerce Specialist Nederland</span>
-        <h1>Shopify & WooCommerce Specialist Amsterdam</h1>
-        <p class="sub">Snelle mobiele laadtijden (&lt;1.5s), iDEAL 2.0 checkout fixes en custom Liquid thema's voor Amsterdamse boetieks en modemerken — zonder dure agency overhead.</p>
+        <h1>WooCommerce Specialist Amsterdam</h1>
+        <p class="sub">Snelle mobiele laadtijden (&lt;2.0s), foutloze iDEAL &amp; Mollie checkout en PostNL-koppelingen voor Amsterdamse webwinkels — zonder de bureau-overhead van een grachtenpand.</p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn">Bereken Je Omzetverlies →</a>
           <a href="#contact" class="btn btn-ghost">Gratis Speed Audit Aanvragen</a>
@@ -653,6 +654,7 @@
       <div class="section-head">
         <div class="eyebrow">DIENSTEN VOOR DE NEDERLANDSE MARKT</div>
         <h2>Waarmee Kan Ik Jouw Webwinkel Helpen?</h2>
+        <p style="margin-top:8px"><a href="/diensten/woocommerce-bug-fix/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">&rarr; Bekijk ook: Acute WooCommerce Bug Fix Service</a> &middot; <a href="/diensten/postnl-woocommerce-koppeling/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">&rarr; PostNL Koppeling Optimalisatie</a></p>
         <p>Gespecialiseerde oplossingen voor Shopify en WooCommerce webshops.</p>
       </div>
 

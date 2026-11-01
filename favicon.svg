@@ -1,25 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <defs>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#E5C07B"/>
-      <stop offset="50%" stop-color="#D4AF37"/>
-      <stop offset="100%" stop-color="#A98548"/>
-    </linearGradient>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#211C16"/>
-      <stop offset="100%" stop-color="#12100E"/>
-    </linearGradient>
-  </defs>
-  <!-- Background squircle -->
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#A98548" stroke-width="1.5" stroke-opacity="0.4"/>
+  <!-- Solid High-Contrast Background Squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#171410" stroke="#D4AF37" stroke-width="2.5"/>
   
-  <!-- Subtle inner glow -->
-  <rect x="4" y="4" width="56" height="56" rx="12" fill="none" stroke="rgba(212,175,55,0.15)" stroke-width="1"/>
-
-  <!-- Monogram JL with Lightning speed accent -->
-  <text x="14" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="url(#goldGrad)" letter-spacing="-1.5">J</text>
-  <text x="30" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#FAF7F1" letter-spacing="-1.5">L</text>
+  <!-- J Monogram in Gold Pure Vector Path -->
+  <path d="M 26 17 L 26 36 C 26 40.5 22.5 44 18 44 C 13.5 44 10 40.5 10 36 L 10 32 L 15 32 L 15 36 C 15 37.8 16.2 39 18 39 C 19.8 39 21 37.8 21 36 L 21 17 Z" fill="#D4AF37"/>
   
-  <!-- Speed indicator dot / spark -->
-  <polygon points="49,15 43,26 48,26 45,34 53,22 48,22" fill="url(#goldGrad)"/>
+  <!-- L Monogram in Premium Crisp White Pure Vector Path -->
+  <path d="M 31 17 L 36.5 17 L 36.5 39 L 48 39 L 48 44 L 31 44 Z" fill="#FAF7F1"/>
+  
+  <!-- Speed Indicator Lightning Accent -->
+  <polygon points="53,13 44,25 49.5,25 46,36 57,21 51,21" fill="#E5BE72"/>
 </svg>
