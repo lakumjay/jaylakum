@@ -42,6 +42,9 @@ AddDefaultCharset UTF-8
 <IfModule mod_mime.c>
     AddType video/mp4 .mp4
     AddType image/svg+xml .svg .svgz
+    AddType image/x-icon .ico
+    AddType image/png .png
+    AddType image/webp .webp
     AddType application/xml .xml
 </IfModule>
 
