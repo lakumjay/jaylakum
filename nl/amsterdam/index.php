@@ -7,13 +7,15 @@
 
 <!-- Favicon & Touch Icons -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
+<meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
+<meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>WooCommerce Developer Amsterdam | Shopify Dev — Jay Lakum</title>
 <meta name="description" content="Trage Shopify of WooCommerce webshop in Amsterdam? Freelance developer voor mobiele laadtijden onder 2,5 seconden en acute checkout fixes. Betalen bij oplevering." />
