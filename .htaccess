@@ -65,4 +65,9 @@ AddDefaultCharset UTF-8
         Header set Pragma "no-cache"
         Header set Expires "0"
     </FilesMatch>
+
+    # X-Robots-Tag for Search Engines & AI Crawlers
+    <FilesMatch "\.(html|php)$">
+        Header set X-Robots-Tag "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    </FilesMatch>
 </IfModule>
