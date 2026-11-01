@@ -68,12 +68,27 @@
       "publisher": { "@id": "https://jaylakum.com/#person" }
     },
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/#webpage",
+      "url": "https://jaylakum.com/",
+      "name": "Shopify & WooCommerce Developer Netherlands | Jay Lakum",
+      "isPartOf": { "@id": "https://jaylakum.com/#website" },
+      "about": { "@id": "https://jaylakum.com/#person" },
+      "description": "Freelance Shopify & WooCommerce developer in the Netherlands. Sub-2.5 second load times, Core Web Vitals optimization, and 24-48h checkout bug fixes.",
+      "inLanguage": "en-US",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero p", "#faq"]
+      }
+    },
+    {
       "@type": "Person",
       "@id": "https://jaylakum.com/#person",
       "name": "Jay Lakum",
       "jobTitle": "Senior Webshop & Performance Developer",
       "url": "https://jaylakum.com/",
       "email": "jay@jaylakum.com",
+      "image": "https://jaylakum.com/og-image.png",
       "sameAs": [
         "https://github.com/lakumjay",
         "https://www.linkedin.com/in/lakum-jay/",
@@ -83,17 +98,49 @@
     {
       "@type": "ProfessionalService",
       "@id": "https://jaylakum.com/#service",
-      "name": "Jay Lakum — India Coders",
+      "name": "Jay Lakum — Webshop Performance Engineering",
       "description": "Specialist in Shopify and WordPress webshop speed optimization, bug fixes and redesigns for EU and UK stores.",
       "email": "jay@jaylakum.com",
       "url": "https://jaylakum.com/",
       "founder": { "@id": "https://jaylakum.com/#person" },
-      "areaServed": ["Netherlands", "United Kingdom", "Germany", "Belgium", "Europe", "United States"],
-      "knowsAbout": ["Shopify", "WordPress", "WooCommerce", "Core Web Vitals", "Speed Optimization", "Liquid", "PHP", "Web Redesign"],
+      "areaServed": [
+        { "@type": "Country", "name": "Netherlands" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "Belgium" }
+      ],
+      "knowsAbout": [
+        "Shopify", "WordPress", "WooCommerce", "Core Web Vitals", 
+        "Largest Contentful Paint (LCP)", "Interaction to Next Paint (INP)", 
+        "Shopify Liquid Optimization", "Mollie & iDEAL Payment Troubleshooting",
+        "PostNL API Integration"
+      ],
+      "priceRange": "€€",
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speed Optimization (Sub-2s Mobile Load)" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Checkout & Gateway Bug Fixes" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boutique Webshop Redesign" } }
+        { 
+          "@type": "Offer", 
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Mobile Speed Optimization (Sub-2.5s Guarantee)",
+            "description": "Clean up bloat, optimize Liquid/PHP queries, and guarantee green Core Web Vitals."
+          } 
+        },
+        { 
+          "@type": "Offer", 
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Checkout & Payment Bug Fixes (24-48h Delivery)",
+            "description": "Diagnosing Mollie, iDEAL, PostNL and WooCommerce cart freeze issues."
+          } 
+        },
+        { 
+          "@type": "Offer", 
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Boutique Webshop Mobile Redesign",
+            "description": "High-converting frictionless mobile UX tailored to European eCommerce standards."
+          } 
+        }
       ]
     }
   ]
@@ -757,6 +804,22 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Nee, alle aanpassingen, code-opschoning en checkout tests worden eerst grondig getest op een staging/duplicaat omgeving voordat ze worden uitgerold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you guarantee sub-2.5s mobile speed for WooCommerce & Shopify stores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By eliminating unused third-party JavaScript, converting images to modern WebP formats, optimizing database queries, and deferring non-critical render-blocking resources."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide fixed-price quotes for eCommerce bug fixes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, every sprint has a transparent fixed price upfront with 100% payment on verified delivery."
       }
     }
   ]
