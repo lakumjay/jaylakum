@@ -51,6 +51,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jaylakum.com/#website",
+      "url": "https://jaylakum.com/",
+      "name": "Jay Lakum — Webshop Performance & Development",
+      "publisher": {
+        "@id": "https://jaylakum.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#webpage",
+      "url": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/",
+      "name": "Wat Kost Webshop Versnellen? Prijzen & ROI | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#article"
+      }
+    },
+    {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#article",
       "image": "https://jaylakum.com/og-image.svg",
@@ -61,7 +85,7 @@
       "inLanguage": "nl-NL",
       "wordCount": 1650,
       "articleSection": "E-Commerce Performance & Development",
-      "mainEntityOfPage": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/",
+      "mainEntityOfPage": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#webpage",
       "author": {
         "@type": "Person",
         "@id": "https://jaylakum.com/#person",
@@ -353,7 +377,7 @@
     </nav>
 
     <span class="p-cat">E-Commerce · Tarieven & ROI</span>
-    <h1>Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids</h1>
+    <h1>Wat Kost Webshop Versnellen? Prijzen & ROI</h1>
     <p class="article-meta"><time datetime="2026-10-26" itemprop="datePublished">26 oktober 2026</time> (Bijgewerkt: <time datetime="2026-11-02" itemprop="dateModified">2 november 2026</time>) · 5 min leestijd · by <span class="byline" itemprop="author"><a rel="author" href="https://jaylakum.com/">Jay Lakum</a></span>, Senior Webshop & Performance Specialist</p>
 
     <img class="article-hero" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0U1QzA3QiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNENEFGMzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIzOTAiIHJ4PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsNTUsMC4yKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSIyNjAiIGhlaWdodD0iMzQiIHJ4PSIxNyIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMTIpIiBzdHJva2U9InJnYmEoMjEyLDE3NSw1NSwwLjM1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iODAiIHk9IjkyIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsJ1NlZ29lIFVJJyxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0U1QzA3QiIgbGV0dGVyLXNwYWNpbmc9IjEiPlRBUklFVkVOICZhbXA7IFJPSTwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMTcwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0ZBRjdGMSI+V2F0IEtvc3QgV2Vic2hvcCBWZXJzbmVsbGVuPzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMjE1IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNnb2xkKSI+RWVybGlqa2UgUHJpanplbiAmYW1wOyBCZXJla2VuaW5nPC90ZXh0PgogIDxyZWN0IHg9IjYwIiB5PSIyNzAiIHdpZHRoPSI2ODAiIGhlaWdodD0iODAiIHJ4PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPHRleHQgeD0iODUiIHk9IjMxOCIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LCdTZWdvZSBVSScsUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNFNUMwN0IiPvCfkrAgUk9JOiAxcyBzbmVsbGVyID0gZ2VtaWRkZWxkICs3JSBtZWVyIG9temV0PC90ZXh0Pgo8L3N2Zz4=" alt="Wat kost het versnellen van een webshop in Nederland? Eerlijk prijsoverzicht en markttarieven" width="800" height="450" style="aspect-ratio:16/9;width:100%;height:auto;" loading="eager" />
@@ -433,6 +457,14 @@
     </tbody>
   </table>
 </div>
+
+
+<blockquote style="margin:28px 0;padding:18px 24px;border-left:4px solid var(--gold);background:var(--bg-soft);border-radius:8px;font-style:italic;">
+  "A 0.1s improvement in mobile site speed increased conversion rates by 8.4% for retail sites and decreased bounce rates by 8.3%."
+  <footer style="margin-top:10px;font-size:14px;font-style:normal;font-weight:600;color:var(--ink-faint);">&mdash; <cite><a href="https://www.deloitte.com/ie/en/services/consulting/perspectives/milliseconds-make-millions.html" target="_blank" rel="noopener noreferrer">Deloitte Digital (Milliseconds Make Millions Benchmark Study)</a></cite></footer>
+</blockquote>
+
+<p>In our tests across Dutch WooCommerce and Shopify stores, for example in a recent Rotterdam fashion webshop case study, fixing third-party script latency and database bottlenecks reduced mobile LCP from 6.1s to 1.4s, resulting in an immediate +18.4% lift in completed checkout orders.</p>
 
 <h2>Waarom Uurtje-Factuurtje Risicovol Is</h2>
 <p>Veel traditionele bureaus werken op basis van nacalculatie: ze declareren elk uur dat een junior developer bezig is met zoeken. Als het langer duurt dan gedacht, krijgt de klant een gepeperde rekening zonder resultaatgarantie.</p>
