@@ -336,6 +336,16 @@ def main():
     print("\n" + "=" * 65)
     print(f"  Audit Completed: Scanned {total_files} files.")
     print(f"  Found {total_issues} issues | Applied {total_fixes} automated fixes.")
+    # Run Autonomous GSC Single-Page Gap Analysis & Self-Healing
+    try:
+        import sys
+        sys.path.insert(0, os.path.join(ROOT_DIR, 'scripts'))
+        import gsc_gap_analyzer_and_fixer
+        _, gsc_fixes = gsc_gap_analyzer_and_fixer.analyze_and_heal_gsc()
+        total_fixes += gsc_fixes
+    except Exception as e:
+        print(f"GSC Analyzer note: {e}")
+
     print("=" * 65)
 
     # Auto-push to GitHub whenever fixes are applied (unless --no-push is specified)
