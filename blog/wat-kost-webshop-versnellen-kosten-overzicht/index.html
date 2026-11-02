@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids | Jay Lakum</title>
+<title>Wat Kost Webshop Versnellen? Prijzen & ROI | Jay Lakum</title>
 <meta name="description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
 <meta name="keywords" content="wat kost webshop versnellen, webshop snelheid kosten, WooCommerce versnellen prijs, Shopify optimalisatie tarieven, webshop laten versnellen Nederland" />
 <meta name="author" content="Jay Lakum" />
@@ -31,13 +31,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids" />
+<meta property="og:title" content="Wat Kost Webshop Versnellen? Prijzen & ROI" />
 <meta property="og:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids" />
+<meta name="twitter:title" content="Wat Kost Webshop Versnellen? Prijzen & ROI" />
 <meta name="twitter:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 

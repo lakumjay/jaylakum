@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes | Jay Lakum</title>
+<title>Diagnose Broken WooCommerce Checkout in 10 Min | Jay Lakum</title>
 <meta name="description" content="A broken checkout is the most expensive bug a store can have. A calm, 10-minute diagnosis routine that finds the usual culprits before you change anything." />
 <meta name="keywords" content="woocommerce checkout broken, diagnose woocommerce checkout, test woocommerce checkout error, plugin conflict woocommerce checkout, fix broken woocommerce cart" />
 <meta name="author" content="Jay Lakum" />
@@ -31,13 +31,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes" />
+<meta property="og:title" content="Diagnose Broken WooCommerce Checkout in 10 Min" />
 <meta property="og:description" content="A broken checkout is the most expensive bug a store can have. A calm, 10-minute diagnosis routine that finds the usual culprits before you change anything." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes" />
+<meta name="twitter:title" content="Diagnose Broken WooCommerce Checkout in 10 Min" />
 <meta name="twitter:description" content="A broken checkout is the most expensive bug a store can have. A calm, 10-minute diagnosis routine that finds the usual culprits before you change anything." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 

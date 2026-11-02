@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond | Jay Lakum</title>
-<meta name="description" content="Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op." />
+<title>Trage Winkelwagen Oplossen: PostNL & Exact | Jay Lakum</title>
+<meta name="description" content="Blijft je WooCommerce winkelwagen hangen bij verzendkosten of voorraad? Los PostNL API latency en Exact Online synchronisatievertraging op." />
 <meta name="keywords" content="trage woocommerce winkelwagen, postnl api checkout vertraging, exact online synchronisatie woocommerce, winkelmand blijft hangen, woocommerce rotterdam specialist" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" />
@@ -32,14 +32,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond" />
-<meta property="og:description" content="Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op." />
+<meta property="og:title" content="Trage Winkelwagen Oplossen: PostNL & Exact" />
+<meta property="og:description" content="Blijft je WooCommerce winkelwagen hangen bij verzendkosten of voorraad? Los PostNL API latency en Exact Online synchronisatievertraging op." />
 <meta property="og:image" content="https://jaylakum.com/blog-og-trage-woocommerce-winkelwagen.png" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond" />
-<meta name="twitter:description" content="Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op." />
+<meta name="twitter:title" content="Trage Winkelwagen Oplossen: PostNL & Exact" />
+<meta name="twitter:description" content="Blijft je WooCommerce winkelwagen hangen bij verzendkosten of voorraad? Los PostNL API latency en Exact Online synchronisatievertraging op." />
 <meta name="twitter:image" content="https://jaylakum.com/blog-og-trage-woocommerce-winkelwagen.png" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -51,7 +51,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/#article",
       "headline": "Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond",
-      "description": "Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op.",
+      "description": "Blijft je WooCommerce winkelwagen hangen bij verzendkosten of voorraad? Los PostNL API latency en Exact Online synchronisatievertraging op.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "nl-NL",

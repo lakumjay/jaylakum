@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt) | Jay Lakum</title>
-<meta name="description" content="Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont." />
+<title>Trage Shopify Apps & Spookcode Opruimen | Jay Lakum</title>
+<meta name="description" content="Apps verwijderd maar je Shopify webshop blijft traag? Zie hoe spookcode in theme.liquid je mobiele PageSpeed verlaagt en hoe je dit opschoont." />
 <meta name="keywords" content="shopify apps vertragen webshop, liquid code opruimen, shopify snelheid verbeteren, theme.liquid optimalisatie, shopify specialist nederland" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" />
@@ -32,14 +32,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt)" />
-<meta property="og:description" content="Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont." />
+<meta property="og:title" content="Trage Shopify Apps & Spookcode Opruimen" />
+<meta property="og:description" content="Apps verwijderd maar je Shopify webshop blijft traag? Zie hoe spookcode in theme.liquid je mobiele PageSpeed verlaagt en hoe je dit opschoont." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt)" />
-<meta name="twitter:description" content="Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont." />
+<meta name="twitter:title" content="Trage Shopify Apps & Spookcode Opruimen" />
+<meta name="twitter:description" content="Apps verwijderd maar je Shopify webshop blijft traag? Zie hoe spookcode in theme.liquid je mobiele PageSpeed verlaagt en hoe je dit opschoont." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -51,7 +51,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/#article",
       "headline": "5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt)",
-      "description": "Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont.",
+      "description": "Apps verwijderd maar je Shopify webshop blijft traag? Zie hoe spookcode in theme.liquid je mobiele PageSpeed verlaagt en hoe je dit opschoont.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "nl-NL",

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen | Jay Lakum</title>
-<meta name="description" content="Wanneer een klant op 'Afrekenen' klikt en 4 tot 8 seconden moet wachten, haakt 40% geruisloos af. Dit zijn de 7 meest voorkomende technische oorzaken in WooCommerce en hoe je ze binnen 24 uur oplost." />
+<title>Waarom Is Mijn WooCommerce Checkout Traag? | Jay Lakum</title>
+<meta name="description" content="Duurt afrekenen in WooCommerce 4 tot 8 seconden? Ontdek de 7 grootste technische oorzaken van een trage checkout en versnel je koopproces." />
 <meta name="keywords" content="waarom is woocommerce checkout traag, trage kassa woocommerce, cart-fragments.js uitschakelen, mollie ideal checkout storing, woocommerce afrekenen versnellen" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/waarom-is-mijn-woocommerce-checkout-traag/" />
@@ -31,14 +31,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/waarom-is-mijn-woocommerce-checkout-traag/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen" />
-<meta property="og:description" content="Wanneer een klant op 'Afrekenen' klikt en 4 tot 8 seconden moet wachten, haakt 40% geruisloos af. Dit zijn de 7 meest voorkomende technische oorzaken in WooCommerce en hoe je ze binnen 24 uur oplost." />
+<meta property="og:title" content="Waarom Is Mijn WooCommerce Checkout Traag?" />
+<meta property="og:description" content="Duurt afrekenen in WooCommerce 4 tot 8 seconden? Ontdek de 7 grootste technische oorzaken van een trage checkout en versnel je koopproces." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen" />
-<meta name="twitter:description" content="Wanneer een klant op 'Afrekenen' klikt en 4 tot 8 seconden moet wachten, haakt 40% geruisloos af. Dit zijn de 7 meest voorkomende technische oorzaken in WooCommerce en hoe je ze binnen 24 uur oplost." />
+<meta name="twitter:title" content="Waarom Is Mijn WooCommerce Checkout Traag?" />
+<meta name="twitter:description" content="Duurt afrekenen in WooCommerce 4 tot 8 seconden? Ontdek de 7 grootste technische oorzaken van een trage checkout en versnel je koopproces." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/waarom-is-mijn-woocommerce-checkout-traag/#article",
       "headline": "Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen",
-      "description": "Wanneer een klant op 'Afrekenen' klikt en 4 tot 8 seconden moet wachten, haakt 40% geruisloos af. Dit zijn de 7 meest voorkomende technische oorzaken in WooCommerce en hoe je ze binnen 24 uur oplost.",
+      "description": "Duurt afrekenen in WooCommerce 4 tot 8 seconden? Ontdek de 7 grootste technische oorzaken van een trage checkout en versnel je koopproces.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify? | Jay Lakum</title>
-<meta name="description" content="Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op." />
+<title>Trage Mollie & iDEAL Checkout Oplossen | Jay Lakum</title>
+<meta name="description" content="Blijft een Mollie iDEAL order op 'In behandeling' of 'Mislukt' staan? Ontdek de oorzaak van webhook timeouts en los checkout storingen snel op." />
 <meta name="keywords" content="mollie ideal checkout storing, woocommerce ideal betaling mislukt, mollie webhook 403 forbidden, shopify mollie checkout traag, ideal storing webshop" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/" />
@@ -32,14 +32,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?" />
-<meta property="og:description" content="Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op." />
+<meta property="og:title" content="Trage Mollie & iDEAL Checkout Oplossen" />
+<meta property="og:description" content="Blijft een Mollie iDEAL order op 'In behandeling' of 'Mislukt' staan? Ontdek de oorzaak van webhook timeouts en los checkout storingen snel op." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?" />
-<meta name="twitter:description" content="Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op." />
+<meta name="twitter:title" content="Trage Mollie & iDEAL Checkout Oplossen" />
+<meta name="twitter:description" content="Blijft een Mollie iDEAL order op 'In behandeling' of 'Mislukt' staan? Ontdek de oorzaak van webhook timeouts en los checkout storingen snel op." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -51,7 +51,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/#article",
       "headline": "Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?",
-      "description": "Klant betaalt via de bank, maar de bestelling blijft op 'In behandeling' of 'Mislukt' staan? Dit is de technische oorzaak van webhook timeouts en zo los je het op.",
+      "description": "Blijft een Mollie iDEAL order op 'In behandeling' of 'Mislukt' staan? Ontdek de oorzaak van webhook timeouts en los checkout storingen snel op.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "nl-NL",

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes | Jay Lakum</title>
-<meta name="description" content="Met Black Friday en de decemberdrukte voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor." />
+<title>Webshop Klaarmaken Voor Feestdagen & BF | Jay Lakum</title>
+<meta name="description" content="Bereid je webshop voor op Black Friday en december. 5 technische fixes voor checkout stabiliteit en snelle mobiele laadtijden onder piekverkeer." />
 <meta name="keywords" content="webshop klaarmaken feestdagen, black friday webshop voorbereiding, mollie ideal webhook test, woocommerce piekbelasting, webshop versnellen feestdagen" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/webshop-klaarmaken-feestdagen/" />
@@ -32,14 +32,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/webshop-klaarmaken-feestdagen/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes" />
-<meta property="og:description" content="Met Black Friday en de decemberdrukte voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor." />
+<meta property="og:title" content="Webshop Klaarmaken Voor Feestdagen & BF" />
+<meta property="og:description" content="Bereid je webshop voor op Black Friday en december. 5 technische fixes voor checkout stabiliteit en snelle mobiele laadtijden onder piekverkeer." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes" />
-<meta name="twitter:description" content="Met Black Friday en de decemberdrukte voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor." />
+<meta name="twitter:title" content="Webshop Klaarmaken Voor Feestdagen & BF" />
+<meta name="twitter:description" content="Bereid je webshop voor op Black Friday en december. 5 technische fixes voor checkout stabiliteit en snelle mobiele laadtijden onder piekverkeer." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -51,7 +51,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/webshop-klaarmaken-feestdagen/#article",
       "headline": "Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes",
-      "description": "Met Black Friday en de decemberdrukte voor de deur verliezen trage Nederlandse webshops duizenden euro's aan haperende checkouts en mobiele laadtijden. Zo bereid je je winkel technisch voor.",
+      "description": "Bereid je webshop voor op Black Friday en december. 5 technische fixes voor checkout stabiliteit en snelle mobiele laadtijden onder piekverkeer.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "nl-NL",

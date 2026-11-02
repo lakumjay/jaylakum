@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Why Your Mobile Checkout Loses Sales (And How to Fix It) | Jay Lakum</title>
-<meta name="description" content="Your mobile checkout can lose ready-to-buy customers through small delays, unclear costs, long forms and badly timed distractions. Here is how to find and fix the friction." />
+<title>Why Your Mobile Checkout Loses Sales & Fixes | Jay Lakum</title>
+<meta name="description" content="Mobile checkout losing buyers? Discover how small delays, long forms and unclear shipping costs kill conversions, and how to fix them quickly." />
 <meta name="keywords" content="mobile checkout dropoff, why mobile checkout loses sales, fix mobile checkout friction, reduce cart abandonment mobile, ecommerce checkout conversion" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/" />
@@ -31,14 +31,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Why Your Mobile Checkout Loses Sales (And How to Fix It)" />
-<meta property="og:description" content="Your mobile checkout can lose ready-to-buy customers through small delays, unclear costs, long forms and badly timed distractions. Here is how to find and fix the friction." />
+<meta property="og:title" content="Why Your Mobile Checkout Loses Sales & Fixes" />
+<meta property="og:description" content="Mobile checkout losing buyers? Discover how small delays, long forms and unclear shipping costs kill conversions, and how to fix them quickly." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Why Your Mobile Checkout Loses Sales (And How to Fix It)" />
-<meta name="twitter:description" content="Your mobile checkout can lose ready-to-buy customers through small delays, unclear costs, long forms and badly timed distractions. Here is how to find and fix the friction." />
+<meta name="twitter:title" content="Why Your Mobile Checkout Loses Sales & Fixes" />
+<meta name="twitter:description" content="Mobile checkout losing buyers? Discover how small delays, long forms and unclear shipping costs kill conversions, and how to fix them quickly." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/#article",
       "headline": "Why Your Mobile Checkout Loses Sales (And How to Fix It)",
-      "description": "Your mobile checkout can lose ready-to-buy customers through small delays, unclear costs, long forms and badly timed distractions. Here is how to find and fix the friction.",
+      "description": "Mobile checkout losing buyers? Discover how small delays, long forms and unclear shipping costs kill conversions, and how to fix them quickly.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

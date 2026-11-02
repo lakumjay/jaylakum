@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>How to Fix a Slow WooCommerce Store: A Practical Checklist | Jay Lakum</title>
-<meta name="description" content="A methodical WooCommerce speed checklist: measure first, then work through hosting, caching, images, plugins, theme code, the database and checkout — one change at a time." />
+<title>Fix Slow WooCommerce Store: Speed Checklist | Jay Lakum</title>
+<meta name="description" content="Step-by-step WooCommerce speed checklist: measure performance, then optimize hosting, caching, images, database queries and checkout flow." />
 <meta name="keywords" content="fix slow woocommerce store, woocommerce performance checklist, speed up woocommerce TTFB, woocommerce database cleanup, high performance order storage" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/how-to-fix-slow-woocommerce-store-practical-checklist/" />
@@ -31,14 +31,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/how-to-fix-slow-woocommerce-store-practical-checklist/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="How to Fix a Slow WooCommerce Store: A Practical Checklist" />
-<meta property="og:description" content="A methodical WooCommerce speed checklist: measure first, then work through hosting, caching, images, plugins, theme code, the database and checkout — one change at a time." />
+<meta property="og:title" content="Fix Slow WooCommerce Store: Speed Checklist" />
+<meta property="og:description" content="Step-by-step WooCommerce speed checklist: measure performance, then optimize hosting, caching, images, database queries and checkout flow." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="How to Fix a Slow WooCommerce Store: A Practical Checklist" />
-<meta name="twitter:description" content="A methodical WooCommerce speed checklist: measure first, then work through hosting, caching, images, plugins, theme code, the database and checkout — one change at a time." />
+<meta name="twitter:title" content="Fix Slow WooCommerce Store: Speed Checklist" />
+<meta name="twitter:description" content="Step-by-step WooCommerce speed checklist: measure performance, then optimize hosting, caching, images, database queries and checkout flow." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/how-to-fix-slow-woocommerce-store-practical-checklist/#article",
       "headline": "How to Fix a Slow WooCommerce Store: A Practical Checklist",
-      "description": "A methodical WooCommerce speed checklist: measure first, then work through hosting, caching, images, plugins, theme code, the database and checkout — one change at a time.",
+      "description": "Step-by-step WooCommerce speed checklist: measure performance, then optimize hosting, caching, images, database queries and checkout flow.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark" />
 
 <title>7 Mobile Mistakes Killing Your Webshop Sales | Jay Lakum</title>
-<meta name="description" content="Most of your visitors are on a phone — but most stores are still checked on a desktop. Seven mobile mistakes I see on fashion and beauty webshops, and how to spot them on yours." />
+<meta name="description" content="Over 70% of visitors shop on phones. Discover the 7 critical mobile UX mistakes hurting webshop conversion rates and how to fix them quickly." />
 <meta name="keywords" content="mobile webshop mistakes, mobile checkout dropoff, mobile conversion rate eCommerce, responsive webshop fixes, mobile bounce rate eCommerce" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/" />
@@ -32,13 +32,13 @@
 <meta property="og:url" content="https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="7 Mobile Mistakes Killing Your Webshop Sales" />
-<meta property="og:description" content="Most of your visitors are on a phone — but most stores are still checked on a desktop. Seven mobile mistakes I see on fashion and beauty webshops, and how to spot them on yours." />
+<meta property="og:description" content="Over 70% of visitors shop on phones. Discover the 7 critical mobile UX mistakes hurting webshop conversion rates and how to fix them quickly." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="7 Mobile Mistakes Killing Your Webshop Sales" />
-<meta name="twitter:description" content="Most of your visitors are on a phone — but most stores are still checked on a desktop. Seven mobile mistakes I see on fashion and beauty webshops, and how to spot them on yours." />
+<meta name="twitter:description" content="Over 70% of visitors shop on phones. Discover the 7 critical mobile UX mistakes hurting webshop conversion rates and how to fix them quickly." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/#article",
       "headline": "7 Mobile Mistakes Killing Your Webshop Sales",
-      "description": "Most of your visitors are on a phone — but most stores are still checked on a desktop. Seven mobile mistakes I see on fashion and beauty webshops, and how to spot them on yours.",
+      "description": "Over 70% of visitors shop on phones. Discover the 7 critical mobile UX mistakes hurting webshop conversion rates and how to fix them quickly.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

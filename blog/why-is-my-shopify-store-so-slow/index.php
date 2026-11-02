@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Why Is My Shopify Store So Slow? 5 Fixes That Actually Work | Jay Lakum</title>
-<meta name="description" content="Shopify itself is fast — so why does your store crawl? The five causes behind almost every slow Shopify store, and how to fix each one." />
+<title>Why Is My Shopify Store Slow? 5 Real Fixes | Jay Lakum</title>
+<meta name="description" content="Shopify itself is fast, so why does your store crawl? Discover the top 5 causes behind slow Shopify stores and how to fix mobile speed today." />
 <meta name="keywords" content="why is my shopify store slow, shopify speed optimization, fix slow shopify theme, improve shopify mobile speed, core web vitals shopify" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/why-is-my-shopify-store-so-slow/" />
@@ -31,14 +31,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/why-is-my-shopify-store-so-slow/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Why Is My Shopify Store So Slow? 5 Fixes That Actually Work" />
-<meta property="og:description" content="Shopify itself is fast — so why does your store crawl? The five causes behind almost every slow Shopify store, and how to fix each one." />
+<meta property="og:title" content="Why Is My Shopify Store Slow? 5 Real Fixes" />
+<meta property="og:description" content="Shopify itself is fast, so why does your store crawl? Discover the top 5 causes behind slow Shopify stores and how to fix mobile speed today." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Why Is My Shopify Store So Slow? 5 Fixes That Actually Work" />
-<meta name="twitter:description" content="Shopify itself is fast — so why does your store crawl? The five causes behind almost every slow Shopify store, and how to fix each one." />
+<meta name="twitter:title" content="Why Is My Shopify Store Slow? 5 Real Fixes" />
+<meta name="twitter:description" content="Shopify itself is fast, so why does your store crawl? Discover the top 5 causes behind slow Shopify stores and how to fix mobile speed today." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/why-is-my-shopify-store-so-slow/#article",
       "headline": "Why Is My Shopify Store So Slow? 5 Fixes That Actually Work",
-      "description": "Shopify itself is fast — so why does your store crawl? The five causes behind almost every slow Shopify store, and how to fix each one.",
+      "description": "Shopify itself is fast, so why does your store crawl? Discover the top 5 causes behind slow Shopify stores and how to fix mobile speed today.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

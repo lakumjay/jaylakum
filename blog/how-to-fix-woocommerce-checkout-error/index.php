@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>How to Fix WooCommerce Checkout Error & Critical Payment Failures | Jay Lakum</title>
-<meta name="description" content="Customers clicking 'Place Order' only to see an endless spinning wheel, a generic 'Internal Server Error', or expired payment sessions? Here is how to isolate and fix critical WooCommerce checkout issues without breaking your live store." />
+<title>Fix WooCommerce Checkout Errors & Payment Bugs | Jay Lakum</title>
+<meta name="description" content="Endless spinning wheel or critical payment errors in WooCommerce checkout? Learn how to isolate gateway failures and fix checkout bugs safely." />
 <meta name="keywords" content="how to fix woocommerce checkout error, woocommerce payment failure, admin-ajax.php checkout error, woocommerce spinning wheel fix, woocommerce checkout not working" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/how-to-fix-woocommerce-checkout-error/" />
@@ -31,14 +31,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/how-to-fix-woocommerce-checkout-error/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="How to Fix WooCommerce Checkout Error & Critical Payment Failures" />
-<meta property="og:description" content="Customers clicking 'Place Order' only to see an endless spinning wheel, a generic 'Internal Server Error', or expired payment sessions? Here is how to isolate and fix critical WooCommerce checkout issues without breaking your live store." />
+<meta property="og:title" content="Fix WooCommerce Checkout Errors & Payment Bugs" />
+<meta property="og:description" content="Endless spinning wheel or critical payment errors in WooCommerce checkout? Learn how to isolate gateway failures and fix checkout bugs safely." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="How to Fix WooCommerce Checkout Error & Critical Payment Failures" />
-<meta name="twitter:description" content="Customers clicking 'Place Order' only to see an endless spinning wheel, a generic 'Internal Server Error', or expired payment sessions? Here is how to isolate and fix critical WooCommerce checkout issues without breaking your live store." />
+<meta name="twitter:title" content="Fix WooCommerce Checkout Errors & Payment Bugs" />
+<meta name="twitter:description" content="Endless spinning wheel or critical payment errors in WooCommerce checkout? Learn how to isolate gateway failures and fix checkout bugs safely." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/how-to-fix-woocommerce-checkout-error/#article",
       "headline": "How to Fix WooCommerce Checkout Error & Critical Payment Failures",
-      "description": "Customers clicking 'Place Order' only to see an endless spinning wheel, a generic 'Internal Server Error', or expired payment sessions? Here is how to isolate and fix critical WooCommerce checkout issues without breaking your live store.",
+      "description": "Endless spinning wheel or critical payment errors in WooCommerce checkout? Learn how to isolate gateway failures and fix checkout bugs safely.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

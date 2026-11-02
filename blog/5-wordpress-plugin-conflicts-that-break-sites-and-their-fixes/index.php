@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>5 WordPress Plugin Conflicts That Break Sites (And Their Fixes) | Jay Lakum</title>
-<meta name="description" content="Five common WordPress plugin conflict patterns — optimisation tools, security rules, translations, caching layers and duplicate libraries — and the safe way to diagnose and fix each one." />
+<title>5 WordPress Plugin Conflicts & How to Fix Them | Jay Lakum</title>
+<meta name="description" content="Learn how to diagnose and resolve 5 critical WordPress plugin conflicts safely: caching collisions, duplicate scripts and fatal checkout errors." />
 <meta name="keywords" content="wordpress plugin conflicts, fix plugin conflict wordpress, white screen of death wordpress, woocommerce plugin conflict checkout, troubleshoot wordpress plugins" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/5-wordpress-plugin-conflicts-that-break-sites-and-their-fixes/" />
@@ -31,14 +31,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/5-wordpress-plugin-conflicts-that-break-sites-and-their-fixes/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="5 WordPress Plugin Conflicts That Break Sites (And Their Fixes)" />
-<meta property="og:description" content="Five common WordPress plugin conflict patterns — optimisation tools, security rules, translations, caching layers and duplicate libraries — and the safe way to diagnose and fix each one." />
+<meta property="og:title" content="5 WordPress Plugin Conflicts & How to Fix Them" />
+<meta property="og:description" content="Learn how to diagnose and resolve 5 critical WordPress plugin conflicts safely: caching collisions, duplicate scripts and fatal checkout errors." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="5 WordPress Plugin Conflicts That Break Sites (And Their Fixes)" />
-<meta name="twitter:description" content="Five common WordPress plugin conflict patterns — optimisation tools, security rules, translations, caching layers and duplicate libraries — and the safe way to diagnose and fix each one." />
+<meta name="twitter:title" content="5 WordPress Plugin Conflicts & How to Fix Them" />
+<meta name="twitter:description" content="Learn how to diagnose and resolve 5 critical WordPress plugin conflicts safely: caching collisions, duplicate scripts and fatal checkout errors." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -50,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/5-wordpress-plugin-conflicts-that-break-sites-and-their-fixes/#article",
       "headline": "5 WordPress Plugin Conflicts That Break Sites (And Their Fixes)",
-      "description": "Five common WordPress plugin conflict patterns — optimisation tools, security rules, translations, caching layers and duplicate libraries — and the safe way to diagnose and fix each one.",
+      "description": "Learn how to diagnose and resolve 5 critical WordPress plugin conflicts safely: caching collisions, duplicate scripts and fatal checkout errors.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",
