@@ -34,7 +34,6 @@
 <meta name="geo.region" content="NL" />
 <meta name="geo.placename" content="Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven, Nederland" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="website" />
@@ -636,7 +635,7 @@
       <div>
         <div class="card" style="border-left:4px solid var(--gold)">
           <div class="eyebrow" style="margin-bottom:10px">VOOR NEDERLANDSE WEBSHOPS</div>
-          <h3 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Bureau, Wel Topkwaliteit</h3>
+          <h2 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Bureau, Wel Topkwaliteit</h2>
           <p>Veel Nederlandse webdesignbureaus rekenen €95 tot €150 per uur voor basisaanpassingen. Als freelance developer werk ik direct met de eigenaar, zonder accountmanagers of overhead:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
             <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile (binnen schriftelijke scope).</li>
@@ -812,7 +811,7 @@
         </div>
         <div>
           <div class="card" style="background:var(--bg-soft);border:1px solid var(--line-strong)">
-            <h4 style="font-size:20px;margin-bottom:12px">🛡️ Mijn Werkwijze voor Betaalproblemen</h4>
+            <h3 style="font-size:20px;margin-bottom:12px">🛡️ Mijn Werkwijze voor Betaalproblemen</h3>
             <ol style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.75;margin:0 0 16px">
               <li><b>Staging Eerst:</b> We testen nooit rechtstreeks op jouw actieve webshop waar klanten winkelen.</li>
               <li><b>Logboek Analyse:</b> Inspectie van Mollie API logs en WooCommerce foutenrapporten.</li>
