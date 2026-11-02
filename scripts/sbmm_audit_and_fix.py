@@ -271,6 +271,34 @@ def audit_and_fix_file(filepath):
             except Exception:
                 pass
 
+    # 12. Blog Language Enforcement for Dutch Content
+    if "/blog/" in rel:
+        is_dutch = any(w in content.lower() for w in ['waarom is mijn', 'wat kost', 'winkelwagen', 'storing', 'oplossen'])
+        if is_dutch and '<html lang="en">' in content:
+            content = content.replace('<html lang="en">', '<html lang="nl-NL">')
+            content = content.replace('content="en_US"', 'content="nl_NL"')
+            issues.append("Dutch blog post had English language tag (en)")
+            fixes.append("Auto-corrected language tag to nl-NL and og:locale to nl_NL")
+
+    # 13. Blog Internal Link Enforcement (Minimum 1 contextual in-body link)
+    if "/blog/" in rel and ('<div class="article-body">' in content or '<article class="article-wrap">' in content):
+        soup_body = BeautifulSoup(content, 'html.parser').find('div', class_='article-body')
+        if soup_body and len(soup_body.find_all('a')) == 0:
+            issues.append("Blog post had 0 internal links in article body")
+            inject_link = '\n<p>Looking for verified expertise? Discover our <a href="/nl/amsterdam/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce specialist Amsterdam</a> services or our dedicated <a href="/diensten/woocommerce-bug-fix/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce bug fix service</a>.</p>\n'
+            if '</div>\n\n    <div class="article-cta">' in content:
+                content = content.replace('</div>\n\n    <div class="article-cta">', inject_link + '</div>\n\n    <div class="article-cta">', 1)
+            elif '</div>\n    <div class="article-cta">' in content:
+                content = content.replace('</div>\n    <div class="article-cta">', inject_link + '</div>\n    <div class="article-cta">', 1)
+            fixes.append("Auto-injected contextual internal link to city and service pages")
+
+    # 14. WWW to non-WWW canonical integrity check
+    if 'www.jaylakum.com' in content and 'contact.php' not in rel:
+        content = content.replace('https://www.jaylakum.com', 'https://jaylakum.com')
+        content = content.replace('http://www.jaylakum.com', 'https://jaylakum.com')
+        issues.append("Found www.jaylakum.com link inside page content")
+        fixes.append("Auto-normalized to non-www https://jaylakum.com")
+
     if content != orig_content:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(content)
