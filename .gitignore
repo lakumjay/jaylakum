@@ -2,4 +2,7 @@
 *.zip
 jaylakum-site-upload/
 scripts/*.log
+.env
+*.env
+
 
