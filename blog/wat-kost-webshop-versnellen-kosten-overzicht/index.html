@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark" />
 
 <title>Wat Kost Webshop Versnellen? Prijzen & ROI | Jay Lakum</title>
-<meta name="description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
+<meta name="description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt en de ROI van snellere laadtijden." />
 <meta name="keywords" content="wat kost webshop versnellen, webshop snelheid kosten, WooCommerce versnellen prijs, Shopify optimalisatie tarieven, webshop laten versnellen Nederland" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
@@ -36,13 +36,13 @@
 <meta property="og:url" content="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Wat Kost Webshop Versnellen? Prijzen & ROI" />
-<meta property="og:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
+<meta property="og:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt en de ROI van snellere laadtijden." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Wat Kost Webshop Versnellen? Prijzen & ROI" />
-<meta name="twitter:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
+<meta name="twitter:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt en de ROI van snellere laadtijden." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -55,7 +55,7 @@
       "@id": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#article",
       "image": "https://jaylakum.com/og-image.svg",
       "headline": "Wat Kost Webshop Versnellen? Prijzen & ROI",
-      "description": "Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden.",
+      "description": "Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt en de ROI van snellere laadtijden.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-11-02T12:00:00+01:00",
       "inLanguage": "nl-NL",
