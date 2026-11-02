@@ -4,17 +4,28 @@ SBMM SEO, AEO & GEO Automated Audit & Auto-Fix Script
 Built directly from SBMM Extension v1.7.2 rules.
 
 Audits:
-- Metadata (Title 50-60 chars, Description 140-155 chars, Robots, Keywords, Canonical)
+- Metadata (Title 50-60 chars & <= 600px, Description 120-155 chars & <= 960px, Robots, Keywords, Canonical)
 - Headings (H1 single, logical hierarchy)
 - Images (alt tags, dimensions, lazy loading)
 - Schema.org JSON-LD (Article image, headline, author, datePublished, dateModified, publisher, sameAs, FAQPage)
 - AEO / GEO (Direct answer box, Question headings, Structured tables, Citations, Visible Author, Time tags)
+- Optional --push flag: Automatically commits and pushes fixes to GitHub!
 """
 
 import os
 import re
 import glob
 import json
+import sys
+import subprocess
+
+try:
+    from PIL import ImageFont
+    FONT_TITLE = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 20)
+    FONT_DESC = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 14)
+except Exception:
+    FONT_TITLE = None
+    FONT_DESC = None
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +36,7 @@ def audit_and_fix_file(filepath):
     issues = []
     fixes = []
 
-    # 1. Title Tag Check
+    # 1. Title Tag Check (Length & Pixel Width)
     m_title = re.search(r"<title>(.*?)</title>", content)
     if not m_title:
         issues.append("Missing <title> tag")
@@ -36,7 +47,12 @@ def audit_and_fix_file(filepath):
         elif len(title) < 40:
             issues.append(f"Title too short ({len(title)} chars < 40): {title}")
 
-    # 2. Meta Description Check
+        if FONT_TITLE:
+            px_w = FONT_TITLE.getlength(title)
+            if px_w > 600:
+                issues.append(f"Title pixel width too wide ({px_w:.0f}px > 600px)")
+
+    # 2. Meta Description Check (Length & Pixel Width)
     m_desc = re.search(r'<meta\s+name=["\']description["\']\s+content="(.*?)"', content)
     if not m_desc:
         issues.append("Missing meta description")
@@ -47,10 +63,14 @@ def audit_and_fix_file(filepath):
         elif len(desc) < 120:
             issues.append(f"Description too short ({len(desc)} chars < 120)")
 
+        if FONT_DESC:
+            px_d = FONT_DESC.getlength(desc)
+            if px_d > 960:
+                issues.append(f"Description pixel width too wide ({px_d:.0f}px > 960px)")
+
     # 3. Robots Tag Check
     if '<meta name="robots"' not in content:
         issues.append("Missing <meta name=\"robots\"> tag")
-        # Auto-fix: add robots tag after canonical
         if '<link rel="canonical"' in content:
             content = content.replace(
                 '<link rel="canonical"',
@@ -62,14 +82,14 @@ def audit_and_fix_file(filepath):
     if '<meta name="keywords"' not in content:
         issues.append("Missing <meta name=\"keywords\"> tag")
 
-    # 5. Schema Image in BlogPosting
-    if '"@type": "BlogPosting"' in content and '"image"' not in content:
-        issues.append("BlogPosting schema missing required 'image' property")
+    # 5. Schema Image in BlogPosting / Article
+    if ('"@type": "BlogPosting"' in content or '"@type": "Article"' in content) and '"image"' not in content:
+        issues.append("Article schema missing required 'image' property")
         content = content.replace(
             '"headline":',
             '"image": "https://jaylakum.com/og-image.svg",\n      "headline":'
         )
-        fixes.append("Added 'image' to BlogPosting schema")
+        fixes.append("Added 'image' to Article schema")
 
     # 6. Schema Author sameAs
     if '"@type": "Person"' in content and 'sameAs' not in content:
@@ -137,6 +157,13 @@ def main():
     print(f"  Audit Completed: Scanned {total_files} files.")
     print(f"  Found {total_issues} issues | Applied {total_fixes} automated fixes.")
     print("=" * 65)
+
+    if "--push" in sys.argv and total_fixes > 0:
+        print("\n🚀 Pushing automated fixes to GitHub repository...")
+        subprocess.run(["git", "add", "-A"], cwd=ROOT_DIR)
+        subprocess.run(["git", "commit", "-m", f"chore(seo-auto): auto-fixed {total_fixes} SBMM SEO/AEO/GEO issues via autopilot cron"], cwd=ROOT_DIR)
+        subprocess.run(["git", "push", "origin", "main"], cwd=ROOT_DIR)
+        print("✅ Changes pushed to main branch successfully!")
 
 if __name__ == "__main__":
     main()

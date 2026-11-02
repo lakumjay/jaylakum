@@ -20,7 +20,7 @@
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>Shopify &amp; WooCommerce Specialist Utrecht | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce specialist in Utrecht gezocht? Vaste prijs vooraf, betalen bij oplevering en directe communicatie. Geen duur marketingbureau." />
+<meta name="description" content="Freelance WooCommerce specialist in Utrecht? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/utrecht/" />
@@ -39,7 +39,7 @@
 <meta property="og:url" content="https://jaylakum.com/nl/utrecht/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
 <meta property="og:title" content="Shopify Specialist Utrecht — Webshop Snelheid & Duurzame Hosting | Jay Lakum" />
-<meta property="og:description" content="Freelance WooCommerce specialist in Utrecht gezocht? Vaste prijs vooraf, betalen bij oplevering en directe communicatie. Geen duur marketingbureau." />
+<meta property="og:description" content="Freelance WooCommerce specialist in Utrecht? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 

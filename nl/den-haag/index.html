@@ -20,7 +20,7 @@
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
 <title>Shopify &amp; WooCommerce Specialist Den Haag | Jay Lakum</title>
-<meta name="description" content="Mollie, iDEAL &amp; Bancontact checkout fouten oplossen in Den Haag? Freelance webshop developer voor internationale webshops. Vaste prijs vooraf." />
+<meta name="description" content="Freelance WooCommerce specialist in Den Haag? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/den-haag/" />
@@ -39,7 +39,7 @@
 <meta property="og:url" content="https://jaylakum.com/nl/den-haag/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
 <meta property="og:title" content="Shopify Specialist Den Haag — Webshop Development & Privacy | Jay Lakum" />
-<meta property="og:description" content="Trage webshops versnellen, Mollie/iDEAL checkout reparaties en conversie-optimalisatie voor Nederlandse webwinkels. Vaste prijs vooraf." />
+<meta property="og:description" content="Freelance WooCommerce specialist in Den Haag? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 

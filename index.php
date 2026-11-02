@@ -21,7 +21,7 @@
 
 <!-- Primary SEO Meta -->
 <title>Shopify &amp; WooCommerce Developer Netherlands | Jay Lakum</title>
-<meta name="description" content="Freelance Shopify &amp; WooCommerce developer in Netherlands. Sub-2.5s mobile speed, Core Web Vitals and 24-48h checkout bug fixes. Pay on delivery." />
+<meta name="description" content="Shopify & WooCommerce speed optimization and checkout bug fixes for Dutch webshops. Fixed project prices, pay on completion, direct contact." />
 <meta name="keywords" content="Shopify developer Netherlands, WooCommerce specialist Amsterdam, Shopify speed optimization, webshop versnellen, WooCommerce checkout fix, freelance ecommerce developer" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
@@ -43,7 +43,7 @@
 <meta property="og:url" content="https://jaylakum.com/" />
 <meta property="og:site_name" content="Jay Lakum — India Coders" />
 <meta property="og:title" content="Jay Lakum — I fix &amp; speed up Shopify and WordPress webshops" />
-<meta property="og:description" content="Speed optimization, bug fixes and redesigns for EU &amp; UK fashion &amp; beauty webshops. Fixed quote upfront. Based in India, async-first." />
+<meta property="og:description" content="Shopify & WooCommerce speed optimization and checkout bug fixes for Dutch webshops. Fixed project prices, pay on completion, direct contact." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -54,7 +54,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="https://jaylakum.com/" />
 <meta name="twitter:title" content="Jay Lakum — Shopify &amp; WordPress Developer for EU &amp; UK Stores" />
-<meta name="twitter:description" content="Speed optimization, checkout bug fixes and high-converting redesigns for European online stores." />
+<meta name="twitter:description" content="Shopify & WooCommerce speed optimization and checkout bug fixes for Dutch webshops. Fixed project prices, pay on completion, direct contact." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 <meta name="twitter:creator" content="@jaylakum" />
 

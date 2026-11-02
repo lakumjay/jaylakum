@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Technical E-Commerce & Webshop Performance Blog | Jay Lakum</title>
-<meta name="description" content="Field-tested technical guides on Shopify and WooCommerce speed optimization, Core Web Vitals, checkout bugs, and high-conversion e-commerce development." />
+<meta name="description" content="Technical guides, checkout fixes and speed blueprints for Shopify and WooCommerce stores in the Netherlands. Real benchmarks, practical solutions." />
 <meta name="keywords" content="ecommerce blog, shopify speed optimization guides, woocommerce checkout repair tutorials, webshop versnellen tips, core web vitals ecommerce" />
 <link rel="canonical" href="https://jaylakum.com/blog/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://jaylakum.com/blog/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Technical E-Commerce & Webshop Performance Blog | Jay Lakum" />
-<meta property="og:description" content="Field-tested technical guides on Shopify and WooCommerce speed optimization, Core Web Vitals, and checkout repairs." />
+<meta property="og:description" content="Technical guides, checkout fixes and speed blueprints for Shopify and WooCommerce stores in the Netherlands. Real benchmarks, practical solutions." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <style>
