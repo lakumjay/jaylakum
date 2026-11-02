@@ -151,6 +151,29 @@ def audit_and_fix_file(filepath):
                 content = re.sub(r'<h4>(.*?)</h4>', r'<h3>\1</h3>', content)
             fixes.append("Auto-promoted section sub-heading from h4 to h3 (resolves h2->h4 skip)")
 
+    # 4b. H1 Describes Page (Length <= 90 chars and shares keywords with Title)
+    h1_el = soup.find('h1')
+    title_el = soup.find('title')
+    if h1_el and title_el:
+        h1_text = h1_el.get_text(strip=True)
+        title_text = title_el.get_text(strip=True)
+        if len(h1_text) > 90:
+            issues.append(f"H1 too long ({len(h1_text)} chars > 90): {h1_text[:40]}...")
+        h1_words = [w.lower() for w in re.findall(r'\b[a-zA-Z0-9\u00C0-\u017F]+\b', h1_text) if len(w) > 2]
+        title_words = set([w.lower() for w in re.findall(r'\b[a-zA-Z0-9\u00C0-\u017F]+\b', title_text) if len(w) > 2])
+        shared_words = [w for w in h1_words if w in title_words]
+        if not shared_words and len(h1_words) >= 2 and rel not in ['index.html', 'index.php']:
+            issues.append(f"H1 shares no words with title: H1='{h1_text[:35]}' vs Title='{title_text[:35]}'")
+
+    # 4c. No Repeated Headings (All H1-H4 must be unique text)
+    heading_texts = [h.get_text(strip=True).lower() for h in soup.find_all(['h1','h2','h3','h4']) if len(h.get_text(strip=True)) >= 3]
+    h_counts = {}
+    for ht in heading_texts:
+        h_counts[ht] = h_counts.get(ht, 0) + 1
+    repeated_h = [ht for ht, cnt in h_counts.items() if cnt > 1]
+    if repeated_h and rel not in ['index.html', 'index.php']:
+        issues.append(f"Repeated headings found: {repeated_h}")
+
     # 5. Schema Image in BlogPosting / Article
     if ('"@type": "BlogPosting"' in content or '"@type": "Article"' in content) and '"image"' not in content:
         issues.append("Article schema missing required 'image' property")

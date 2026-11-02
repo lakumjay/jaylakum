@@ -190,7 +190,7 @@
 <main class="wrap">
   <div class="blog-head">
     <span class="p-cat">Engineering Notes</span>
-    <h1>Faster, Healthier Webshops</h1>
+    <h1>Webshop Performance &amp; Technical E-Commerce Guides</h1>
     <p>Field-tested technical guides on Shopify and WooCommerce performance, checkout repairs, Core Web Vitals, and conversion optimization.</p>
   </div>
 

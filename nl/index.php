@@ -619,7 +619,7 @@
     <div class="wrap hero-grid">
       <div>
         <span class="tag" style="margin-bottom:16px">🇳🇱 Shopify & WooCommerce Specialist Nederland</span>
-        <h1>Trage Webshop Versnellen of <span style="color:var(--gold-deep)">iDEAL Foutmeldingen</span> Oplossen</h1>
+        <h1>Shopify &amp; WooCommerce Specialist: <span style="color:var(--gold-deep)">Webshop Versnellen</span> &amp; iDEAL Fix</h1>
         <p class="sub">Verlies geen omzet door trage mobiele laadtijden of een vastlopende kassa. Ik help Nederlandse webwinkels aan <b>snelle mobiele laadtijden (doel: sub-2.5s LCP conform Core Web Vitals)</b> en storingsvrije <b>iDEAL & Mollie checkouts</b>. Vaste prijs vooraf — geen uurtje-factuurtje.</p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn">Bereken Je Omzetverlies →</a>
@@ -964,7 +964,7 @@
         <div class="pricing-card">
           <div>
             <span class="eyebrow" style="margin-bottom:6px">Complete Redesign &middot; 2-3 Weken</span>
-            <h3 style="font-size:20px;margin:0 0 10px">Boutique Webshop Redesign</h3>
+            <h3 style="font-size:20px;margin:0 0 10px">Boutique Webshop Redesign Pakket</h3>
             <div style="font-size:32px;font-weight:800;color:var(--ink);margin-bottom:14px">€1.490 – €2.800 <span style="font-size:14px;font-weight:400;color:var(--ink-faint)">/ vaste prijs</span></div>
             <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0 0 18px">
               Geef je webshop de uitstraling die bij je merk past. Maatwerk Liquid/WooCommerce templates, hoge conversie en soepele mobiele flow.

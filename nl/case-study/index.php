@@ -338,7 +338,7 @@
 
   <article class="case-header">
     <span class="tag">GEVERIFIEERDE CASE STUDY &middot; WEBSHOP SNELHEID</span>
-    <h1>Hoe we de mobiele laadtijd verlaagden van 6.1s naar 2.2s voor Nordic Apparel &amp; Accessories (Fashion Boutique)</h1>
+    <h1>Hoe We de Mobiele Laadtijd Verlaagden van 6.1s naar 2.2s</h1>
     <p class="case-summary">
       Nordic Apparel & Accessories (Mode & Accessoires Boutique — Geanonimiseerde Case Study) verloor waardevolle mobiele bestellingen door trage laadtijden. Hier is het exacte stappenplan waarmee we achtergebleven app code verwijderden, mobiele laadtijd terugbrachten naar 2.2s en winkelwagenuitval aanzienlijk terugdrongen.
     </p>

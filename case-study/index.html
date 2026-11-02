@@ -321,7 +321,7 @@
 
   <article class="case-header">
     <span class="tag">VERIFIED CASE STUDY &middot; SHOPIFY PERFORMANCE</span>
-    <h1>How We Cut Mobile Load Time from 6.1s to 2.2s for Nordic Apparel &amp; Accessories (Fashion Boutique)</h1>
+    <h1>How We Cut Mobile Load Time from 6.1s to 2.2s</h1>
     <p class="case-summary">
       Nordic Apparel & Accessories (Fashion Boutique — Anonymized Boutique Case Study) was experiencing high mobile drop-off due to sluggish loading times. Here is the exact technical breakdown of how we eliminated leftover app scripts, optimized critical rendering, and passed Google Core Web Vitals.
     </p>

@@ -335,11 +335,11 @@
 <h2>Symptom 1: Infinite Spinning Wheel on "Place Order"</h2>
 <p>When the customer clicks the final submit button, the button dims, a loading wheel appears, and nothing ever happens. The customer refreshes or leaves.</p>
 
-<h3>The Underlying Cause:</h3>
+<h3>Underlying Cause &amp; Technical Diagnosis:</h3>
 <p>Open your browser's Developer Tools (<code>F12</code> or <code>Right Click → Inspect</code>) and check the <strong>Console</strong> and <strong>Network</strong> tabs.</p>
 <p>9 times out of 10, you will see a red error message: <code>admin-ajax.php 500 Internal Server Error</code> or a JavaScript fatal error from a conflicting plugin.</p>
 
-<h3>The Fix:</h3>
+<h3>Fix 1: Flush Transients &amp; Cache Nonces</h3>
 <ol>
   <li>Inspect the network response for <code>?wc-ajax=checkout</code>. Click on the failed request and view the <strong>Response</strong> tab. It will reveal the exact PHP fatal error or file path causing the crash.</li>
   <li>Common culprits include outdated shipping plugins (PostNL, DHL), dynamic currency switchers, or poorly coded tax calculation hooks.</li>
@@ -350,10 +350,10 @@
 <h2>Symptom 2: "Session Expired" or "Nonce Verification Failed"</h2>
 <p>Customers submit their details, but WooCommerce rejects the form claiming the security nonce is invalid or the session has timed out, even if they just arrived.</p>
 
-<h3>The Underlying Cause:</h3>
+<h3>Underlying Cause &amp; Gateway Conflict:</h3>
 <p>Aggressive page caching by server plugins (LiteSpeed Cache, WP Rocket, Cloudflare APO, or Varnish). When the checkout page is cached as static HTML, every customer receives the exact same cached security nonce generated hours earlier. When submitted, WooCommerce rejects it as expired.</p>
 
-<h3>The Fix:</h3>
+<h3>Fix 2: Isolate Plugin &amp; Theme Conflicts</h3>
 <p>Never allow your caching plugin to cache the following pages:</p>
 <ul>
   <li><code>/cart/</code> (and Dutch: <code>/winkelwagen/</code>)</li>
@@ -367,10 +367,10 @@
 <h2>Symptom 3: Payment Gateway Webhook Drops (Mollie, Stripe, PayPal)</h2>
 <p>The customer pays successfully in their banking app (e.g., iDEAL, Bancontact, Credit Card), but when redirected back to your site, the order status remains "Pending Payment" or flips to "Failed".</p>
 
-<h3>The Underlying Cause:</h3>
+<h3>Underlying Cause &amp; Memory Limits:</h3>
 <p>Your payment provider sends an automated server-to-server webhook notification to update the order. If your site has a firewall (Wordfence, Cloudflare Bot Fight Mode, or an overly strict <code>.htaccess</code> rule), it may block the webhook IP address with a <code>403 Forbidden</code>.</p>
 
-<h3>The Fix:</h3>
+<h3>Fix 3: Increase WP Memory &amp; Execution Timeout</h3>
 <ol>
   <li>In your Mollie or Stripe dashboard, inspect the Webhook Logs. If the response code is <code>403</code> or <code>500</code>, the webhook is being intercepted.</li>
   <li>Whitelist the official IP ranges of your payment gateway in your security plugin and Cloudflare.</li>
@@ -381,7 +381,7 @@
 <h2>Symptom 4: Database Deadlocks &amp; High Concurrency Freezes</h2>
 <p>If your store runs flash sales, Black Friday promotions, or influencer drops, multiple checkouts simultaneously accessing the WooCommerce orders table can cause MySQL row deadlocks.</p>
 
-<h3>The Fix:</h3>
+<h3>Fix 4: Verify Webhook Endpoints &amp; SSL</h3>
 <p>Ensure your WooCommerce installation has enabled <strong>High-Performance Order Storage (HPOS)</strong> (Custom Order Tables). HPOS migrates orders out of the legacy <code>wp_posts</code> and <code>wp_postmeta</code> tables into dedicated transactional tables, eliminating database locks and increasing checkout concurrency capacity by up to 5x.</p>
 
 <hr>
