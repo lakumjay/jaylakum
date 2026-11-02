@@ -19,13 +19,24 @@ import json
 import sys
 import subprocess
 
-try:
-    from PIL import ImageFont
-    FONT_TITLE = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 20)
-    FONT_DESC = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 14)
-except Exception:
-    FONT_TITLE = None
-    FONT_DESC = None
+def load_font(size):
+    candidates = [
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/Library/Fonts/Arial.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    ]
+    try:
+        from PIL import ImageFont
+        for path in candidates:
+            if os.path.exists(path):
+                return ImageFont.truetype(path, size)
+    except Exception:
+        pass
+    return None
+
+FONT_TITLE = load_font(20)
+FONT_DESC = load_font(14)
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
