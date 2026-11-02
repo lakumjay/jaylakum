@@ -158,12 +158,16 @@ def main():
     print(f"  Found {total_issues} issues | Applied {total_fixes} automated fixes.")
     print("=" * 65)
 
-    if "--push" in sys.argv and total_fixes > 0:
-        print("\n🚀 Pushing automated fixes to GitHub repository...")
+    # Auto-push to GitHub whenever fixes are applied (unless --no-push is specified)
+    if "--no-push" not in sys.argv and total_fixes > 0:
+        print("\n🚀 Auto-pushing fixes to GitHub repository...")
         subprocess.run(["git", "add", "-A"], cwd=ROOT_DIR)
-        subprocess.run(["git", "commit", "-m", f"chore(seo-auto): auto-fixed {total_fixes} SBMM SEO/AEO/GEO issues via autopilot cron"], cwd=ROOT_DIR)
-        subprocess.run(["git", "push", "origin", "main"], cwd=ROOT_DIR)
-        print("✅ Changes pushed to main branch successfully!")
+        subprocess.run(["git", "commit", "-m", f"chore(seo-auto): auto-fixed {total_fixes} SBMM SEO/AEO/GEO issues via autopilot"], cwd=ROOT_DIR)
+        res = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT_DIR)
+        if res.returncode == 0:
+            print("✅ Changes pushed to main branch successfully! Webhook will auto-deploy.")
+        else:
+            print("⚠️ Git push returned non-zero code. Check network or credentials.")
 
 if __name__ == "__main__":
     main()
