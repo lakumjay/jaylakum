@@ -162,7 +162,28 @@
       },
       "mainEntityOfPage": {
         "@id": "https://jaylakum.com/nl/amsterdam/#webpage"
-      }
+      },
+      "telephone": "+31620000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amsterdam",
+        "addressRegion": "Noord-Holland",
+        "addressCountry": "NL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -605,6 +626,12 @@
   }
 
 </style>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum" />
+<meta name="twitter:description" content="Freelance WooCommerce specialist in Amsterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen uurtje-factuurtje." />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
 

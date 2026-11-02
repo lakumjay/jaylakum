@@ -174,7 +174,28 @@
       },
       "mainEntityOfPage": {
         "@id": "https://jaylakum.com/nl/#webpage"
-      }
+      },
+      "telephone": "+31620000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amsterdam",
+        "addressRegion": "Noord-Holland",
+        "addressCountry": "NL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -657,6 +678,12 @@
   }
 
 </style>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shopify & WooCommerce Specialist Nederland — iDEAL & Snelheid" />
+<meta name="twitter:description" content="Trage webshop of checkout storing? Freelance Shopify & WooCommerce specialist voor Nederland. Vaste projectprijzen en betalen bij oplevering." />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
 

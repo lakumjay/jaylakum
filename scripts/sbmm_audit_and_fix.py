@@ -221,6 +221,39 @@ def audit_and_fix_file(filepath):
             content = content.replace(old_meta.group(0), new_meta)
             fixes.append("Added itemprop='author' byline and semantic <time> tags")
 
+    # 10. Twitter Card Meta Tag Check
+    if 'name="twitter:card"' not in content and '</head>' in content:
+        issues.append("Missing twitter:card meta tag")
+        tw_meta = """<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
+"""
+        content = content.replace('</head>', tw_meta + '</head>')
+        fixes.append("Added twitter:card meta tags")
+
+    # 11. LocalBusiness / ProfessionalService Schema Check
+    if ('"LocalBusiness"' in content or '"ProfessionalService"' in content) and '"openingHoursSpecification"' not in content:
+        issues.append("LocalBusiness schema missing address, telephone or openingHoursSpecification")
+        content = content.replace(
+            '"priceRange": "€€",',
+            '''"priceRange": "€€",
+      "telephone": "+31620000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amsterdam",
+        "addressCountry": "NL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],'''
+        )
+        fixes.append("Added full address, telephone and openingHours to LocalBusiness schema")
+
     if content != orig_content:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(content)

@@ -3,8 +3,8 @@ run-name: 24/7 SEO Audit & Auto-Fix (${{ github.event_name }})
 
 on:
   schedule:
-    # Runs automatically every 6 hours in GitHub Cloud (even when PC is turned off!)
-    - cron: '0 */6 * * *'
+    # Runs automatically every 2 hours in GitHub Cloud (24/7 even when PC is turned off!)
+    - cron: '0 */2 * * *'
   workflow_dispatch: # Allows manual trigger from GitHub anytime
 
 permissions:

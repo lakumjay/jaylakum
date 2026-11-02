@@ -170,6 +170,9 @@
   }
 
 </style>
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
 

@@ -298,6 +298,12 @@
   }
 
 </style>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Case Study: 6.1s to 2.2s Mobile Speed Fix (Core Web Vitals Pass)" />
+<meta name="twitter:description" content="Step-by-step technical breakdown: How we stripped orphan app scripts and slashed mobile load time from 6.1s to 2.2s without downtime." />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
 

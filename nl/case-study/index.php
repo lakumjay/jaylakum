@@ -315,6 +315,12 @@
   }
 
 </style>
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd)" />
+<meta name="twitter:description" content="Hoe we een Nederlandse fashion webshop versnelden van 6.1s naar 1.4s laadtijd. Bekijk de complete Core Web Vitals en omzetresultaten case." />
+<meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
 
