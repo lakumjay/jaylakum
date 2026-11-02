@@ -48,8 +48,12 @@
   "@graph": [
     {
       "@type": "WebPage",
-      "isPartOf": { "@id": "https://jaylakum.com/#website" },
-      "about": { "@id": "https://jaylakum.com/#person" },
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
       "@id": "https://jaylakum.com/diensten/woocommerce-bug-fix/#webpage",
       "url": "https://jaylakum.com/diensten/woocommerce-bug-fix/",
       "name": "WooCommerce Bug Fix & Checkout Reparatie | Binnen 24u — Jay Lakum",
@@ -70,10 +74,15 @@
       ]
     },
     {
-      "@type": ["Service", "ProfessionalService"],
+      "@type": [
+        "Service",
+        "ProfessionalService"
+      ],
       "@id": "https://jaylakum.com/diensten/woocommerce-bug-fix/#service",
       "name": "WooCommerce Bug Fix & Checkout Reparatie",
-      "provider": { "@id": "https://jaylakum.com/#person" },
+      "provider": {
+        "@id": "https://jaylakum.com/#person"
+      },
       "areaServed": {
         "@type": "Country",
         "name": "Netherlands"
@@ -87,45 +96,65 @@
         "price": "290",
         "availability": "https://schema.org/InStock",
         "validFrom": "2026-01-01"
-      }
+      },
+      "telephone": "+31620000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amsterdam",
+        "addressCountry": "NL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
       "@id": "https://jaylakum.com/diensten/woocommerce-bug-fix/#faq",
       "mainEntity": [
-      {
-            "@type": "Question",
-            "name": "Hoe snel kan een acute WooCommerce checkout storing worden opgelost?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Acute kassa-storingen en iDEAL haperingen pakken we met prioriteit op. In 90% van de gevallen is de diagnose en fix binnen 24 tot maximaal 48 uur afgerond op staging."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Blijft mijn webwinkel online tijdens de reparatie?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Jazeker. Wij passen nooit direct code aan op jouw actieve productiewebsite. We zetten een staging kopie op waar we de fout reproduceren en fixen. Jouw omzet loopt tijdens het werk gewoon door."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Wat kost een WooCommerce bug fix gemiddeld?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Voor gerichte checkout bugs, AJAX conflicts en iDEAL storingen hanteren we een vaste prijs tussen €290 en €450 vooraf. Je ontvangt altijd eerst een vaste prijsopgave zonder verrassingen achteraf."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Wat houdt de no-cure-no-pay garantie in?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Ligt het probleem binnen de schriftelijk overeengekomen scope en slagen wij er niet in de bug op te lossen? Dan vervalt de factuur volledig. Je loopt als ondernemer geen enkel financieel risico."
-            }
-      }
-]
+        {
+          "@type": "Question",
+          "name": "Hoe snel kan een acute WooCommerce checkout storing worden opgelost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Acute kassa-storingen en iDEAL haperingen pakken we met prioriteit op. In 90% van de gevallen is de diagnose en fix binnen 24 tot maximaal 48 uur afgerond op staging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Blijft mijn webwinkel online tijdens de reparatie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jazeker. Wij passen nooit direct code aan op jouw actieve productiewebsite. We zetten een staging kopie op waar we de fout reproduceren en fixen. Jouw omzet loopt tijdens het werk gewoon door."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kost een WooCommerce bug fix gemiddeld?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voor gerichte checkout bugs, AJAX conflicts en iDEAL storingen hanteren we een vaste prijs tussen €290 en €450 vooraf. Je ontvangt altijd eerst een vaste prijsopgave zonder verrassingen achteraf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat houdt de no-cure-no-pay garantie in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ligt het probleem binnen de schriftelijk overeengekomen scope en slagen wij er niet in de bug op te lossen? Dan vervalt de factuur volledig. Je loopt als ondernemer geen enkel financieel risico."
+          }
+        }
+      ]
     }
   ]
 }

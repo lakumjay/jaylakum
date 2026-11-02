@@ -48,8 +48,12 @@
   "@graph": [
     {
       "@type": "WebPage",
-      "isPartOf": { "@id": "https://jaylakum.com/#website" },
-      "about": { "@id": "https://jaylakum.com/#person" },
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
       "@id": "https://jaylakum.com/diensten/postnl-woocommerce-koppeling/#webpage",
       "url": "https://jaylakum.com/diensten/postnl-woocommerce-koppeling/",
       "name": "PostNL WooCommerce Koppeling Repareren & Versnellen | Jay Lakum",
@@ -70,10 +74,15 @@
       ]
     },
     {
-      "@type": ["Service", "ProfessionalService"],
+      "@type": [
+        "Service",
+        "ProfessionalService"
+      ],
       "@id": "https://jaylakum.com/diensten/postnl-woocommerce-koppeling/#service",
       "name": "PostNL WooCommerce Koppeling Reparatie & Versnelling",
-      "provider": { "@id": "https://jaylakum.com/#person" },
+      "provider": {
+        "@id": "https://jaylakum.com/#person"
+      },
       "areaServed": {
         "@type": "Country",
         "name": "Netherlands"
@@ -87,45 +96,65 @@
         "price": "290",
         "availability": "https://schema.org/InStock",
         "validFrom": "2026-01-01"
-      }
+      },
+      "telephone": "+31620000000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amsterdam",
+        "addressCountry": "NL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
       "@id": "https://jaylakum.com/diensten/postnl-woocommerce-koppeling/#faq",
       "mainEntity": [
-      {
-            "@type": "Question",
-            "name": "Waarom maakt de officiële PostNL plugin mijn kassa zo traag?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "De officiële PostNL plugin controleert adressen en pakketpunten via live API-aanroepen. Als deze aanroepen synchroon worden uitgevoerd, moet de browser van jouw bezoeker wachten op het antwoord van de PostNL server voordat de kassa verder kan. Met asynchrone validatie en slimme transient caching verhelpen we dit knelpunt volledig."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Werkt dit ook met MyParcel of Sendcloud?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Jazeker. Wij hebben ruime ervaring met alle gangbare Nederlandse verzendoplossingen (PostNL, MyParcel, Sendcloud, Trunkrs en Fietskoeriers) en zorgen dat ze probleemloos integreren zonder database-vervuiling."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Wat kost een optimalisatie of reparatie van de PostNL koppeling?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Voor een complete analyse, ontkoppeling van vertragende synchrone calls en het foutloos instellen van pakketpunten hanteren we een vaste projectprijs van €290 tot €490. No-cure-no-pay binnen overeengekomen scope."
-            }
-      },
-      {
-            "@type": "Question",
-            "name": "Moet ik overstappen naar een andere hostingpartij?",
-            "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "In 95% van de gevallen niet. De vertraging zit vrijwel altijd in de manier waarop de plugin API-calls afhandelt en niet in de serverhardware. Na de code-optimalisatie draait de checkout direct soepel op jouw bestaande hosting."
-            }
-      }
-]
+        {
+          "@type": "Question",
+          "name": "Waarom maakt de officiële PostNL plugin mijn kassa zo traag?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De officiële PostNL plugin controleert adressen en pakketpunten via live API-aanroepen. Als deze aanroepen synchroon worden uitgevoerd, moet de browser van jouw bezoeker wachten op het antwoord van de PostNL server voordat de kassa verder kan. Met asynchrone validatie en slimme transient caching verhelpen we dit knelpunt volledig."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werkt dit ook met MyParcel of Sendcloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jazeker. Wij hebben ruime ervaring met alle gangbare Nederlandse verzendoplossingen (PostNL, MyParcel, Sendcloud, Trunkrs en Fietskoeriers) en zorgen dat ze probleemloos integreren zonder database-vervuiling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat kost een optimalisatie of reparatie van de PostNL koppeling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voor een complete analyse, ontkoppeling van vertragende synchrone calls en het foutloos instellen van pakketpunten hanteren we een vaste projectprijs van €290 tot €490. No-cure-no-pay binnen overeengekomen scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Moet ik overstappen naar een andere hostingpartij?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In 95% van de gevallen niet. De vertraging zit vrijwel altijd in de manier waarop de plugin API-calls afhandelt en niet in de serverhardware. Na de code-optimalisatie draait de checkout direct soepel op jouw bestaande hosting."
+          }
+        }
+      ]
     }
   ]
 }

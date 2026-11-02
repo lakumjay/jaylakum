@@ -233,26 +233,43 @@ def audit_and_fix_file(filepath):
 
     # 11. LocalBusiness / ProfessionalService Schema Check
     if ('"LocalBusiness"' in content or '"ProfessionalService"' in content) and '"openingHoursSpecification"' not in content:
-        issues.append("LocalBusiness schema missing address, telephone or openingHoursSpecification")
-        content = content.replace(
-            '"priceRange": "€€",',
-            '''"priceRange": "€€",
-      "telephone": "+31620000000",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Amsterdam",
-        "addressCountry": "NL"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ],'''
-        )
-        fixes.append("Added full address, telephone and openingHours to LocalBusiness schema")
+        soup_ld = BeautifulSoup(content, 'html.parser')
+        scripts_ld = soup_ld.find_all('script', type='application/ld+json')
+        for s_el in scripts_ld:
+            try:
+                d_obj = json.loads(s_el.string)
+                g_list = d_obj.get('@graph', [d_obj])
+                mod_ld = False
+                for item in g_list:
+                    t = item.get('@type')
+                    if t == 'LocalBusiness' or t == 'ProfessionalService' or (isinstance(t, list) and ('LocalBusiness' in t or 'ProfessionalService' in t)):
+                        if 'telephone' not in item:
+                            item['telephone'] = '+31620000000'
+                            mod_ld = True
+                        if 'address' not in item:
+                            item['address'] = {
+                                '@type': 'PostalAddress',
+                                'addressLocality': 'Amsterdam',
+                                'addressCountry': 'NL'
+                            }
+                            mod_ld = True
+                        if 'openingHoursSpecification' not in item:
+                            item['openingHoursSpecification'] = [
+                                {
+                                    '@type': 'OpeningHoursSpecification',
+                                    'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                                    'opens': '09:00',
+                                    'closes': '18:00'
+                                }
+                            ]
+                            mod_ld = True
+                if mod_ld:
+                    new_json = json.dumps(d_obj, indent=2, ensure_ascii=False)
+                    content = content.replace(s_el.string, '\n' + new_json + '\n')
+                    issues.append("LocalBusiness schema missing address, telephone or openingHoursSpecification")
+                    fixes.append("Added full address, telephone and openingHours to LocalBusiness schema")
+            except Exception:
+                pass
 
     if content != orig_content:
         with open(filepath, "w", encoding="utf-8") as f:
