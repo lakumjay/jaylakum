@@ -1113,7 +1113,7 @@
           <h3 style="font-size:20px;margin-bottom:12px">📍 Werkgebied & Focusregio's</h3>
           <p style="font-size:15px;color:var(--ink-soft);margin-bottom:16px">Gespecialiseerd in snelle ondersteuning voor boutique modemerken, cosmetica webshops en D2C e-commerce in:</p>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:15px">
-            <li>🏛️ <b>Amsterdam & Regio:</b> <a href="/nl/amsterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Amsterdam</a></li>
+            <li>🏛️ <b>Amsterdam & Regio:</b> <a href="/nl/amsterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">WooCommerce Specialist Amsterdam</a></li>
             <li>🚢 <b>Rotterdam & Rijnmond:</b> <a href="/nl/rotterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Rotterdam</a></li>
             <li>⚡ <b>Utrecht & Midden-NL:</b> <a href="/nl/utrecht/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Utrecht</a></li>
             <li>⚖️ <b>Den Haag & Westland:</b> <a href="/nl/den-haag/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Den Haag</a></li>
@@ -1148,7 +1148,7 @@
       <div style="flex:1;min-width:240px">
         <strong style="color:var(--ink);display:block;margin-bottom:8px">Regio's & Steden</strong>
         <ul style="list-style:none;padding:0;margin:0;line-height:1.8">
-          <li><a href="/nl/amsterdam/">Shopify Specialist Amsterdam</a></li>
+          <li><a href="/nl/amsterdam/">WooCommerce Specialist Amsterdam</a></li>
           <li><a href="/nl/rotterdam/">Shopify Specialist Rotterdam</a></li>
           <li><a href="/nl/utrecht/">Shopify Specialist Utrecht</a></li>
           <li><a href="/nl/den-haag/">Shopify Specialist Den Haag</a></li>

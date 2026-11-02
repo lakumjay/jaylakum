@@ -391,7 +391,7 @@
 <hr>
 
 <h2>Conclusie &amp; Volgende Stap</h2>
-<p>Een trage WooCommerce checkout kost je elke dag keiharde euro's aan verloren bestellingen. Het goede nieuws: 90% van deze problemen kan binnen 24 tot 48 uur worden verholpen zonder dat je een duur nieuw thema hoeft te kopen.</p>
+<p>Een trage WooCommerce checkout kost je elke dag keiharde euro's aan verloren bestellingen. Het goede nieuws: 90% van deze problemen kan binnen 24 tot 48 uur worden verholpen zonder dat je een duur nieuw thema hoeft te kopen. Als freelance <a href="/nl/amsterdam/" style="font-weight:700;text-decoration:underline">WooCommerce specialist Amsterdam</a> help ik webwinkels met diepgaande performance profiling om checkout laadtijden structureel onder de 2.0 seconden te krijgen.</p>
 
 <div class="callout" style="background:var(--card);border:1.5px solid var(--gold);padding:24px;border-radius:12px;margin-top:32px">
   <h3 style="margin:0 0 10px;font-size:20px;color:var(--gold-deep)">Wil je weten wat jouw kassa vertraagt?</h3>

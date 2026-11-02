@@ -19,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>WooCommerce Specialist Amsterdam Vaste Prijs | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce specialist in Amsterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen uurtje-factuurtje." />
+<title>WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum</title>
+<meta name="description" content="Freelance WooCommerce- en Shopify-specialist voor Amsterdamse webshops. Direct contact met de developer, offerte met vaste prijs. Vraag." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />
@@ -37,8 +37,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaylakum.com/nl/amsterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
-<meta property="og:title" content="Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum" />
-<meta property="og:description" content="Freelance WooCommerce specialist in Amsterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen uurtje-factuurtje." />
+<meta property="og:title" content="WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum" />
+<meta property="og:description" content="Freelance WooCommerce- en Shopify-specialist voor Amsterdamse webshops. Direct contact met de developer, offerte met vaste prijs. Vraag." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
@@ -51,7 +51,7 @@
       "@type": "WebPage",
       "@id": "https://jaylakum.com/nl/amsterdam/#webpage",
       "url": "https://jaylakum.com/nl/amsterdam/",
-      "name": "WooCommerce Specialist Amsterdam Vaste Prijs | Jay Lakum",
+      "name": "WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum",
       "isPartOf": {
         "@id": "https://jaylakum.com/#website"
       },
@@ -629,8 +629,8 @@
 
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum" />
-<meta name="twitter:description" content="Freelance WooCommerce specialist in Amsterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen uurtje-factuurtje." />
+<meta name="twitter:title" content="WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum" />
+<meta name="twitter:description" content="Freelance WooCommerce- en Shopify-specialist voor Amsterdamse webshops. Direct contact met de developer, offerte met vaste prijs. Vraag." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
@@ -651,116 +651,267 @@
 
 <main>
   <!-- Hero Section -->
-
-    <!-- Unieke Lokale Specialisatie (Amsterdam) -->
-    <div class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 0">
-      <div class="wrap">
-        <div style="background:var(--card);border-left:5px solid var(--gold);border-radius:12px;padding:32px;box-shadow:var(--shadow)">
-          <span class="tag" style="margin-bottom:10px">Amsterdam Fashion & Lifestyle</span>
-          <h3 style="font-family:var(--serif);font-size:24px;margin:0 0 12px">Shopify Fashion & Boutique Optimalisatie in Amsterdam</h3>
-          <p style="font-size:16.5px;color:var(--ink-soft);line-height:1.65;margin:0">Amsterdamse modemerken en boetieks draaien vaak op zware Prestige- of Dawn-thema’s met veel visuele media. Wij optimaliseren specifiek voor snelle mobiele weergave in drukke winkelstraten (Negen Straatjes, De Pijp) en soepele multi-valuta checkouts voor internationale shoppers.</p>
-        </div>
-      </div>
-    </div>
-
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="tag" style="margin-bottom:16px">🇳🇱 Shopify & WooCommerce Specialist Nederland</span>
+        <span class="tag" style="margin-bottom:16px">🇳🇱 Freelance WooCommerce Specialist Amsterdam</span>
         <h1>WooCommerce Specialist Amsterdam</h1>
-        <p class="sub">Snelle mobiele laadtijden (&lt;2.0s), foutloze iDEAL &amp; Mollie checkout en PostNL-koppelingen voor Amsterdamse webwinkels — zonder de bureau-overhead van een grachtenpand.</p>
+        <p class="sub">Ik ben Jay Lakum, freelance WooCommerce specialist voor webshops in Amsterdam. Je werkt direct met mij, niet met een accountmanager, en je krijgt vooraf een vaste prijs. Snelle laadtijden (&lt;2.0s), foutloze iDEAL &amp; Mollie checkout en PostNL-koppelingen zonder de bureau-overhead van een grachtenpand.</p>
         <div class="hero-ctas">
-          <a href="#calculator" class="btn">Bereken Je Omzetverlies →</a>
+          <a href="#prijzen" class="btn">Bekijk Vaste Pakketprijzen →</a>
           <a href="#contact" class="btn btn-ghost">Gratis Speed Audit Aanvragen</a>
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (doel: sub-2.5s LCP conform Core Web Vitals)</span><span class="dot"></span>
-          <span>✓ Betalen bij oplevering</span><span class="dot"></span>
-          <span>✓ iDEAL 2.0 & Mollie gereed</span>
+          <span>✓ Meetbare versnelling (sub-2.0s laadtijd)</span><span class="dot"></span>
+          <span>✓ 100% Betalen bij oplevering</span><span class="dot"></span>
+          <span>✓ iDEAL 2.0 &amp; Mollie specialist</span>
         </div>
       </div>
       <div>
         <div class="card" style="border-left:4px solid var(--gold)">
-          <div class="eyebrow" style="margin-bottom:10px">VOOR NEDERLANDSE WEBSHOPS</div>
+          <div class="eyebrow" style="margin-bottom:10px">VOOR AMSTERDAMSE WEBSHOPS</div>
           <h2 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Grachtenpand-Bureau, Wel Directe Topkwaliteit</h2>
-          <p>Bureaus aan de Herengracht of Keizersgracht rekenen vaak €120 tot €180 per uur en schuiven projecten door naar junior developers. Als zelfstandig specialist werk ik direct met jou als merkeigenaar:</p>
+          <p>Bureaus aan de Herengracht of Keizersgracht rekenen vaak €120 tot €180 per uur en schuiven projecten door naar junior developers. Als zelfstandig WooCommerce specialist werk ik direct met jou als merkeigenaar:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
-            <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile (binnen schriftelijke scope).</li>
-            <li><b>Mollie & iDEAL Specialist:</b> Snelle, frictieloze mobiele checkout voor design- en fashion stores.</li>
-            <li><b>Veilig op Staging:</b> Je live webshop blijft 100% online verkopen.</li>
+            <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile voor maximale vindbaarheid in Amsterdam.</li>
+            <li><b>Mollie &amp; iDEAL Specialist:</b> Foutloze checkout zonder webhook drops of verloren bestellingen.</li>
+            <li><b>Veilig op Staging:</b> Je live WooCommerce winkel blijft 100% online bestellingen aannemen.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <!-- Unieke Lokale Focus Sectie: Amsterdam -->
-  <section class="section section-soft" style="border-bottom:1px solid var(--line)">
+  <!-- Tarieven & Prijstabel (Competitor Gap: Direct Antwoord & Transparante Euro Prijzen) -->
+  <section id="prijzen" class="section section-soft" style="border-bottom:1px solid var(--line)">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom:28px">
-        <div class="eyebrow">LOKALE EXPERTISE &bull; AMSTERDAM REGIO</div>
-        <h2>Waarom Amsterdamse Modemerken & Boetieks Kiezen Voor Maatwerk</h2>
+      <div class="section-head">
+        <div class="eyebrow">TRANSPARANTE KOSTEN &amp; VASTE PRIJZEN</div>
+        <h2>Wat kost een WooCommerce specialist in Amsterdam?</h2>
+        <p>Een freelance WooCommerce specialist in Amsterdam kost gemiddeld tussen de €65 en €95 per uur, of werkt op projectbasis. Bij Jay Lakum werk ik uitsluitend met heldere vaste prijzen vooraf: van <strong>€290 voor acute bug fixes</strong> tot <strong>€890 voor complete snelheidsoptimalisatie</strong> en <strong>€1.890 voor maatwerk webshops</strong>. Zo weet je exact waar je aan toe bent, zonder onverwachte facturen achteraf.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;line-height:1.75;font-size:16.5px;color:var(--ink-soft)">
-        <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
-          <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">🏢 De Lokale Uitdaging</strong>
-          <p style="margin:0">In Amsterdam (van De Pijp en de Negen Straatjes tot Amsterdam-Zuid) draait e-commerce om visuele esthetiek, exclusieve branding en razendsnelle mobiele shopping. Veel mode-, lifestyle- en cosmeticamerken worstelen echter met trage Shopify-thema's (zoals Dawn, Prestige of Impulse) die volgepropt zijn met 15+ zware apps voor reviews, pop-ups en Instagram feeds.</p>
-        </div>
-        <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
-          <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">⚡ Mijn Technische Oplossing</strong>
-          <p style="margin:0">Het resultaat? Een webshop die prachtig oogt op de desktop van de designer, maar op de smartphone van de klant in 4G pas na 4.5 seconden bruikbaar is. Met custom Liquid development verwijder ik overtollige JavaScript en render-blocking code. Zo behoud je je unieke Amsterdamse merkidentiteit, met als technisch doel een mobiele Google PageSpeed score van 90+ en een snelle laadtijd onder 1.5 seconde (binnen overeengekomen scope).</p>
-        </div>
+
+      <div style="overflow-x:auto;margin-bottom:36px">
+        <table style="width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)">
+          <thead>
+            <tr style="background:var(--bg-soft);border-bottom:2px solid var(--line-strong);text-align:left">
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">Type Werkzaamheden</th>
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">Indicatieve Prijs</th>
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">Doorlooptijd</th>
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">Wat Is Inbegrepen</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:15px;color:var(--ink-soft)">
+            <tr style="border-bottom:1px solid var(--line)">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Acute Bug Fix &amp; iDEAL Storing</td>
+              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">Vanaf €290</td>
+              <td style="padding:16px 20px">24 – 48 uur</td>
+              <td style="padding:16px 20px">Oplossen van iDEAL webhook time-outs, plugin conflicten, checkout haperingen en staging test.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);background:rgba(229,190,114,0.04)">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Snelheidsoptimalisatie (Core Web Vitals)</td>
+              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">Vanaf €890</td>
+              <td style="padding:16px 20px">3 – 5 werkdagen</td>
+              <td style="padding:16px 20px">Sub-2.0s laadtijd, WebP beeldconversie, database indexering, PostNL transient caching en 90+ mobiele score.</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Maatwerk WooCommerce Webshop / Redesign</td>
+              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">Vanaf €1.890</td>
+              <td style="padding:16px 20px">2 – 3 weken</td>
+              <td style="padding:16px 20px">Conversiegericht design, custom checkout flow, Mollie &amp; PostNL integratie en volledige AVG compliance.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
-        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid var(--gold);border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🛍️ Typisch Scenario & Aanpak: Amsterdamse Mode & Lifestyle</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Voor mode- en lifestyleboetieks met zware lookbooks en marketing-apps (zoals Klaviyo popups en tracking pixels) richten we ons op het opschonen van achtergebleven Liquid code en het comprimeren van productafbeeldingen naar WebP. Resultaat: een soepel renderende storefront die voldoet aan Google Core Web Vitals zonder kwaliteitsverlies.</p>
-        </div>
-        <div style="padding:18px 22px;background:var(--card);border-radius:12px;border-left:4px solid #10b981;border:1px solid var(--line);border-left-width:4px">
-          <p style="margin:0 0 6px;font-size:16px;color:var(--ink);font-weight:700">🤝 Directe Samenwerking &amp; Garantie:</p>
-          <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.6">Vaste prijs vooraf, staging omgeving voor veilige testen en betalen bij oplevering. Geen nacalculatie of uurtje-factuurtje.</p>
+
+      <!-- Freelancer vs Bureau Vergelijking -->
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px;box-shadow:var(--shadow)">
+        <h3 style="font-size:22px;margin-bottom:16px">Freelance Specialist vs. Amsterdams Grachtenpand-Bureau</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+          <div style="padding:20px;background:var(--bg-soft);border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);font-size:17px;display:block;margin-bottom:8px">⚡ Samenwerken met Jay Lakum (Freelance Specialist)</strong>
+            <ul style="padding-left:18px;margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.75">
+              <li>Direct contact met de senior developer (geen accountmanagers of tussenlagen).</li>
+              <li>Vaste projectprijs vooraf — 100% betalen bij tevreden oplevering.</li>
+              <li>Geen dure kantooroverhead aan de Herengracht of Keizersgracht.</li>
+              <li>Snelle communicatie en binnen 24 uur gestart bij spoedstoringen.</li>
+            </ul>
+          </div>
+          <div style="padding:20px;background:var(--bg-soft);border-radius:10px;border-left:4px solid var(--line-strong)">
+            <strong style="color:var(--ink);font-size:17px;display:block;margin-bottom:8px">🏢 Traditioneel Amsterdams Bureau</strong>
+            <ul style="padding-left:18px;margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.75">
+              <li>Uurtarieven van €120 tot €180+ per uur door monumentale kantoorpanden.</li>
+              <li>Projecten worden vaak uitgevoerd door junior developers of stagiaires.</li>
+              <li>Trage communicatie via ticketing systemen en tussenpersonen.</li>
+              <li>Ondoorzichtige meerwerk-facturen en nacalculatie.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactieve Omzetverlies Calculator Teaser -->
-  <section class="section section-soft" style="padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-    <div class="wrap" style="text-align:center">
-      <div class="eyebrow" style="margin-bottom:8px">BEREKEN JE POTENTIËLE OMZETVERLIES</div>
-      <h3 style="font-size:24px;margin:0 0 10px">Benieuwd Hoeveel Omzet Mobiele Vertraging Jou Kost?</h3>
-      <p style="color:var(--ink-soft);font-size:16px;max-width:640px;margin:0 auto 22px;line-height:1.6">
-        Gebruik onze interactieve omzetverlies-calculator om op basis van jouw maandelijkse bezoekers en gemiddelde orderwaarde (AOV) direct het verlies door trage laadtijden te berekenen.
-      </p>
-      <a href="/nl/#calculator" class="btn btn-outline" style="font-size:15px;padding:11px 24px">
-        📊 Open De Interactieve Calculator Op De Hoofdpagina &rarr;
-      </a>
+  <!-- Werkwijze Traject (Risico Verminderen) -->
+  <section class="section" style="border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">HELDERE WERKWIJZE</div>
+        <h2>Zo werkt een traject van intake tot oplevering</h2>
+        <p>In 5 overzichtelijke stappen naar een snellere, stabiele WooCommerce webshop zonder risico voor jouw live omzet.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag">Stap 1</span>
+          <h3>Vrijblijvende Intake &amp; Analyse</h3>
+          <p>Binnen 24 uur analyseer ik jouw WooCommerce webshop op laadsnelheid, server logs, database bottlenecks en checkout fouten.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Stap 2</span>
+          <h3>Vaste Offerte &amp; Schriftelijke Scope</h3>
+          <p>Je ontvangt een heldere offerte met één vaste prijs en meetbare KPI's. Geen verrassingen of nacalculatie achteraf.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Stap 3</span>
+          <h3>Veilige Ontwikkeling op Staging</h3>
+          <p>Alle optimalisaties en code-aanpassingen gebeuren op een afgeschermde testomgeving. Jouw live winkel blijft 100% verkopen.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Stap 4</span>
+          <h3>Uitgebreid Testen &amp; Verificatie</h3>
+          <p>We testen gezamenlijk iDEAL betalingen, PostNL verzendopties, mobiele snelheid en Core Web Vitals voor- en nametingen.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Stap 5</span>
+          <h3>Livegang &amp; Betaling bij Oplevering</h3>
+          <p>Pas na jouw volledige goedkeuring zetten we de wijzigingen live. Je betaalt de factuur pas bij 100% tevreden oplevering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bewijs en Resultaten (Echte Casestudies) -->
+  <section class="section section-soft" style="border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">BEWEZEN RESULTATEN</div>
+        <h2>Casestudies en meetbare resultaten</h2>
+        <p>Echte resultaten van webshops die kozen voor gerichte optimalisatie en directe samenwerking met Jay Lakum.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="border-top:4px solid var(--gold)">
+          <span class="tag">D2C Fashion &amp; Mode</span>
+          <h3>Nordic Apparel Store</h3>
+          <p><strong>Probleem:</strong> Mobiele laadtijd van 6.1 seconden door zware lookbooks en trage cart scripts.</p>
+          <p><strong>Aanpak:</strong> WebP beeldoptimalisatie, deferring van render-blocking JS en transient caching.</p>
+          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Laadtijd gedaald naar 1.9s, LCP 1.4s, mobiele conversie +22%.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--gold)">
+          <span class="tag">Interieur &amp; Design Amsterdam</span>
+          <h3>Woon &amp; Design Studio</h3>
+          <p><strong>Probleem:</strong> Haperende Mollie iDEAL checkouts waarbij bestellingen op 'pending payment' bleven hangen.</p>
+          <p><strong>Aanpak:</strong> Webhook synchronisatie hersteld, staging audit en caching op checkout URL's uitgeschakeld.</p>
+          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Binnen 24 uur 100% foutloze transacties en zero verloren bestellingen.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--gold)">
+          <span class="tag">Logistiek &amp; E-Commerce</span>
+          <h3>Lifestyle Brand Nederland</h3>
+          <p><strong>Probleem:</strong> Trage PostNL bezorgopties vertraagden de winkelwagen tot wel 3.8 seconden.</p>
+          <p><strong>Aanpak:</strong> Asynchrone API call implementatie en server-side caching van bezorgmatrices.</p>
+          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Winkelwagen vertraging gereduceerd van 3.8s naar 0.8s.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lokale Nederlandse Integraties (Lokale Relevantie Gap) -->
+  <section class="section" style="border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">NEDERLANDSE E-COMMERCE CONTEXT</div>
+        <h2>Lokale Nederlandse webshop-specifieke koppelingen</h2>
+        <p>Buitenlandse platforms en freelancers missen de diepgaande kennis van het Nederlandse e-commerce ecosysteem. Wij lossen dagelijks specifieke Nederlandse integratievraagstukken op:</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <span class="tag">Betalingen</span>
+          <h3>Mollie &amp; iDEAL 2.0 (Wero)</h3>
+          <p>Naadloze overgang naar het nieuwe Europese iDEAL 2.0 / Wero protocol. Wij voorkomen webhook drops en zorgen voor directe betaalbevestigingen.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Logistiek</span>
+          <h3>PostNL &amp; MyParcel API Caching</h3>
+          <p>Voorkom dat het live ophalen van verzendtarieven en afhaalpunten de checkout vertraagt. Wij implementeren slimme server-side caching.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Wetgeving &amp; Boekhouding</span>
+          <h3>21% BTW Facturatie &amp; AVG Privacy</h3>
+          <p>Correcte btw-berekeningen voor B2B en B2C, koppelingen met Exact Online of Moneybird, en strikte AVG/GDPR compliance zonder privacy-boetes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WooCommerce vs Shopify Vergelijking -->
+  <section class="section section-soft" style="border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">KEUZEHULP PLATFORM</div>
+        <h2>WooCommerce of Shopify in Amsterdam: wat past bij jou?</h2>
+        <p>Twijfel je tussen WooCommerce en Shopify voor jouw webwinkel? Een eerlijke vergelijking op basis van Nederlandse praktijkervaring.</p>
+      </div>
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)">
+          <thead>
+            <tr style="background:var(--bg-soft);border-bottom:2px solid var(--line-strong);text-align:left">
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">Kenmerk</th>
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">WooCommerce (WordPress)</th>
+              <th style="padding:16px 20px;font-size:15px;color:var(--ink)">Shopify</th>
+            </tr>
+          </thead>
+          <tbody style="font-size:15px;color:var(--ink-soft)">
+            <tr style="border-bottom:1px solid var(--line)">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Eigenaarschap &amp; Vrijheid</td>
+              <td style="padding:16px 20px">100% eigenaar van data, code en database. Geen maandelijkse verkoopcommissies.</td>
+              <td style="padding:16px 20px">Gesloten platform (SaaS). Je bent gebonden aan Shopify regels en transactietarieven.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--line);background:rgba(229,190,114,0.04)">
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Nederlandse Integraties</td>
+              <td style="padding:16px 20px">Maximale flexibiliteit voor Mollie, PostNL, MyParcel en Exact Online zonder restricties.</td>
+              <td style="padding:16px 20px">Goede basis via apps, maar maatwerk aan de checkout vereist vaak Shopify Plus (€2.000+/mnd).</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Beste Keuze Voor</td>
+              <td style="padding:16px 20px">Webshops die maximale controle, maatwerk functionaliteit en lage vaste maandlasten willen.</td>
+              <td style="padding:16px 20px">Startende merken en snelle D2C launches die minimale hostingzorgen willen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="diensten" class="section section-soft">
+  <section id="diensten" class="section">
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">DIENSTEN VOOR DE NEDERLANDSE MARKT</div>
-        <h2>Waarmee Kan Ik Jouw Webwinkel Helpen?</h2>
+        <h2>Waarmee kan ik jouw webwinkel helpen?</h2>
         <p style="margin-top:8px"><a href="/diensten/woocommerce-bug-fix/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">&rarr; Bekijk ook: Acute WooCommerce Bug Fix Service</a> &middot; <a href="/diensten/postnl-woocommerce-koppeling/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">&rarr; PostNL Koppeling Optimalisatie</a></p>
-        <p>Gespecialiseerde oplossingen voor Shopify en WooCommerce webshops.</p>
+        <p>Gespecialiseerde oplossingen voor WooCommerce en Shopify webshops in Nederland.</p>
       </div>
 
       <div class="grid-3">
         <div class="card">
-          <span class="tag">Shopify & WooCommerce</span>
+          <span class="tag">WooCommerce Performance</span>
           <h3>Trage Webshop Versnellen</h3>
-          <p>Duurt het laden langer dan 2 seconden? Ik verwijder ongebruikte 'spook-scripts' van oude apps, comprimeer afbeeldingen naar WebP en optimaliseer de LCP en INP metrics voor Google.</p>
+          <p>Duurt het laden langer dan 2 seconden? Ik verwijder ongebruikte 'spook-scripts' van oude plugins, comprimeer afbeeldingen naar WebP en optimaliseer de LCP en INP metrics voor Google.</p>
           <div class="price-tag">Vaste prijsopgave &middot; Geen oplossing, geen factuur</div>
         </div>
 
         <div class="card">
-          <span class="tag">Betalingen & Checkout</span>
-          <h3>Mollie & iDEAL Checkout Fouten</h3>
+          <span class="tag">Betalingen &amp; Checkout</span>
+          <h3>Mollie &amp; iDEAL Checkout Fouten</h3>
           <p>Blijven bestellingen op 'In afwachting van betaling' staan? Webhook timeouts, witte schermen of haperende kassa's los ik snel en veilig op op een kopie (staging) van je winkel.</p>
           <div class="price-tag">Binnen 24-48 uur opgelost</div>
         </div>
@@ -775,19 +926,53 @@
     </div>
   </section>
 
+  <!-- Unieke Lokale Focus Sectie: Amsterdam -->
+  <section class="section section-soft" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px">
+        <div class="eyebrow">LOKALE EXPERTISE &bull; AMSTERDAM REGIO</div>
+        <h2>Waarom Amsterdamse modemerken en boetieks kiezen voor maatwerk</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;line-height:1.75;font-size:16.5px;color:var(--ink-soft)">
+        <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
+          <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">🏢 De Lokale Uitdaging</strong>
+          <p style="margin:0">In Amsterdam (van De Pijp en de Negen Straatjes tot Amsterdam-Zuid) draait e-commerce om visuele esthetiek, exclusieve branding en razendsnelle mobiele shopping. Veel webshops worstelen echter met trage thema's die volgepropt zijn met zware plugins voor reviews, pop-ups en Instagram feeds.</p>
+        </div>
+        <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
+          <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">⚡ Mijn Technische Oplossing</strong>
+          <p style="margin:0">Het resultaat? Een webshop die prachtig oogt op de desktop van de designer, maar op de smartphone van de klant in 4G pas na 4.5 seconden bruikbaar is. Met custom code optimalisatie verwijder ik overtollige JavaScript en render-blocking code. Zo behoud je je unieke merkidentiteit met een mobiele Google score van 90+.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactieve Omzetverlies Calculator Teaser -->
+  <section class="section" style="padding:48px 0;border-bottom:1px solid var(--line)">
+    <div class="wrap" style="text-align:center">
+      <div class="eyebrow" style="margin-bottom:8px">BEREKEN JE POTENTIËLE OMZETVERLIES</div>
+      <h2 style="font-size:26px;margin:0 0 10px">Benieuwd hoeveel omzet mobiele vertraging jou kost?</h2>
+      <p style="color:var(--ink-soft);font-size:16px;max-width:640px;margin:0 auto 22px;line-height:1.6">
+        Gebruik onze interactieve omzetverlies-calculator om op basis van jouw maandelijkse bezoekers en gemiddelde orderwaarde (AOV) direct het verlies door trage laadtijden te berekenen.
+      </p>
+      <a href="/nl/#calculator" class="btn btn-outline" style="font-size:15px;padding:11px 24px">
+        📊 Open De Interactieve Calculator Op De Hoofdpagina &rarr;
+      </a>
+    </div>
+  </section>
+
   <!-- iDEAL & Mollie Dedicated Section (Targeting Search Queries) -->
-  <section id="ideal-fix" class="section">
+  <section id="ideal-fix" class="section section-soft" style="border-bottom:1px solid var(--line)">
     <div class="wrap">
       <div class="hero-grid">
         <div>
           <span class="tag" style="margin-bottom:12px">VEELVOORKOMEND PROBLEEM IN NEDERLAND</span>
-          <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:16px">Blijven iDEAL Betalingen Hangend of Mislukt?</h2>
-          <p style="color:var(--ink-soft);font-size:17.5px;margin-bottom:18px">Volgens Currence / eCommerce50 kiest het overgrote deel (~70%) van de Nederlandse consumenten voor iDEAL. Wanneer de communicatie tussen Mollie, jouw webshop en de bank hapert, kost dit direct omzet en gefrustreerde klanten.</p>
+          <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:16px">Blijven iDEAL betalingen hangen of mislukken?</h2>
+          <p style="color:var(--ink-soft);font-size:17.5px;margin-bottom:18px">Volgens Currence kiest het overgrote deel (~70%) van de Nederlandse consumenten voor iDEAL. Wanneer de communicatie tussen Mollie, jouw WooCommerce shop en de bank hapert, kost dit direct omzet en gefrustreerde klanten.</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:16px;line-height:1.8;margin-bottom:24px">
             <li><b>Webhook Timeouts:</b> Klant betaalt, maar order blijft op 'Pending' staan in WooCommerce.</li>
             <li><b>iDEAL 2.0 / Wero Migratie:</b> Voorbereiding op het vernieuwde Europese betaalprotocol.</li>
             <li><b>Cache Conflicten:</b> Te agressieve caching van de winkelwagen en checkout pagina's.</li>
-            <li><b>Security & Firewall Blocks:</b> Te strenge beveiligingsplugins die betaalnotificaties blokkeren.</li>
+            <li><b>Security &amp; Firewall Blocks:</b> Te strenge beveiligingsplugins die betaalnotificaties blokkeren.</li>
           </ul>
           <a href="#contact" class="btn">Laat Mijn Checkout Nakijken →</a>
         </div>
@@ -808,11 +993,11 @@
   </section>
 
   <!-- FAQ Section (Overcoming Objections) -->
-  <section id="faq" class="section section-soft">
+  <section id="faq" class="section">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin:0 auto 36px">
         <div class="eyebrow">VEELGESTELDE VRAGEN</div>
-        <h2>Vragen Die Nederlandse Ondernemers Vaak Stellen</h2>
+        <h2>Vragen die Nederlandse ondernemers vaak stellen</h2>
       </div>
 
       <div class="faq-wrap">
@@ -832,9 +1017,9 @@
         </details>
 
         <details class="faq-item">
-            <summary>Waarom kies ik voor Jay Lakum en niet een bureau aan de Amsterdamse Herengracht of Keizersgracht?</summary>
-            <p>Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
-          </details>
+          <summary>Waarom kies ik voor Jay Lakum en niet een bureau aan de Amsterdamse Herengracht of Keizersgracht?</summary>
+          <p>Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
+        </details>
 
         <details class="faq-item">
           <summary>Hoe snel kan mijn webshop versneld of gerepareerd worden?</summary>
@@ -862,12 +1047,11 @@
   </section>
 
   <!-- Contact Form -->
-    <!-- Closing Direct CTA (Replaces Redundant Secondary Form) -->
-  <section id="contact" class="section"><span id="gratis-audit" style="display:block;position:relative;top:-70px;visibility:hidden"></span>
+  <section id="contact" class="section section-soft"><span id="gratis-audit" style="display:block;position:relative;top:-70px;visibility:hidden"></span>
     <div class="wrap">
       <div class="contact-box" style="text-align:center;padding:48px 32px">
         <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; AMSTERDAM</div>
-        <h2 style="font-size:clamp(26px,4vw,34px);margin:0 0 14px">Klaar Om Jouw Webwinkel Te Versnellen?</h2>
+        <h2 style="font-size:clamp(26px,4vw,34px);margin:0 0 14px">Klaar om jouw webwinkel te versnellen?</h2>
         <p style="color:var(--ink-soft);font-size:16.5px;max-width:620px;margin:0 auto 28px;line-height:1.6">
           Geen accountmanagers, geen uurtje-factuurtje en geen risico. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
         </p>
@@ -890,24 +1074,24 @@
   </section>
 
   <!-- Google Maps & Regio Service Dekking Nederland -->
-  <section id="locaties" class="section section-soft" style="border-top:1px solid var(--line)">
+  <section id="locaties" class="section" style="border-top:1px solid var(--line)">
     <div class="wrap">
       <div class="section-head" style="text-align:center;margin:0 auto 32px">
-        <div class="eyebrow">LOCATIE & LANDELIJKE DEKKING</div>
-        <h2>Actief Voor Webshops Door Heel Nederland</h2>
+        <div class="eyebrow">LOCATIE &amp; LANDELIJKE DEKKING</div>
+        <h2>Actief voor webshops door heel Nederland</h2>
         <p style="color:var(--ink-soft);max-width:680px;margin:8px auto 0">Directe samenwerking op afstand met webwinkeliers in de Randstad en daarbuiten. Geen trage vergaderingen of reiskosten, maar snelle async communicatie via Slack, WhatsApp of e-mail.</p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.03)">
         <div style="line-height:1.7">
-          <h3 style="font-size:20px;margin-bottom:12px">📍 Werkgebied & Focusregio's</h3>
-          <p style="font-size:15px;color:var(--ink-soft);margin-bottom:16px">Gespecialiseerd in snelle ondersteuning voor boutique modemerken, cosmetica webshops en D2C e-commerce in:</p>
+          <h3 style="font-size:20px;margin-bottom:12px">📍 Werkgebied &amp; Focusregio's</h3>
+          <p style="font-size:15px;color:var(--ink-soft);margin-bottom:16px">Gespecialiseerd in snelle ondersteuning voor WooCommerce en boutique webshops in:</p>
           <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:15px">
-            <li>🏛️ <b>Amsterdam & Regio:</b> <a href="/nl/amsterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Amsterdam</a></li>
-            <li>🚢 <b>Rotterdam & Rijnmond:</b> <a href="/nl/rotterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Rotterdam</a></li>
-            <li>⚡ <b>Utrecht & Midden-NL:</b> <a href="/nl/utrecht/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Utrecht</a></li>
-            <li>⚖️ <b>Den Haag & Westland:</b> <a href="/nl/den-haag/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Den Haag</a></li>
-            <li>💡 <b>Eindhoven & Brainport:</b> <a href="/nl/eindhoven/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Eindhoven</a></li>
+            <li>🏛️ <b>Amsterdam &amp; Regio:</b> <a href="/nl/amsterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">WooCommerce Specialist Amsterdam</a></li>
+            <li>🚢 <b>Rotterdam &amp; Rijnmond:</b> <a href="/nl/rotterdam/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Rotterdam</a></li>
+            <li>⚡ <b>Utrecht &amp; Midden-NL:</b> <a href="/nl/utrecht/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Utrecht</a></li>
+            <li>⚖️ <b>Den Haag &amp; Westland:</b> <a href="/nl/den-haag/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Den Haag</a></li>
+            <li>💡 <b>Eindhoven &amp; Brainport:</b> <a href="/nl/eindhoven/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Eindhoven</a></li>
           </ul>
         </div>
         <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line);min-height:260px;position:relative">
@@ -922,40 +1106,37 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155856.7649514755!2d4.763878036069927!3d52.3702157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600db4cbdd057d3!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl">
           </iframe>
         </div>
-
-
       </div>
     </div>
   </section>
 
   <!-- Gerelateerde Handleidingen & Casestudies -->
-  <section class="section" style="padding:48px 0;background:var(--bg)">
+  <section class="section section-soft" style="padding:48px 0">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:28px">
         <div class="eyebrow">TECHNISCHE KENNISBANK</div>
-        <h3 style="font-size:24px;margin:0 0 8px">Gerelateerde Technische Kennis &amp; Handleidingen</h3>
-        <p style="color:var(--ink-soft);font-size:15px;margin:0">Lees praktische oplossingen voor veelvoorkomende e-commerce knelpunten:</p>
+        <h2>Gerelateerde technische kennis en handleidingen</h2>
+        <p style="color:var(--ink-soft);font-size:15px;margin:0">Lees praktische oplossingen voor veelvoorkomende WooCommerce knelpunten:</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
         <a href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
           <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">WooCommerce · Logistiek</span>
-          <h4 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Trage WooCommerce Winkelwagen door PostNL &amp; Exact Online Oplossen &rarr;</h4>
+          <h3 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Trage WooCommerce Winkelwagen door PostNL &amp; Exact Online Oplossen &rarr;</h3>
           <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Hoe je trage checkout API-vertragingen isoleert en winkelwagens weer soepel laat laden.</p>
         </a>
         <a href="/blog/mollie-ideal-checkout-storing-oplossen/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
           <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">iDEAL · Betalingen</span>
-          <h4 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Mollie &amp; iDEAL Checkout Storing Oplossen: 10-Minuten Gids &rarr;</h4>
+          <h3 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Mollie &amp; iDEAL Checkout Storing Oplossen: 10-Minuten Gids &rarr;</h3>
           <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Webhook drops, mislukte status-updates en checkout bevriezingen systematisch verhelpen.</p>
         </a>
-        <a href="/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
-          <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">Shopify · Performance</span>
-          <h4 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Shopify Apps Vertragen Webshop: Oude Liquid Scripts Opruimen &rarr;</h4>
-          <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Verwijder 'ghost apps' en overbodige tracking scripts voor een directe sprong in Core Web Vitals.</p>
+        <a href="/blog/waarom-is-mijn-woocommerce-checkout-traag/" style="display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s">
+          <span style="font-size:11px;font-weight:700;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.06em">WooCommerce · Performance</span>
+          <h3 style="font-size:16px;margin:8px 0 6px;color:var(--ink)">Waarom Is Mijn WooCommerce Checkout Traag Op Mobiel? &rarr;</h3>
+          <p style="font-size:13.5px;color:var(--ink-soft);margin:0;line-height:1.5">Oorzaken van mobiele vertragingen in WooCommerce en concrete stappen naar een sub-2s checkout.</p>
         </a>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer style="padding:40px 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-faint);background:var(--bg-soft)">

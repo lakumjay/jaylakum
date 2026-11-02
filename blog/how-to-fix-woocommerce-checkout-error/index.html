@@ -396,7 +396,8 @@
 
 <div class="callout" style="background:var(--card);border:1.5px solid var(--gold);padding:24px;border-radius:12px;margin-top:32px">
   <h3 style="margin:0 0 10px;font-size:20px;color:var(--gold-deep)">Need Emergency WooCommerce Checkout Repairs?</h3>
-  <p style="margin:0 0 16px;color:var(--ink-soft);font-size:15px">Checkout bugs cost you money every hour they remain unresolved. I diagnose and resolve critical payment gateway and WooCommerce errors on staging with a guaranteed 24-48h turnaround.</p>
+  <p style="margin:0 0 16px;color:var(--ink-soft);font-size:15px">Need hands-on technical resolution? As a freelance <a href="/nl/amsterdam/" style="font-weight:700;text-decoration:underline">WooCommerce specialist Amsterdam</a>, I debug webhook drops, nonce mismatches, and gateway timeout errors on safe staging environments.</p>
+<p style="margin:0 0 16px;color:var(--ink-soft);font-size:15px">Checkout bugs cost you money every hour they remain unresolved. I diagnose and resolve critical payment gateway and WooCommerce errors on staging with a guaranteed 24-48h turnaround.</p>
   <a href="/#contact" class="btn">Get Immediate Checkout Help &rarr;</a>
 </div>
     </div>
