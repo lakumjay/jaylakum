@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Case Study: Webshop van 6.1s naar 1.4s | Jay Lakum</title>
-<meta name="description" content="Hoe we een Nederlandse fashion webshop versnelden van 6.1s naar 1.4s laadtijd. Bekijk de complete Core Web Vitals en omzetresultaten case study." />
+<meta name="description" content="Hoe we een Nederlandse fashion webshop versnelden van 6.1s naar 1.4s laadtijd. Bekijk de complete Core Web Vitals en omzetresultaten case." />
 <meta name="keywords" content="case study webshop versnellen, webshop snelheid resultaten, Core Web Vitals optimalisatie, WooCommerce versnellen" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="canonical" href="https://jaylakum.com/nl/case-study/" />
@@ -24,7 +24,7 @@
 <meta property="og:url" content="https://jaylakum.com/nl/case-study/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd)" />
-<meta property="og:description" content="Hoe we een Nederlandse fashion webshop versnelden van 6.1s naar 1.4s laadtijd. Bekijk de complete Core Web Vitals en omzetresultaten case study." />
+<meta property="og:description" content="Hoe we een Nederlandse fashion webshop versnelden van 6.1s naar 1.4s laadtijd. Bekijk de complete Core Web Vitals en omzetresultaten case." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 
 <!-- Structured Data -->

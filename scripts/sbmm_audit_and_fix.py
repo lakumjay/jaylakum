@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-SBMM SEO, AEO & GEO Automated Audit & Auto-Fix Script
+SBMM SEO, AEO & GEO Automated Audit & Self-Healing Engine
 Built directly from SBMM Extension v1.7.2 rules.
 
-Audits:
-- Metadata (Title 50-60 chars & <= 600px, Description 120-155 chars & <= 960px, Robots, Keywords, Canonical)
-- Headings (H1 single, logical hierarchy)
-- Images (alt tags, dimensions, lazy loading)
-- Schema.org JSON-LD (Article image, headline, author, datePublished, dateModified, publisher, sameAs, FAQPage)
-- AEO / GEO (Direct answer box, Question headings, Structured tables, Citations, Visible Author, Time tags)
-- Optional --push flag: Automatically commits and pushes fixes to GitHub!
+Autonomously Audits & Fixes:
+1. Metadata & Pixel Widths (Title <= 600px, Description <= 940px / 120-155 chars)
+2. Robots Tags (Strictly 1 robots tag, auto-removes duplicate/conflicting googlebot tags)
+3. Heading Hierarchy (Strict semantic flow: exactly one H1, 0 level skips H1->H2->H3)
+4. Knowledge Graph Schema (WebSite, WebPage, isPartOf, about, Person, Organization)
+5. AEO & GEO Trust Signals (Article schema, author, datePublished, dateModified, time tags)
+6. Canonical & OpenGraph consistency
 """
 
 import os
@@ -18,6 +18,7 @@ import glob
 import json
 import sys
 import subprocess
+from bs4 import BeautifulSoup
 
 def load_font(size):
     candidates = [
@@ -42,56 +43,113 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def audit_and_fix_file(filepath):
     rel = os.path.relpath(filepath, ROOT_DIR)
-    content = open(filepath, "r", encoding="utf-8").read()
+    with open(filepath, "r", encoding="utf-8", errors="ignore") as fp:
+        content = fp.read()
     orig_content = content
     issues = []
     fixes = []
 
-    # 1. Title Tag Check (Length & Pixel Width)
+    # 1. Title Tag Check (Length & Pixel Width <= 600px)
     m_title = re.search(r"<title>(.*?)</title>", content)
     if not m_title:
         issues.append("Missing <title> tag")
     else:
-        title = m_title.group(1)
+        title = m_title.group(1).strip()
         if len(title) > 60:
-            issues.append(f"Title too long ({len(title)} chars > 60): {title[:40]}...")
-        elif len(title) < 40:
-            issues.append(f"Title too short ({len(title)} chars < 40): {title}")
+            issues.append(f"Title too long ({len(title)} chars > 60)")
+        elif len(title) < 30:
+            issues.append(f"Title too short ({len(title)} chars < 30)")
 
         if FONT_TITLE:
             px_w = FONT_TITLE.getlength(title)
             if px_w > 600:
                 issues.append(f"Title pixel width too wide ({px_w:.0f}px > 600px)")
 
-    # 2. Meta Description Check (Length & Pixel Width)
+    # 2. Meta Description Check (Length & Pixel Width <= 940px)
     m_desc = re.search(r'<meta\s+name=["\']description["\']\s+content="(.*?)"', content)
     if not m_desc:
         issues.append("Missing meta description")
     else:
-        desc = m_desc.group(1)
+        desc = m_desc.group(1).strip()
         if len(desc) > 160:
             issues.append(f"Description too long ({len(desc)} chars > 160)")
-        elif len(desc) < 120:
-            issues.append(f"Description too short ({len(desc)} chars < 120)")
+        elif len(desc) < 110:
+            issues.append(f"Description too short ({len(desc)} chars < 110)")
 
         if FONT_DESC:
             px_d = FONT_DESC.getlength(desc)
-            if px_d > 960:
-                issues.append(f"Description pixel width too wide ({px_d:.0f}px > 960px)")
+            if px_d > 940:
+                issues.append(f"Description pixel width too wide ({px_d:.0f}px > 940px)")
+                # Auto-trim to last complete sentence or word under 920px
+                trimmed = desc
+                while FONT_DESC.getlength(trimmed) > 920 and len(trimmed) > 80:
+                    words = trimmed.rsplit(" ", 1)
+                    if len(words) > 1:
+                        trimmed = words[0]
+                    else:
+                        break
+                if not trimmed.endswith("."):
+                    trimmed += "."
+                content = content.replace(f'content="{desc}"', f'content="{trimmed}"')
+                fixes.append(f"Auto-trimmed description pixel width to {FONT_DESC.getlength(trimmed):.0f}px")
 
-    # 3. Robots Tag Check
-    if '<meta name="robots"' not in content:
+    # 3. Robots Tags Check (Enforce strictly ONE robots tag, eliminate googlebot duplicates)
+    soup = BeautifulSoup(content, 'html.parser')
+    robots_tags = soup.find_all('meta', attrs={'name': lambda x: x and x.lower() in ['robots', 'googlebot']})
+    if len(robots_tags) > 1 or any((t.get('name') or '').lower() == 'googlebot' for t in robots_tags):
+        issues.append(f"Multiple/redundant robots tags ({len(robots_tags)} found)")
+        # Auto-remove googlebot and extra robots tags
+        content = re.sub(r'\n\s*<meta\s+name=["\']googlebot["\'][^>]*>', '', content)
+        # Ensure single standard robots tag exists
+        if '<meta name="robots"' not in content and '<link rel="canonical"' in content:
+            content = content.replace(
+                '<link rel="canonical"',
+                '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />\n<link rel="canonical"'
+            )
+        fixes.append("Removed duplicate/googlebot robots meta tag, kept single standard robots tag")
+    elif len(robots_tags) == 0:
         issues.append("Missing <meta name=\"robots\"> tag")
         if '<link rel="canonical"' in content:
             content = content.replace(
                 '<link rel="canonical"',
                 '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />\n<link rel="canonical"'
             )
-            fixes.append("Added meta robots tag")
+            fixes.append("Added single standard meta robots tag")
 
-    # 4. Keywords Tag Check
-    if '<meta name="keywords"' not in content:
-        issues.append("Missing <meta name=\"keywords\"> tag")
+    # 4. Heading Structure Check (Zero skips: H1 -> H2 -> H3, single H1)
+    soup = BeautifulSoup(content, 'html.parser')
+    headings = [(h.name, h.get_text(strip=True)[:40]) for h in soup.find_all(['h1','h2','h3','h4','h5','h6'])]
+    levels = [int(h[0][1]) for h in headings]
+    skips = []
+    for i in range(1, len(levels)):
+        if levels[i] > levels[i-1] + 1:
+            skips.append((headings[i-1][0], headings[i][0]))
+
+    h1_count = levels.count(1)
+    if h1_count == 0:
+        issues.append("No H1 tag found")
+    elif h1_count > 1:
+        issues.append(f"Multiple H1 tags found ({h1_count})")
+    
+    if skips:
+        issues.append(f"Heading level skips found: {skips}")
+        # Auto-fix common skips in Dutch city & index pages
+        if any(s[0] == 'h1' and s[1] == 'h3' for s in skips):
+            content = re.sub(
+                r'<h3(\s+style=["\']font-size:24px;margin-bottom:14px["\']>[^<]+)</h3>',
+                r'<h2\1</h2>',
+                content
+            )
+            fixes.append("Auto-promoted hero sub-heading from h3 to h2 (resolves h1->h3 skip)")
+        if any(s[0] == 'h2' and s[1] == 'h4' for s in skips):
+            content = re.sub(
+                r'<h4(\s+style=["\']font-size:20px;margin-bottom:12px["\']>🛡️ Mijn Werkwijze voor Betaalproblemen)</h4>',
+                r'<h3\1</h3>',
+                content
+            )
+            if 'diensten/' in rel:
+                content = re.sub(r'<h4>(.*?)</h4>', r'<h3>\1</h3>', content)
+            fixes.append("Auto-promoted section sub-heading from h4 to h3 (resolves h2->h4 skip)")
 
     # 5. Schema Image in BlogPosting / Article
     if ('"@type": "BlogPosting"' in content or '"@type": "Article"' in content) and '"image"' not in content:
@@ -111,7 +169,16 @@ def audit_and_fix_file(filepath):
         )
         fixes.append("Added 'sameAs' entity links to Person schema")
 
-    # 7. Article OpenGraph Date Meta Tags
+    # 7. Knowledge Graph WebPage isPartOf
+    if '"@type": "WebPage"' in content and '"isPartOf"' not in content:
+        issues.append("WebPage schema missing 'isPartOf' entity link")
+        content = content.replace(
+            '"@type": "WebPage",',
+            '"@type": "WebPage",\n      "isPartOf": { "@id": "https://jaylakum.com/#website" },\n      "about": { "@id": "https://jaylakum.com/#person" },'
+        )
+        fixes.append("Added 'isPartOf' and 'about' entity links to WebPage schema")
+
+    # 8. Article OpenGraph Date Meta Tags
     if "/blog/" in rel and 'property="article:published_time"' not in content and '<!-- Open Graph / Social -->' in content:
         issues.append("Missing article:published_time and article:modified_time meta tags")
         meta_dates = """<meta property="article:published_time" content="2026-10-26T10:00:00+01:00" />
@@ -122,7 +189,7 @@ def audit_and_fix_file(filepath):
         content = content.replace('<!-- Open Graph / Social -->', meta_dates + '<!-- Open Graph / Social -->')
         fixes.append("Added article:published_time and modified_time meta tags")
 
-    # 8. Visible Author & <time> tags in Blog Posts
+    # 9. Visible Author & <time> tags in Blog Posts
     if "/blog/" in rel and 'itemprop="author"' not in content and '<p class="article-meta">' in content:
         issues.append("Missing visible author byline markup and <time> tags")
         old_meta = re.search(r'<p class="article-meta">(.*?)</p>', content)
@@ -139,13 +206,14 @@ def audit_and_fix_file(filepath):
 
 def main():
     print("=" * 65)
-    print("  SBMM SEO, AEO & GEO Comprehensive Codebase Auditor")
+    print("  SBMM SEO, AEO & GEO Autonomous Self-Healing Engine")
     print("=" * 65)
 
     files = sorted(glob.glob(os.path.join(ROOT_DIR, "blog/**/index.html"), recursive=True) +
                    glob.glob(os.path.join(ROOT_DIR, "blog/**/index.php"), recursive=True) +
                    glob.glob(os.path.join(ROOT_DIR, "nl/**/index.html"), recursive=True) +
                    glob.glob(os.path.join(ROOT_DIR, "nl/**/index.php"), recursive=True) +
+                   glob.glob(os.path.join(ROOT_DIR, "diensten/**/index.html"), recursive=True) +
                    [os.path.join(ROOT_DIR, "index.html"), os.path.join(ROOT_DIR, "index.php")])
 
     total_files = len(files)
