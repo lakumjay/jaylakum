@@ -18,9 +18,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
+
 <!-- Primary SEO Meta -->
 <title>Shopify &amp; WooCommerce Developer Netherlands | Jay Lakum</title>
-<meta name="description" content="Freelance Shopify &amp; WooCommerce developer in the Netherlands. Pages that load in under 2.5 seconds and 24-48h checkout bug fixes. Pay 100% on verified delivery." />
+<meta name="description" content="Freelance Shopify &amp; WooCommerce developer in Netherlands. Sub-2.5s mobile speed, Core Web Vitals and 24-48h checkout bug fixes. Pay on delivery." />
 <meta name="keywords" content="Shopify developer Netherlands, WooCommerce specialist Amsterdam, Shopify speed optimization, webshop versnellen, WooCommerce checkout fix, freelance ecommerce developer" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/" />
@@ -32,7 +33,6 @@
 
 <!-- Robots & Search Engine Directives -->
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
 
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#171410" media="(prefers-color-scheme: dark)" />
@@ -72,12 +72,27 @@
       "publisher": { "@id": "https://jaylakum.com/#person" }
     },
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/#webpage",
+      "url": "https://jaylakum.com/",
+      "name": "Shopify & WooCommerce Developer Netherlands | Jay Lakum",
+      "isPartOf": { "@id": "https://jaylakum.com/#website" },
+      "about": { "@id": "https://jaylakum.com/#person" },
+      "description": "Freelance Shopify & WooCommerce developer in the Netherlands. Sub-2.5 second load times, Core Web Vitals optimization, and 24-48h checkout bug fixes.",
+      "inLanguage": "en-US",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero p", "#faq"]
+      }
+    },
+    {
       "@type": "Person",
       "@id": "https://jaylakum.com/#person",
       "name": "Jay Lakum",
       "jobTitle": "Senior Webshop & Performance Developer",
       "url": "https://jaylakum.com/",
       "email": "jay@jaylakum.com",
+      "image": "https://jaylakum.com/og-image.png",
       "sameAs": [
         "https://github.com/lakumjay",
         "https://www.linkedin.com/in/lakum-jay/",
@@ -85,19 +100,73 @@
       ]
     },
     {
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "LocalBusiness"],
       "@id": "https://jaylakum.com/#service",
-      "name": "Jay Lakum — India Coders",
+      "name": "Jay Lakum — Webshop Performance Engineering",
       "description": "Specialist in Shopify and WordPress webshop speed optimization, bug fixes and redesigns for EU and UK stores.",
       "email": "jay@jaylakum.com",
+      "telephone": "+91-6353116138",
       "url": "https://jaylakum.com/",
       "founder": { "@id": "https://jaylakum.com/#person" },
-      "areaServed": ["Netherlands", "United Kingdom", "Germany", "Belgium", "Europe", "United States"],
-      "knowsAbout": ["Shopify", "WordPress", "WooCommerce", "Core Web Vitals", "Speed Optimization", "Liquid", "PHP", "Web Redesign"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tagore Road",
+        "addressLocality": "Rajkot",
+        "addressRegion": "Gujarat",
+        "postalCode": "360002",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.3039,
+        "longitude": 70.8022
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        }
+      ],
+      "areaServed": [
+        { "@type": "Country", "name": "Netherlands" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "Belgium" }
+      ],
+      "knowsAbout": [
+        "Shopify", "WordPress", "WooCommerce", "Core Web Vitals", 
+        "Largest Contentful Paint (LCP)", "Interaction to Next Paint (INP)", 
+        "Shopify Liquid Optimization", "Mollie & iDEAL Payment Troubleshooting",
+        "PostNL API Integration"
+      ],
+      "priceRange": "€€",
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speed Optimization (Sub-2s Mobile Load)" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Checkout & Gateway Bug Fixes" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boutique Webshop Redesign" } }
+        { 
+          "@type": "Offer", 
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Mobile Speed Optimization (Sub-2.5s Guarantee)",
+            "description": "Clean up bloat, optimize Liquid/PHP queries, and guarantee green Core Web Vitals."
+          } 
+        },
+        { 
+          "@type": "Offer", 
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Checkout & Payment Bug Fixes (24-48h Delivery)",
+            "description": "Diagnosing Mollie, iDEAL, PostNL and WooCommerce cart freeze issues."
+          } 
+        },
+        { 
+          "@type": "Offer", 
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Boutique Webshop Mobile Redesign",
+            "description": "High-converting frictionless mobile UX tailored to European eCommerce standards."
+          } 
+        }
       ]
     }
   ]
@@ -741,26 +810,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Hoe snel kan een trage Shopify of WooCommerce webshop versneld worden?",
+      "name": "You are based in India — how does communication and working across time zones work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "De meeste snelheidsproblemen, render-blocking scripts en ongebruikte app-resten worden binnen 24 tot 48 uur opgelost op een veilige staging omgeving, zonder live onderbreking."
+        "text": "I work async-first with European & UK store owners: you receive clear written updates, screenshots, and concise Loom screen recordings without having to sit through endless meetings. Our working hours overlap with Central European Time (CET). If an urgent discussion or video call is ever needed, we hop on Google Meet directly. You never pay for account managers or hourly retainers — only for verified results delivered safely on staging."
       }
     },
     {
       "@type": "Question",
-      "name": "Wat kost het repareren van een haperende checkout of iDEAL/Mollie fout?",
+      "name": "How can I verify your professional identity and development background?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ik werk uitsluitend met een vaste prijs vooraf (fixed quote upfront). Geen onverwachte uurtarieven of nacalculaties."
+        "text": "You can inspect my verified public engineering work and professional profiles directly on LinkedIn, GitHub, and technical writeups on DEV.to. In addition, you work with fixed deliverables and pay 100% on delivery after you test on staging, which completely protects your business."
       }
     },
     {
       "@type": "Question",
-      "name": "Werk je rechtstreeks op de live webshop?",
+      "name": "How long does a fix take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nee, alle aanpassingen, code-opschoning en checkout tests worden eerst grondig getest op een staging/duplicaat omgeving voordat ze worden uitgerold."
+        "text": "It depends on the problem, and I'll always tell you upfront. A single bug fix is usually a matter of days once I've reproduced the issue; a full speed optimisation or a redesign of your key pages takes longer, and you'll get a written timeline with your quote before anything starts. If something turns out bigger than expected, I tell you before doing extra work — never after."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every job is quoted as one fixed price after a Free 3-Minute Video Audit of your store — no hourly billing and no open-ended invoices. You approve the written scope and price first, and that's what you pay on delivery. If I can't fix your problem, you don't pay for the attempt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't like the result?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You see everything on a staging copy before it goes live, so there are no surprises at the end. If the result isn't what we agreed in the written scope, I revise it until it matches — that's the deal. Your live store is never touched until you've approved the work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which platforms do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shopify and WordPress with WooCommerce are my main platforms — that's where most of my speed and bug-fix work happens. My background also covers Laravel and custom PHP, so if your store has custom code or integrations, I can usually work with those too. Not sure if your setup fits? Email me the URL and I'll tell you honestly."
       }
     }
   ]
@@ -862,24 +955,24 @@
           <p>Three focused services for Shopify and WordPress/WooCommerce shops. Every job starts with a Free 3-Minute Video Audit and a fixed written quote.</p>
         </div>
         <div class="grid-3">
-          <article class="card">
+          <div class="card">
             <span class="tag">Fixed quote upfront</span>
             <h3>Speed Optimization</h3>
             <p>Your store loads slowly, customers leave before the page even opens. I find what's dragging it down — oversized images, heavy apps, bloated themes — and make it fast on mobile and desktop.</p>
             <a class="more" href="#services">See what's included →</a>
-          </article>
-          <article class="card">
+          </div>
+          <div class="card">
             <span class="tag">Fixed quote upfront</span>
             <h3>Bug Fixes</h3>
             <p>Checkout errors, broken layouts, a plugin update that took the shop down. Send me the problem, I reproduce it, explain the cause in plain words, and fix it on a staging copy first.</p>
             <a class="more" href="#services">See what's included →</a>
-          </article>
-          <article class="card">
+          </div>
+          <div class="card">
             <span class="tag">Fixed quote upfront</span>
             <h3>Redesigns</h3>
             <p>Your products are good but the store looks dated or is hard to use on a phone. I redesign the pages that matter most — home, product, cart — so the shop feels as premium as what you sell.</p>
             <a class="more" href="#services">See what's included →</a>
-          </article>
+          </div>
         </div>
       </div>
     </div>
@@ -917,7 +1010,7 @@
             </figure>
             <div class="w-top"><span class="tag">Shopify · Fashion Boutique</span></div>
             <h3><a href="/case-study/">Nordic Apparel &amp; Accessories (Fashion Boutique)</a></h3>
-            <p>European fashion boutique on Shopify. Cleaned unused Liquid theme code, compressed lookbooks and brought mobile load times permanently under 2.5s.</p>
+            <p>European boutique fashion retailer on Shopify. Eliminated heavy unused Liquid theme libraries, converted lookbooks to modern WebP, and restored sub-2.2s load speeds.</p>
             <div style="font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:6px">Role: Liquid performance profiling &amp; Core Web Vitals sprint by Jay Lakum</div>
             <a class="visit" href="/case-study/">Read technical case study ↗</a>
           </article>
@@ -1218,25 +1311,25 @@
         </div>
         <div class="blog-grid" id="homeBlogGrid" style="padding:20px 0 30px">
           <article class="card post-card">
-            <span class="p-cat">Shopify · Speed &amp; Mobile</span>
-            <h3><a href="/blog/why-is-my-shopify-store-so-slow/">Why Is My Shopify Store So Slow? 5 Fixes That Actually Work</a></h3>
-            <p>Every app installed, uncompressed image, and heavy theme script eats into your mobile conversion rate. Here are the 5 high-impact fixes that actually move the needle.</p>
-            <p class="post-meta">October 2026 · 5 min read</p>
-            <a class="more" href="/blog/why-is-my-shopify-store-so-slow/">Read the article →</a>
+            <span class="p-cat">E-Commerce · Tarieven &amp; ROI</span>
+            <h3><a href="/blog/wat-kost-webshop-versnellen-kosten-overzicht/">Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen &amp; ROI Gids</a></h3>
+            <p>Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bureauprijzen en hoe snel het zich terugverdient.</p>
+            <p class="post-meta">October 2026 · 5 min leestijd · 🇳🇱 NL</p>
+            <a class="more" href="/blog/wat-kost-webshop-versnellen-kosten-overzicht/">Read article →</a>
           </article>
           <article class="card post-card">
-            <span class="p-cat">WooCommerce · Checkout Diagnostics</span>
-            <h3><a href="/blog/woocommerce-checkout-broken-diagnose-10-minutes/">WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes</a></h3>
-            <p>Step-by-step developer checklist to pinpoint why carts stall, AJAX spinners hang, and payment gateways fail on WooCommerce.</p>
-            <p class="post-meta">October 2026 · 5 min read</p>
-            <a class="more" href="/blog/woocommerce-checkout-broken-diagnose-10-minutes/">Read the article →</a>
+            <span class="p-cat">WooCommerce · Troubleshooting</span>
+            <h3><a href="/blog/how-to-fix-woocommerce-checkout-error/">How to Fix WooCommerce Checkout Error &amp; Critical Payment Failures</a></h3>
+            <p>Customers clicking 'Place Order' only to see an endless spinning wheel, a generic 500 Internal Error, or expired payment sessions? Step-by-step developer guide.</p>
+            <p class="post-meta">October 2026 · 7 min read</p>
+            <a class="more" href="/blog/how-to-fix-woocommerce-checkout-error/">Read article →</a>
           </article>
           <article class="card post-card">
-            <span class="p-cat">WooCommerce · Performance &amp; Core Web Vitals</span>
-            <h3><a href="/blog/how-to-fix-slow-woocommerce-store-practical-checklist/">How to Fix a Slow WooCommerce Store: A Practical Checklist</a></h3>
-            <p>From server response time (TTFB) to cart fragments and database bloat — a developer-grade checklist to speed up your store.</p>
-            <p class="post-meta">October 2026 · 6 min read</p>
-            <a class="more" href="/blog/how-to-fix-slow-woocommerce-store-practical-checklist/">Read the article →</a>
+            <span class="p-cat">WooCommerce · PostNL &amp; ERP</span>
+            <h3><a href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/">Trage WooCommerce Winkelwagen: PostNL &amp; Exact Online Knelpunten</a></h3>
+            <p>Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en synchronisatievertraging op.</p>
+            <p class="post-meta">October 2026 · 5 min leestijd · 🇳🇱 NL</p>
+            <a class="more" href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/">Read article →</a>
           </article>
         </div>
         <div style="text-align:center;margin-top:28px">
@@ -1538,10 +1631,10 @@
 
           <!-- Share on Social Buttons -->
           <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-bottom:24px">
-            <a id="btnShareLinkedIn" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13.5px;padding:8px 16px">
+            <a id="btnShareLinkedIn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fjaylakum.com%2F" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13.5px;padding:8px 16px">
               💼 Share Score on LinkedIn
             </a>
-            <a id="btnShareWhatsApp" href="#" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13.5px;padding:8px 16px">
+            <a id="btnShareWhatsApp" href="https://api.whatsapp.com/send?text=Test%20your%20store%20speed%20on%20https%3A%2F%2Fjaylakum.com%2F" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13.5px;padding:8px 16px">
               💬 Share on WhatsApp
             </a>
           </div>
