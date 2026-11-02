@@ -7,15 +7,25 @@
 
 <title>7 Mobile Mistakes Killing Your Webshop Sales | Jay Lakum</title>
 <meta name="description" content="Most of your visitors are on a phone — but most stores are still checked on a desktop. Seven mobile mistakes I see on fashion and beauty webshops, and how to spot them on yours." />
+<meta name="keywords" content="mobile webshop mistakes, mobile checkout dropoff, mobile conversion rate eCommerce, responsive webshop fixes, mobile bounce rate eCommerce" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/" />
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/" />
 
-<!-- Favicon -->
+<!-- Favicon & Touch Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
+<meta name="msapplication-TileColor" content="#171410" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="article" />

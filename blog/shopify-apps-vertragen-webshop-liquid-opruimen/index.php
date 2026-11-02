@@ -7,16 +7,26 @@
 
 <title>5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt) | Jay Lakum</title>
 <meta name="description" content="Heb je apps verwijderd, maar voelt je Shopify webshop nog steeds traag? Waarom onzichtbare 'spookcode' in theme.liquid je mobiele PageSpeed keldert en hoe je dit opschoont." />
+<meta name="keywords" content="shopify apps vertragen webshop, liquid code opruimen, shopify snelheid verbeteren, theme.liquid optimalisatie, shopify specialist nederland" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="alternate" hreflang="nl-NL" href="https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" />
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/" />
 
-<!-- Favicon -->
+<!-- Favicon & Touch Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
+<meta name="msapplication-TileColor" content="#171410" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="article" />

@@ -7,16 +7,26 @@
 
 <title>Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond | Jay Lakum</title>
 <meta name="description" content="Blijft je WooCommerce winkelwagen hangen bij het berekenen van verzendkosten of voorraad? Zo los je PostNL API latency en Exact Online synchronisatievertraging op." />
+<meta name="keywords" content="trage woocommerce winkelwagen, postnl api checkout vertraging, exact online synchronisatie woocommerce, winkelmand blijft hangen, woocommerce rotterdam specialist" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="alternate" hreflang="nl-NL" href="https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" />
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/" />
 
-<!-- Favicon -->
+<!-- Favicon & Touch Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
+<meta name="msapplication-TileColor" content="#171410" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="article" />

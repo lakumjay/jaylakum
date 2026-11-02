@@ -6,29 +6,39 @@
 <meta name="color-scheme" content="light dark" />
 
 <title>Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids | Jay Lakum</title>
-<meta name="description" content="Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bureauprijzen, wat je krijgt voor je geld, en hoe snel een snellere mobiele laadtijd zichzelf terugverdient." />
+<meta name="description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
+<meta name="keywords" content="wat kost webshop versnellen, webshop snelheid kosten, WooCommerce versnellen prijs, Shopify optimalisatie tarieven, webshop laten versnellen Nederland" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
 
-<!-- Favicon -->
+<!-- Favicon & Touch Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
+<meta name="msapplication-TileColor" content="#171410" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids" />
-<meta property="og:description" content="Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bureauprijzen, wat je krijgt voor je geld, en hoe snel een snellere mobiele laadtijd zichzelf terugverdient." />
+<meta property="og:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids" />
-<meta name="twitter:description" content="Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bureauprijzen, wat je krijgt voor je geld, en hoe snel een snellere mobiele laadtijd zichzelf terugverdient." />
+<meta name="twitter:description" content="Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -40,7 +50,7 @@
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#article",
       "headline": "Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids",
-      "description": "Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bureauprijzen, wat je krijgt voor je geld, en hoe snel een snellere mobiele laadtijd zichzelf terugverdient.",
+      "description": "Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden.",
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",

@@ -7,15 +7,25 @@
 
 <title>Why Your Mobile Checkout Loses Sales (And How to Fix It) | Jay Lakum</title>
 <meta name="description" content="Your mobile checkout can lose ready-to-buy customers through small delays, unclear costs, long forms and badly timed distractions. Here is how to find and fix the friction." />
+<meta name="keywords" content="mobile checkout dropoff, why mobile checkout loses sales, fix mobile checkout friction, reduce cart abandonment mobile, ecommerce checkout conversion" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/" />
 <link rel="alternate" hreflang="x-default" href="https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/" />
 
-<!-- Favicon -->
+<!-- Favicon & Touch Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="alternate icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
+<meta name="msapplication-TileColor" content="#171410" />
 
 <!-- Open Graph / Social -->
 <meta property="og:type" content="article" />
