@@ -57,6 +57,9 @@
       },
       "about": {
         "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/nl/amsterdam/#service"
       }
     },
     {
@@ -66,7 +69,9 @@
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",
       "description": "Professionele webshop optimalisatie, iDEAL koppelingen en Core Web Vitals versnelling in Nederland.",
-      "publisher": { "@id": "https://jaylakum.com/#person" }
+      "publisher": {
+        "@id": "https://jaylakum.com/#person"
+      }
     },
     {
       "@type": "Person",
@@ -82,8 +87,11 @@
       ]
     },
     {
-      "@type": ["ProfessionalService", "LocalBusiness"],
-      "@id": "https://jaylakum.com/nl/#service",
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
+      "@id": "https://jaylakum.com/nl/amsterdam/#service",
       "name": "Jay Lakum — E-Commerce & Performance Specialist Nederland",
       "description": "Specialist in trage Shopify en WooCommerce webshops versnellen, Mollie iDEAL fouten oplossen en Core Web Vitals groen krijgen.",
       "email": "jay@jaylakum.com",
@@ -96,20 +104,65 @@
         "longitude": 4.9041
       },
       "areaServed": [
-        { "@type": "Country", "name": "Netherlands" },
-        { "@type": "City", "name": "Amsterdam" },
-        { "@type": "City", "name": "Rotterdam" },
-        { "@type": "City", "name": "Utrecht" },
-        { "@type": "City", "name": "Den Haag" },
-        { "@type": "City", "name": "Eindhoven" }
+        {
+          "@type": "Country",
+          "name": "Netherlands"
+        },
+        {
+          "@type": "City",
+          "name": "Amsterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Rotterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Utrecht"
+        },
+        {
+          "@type": "City",
+          "name": "Den Haag"
+        },
+        {
+          "@type": "City",
+          "name": "Eindhoven"
+        }
       ],
-      "knowsLanguage": ["nl", "en"],
+      "knowsLanguage": [
+        "nl",
+        "en"
+      ],
       "paymentAccepted": "iDEAL, SEPA, Credit Card, Bank Transfer, Mollie",
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mollie & iDEAL Checkout Fouten Oplossen" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webshop Redesign & Conversie Verbetering" } }
-      ]
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mollie & iDEAL Checkout Fouten Oplossen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webshop Redesign & Conversie Verbetering"
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://jaylakum.com/nl/amsterdam/#webpage"
+      }
     },
     {
       "@type": "FAQPage",
@@ -117,10 +170,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Hoe werken de vaste prijzen en de resultaatgarantie ('Geen oplossing, geen factuur')?",
+          "name": "Hoe werken de vaste prijzen en de resultaatgarantie (\"Geen oplossing, geen factuur\")?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Voordat ik code aanpas, ontvang je een schriftelijke offerte met één vaste totaalprijs en heldere scope. Behaal ik het vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Betaling pas na verificatie op staging."
+            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een schriftelijke offerte metéén vaste totaalprijsen een heldere scope. Is de klus achteraf complexer? Dat is mijn risico, niet het jouwe. Behaal ik het vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Je betaalt pas na tevreden oplevering en verificatie op staging."
           }
         },
         {
@@ -128,7 +181,7 @@
           "name": "Komt mijn webshop hiermee direct op nummer 1 in Google.nl?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wat deze optimalisatie wél doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
+            "text": "Niemand kan eerlijk 'nummer 1 posities binnen een week' beloven — zoekmachineoptimalisatie (SEO) kost tijd en consistente autoriteit. Wat deze optimalisatie wél doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
           }
         },
         {
@@ -144,7 +197,7 @@
           "name": "Waarom kies ik voor Jay Lakum en niet een bureau aan de Amsterdamse Herengracht of Keizersgracht?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak hoge bedragen rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
           }
         },
         {
@@ -160,7 +213,7 @@
           "name": "Waarom presteert onze Amsterdamse modewebshop traag op mobiel ondanks snelle kantoor-wifi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Veel modemerken in de Amsterdamse Negen Straatjes en Oud-Zuid testen hun webwinkel op snelle kantoor-glasvezel. Echte klanten lopen echter door de stad met een 4G/5G-verbinding. Zware lookbook-fotografie en dynamische carousels blazen de paginagrootte op. Zonder compressie en responsive afbeeldingsschaling leidt dit direct tot 6+ seconden laadtijd."
+            "text": "Veel modemerken in de Amsterdamse Negen Straatjes en Oud-Zuid testen hun webwinkel op snelle kantoor-glasvezel met high-end MacBooks. Je echte klanten lopen echter door de stad met een 4G/5G-verbinding op hun smartphone. Zware lookbook-fotografie, retina-banners en dynamische carousels blazen de paginagrootte op tot meer dan 8MB. Zonder compressie en responsive afbeeldingsschaling (WebP/AVIF) leidt dit direct tot 6+ seconden laadtijd en een hoge bounce rate."
           }
         },
         {
@@ -168,7 +221,7 @@
           "name": "Bieden jullie ondersteuning voor lokale bezorgdiensten in Amsterdam (zoals Fietskoeriers, Trunkrs of PostNL)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Jazeker. Wij zorgen ervoor dat checkout-plugins voor Trunkrs, Fietskoeriers en PostNL asynchroon communiceren via transient caching, zodat het ophalen van bezorgmomenten de kassa niet vertraagt."
+            "text": "Jazeker. Lokale bezorgopties zijn in Amsterdam essentieel voor next-day en same-day delivery. Wij zorgen ervoor dat checkout-plugins voor Trunkrs, Fietskoeriers en PostNL asynchroon communiceren via transient caching, zodat het ophalen van bezorgmomenten de kassa niet vertraagt."
           }
         },
         {
@@ -176,7 +229,7 @@
           "name": "Hoe gaan we om met meertaligheid en buitenlandse toeristen of expats die in Amsterdam bestellen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Amsterdam heeft een groot internationaal publiek. Wij optimaliseren meertalige setups (zoals Shopify Markets of WPML/Polylang voor WooCommerce) zodat taal- en valutaswitchers geen zware redirects veroorzaken en iDEAL, Creditcard en Bancontact naadloos worden gepresenteerd."
+            "text": "Amsterdam heeft een groot internationaal publiek. Wij optimaliseren meertalige setups (zoals Shopify Markets of WPML/Polylang voor WooCommerce) zodat taal- en valutaswitchers geen zware redirects veroorzaken en iDEAL, Creditcard en Bancontact naadloos worden gepresenteerd op basis van de taal van de bezoeker."
           }
         },
         {
@@ -184,7 +237,7 @@
           "name": "Werken jullie samen met lokale Amsterdamse bureaus of interne marketingteams?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Regelmatig. Lokale marketing- en designbureaus in Amsterdam zijn ijzersterk in branding en ads, maar missen vaak de diepgaande technische capaciteit voor backend profiling en Core Web Vitals. Wij fungeren als technische partner achter de schermen."
+            "text": "Regelmatig. Lokale marketing- en designbureaus in Amsterdam zijn ijzersterk in branding en Meta-advertenties, maar missen vaak de diepgaande technische capaciteit voor backend profiling en Core Web Vitals optimalisatie. Wij fungeren als technische partner achter de schermen op projectbasis of per sprint."
           }
         }
       ]

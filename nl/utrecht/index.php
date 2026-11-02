@@ -57,6 +57,9 @@
       },
       "about": {
         "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/nl/utrecht/#service"
       }
     },
     {
@@ -66,7 +69,9 @@
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",
       "description": "Professionele webshop optimalisatie, iDEAL koppelingen en Core Web Vitals versnelling in Nederland.",
-      "publisher": { "@id": "https://jaylakum.com/#person" }
+      "publisher": {
+        "@id": "https://jaylakum.com/#person"
+      }
     },
     {
       "@type": "Person",
@@ -82,8 +87,11 @@
       ]
     },
     {
-      "@type": ["ProfessionalService", "LocalBusiness"],
-      "@id": "https://jaylakum.com/nl/#service",
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
+      "@id": "https://jaylakum.com/nl/utrecht/#service",
       "name": "Jay Lakum — E-Commerce & Performance Specialist Nederland",
       "description": "Specialist in trage Shopify en WooCommerce webshops versnellen, Mollie iDEAL fouten oplossen en Core Web Vitals groen krijgen.",
       "email": "jay@jaylakum.com",
@@ -96,20 +104,65 @@
         "longitude": 5.1214
       },
       "areaServed": [
-        { "@type": "Country", "name": "Netherlands" },
-        { "@type": "City", "name": "Amsterdam" },
-        { "@type": "City", "name": "Rotterdam" },
-        { "@type": "City", "name": "Utrecht" },
-        { "@type": "City", "name": "Den Haag" },
-        { "@type": "City", "name": "Eindhoven" }
+        {
+          "@type": "Country",
+          "name": "Netherlands"
+        },
+        {
+          "@type": "City",
+          "name": "Amsterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Rotterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Utrecht"
+        },
+        {
+          "@type": "City",
+          "name": "Den Haag"
+        },
+        {
+          "@type": "City",
+          "name": "Eindhoven"
+        }
       ],
-      "knowsLanguage": ["nl", "en"],
+      "knowsLanguage": [
+        "nl",
+        "en"
+      ],
       "paymentAccepted": "iDEAL, SEPA, Credit Card, Bank Transfer, Mollie",
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mollie & iDEAL Checkout Fouten Oplossen" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webshop Redesign & Conversie Verbetering" } }
-      ]
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mollie & iDEAL Checkout Fouten Oplossen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webshop Redesign & Conversie Verbetering"
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://jaylakum.com/nl/utrecht/#webpage"
+      }
     },
     {
       "@type": "FAQPage",
@@ -117,34 +170,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wat kost het om Core Web Vitals groen te krijgen voor een webshop in Utrecht?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Afhankelijk van je e-commerce platform ontvang je een vaste prijsopgave met meetbare Core Web Vitals targets (LCP < 2.0s, INP < 200ms) binnen overeengekomen scope."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hoe snel kan mijn webwinkel in Utrecht sneller laden op mobiel?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mobiele laadtijdverbeteringen voer ik binnen 3 tot 5 werkdagen uit met moderne WebP/AVIF compressie en CSS/JS stroomlijning op staging."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "Hoe weet ik zeker wat het kost (geen uurtje-factuurtje)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met één vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
+            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte metéén vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
           }
         },
         {
           "@type": "Question",
-          "name": "Hoe werkt de resultaatgarantie ('Geen oplossing, geen factuur') precies?",
+          "name": "Hoe werkt de resultaatgarantie (\"Geen oplossing, geen factuur\") precies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We leggen vooraf in een duidelijke schriftelijke scope vast wat het meetbare doel is (bijvoorbeeld: Mollie webhook herstellen zodat bestellingen direct op Voltooid springen of Mobile LCP onder 2.0s brengen op Google PageSpeed). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig."
+            "text": "We leggen vooraf in een duidelijkeschriftelijke scopevast wat het meetbare doel is (bijvoorbeeld: 'Mollie webhook herstellen zodat bestellingen direct op Voltooid springen' of 'Mobile LCP onder 2.0s brengen op Google PageSpeed'). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Zo loop je als ondernemer geen enkel financieel risico, en is de opdracht voor beide partijen 100% transparant."
           }
         },
         {
@@ -152,7 +189,7 @@
           "name": "Komt mijn webshop hiermee direct op nummer 1 in Google.nl?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wat deze optimalisatie doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
+            "text": "Niemand kan eerlijk 'nummer 1 posities binnen een week' beloven — zoekmachineoptimalisatie (SEO) kost tijd en consistente autoriteit. Wat deze optimalisatie wél doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
           }
         },
         {
@@ -160,7 +197,7 @@
           "name": "Moet mijn webwinkel offline tijdens de optimalisatie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen."
+            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen. Pas na jouw goedkeuring zetten we de wijzigingen live."
           }
         },
         {
@@ -176,7 +213,7 @@
           "name": "Hoe snel kan mijn webshop versneld of gerepareerd worden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Acute bug fixes en iDEAL haperingen worden meestal binnen 24 tot 48 uur opgelost. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
+            "text": "Acute bug fixes en iDEAL haperingen los ik meestal binnen 24 tot 48 uur op. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
           }
         }
       ]

@@ -54,13 +54,24 @@
       "@id": "https://jaylakum.com/nl/#webpage",
       "url": "https://jaylakum.com/nl/",
       "name": "Shopify & WooCommerce Specialist Nederland | Jay Lakum",
-      "isPartOf": { "@id": "https://jaylakum.com/nl/#website" },
-      "about": { "@id": "https://jaylakum.com/#person" },
+      "isPartOf": {
+        "@id": "https://jaylakum.com/nl/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
       "description": "Freelance Shopify & WooCommerce specialist in Nederland. Vaste projectprijs vooraf, gegarandeerd snellere webshops (<1.5s) en 24/48u checkout bug fixes.",
       "inLanguage": "nl-NL",
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", ".hero-sub", "#faq"]
+        "cssSelector": [
+          "h1",
+          ".hero-sub",
+          "#faq"
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/nl/#service"
       }
     },
     {
@@ -70,7 +81,9 @@
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",
       "description": "Professionele webshop optimalisatie, iDEAL koppelingen en Core Web Vitals versnelling in Nederland.",
-      "publisher": { "@id": "https://jaylakum.com/#person" }
+      "publisher": {
+        "@id": "https://jaylakum.com/#person"
+      }
     },
     {
       "@type": "Person",
@@ -86,7 +99,10 @@
       ]
     },
     {
-      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@type": [
+        "ProfessionalService",
+        "LocalBusiness"
+      ],
       "@id": "https://jaylakum.com/nl/#service",
       "name": "Jay Lakum — E-Commerce & Performance Specialist Nederland",
       "description": "Specialist in trage Shopify en WooCommerce webshops versnellen, Mollie iDEAL fouten oplossen en Core Web Vitals groen krijgen.",
@@ -100,20 +116,65 @@
         "longitude": 4.9041
       },
       "areaServed": [
-        { "@type": "Country", "name": "Netherlands" },
-        { "@type": "City", "name": "Amsterdam" },
-        { "@type": "City", "name": "Rotterdam" },
-        { "@type": "City", "name": "Utrecht" },
-        { "@type": "City", "name": "Den Haag" },
-        { "@type": "City", "name": "Eindhoven" }
+        {
+          "@type": "Country",
+          "name": "Netherlands"
+        },
+        {
+          "@type": "City",
+          "name": "Amsterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Rotterdam"
+        },
+        {
+          "@type": "City",
+          "name": "Utrecht"
+        },
+        {
+          "@type": "City",
+          "name": "Den Haag"
+        },
+        {
+          "@type": "City",
+          "name": "Eindhoven"
+        }
       ],
-      "knowsLanguage": ["nl", "en"],
+      "knowsLanguage": [
+        "nl",
+        "en"
+      ],
       "paymentAccepted": "iDEAL, SEPA, Credit Card, Bank Transfer, Mollie",
       "makesOffer": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mollie & iDEAL Checkout Fouten Oplossen" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webshop Redesign & Conversie Verbetering" } }
-      ]
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mollie & iDEAL Checkout Fouten Oplossen"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Webshop Redesign & Conversie Verbetering"
+          }
+        }
+      ],
+      "provider": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://jaylakum.com/nl/#webpage"
+      }
     },
     {
       "@type": "FAQPage",
@@ -121,18 +182,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wat kost een Shopify of WooCommerce speed optimalisatie?",
+          "name": "Je werkt vanuit India — hoe verloopt de communicatie en het tijdsverschil?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Een complete Shopify of WooCommerce snelheidsoptimalisatie voer ik uit op basis van één vaste projectprijs vooraf (geen onverwachte nacalculatie). Na een Gratis 3-Minuten Video Audit ontvang je een duidelijke schriftelijke scope met gegarandeerde doelen. Betaling gebeurt pas na oplevering en verificatie op staging."
+            "text": "Ik werk async-first voor Nederlandse webwinkels: duidelijke schriftelijke updates, screenshots en korte Loom video's via e-mail of WhatsApp. Mijn werktijden overlappen ruimschoots met de Nederlandse kantoortijden (CET). Mocht een video-call gewenst zijn, dan plannen we direct een Google Meet in. Je betaalt nooit voor accountmanagers of overleg-uren — alleen voor geteste resultaten op een veilige staging server."
           }
         },
         {
           "@type": "Question",
-          "name": "Hoe snel is mijn trage WooCommerce checkout of Mollie storing opgelost?",
+          "name": "Hoe kan ik je professionele achtergrond en identiteit verifiëren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Acute checkout storingen, vastlopende iDEAL betalingen en Mollie webhook timeouts los ik doorgaans binnen 24 tot 48 uur op op een veilige staging omgeving zonder dat je live winkel offline hoeft."
+            "text": "Mijn professionele profiel en technische achtergrond kun je direct openbaar bekijken opLinkedIn,GitHubenDEV.to. Bovendien loop je nul financieel risico dankzij 100% betaling bij tevreden oplevering op staging."
           }
         },
         {
@@ -140,15 +201,15 @@
           "name": "Wat kost een Shopify developer of webshop versnellen in Nederland?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte met één vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
+            "text": "Voordat ik ook maar één regel code aanpas, ontvang je een korte schriftelijke offerte metéén vaste totaalprijs. Is de klus achteraf ingewikkelder dan gedacht? Dat is mijn risico, niet het jouwe. Je betaalt exact wat vooraf is afgesproken."
           }
         },
         {
           "@type": "Question",
-          "name": "Hoe werkt de resultaatgarantie ('Geen oplossing, geen factuur') precies?",
+          "name": "Hoe werkt de resultaatgarantie (\"Geen oplossing, geen factuur\") precies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We leggen vooraf in een duidelijke schriftelijke scope vast wat het meetbare doel is (bijvoorbeeld: Mollie webhook herstellen zodat bestellingen direct op Voltooid springen of Mobile LCP onder 2.0s brengen op Google PageSpeed). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig."
+            "text": "We leggen vooraf in een duidelijkeschriftelijke scopevast wat het meetbare doel is (bijvoorbeeld: 'Mollie webhook herstellen zodat bestellingen direct op Voltooid springen' of 'Mobile LCP onder 2.0s brengen op Google PageSpeed'). Behaal ik dit vastgelegde resultaat binnen de scope niet? Dan vervalt de factuur volledig. Zo loop je als ondernemer geen enkel financieel risico, en is de opdracht voor beide partijen 100% transparant."
           }
         },
         {
@@ -156,7 +217,7 @@
           "name": "Komt mijn webshop hiermee direct op nummer 1 in Google.nl?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wat deze optimalisatie doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
+            "text": "Niemand kan eerlijk 'nummer 1 posities binnen een week' beloven — zoekmachineoptimalisatie (SEO) kost tijd en consistente autoriteit. Wat deze optimalisatie wél doet: het verwijdert de technische strafpunten die Google geeft aan trage webshops. Snelle laadtijden en foutloze Core Web Vitals zijn de absolute technische basisvoorwaarde om structureel hoger te ranken in Google Nederland."
           }
         },
         {
@@ -164,7 +225,7 @@
           "name": "Moet mijn webwinkel offline tijdens de optimalisatie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen."
+            "text": "Nee, absoluut niet. Ik werk altijd op een testomgeving (staging server) of een niet-gepubliceerd thema (in Shopify). Jouw live webshop blijft gewoon doordraaien en bestellingen ontvangen. Pas na jouw goedkeuring zetten we de wijzigingen live."
           }
         },
         {
@@ -172,7 +233,7 @@
           "name": "Waarom kies ik voor Jay Lakum en niet een traditioneel Nederlands webbureau?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Traditionele full-service bureaus hebben forse kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €3.000 tot €6.000 rekenen voor relatief eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "Traditionele full-service bureaus hebben forse kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €3.000 tot €6.000 rekenen voor relatief eenvoudige optimalisaties. Bij mij heb je direct contact met de developer die het werk zelf uitvoert. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
           }
         },
         {
@@ -180,7 +241,7 @@
           "name": "Bied je een webshop spoed reparatie voor acute checkout fouten binnen 24 uur?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Acute bug fixes en iDEAL haperingen worden meestal binnen 24 tot 48 uur opgelost. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
+            "text": "Acute bug fixes en iDEAL haperingen los ik meestal binnen 24 tot 48 uur op. Een complete snelheidsoptimalisatie (Core Web Vitals groen) duurt gemiddeld 3 tot 5 werkdagen inclusief uitgebreide voor- en nametingen."
           }
         }
       ]
