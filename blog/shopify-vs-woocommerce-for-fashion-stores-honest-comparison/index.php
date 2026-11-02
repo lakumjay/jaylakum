@@ -47,6 +47,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jaylakum.com/#website",
+      "url": "https://jaylakum.com/",
+      "name": "Jay Lakum — Webshop Performance & Development",
+      "publisher": {
+        "@id": "https://jaylakum.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/#webpage",
+      "url": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/",
+      "name": "Shopify vs WooCommerce for Fashion Stores | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/#article"
+      }
+    },
+    {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/#article",
       "image": "https://jaylakum.com/og-image.svg",
@@ -55,7 +79,7 @@
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",
-      "mainEntityOfPage": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/",
+      "mainEntityOfPage": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/#webpage",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",

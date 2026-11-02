@@ -49,8 +49,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/nl/eindhoven/#webpage",
+      "url": "https://jaylakum.com/nl/eindhoven/",
+      "name": "Shopify &amp; WooCommerce Specialist Eindhoven | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      }
+    },
+    {
       "@type": "WebSite",
-      "@id": "https://jaylakum.com/nl/eindhoven/#website",
+      "@id": "https://jaylakum.com/#website",
       "url": "https://jaylakum.com/nl/eindhoven/",
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",

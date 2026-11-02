@@ -47,6 +47,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jaylakum.com/#website",
+      "url": "https://jaylakum.com/",
+      "name": "Jay Lakum — Webshop Performance & Development",
+      "publisher": {
+        "@id": "https://jaylakum.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/#webpage",
+      "url": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/",
+      "name": "Diagnose Broken WooCommerce Checkout in 10 Min | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/#article"
+      }
+    },
+    {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/#article",
       "image": "https://jaylakum.com/og-image.svg",
@@ -55,7 +79,7 @@
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "en",
-      "mainEntityOfPage": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/",
+      "mainEntityOfPage": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/#webpage",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",

@@ -49,8 +49,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/nl/utrecht/#webpage",
+      "url": "https://jaylakum.com/nl/utrecht/",
+      "name": "Shopify &amp; WooCommerce Specialist Utrecht | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      }
+    },
+    {
       "@type": "WebSite",
-      "@id": "https://jaylakum.com/nl/utrecht/#website",
+      "@id": "https://jaylakum.com/#website",
       "url": "https://jaylakum.com/nl/utrecht/",
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",

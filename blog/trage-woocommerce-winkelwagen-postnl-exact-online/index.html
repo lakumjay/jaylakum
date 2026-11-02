@@ -48,6 +48,30 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jaylakum.com/#website",
+      "url": "https://jaylakum.com/",
+      "name": "Jay Lakum — Webshop Performance & Development",
+      "publisher": {
+        "@id": "https://jaylakum.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/#webpage",
+      "url": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/",
+      "name": "Trage Winkelwagen Oplossen: PostNL & Exact | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/#article"
+      }
+    },
+    {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/#article",
       "image": "https://jaylakum.com/og-image.svg",
@@ -56,7 +80,7 @@
       "datePublished": "2026-10-26T10:00:00+01:00",
       "dateModified": "2026-10-26T18:00:00+01:00",
       "inLanguage": "nl-NL",
-      "mainEntityOfPage": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/",
+      "mainEntityOfPage": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/#webpage",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",

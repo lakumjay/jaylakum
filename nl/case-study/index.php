@@ -33,6 +33,18 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/nl/case-study/#webpage",
+      "url": "https://jaylakum.com/nl/case-study/",
+      "name": "Case Study: Webshop van 6.1s naar 1.4s | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      }
+    },
+    {
       "@type": "Article",
       "@id": "https://jaylakum.com/nl/case-study/#article",
       "image": "https://jaylakum.com/og-image.png",

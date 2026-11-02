@@ -49,8 +49,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/nl/rotterdam/#webpage",
+      "url": "https://jaylakum.com/nl/rotterdam/",
+      "name": "Shopify &amp; WooCommerce Specialist Rotterdam | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      }
+    },
+    {
       "@type": "WebSite",
-      "@id": "https://jaylakum.com/nl/rotterdam/#website",
+      "@id": "https://jaylakum.com/#website",
       "url": "https://jaylakum.com/nl/rotterdam/",
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",

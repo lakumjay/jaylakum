@@ -48,8 +48,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/nl/amsterdam/#webpage",
+      "url": "https://jaylakum.com/nl/amsterdam/",
+      "name": "WooCommerce Specialist Amsterdam Vaste Prijs | Jay Lakum",
+      "isPartOf": {
+        "@id": "https://jaylakum.com/#website"
+      },
+      "about": {
+        "@id": "https://jaylakum.com/#person"
+      }
+    },
+    {
       "@type": "WebSite",
-      "@id": "https://jaylakum.com/nl/amsterdam/#website",
+      "@id": "https://jaylakum.com/#website",
       "url": "https://jaylakum.com/nl/amsterdam/",
       "name": "Jay Lakum — Shopify & WooCommerce Specialist Nederland",
       "inLanguage": "nl-NL",

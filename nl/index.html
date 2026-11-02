@@ -51,6 +51,20 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebPage",
+      "@id": "https://jaylakum.com/nl/#webpage",
+      "url": "https://jaylakum.com/nl/",
+      "name": "Shopify & WooCommerce Specialist Nederland | Jay Lakum",
+      "isPartOf": { "@id": "https://jaylakum.com/nl/#website" },
+      "about": { "@id": "https://jaylakum.com/#person" },
+      "description": "Freelance Shopify & WooCommerce specialist in Nederland. Vaste projectprijs vooraf, gegarandeerd snellere webshops (<1.5s) en 24/48u checkout bug fixes.",
+      "inLanguage": "nl-NL",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".hero-sub", "#faq"]
+      }
+    },
+    {
       "@type": "WebSite",
       "@id": "https://jaylakum.com/nl/#website",
       "url": "https://jaylakum.com/nl/",
