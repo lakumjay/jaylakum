@@ -385,62 +385,24 @@ add_action('woocommerce_checkout_order_processed', function($order_id) {
 <p>Wil je dat ik jouw WooCommerce webshop en logistieke koppelingen grondig doorlicht? Vraag een <a href="/nl/#gratis-audit">gratis 3-minuten video audit</a> aan of neem direct contact op. Ik werk op basis van vaste deliverables, veilige staging tests en betaling bij tevreden oplevering.</p>
     </div>
 
-    <div class="article-cta">
-      <h3>Hulp nodig bij jouw webshop?</h3>
-      <p>Stuur me een bericht met je webshop URL voor een gratis mini-audit en vaste prijs vooraf.</p>
-      <a class="btn" href="mailto:jay@jaylakum.com">Neem direct contact op</a>
-    </div>
-
-    <div class="related-sect">
-      <h3 style="font-family:var(--serif);font-size:22px">More Technical Field Guides</h3>
-      <div class="blog-grid">
-        
-        <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <a href="/blog/wat-kost-webshop-versnellen-kosten-overzicht/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:12px;background:var(--bg-soft)">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0U1QzA3QiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNENEFGMzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIzOTAiIHJ4PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsNTUsMC4yKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSIyNjAiIGhlaWdodD0iMzQiIHJ4PSIxNyIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMTIpIiBzdHJva2U9InJnYmEoMjEyLDE3NSw1NSwwLjM1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iODAiIHk9IjkyIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsJ1NlZ29lIFVJJyxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0U1QzA3QiIgbGV0dGVyLXNwYWNpbmc9IjEiPlRBUklFVkVOICZhbXA7IFJPSTwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMTcwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0ZBRjdGMSI+V2F0IEtvc3QgV2Vic2hvcCBWZXJzbmVsbGVuPzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMjE1IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNnb2xkKSI+RWVybGlqa2UgUHJpanplbiAmYW1wOyBCZXJla2VuaW5nPC90ZXh0PgogIDxyZWN0IHg9IjYwIiB5PSIyNzAiIHdpZHRoPSI2ODAiIGhlaWdodD0iODAiIHJ4PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPHRleHQgeD0iODUiIHk9IjMxOCIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LCdTZWdvZSBVSScsUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNFNUMwN0IiPvCfkrAgUk9JOiAxcyBzbmVsbGVyID0gZ2VtaWRkZWxkICs3JSBtZWVyIG9temV0PC90ZXh0Pgo8L3N2Zz4=" alt="Wat kost het versnellen van een webshop in Nederland? Eerlijk prijsoverzicht en markttarieven" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;" loading="lazy" />
-            </a>
-            <span class="p-cat">E-Commerce · Tarieven & ROI</span>
-            <h3 style="font-size:18px;margin:8px 0"><a href="/blog/wat-kost-webshop-versnellen-kosten-overzicht/">Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids</a></h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">Wat kost professionele webshop speed optimization in Nederland? Een eerlijk overzicht van freelance tarieven versus bure...</p>
-          </div>
-          <div>
-            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:8px">October 2026 · 5 min leestijd</p>
-            <a class="more" href="/blog/wat-kost-webshop-versnellen-kosten-overzicht/" style="font-size:14px;font-weight:600;color:var(--gold)">Read article →</a>
-          </div>
-        </article>
-        
-        <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <a href="/blog/how-to-fix-woocommerce-checkout-error/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:12px;background:var(--bg-soft)">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0U1QzA3QiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNENEFGMzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIzOTAiIHJ4PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsNTUsMC4yKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSIyNjAiIGhlaWdodD0iMzQiIHJ4PSIxNyIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMTIpIiBzdHJva2U9InJnYmEoMjEyLDE3NSw1NSwwLjM1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iODAiIHk9IjkyIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsJ1NlZ29lIFVJJyxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0U1QzA3QiIgbGV0dGVyLXNwYWNpbmc9IjEiPldPT0NPTU1FUkNFIMK3IERFQlVHR0lORzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMTcwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0ZBRjdGMSI+V29vQ29tbWVyY2UgQ2hlY2tvdXQgRXJyb3I/PC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSIyMTUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ1cmwoI2dvbGQpIj5Dcml0aWNhbCBGaXhlcyBmb3IgUGF5bWVudCBEcm9wczwvdGV4dD4KICA8cmVjdCB4PSI2MCIgeT0iMjcwIiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjgwIiByeD0iMTAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMikiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIvPgogIDx0ZXh0IHg9Ijg1IiB5PSIzMTgiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCwnU2Vnb2UgVUknLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjRTVDMDdCIj7wn5uh77iPIEZpeCA1MDAgZXJyb3JzLCBzcGlubmluZyB3aGVlbHMgJmFtcDsgbm9uY2UgZmFpbHVyZXM8L3RleHQ+Cjwvc3ZnPg==" alt="How to fix WooCommerce checkout error and payment failures step by step" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;" loading="lazy" />
-            </a>
-            <span class="p-cat">WooCommerce · Troubleshooting</span>
-            <h3 style="font-size:18px;margin:8px 0"><a href="/blog/how-to-fix-woocommerce-checkout-error/">How to Fix WooCommerce Checkout Error & Critical Payment Failures</a></h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">Customers clicking 'Place Order' only to see an endless spinning wheel, a generic 'Internal Server Error', or expired pa...</p>
-          </div>
-          <div>
-            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:8px">October 2026 · 7 min read</p>
-            <a class="more" href="/blog/how-to-fix-woocommerce-checkout-error/" style="font-size:14px;font-weight:600;color:var(--gold)">Read article →</a>
-          </div>
-        </article>
-        
-        <article class="card post-card" style="display:flex;flex-direction:column;justify-content:space-between">
-          <div>
-            <a href="/blog/waarom-is-mijn-woocommerce-checkout-traag/" style="display:block;overflow:hidden;border-radius:8px;margin-bottom:12px;background:var(--bg-soft)">
-              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0U1QzA3QiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNENEFGMzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIzOTAiIHJ4PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsNTUsMC4yKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSIyNjAiIGhlaWdodD0iMzQiIHJ4PSIxNyIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMTIpIiBzdHJva2U9InJnYmEoMjEyLDE3NSw1NSwwLjM1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iODAiIHk9IjkyIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsJ1NlZ29lIFVJJyxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0U1QzA3QiIgbGV0dGVyLXNwYWNpbmc9IjEiPldPT0NPTU1FUkNFIMK3IFNORUxIRUlEPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSIxNzAiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLHNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRkFGN0YxIj5XYWFyb20gSXMgTWlqbiBDaGVja291dCBUcmFhZz88L3RleHQ+CiAgPHRleHQgeD0iNjAiIHk9IjIxNSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9InVybCgjZ29sZCkiPjcgVGVjaG5pc2NoZSBPb3J6YWtlbiAmYW1wOyBGaXhlczwvdGV4dD4KICA8cmVjdCB4PSI2MCIgeT0iMjcwIiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjgwIiByeD0iMTAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMikiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA4KSIvPgogIDx0ZXh0IHg9Ijg1IiB5PSIzMTgiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCwnU2Vnb2UgVUknLFJvYm90byxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjRTVDMDdCIj7imqEgVmFuIDYuNHMgbmFhciAxLjhzIG1vYmllbGUgY2hlY2tvdXQgbGFhZHRpamQ8L3RleHQ+Cjwvc3ZnPg==" alt="Waarom is mijn WooCommerce checkout traag? 7 technische oorzaken en directe oplossingen" width="600" height="338" style="aspect-ratio:16/9;width:100%;height:auto;object-fit:cover;display:block;border-radius:8px;" loading="lazy" />
-            </a>
-            <span class="p-cat">WooCommerce · Checkout</span>
-            <h3 style="font-size:18px;margin:8px 0"><a href="/blog/waarom-is-mijn-woocommerce-checkout-traag/">Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen</a></h3>
-            <p style="font-size:14px;color:var(--ink-soft);line-height:1.5;margin-bottom:12px">Wanneer een klant op 'Afrekenen' klikt en 4 tot 8 seconden moet wachten, haakt 40% geruisloos af. Dit zijn de 7 meest vo...</p>
-          </div>
-          <div>
-            <p class="post-meta" style="font-size:13px;color:var(--ink-faint);margin-bottom:8px">October 2026 · 6 min leestijd</p>
-            <a class="more" href="/blog/waarom-is-mijn-woocommerce-checkout-traag/" style="font-size:14px;font-weight:600;color:var(--gold)">Read article →</a>
-          </div>
-        </article>
-        
+    <div class="article-cta" style="background:var(--card);border:2px solid var(--gold);padding:32px;border-radius:14px;margin:40px 0;text-align:center">
+      <span class="tag" style="margin-bottom:10px">Directe Hulp &middot; Vaste Prijs</span>
+      <h3 style="margin:8px 0 12px;font-size:24px;color:var(--ink)">Hulp nodig bij jouw PostNL koppeling? Vaste prijs offerte</h3>
+      <p style="color:var(--ink-soft);font-size:16px;max-width:620px;margin:0 auto 22px;line-height:1.6">
+        Als freelance <a href="/nl/amsterdam/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce specialist</a> richt ik nieuwe koppelingen in of los ik PostNL API-vertragingen, adresvalidatie-timeouts en labelprint errors binnen 24-48 uur op. 100% veilig op staging en betalen bij oplevering.
+      </p>
+      <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;align-items:center">
+        <a href="/diensten/postnl-woocommerce-koppeling/" class="btn" style="font-size:15px;padding:12px 24px">
+          📦 PostNL Koppeling Laten Maken of Repareren &rarr;
+        </a>
+        <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20PostNL%20WooCommerce%20koppeling" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#25D366;border-color:rgba(37,211,102,0.5);font-size:15px;padding:12px 20px">
+          💬 WhatsApp Direct: +91 6353116138
+        </a>
+        <a href="mailto:jay@jaylakum.com" class="btn btn-ghost" style="font-size:15px;padding:12px 20px">
+          ✉️ jay@jaylakum.com
+        </a>
       </div>
+    </div>
     </div>
   </article>
 </main>
