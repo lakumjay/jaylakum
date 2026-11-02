@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/why-your-mobile-checkout-loses-sales-and-how-to-fix-it/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Why Your Mobile Checkout Loses Sales (And How to Fix It)",
       "description": "Mobile checkout losing buyers? Discover how small delays, long forms and unclear shipping costs kill conversions, and how to fix them quickly.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

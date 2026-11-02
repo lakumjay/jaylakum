@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/waarom-is-mijn-woocommerce-checkout-traag/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Waarom Is Mijn WooCommerce Checkout Traag? 7 Oorzaken & Snelle Oplossingen",
       "description": "Duurt afrekenen in WooCommerce 4 tot 8 seconden? Ontdek de 7 grootste technische oorzaken van een trage checkout en versnel je koopproces.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

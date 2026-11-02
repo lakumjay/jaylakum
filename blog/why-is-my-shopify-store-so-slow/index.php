@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/why-is-my-shopify-store-so-slow/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Why Is My Shopify Store So Slow? 5 Fixes That Actually Work",
       "description": "Shopify itself is fast, so why does your store crawl? Discover the top 5 causes behind slow Shopify stores and how to fix mobile speed today.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

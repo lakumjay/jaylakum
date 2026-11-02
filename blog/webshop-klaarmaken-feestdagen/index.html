@@ -50,6 +50,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/webshop-klaarmaken-feestdagen/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Webshop Klaarmaken Voor De Feestdagen: 5 Technische Checkout & Snelheid Fixes",
       "description": "Bereid je webshop voor op Black Friday en december. 5 technische fixes voor checkout stabiliteit en snelle mobiele laadtijden onder piekverkeer.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -60,7 +61,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

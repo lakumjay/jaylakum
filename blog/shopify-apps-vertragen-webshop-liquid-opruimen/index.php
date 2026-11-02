@@ -50,6 +50,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/shopify-apps-vertragen-webshop-liquid-opruimen/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "5 Shopify apps die Nederlandse webshops vertragen (en hoe je achtergebleven Liquid code opruimt)",
       "description": "Apps verwijderd maar je Shopify webshop blijft traag? Zie hoe spookcode in theme.liquid je mobiele PageSpeed verlaagt en hoe je dit opschoont.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -60,7 +61,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

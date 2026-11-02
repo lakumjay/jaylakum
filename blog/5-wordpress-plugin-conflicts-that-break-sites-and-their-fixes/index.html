@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/5-wordpress-plugin-conflicts-that-break-sites-and-their-fixes/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "5 WordPress Plugin Conflicts That Break Sites (And Their Fixes)",
       "description": "Learn how to diagnose and resolve 5 critical WordPress plugin conflicts safely: caching collisions, duplicate scripts and fatal checkout errors.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

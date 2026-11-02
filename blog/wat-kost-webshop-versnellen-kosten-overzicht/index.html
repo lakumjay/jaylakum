@@ -27,6 +27,10 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 
+<meta property="article:published_time" content="2026-10-26T10:00:00+01:00" />
+<meta property="article:modified_time" content="2026-11-02T12:00:00+01:00" />
+<meta property="article:author" content="https://jaylakum.com/" />
+<meta property="og:updated_time" content="2026-11-02T12:00:00+01:00" />
 <!-- Open Graph / Social -->
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/" />
@@ -49,6 +53,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/wat-kost-webshop-versnellen-kosten-overzicht/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Wat Kost Webshop Versnellen? Prijzen & ROI",
       "description": "Wat kost webshop versnellen in Nederland? Eerlijk overzicht van freelance vs bureau tarieven, wat je krijgt voor je geld en de ROI van snellere laadtijden.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -349,7 +354,7 @@
 
     <span class="p-cat">E-Commerce · Tarieven & ROI</span>
     <h1>Wat Kost Het Versnellen van een Webshop? Eerlijke Prijzen & ROI Gids</h1>
-    <p class="article-meta">October 2026 · 5 min leestijd · by Jay Lakum, Senior Webshop & Performance Specialist</p>
+    <p class="article-meta"><time datetime="2026-10-26" itemprop="datePublished">26 oktober 2026</time> (Bijgewerkt: <time datetime="2026-11-02" itemprop="dateModified">2 november 2026</time>) · 5 min leestijd · by <span class="byline" itemprop="author"><a rel="author" href="https://jaylakum.com/">Jay Lakum</a></span>, Senior Webshop & Performance Specialist</p>
 
     <img class="article-hero" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNDUwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE2MTgxRCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwRTEwMTMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI0U1QzA3QiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNENEFGMzciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHg9IjMwIiB5PSIzMCIgd2lkdGg9Ijc0MCIgaGVpZ2h0PSIzOTAiIHJ4PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxMiwxNzUsNTUsMC4yKSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSIyNjAiIGhlaWdodD0iMzQiIHJ4PSIxNyIgZmlsbD0icmdiYSgyMTIsMTc1LDU1LDAuMTIpIiBzdHJva2U9InJnYmEoMjEyLDE3NSw1NSwwLjM1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPHRleHQgeD0iODAiIHk9IjkyIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsJ1NlZ29lIFVJJyxSb2JvdG8sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0U1QzA3QiIgbGV0dGVyLXNwYWNpbmc9IjEiPlRBUklFVkVOICZhbXA7IFJPSTwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMTcwIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0ZBRjdGMSI+V2F0IEtvc3QgV2Vic2hvcCBWZXJzbmVsbGVuPzwvdGV4dD4KICA8dGV4dCB4PSI2MCIgeT0iMjE1IiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNnb2xkKSI+RWVybGlqa2UgUHJpanplbiAmYW1wOyBCZXJla2VuaW5nPC90ZXh0PgogIDxyZWN0IHg9IjYwIiB5PSIyNzAiIHdpZHRoPSI2ODAiIGhlaWdodD0iODAiIHJ4PSIxMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDgpIi8+CiAgPHRleHQgeD0iODUiIHk9IjMxOCIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LCdTZWdvZSBVSScsUm9ib3RvLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNFNUMwN0IiPvCfkrAgUk9JOiAxcyBzbmVsbGVyID0gZ2VtaWRkZWxkICs3JSBtZWVyIG9temV0PC90ZXh0Pgo8L3N2Zz4=" alt="Wat kost het versnellen van een webshop in Nederland? Eerlijk prijsoverzicht en markttarieven" width="800" height="450" style="aspect-ratio:16/9;width:100%;height:auto;" loading="eager" />
 
@@ -487,7 +492,18 @@
 </div>
     </div>
 
-    <div class="article-cta">
+    
+    <!-- Author Bio Card (SBMM Trust Signal D1: 4/4) -->
+    <div class="author-card" style="display:flex;align-items:center;gap:20px;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:40px 0;">
+      <img src="https://jaylakum.com/favicon-192x192.png" alt="Jay Lakum" width="64" height="64" style="border-radius:50%;border:2px solid var(--gold);flex-shrink:0;" />
+      <div>
+        <h4 style="margin:0 0 4px;font-size:18px;color:var(--ink);"><span class="byline" itemprop="author"><a rel="author" href="https://jaylakum.com/">Jay Lakum</a></span></h4>
+        <p style="margin:0 0 8px;font-size:14px;color:var(--ink-faint);">Senior Freelance Webshop &amp; Core Web Vitals Specialist</p>
+        <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5;">In my experience optimizing WooCommerce and Shopify stores across the Netherlands, real-world page speed and clean checkout flows directly drive store revenue. Connect on <a href="https://www.linkedin.com/in/jay-lakum" target="_blank" rel="noopener noreferrer">LinkedIn</a> or <a href="https://github.com/lakumjay" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </div>
+    </div>
+
+<div class="article-cta">
       <h3>Need this fixed on your store?</h3>
       <p>Forms aren't for everyone. Email me directly with your store URL and what's broken — I reply within 24 hours.</p>
       <a class="btn" href="mailto:jay@jaylakum.com">Email jay@jaylakum.com</a>

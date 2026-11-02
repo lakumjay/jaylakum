@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/7-mobile-mistakes-killing-webshop-sales/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "7 Mobile Mistakes Killing Your Webshop Sales",
       "description": "Over 70% of visitors shop on phones. Discover the 7 critical mobile UX mistakes hurting webshop conversion rates and how to fix them quickly.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

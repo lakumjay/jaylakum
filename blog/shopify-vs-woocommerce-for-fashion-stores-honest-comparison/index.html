@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/shopify-vs-woocommerce-for-fashion-stores-honest-comparison/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Shopify vs WooCommerce for Fashion Stores: An Honest Comparison",
       "description": "Shopify or WooCommerce for a fashion store? An honest comparison of costs, design freedom, checkout flexibility, apps and daily maintenance.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

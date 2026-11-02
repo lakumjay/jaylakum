@@ -50,6 +50,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Hoe los je een trage iDEAL / Mollie checkout op in WooCommerce &amp; Shopify?",
       "description": "Blijft een Mollie iDEAL order op 'In behandeling' of 'Mislukt' staan? Ontdek de oorzaak van webhook timeouts en los checkout storingen snel op.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -60,7 +61,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

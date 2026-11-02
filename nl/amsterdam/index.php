@@ -19,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce specialist in Amsterdam nodig? Sub-2.0s mobiele laadtijd, Mollie/iDEAL &amp; PostNL checkout fixes binnen 24–48u. 100% vaste prijs &amp; betalen bij oplevering." />
+<title>WooCommerce Specialist Amsterdam Vaste Prijs | Jay Lakum</title>
+<meta name="description" content="Freelance WooCommerce specialist in Amsterdam nodig? Vaste projectprijs vooraf, betalen bij oplevering en directe communicatie. Geen uurtje-factuurtje." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />
@@ -38,7 +38,7 @@
 <meta property="og:url" content="https://jaylakum.com/nl/amsterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
 <meta property="og:title" content="Freelance WooCommerce Specialist Amsterdam — Vaste Prijs | Jay Lakum" />
-<meta property="og:description" content="Trage webshops versnellen, Mollie/iDEAL checkout reparaties en conversie-optimalisatie voor Nederlandse webwinkels. Vaste prijs vooraf." />
+<meta property="og:description" content="Freelance WooCommerce specialist in Amsterdam nodig? Vaste projectprijs vooraf, betalen bij oplevering en directe communicatie. Geen uurtje-factuurtje." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 

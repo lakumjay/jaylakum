@@ -50,6 +50,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/trage-woocommerce-winkelwagen-postnl-exact-online/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "Trage WooCommerce Winkelwagen Oplossen: PostNL &amp; Exact Online Knelpunten in Rotterdam &amp; Rijnmond",
       "description": "Blijft je WooCommerce winkelwagen hangen bij verzendkosten of voorraad? Los PostNL API latency en Exact Online synchronisatievertraging op.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -60,7 +61,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd) | Jay Lakum</title>
-<meta name="description" content="Stap-voor-stap technische case study: Hoe we achtergebleven app code opruimden, mobiele LCP verlaagden van 6.1s naar 2.2s en Core Web Vitals groen kregen." />
+<title>Case Study: Webshop van 6.1s naar 1.4s | Jay Lakum</title>
+<meta name="description" content="Hoe we een trage Nederlandse fashion webshop versnelden van 6.1s naar 1.4s mobiele laadtijd. Bekijk de volledige Core Web Vitals en omzet case study." />
+<meta name="keywords" content="case study webshop versnellen, webshop snelheid resultaten, Core Web Vitals optimalisatie, WooCommerce versnellen" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <link rel="canonical" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
@@ -22,7 +24,7 @@
 <meta property="og:url" content="https://jaylakum.com/nl/case-study/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
 <meta property="og:title" content="Case Study: Webshop Snelheid van 6.1s naar 2.2s (Core Web Vitals Geslaagd)" />
-<meta property="og:description" content="Echte resultaten: Hoe we een mode webshop versnelden naar 2.2s en omzetverlies stopten zonder live downtime." />
+<meta property="og:description" content="Hoe we een trage Nederlandse fashion webshop versnelden van 6.1s naar 1.4s mobiele laadtijd. Bekijk de volledige Core Web Vitals en omzet case study." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 
 <!-- Structured Data -->
@@ -33,17 +35,20 @@
     {
       "@type": "Article",
       "@id": "https://jaylakum.com/nl/case-study/#article",
+      "image": "https://jaylakum.com/og-image.png",
       "headline": "Hoe we de mobiele laadtijd van een kledingwebshop verlaagden van 6.1s naar 2.2s",
       "description": "Technische case study over Shopify & WooCommerce mobiele snelheidsoptimalisatie en Core Web Vitals.",
       "author": {
         "@type": "Person",
         "name": "Jay Lakum",
-        "url": "https://jaylakum.com/nl/"
+        "url": "https://jaylakum.com/nl/",
+        "sameAs": ["https://www.linkedin.com/in/jay-lakum", "https://github.com/lakumjay"]
       },
       "publisher": {
         "@type": "Organization",
         "name": "Jay Lakum",
-        "url": "https://jaylakum.com/nl/"
+        "url": "https://jaylakum.com/nl/",
+        "sameAs": ["https://www.linkedin.com/in/jay-lakum", "https://github.com/lakumjay"]
       },
       "datePublished": "2026-10-26T12:00:00+01:00",
       "dateModified": "2026-10-26T20:00:00+01:00"

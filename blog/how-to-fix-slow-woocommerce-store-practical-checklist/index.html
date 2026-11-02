@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/how-to-fix-slow-woocommerce-store-practical-checklist/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "How to Fix a Slow WooCommerce Store: A Practical Checklist",
       "description": "Step-by-step WooCommerce speed checklist: measure performance, then optimize hosting, caching, images, database queries and checkout flow.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

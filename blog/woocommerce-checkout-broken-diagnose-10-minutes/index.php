@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/woocommerce-checkout-broken-diagnose-10-minutes/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "WooCommerce Checkout Broken? How to Diagnose It in 10 Minutes",
       "description": "A broken checkout is the most expensive bug a store can have. A calm, 10-minute diagnosis routine that finds the usual culprits before you change anything.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",

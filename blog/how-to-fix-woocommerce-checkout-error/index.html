@@ -49,6 +49,7 @@
     {
       "@type": "BlogPosting",
       "@id": "https://jaylakum.com/blog/how-to-fix-woocommerce-checkout-error/#article",
+      "image": "https://jaylakum.com/og-image.svg",
       "headline": "How to Fix WooCommerce Checkout Error & Critical Payment Failures",
       "description": "Endless spinning wheel or critical payment errors in WooCommerce checkout? Learn how to isolate gateway failures and fix checkout bugs safely.",
       "datePublished": "2026-10-26T10:00:00+01:00",
@@ -59,7 +60,11 @@
         "@type": "Person",
         "name": "Jay Lakum",
         "url": "https://jaylakum.com/",
-        "jobTitle": "Senior Webshop & Performance Developer"
+        "jobTitle": "Senior Webshop & Performance Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/jay-lakum",
+          "https://github.com/lakumjay"
+        ]
       },
       "publisher": {
         "@type": "Organization",
