@@ -853,7 +853,7 @@
       <div class="section-head">
         <div class="eyebrow">DIENSTEN VOOR DE NEDERLANDSE MARKT</div>
         <h2>Waarmee Kan Ik Jouw Webwinkel Helpen?</h2>
-        <p>Gespecialiseerde oplossingen voor Shopify en WooCommerce webshops.</p>
+        <p>Gespecialiseerde oplossingen voor Shopify en WooCommerce webshops. <a href="/diensten/woocommerce-bug-fix/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">&rarr; WooCommerce Bug Fix Service</a> &middot; <a href="/diensten/postnl-woocommerce-koppeling/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">&rarr; PostNL Koppeling Reparatie</a></p>
       </div>
 
       <div class="grid-3">
@@ -876,6 +876,39 @@
           <h3>Boutique Webshop Redesign</h3>
           <p>Mooie producten maar een verouderde uitstraling? Een gerichte make-over van je homepage, productpagina en mobiele checkout die zorgt dat bezoekers sneller bestellen.</p>
           <div class="price-tag">Vaste projectprijs vooraf</div>
+        </div>
+      </div>
+
+      <!-- Herkenbare Symptomen Sectie (Directe Herkenning voor Ondernemers) -->
+      <div style="margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:32px 28px;">
+        <span class="tag" style="margin-bottom:12px">VEELVOORKOMENDE KLACHTEN BIJ NEDERLANDSE WEBWINKELS</span>
+        <h3 style="font-size:24px;margin:0 0 16px">Herken Je Een Van Deze Webshop Problemen?</h3>
+        <p style="color:var(--ink-soft);font-size:16px;margin-bottom:24px">Ondernemers zoeken zelden naar technische labels zoals 'PHP debugging'. In de praktijk ervaar je concrete symptomen in je omzet:</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+          <div style="background:var(--bg-soft);padding:18px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:6px">#1 Trage Mobiele Winkelwagen</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Klanten wachten te lang bij het toevoegen van producten of afrekenen op mobiel. Resultaat: hoog verlaten winkelwagen percentage.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:6px">#2 Webshop Moet Afgemaakt Worden</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Je vorige webbouwer reageert niet meer of het bureau vraagt absurde meerprijzen. Ik neem je half-afgemaakte webshop over en lever hem netjes op.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:6px">#3 Storing Na Een Update</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">WooCommerce of plugins bijgewerkt en ineens een wit scherm, gebroken lay-out of fatale error? Binnen 24 uur opgelost op staging.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:6px">#4 iDEAL Draaiend Wieltje</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Geld is afgeschreven bij de bank, maar de order blijft in WooCommerce op 'In afwachting' staan door webhook timeouts.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:6px">#5 Overstap Naar Wero (iDEAL 2.0)</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Het Europese Wero betaalsysteem vervangt iDEAL. Zorg dat je kassa tijdig is voorbereid zonder uitval.</p>
+          </div>
+          <div style="background:var(--bg-soft);padding:18px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:6px">#6 Black Friday &amp; Piekdrukte Check</strong>
+            <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Server stress-test en geoptimaliseerde caching zodat je webshop niet crasht tijdens feestdagen en advertentiecampagnes.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1146,13 +1179,14 @@
         <p style="margin:0">Vaste prijs vooraf &middot; Direct contact &middot; Binnen 24u reactie</p>
       </div>
       <div style="flex:1;min-width:240px">
-        <strong style="color:var(--ink);display:block;margin-bottom:8px">Regio's & Steden</strong>
+        <strong style="color:var(--ink);display:block;margin-bottom:8px">Diensten & Regio's</strong>
         <ul style="list-style:none;padding:0;margin:0;line-height:1.8">
+          <li><a href="/diensten/woocommerce-bug-fix/">WooCommerce Bug Fix Service</a></li>
+          <li><a href="/diensten/postnl-woocommerce-koppeling/">PostNL Koppeling Repareren</a></li>
           <li><a href="/nl/amsterdam/">WooCommerce Specialist Amsterdam</a></li>
-          <li><a href="/nl/rotterdam/">Shopify Specialist Rotterdam</a></li>
-          <li><a href="/nl/utrecht/">Shopify Specialist Utrecht</a></li>
-          <li><a href="/nl/den-haag/">Shopify Specialist Den Haag</a></li>
-          <li><a href="/nl/eindhoven/">Shopify Specialist Eindhoven</a></li>
+          <li><a href="/nl/rotterdam/">WooCommerce Specialist Rotterdam</a></li>
+          <li><a href="/nl/utrecht/">WooCommerce Specialist Utrecht</a></li>
+          <li><a href="/nl/den-haag/">WooCommerce Specialist Den Haag</a></li>
         </ul>
       </div>
       <div style="flex:1;min-width:200px">

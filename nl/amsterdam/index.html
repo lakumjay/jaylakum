@@ -849,6 +849,31 @@
           <p>Correcte btw-berekeningen voor B2B en B2C, koppelingen met Exact Online of Moneybird, en strikte AVG/GDPR compliance zonder privacy-boetes.</p>
         </div>
       </div>
+
+      <!-- Herkenbare Symptomen Sectie Amsterdam -->
+      <div style="margin-top:40px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:28px 24px;">
+        <span class="tag" style="margin-bottom:10px">DIRECTE HERKENNING VOOR WEBSHOPEIGENAREN</span>
+        <h3 style="font-size:22px;margin:0 0 12px">Herken je een van deze webshop symptomen?</h3>
+        <p style="color:var(--ink-soft);font-size:15px;margin-bottom:20px">Webshopeigenaren zoeken zelden naar technische labels. In de praktijk zie je symptomen die direct je dagelijkse omzet raken:</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+          <div style="background:var(--card);padding:16px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:4px">1. Trage Mobiele Winkelwagen</strong>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Klanten wachten te lang bij het updaten van hun winkelmand op mobiel, wat leidt tot afgebroken checkouts.</p>
+          </div>
+          <div style="background:var(--card);padding:16px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:4px">2. Webshop Afmaken &amp; Live Zetten</strong>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Je vorige bureau of freelancer reageert niet meer en je webshop staat half-af stil. Ik rond het netjes voor je af.</p>
+          </div>
+          <div style="background:var(--card);padding:16px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:4px">3. Wit Scherm Na Plugin Update</strong>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Fatale PHP errors of een gebroken kassa na het updaten van WooCommerce of plugins. Opgelost binnen 24-48u op staging.</p>
+          </div>
+          <div style="background:var(--card);padding:16px;border-radius:10px;border-left:4px solid var(--gold)">
+            <strong style="color:var(--ink);display:block;margin-bottom:4px">4. Mollie iDEAL Blijft Hangen</strong>
+            <p style="margin:0;font-size:14px;color:var(--ink-soft);line-height:1.5">Een draaiend wieltje bij iDEAL of bestellingen die op 'In afwachting van betaling' blijven staan door webhook drops.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

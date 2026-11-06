@@ -1049,6 +1049,40 @@
             <a href="#free-video-audit" class="btn" style="padding:10px 20px;font-size:14px">Get Your Free 3-Minute Video Audit →</a>
           </div>
         </div>
+
+        <!-- Verified Gothenburg Local SEO Case Study Box -->
+        <div class="case-study-box" style="margin-top:28px;background:var(--card);border:2px solid var(--gold);border-radius:16px;padding:32px 28px;box-shadow:var(--shadow)">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:16px">
+            <div>
+              <span class="tag" style="margin-bottom:8px">VERIFIED LOCAL SEO CASE STUDY</span>
+              <h3 style="font-size:23px;margin:0">Gothenburg Local Business: 300+ Ranked Organic Keywords</h3>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.08em;font-weight:700">Search Growth</div>
+              <div style="font-family:var(--serif);font-size:22px;font-weight:800;color:var(--gold-deep)">0 ➔ 300+ Terms</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:22px">
+            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:#991b1b;margin-bottom:6px">1. THE PROBLEM</div>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Reputable service business in Gothenburg, Sweden, completely invisible on mobile search results. Flat site hierarchy and zero structured data.</p>
+            </div>
+            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:var(--gold-deep);margin-bottom:6px">2. THE FIX</div>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Deep technical crawl cleanup, dedicated local service hierarchy, LocalBusiness JSON-LD schema, and 100% consistent directory citation alignment.</p>
+            </div>
+            <div style="background:var(--bg-soft);padding:16px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:6px">3. THE RESULT</div>
+              <p style="margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.55">Over 300 commercial keywords ranked on Google Sweden with sustained page-1 positions and inbound customer inquiries.</p>
+            </div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--gold-soft);padding:10px 18px 18px;border-radius:10px">
+            <p style="margin:0;font-size:14.5px;color:var(--gold-deep);font-weight:600">
+              📊 <strong>Semrush Technical &amp; AI SEO Certified.</strong> Verified white-hat process with zero link networks or spam.
+            </p>
+            <a href="/case-study/gothenburg-local-seo/" class="btn" style="padding:10px 20px;font-size:14px">Read Full Gothenburg Case Study →</a>
+          </div>
+        </div>
       </div>
     </div>
 
