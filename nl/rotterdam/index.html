@@ -19,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>Shopify &amp; WooCommerce Specialist Rotterdam | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce specialist in Rotterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
+<title>Webshop &amp; WooCommerce Specialist Rotterdam | Vaste Prijs | Jay Lakum</title>
+<meta name="description" content="Freelance WooCommerce & Shopify specialist in Rotterdam. Snelle mobiele checkouts, PostNL & Mollie iDEAL. Vaste projectprijs, betalen na." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/rotterdam/" />
@@ -37,8 +37,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaylakum.com/nl/rotterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
-<meta property="og:title" content="Shopify Specialist Rotterdam — Freelance Webshop Developer & B2B | Jay Lakum" />
-<meta property="og:description" content="Freelance WooCommerce specialist in Rotterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
+<meta property="og:title" content="Webshop &amp; WooCommerce Specialist Rotterdam | Vaste Prijs | Jay Lakum" />
+<meta property="og:description" content="Freelance WooCommerce & Shopify specialist in Rotterdam. Snelle mobiele checkouts, PostNL & Mollie iDEAL. Vaste projectprijs, betalen na." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
@@ -605,8 +605,8 @@
 
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Shopify Specialist Rotterdam — Freelance Webshop Developer & B2B | Jay Lakum" />
-<meta name="twitter:description" content="Freelance WooCommerce specialist in Rotterdam? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
+<meta name="twitter:title" content="Webshop &amp; WooCommerce Specialist Rotterdam | Vaste Prijs | Jay Lakum" />
+<meta name="twitter:description" content="Freelance WooCommerce & Shopify specialist in Rotterdam. Snelle mobiele checkouts, PostNL & Mollie iDEAL. Vaste projectprijs, betalen na." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>

@@ -19,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce- en Shopify-specialist voor Amsterdamse webshops. Direct contact met de developer, offerte met vaste prijs. Vraag." />
+<title>WooCommerce Specialist Amsterdam | Vaste Prijs Vanaf €249 | Jay Lakum</title>
+<meta name="description" content="Freelance WooCommerce- & Shopify-specialist voor Amsterdamse webshops. Snelle checkouts, Mollie iDEAL & PostNL. Vaste prijs vooraf,." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />
@@ -38,7 +38,7 @@
 <meta property="og:url" content="https://jaylakum.com/nl/amsterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
 <meta property="og:title" content="WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum" />
-<meta property="og:description" content="Freelance WooCommerce- en Shopify-specialist voor Amsterdamse webshops. Direct contact met de developer, offerte met vaste prijs. Vraag." />
+<meta property="og:description" content="Freelance WooCommerce- & Shopify-specialist voor Amsterdamse webshops. Snelle checkouts, Mollie iDEAL & PostNL. Vaste prijs vooraf,." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
@@ -630,7 +630,7 @@
 <!-- Twitter / X Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum" />
-<meta name="twitter:description" content="Freelance WooCommerce- en Shopify-specialist voor Amsterdamse webshops. Direct contact met de developer, offerte met vaste prijs. Vraag." />
+<meta name="twitter:description" content="Freelance WooCommerce- & Shopify-specialist voor Amsterdamse webshops. Snelle checkouts, Mollie iDEAL & PostNL. Vaste prijs vooraf,." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 </head>
 <body>
