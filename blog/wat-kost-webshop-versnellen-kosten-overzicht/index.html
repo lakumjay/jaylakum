@@ -597,10 +597,10 @@
 
 <!-- Verified Sources & Citations Section (Source Credibility 2/2 & Claims tied to sources 4/4) -->
 <section class="sources-section" style="margin:44px 0 28px;padding:24px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--ink-soft);">
-  <h4 style="margin:0 0 12px;font-size:16px;color:var(--ink);display:flex;align-items:center;gap:8px;">
+  <h3 style="margin:0 0 12px;font-size:16px;color:var(--ink);display:flex;align-items:center;gap:8px;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
     Geverifieerde Bronnen &amp; Empirische Studies:
-  </h4>
+  </h3>
   <ol style="margin:0;padding-left:22px;line-height:1.75;">
     <li id="ref-1"><strong>Deloitte Digital &amp; Google</strong>: <em>Milliseconds Make Millions — How a 0.1-second mobile site speed improvement affects consumers and digital conversions in retail</em>. <a href="https://www.deloitte.com/ie/en/services/consulting/perspectives/milliseconds-make-millions.html" target="_blank" rel="noopener noreferrer">Bekijk het Deloitte onderzoek &rarr;</a></li>
     <li id="ref-2"><strong>Google Chrome Dev Team (Web.dev)</strong>: <em>Core Web Vitals Thresholds (Largest Contentful Paint &lt; 2.5s, Interaction to Next Paint &lt; 200ms, Cumulative Layout Shift &lt; 0.1)</em>. <a href="https://web.dev/explore/core-web-vitals" target="_blank" rel="noopener noreferrer">Offici&euml;le Google Documentatie &rarr;</a></li>
