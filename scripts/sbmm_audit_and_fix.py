@@ -49,21 +49,62 @@ def audit_and_fix_file(filepath):
     issues = []
     fixes = []
 
-    # 1. Title Tag Check (Length & Pixel Width <= 600px)
+    # 1. Title Tag Check (Length & Pixel Width <= 600px with Autonomous Auto-Heal)
     m_title = re.search(r"<title>(.*?)</title>", content)
     if not m_title:
         issues.append("Missing <title> tag")
     else:
         title = m_title.group(1).strip()
-        if len(title) > 60:
-            issues.append(f"Title too long ({len(title)} chars > 60)")
-        elif len(title) < 30:
+        if len(title) < 30:
             issues.append(f"Title too short ({len(title)} chars < 30)")
+        elif len(title) > 60 or (FONT_TITLE and FONT_TITLE.getlength(title) > 600):
+            if len(title) > 60:
+                issues.append(f"Title too long ({len(title)} chars > 60)")
+            if FONT_TITLE and FONT_TITLE.getlength(title) > 600:
+                issues.append(f"Title pixel width too wide ({FONT_TITLE.getlength(title):.0f}px > 600px)")
+            
+            # Autonomous Title Auto-Healer
+            parts = [p.strip() for p in title.split('|')]
+            healed = None
+            if len(parts) >= 3:
+                first = parts[0]
+                last = parts[-1]
+                mid = parts[1]
+                if 'vaste prijs' in mid.lower():
+                    mid = 'Vaste Prijs'
+                candidate = f"{first} | {mid} | {last}"
+                if len(candidate) <= 60 and (not FONT_TITLE or FONT_TITLE.getlength(candidate) <= 600):
+                    healed = candidate
+                else:
+                    candidate = f"{first} | {last}"
+                    if len(candidate) <= 60 and (not FONT_TITLE or FONT_TITLE.getlength(candidate) <= 600):
+                        healed = candidate
+            elif len(parts) == 2:
+                candidate = f"{parts[0]} | {parts[1]}"
+                while (len(candidate) > 60 or (FONT_TITLE and FONT_TITLE.getlength(candidate) > 600)) and len(parts[0]) > 15:
+                    w = parts[0].rsplit(' ', 1)
+                    if len(w) > 1:
+                        parts[0] = w[0]
+                        candidate = f"{parts[0]} | {parts[1]}"
+                    else:
+                        break
+                if len(candidate) <= 60 and (not FONT_TITLE or FONT_TITLE.getlength(candidate) <= 600):
+                    healed = candidate
 
-        if FONT_TITLE:
-            px_w = FONT_TITLE.getlength(title)
-            if px_w > 600:
-                issues.append(f"Title pixel width too wide ({px_w:.0f}px > 600px)")
+            if not healed:
+                trimmed = title
+                while (len(trimmed) > 60 or (FONT_TITLE and FONT_TITLE.getlength(trimmed) > 600)) and len(trimmed) > 20:
+                    w = trimmed.rsplit(' ', 1)
+                    if len(w) > 1:
+                        trimmed = w[0]
+                    else:
+                        break
+                healed = trimmed
+
+            if healed and healed != title:
+                content = content.replace(f"<title>{title}</title>", f"<title>{healed}</title>")
+                fixes.append(f"Auto-healed title to '{healed}' ({len(healed)} chars, {FONT_TITLE.getlength(healed):.0f}px)")
+                title = healed
 
     # 2. Meta Description Check (Length & Pixel Width <= 940px)
     m_desc = re.search(r'<meta\s+name=["\']description["\']\s+content="(.*?)"', content)
@@ -356,6 +397,12 @@ def main():
         res = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT_DIR)
         if res.returncode == 0:
             print("✅ Changes pushed to main branch successfully! Webhook will auto-deploy.")
+            try:
+                import urllib.request
+                req = urllib.request.urlopen("https://jaylakum.com/deploy.php?key=JayLakumDeploy2026", timeout=15)
+                print("🚀 Live production site deployed successfully!")
+            except Exception as e:
+                print(f"Deploy notification note: {e}")
         else:
             print("⚠️ Git push returned non-zero code. Check network or credentials.")
 
