@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Case Study: 6.1s to 2.2s Mobile Speed Fix (Core Web Vitals Pass) | Jay Lakum</title>
-<meta name="description" content="Step-by-step technical case study: How we stripped leftover app code, fixed render-blocking CSS, and reduced mobile LCP from 6.1s to 2.2s for an EU fashion boutique." />
+<title>Case Study: 6.1s to 2.2s Webshop Speed Fix | Jay Lakum</title>
+<meta name="description" content="Step-by-step technical case study: how we stripped app code, fixed blocking CSS, and cut mobile LCP from 6.1s to 2.2s for an EU webshop." />
 <link rel="canonical" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="en" href="https://jaylakum.com/case-study/" />
 <link rel="alternate" hreflang="nl" href="https://jaylakum.com/nl/case-study/" />

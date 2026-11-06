@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 
-<title>Mollie iDEAL Checkout Storing Oplossen & Pay by Bank Handleiding (2026) | Jay Lakum</title>
-<meta name="description" content="Blijft een Mollie iDEAL order op 'In behandeling' staan of zoek je uitleg over Mollie Pay by Bank & Omnichannel Checkout? Complete technische." />
+<title>Mollie iDEAL &amp; Pay by Bank Storing Oplossen | Jay Lakum</title>
+<meta name="description" content="Blijft een Mollie iDEAL order op 'In behandeling' staan? Technische gids voor webhook timeouts en Pay by Bank configuratie." />
 <meta name="keywords" content="mollie ideal checkout storing, woocommerce ideal betaling mislukt, mollie webhook 403 forbidden, shopify mollie checkout traag, ideal storing webshop" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/" />
@@ -32,14 +32,14 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development" />
-<meta property="og:title" content="Mollie iDEAL Checkout Storing Oplossen & Pay by Bank Handleiding (2026)" />
-<meta property="og:description" content="Blijft een Mollie iDEAL order op 'In behandeling' staan of zoek je uitleg over Mollie Pay by Bank & Omnichannel Checkout? Complete gids door Jay Lakum." />
+<meta property="og:title" content="Mollie iDEAL &amp; Pay by Bank Storing Oplossen | Jay Lakum" />
+<meta property="og:description" content="Blijft een Mollie iDEAL order op 'In behandeling' staan? Technische gids voor webhook timeouts en Pay by Bank configuratie." />
 <meta property="og:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mollie iDEAL Checkout Storing Oplossen & Pay by Bank Handleiding (2026)" />
-<meta name="twitter:description" content="Blijft een Mollie iDEAL order op 'In behandeling' staan of zoek je uitleg over Mollie Pay by Bank & Omnichannel Checkout? Complete gids door Jay Lakum." />
+<meta name="twitter:title" content="Mollie iDEAL &amp; Pay by Bank Storing Oplossen | Jay Lakum" />
+<meta name="twitter:description" content="Blijft een Mollie iDEAL order op 'In behandeling' staan? Technische gids voor webhook timeouts en Pay by Bank configuratie." />
 <meta name="twitter:image" content="https://jaylakum.com/og-image.svg" />
 
 <!-- Structured Data (JSON-LD) -->
@@ -60,7 +60,7 @@
       "@type": "WebPage",
       "@id": "https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/#webpage",
       "url": "https://jaylakum.com/blog/mollie-ideal-checkout-storing-oplossen/",
-      "name": "Mollie iDEAL Checkout Storing Oplossen & Pay by Bank Handleiding (2026) | Jay Lakum",
+      "name": "Mollie iDEAL & Pay by Bank Storing Oplossen | Jay Lakum",
       "isPartOf": {
         "@id": "https://jaylakum.com/#website"
       },
