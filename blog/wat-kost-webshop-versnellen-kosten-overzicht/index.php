@@ -471,33 +471,28 @@
   <footer style="margin-top:12px;font-size:14px;font-style:normal;font-weight:600;color:var(--ink-faint);">&mdash; <cite><a href="https://www.deloitte.com/ie/en/services/consulting/perspectives/milliseconds-make-millions.html" target="_blank" rel="noopener noreferrer">Deloitte Digital (Milliseconds Make Millions Benchmark Study) [1]</a></cite></footer>
 </blockquote>
 
-<!-- Verified Case Study & Specific Evidence Card (Evidence & Specifics: 3/3) -->
+<!-- Echte case: het enige gemeten resultaat -->
 <div class="case-study-box" style="background:var(--card);border:1.5px solid var(--line-strong);border-radius:12px;padding:26px;margin:32px 0;box-shadow:var(--shadow);">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-    <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:12px;padding:4px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:0.5px;">Geverifieerde Case Study &amp; Data</span>
-    <span style="font-size:13px;color:var(--ink-faint);">Meetinstrument: Google PageSpeed Insights &amp; CrUX Real-User Data</span>
+    <span style="background:var(--gold-soft);color:var(--gold-deep);font-weight:700;font-size:12px;padding:4px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:0.5px;">Echte Case &amp; Data</span>
+    <span style="font-size:13px;color:var(--ink-faint);">Gemeten voor en na de fix</span>
   </div>
-  <h3 style="margin:0 0 12px;font-size:20px;color:var(--ink);">Rotterdam D2C Fashion Webshop (WooCommerce 8.x + Mollie)</h3>
+  <h3 style="margin:0 0 12px;font-size:20px;color:var(--ink);">WooCommerce webshop: mobiele laadtijd van 6.1s naar 2.2s</h3>
   <p style="margin:0 0 16px;font-size:15.5px;color:var(--ink-soft);line-height:1.6;">
-    In onze recente prestatie-audit van een snelgroeiend kledingmerk in Rotterdam bleek dat ongecomprimeerde productfoto's en 7 overlappende tracking tags (o.a. Meta Pixel, TikTok, Klaviyo) de mobiele checkout vertraagden tot ruim 6.1 seconden. Door het implementeren van Redis Object Cache, Critical CSS rendering en WebP-conversie behaalden we de volgende geverifieerde resultaten [3]:
+    Het enige resultaat dat ik hier publiceer, omdat het het enige is dat ik kan bewijzen: bij een WooCommerce webshop bracht een gerichte snelheidsoptimalisatie de mobiele laadtijd van 6.1 naar 2.2 seconden. De shopnaam blijft anoniem (privacy van de klant) en er horen geen verzonnen conversiecijfers bij — alleen deze gemeten laadtijd.
   </p>
   <div class="metrics-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:16px;">
     <div style="background:var(--bg-soft);padding:14px;border-radius:8px;border:1px solid var(--line);text-align:center;">
-      <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;font-weight:600;">Time to First Byte (TTFB)</div>
-      <div style="font-size:20px;font-weight:700;color:var(--gold);margin-top:4px;">1.840ms &rarr; 240ms</div>
-      <div style="font-size:12px;color:#2e7d32;font-weight:600;">-87% Serververtraging</div>
+      <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;font-weight:600;">Mobiele laadtijd (voor)</div>
+      <div style="font-size:20px;font-weight:700;color:var(--gold);margin-top:4px;">6.1s</div>
     </div>
     <div style="background:var(--bg-soft);padding:14px;border-radius:8px;border:1px solid var(--line);text-align:center;">
-      <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;font-weight:600;">Largest Contentful Paint</div>
-      <div style="font-size:20px;font-weight:700;color:var(--gold);margin-top:4px;">6.1s &rarr; 1.4s</div>
-      <div style="font-size:12px;color:#2e7d32;font-weight:600;">Google 'Groen' Behaald</div>
-    </div>
-    <div style="background:var(--bg-soft);padding:14px;border-radius:8px;border:1px solid var(--line);text-align:center;">
-      <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;font-weight:600;">Afrekenconversie (Mobile)</div>
-      <div style="font-size:20px;font-weight:700;color:var(--gold);margin-top:4px;">1.72% &rarr; 2.04%</div>
-      <div style="font-size:12px;color:#2e7d32;font-weight:600;">+18.4% Meer Bestellingen</div>
+      <div style="font-size:12px;color:var(--ink-faint);text-transform:uppercase;font-weight:600;">Mobiele laadtijd (na)</div>
+      <div style="font-size:20px;font-weight:700;color:var(--gold);margin-top:4px;">2.2s</div>
+      <div style="font-size:12px;color:#2e7d32;font-weight:600;">Gemeten resultaat</div>
     </div>
   </div>
+  <p style="margin:16px 0 0;font-size:15px;color:var(--ink-soft);">Lees de volledige aanpak in de <a href="/case-study/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">case study</a>.</p>
 </div>
 
 <h2>Waarom Uurtje-Factuurtje Risicovol Is</h2>
