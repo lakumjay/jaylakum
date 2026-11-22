@@ -19,15 +19,15 @@
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 <meta name="theme-color" content="#171410" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#FAF7F1" media="(prefers-color-scheme: light)" />
-<title>Jay lakum — WooCommerce Snelheid Optimalisatie &amp; Shopify</title>
-<meta name="description" content="Finale versie: WooCommerce snelheid optimalisatie (€690–€950), checkout- en storing-fixes (€290–€450, geen oplossing geen factuur) en." />
+<title>WooCommerce &amp; Shopify Speed, Bug Fixes &amp; Redesigns — Fixed Price | Jay Lakum</title>
+<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a WooCommerce store from 6.1s to 2.2s. Based in India, working with webshop owners in the Netherlands &amp; worldwide." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Jay lakum — India Coders" />
 <meta property="og:title" content="Jay lakum — WooCommerce &amp; Shopify fixes met vaste prijs" />
-<meta property="og:description" content="Dutch WooCommerce speed page, checkout-traag, Mollie bestelling-hangen en storing-oplossen — de vier P1-pagina's uit het finale SEO-plan. Vaste prijs, diagnose binnen 4 uur bij storing." />
+<meta property="og:description" content="Fixed-price speed, bug fixes and redesigns for Shopify &amp; WooCommerce webshops. Real result: a WooCommerce store from 6.1s to 2.2s load time. No fix, no invoice." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Jay lakum — WooCommerce Snelheid &amp; Shopify Developer NL" />
-<meta name="twitter:description" content="Vaste-prijs speed, bug fixes en redesigns voor NL &amp; UK webshops. Alleen e-mail: jay@jaylakum.com." />
+<meta name="twitter:description" content="Vaste-prijs speed, bug fixes en redesigns voor NL &amp; UK webshops. WhatsApp of e-mail: jay@jaylakum.com." />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,26 +104,6 @@
         "@type": "Service",
         "name": "Webshop Redesign"
       }
-    }
-  ],
-  "telephone": "+31620000000",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Amsterdam",
-    "addressCountry": "NL"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
     }
   ]
 }
@@ -564,7 +544,6 @@
       <a href="#services" data-nav="services">Services</a>
       <a href="#work" data-nav="work">Work</a>
       <a href="#partner" data-nav="partner">Partners</a>
-      <a href="#plan" data-nav="plan">Final Plan</a>
       <a href="#blog" data-nav="blog">Blog</a>
       <a href="#contact" class="btn nav-cta">Email me</a>
     </nav>
@@ -577,20 +556,18 @@
     <div class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">Finale versie · Jay lakum · India Coders</p>
           <h1>WooCommerce &amp; Shopify webshops: <span class="gold">sneller, heel, verkocht.</span></h1>
-          <p class="sub">Dit is de finale opzet uit het A-tot-Z plan: geen mega-pagina meer voor zes zoekwoorden, maar <strong>één pagina per zoekwoord en intentie</strong> — Dutch WooCommerce speed eerst, daarna checkout-traag, Mollie en storing. Vaste prijs vooraf, nooit per uur.</p>
           <div class="price-line">
             <span class="price-chip">Fixes &amp; storing <b>€290–€450</b></span>
             <span class="price-chip">Speed pakket <b>€690–€950</b></span>
             <span class="price-chip">Storing? <b>Diagnose binnen 4 uur</b></span>
           </div>
           <div class="hero-ctas">
-            <a class="btn" href="#nl-storing">Webshop kapot? Spoed →</a>
-            <a class="btn btn-ghost" href="#nl">Naar de NL hub</a>
+            <a class="btn" href="#speed-checker">Gratis speed check — 2 minuten →</a>
+            <a class="btn btn-ghost" href="https://wa.me/916353116138" target="_blank" rel="noopener">Chat via WhatsApp</a>
           </div>
           <p class="trust-line">
-            <span>Alleen e-mail — geen nep-nummer</span><span class="dot"></span>
+            <span>WhatsApp &amp; e-mail — direct contact</span><span class="dot"></span>
             <span>NL eerst, UK daarna</span><span class="dot"></span>
             <span>Geen oplossing = geen factuur</span>
           </p>
@@ -631,30 +608,30 @@
     <div class="section">
       <div class="wrap">
         <div class="section-head">
-          <h2>De vier P1-pagina's — final, in deze volgorde</h2>
-          <p>Gebouwd op het keyword-onderzoek: op deze vier Dutch zoekintenties staat <strong>geen enkele Dutch service-pagina</strong> in Google — alleen DIY-blogs en helpdocs. Daar ligt het geld, daar begint de finale versie.</p>
+          <h2>Vier diensten — elk met een vaste prijs</h2>
+          <p>Elke dienst heeft een eigen pagina: het probleem, de aanpak en een vaste prijs vooraf. Kies hieronder wat je herkent.</p>
         </div>
         <div class="grid-3 hub-grid" id="p1Grid">
           <article class="card">
-            <div class="w-top"><span class="tag">P1 · Pagina 1 — leeg SERP</span><span class="prio">PRIORITY 10</span></div>
+            <div class="w-top"><span class="tag">Speed</span></div>
             <h3><a href="#nl-snelheid" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3>
-            <p>Voor “woocommerce snelheid optimalisatie” bestaan alleen Engelse doe-het-zelf gidsen. Dit is de eerste Dutch service-pagina, met het speed-pakket van <strong>€690–€950</strong> bovenaan in plaats van verstopt in een mega-pagina.</p>
+            <p>Je WooCommerce webshop sneller maken: eerst meten, dan fixen, daarna opnieuw meten. Speed-pakket <strong>€690–€950</strong> vast — bewijs: een echte webshop van 6.1s naar 2.2s mobiel.</p>
             <a class="more" href="#nl-snelheid">Bekijk de speed-pagina →</a>
           </article>
           <article class="card">
-            <div class="w-top"><span class="tag">P1 · Symptoom-pagina</span><span class="prio">PRIORITY 9</span></div>
+            <div class="w-top"><span class="tag">Checkout</span></div>
             <h3><a href="#nl-checkout-traag" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3>
             <p>Een trage checkout kost bestellingen op het duurste moment. Niemand verkoopt “binnen 48 uur gefixt” — deze pagina wel: vaste prijs <strong>€290–€450</strong>, staging eerst, geen oplossing geen factuur.</p>
             <a class="more" href="#nl-checkout-traag">Bekijk de checkout-pagina →</a>
           </article>
           <article class="card">
-            <div class="w-top"><span class="tag">P1 · Symptoom-pagina</span><span class="prio">PRIORITY 9</span></div>
+            <div class="w-top"><span class="tag">Mollie</span></div>
             <h3><a href="#nl-mollie" style="color:var(--ink)">Mollie: Bestelling Blijft Hangen</a></h3>
             <p>Bestelling blijft op “afwachting van betaling” staan terwijl de klant wél betaalde? Bijna altijd de webhook-synchronisatie. De enige Dutch pagina die dit probleem bij naam noemt én de fix verkoopt.</p>
             <a class="more" href="#nl-mollie">Bekijk de Mollie-pagina →</a>
           </article>
           <article class="card">
-            <div class="w-top"><span class="tag">P1 · Spoed-pagina</span><span class="prio">PRIORITY 9</span></div>
+            <div class="w-top"><span class="tag">Spoed</span></div>
             <h3><a href="#nl-storing" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3>
             <p>Webshop kapot = omzet kapot. Dutch spoed-intentie wordt nu alleen door documentatie beantwoord. Hier geldt: <strong>diagnose binnen 4 uur</strong>, vaste prijs €290–€450, geen oplossing geen factuur.</p>
             <a class="more" href="#nl-storing">Naar de spoed-pagina →</a>
@@ -663,7 +640,7 @@
         <div class="proof-strip" style="margin-top:26px">
           <div class="proof-num">6.1s <span class="gold">→ 2.2s</span></div>
           <div>
-            <p><strong>Het enige case-cijfer op deze hele site.</strong> Een echte WooCommerce webshop, mobiele laadtijd van 6.1 naar 2.2 seconden — zonder shopnaam, zonder verzonnen extra cijfers. De oude “geverifieerde” Rotterdam-case en de Amsterdamse “bewezen resultaten”-blokken zijn in deze finale versie <strong>verwijderd</strong>: geen bewijs = niet publiceren.</p>
+            <p><strong>Echt gemeten resultaat.</strong> Een echte WooCommerce webshop: mobiele laadtijd van 6.1 naar 2.2 seconden na de speed-fix. Zonder shopnaam (privacy van de klant) en zonder extra cijfers — dit is het gemeten resultaat, meer beloven we niet.</p>
           </div>
         </div>
       </div>
@@ -970,9 +947,9 @@
   <section class="view" id="view-nl">
     <div class="wrap">
       <div class="page-head">
-        <p class="eyebrow">NL Hub · Finale versie</p>
+        <p class="eyebrow">NL Hub</p>
         <h1>Webshop hulp in Nederland — per probleem, per pagina</h1>
-        <p>De oude opzet zette zes intenties op één mega-pagina; zo rankt een pagina voor geen enkel zoekwoord. De finale hub doet het anders: <strong>elke dienst heeft een eigen pagina, eigen zoekwoord en eigen vaste prijs.</strong> Kies hieronder je probleem.</p>
+        <p><strong>Elke dienst heeft een eigen pagina en een eigen vaste prijs.</strong> Kies hieronder je probleem — of start direct met de <a href="#speed-checker">gratis speed check</a>.</p>
       </div>
       <div class="offer-bar">
         <span class="ob-item">Fixes <span>€290–€450</span></span>
@@ -981,19 +958,19 @@
         <span class="ob-item">Altijd <span>geen oplossing, geen factuur</span></span>
       </div>
       <div class="hub-grid" style="padding-bottom:30px">
-        <article class="card"><span class="tag">P1 · Priority 10</span><h3><a href="#nl-snelheid" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3><p>Trage WooCommerce webshop sneller maken. Het enige echte bewijs op de site: 6.1s → 2.2s mobiel. Doelen: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.</p><a class="more" href="#nl-snelheid">Speed-pagina →</a></article>
-        <article class="card"><span class="tag">P1 · Priority 9</span><h3><a href="#nl-checkout-traag" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3><p>Afrekenen duurt eeuwig of blijft laden? Oorzaken, herkenning en een vaste-prijs fix binnen 48 uur.</p><a class="more" href="#nl-checkout-traag">Checkout-pagina →</a></article>
-        <article class="card"><span class="tag">P1 · Priority 9</span><h3><a href="#nl-mollie" style="color:var(--ink)">Mollie Bestelling Blijft Hangen</a></h3><p>Bestelling blijft op “afwachting van betaling” na een geslaagde iDEAL-betaling. Webhook-sync uitgelegd + fix.</p><a class="more" href="#nl-mollie">Mollie-pagina →</a></article>
-        <article class="card"><span class="tag">P1 · Priority 9 · Spoed</span><h3><a href="#nl-storing" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3><p>Webshop kapot, wit scherm of checkout dood? Diagnose binnen 4 uur, vaste prijs, eerst staging.</p><a class="more" href="#nl-storing">Spoed-pagina →</a></article>
-        <article class="card"><span class="tag">P2 · Priority 8</span><h3><a href="#nl-shopify" style="color:var(--ink)">Shopify Snelheid &amp; Spookcode</a></h3><p>Trage Shopify shop? Vaak is het “spookcode”: achtergebleven code van verwijderde apps. Opruimen als betaalde dienst, €690–€950.</p><a class="more" href="#nl-shopify">Shopify-pagina →</a></article>
-        <article class="card"><span class="tag">B2B · Priority 7</span><h3><a href="#partner" style="color:var(--ink)">Partner voor bureaus (white-label)</a></h3><p>Voor agencies die bouwcapaciteit zoeken: alleen bouwen, volledig onzichtbaar, eerst een kleine betaalde pilot. “Agency WooCommerce Rotterdam” staat al op positie ~15.</p><a class="more" href="#partner">Partner-pagina →</a></article>
+        <article class="card"><span class="tag">Speed</span><h3><a href="#nl-snelheid" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3><p>Trage WooCommerce webshop sneller maken. Het enige echte bewijs op de site: 6.1s → 2.2s mobiel. Doelen: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.</p><a class="more" href="#nl-snelheid">Speed-pagina →</a></article>
+        <article class="card"><span class="tag">Checkout</span><h3><a href="#nl-checkout-traag" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3><p>Afrekenen duurt eeuwig of blijft laden? Oorzaken, herkenning en een vaste-prijs fix binnen 48 uur.</p><a class="more" href="#nl-checkout-traag">Checkout-pagina →</a></article>
+        <article class="card"><span class="tag">Mollie</span><h3><a href="#nl-mollie" style="color:var(--ink)">Mollie Bestelling Blijft Hangen</a></h3><p>Bestelling blijft op “afwachting van betaling” na een geslaagde iDEAL-betaling. Webhook-sync uitgelegd + fix.</p><a class="more" href="#nl-mollie">Mollie-pagina →</a></article>
+        <article class="card"><span class="tag">Spoed</span><h3><a href="#nl-storing" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3><p>Webshop kapot, wit scherm of checkout dood? Diagnose binnen 4 uur, vaste prijs, eerst staging.</p><a class="more" href="#nl-storing">Spoed-pagina →</a></article>
+        <article class="card"><span class="tag">Shopify</span><h3><a href="#nl-shopify" style="color:var(--ink)">Shopify Snelheid &amp; Spookcode</a></h3><p>Trage Shopify shop? Vaak is het “spookcode”: achtergebleven code van verwijderde apps. Opruimen als betaalde dienst, €690–€950.</p><a class="more" href="#nl-shopify">Shopify-pagina →</a></article>
+        <article class="card"><span class="tag">B2B partners</span><h3><a href="#partner" style="color:var(--ink)">Partner voor bureaus (white-label)</a></h3><p>Voor agencies die bouwcapaciteit zoeken: alleen bouwen, volledig onzichtbaar, eerst een kleine betaalde pilot.</p><a class="more" href="#partner">Partner-pagina →</a></article>
       </div>
       <div class="plan-block">
         <h3>Meest gelezen: PostNL × WooCommerce</h3>
-        <p class="plan-sub">Het artikel over de trage WooCommerce-winkelwagen met PostNL staat al op gemiddelde positie ~15 in Google — de dichtstbijzijnde pagina-1 kans van de hele site. In de finale versie is dit artikel de hub van het PostNL-cluster; er komt geen derde PostNL-pagina bij.</p>
+        <p class="plan-sub">Winkelwagen traag met PostNL in je WooCommerce shop? Dit artikel legt de oorzaken en de fix stap voor stap uit.</p>
         <p><a class="btn btn-ghost" href="#blog/postnl-woocommerce-trage-winkelwagen-fix">Lees het PostNL-artikel →</a></p>
       </div>
-      <p style="padding-bottom:70px;color:var(--ink-soft)">Stadspagina's (Amsterdam, Rotterdam, Eindhoven, Utrecht) staan bewust <strong>niet</strong> meer centraal: zonder echt lokaal bewijs zijn het doorway-risico's. Energie gaat naar service-pagina's met echt bewijs. Contact loopt alleen via e-mail: <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>.</p>
+      <p style="padding-bottom:70px;color:var(--ink-soft)">Ik werk remote vanuit India voor webshop-eigenaren in heel Nederland — Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en daarbuiten. Contact: <a href="https://wa.me/916353116138" target="_blank" rel="noopener">WhatsApp</a>, e-mail <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a> of het <a href="#contact">formulier</a>.</p>
     </div>
   </section>
 
@@ -1164,90 +1141,31 @@
     </div>
   </section>
 
-  <!-- ================= FINAL PLAN A-TO-Z ================= -->
-  <section class="view" id="view-plan">
+  <!-- ================= SPEED CHECKER ================= -->
+  <section class="view" id="view-speed-checker">
     <div class="wrap">
       <div class="page-head">
-        <p class="eyebrow">Final Plan · A tot Z</p>
-        <h1>Het finale plan — dit blijft, al het eerdere vervalt</h1>
-        <p>Samengevoegd uit de sheet (61 items, 5 tabs), de keyword-map (57 echte GSC-queries) en de SEO 2026-learning. <strong>Dit is de versie waar de site nu op draait.</strong> Eerlijke kern eerst: alleen SEO levert de eerste klant pas over 6–12 maanden; daarom draait het plan op twee benen — SEO voor de lange termijn, partnership/community/LinkedIn voor de eerste klant.</p>
+        <p class="eyebrow">Free speed check</p>
+        <h1>Free 2-minute webshop speed check</h1>
+        <p>Enter your webshop URL. You get a mobile speed score, the measured load time and what is slowing your store down — free, no email needed.</p>
       </div>
-
-      <div class="plan-block">
-        <h3>1 · Wat er veranderd is (sheet tab 1 — toegepast)</h3>
-        <p class="plan-sub">De P1-schoonmaak is in deze finale versie uitgevoerd, niet alleen beschreven:</p>
-        <ul class="check-list">
-          <li><b>Verzonnen cases verwijderd</b> — de “geverifieerde” Rotterdam-case (TTFB/LCP/conversie-cijfers zonder bewijs) en de drie Amsterdamse “BEWEZEN RESULTATEN”-blokken staan nergens meer. Alleen het echte cijfer blijft: <b>6.1s → 2.2s</b>.</li>
-          <li><b>Geen nep-telefoonnummer</b> — +31620000000-achtige placeholders zijn verboden op deze site. Contact = alleen jay@jaylakum.com + formulier.</li>
-          <li><b>Mega-pagina gesplitst</b> — /nl/ is nu een hub; elk zoekwoord heeft een eigen pagina (tab 2 hieronder).</li>
-          <li><b>Bug-fix pagina krijgt interne kracht</b> — elk symptoom- en spoed-artikel linkt nu naar de juiste service-pagina, in plaats van los te hangen op positie ~94.</li>
-          <li><b>“Webshop laten maken” losgelaten</b> — het meest bevochten head-term (€2.495–€3.500-bouwers) krijgt geen energie meer; fix/speed-positionering wint.</li>
-          <li><b>Stadspagina's gedegradeerd</b> — doorway-risico volgens Google's eigen beleid; alleen behouden wat echt lokaal bewijs heeft.</li>
-          <li><b>Schema minimaal</b> — alleen Organization + Service + Breadcrumb + Article. FAQ-schema is dood (rich results gestopt op 7 mei 2026); eigen review-sterren zijn nooit toegestaan geweest.</li>
-          <li><b>PostNL-artikel gepusht</b> — positie ~15 is de dichtstbijzijnde winst: hub-status, interne links vanaf home en NL-hub, primair zoekwoord nu “postnl woocommerce” (zo typen zoekers het echt).</li>
-        </ul>
-      </div>
-
-      <div class="plan-block">
-        <h3>2 · Keyword-prioriteiten (echte GSC-data, geen verzonnen volumes)</h3>
-        <p class="plan-sub">Zoekvolume uit gratis tools is onbetrouwbaar — in een studie van 33.377 zoekwoorden week het meer dan ±50% af, en Ahrefs' eigen CMO zegt dat exact volume niet bestaat. Daarom: alleen GSC-vloeren (eigen impressies, 18 okt – 10 nov 2026) en live SERP-lezingen. Positie 1 ≈ 28% van de kliks, positie 5 ≈ 5%, pagina 2 ≈ 0.</p>
-        <div class="kw-table">
-          <div class="kw-row"><span class="kw-n">1</span><div><h4>postnl woocommerce</h4><p>GSC-vloer ~91/mnd · blog al op positie ~15 — dichtstbijzijnde pagina-1 winst van de site</p></div><a class="kw-page" href="#blog/postnl-woocommerce-trage-winkelwagen-fix">Blog-hub →</a></div>
-          <div class="kw-row"><span class="kw-n">2</span><div><h4>woocommerce snelheid optimalisatie</h4><p>Geen betrouwbare gratis volumedata · SERP = alleen Engelse DIY-guides, nul Dutch service-pagina's</p></div><a class="kw-page" href="#nl-snelheid">Speed-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">3</span><div><h4>woocommerce checkout traag</h4><p>Symptoom-intentie · alleen blogs in het SERP, niemand verkoopt een 48-uurs fix</p></div><a class="kw-page" href="#nl-checkout-traag">Checkout-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">4</span><div><h4>Mollie: bestelling blijft hangen</h4><p>Eén Dutch commerciële blogpost (Kaige) zonder prijs of aanbod — gat is open</p></div><a class="kw-page" href="#nl-mollie">Mollie-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">5</span><div><h4>woocommerce storing oplossen</h4><p>Spoed-intentie met hoogste koopbereidheid · alleen docs/helpcenters ranken nu</p></div><a class="kw-page" href="#nl-storing">Spoed-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">6</span><div><h4>shopify snelheid / spookcode</h4><p>Agency-blogs benoemen spookcode maar verkopen de opruiming niet · pakket €690–€950</p></div><a class="kw-page" href="#nl-shopify">Shopify-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">7</span><div><h4>woocommerce amsterdam (cluster)</h4><p>Grootste bewezen vraag: vloer ~144/mnd · maar sterkste rivalen — lange termijn, eerst bewijs fixen</p></div><span class="kw-page">Hub: NL-pagina</span></div>
-          <div class="kw-row"><span class="kw-n">8</span><div><h4>shopify ontwikkelaar nederland</h4><p>Pagina was 404 · Indiaas team (BtechWaleTech) top-5 bewijst: afstand is niet de barrière, architectuur wel</p></div><a class="kw-page" href="#nl-shopify">Shopify-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">9</span><div><h4>agency woocommerce rotterdam</h4><p>Staat al op positie ~15 zonder pagina · piepklein volume, maximale zakelijke waarde (partner-intentie)</p></div><a class="kw-page" href="#partner">Partner-pagina →</a></div>
-          <div class="kw-row"><span class="kw-n">10</span><div><h4>wat kost webshop versnellen</h4><p>Koop-nabije intentie · bestaande blog blijft, maar zónder het verwijderde verzonnen case-blok</p></div><span class="kw-page">Blog (geschoond)</span></div>
+      <form id="speedCheckerForm" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px">
+        <input type="url" id="speedInputUrl" placeholder="https://yourstore.com" required style="flex:1 1 320px;padding:12px 18px;border-radius:999px;border:1.5px solid var(--line);font-size:15px;background:var(--card);color:var(--ink)" />
+        <button type="submit" id="speedBtn" class="btn">Check my speed →</button>
+      </form>
+      <p id="speedLoading" style="display:none;color:var(--ink-soft)">Measuring your store on a mobile connection…</p>
+      <p id="speedError" style="display:none;color:#c81e1e"></p>
+      <div id="speedResult" style="display:none;margin-bottom:40px">
+        <div class="proof-strip">
+          <div class="proof-num"><span id="resScore">–</span><span class="gold">/100</span></div>
+          <div>
+            <p><strong id="resHost">yourstore.com</strong> · <span id="resPlatform"></span> · <span id="resStatus"></span><br />
+            Mobile load (LCP estimate): <strong id="resLcp"></strong> · Server response: <strong id="resTtfb"></strong> · Scripts loaded: <strong id="resScripts"></strong> · Page size: <strong id="resSize"></strong></p>
+            <p>Want this fixed for a fixed price? <a class="btn" href="https://wa.me/916353116138" target="_blank" rel="noopener">Chat via WhatsApp</a> <a class="btn btn-ghost" href="#contact">Send the form</a></p>
+          </div>
         </div>
       </div>
-
-      <div class="plan-block">
-        <h3>3 · Concurrenten — wie er zijn en wat we ervan overnemen</h3>
-        <p class="plan-sub">Uit sheet tab 3. Niet kopiëren: leren waar het gat zit.</p>
-        <div class="comp-list">
-          <div class="comp-row"><div><h4>Joepify</h4><span class="comp-type">Freelancer · Rotterdam</span></div><div><p><b>De #1 om van te leren.</b> Elk zoekwoord een eigen pagina, 43 Google-reviews op élke pagina, vaste prijzen (webshop €2.495 / €3.995 / €6.995+, beheer €199/mnd). Zijn prijzen liggen bóven die van Jay — het aanbod hier is op papier beter, het moet alleen zichtbaar worden.</p></div></div>
-          <div class="comp-row"><div><h4>BtechWaleTech</h4><span class="comp-type">Indiaas team · remote</span></div><div><p><b>Het bewijs.</b> Indiaas team, top-5 op “shopify developer netherlands” én de Dutch variant, met één geo-pagina (webshops vanaf US$750, iDEAL/Wero bij naam). Remote zijn is dus niet de reden van niet ranken — pagina-architectuur is het.</p></div></div>
-          <div class="comp-row"><div><h4>Fast4You</h4><span class="comp-type">NL speed-specialist</span></div><div><p>De enige geprijsde Dutch speed-rivaal: audit/traject €750–€1.500. Jay's pakket (€690–€950) is goedkoper — pagina #1 uit tab 2 bestaat om precies dit gat te pakken.</p></div></div>
-          <div class="comp-row"><div><h4>Kaige</h4><span class="comp-type">Agency · Breda</span></div><div><p>De enige Dutch speler met symptoom-content (o.a. Mollie), maar zonder prijs en zonder aanbod. Zij hebben content zonder offer; hier stond het offer zonder URL's. De symptoom-pagina's dichten dat gat.</p></div></div>
-          <div class="comp-row"><div><h4>WP Agency</h4><span class="comp-type">UK-domein · NL-focus</span></div><div><p>Verkoopt uren-bundels en antwoordt binnen 4 kantooruren. Jay verkoopt een vaste prijs — dat verschil staat nu expliciet op elke fix-pagina.</p></div></div>
-          <div class="comp-row"><div><h4>Woosa + directories</h4><span class="comp-type">Vendor · platforms</span></div><div><p>Woosa bezit “woocommerce onderhoud” (€15 / €75 / €325 per maand) — daar niet frontaal tegenin; het onderhoud-aanbod hier wordt later “nooit meer traag” (speed-garantie). Sortlist/Clutch/Upwork bezetten top-5 posities met gratis profielen: een gratis listing ís een ranking.</p></div></div>
-        </div>
-      </div>
-
-      <div class="plan-block">
-        <h3>4 · Reach &amp; kliks — hoe verkeer echt komt</h3>
-        <p class="plan-sub">Uit sheet tab 4. Geen virale beloftes: positie is wiskunde, geen geluk.</p>
-        <ul class="check-list">
-          <li><b>Positie eerst, CTR later</b> — 49 van de 57 queries stonden op positie 21+. Eerst de 11–20-groep (striking distance) winnen, PostNL voorop; titels optimaliseren op positie 40 is zinloos.</li>
-          <li><b>AI Overviews eten informatieve kliks</b> — de CTR-daling is grofweg een derde tot de helft op informatieve vragen. Daarom: geld naar transactionele service-pagina's; de blog voedt alleen nog symptoom-onderwerpen die een service-pagina versterken.</li>
-          <li><b>AI-zichtbaarheid zonder trucs</b> — Google's eigen 2026-gids: geen GEO/AEO-trucs, geen llms.txt-magie. Wat wél telt: pagina's die alle deelvragen van een onderwerp beantwoorden (161% vaker geciteerd) en merkvermeldingen — web-mentions correleren ~0.66 met AI-zichtbaarheid, YouTube-mentions ~0.74, backlinks maar ~0.22.</li>
-          <li><b>Reviews = het grootste lege vak</b> — 25+ echte klanten, nul publieke reviews, tegenover Joepify's 43. Actie: 3–5 klanten om een LinkedIn-aanbeveling + schriftelijke testimonial vragen (WhatsApp-reviews bestaan al; met toestemming als kaart op de site). Nul verzonnen reviews, ooit.</li>
-          <li><b>Gratis backlinks, eerlijke routes</b> — Featured.com (HARO's gratis opvolger), unlinked mentions terughalen, partner-credits, echte directories. “Toxic links” is een mythe: nooit disavowen. Exact-match ankertekst max 1–5%.</li>
-          <li><b>Community = snelste gratis bereik</b> — Reddit, Shopify/WooCommerce Facebook-groepen en het Shopify-forum: dagelijks echte problemen, volledig antwoord + before/after = portfolio. Forums verschijnen in 11,7% van de US-zoekopdrachten (84–88% Reddit).</li>
-          <li><b>Partnership blijft kanaal #1</b> — white-label bouwen voor NL bureaus/freelancers; één partner = herhaald werk. Zie de <a href="#partner">partner-pagina</a>.</li>
-          <li><b>Marktvolgorde</b> — site: Dutch gaten eerst (minste concurrentie). Outreach/community: UK eerst (~2,6× groter Shopify-markt dan NL, Engels, 3–4 uur echte overlap met IST).</li>
-          <li><b>Ritme</b> — wekelijkse blog terug (max 2 interne links per artikel: één naar de NL-hub, één naar de bijpassende service-pagina), zondag GSC-review, en het 28-daagse vergelijk als beslispunt — tijdens de core update van november 2026 (10–±24 nov) pas een week ná afloop meten.</li>
-        </ul>
-      </div>
-
-      <div class="plan-block">
-        <h3>5 · SEO-regels A–Z (vast, uit de 2026-learning)</h3>
-        <ul class="check-list">
-          <li><b>Eén pagina = één zoekwoord = één intentie.</b> Intent bepaalt paginatype: “developer nederland” = service-pagina, “traag / werkt niet” = symptoom-content.</li>
-          <li><b>Keyword Difficulty liegt</b> — KD meet alleen backlinks van de top-10 (correlatie 0.91), niet domeinkracht (0.36). Winbaarheid lees je aan de zwakste top-10 pagina, niet aan een groen scoregetal.</li>
-          <li><b>Core Web Vitals:</b> LCP ≤ 2,5s, INP ≤ 200ms, CLS ≤ 0,1 (75e percentiel). “Poor” eruit, geen 100-jacht. Elk nieuw/gewijzigd pagina eerst op mobiel testen.</li>
-          <li><b>FAQ-schema is dood</b> (7 mei 2026), zelf-reviews nooit toegestaan. Schema = Organization + Service + Breadcrumb + Article, nooit een nep-NL-adres.</li>
-          <li><b>Google Business Profile voor NL is gesloten</b> — vereist een echte, persoonlijk verifieerbare NL-basis. Het concept blijft ongepubliceerd.</li>
-          <li><b>Sitemap-eerlijkheid</b> — lastmod alleen bij een echte update, nooit een verzonnen datum. Pagina's updaten, nooit verwijderen-en-herplaatsen.</li>
-          <li><b>Nieuwe AI-meting</b> — sinds augustus 2026 toont GSC een Generative AI-rapport (impressies, geen kliks/queries). Voortaan in elke audit meenemen.</li>
-          <li><b>Verwachting eerlijk</b> — slechts 1,74% van nieuwe pagina's haalt in jaar één de top-10. SEO is de lange adem (6–12 mnd); de eerste klant komt via partnership, community en LinkedIn.</li>
-        </ul>
-        <p style="padding-bottom:70px"><a class="btn" href="#nl">Start bij de NL hub →</a> &nbsp;<a href="#contact" style="font-weight:600">of mail direct →</a></p>
-      </div>
+      <p style="padding-bottom:70px;color:var(--ink-soft)">The check measures your live store once, on a mobile-style connection. A full audit checks every page type that sells — home, category, product, cart and checkout.</p>
     </div>
   </section>
 
@@ -1261,14 +1179,11 @@
       </div>
       <div class="contact-grid">
         <div>
-          <!--
-            FORMSPREE SETUP (owner: Jay) — 3 steps to activate this form:
-            1. Go to https://formspree.io and create a free account with jay@jaylakum.com.
-            2. Create a new form there — Formspree gives you a form ID (e.g. "xabcdwyz").
-            3. In the line below, replace YOUR_FORMSPREE_ID with that ID.
-            Until then, the big email button on the right works as the fallback.
-          -->
-          <form class="req" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <form class="req" action="/contact.php" method="POST">
+            <input type="hidden" name="_ts_token" id="f-ts" value="" />
+            <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+              <label>Company website (leave this empty)<input type="text" name="_hp_company_website_verify" tabindex="-1" autocomplete="off" /></label>
+            </div>
             <div class="field">
               <label for="f-name">Your name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required />
@@ -1319,7 +1234,6 @@
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="#partner">Partners</a>
-      <a href="#plan">Final Plan</a>
       <a href="#blog">Blog</a>
       <a href="#contact">Contact</a>
       <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
@@ -1643,8 +1557,8 @@ document.getElementById('blogGrid').innerHTML = ARTICLES.map(function(a){
 
 /* ---------- SEO per view ---------- */
 var META = {
-  home:     { title: "Jay lakum — WooCommerce Snelheid Optimalisatie & Shopify Developer Nederland",
-              desc: "Finale versie: WooCommerce snelheid optimalisatie (€690–€950), checkout- en storing-fixes (€290–€450, geen oplossing geen factuur) en Shopify spookcode-opruiming voor NL & UK webshops." },
+  home:     { title: "WooCommerce & Shopify Speed, Bug Fixes & Redesigns — Fixed Price | Jay Lakum",
+              desc: "Slow or broken webshop? Fixed-price Shopify & WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a WooCommerce store from 6.1s to 2.2s. Based in India, working with webshop owners in the Netherlands & worldwide." },
   nl:       { title: "NL Hub — WooCommerce & Shopify hulp per probleem | Jay lakum",
               desc: "Eén pagina per zoekwoord: WooCommerce snelheid, checkout traag, Mollie bestelling hangen, storing oplossen en Shopify spookcode. Vaste prijzen €290–€450 en €690–€950." },
   "nl-snelheid": { title: "WooCommerce Snelheid Optimalisatie — €690–€950 vast | Jay lakum",
@@ -1659,8 +1573,6 @@ var META = {
               desc: "Trage Shopify shop door spookcode van verwijderde apps. Opruiming als vaste-prijs dienst door een Shopify developer voor Nederland." },
   partner:  { title: "White-label Partner voor Bureaus — WooCommerce & Shopify bouw | Jay lakum",
               desc: "Bouwcapaciteit voor NL bureaus: alleen bouwen, volledig onzichtbaar, start met een kleine betaalde pilot. NDA vanzelfsprekend." },
-  plan:     { title: "Final Plan A-to-Z — Keywords, Concurrenten, Reach & SEO-regels | Jay lakum",
-              desc: "Het finale plan: toegepaste wijzigingen, top-10 keyword-prioriteiten met echte GSC-data, concurrenten (Joepify, Fast4You, BtechWaleTech), reach- en kliksplan en de SEO 2026-regels." },
   services: { title: "Services — Speed Optimization, Bug Fixes & Redesigns | Jay lakum",
               desc: "Shopify and WooCommerce services: speed optimization, bug fixes and webshop redesigns. Free mini-audit, written scope, fixed price, pay on delivery." },
   work:     { title: "Work — Real Live Projects | Jay lakum",
@@ -1670,7 +1582,9 @@ var META = {
   blog:     { title: "Blog — Faster, Healthier Webshops | Jay lakum",
               desc: "Practical guides for Shopify and WooCommerce owners: fixing slow stores, diagnosing checkout errors and the mobile mistakes that cost sales." },
   contact:  { title: "Contact — Tell Me About Your Store's Problem | Jay lakum",
-              desc: "Send your store's URL and the problem you're facing. Free mini-audit, fixed quote, reply within 24 hours. Email: jay@jaylakum.com." }
+              desc: "Send your store's URL and the problem you're facing. Free mini-audit, fixed quote, reply within 24 hours. Email: jay@jaylakum.com." },
+  "speed-checker": { title: "Free Webshop Speed Check — 2 Minutes | Jay Lakum",
+              desc: "Enter your webshop URL and get a free mobile speed score with load time, server response and script count. Fixed-price fixes if you want it done for you." }
 };
 var descEl = document.querySelector('meta[name="description"]');
 
@@ -1686,7 +1600,7 @@ function setMeta(view, article){
 }
 
 /* ---------- Router ---------- */
-var VIEWS = ['home','nl','nl-snelheid','nl-checkout-traag','nl-mollie','nl-storing','nl-shopify','partner','plan','services','work','watch','blog','article','contact'];
+var VIEWS = ['home','nl','nl-snelheid','nl-checkout-traag','nl-mollie','nl-storing','nl-shopify','partner','services','work','watch','blog','article','contact','speed-checker'];
 function route(){
   var hash = (location.hash || '#nl').replace(/^#\/?/, '');
   var parts = hash.split('/');
@@ -1726,6 +1640,51 @@ function route(){
 }
 window.addEventListener('hashchange', route);
 route();
+
+/* ---------- Speed checker ---------- */
+var tsEl = document.getElementById('f-ts');
+if (tsEl) tsEl.value = Math.floor(Date.now() / 1000);
+document.getElementById('speedCheckerForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var url = document.getElementById('speedInputUrl').value.trim();
+  if (!url) return;
+  var loading = document.getElementById('speedLoading');
+  var result = document.getElementById('speedResult');
+  var errBox = document.getElementById('speedError');
+  var btn = document.getElementById('speedBtn');
+  loading.style.display = 'block';
+  result.style.display = 'none';
+  errBox.style.display = 'none';
+  btn.disabled = true;
+  fetch('/speed-check.php?url=' + encodeURIComponent(url))
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      loading.style.display = 'none';
+      btn.disabled = false;
+      if (data.error){
+        errBox.textContent = data.error;
+        errBox.style.display = 'block';
+        return;
+      }
+      document.getElementById('resPlatform').textContent = data.platform;
+      document.getElementById('resHost').textContent = data.host;
+      document.getElementById('resScore').textContent = data.score;
+      var st = document.getElementById('resStatus');
+      st.textContent = data.status_label;
+      st.style.color = data.status_color;
+      document.getElementById('resLcp').textContent = data.lcp;
+      document.getElementById('resTtfb').textContent = data.ttfb;
+      document.getElementById('resScripts').textContent = data.scripts;
+      document.getElementById('resSize').textContent = data.page_size_kb + ' KB';
+      result.style.display = 'block';
+    })
+    .catch(function(){
+      loading.style.display = 'none';
+      btn.disabled = false;
+      errBox.textContent = 'Could not reach that store. Check the URL and try again.';
+      errBox.style.display = 'block';
+    });
+});
 
 /* ---------- Showcase reel ---------- */
 var reelVideo = document.getElementById('reelVideo');
