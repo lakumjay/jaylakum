@@ -43,12 +43,12 @@
       "image": "https://jaylakum.com/og-image.png",
       "author": {
         "@type": "Person",
-        "name": "Jay Lakum",
-        "url": "https://jaylakum.com/",
-        "sameAs": [
-          "https://www.linkedin.com/in/lakum-jay/",
-          "https://github.com/lakumjay"
-        ]
+        "name": "Hetal Rathod",
+        "jobTitle": "SEO Specialist",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "India Coders"
+        }
       },
       "publisher": {
         "@type": "Organization",
@@ -191,7 +191,8 @@
 
     <span class="p-cat">Local SEO &middot; Technical Foundation &middot; Sweden</span>
     <h1>Scaling a Gothenburg Local Business to 300+ Ranked Keywords</h1>
-    <p class="article-meta">Published by Jay Lakum, Senior SEO &amp; Technical Performance Specialist &middot; 5+ Years Experience</p>
+    <p class="article-meta">By Hetal Rathod — SEO Specialist, India Coders team</p>
+    <p style="background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14.5px;color:var(--ink-soft)"><strong>Credit:</strong> This SEO case study is the work of <strong>Hetal Rathod</strong>, SEO specialist on the India Coders team, and is published here with her credited as its author. Jay Lakum's own case study is the <a href="/case-study/">WooCommerce speed fix (6.1s → 2.2s)</a>.</p>
 
     <div class="stat-grid">
       <div class="stat-card">
