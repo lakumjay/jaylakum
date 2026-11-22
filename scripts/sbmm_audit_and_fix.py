@@ -243,24 +243,18 @@ def audit_and_fix_file(filepath):
         fixes.append("Added 'isPartOf' and 'about' entity links to WebPage schema")
 
     # 8. Article OpenGraph Date Meta Tags
+    # DISABLED 2026-11-22 (honesty fix): this block used to stamp the SAME hardcoded
+    # dates (published 2026-10-26, modified 2026-11-02) on every blog article that
+    # lacked them. Real per-article dates are unknown to this script; never invent
+    # or uniform-stamp publish/modified dates again. Report only.
     if "/blog/" in rel and 'property="article:published_time"' not in content and '<!-- Open Graph / Social -->' in content:
-        issues.append("Missing article:published_time and article:modified_time meta tags")
-        meta_dates = """<meta property="article:published_time" content="2026-10-26T10:00:00+01:00" />
-<meta property="article:modified_time" content="2026-11-02T12:00:00+01:00" />
-<meta property="article:author" content="https://jaylakum.com/" />
-<meta property="og:updated_time" content="2026-11-02T12:00:00+01:00" />
-"""
-        content = content.replace('<!-- Open Graph / Social -->', meta_dates + '<!-- Open Graph / Social -->')
-        fixes.append("Added article:published_time and modified_time meta tags")
+        issues.append("Missing article:published_time and article:modified_time meta tags (left unset: real dates must be added by hand, never stamped)")
 
     # 9. Visible Author & <time> tags in Blog Posts
+    # DISABLED 2026-11-22 (honesty fix): this block used to rewrite every blog
+    # byline to the same hardcoded 2026-10-26 / 2026-11-02 dates. Report only.
     if "/blog/" in rel and 'itemprop="author"' not in content and '<p class="article-meta">' in content:
-        issues.append("Missing visible author byline markup and <time> tags")
-        old_meta = re.search(r'<p class="article-meta">(.*?)</p>', content)
-        if old_meta:
-            new_meta = '<p class="article-meta"><time datetime="2026-10-26" itemprop="datePublished">26 oktober 2026</time> (Bijgewerkt: <time datetime="2026-11-02" itemprop="dateModified">2 november 2026</time>) · 5 min leestijd · by <span class="byline" itemprop="author"><a rel="author" href="https://jaylakum.com/">Jay Lakum</a></span>, Senior Webshop & Performance Specialist</p>'
-            content = content.replace(old_meta.group(0), new_meta)
-            fixes.append("Added itemprop='author' byline and semantic <time> tags")
+        issues.append("Missing visible author byline markup and <time> tags (left as-is: byline dates must be the article's real dates)")
 
     # 10. Twitter Card Meta Tag Check
     if 'name="twitter:card"' not in content and '</head>' in content:
@@ -284,26 +278,12 @@ def audit_and_fix_file(filepath):
                 for item in g_list:
                     t = item.get('@type')
                     if t == 'LocalBusiness' or t == 'ProfessionalService' or (isinstance(t, list) and ('LocalBusiness' in t or 'ProfessionalService' in t)):
-                        if 'telephone' not in item:
-                            item['telephone'] = '+31620000000'
-                            mod_ld = True
-                        if 'address' not in item:
-                            item['address'] = {
-                                '@type': 'PostalAddress',
-                                'addressLocality': 'Amsterdam',
-                                'addressCountry': 'NL'
-                            }
-                            mod_ld = True
-                        if 'openingHoursSpecification' not in item:
-                            item['openingHoursSpecification'] = [
-                                {
-                                    '@type': 'OpeningHoursSpecification',
-                                    'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-                                    'opens': '09:00',
-                                    'closes': '18:00'
-                                }
-                            ]
-                            mod_ld = True
+                        # DISABLED 2026-11-22 (honesty fix): this block used to invent a
+                        # placeholder Dutch telephone number (+31620000000), an Amsterdam
+                        # postal address and Mon-Fri opening hours. The business is
+                        # remote, based in India, with no NL phone or office. Never
+                        # complete LocalBusiness schema with invented data again.
+                        pass
                 if mod_ld:
                     new_json = json.dumps(d_obj, indent=2, ensure_ascii=False)
                     content = content.replace(s_el.string, '\n' + new_json + '\n')
@@ -326,7 +306,10 @@ def audit_and_fix_file(filepath):
         soup_body = BeautifulSoup(content, 'html.parser').find('div', class_='article-body')
         if soup_body and len(soup_body.find_all('a')) == 0:
             issues.append("Blog post had 0 internal links in article body")
-            inject_link = '\n<p>Looking for verified expertise? Discover our <a href="/nl/amsterdam/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce specialist Amsterdam</a> services or our dedicated <a href="/diensten/woocommerce-bug-fix/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce bug fix service</a>.</p>\n'
+            # CHANGED 2026-11-22 (honesty fix): the injected link used to prop up the
+            # /nl/amsterdam/ city page. It now points at the NL hub instead; never
+            # inject internal links to a city page from blog posts again.
+            inject_link = '\n<p>Looking for verified expertise? Discover our <a href="/nl/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce specialist Nederland</a> services or our dedicated <a href="/diensten/woocommerce-bug-fix/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">WooCommerce bug fix service</a>.</p>\n'
             if '</div>\n\n    <div class="article-cta">' in content:
                 content = content.replace('</div>\n\n    <div class="article-cta">', inject_link + '</div>\n\n    <div class="article-cta">', 1)
             elif '</div>\n    <div class="article-cta">' in content:
