@@ -19,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce specialist Amsterdam. Snelle checkouts, Mollie iDEAL & PostNL. Vaste prijs, betalen na tevredenheid." />
+<title>WooCommerce Specialist Amsterdam — Speed &amp; Bug Fixes, Vaste Prijs | Jay Lakum</title>
+<meta name="description" content="Trage of kapotte WooCommerce webshop in Amsterdam? Remote specialist vanuit India: snelheid, checkout- en Mollie-fixes voor een vaste prijs (€290–€950). Echt resultaat: 6.1s → 2.2s mobiel. Geen oplossing, geen factuur." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/amsterdam/" />
@@ -37,8 +37,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaylakum.com/nl/amsterdam/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
-<meta property="og:title" content="WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum" />
-<meta property="og:description" content="Freelance WooCommerce specialist Amsterdam. Snelle checkouts, Mollie iDEAL & PostNL. Vaste prijs, betalen na tevredenheid." />
+<meta property="og:title" content="WooCommerce Specialist Amsterdam — Speed &amp; Bug Fixes, Vaste Prijs | Jay Lakum" />
+<meta property="og:description" content="Trage of kapotte WooCommerce webshop in Amsterdam? Remote specialist vanuit India: snelheid, checkout- en Mollie-fixes voor een vaste prijs (€290–€950). Echt resultaat: 6.1s → 2.2s mobiel." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
@@ -51,7 +51,7 @@
       "@type": "WebPage",
       "@id": "https://jaylakum.com/nl/amsterdam/#webpage",
       "url": "https://jaylakum.com/nl/amsterdam/",
-      "name": "WooCommerce Specialist Amsterdam | Vaste Prijs | Jay Lakum",
+      "name": "WooCommerce Specialist Amsterdam — Speed & Bug Fixes, Vaste Prijs | Jay Lakum",
       "isPartOf": {
         "@id": "https://jaylakum.com/#website"
       },
@@ -162,28 +162,7 @@
       },
       "mainEntityOfPage": {
         "@id": "https://jaylakum.com/nl/amsterdam/#webpage"
-      },
-      "telephone": "+31620000000",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Amsterdam",
-        "addressRegion": "Noord-Holland",
-        "addressCountry": "NL"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -218,7 +197,7 @@
           "name": "Waarom kies ik voor Jay Lakum en niet een bureau aan de Amsterdamse Herengracht of Keizersgracht?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
+            "text": "Bij een groot bureau loopt je vraag via accountmanagers en projectmanagers voordat een developer ernaar kijkt. Bij mij heb je direct contact met de developer zelf — dezelfde persoon die je site meet, fixt en oplevert. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead."
           }
         },
         {
@@ -654,16 +633,16 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="tag" style="margin-bottom:16px">🇳🇱 Freelance WooCommerce Specialist Amsterdam</span>
+        <span class="tag" style="margin-bottom:16px">🇳🇱 Freelance WooCommerce Specialist — remote voor Amsterdam</span>
         <h1>WooCommerce Specialist Amsterdam</h1>
-        <p class="sub">Ik ben Jay Lakum, freelance WooCommerce specialist voor webshops in Amsterdam. Je werkt direct met mij, niet met een accountmanager, en je krijgt vooraf een vaste prijs. Snelle laadtijden (&lt;2.0s), foutloze iDEAL &amp; Mollie checkout en PostNL-koppelingen zonder de bureau-overhead van een grachtenpand.</p>
+        <p class="sub">Ik ben Jay Lakum, freelance WooCommerce specialist. Ik werk remote vanuit India voor webshops in Amsterdam en heel Nederland. Je werkt direct met mij, niet met een accountmanager, en je krijgt vooraf een vaste prijs. Snelheid, iDEAL &amp; Mollie checkout en PostNL-koppelingen — zonder bureau-overhead.</p>
         <div class="hero-ctas">
           <a href="#prijzen" class="btn">Bekijk Vaste Pakketprijzen →</a>
           <a href="#contact" class="btn btn-ghost">Gratis Speed Audit Aanvragen</a>
         </div>
         <div class="trust-line">
           <span>✓ Vaste prijs vooraf</span><span class="dot"></span>
-          <span>✓ Meetbare versnelling (sub-2.0s laadtijd)</span><span class="dot"></span>
+          <span>✓ Meetbare versnelling (voor- en nameting)</span><span class="dot"></span>
           <span>✓ 100% Betalen bij oplevering</span><span class="dot"></span>
           <span>✓ iDEAL 2.0 &amp; Mollie specialist</span>
         </div>
@@ -672,10 +651,10 @@
         <div class="card" style="border-left:4px solid var(--gold)">
           <div class="eyebrow" style="margin-bottom:10px">VOOR AMSTERDAMSE WEBSHOPS</div>
           <h2 style="font-size:24px;margin-bottom:14px">Geen Duur Amsterdams Grachtenpand-Bureau, Wel Directe Topkwaliteit</h2>
-          <p>Bureaus aan de Herengracht of Keizersgracht rekenen vaak €120 tot €180 per uur en schuiven projecten door naar junior developers. Als zelfstandig WooCommerce specialist werk ik direct met jou als merkeigenaar:</p>
+          <p>Bij een bureau loopt je project via accountmanagers en meerdere lagen. Als zelfstandig WooCommerce specialist werk ik direct met jou als merkeigenaar:</p>
           <ul style="padding-left:20px;color:var(--ink-soft);font-size:15px;line-height:1.8">
-            <li><b>Core Web Vitals Focus:</b> Streven naar 90+ op Google PageSpeed Mobile voor maximale vindbaarheid in Amsterdam.</li>
-            <li><b>Mollie &amp; iDEAL Specialist:</b> Foutloze checkout zonder webhook drops of verloren bestellingen.</li>
+            <li><b>Core Web Vitals Focus:</b> Meten, fixen en opnieuw meten — doelen LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.</li>
+            <li><b>Mollie &amp; iDEAL Specialist:</b> Checkout-fouten opsporen en herstellen — van webhook drops tot hangende bestellingen.</li>
             <li><b>Veilig op Staging:</b> Je live WooCommerce winkel blijft 100% online bestellingen aannemen.</li>
           </ul>
         </div>
@@ -689,7 +668,7 @@
       <div class="section-head">
         <div class="eyebrow">TRANSPARANTE KOSTEN &amp; VASTE PRIJZEN</div>
         <h2>Wat kost een WooCommerce specialist in Amsterdam?</h2>
-        <p>Een freelance WooCommerce specialist in Amsterdam kost gemiddeld tussen de €65 en €95 per uur, of werkt op projectbasis. Bij Jay Lakum werk ik uitsluitend met heldere vaste prijzen vooraf: van <strong>€290 voor acute bug fixes</strong> tot <strong>€890 voor complete snelheidsoptimalisatie</strong> en <strong>€1.890 voor maatwerk webshops</strong>. Zo weet je exact waar je aan toe bent, zonder onverwachte facturen achteraf.</p>
+        <p>Ik werk uitsluitend met heldere vaste prijzen vooraf: bug fixes en storingen <strong>€290–€450</strong>, snelheidsoptimalisatie <strong>€690–€950</strong>. Eerst een gratis mini-audit, daarna één vaste totaalprijs in een schriftelijke offerte. Zo weet je exact waar je aan toe bent, zonder onverwachte facturen achteraf.</p>
       </div>
 
       <div style="overflow-x:auto;margin-bottom:36px">
@@ -711,15 +690,15 @@
             </tr>
             <tr style="border-bottom:1px solid var(--line);background:rgba(229,190,114,0.04)">
               <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Snelheidsoptimalisatie (Core Web Vitals)</td>
-              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">Vanaf €890</td>
+              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">€690–€950</td>
               <td style="padding:16px 20px">3 – 5 werkdagen</td>
-              <td style="padding:16px 20px">Sub-2.0s laadtijd, WebP beeldconversie, database indexering, PostNL transient caching en 90+ mobiele score.</td>
+              <td style="padding:16px 20px">Voor- en nameting van laadtijd en Core Web Vitals, WebP beeldconversie, database-opruiming en caching. Doelen: LCP ≤ 2.5s, INP ≤ 200ms.</td>
             </tr>
             <tr>
               <td style="padding:16px 20px;font-weight:700;color:var(--ink)">Maatwerk WooCommerce Webshop / Redesign</td>
-              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">Vanaf €1.890</td>
-              <td style="padding:16px 20px">2 – 3 weken</td>
-              <td style="padding:16px 20px">Conversiegericht design, custom checkout flow, Mollie &amp; PostNL integratie en volledige AVG compliance.</td>
+              <td style="padding:16px 20px;font-weight:700;color:var(--gold-deep)">Offerte op maat</td>
+              <td style="padding:16px 20px">In overleg</td>
+              <td style="padding:16px 20px">Conversiegericht design, custom checkout flow en Mollie &amp; PostNL integratie.</td>
             </tr>
           </tbody>
         </table>
@@ -741,7 +720,7 @@
           <div style="padding:20px;background:var(--bg-soft);border-radius:10px;border-left:4px solid var(--line-strong)">
             <strong style="color:var(--ink);font-size:17px;display:block;margin-bottom:8px">🏢 Traditioneel Amsterdams Bureau</strong>
             <ul style="padding-left:18px;margin:0;font-size:14.5px;color:var(--ink-soft);line-height:1.75">
-              <li>Uurtarieven van €120 tot €180+ per uur door monumentale kantoorpanden.</li>
+              <li>Uurtarieven en nacalculatie — de eindprijs zie je pas achteraf.</li>
               <li>Projecten worden vaak uitgevoerd door junior developers of stagiaires.</li>
               <li>Trage communicatie via ticketing systemen en tussenpersonen.</li>
               <li>Ondoorzichtige meerwerk-facturen en nacalculatie.</li>
@@ -790,35 +769,33 @@
     </div>
   </section>
 
-  <!-- Bewijs en Resultaten (Echte Casestudies) -->
+  <!-- Bewijs: het enige echte case-cijfer -->
   <section class="section section-soft" style="border-bottom:1px solid var(--line)">
     <div class="wrap">
       <div class="section-head">
-        <div class="eyebrow">BEWEZEN RESULTATEN</div>
-        <h2>Casestudies en meetbare resultaten</h2>
-        <p>Echte resultaten van webshops die kozen voor gerichte optimalisatie en directe samenwerking met Jay Lakum.</p>
+        <div class="eyebrow">ECHT RESULTAAT</div>
+        <h2>Eén gemeten resultaat — geen verhalen</h2>
+        <p>Ik publiceer alleen cijfers die ik kan bewijzen. Dit is het enige case-resultaat op deze pagina:</p>
       </div>
       <div class="grid-3">
         <div class="card" style="border-top:4px solid var(--gold)">
-          <span class="tag">D2C Fashion &amp; Mode</span>
-          <h3>Nordic Apparel Store</h3>
-          <p><strong>Probleem:</strong> Mobiele laadtijd van 6.1 seconden door zware lookbooks en trage cart scripts.</p>
-          <p><strong>Aanpak:</strong> WebP beeldoptimalisatie, deferring van render-blocking JS en transient caching.</p>
-          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Laadtijd gedaald naar 1.9s, LCP 1.4s, mobiele conversie +22%.</p>
+          <span class="tag">WooCommerce · Snelheid</span>
+          <h3>Van 6.1s naar 2.2s mobiel</h3>
+          <p><strong>Probleem:</strong> Een WooCommerce webshop met een mobiele laadtijd van 6.1 seconden.</p>
+          <p><strong>Aanpak:</strong> Meting per paginatype, daarna de gevonden knelpunten gefixt en opnieuw gemeten.</p>
+          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Mobiele laadtijd van 6.1s naar 2.2s — gemeten voor en na.</p>
         </div>
-        <div class="card" style="border-top:4px solid var(--gold)">
-          <span class="tag">Interieur &amp; Design Amsterdam</span>
-          <h3>Woon &amp; Design Studio</h3>
-          <p><strong>Probleem:</strong> Haperende Mollie iDEAL checkouts waarbij bestellingen op 'pending payment' bleven hangen.</p>
-          <p><strong>Aanpak:</strong> Webhook synchronisatie hersteld, staging audit en caching op checkout URL's uitgeschakeld.</p>
-          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Binnen 24 uur 100% foutloze transacties en zero verloren bestellingen.</p>
+        <div class="card">
+          <span class="tag">Eerlijk over bewijs</span>
+          <h3>Waarom maar één case?</h3>
+          <p>De shopnaam blijft anoniem, uit privacy voor de klant. Er horen geen verzonnen conversiepercentages of extra cijfers bij dit resultaat — alleen de gemeten laadtijd hierboven.</p>
+          <p>Meer over de aanpak: <a href="/case-study/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">bekijk de volledige case study →</a></p>
         </div>
-        <div class="card" style="border-top:4px solid var(--gold)">
-          <span class="tag">Logistiek &amp; E-Commerce</span>
-          <h3>Lifestyle Brand Nederland</h3>
-          <p><strong>Probleem:</strong> Trage PostNL bezorgopties vertraagden de winkelwagen tot wel 3.8 seconden.</p>
-          <p><strong>Aanpak:</strong> Asynchrone API call implementatie en server-side caching van bezorgmatrices.</p>
-          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Winkelwagen vertraging gereduceerd van 3.8s naar 0.8s.</p>
+        <div class="card">
+          <span class="tag">Remote · India → Amsterdam</span>
+          <h3>Zo werken we samen</h3>
+          <p>Ik werk remote vanuit India voor webshops in Amsterdam en heel Nederland. Alles loopt via staging, WhatsApp en e-mail — je live shop blijft tijdens het werk gewoon verkopen.</p>
+          <p><a href="#contact" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">Start met een gratis mini-audit →</a></p>
         </div>
       </div>
     </div>
@@ -965,7 +942,7 @@
         </div>
         <div style="background:var(--card);padding:26px;border-radius:12px;border:1px solid var(--line)">
           <strong style="color:var(--ink);font-size:18px;display:block;margin-bottom:10px">⚡ Mijn Technische Oplossing</strong>
-          <p style="margin:0">Het resultaat? Een webshop die prachtig oogt op de desktop van de designer, maar op de smartphone van de klant in 4G pas na 4.5 seconden bruikbaar is. Met custom code optimalisatie verwijder ik overtollige JavaScript en render-blocking code. Zo behoud je je unieke merkidentiteit met een mobiele Google score van 90+.</p>
+          <p style="margin:0">Het resultaat? Een webshop die prachtig oogt op de desktop van de designer, maar op de smartphone van de klant in 4G pas na 4.5 seconden bruikbaar is. Met custom code optimalisatie verwijder ik overtollige JavaScript en render-blocking code. Zo behoud je je unieke merkidentiteit én wordt je shop meetbaar sneller op mobiel.</p>
         </div>
       </div>
     </div>
@@ -1043,7 +1020,7 @@
 
         <details class="faq-item">
           <summary>Waarom kies ik voor Jay Lakum en niet een bureau aan de Amsterdamse Herengracht of Keizersgracht?</summary>
-          <p>Grote bureaus aan de grachten hebben monumentale kantoorpanden, projectmanagers en hoge overheadkosten, waardoor zij vaak €5.000+ rekenen voor eenvoudige optimalisaties. Bij Jay Lakum heb je direct contact met de senior developer zelf. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
+          <p>Bij een groot bureau loopt je vraag via accountmanagers en projectmanagers voordat een developer ernaar kijkt. Bij mij heb je direct contact met de developer zelf — dezelfde persoon die je site meet, fixt en oplevert. Snellere communicatie, diepere technische focus en een transparante vaste projectprijs zonder bureau-overhead.</p>
         </details>
 
         <details class="faq-item">
@@ -1075,10 +1052,10 @@
   <section id="contact" class="section section-soft"><span id="gratis-audit" style="display:block;position:relative;top:-70px;visibility:hidden"></span>
     <div class="wrap">
       <div class="contact-box" style="text-align:center;padding:48px 32px">
-        <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; AMSTERDAM</div>
+        <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; REMOTE VANUIT INDIA</div>
         <h2 style="font-size:clamp(26px,4vw,34px);margin:0 0 14px">Klaar om jouw webwinkel te versnellen?</h2>
         <p style="color:var(--ink-soft);font-size:16.5px;max-width:620px;margin:0 auto 28px;line-height:1.6">
-          Geen accountmanagers, geen uurtje-factuurtje en geen risico. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
+          Geen accountmanagers, geen uurtje-factuurtje en geen risico. Ik werk remote vanuit India voor webshops in Amsterdam en heel Nederland. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
         </p>
         <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;align-items:center">
           <a href="/nl/#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
@@ -1104,7 +1081,7 @@
       <div class="section-head" style="text-align:center;margin:0 auto 32px">
         <div class="eyebrow">LOCATIE &amp; LANDELIJKE DEKKING</div>
         <h2>Actief voor webshops door heel Nederland</h2>
-        <p style="color:var(--ink-soft);max-width:680px;margin:8px auto 0">Directe samenwerking op afstand met webwinkeliers in de Randstad en daarbuiten. Geen trage vergaderingen of reiskosten, maar snelle async communicatie via Slack, WhatsApp of e-mail.</p>
+        <p style="color:var(--ink-soft);max-width:680px;margin:8px auto 0">Directe samenwerking op afstand — ik werk vanuit India — met webwinkeliers in de Randstad en daarbuiten. Geen trage vergaderingen of reiskosten, maar snelle async communicatie via Slack, WhatsApp of e-mail.</p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.03)">
@@ -1119,17 +1096,9 @@
             <li>💡 <b>Eindhoven &amp; Brainport:</b> <a href="/nl/eindhoven/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Eindhoven</a></li>
           </ul>
         </div>
-        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line);min-height:260px;position:relative">
-          <iframe 
-            title="Google Maps Nederland Dekking"
-            width="100%" 
-            height="260" 
-            style="border:0;display:block" 
-            loading="lazy" 
-            allowfullscreen 
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155856.7649514755!2d4.763878036069927!3d52.3702157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600db4cbdd057d3!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl">
-          </iframe>
+        <div style="border-radius:12px;border:1px solid var(--line);padding:26px;background:var(--bg-soft)">
+          <h3 style="font-size:20px;margin:0 0 12px">📍 Remote vanuit India</h3>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.7;margin:0">Ik werk volledig op afstand en heb geen bezoekadres in Amsterdam. Wel: direct contact met de developer zelf via WhatsApp, e-mail en Slack, werken op staging zodat je live shop altijd doorverkoopt, en een vaste prijs vooraf.</p>
         </div>
       </div>
     </div>
