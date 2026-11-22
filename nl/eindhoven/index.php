@@ -19,8 +19,8 @@
 <meta name="msapplication-TileImage" content="https://jaylakum.com/favicon-192x192.png" />
 <meta name="msapplication-TileColor" content="#171410" />
 <!-- Primary SEO Meta Targeting Netherlands -->
-<title>Shopify &amp; WooCommerce Specialist Eindhoven | Jay Lakum</title>
-<meta name="description" content="Freelance WooCommerce specialist in Eindhoven? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
+<title>Shopify &amp; WooCommerce Specialist Eindhoven — Speed &amp; Bug Fixes | Jay Lakum</title>
+<meta name="description" content="Webshop in Eindhoven traag of kapot? Remote Shopify &amp; WooCommerce specialist vanuit India: snelheid en bug fixes voor een vaste prijs (€290–€950). Echt resultaat: 6.1s → 2.2s mobiel. Geen oplossing, geen factuur." />
 <meta name="keywords" content="Shopify webshop sneller maken, WooCommerce trage webshop versnellen, Mollie iDEAL betaling mislukt WooCommerce, Core Web Vitals verbeteren webshop, Shopify specialist Nederland, freelance webdeveloper Amsterdam, webshop laten maken Rotterdam, iDEAL checkout repareren" />
 <meta name="author" content="Jay Lakum" />
 <link rel="canonical" href="https://jaylakum.com/nl/eindhoven/" />
@@ -37,8 +37,8 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaylakum.com/nl/eindhoven/" />
 <meta property="og:site_name" content="Jay Lakum — Webshop Performance & Development Nederland" />
-<meta property="og:title" content="Shopify Specialist Eindhoven — Headless Storefront & API | Jay Lakum" />
-<meta property="og:description" content="Freelance WooCommerce specialist in Eindhoven? Vaste projectprijs vooraf, betalen bij oplevering en direct contact. Geen duur marketingbureau." />
+<meta property="og:title" content="Shopify &amp; WooCommerce Specialist Eindhoven — Speed &amp; Bug Fixes | Jay Lakum" />
+<meta property="og:description" content="Webshop in Eindhoven traag of kapot? Remote Shopify &amp; WooCommerce specialist vanuit India: snelheid en bug fixes voor een vaste prijs (€290–€950). Echt resultaat: 6.1s → 2.2s mobiel." />
 <meta property="og:image" content="https://jaylakum.com/og-image.png" />
 <meta property="og:locale" content="nl_NL" />
 
@@ -51,7 +51,7 @@
       "@type": "WebPage",
       "@id": "https://jaylakum.com/nl/eindhoven/#webpage",
       "url": "https://jaylakum.com/nl/eindhoven/",
-      "name": "Shopify &amp; WooCommerce Specialist Eindhoven | Jay Lakum",
+      "name": "Shopify & WooCommerce Specialist Eindhoven — Speed & Bug Fixes | Jay Lakum",
       "isPartOf": {
         "@id": "https://jaylakum.com/#website"
       },
@@ -139,7 +139,7 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Shopify & WooCommerce Snelheid Optimalisatie (<1.5s)"
+            "name": "Shopify & WooCommerce Snelheid Optimalisatie"
           }
         },
         {
@@ -162,28 +162,7 @@
       },
       "mainEntityOfPage": {
         "@id": "https://jaylakum.com/nl/eindhoven/#webpage"
-      },
-      "telephone": "+31620000000",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Amsterdam",
-        "addressRegion": "Noord-Holland",
-        "addressCountry": "NL"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "18:00"
-        }
-      ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -644,7 +623,7 @@
       <div>
         <span class="tag" style="margin-bottom:16px">🇳🇱 Shopify & WooCommerce Specialist Nederland</span>
         <h1>Shopify & WooCommerce Specialist Eindhoven</h1>
-        <p class="sub">High-tech webshop architectuur, custom API koppelingen en lightning-fast Shopify development voor Brainport Eindhoven.</p>
+        <p class="sub">Webshop architectuur, custom API-koppelingen en snelle Shopify &amp; WooCommerce development voor Brainport Eindhoven. Ik werk remote vanuit India — je spreekt direct met de developer, tegen een vaste prijs vooraf.</p>
         <div class="hero-ctas">
           <a href="#calculator" class="btn">Bereken Je Omzetverlies →</a>
           <a href="#contact" class="btn btn-ghost">Gratis Speed Audit Aanvragen</a>
@@ -824,15 +803,47 @@
     </div>
   </section>
 
+  <!-- Bewijs: het enige echte case-cijfer -->
+  <section class="section section-soft" style="border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">ECHT RESULTAAT</div>
+        <h2>Eén gemeten resultaat — geen verhalen</h2>
+        <p>Ik publiceer alleen cijfers die ik kan bewijzen. Dit is het enige case-resultaat dat ik laat zien:</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="border-top:4px solid var(--gold)">
+          <span class="tag">WooCommerce · Snelheid</span>
+          <h3>Van 6.1s naar 2.2s mobiel</h3>
+          <p><strong>Probleem:</strong> Een WooCommerce webshop met een mobiele laadtijd van 6.1 seconden.</p>
+          <p><strong>Aanpak:</strong> Meting per paginatype, daarna de gevonden knelpunten gefixt en opnieuw gemeten.</p>
+          <p style="font-weight:700;color:var(--gold-deep);margin-bottom:0">Resultaat: Mobiele laadtijd van 6.1s naar 2.2s — gemeten voor en na.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Eerlijk over bewijs</span>
+          <h3>Waarom maar één case?</h3>
+          <p>De shopnaam blijft anoniem, uit privacy voor de klant, en er horen geen verzonnen conversiepercentages bij dit resultaat. De case hoort niet bij een specifieke stad — het werk is remote geleverd, zoals al mijn werk.</p>
+          <p>Meer over de aanpak: <a href="/case-study/" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">bekijk de volledige case study →</a></p>
+        </div>
+        <div class="card">
+          <span class="tag">Remote · India → Eindhoven</span>
+          <h3>Zo werken we samen</h3>
+          <p>Ik werk remote vanuit India voor webshops in Eindhoven en heel Nederland. Alles loopt via staging, WhatsApp en e-mail — je live shop blijft tijdens het werk gewoon verkopen.</p>
+          <p><a href="#contact" style="font-weight:700;color:var(--gold-deep);text-decoration:underline">Start met een gratis mini-audit →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Form -->
     <!-- Closing Direct CTA (Replaces Redundant Secondary Form) -->
   <section id="contact" class="section"><span id="gratis-audit" style="display:block;position:relative;top:-70px;visibility:hidden"></span>
     <div class="wrap">
       <div class="contact-box" style="text-align:center;padding:48px 32px">
-        <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; EINDHOVEN</div>
+        <div class="eyebrow" style="margin-bottom:8px">DIRECT CONTACT MET DE DEVELOPER &bull; REMOTE VANUIT INDIA</div>
         <h2 style="font-size:clamp(26px,4vw,34px);margin:0 0 14px">Klaar Om Jouw Webwinkel Te Versnellen?</h2>
         <p style="color:var(--ink-soft);font-size:16.5px;max-width:620px;margin:0 auto 28px;line-height:1.6">
-          Geen accountmanagers, geen uurtje-factuurtje en geen risico. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
+          Geen accountmanagers, geen uurtje-factuurtje en geen risico. Ik werk remote vanuit India voor webshops in heel Nederland. Vraag een Gratis 3-Minuten Video Audit aan of stuur direct een WhatsApp / e-mail voor snel advies.
         </p>
         <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;align-items:center">
           <a href="/nl/#gratis-audit" class="btn" style="background:var(--gold-btn);border-color:var(--gold);color:var(--gold-btn-text)!important;font-size:15.5px;padding:12px 24px">
@@ -858,7 +869,7 @@
       <div class="section-head" style="text-align:center;margin:0 auto 32px">
         <div class="eyebrow">LOCATIE & LANDELIJKE DEKKING</div>
         <h2>Actief Voor Webshops Door Heel Nederland</h2>
-        <p style="color:var(--ink-soft);max-width:680px;margin:8px auto 0">Directe samenwerking op afstand met webwinkeliers in de Randstad en daarbuiten. Geen trage vergaderingen of reiskosten, maar snelle async communicatie via Slack, WhatsApp of e-mail.</p>
+        <p style="color:var(--ink-soft);max-width:680px;margin:8px auto 0">Directe samenwerking op afstand — ik werk vanuit India — met webwinkeliers in de Randstad en daarbuiten. Geen trage vergaderingen of reiskosten, maar snelle async communicatie via Slack, WhatsApp of e-mail.</p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.03)">
@@ -873,17 +884,9 @@
             <li>💡 <b>Eindhoven & Brainport:</b> <a href="/nl/eindhoven/" style="color:var(--gold-deep);font-weight:600;text-decoration:underline">Shopify Specialist Eindhoven</a></li>
           </ul>
         </div>
-        <div style="border-radius:12px;overflow:hidden;border:1px solid var(--line);min-height:260px;position:relative">
-          <iframe 
-            title="Google Maps Nederland Dekking"
-            width="100%" 
-            height="260" 
-            style="border:0;display:block" 
-            loading="lazy" 
-            allowfullscreen 
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155856.7649514755!2d4.763878036069927!3d52.3702157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c63fb5949a7755%3A0x6600db4cbdd057d3!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl">
-          </iframe>
+        <div style="border-radius:12px;border:1px solid var(--line);padding:26px;background:var(--bg-soft)">
+          <h3 style="font-size:20px;margin:0 0 12px">📍 Remote vanuit India</h3>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.7;margin:0">Ik werk volledig op afstand en heb geen bezoekadres in Eindhoven. Wel: direct contact met de developer zelf via WhatsApp, e-mail en Slack, werken op staging zodat je live shop altijd doorverkoopt, en een vaste prijs vooraf.</p>
         </div>
       </div>
     </div>
