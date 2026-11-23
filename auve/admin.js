@@ -1113,6 +1113,77 @@ function vSaveSettings(part, okText) {
     refreshVisualPreview();
   }).catch(function (e) { showMsg($('vMsg'), e.message, false); });
 }
+var DEFAULT_REELS_ADMIN = [
+  { video: 'assets/reels/first-look.mp4', poster: 'assets/p/v-09.jpg', caption: 'First Look, brocade on a gold wedge', pid: 'first-look' },
+  { video: 'assets/reels/muse.mp4', poster: 'assets/p/bn-muse-1.jpg', caption: 'Muse, in pastel', pid: 'muse' },
+  { video: 'assets/reels/after-glow.mp4', poster: 'assets/p/gh-top.jpg', caption: 'Golden Hour', pid: 'golden-hour' },
+  { video: 'assets/reels/desertsand.mp4', poster: 'assets/p/bn-softfocus-2.jpg', caption: 'Soft Focus, all day', pid: 'soft-focus' },
+  { video: 'assets/reels/daydream-pink.mp4', poster: 'assets/p/bn-daydream-2.jpg', caption: 'Day Dream, barely there', pid: 'daydream-b' },
+  { video: 'assets/reels/champagne.mp4', poster: 'assets/p/bn-whisper-1.jpg', caption: 'Step in. Stand out.', pid: 'whisper' },
+  { video: 'assets/reels/dune.mp4', poster: 'assets/p/bn-dune-2.jpg', caption: 'The Barely Edit 2026', pid: 'dune' }
+];
+function reelRowHtml(r) {
+  r = r || {};
+  var opts = '<option value="">No product link</option>' + (products || []).map(function (p) {
+    return '<option value="' + esc(p.id) + '"' + (r.pid === p.id ? ' selected' : '') + '>' + esc(p.name) + '</option>';
+  }).join('');
+  return '<div class="reel-row">'
+    + '<div class="reel-head"><b class="r-title">Reel</b><span>'
+    + '<button type="button" class="btn btn-light btn-sm r-up">Move up</button> '
+    + '<button type="button" class="btn btn-light btn-sm r-down">Move down</button> '
+    + '<button type="button" class="btn btn-light btn-sm r-del">Remove</button></span></div>'
+    + '<label>Video file (mp4)</label>'
+    + '<input type="text" class="r-video" value="' + esc(r.video || '') + '" placeholder="assets/reels/my-video.mp4">'
+    + '<p class="reel-btns"><button type="button" class="btn btn-light btn-sm r-up-video">Upload video</button> <button type="button" class="btn btn-light btn-sm r-lib-video">Choose from library</button></p>'
+    + '<label>Poster photo (shows before the video plays)</label>'
+    + '<input type="text" class="r-poster" value="' + esc(r.poster || '') + '" placeholder="assets/p/photo.jpg">'
+    + '<p class="reel-btns"><button type="button" class="btn btn-light btn-sm r-up-poster">Upload photo</button> <button type="button" class="btn btn-light btn-sm r-lib-poster">Choose from library</button></p>'
+    + '<label>Caption</label>'
+    + '<input type="text" class="r-caption" value="' + esc(r.caption || '') + '" placeholder="Text shown with the video">'
+    + '<label>When a customer taps the reel, open this product</label>'
+    + '<select class="r-pid">' + opts + '</select>'
+    + '</div>';
+}
+function renumberReelRows() {
+  Array.prototype.forEach.call(document.querySelectorAll('#vReelsList .reel-row'), function (row, i) {
+    row.querySelector('.r-title').textContent = 'Reel ' + (i + 1);
+  });
+}
+function pickReelFile(inputEl, accept) {
+  var f = document.createElement('input');
+  f.type = 'file'; f.accept = accept;
+  f.addEventListener('change', function () {
+    if (!f.files || !f.files.length) return;
+    var old = inputEl.value;
+    inputEl.value = 'Uploading...';
+    uploadFiles(f.files).then(function (res) {
+      inputEl.value = res.url || (res.files && res.files[0] && (res.files[0].url || res.files[0].path)) || old;
+    }).catch(function (e) { inputEl.value = old; alert('Upload failed: ' + e.message); });
+  });
+  f.click();
+}
+function wireReelsPanel() {
+  renumberReelRows();
+  var list = $('vReelsList');
+  if (!list) return;
+  list.addEventListener('click', function (e) {
+    var btn = e.target.closest('button'); if (!btn) return;
+    var row = e.target.closest('.reel-row'); if (!row) return;
+    if (btn.classList.contains('r-up')) { var prev = row.previousElementSibling; if (prev) list.insertBefore(row, prev); renumberReelRows(); }
+    else if (btn.classList.contains('r-down')) { var next = row.nextElementSibling; if (next) list.insertBefore(next, row); renumberReelRows(); }
+    else if (btn.classList.contains('r-del')) { row.remove(); renumberReelRows(); }
+    else if (btn.classList.contains('r-up-video')) pickReelFile(row.querySelector('.r-video'), 'video/mp4,video/webm,video/quicktime');
+    else if (btn.classList.contains('r-lib-video')) openMediaLibrary(function (src) { row.querySelector('.r-video').value = src; });
+    else if (btn.classList.contains('r-up-poster')) pickReelFile(row.querySelector('.r-poster'), 'image/*');
+    else if (btn.classList.contains('r-lib-poster')) openMediaLibrary(function (src) { row.querySelector('.r-poster').value = src; });
+  });
+  $('vReelAdd').addEventListener('click', function () {
+    var div = document.createElement('div');
+    div.innerHTML = reelRowHtml({});
+    list.appendChild(div.firstChild);
+    renumberReelRows();
+  });
+}
 function imgPickHtml(prefix, label, value, help) {
   var opts = '';
   if (value && assetImages.indexOf(value) < 0) opts += '<option value="' + esc(value) + '" selected>' + esc(value) + '</option>';
@@ -1251,15 +1322,27 @@ function openVisualEditor(key) {
       });
     };
   } else if (key === 'reels') {
-    html = vHead('Video reels', 'This section shows your "Moments in motion" vertical videos.') +
+    var startReels = (c.reelsList && c.reelsList.length) ? c.reelsList : DEFAULT_REELS_ADMIN;
+    html = vHead('Video reels', 'This section shows your "Moments in motion" vertical videos. Add a new video, remove one, change the order or edit the words here. Your shop updates when you save.') +
       '<label for="v-reels-h">Reels section heading</label><input type="text" id="v-reels-h" value="' + esc(c.reelsHeading || 'Moments in motion') + '">' +
+      '<div id="vReelsList">' + startReels.map(reelRowHtml).join('') + '</div>' +
+      '<p style="margin:14px 0 4px"><button type="button" class="btn btn-light" id="vReelAdd">+ Add a reel</button></p>' +
       vSectionToggle('reels') + vSaveRow('SAVE REELS');
     wire = function () {
+      wireReelsPanel();
       $('vSave').addEventListener('click', function () {
+        var list = Array.prototype.map.call(document.querySelectorAll('#vReelsList .reel-row'), function (row) {
+          return {
+            video: row.querySelector('.r-video').value.trim(),
+            poster: row.querySelector('.r-poster').value.trim(),
+            caption: row.querySelector('.r-caption').value.trim(),
+            pid: row.querySelector('.r-pid').value
+          };
+        }).filter(function (r) { return r.video || r.poster; });
         vSaveSettings({
-          content: { reelsHeading: $('v-reels-h').value.trim() },
+          content: { reelsHeading: $('v-reels-h').value.trim(), reelsList: list },
           sections: { reels: $('v-sec').checked }
-        }, 'Saved! Video reels heading is updated in your shop.');
+        }, 'Saved! Your video reels are updated in your shop.');
       });
     };
   } else if (key === 'newsletter') {
