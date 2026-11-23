@@ -404,6 +404,17 @@ if (str_starts_with($route, 'admin/')) {
         sendJson(200, ['ok' => true, 'products' => AuveStorage::getProducts()]);
     }
 
+    // PUT api/admin/products/reorder
+    if ($route === 'admin/products/reorder' && $method === 'PUT') {
+        $body = getJsonBody();
+        $ids = $body['ids'] ?? [];
+        if (!is_array($ids) || empty($ids)) {
+            sendJson(400, ['ok' => false, 'error' => 'Product IDs array required.']);
+        }
+        $reordered = AuveStorage::reorderProducts($ids);
+        sendJson(200, ['ok' => true, 'products' => $reordered]);
+    }
+
     // POST api/admin/products
     if ($route === 'admin/products' && $method === 'POST') {
         $body = getJsonBody();

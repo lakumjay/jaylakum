@@ -175,6 +175,41 @@ class AuveStorage {
         return true;
     }
 
+    public static function reorderProducts(array $orderedIds): array {
+        self::init();
+        $products = self::getProducts();
+        $byId = [];
+        foreach ($products as $p) $byId[$p['id']] = $p;
+
+        $newOrder = [];
+        $sortOrder = 1;
+
+        foreach ($orderedIds as $id) {
+            if (isset($byId[$id])) {
+                $newOrder[] = $byId[$id];
+                if (self::$usingDatabase && self::$pdo) {
+                    try {
+                        $st = self::$pdo->prepare("UPDATE auve_products SET sort_order = :ord WHERE id = :id");
+                        $st->execute([':ord' => $sortOrder++, ':id' => $id]);
+                    } catch (Throwable $e) {}
+                }
+                unset($byId[$id]);
+            }
+        }
+        foreach ($byId as $id => $p) {
+            $newOrder[] = $p;
+            if (self::$usingDatabase && self::$pdo) {
+                try {
+                    $st = self::$pdo->prepare("UPDATE auve_products SET sort_order = :ord WHERE id = :id");
+                    $st->execute([':ord' => $sortOrder++, ':id' => $id]);
+                } catch (Throwable $e) {}
+            }
+        }
+
+        self::writeJsonAtomic(self::$dataDir . '/products.json', $newOrder);
+        return $newOrder;
+    }
+
     // -------------------------------------------------------------
     // SETTINGS
     // -------------------------------------------------------------

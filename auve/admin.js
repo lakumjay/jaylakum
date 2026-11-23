@@ -108,22 +108,147 @@ function loadProducts() {
 function renderProductList() {
   var el = $('productList');
   if (!products.length) { el.innerHTML = '<p class="help">No products yet. Press the green button above to add your first product.</p>'; return; }
-  el.innerHTML = products.map(function (p) {
+  
+  el.innerHTML = products.map(function (p, idx) {
     var img = p.cover || (p.variants[0] && p.variants[0].imgs[0]) || '';
-    return '<div class="prod-row">' +
+    var isTop = idx === 0;
+    var isLast = idx === products.length - 1;
+    return '<div class="prod-row draggable" draggable="true" data-id="' + esc(p.id) + '" data-idx="' + idx + '">' +
+      '<div class="drag-handle" title="Drag and drop to reorder">⋮⋮</div>' +
+      '<span class="pos-badge ' + (isTop ? 'top-one' : '') + '">#' + (idx + 1) + '</span>' +
       (img ? '<img src="' + esc(img) + '" alt="">' : '') +
-      '<div class="grow"><div class="prod-name">' + esc(p.name) + '</div>' +
+      '<div class="grow"><div class="prod-name">' + esc(p.name) + (p.tag ? ' <span style="font-size:12px; font-weight:normal; background:#FAF5EB; border:1px solid #D8CDB4; padding:2px 6px; border-radius:3px; margin-left:6px">' + esc(p.tag) + '</span>' : '') + '</div>' +
       '<div class="prod-meta">' + esc(COLL_NAMES[p.coll] || p.coll) + ' · ' + esc(p.type) + ' · ' + inr(p.price) + '</div></div>' +
+      '<div class="order-btn-group">' +
+        (isTop ? '' : '<button type="button" class="btn-order btn-top" data-move-top="' + esc(p.id) + '" title="Make this the 1st product on homepage">🔝 Top</button>') +
+        (idx > 0 ? '<button type="button" class="btn-order btn-up" data-move-up="' + esc(p.id) + '" title="Move Up">▲</button>' : '') +
+        (!isLast ? '<button type="button" class="btn-order btn-down" data-move-down="' + esc(p.id) + '" title="Move Down">▼</button>' : '') +
+        (!isLast ? '<button type="button" class="btn-order btn-bottom" data-move-bottom="' + esc(p.id) + '" title="Move to Bottom">🔻</button>' : '') +
+      '</div>' +
       '<button class="btn btn-light btn-small" data-edit="' + esc(p.id) + '">Edit</button>' +
       '<button class="btn btn-danger btn-small" data-del="' + esc(p.id) + '">Delete</button>' +
       '</div>';
   }).join('');
+
+  // Wire edit and delete
   el.querySelectorAll('[data-edit]').forEach(function (b) { b.addEventListener('click', function () { openEditor(b.dataset.edit); }); });
   el.querySelectorAll('[data-del]').forEach(function (b) {
     b.addEventListener('click', function () {
       if (b.dataset.confirm) { deleteProduct(b.dataset.del); }
       else { b.dataset.confirm = '1'; b.textContent = 'Really delete? Press again to confirm'; setTimeout(function () { delete b.dataset.confirm; b.textContent = 'Delete'; }, 4000); }
     });
+  });
+
+  // Wire instant reorder buttons
+  el.querySelectorAll('[data-move-top]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var id = b.dataset.moveTop;
+      var curIdx = products.findIndex(function (x) { return x.id === id; });
+      if (curIdx > 0) {
+        var item = products.splice(curIdx, 1)[0];
+        products.unshift(item);
+        persistProductOrder('Moved "' + item.name + '" to position #1 (Top of shop)!');
+      }
+    });
+  });
+
+  el.querySelectorAll('[data-move-up]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var id = b.dataset.moveUp;
+      var curIdx = products.findIndex(function (x) { return x.id === id; });
+      if (curIdx > 0) {
+        var temp = products[curIdx];
+        products[curIdx] = products[curIdx - 1];
+        products[curIdx - 1] = temp;
+        persistProductOrder('Moved "' + temp.name + '" up to #' + curIdx);
+      }
+    });
+  });
+
+  el.querySelectorAll('[data-move-down]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var id = b.dataset.moveDown;
+      var curIdx = products.findIndex(function (x) { return x.id === id; });
+      if (curIdx !== -1 && curIdx < products.length - 1) {
+        var temp = products[curIdx];
+        products[curIdx] = products[curIdx + 1];
+        products[curIdx + 1] = temp;
+        persistProductOrder('Moved "' + temp.name + '" down to #' + (curIdx + 2));
+      }
+    });
+  });
+
+  el.querySelectorAll('[data-move-bottom]').forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var id = b.dataset.moveBottom;
+      var curIdx = products.findIndex(function (x) { return x.id === id; });
+      if (curIdx !== -1 && curIdx < products.length - 1) {
+        var item = products.splice(curIdx, 1)[0];
+        products.push(item);
+        persistProductOrder('Moved "' + item.name + '" to bottom of shop.');
+      }
+    });
+  });
+
+  // Wire HTML5 Drag & Drop
+  var draggedRow = null;
+  var rows = el.querySelectorAll('.prod-row.draggable');
+  rows.forEach(function (row) {
+    row.addEventListener('dragstart', function (e) {
+      draggedRow = row;
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', row.dataset.id);
+    });
+    row.addEventListener('dragover', function (e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      if (draggedRow && draggedRow !== row) {
+        row.classList.add('drag-over');
+      }
+    });
+    row.addEventListener('dragleave', function () {
+      row.classList.remove('drag-over');
+    });
+    row.addEventListener('drop', function (e) {
+      e.preventDefault();
+      row.classList.remove('drag-over');
+      if (draggedRow && draggedRow !== row) {
+        var fromId = draggedRow.dataset.id;
+        var toId = row.dataset.id;
+        var fromIdx = products.findIndex(function (x) { return x.id === fromId; });
+        var toIdx = products.findIndex(function (x) { return x.id === toId; });
+        if (fromIdx !== -1 && toIdx !== -1) {
+          var item = products.splice(fromIdx, 1)[0];
+          products.splice(toIdx, 0, item);
+          persistProductOrder('Moved "' + item.name + '" to position #' + (toIdx + 1));
+        }
+      }
+    });
+    row.addEventListener('dragend', function () {
+      row.classList.remove('dragging');
+      rows.forEach(function (r) { r.classList.remove('drag-over'); });
+      draggedRow = null;
+    });
+  });
+}
+
+function persistProductOrder(successMsg) {
+  var ids = products.map(function (p) { return p.id; });
+  renderProductList();
+  showMsg($('prodMsg'), 'Saving new order to database...', true);
+  api('PUT', '/api/admin/products/reorder', { ids: ids }).then(function (d) {
+    if (d.products) products = d.products;
+    renderProductList();
+    showMsg($('prodMsg'), successMsg || 'New product order saved in database!', true);
+    refreshVisualPreview();
+  }).catch(function (err) {
+    showMsg($('prodMsg'), 'Failed to save order: ' + err.message, false);
+    loadProducts();
   });
 }
 function deleteProduct(id) {
@@ -457,10 +582,16 @@ function syncColor(pickerId, textId) {
 function setColor(pickerId, textId, val) { $(textId).value = val || ''; if (/^#[0-9a-fA-F]{6}$/.test(val || '')) $(pickerId).value = val; }
 function fillLook() {
   var d = settings.design || {};
+  var c = settings.content || {};
   setColor('d-bg-picker', 'd-bg', d.backgroundColor);
   setColor('d-ink-picker', 'd-ink', d.primaryColor);
   setColor('d-btn-picker', 'd-btn', d.buttonColor);
   setColor('d-btnink-picker', 'd-btnink', d.buttonTextColor);
+  if ($('d-btnshape')) $('d-btnshape').value = d.buttonShape || 'pill';
+  if ($('d-btnsize')) $('d-btnsize').value = d.buttonSize || 'normal';
+  if ($('d-btn-shopall')) $('d-btn-shopall').value = c.btnShopAllText || 'Shop all pairs';
+  if ($('d-btn-addbag')) $('d-btn-addbag').value = c.btnAddToBagText || 'Add to cart';
+  if ($('d-btn-buynow')) $('d-btn-buynow').value = c.btnBuyNowText || 'Buy now';
   $('d-font').value = d.fontPreset || 'classic';
   $('d-hsize').value = d.headingSize == null ? '' : d.headingSize;
   $('d-bsize').value = d.bodySize == null ? '' : d.bodySize;
@@ -471,26 +602,60 @@ function saveLook() {
     primaryColor: $('d-ink').value.trim(),
     buttonColor: $('d-btn').value.trim(),
     buttonTextColor: $('d-btnink').value.trim(),
+    buttonShape: $('d-btnshape') ? $('d-btnshape').value : 'pill',
+    buttonSize: $('d-btnsize') ? $('d-btnsize').value : 'normal',
     fontPreset: $('d-font').value,
     headingSize: $('d-hsize').value === '' ? null : Number($('d-hsize').value),
     bodySize: $('d-bsize').value === '' ? null : Number($('d-bsize').value)
   };
-  api('PUT', '/api/admin/settings', { settings: { design: design } }).then(function (d) {
+  var content = {
+    btnShopAllText: $('d-btn-shopall') ? $('d-btn-shopall').value.trim() : 'Shop all pairs',
+    btnAddToBagText: $('d-btn-addbag') ? $('d-btn-addbag').value.trim() : 'Add to cart',
+    btnBuyNowText: $('d-btn-buynow') ? $('d-btn-buynow').value.trim() : 'Buy now'
+  };
+  api('PUT', '/api/admin/settings', { settings: { design: design, content: content } }).then(function (d) {
     settings = d.settings;
-    showMsg($('lookMsg'), 'Saved! Your shop now uses the new look. Open "See my shop" to check it.', true);
+    showMsg($('lookMsg'), 'Saved! Your shop now uses the new look and button styling.', true);
     refreshVisualPreview();
   }).catch(function (e) { showMsg($('lookMsg'), e.message, false); });
 }
 function fillWriting() {
   var c = settings.content || {};
+  var s = settings.sections || {};
   $('c-ann-on').checked = c.announcementOn !== false;
   $('c-ann').value = c.announcementText || '';
+  if ($('c-ann-link')) $('c-ann-link').value = c.announcementLink || '';
+  if ($('c-ann-bg')) setColor('c-ann-bg-picker', 'c-ann-bg', c.announcementBg || '#1B1A34');
+  if ($('c-ann-color')) setColor('c-ann-color-picker', 'c-ann-color', c.announcementColor || '#FFFFFF');
+  if ($('c-ann-code')) $('c-ann-code').value = c.announcementPromoCode || 'WELCOME10';
+
   $('c-h1').value = c.heroHeading1 || '';
   $('c-h2').value = c.heroHeading2 || '';
   $('c-hdesk').value = c.heroDesktopImage || '';
   $('c-hmob').value = c.heroMobileImage || '';
   $('c-fest').value = c.festiveHeading || '';
   $('c-best').value = c.bestsellersHeading || '';
+
+  // Newsletter
+  if ($('c-nl-on')) $('c-nl-on').checked = s.newsletter !== false;
+  if ($('c-nl-h')) $('c-nl-h').value = c.newsletterHeading || 'Get 10% off';
+  if ($('c-nl-p')) $('c-nl-p').value = c.newsletterText || 'New drops, restock alerts and early access to offers, straight to your inbox. 10% off your first order.';
+  if ($('c-nl-place')) $('c-nl-place').value = c.newsletterPlaceholder || 'Your mobile number';
+  if ($('c-nl-btn')) $('c-nl-btn').value = c.newsletterButton || 'Subscribe';
+  if ($('c-nl-code')) $('c-nl-code').value = c.newsletterCode || 'WELCOME10';
+
+  // Craft video banner
+  if ($('c-craft-on')) $('c-craft-on').checked = s.craftBanner !== false;
+  if ($('c-craft-h')) $('c-craft-h').value = c.craftHeading || 'Handcrafted. Comfort first.';
+  if ($('c-craft-sub')) $('c-craft-sub').value = c.craftSubheading || 'From our hands, to your feet';
+  if ($('c-craft-btn')) $('c-craft-btn').value = c.craftBtnText || 'Shop all pairs';
+  if ($('c-craft-link')) $('c-craft-link').value = c.craftBtnLink || '#/shop';
+  if ($('c-craft-vid')) $('c-craft-vid').value = c.craftVideo || 'assets/banner2.mp4';
+
+  // Reels
+  if ($('c-reels-on')) $('c-reels-on').checked = s.reels !== false;
+  if ($('c-reels-h')) $('c-reels-h').value = c.reelsHeading || 'Moments in motion';
+
   updateMediaPreview($('c-hdesk'), $('prev-hdesk'), $('empty-hdesk'));
   updateMediaPreview($('c-hmob'), $('prev-hmob'), $('empty-hmob'));
 }
@@ -498,16 +663,36 @@ function saveWriting() {
   var content = {
     announcementOn: $('c-ann-on').checked,
     announcementText: $('c-ann').value.trim(),
+    announcementLink: $('c-ann-link') ? $('c-ann-link').value.trim() : '',
+    announcementBg: $('c-ann-bg') ? $('c-ann-bg').value.trim() : '',
+    announcementColor: $('c-ann-color') ? $('c-ann-color').value.trim() : '',
+    announcementPromoCode: $('c-ann-code') ? $('c-ann-code').value.trim() : '',
     heroHeading1: $('c-h1').value.trim(),
     heroHeading2: $('c-h2').value.trim(),
     heroDesktopImage: $('c-hdesk').value.trim(),
     heroMobileImage: $('c-hmob').value.trim(),
     festiveHeading: $('c-fest').value.trim(),
-    bestsellersHeading: $('c-best').value.trim()
+    bestsellersHeading: $('c-best').value.trim(),
+    newsletterHeading: $('c-nl-h') ? $('c-nl-h').value.trim() : 'Get 10% off',
+    newsletterText: $('c-nl-p') ? $('c-nl-p').value.trim() : '',
+    newsletterPlaceholder: $('c-nl-place') ? $('c-nl-place').value.trim() : '',
+    newsletterButton: $('c-nl-btn') ? $('c-nl-btn').value.trim() : 'Subscribe',
+    newsletterCode: $('c-nl-code') ? $('c-nl-code').value.trim() : 'WELCOME10',
+    craftHeading: $('c-craft-h') ? $('c-craft-h').value.trim() : 'Handcrafted. Comfort first.',
+    craftSubheading: $('c-craft-sub') ? $('c-craft-sub').value.trim() : 'From our hands, to your feet',
+    craftBtnText: $('c-craft-btn') ? $('c-craft-btn').value.trim() : 'Shop all pairs',
+    craftBtnLink: $('c-craft-link') ? $('c-craft-link').value.trim() : '#/shop',
+    craftVideo: $('c-craft-vid') ? $('c-craft-vid').value.trim() : 'assets/banner2.mp4',
+    reelsHeading: $('c-reels-h') ? $('c-reels-h').value.trim() : 'Moments in motion'
   };
-  api('PUT', '/api/admin/settings', { settings: { content: content } }).then(function (d) {
+  var sections = {};
+  if ($('c-nl-on')) sections.newsletter = $('c-nl-on').checked;
+  if ($('c-craft-on')) sections.craftBanner = $('c-craft-on').checked;
+  if ($('c-reels-on')) sections.reels = $('c-reels-on').checked;
+
+  api('PUT', '/api/admin/settings', { settings: { content: content, sections: sections } }).then(function (d) {
     settings = d.settings;
-    showMsg($('writingMsg'), 'Saved! The new words are now in your shop.', true);
+    showMsg($('writingMsg'), 'Saved! The new words and sections are now updated in your shop and database.', true);
     refreshVisualPreview();
   }).catch(function (e) { showMsg($('writingMsg'), e.message, false); });
 }
@@ -938,15 +1123,31 @@ function openVisualEditor(key) {
   var wire = function () {};
 
   if (key === 'announcement') {
-    html = vHead('The thin strip at the very top', 'This strip sits above everything and shows on every page of your shop.') +
-      '<label for="v-ann">Words on the top strip</label><input type="text" id="v-ann" value="' + esc(c.announcementText || '') + '">' +
-      '<p class="field-help">Keep it short, one line.</p>' +
+    html = vHead('The thin strip at the very top (Offer & Announcement Bar)', 'This strip sits above everything and shows on every page of your shop.') +
+      '<label for="v-ann">Words on the top strip (Offer text)</label><input type="text" id="v-ann" value="' + esc(c.announcementText || '') + '">' +
+      '<label for="v-ann-link">Banner link (optional)</label><input type="text" id="v-ann-link" value="' + esc(c.announcementLink || '') + '" placeholder="Example: #/shop">' +
+      vColorRow('v-ann-bg', 'Banner background colour', c.announcementBg || '#1B1A34', 'Background colour for the offer bar.') +
+      vColorRow('v-ann-color', 'Banner text colour', c.announcementColor || '#FFFFFF', 'Text colour for the offer bar.') +
+      '<label for="v-ann-code">Offer / Coupon Code</label><input type="text" id="v-ann-code" value="' + esc(c.announcementPromoCode || 'WELCOME10') + '">' +
       '<div class="toggle-row"><div class="grow"><b>Show the top strip</b><br><span class="field-help" style="margin:0">Turn this off to hide the strip completely.</span></div>' +
       '<label class="switch"><input type="checkbox" id="v-ann-on"' + (c.announcementOn !== false ? ' checked' : '') + '><span class="track"></span></label></div>' +
       vSaveRow('SAVE');
     wire = function () {
+      [['v-ann-bg-picker', 'v-ann-bg'], ['v-ann-color-picker', 'v-ann-color']].forEach(function (pair) {
+        setColor(pair[0], pair[1], $(pair[1]).value);
+        syncColor(pair[0], pair[1]);
+      });
       $('vSave').addEventListener('click', function () {
-        vSaveSettings({ content: { announcementText: $('v-ann').value.trim(), announcementOn: $('v-ann-on').checked } }, 'Saved! The top strip now shows your new words.');
+        vSaveSettings({
+          content: {
+            announcementText: $('v-ann').value.trim(),
+            announcementLink: $('v-ann-link').value.trim(),
+            announcementBg: $('v-ann-bg').value.trim(),
+            announcementColor: $('v-ann-color').value.trim(),
+            announcementPromoCode: $('v-ann-code').value.trim(),
+            announcementOn: $('v-ann-on').checked
+          }
+        }, 'Saved! The top offer banner is updated in your shop.');
       });
     };
   } else if (key === 'hero' || key === 'heroHeading') {
@@ -1005,18 +1206,60 @@ function openVisualEditor(key) {
         vSaveSettings(part, 'Saved!');
       });
     };
-  } else if (key === 'craftBanner' || key === 'reels' || key === 'newsletter') {
-    var info = {
-      craftBanner: ['Craft video banner', 'This part plays your craft video next to the words "Handcrafted. Comfort first." The video and its words are part of the shop design. If you would like them changed, please ask your developer.'],
-      reels: ['Video reels', 'This part shows your "Moments in motion" videos. The videos are set up by your developer from your product videos.'],
-      newsletter: ['Newsletter box', 'Customers type their email address here to hear about new pairs and offers. The words in this box are part of the shop design.']
-    }[key];
-    html = vHead(info[0], info[1]) + vSectionToggle(key) + vSaveRow('SAVE');
+  } else if (key === 'craftBanner') {
+    html = vHead('Craft video banner', 'This section plays your brand craft video next to your headline and "Shop all" button.') +
+      '<label for="v-craft-h">Big headline</label><input type="text" id="v-craft-h" value="' + esc(c.craftHeading || 'Handcrafted. Comfort first.') + '">' +
+      '<label for="v-craft-sub">Subheading</label><input type="text" id="v-craft-sub" value="' + esc(c.craftSubheading || 'From our hands, to your feet') + '">' +
+      '<label for="v-craft-btn">Button label</label><input type="text" id="v-craft-btn" value="' + esc(c.craftBtnText || 'Shop all pairs') + '">' +
+      '<label for="v-craft-link">Button link</label><input type="text" id="v-craft-link" value="' + esc(c.craftBtnLink || '#/shop') + '">' +
+      '<label for="v-craft-vid">Craft video file</label><input type="text" id="v-craft-vid" value="' + esc(c.craftVideo || 'assets/banner2.mp4') + '">' +
+      vSectionToggle('craftBanner') + vSaveRow('SAVE CRAFT BANNER');
     wire = function () {
       $('vSave').addEventListener('click', function () {
-        var part = { sections: {} };
-        part.sections[key] = $('v-sec').checked;
-        vSaveSettings(part, 'Saved!');
+        vSaveSettings({
+          content: {
+            craftHeading: $('v-craft-h').value.trim(),
+            craftSubheading: $('v-craft-sub').value.trim(),
+            craftBtnText: $('v-craft-btn').value.trim(),
+            craftBtnLink: $('v-craft-link').value.trim(),
+            craftVideo: $('v-craft-vid').value.trim()
+          },
+          sections: { craftBanner: $('v-sec').checked }
+        }, 'Saved! Craft video banner is updated in your shop.');
+      });
+    };
+  } else if (key === 'reels') {
+    html = vHead('Video reels', 'This section shows your "Moments in motion" vertical videos.') +
+      '<label for="v-reels-h">Reels section heading</label><input type="text" id="v-reels-h" value="' + esc(c.reelsHeading || 'Moments in motion') + '">' +
+      vSectionToggle('reels') + vSaveRow('SAVE REELS');
+    wire = function () {
+      $('vSave').addEventListener('click', function () {
+        vSaveSettings({
+          content: { reelsHeading: $('v-reels-h').value.trim() },
+          sections: { reels: $('v-sec').checked }
+        }, 'Saved! Video reels heading is updated in your shop.');
+      });
+    };
+  } else if (key === 'newsletter') {
+    html = vHead('Newsletter & Discount Box', 'Customers enter their mobile number or email here to receive their 10% first-order discount code.') +
+      '<label for="v-nl-h">Headline</label><input type="text" id="v-nl-h" value="' + esc(c.newsletterHeading || 'Get 10% off') + '">' +
+      '<label for="v-nl-p">Description text</label><textarea id="v-nl-p">' + esc(c.newsletterText || 'New drops, restock alerts and early access to offers, straight to your inbox. 10% off your first order.') + '</textarea>' +
+      '<label for="v-nl-place">Input box placeholder text</label><input type="text" id="v-nl-place" value="' + esc(c.newsletterPlaceholder || 'Your mobile number') + '">' +
+      '<label for="v-nl-btn">Button text</label><input type="text" id="v-nl-btn" value="' + esc(c.newsletterButton || 'Subscribe') + '">' +
+      '<label for="v-nl-code">Promo coupon code</label><input type="text" id="v-nl-code" value="' + esc(c.newsletterCode || 'WELCOME10') + '">' +
+      vSectionToggle('newsletter') + vSaveRow('SAVE NEWSLETTER');
+    wire = function () {
+      $('vSave').addEventListener('click', function () {
+        vSaveSettings({
+          content: {
+            newsletterHeading: $('v-nl-h').value.trim(),
+            newsletterText: $('v-nl-p').value.trim(),
+            newsletterPlaceholder: $('v-nl-place').value.trim(),
+            newsletterButton: $('v-nl-btn').value.trim(),
+            newsletterCode: $('v-nl-code').value.trim()
+          },
+          sections: { newsletter: $('v-sec').checked }
+        }, 'Saved! Newsletter box is updated in your shop.');
       });
     };
   } else if (key === 'footer') {
@@ -1087,13 +1330,14 @@ $('saveLookBtn').addEventListener('click', saveLook);
 $('saveWritingBtn').addEventListener('click', saveWriting);
 $('saveSectionsBtn').addEventListener('click', saveSections);
 $('refreshOrdersBtn').addEventListener('click', loadOrders);
-[['d-bg-picker', 'd-bg'], ['d-ink-picker', 'd-ink'], ['d-btn-picker', 'd-btn'], ['d-btnink-picker', 'd-btnink']].forEach(function (pair) { syncColor(pair[0], pair[1]); });
+[['d-bg-picker', 'd-bg'], ['d-ink-picker', 'd-ink'], ['d-btn-picker', 'd-btn'], ['d-btnink-picker', 'd-btnink'], ['c-ann-bg-picker', 'c-ann-bg'], ['c-ann-color-picker', 'c-ann-color']].forEach(function (pair) { if ($(pair[0]) && $(pair[1])) syncColor(pair[0], pair[1]); });
 
 /* Setup Photo & Video Controls */
 setupMediaField('f-cover', 'prev-cover', 'empty-cover', 'up-cover', 'lib-cover', 'del-cover');
 setupMediaField('f-cover2', 'prev-cover2', 'empty-cover2', 'up-cover2', 'lib-cover2', 'del-cover2');
 setupMediaField('c-hdesk', 'prev-hdesk', 'empty-hdesk', 'up-hdesk', 'lib-hdesk');
 setupMediaField('c-hmob', 'prev-hmob', 'empty-hmob', 'up-hmob', 'lib-hmob');
+setupMediaField('c-craft-vid', null, null, 'up-craftvid', 'lib-craftvid');
 $('closeMediaModal').addEventListener('click', closeMediaLibrary);
 $('cancelMediaModal').addEventListener('click', closeMediaLibrary);
 

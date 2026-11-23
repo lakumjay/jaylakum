@@ -113,7 +113,7 @@
   .gallery-add-card:hover { background: #F3EBD9; }
   .gallery-add-card input[type="file"] { display: none; }
 
-  /* media library modal */
+  /* ---- media library modal ---- */
   .modal-overlay { position: fixed; inset: 0; background: rgba(27,26,52,0.65); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(2px); }
   .modal-box { background: #FAF6F0; border-radius: 14px; max-width: 760px; width: 100%; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
   .modal-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #E6DEC8; background: #FFF; }
@@ -124,6 +124,21 @@
   .media-grid-item:hover { border-color: #B98E4F; transform: scale(1.02); }
   .media-grid-item img, .media-grid-item video { width: 100%; height: 100%; object-fit: cover; }
   .modal-foot { padding: 12px 20px; border-top: 1px solid #E6DEC8; background: #FFF; display: flex; justify-content: flex-end; }
+
+  /* ---- drag & drop product reordering & top button ---- */
+  .prod-row { cursor: default; transition: background 0.15s, transform 0.15s, box-shadow 0.15s; }
+  .prod-row.draggable { cursor: grab; }
+  .prod-row.dragging { opacity: 0.35; background: #FFF4E5 !important; border: 2px dashed #B98E4F; }
+  .prod-row.drag-over { border-top: 3px solid #2d7a46; background: #EDF7EE !important; }
+  .drag-handle { cursor: grab; font-size: 22px; color: #9C8E82; padding: 4px 8px; user-select: none; line-height: 1; display: flex; align-items: center; }
+  .drag-handle:hover { color: #1B1A34; }
+  .pos-badge { font-weight: 800; font-size: 13px; color: #1B1A34; background: #EAE1D1; border-radius: 999px; padding: 4px 10px; min-width: 32px; text-align: center; display: inline-block; }
+  .pos-badge.top-one { background: #2d7a46; color: #FFF; }
+  .order-btn-group { display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .btn-order { background: #F3EFEA; border: 1.5px solid #D8CDB4; color: #1B1A34; padding: 6px 9px; font-size: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.15s; line-height: 1; }
+  .btn-order:hover { background: #E6DEC8; border-color: #B98E4F; }
+  .btn-order.btn-top { background: #2d7a46; color: #FFF; border-color: #246338; }
+  .btn-order.btn-top:hover { background: #246338; }
 </style>
 </head>
 <body>
@@ -349,6 +364,31 @@
         </div>
         <p class="field-help">The writing on those buttons. It should be easy to read against the button colour.</p>
 
+        <label for="d-btnshape">Button Shape / Style</label>
+        <select id="d-btnshape">
+          <option value="pill">Pill (999px — Classic Round)</option>
+          <option value="rounded">Soft Rounded (8px — Modern)</option>
+          <option value="boxy">Boxy / Sharp (2px — Crisp Clean)</option>
+        </select>
+        <p class="field-help">Choose how round the buttons look across your store.</p>
+
+        <label for="d-btnsize">Button Size</label>
+        <select id="d-btnsize">
+          <option value="normal">Normal (Standard)</option>
+          <option value="compact">Compact (Slightly smaller)</option>
+          <option value="large">Large (Bold &amp; prominent)</option>
+        </select>
+        <p class="field-help">Choose button padding and text size.</p>
+
+        <label for="d-btn-shopall">"Shop all" button label</label>
+        <input type="text" id="d-btn-shopall" placeholder="Shop all pairs">
+
+        <label for="d-btn-addbag">"Add to bag / cart" button label</label>
+        <input type="text" id="d-btn-addbag" placeholder="Add to cart">
+
+        <label for="d-btn-buynow">"Buy now" button label</label>
+        <input type="text" id="d-btn-buynow" placeholder="Buy now">
+
         <label for="d-font">Writing style</label>
         <select id="d-font">
           <option value="classic">Classic — the current AUVÉ look</option>
@@ -377,14 +417,33 @@
         <p class="help">Change the words at the top of the shop and on the homepage. No code needed — type the new words and save.</p>
         <div id="writingMsg"></div>
 
-        <h3>The thin strip at the very top</h3>
+        <h3>The thin strip at the very top (Offer &amp; Announcement Banner)</h3>
         <div class="toggle-row" style="border:none; padding-top:0">
-          <div class="grow"><b>Show the top strip</b><br><span class="field-help" style="margin:0">The thin dark line above everything, seen on every page.</span></div>
+          <div class="grow"><b>Show the top strip</b><br><span class="field-help" style="margin:0">The thin line above everything, seen on every page.</span></div>
           <label class="switch"><input type="checkbox" id="c-ann-on"><span class="track"></span></label>
         </div>
-        <label for="c-ann">Words on the top strip</label>
+        <label for="c-ann">Words on the top strip (Offer text)</label>
         <input type="text" id="c-ann" placeholder="Example: Free shipping across India on all orders">
         <p class="field-help">Keep it short — one line.</p>
+
+        <label for="c-ann-link">Banner link (optional)</label>
+        <input type="text" id="c-ann-link" placeholder="Example: #/shop">
+        <p class="field-help">Where the customer goes when they tap the top banner.</p>
+
+        <label>Banner background colour</label>
+        <div class="color-row">
+          <input type="color" id="c-ann-bg-picker">
+          <div><input type="text" id="c-ann-bg" placeholder="#1B1A34"></div>
+        </div>
+
+        <label>Banner text colour</label>
+        <div class="color-row">
+          <input type="color" id="c-ann-color-picker">
+          <div><input type="text" id="c-ann-color" placeholder="#FFFFFF"></div>
+        </div>
+
+        <label for="c-ann-code">Offer / Coupon Code (e.g. WELCOME10)</label>
+        <input type="text" id="c-ann-code" placeholder="WELCOME10">
 
         <h3>The big photo on the homepage</h3>
         <label for="c-h1">Big heading, first line</label>
@@ -434,6 +493,57 @@
         <input type="text" id="c-fest" placeholder="Example: Festive collection">
         <label for="c-best">Bestsellers row heading</label>
         <input type="text" id="c-best" placeholder="Example: Bestsellers">
+
+        <h3>Newsletter &amp; First Order Discount Box</h3>
+        <div class="toggle-row" style="border:none; padding-top:0">
+          <div class="grow"><b>Show Newsletter Box</b><br><span class="field-help" style="margin:0">Shows the newsletter subscription box on the homepage.</span></div>
+          <label class="switch"><input type="checkbox" id="c-nl-on"><span class="track"></span></label>
+        </div>
+        <label for="c-nl-h">Newsletter headline</label>
+        <input type="text" id="c-nl-h" placeholder="Get 10% off">
+        <label for="c-nl-p">Newsletter description text</label>
+        <textarea id="c-nl-p" placeholder="New drops, restock alerts and early access to offers, straight to your inbox. 10% off your first order."></textarea>
+        <label for="c-nl-place">Input box placeholder text</label>
+        <input type="text" id="c-nl-place" placeholder="Your mobile number">
+        <label for="c-nl-btn">Subscribe button text</label>
+        <input type="text" id="c-nl-btn" placeholder="Subscribe">
+        <label for="c-nl-code">Promo coupon code</label>
+        <input type="text" id="c-nl-code" placeholder="WELCOME10">
+
+        <h3>Craft Video Banner</h3>
+        <div class="toggle-row" style="border:none; padding-top:0">
+          <div class="grow"><b>Show Craft Video Banner</b></div>
+          <label class="switch"><input type="checkbox" id="c-craft-on"><span class="track"></span></label>
+        </div>
+        <label for="c-craft-h">Craft headline</label>
+        <input type="text" id="c-craft-h" placeholder="Handcrafted. Comfort first.">
+        <label for="c-craft-sub">Craft subheading</label>
+        <input type="text" id="c-craft-sub" placeholder="From our hands, to your feet">
+        <label for="c-craft-btn">Button label</label>
+        <input type="text" id="c-craft-btn" placeholder="Shop all pairs">
+        <label for="c-craft-link">Button link</label>
+        <input type="text" id="c-craft-link" placeholder="#/shop">
+        <label>Craft video file</label>
+        <div class="media-box" id="box-craftvid">
+          <div class="media-content">
+            <input type="text" id="c-craft-vid" placeholder="Example: assets/banner2.mp4">
+            <div class="media-btn-row">
+              <label class="btn-upload">
+                🎥 Upload Video
+                <input type="file" id="up-craftvid" accept="video/mp4,video/webm">
+              </label>
+              <button type="button" class="btn btn-light btn-small" id="lib-craftvid">Choose from Library</button>
+            </div>
+          </div>
+        </div>
+
+        <h3>Video Reels</h3>
+        <div class="toggle-row" style="border:none; padding-top:0">
+          <div class="grow"><b>Show Video Reels</b></div>
+          <label class="switch"><input type="checkbox" id="c-reels-on"><span class="track"></span></label>
+        </div>
+        <label for="c-reels-h">Reels heading</label>
+        <input type="text" id="c-reels-h" placeholder="Moments in motion">
 
         <p style="margin-top:24px"><button class="btn btn-green" id="saveWritingBtn" style="font-size:19px; padding:16px 38px">SAVE WRITING</button></p>
       </div>
@@ -568,6 +678,6 @@
   </div>
 </div>
 
-<script src="admin.js?v=20261123_2"></script>
+<script src="admin.js?v=20261123_3"></script>
 </body>
 </html>
