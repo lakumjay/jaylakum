@@ -137,6 +137,82 @@ if ($route === 'coupons' && $method === 'GET') {
     sendJson(200, $active);
 }
 
+// POST api/forms — newsletter signup, help / contact message, bulk enquiry.
+// The submission is saved, and an email is sent to the address set in the
+// admin panel (Settings -> Shop email). If no email is set there, the shop's
+// contact email is used.
+if ($route === 'forms' && $method === 'POST') {
+    $body = getJsonBody();
+    $type = $body['type'] ?? '';
+    if (!in_array($type, ['newsletter', 'contact', 'bulk'], true)) {
+        sendJson(400, ['ok' => false, 'error' => 'Unknown form type.']);
+    }
+    $labels = [
+        'name' => 'Name', 'email' => 'Email', 'phone' => 'Phone / WhatsApp',
+        'message' => 'Message', 'size' => 'Shoe size (EU)', 'interests' => 'Interested in',
+        'month' => 'Delivery month', 'kind' => 'Enquiry type', 'city' => 'City', 'date' => 'Needed by'
+    ];
+    $fields = [];
+    foreach ($labels as $k => $label) {
+        if (!isset($body[$k]) || $body[$k] === '') continue;
+        $v = is_array($body[$k]) ? implode(', ', $body[$k]) : (string)$body[$k];
+        $fields[$k] = trim(mb_substr($v, 0, 2000));
+    }
+    if ($type === 'newsletter' && empty($fields['email']) && empty($fields['phone'])) {
+        sendJson(400, ['ok' => false, 'error' => 'Please add your email or phone number.']);
+    }
+    if ($type === 'contact' && (empty($fields['email']) || empty($fields['message']))) {
+        sendJson(400, ['ok' => false, 'error' => 'Please add your email and a message.']);
+    }
+    if ($type === 'bulk' && (empty($fields['name']) || empty($fields['email']))) {
+        sendJson(400, ['ok' => false, 'error' => 'Please add your name and email.']);
+    }
+
+    $settings = AuveStorage::getSettings();
+    $content = $settings['content'] ?? [];
+    $to = trim($content['notifyEmail'] ?? '');
+    if (!filter_var($to, FILTER_VALIDATE_EMAIL)) $to = trim($content['contactEmail'] ?? '');
+    if (!filter_var($to, FILTER_VALIDATE_EMAIL)) $to = 'contact@auve.in';
+
+    $titles = [
+        'newsletter' => 'New newsletter signup',
+        'contact' => 'New message from the Help / Contact form',
+        'bulk' => 'New bulk order enquiry'
+    ];
+    $rows = '';
+    foreach ($fields as $k => $v) {
+        $rows .= '<tr><td style="padding:9px 12px;border-bottom:1px solid #EDE6D6;color:#5A5348;font-size:14px;width:150px">' . htmlspecialchars($labels[$k]) . '</td>'
+            . '<td style="padding:9px 12px;border-bottom:1px solid #EDE6D6;color:#1B1A34;font-size:15px">' . nl2br(htmlspecialchars($v)) . '</td></tr>';
+    }
+    $when = date('d M Y, h:i A') . ' IST';
+    $html = '<div style="margin:0;padding:0;background:#FAF6EE;font-family:Arial,Helvetica,sans-serif">'
+        . '<div style="max-width:560px;margin:0 auto;padding:24px 14px">'
+        . '<div style="background:#1B1A34;border-radius:12px 12px 0 0;padding:20px 24px"><span style="color:#FFFFFF;font-size:22px;letter-spacing:3px">AUV&Eacute;</span><div style="color:#C9A24B;font-size:11px;letter-spacing:3px;margin-top:2px">SHOP WEBSITE</div></div>'
+        . '<div style="background:#FFFFFF;border:1px solid #E9E1D2;border-top:none;border-radius:0 0 12px 12px;padding:22px 24px">'
+        . '<h2 style="margin:0 0 4px;color:#1B1A34;font-size:19px">' . $titles[$type] . '</h2>'
+        . '<p style="margin:0 0 14px;color:#5A5348;font-size:13.5px">Received on ' . $when . ' from your shop website.</p>'
+        . '<table style="width:100%;border-collapse:collapse">' . $rows . '</table>'
+        . '<p style="margin:16px 0 0;color:#5A5348;font-size:13.5px">To answer the customer, just reply to this email' . (!empty($fields['email']) ? ' — it will go to ' . htmlspecialchars($fields['email']) : '') . '. This message is also saved in your shop manager under Settings, Form messages.</p>'
+        . '</div></div></div>';
+
+    $headers = "MIME-Version: 1.0\r\n"
+        . "Content-type: text/html; charset=UTF-8\r\n"
+        . "From: AUVE Website <website@jaylakum.com>\r\n";
+    if (!empty($fields['email']) && filter_var($fields['email'], FILTER_VALIDATE_EMAIL)) {
+        $headers .= "Reply-To: " . $fields['email'] . "\r\n";
+    }
+    $emailed = @mail($to, 'AUVE Shop: ' . $titles[$type], $html, $headers);
+
+    AuveStorage::saveFormSubmission([
+        'type' => $type,
+        'fields' => $fields,
+        'at' => date('c'),
+        'emailed' => $emailed ? true : false,
+        'sentTo' => $to
+    ]);
+    sendJson(200, ['ok' => true]);
+}
+
 // POST api/orders
 if ($route === 'orders' && $method === 'POST') {
     $body = getJsonBody();
@@ -523,6 +599,11 @@ if (str_starts_with($route, 'admin/')) {
     // GET api/admin/orders
     if ($route === 'admin/orders' && $method === 'GET') {
         sendJson(200, ['ok' => true, 'orders' => AuveStorage::getOrders()]);
+    }
+
+    // GET api/admin/forms — saved newsletter / contact / bulk submissions
+    if ($route === 'admin/forms' && $method === 'GET') {
+        sendJson(200, ['ok' => true, 'forms' => AuveStorage::getFormSubmissions(50)]);
     }
 
     // GET api/admin/assets
