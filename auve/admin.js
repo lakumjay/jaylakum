@@ -77,7 +77,7 @@ function startApp() {
   loadProducts();
   loadSettings();
   loadOrders();
-  switchTab('visual');
+  switchTab('dashboard');
   loadSecurity();
 }
 
@@ -91,8 +91,8 @@ function switchTab(name) {
   var wrap = document.querySelector('.wrap');
   if (wrap) wrap.classList.toggle('wide', name === 'visual');
   if (name === 'visual') { initVisual(); setTimeout(positionBadges, 120); }
-  if (name === 'security') loadSecurity();
-  if (name === 'payments') loadIntegrations();
+  if (name === 'dashboard') loadDashboard();
+  if (name === 'settings') { loadIntegrations(); loadSecurity(); fillStoreSettings(); loadFormMessages(); }
   if (name === 'coupons') loadCoupons();
 }
 document.querySelectorAll('.tab').forEach(function (btn) {
@@ -507,8 +507,8 @@ function openEditor(id) {
   $('f-cover2').value = p ? (p.cover2 || '') : '';
 
   // Synchronize cover previews
-  updateMediaPreview($('f-cover'), $('prev-cover'), $('empty-cover'), $('del-cover'));
-  updateMediaPreview($('f-cover2'), $('prev-cover2'), $('empty-cover2'), $('del-cover2'));
+  updateMediaPreview($('f-cover'), $('prev-cover'), $('empty-cover'), $('del-cover'), $('name-cover'));
+  updateMediaPreview($('f-cover2'), $('prev-cover2'), $('empty-cover2'), $('del-cover2'), $('name-cover2'));
 
   var vWrap = $('variants'); vWrap.innerHTML = '';
   (p ? p.variants : [null]).forEach(function (v) { vWrap.appendChild(variantCard(v)); });
@@ -1474,3 +1474,114 @@ $('closeMediaModal').addEventListener('click', closeMediaLibrary);
 $('cancelMediaModal').addEventListener('click', closeMediaLibrary);
 
 if (token) startApp();
+
+/* ---------------- dashboard ---------------- */
+function inrShort(n) {
+  n = Math.round(Number(n) || 0);
+  if (n >= 100000) return '₹' + (Math.round(n / 1000) / 10) + 'L';
+  if (n >= 1000) return '₹' + (Math.round(n / 100) / 10) + 'k';
+  return '₹' + n;
+}
+function loadDashboard() {
+  Promise.all([
+    api('GET', '/api/admin/orders').catch(function () { return { orders: [] }; }),
+    api('GET', '/api/admin/products').catch(function () { return { products: products || [] }; }),
+    api('GET', '/api/admin/integrations').catch(function () { return {}; }),
+    api('GET', '/api/admin/forms').catch(function () { return { forms: [] }; })
+  ]).then(function (res) {
+    var orders = (res[0] && res[0].orders) || [];
+    var prods = (res[1] && res[1].products) || [];
+    products = prods;
+    var integ = res[2] || {};
+    var forms = (res[3] && res[3].forms) || [];
+    var income = 0, todayCount = 0, todayStr = new Date().toDateString();
+    orders.forEach(function (o) {
+      income += Number((o.totals && o.totals.total) || 0);
+      if (o.at && new Date(o.at).toDateString() === todayStr) todayCount++;
+    });
+    var rz = integ.razorpay || {}, sr = integ.shiprocket || {};
+    var stats = [
+      { num: inr(income), label: 'Total income (all orders)', gold: true },
+      { num: orders.length, label: 'Total orders' },
+      { num: todayCount, label: 'Orders today' },
+      { num: prods.length, label: 'Products in your shop' },
+      { num: forms.length, label: 'Form messages received' },
+      { num: rz.configured ? 'LIVE' : 'TEST', label: rz.configured ? 'Online payments are live' : 'Payments in test mode' }
+    ];
+    $('dashStats').innerHTML = stats.map(function (s) {
+      return '<div class="stat-card' + (s.gold ? ' gold' : '') + '"><div class="stat-num">' + s.num + '</div><div class="stat-label">' + s.label + '</div></div>';
+    }).join('');
+    var days = [], byDay = {}, i, d;
+    for (i = 13; i >= 0; i--) { d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - i); days.push(d); byDay[d.toDateString()] = 0; }
+    orders.forEach(function (o) { if (!o.at) return; var k = new Date(o.at).toDateString(); if (k in byDay) byDay[k] += Number((o.totals && o.totals.total) || 0); });
+    var max = 0; days.forEach(function (dd) { max = Math.max(max, byDay[dd.toDateString()]); });
+    $('dashChart').innerHTML = '<div class="chart">' + days.map(function (dd, idx) {
+      var v = byDay[dd.toDateString()]; var hgt = max > 0 ? Math.max(2, Math.round(v / max * 100)) : 2;
+      return '<div class="bar-col"><div class="bar-val">' + (v ? inrShort(v) : '') + '</div><div class="bar' + (idx === 13 ? ' today' : '') + '" style="height:' + hgt + '%"></div><div class="bar-day">' + dd.getDate() + ' ' + dd.toLocaleDateString('en-IN', { weekday: 'narrow' }) + '</div></div>';
+    }).join('') + '</div>' + (max === 0 ? '<p class="dash-empty">No orders in the last 14 days yet. Your first order will appear here.</p>' : '');
+    $('dashRecent').innerHTML = orders.length ? orders.slice(0, 5).map(function (o) {
+      var pay = o.payment || {};
+      var pill = (pay.status === 'paid' || pay.method === 'razorpay') ? '<span class="pill paid">Paid online</span>' : (pay.method === 'cod' ? '<span class="pill cod">Cash on delivery</span>' : '<span class="pill">TEST</span>');
+      var count = (o.totals && o.totals.pairs) || (o.items ? o.items.length : 0);
+      return '<div class="dash-row"><div class="grow"><b>' + esc(o.id || '') + '</b><div class="prod-meta">' + (o.at ? new Date(o.at).toLocaleString('en-IN') : '') + ' · ' + count + ' item(s)</div></div>' + pill + '<b>' + inr((o.totals && o.totals.total) || 0) + '</b></div>';
+    }).join('') : '<p class="dash-empty">No orders yet.</p>';
+    var byName = {};
+    orders.forEach(function (o) { (o.items || []).forEach(function (it) { var n = it.name || it.id || 'Product'; byName[n] = (byName[n] || 0) + (Number(it.qty) || 1); }); });
+    var top = Object.keys(byName).map(function (n) { return { name: n, qty: byName[n] }; }).sort(function (a, b) { return b.qty - a.qty; }).slice(0, 5);
+    $('dashTop').innerHTML = top.length ? top.map(function (t, i) { return '<div class="dash-row"><div class="grow"><b>' + (i + 1) + '. ' + esc(t.name) + '</b></div><span class="pill">' + t.qty + ' sold</span></div>'; }).join('') : '<p class="dash-empty">No sales yet. Best sellers will appear here.</p>';
+    var awbCount = 0; orders.forEach(function (o) { if (o.shipment && o.shipment.awb) awbCount++; });
+    $('dashShip').innerHTML =
+      '<div class="dash-row"><div class="grow"><b>Razorpay payments</b><div class="prod-meta">' + (rz.configured ? 'Live, real card and UPI payments are on' : 'Test mode, no real money is taken yet') + '</div></div><span class="pill ' + (rz.configured ? 'paid' : 'cod') + '">' + (rz.configured ? 'ON' : 'OFF') + '</span></div>'
+      + '<div class="dash-row"><div class="grow"><b>Shiprocket delivery</b><div class="prod-meta">' + (sr.configured ? 'Connected as ' + esc(sr.email || '') + ' · pickup: ' + esc(sr.pickupLocation || 'Primary') : 'Not connected, add your login in Settings') + '</div></div><span class="pill ' + (sr.configured ? 'paid' : 'cod') + '">' + (sr.configured ? 'ON' : 'OFF') + '</span></div>'
+      + '<div class="dash-row"><div class="grow"><b>Shipments created</b><div class="prod-meta">Orders with a courier AWB number</div></div><b>' + awbCount + '</b></div>';
+    var low = prods.filter(function (p) { return (p.soldOut || []).length >= 4; });
+    $('dashStock').innerHTML = low.length ? low.map(function (p) { return '<div class="dash-row"><div class="grow"><b>' + esc(p.name) + '</b><div class="prod-meta">' + (p.soldOut || []).length + ' sizes sold out</div></div><span class="pill cod">Restock</span></div>'; }).join('') : '<p class="dash-empty">Nothing is running out right now. Good.</p>';
+  }).catch(function (e) { showMsg($('dashMsg'), e.message, false); });
+}
+
+/* ---------------- settings: store email + legal + form messages ---------------- */
+function fillStoreSettings() {
+  api('GET', '/api/admin/settings').then(function (d) {
+    settings = d.settings || settings;
+    var c = settings.content || {};
+    if ($('set-notify')) $('set-notify').value = c.notifyEmail || '';
+    if ($('set-contact')) $('set-contact').value = c.contactEmail || '';
+    if ($('set-wa')) $('set-wa').value = c.whatsappNumber || '';
+    if ($('set-bizname')) $('set-bizname').value = c.bizName || '';
+    if ($('set-bizaddr')) $('set-bizaddr').value = c.bizAddress || '';
+    if ($('set-bizgst')) $('set-bizgst').value = c.bizGst || '';
+    if ($('set-bizgrievance')) $('set-bizgrievance').value = c.bizGrievance || '';
+    if ($('set-bizphone')) $('set-bizphone').value = c.bizPhone || '';
+    if ($('set-bizemail')) $('set-bizemail').value = c.bizEmail || '';
+  }).catch(function () {});
+}
+function saveStoreSettings() {
+  var content = { notifyEmail: $('set-notify').value.trim(), contactEmail: $('set-contact').value.trim(), whatsappNumber: $('set-wa').value.trim() };
+  api('PUT', '/api/admin/settings', { settings: { content: content } }).then(function (d) {
+    settings = d.settings || settings;
+    showMsg($('storeMsg'), 'Saved! Form messages will now be emailed to ' + (content.notifyEmail || content.contactEmail || 'contact@auve.in') + '.', true);
+  }).catch(function (e) { showMsg($('storeMsg'), e.message, false); });
+}
+function saveLegalSettings() {
+  var content = { bizName: $('set-bizname').value.trim(), bizAddress: $('set-bizaddr').value.trim(), bizGst: $('set-bizgst').value.trim(), bizGrievance: $('set-bizgrievance').value.trim(), bizPhone: $('set-bizphone').value.trim(), bizEmail: $('set-bizemail').value.trim() };
+  api('PUT', '/api/admin/settings', { settings: { content: content } }).then(function (d) {
+    settings = d.settings || settings;
+    showMsg($('legalMsg'), 'Saved! Your legal pages now show these details.', true);
+  }).catch(function (e) { showMsg($('legalMsg'), e.message, false); });
+}
+function loadFormMessages() {
+  api('GET', '/api/admin/forms').then(function (d) {
+    var forms = d.forms || [];
+    if (!forms.length) { $('formList').innerHTML = '<p class="dash-empty">No form messages yet. Newsletter signups, help form messages and bulk enquiries will appear here.</p>'; return; }
+    var titles = { newsletter: 'Newsletter signup', contact: 'Help / Contact message', bulk: 'Bulk enquiry' };
+    $('formList').innerHTML = forms.map(function (f) {
+      var rows = Object.keys(f.fields || {}).map(function (k) { return '<tr><td>' + esc(k) + '</td><td>' + esc(String(f.fields[k])) + '</td></tr>'; }).join('');
+      return '<div class="form-item"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>' + (titles[f.type] || 'Form') + '</b><span class="prod-meta">' + (f.at ? new Date(f.at).toLocaleString('en-IN') : '') + '</span></div>'
+        + '<table>' + rows + '</table>'
+        + '<div class="prod-meta" style="margin-top:6px">' + (f.emailed ? 'Emailed to ' + esc(f.sentTo || '') : 'Saved here (email could not be sent)') + '</div></div>';
+    }).join('');
+  }).catch(function (e) { $('formList').innerHTML = '<p class="dash-empty">' + esc(e.message) + '</p>'; });
+}
+if ($('saveStoreBtn')) $('saveStoreBtn').addEventListener('click', saveStoreSettings);
+if ($('saveLegalBtn')) $('saveLegalBtn').addEventListener('click', saveLegalSettings);
+if ($('refreshFormsBtn')) $('refreshFormsBtn').addEventListener('click', loadFormMessages);
