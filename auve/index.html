@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
-<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AUVÉ | Handmade footwear from Surat</title>
@@ -29,7 +28,9 @@
   function loadApp() { var s = document.createElement('script'); s.src = 'app.js?v=52'; document.body.appendChild(s); }
   Promise.all([
     fetch('data/products.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('products ' + r.status); return r.json(); }),
-    fetch('api-settings.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+    fetch('api/settings', { cache: 'no-store' })
+      .then(function (r) { if (r.ok) return r.json(); return fetch('api-settings.json', { cache: 'no-store' }).then(function (r2) { return r2.ok ? r2.json() : {}; }); })
+      .catch(function () { return {}; })
   ])
     .then(function (res) { window.AUVE_CATALOG = res[0]; window.AUVE_SETTINGS = res[1] || {}; loadApp(); })
     .catch(function () {

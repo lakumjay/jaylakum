@@ -1,0 +1,43 @@
+# ============================================================================
+# AUVÉ Dynamic Footwear Store — Subdirectory .htaccess
+# ============================================================================
+Options -Indexes
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Route /api/* requests to api.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^api/(.*)$ api.php?route=$1 [QSA,L]
+    RewriteRule ^api$ api.php?route= [QSA,L]
+</IfModule>
+
+# Block direct web access to sensitive backend and credential files
+<FilesMatch "^(server\.js|config\.js|config\.php|db_config\.php|db\.php|auve_database\.sql|\.env.*)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to private data files (tokens, passwords, orders)
+<IfModule mod_rewrite.c>
+    RewriteRule ^data/(admin-auth|orders|tokens)\.json$ - [F,L,NC]
+</IfModule>
+
+# Caching policy for assets and images
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 7 days"
+    ExpiresByType image/png "access plus 7 days"
+    ExpiresByType image/webp "access plus 7 days"
+    ExpiresByType video/mp4 "access plus 7 days"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType application/json "access plus 0 seconds"
+</IfModule>

@@ -286,7 +286,7 @@ class Component extends DCLogic {
     this.sampleBgs();
     /* Dynamic backend: learn whether online payments are live (Razorpay keys
        configured on the server) so checkout can label TEST mode honestly. */
-    try { fetch('/api/store-config').then(r => r.json()).then(c => { window.AUVE_STORE = c; this.setState({ payLive: !!c.paymentsLive }); }).catch(() => {}); } catch (e) {}
+    try { fetch('api/store-config').then(r => r.json()).then(c => { window.AUVE_STORE = c; this.setState({ payLive: !!c.paymentsLive }); }).catch(() => {}); } catch (e) {}
     this.timer = setTimeout(() => this.setState({ loading: false }), 2350);
     let seen = false; try { seen = sessionStorage.getItem('auve_popup_seen') === '1'; } catch (e) {}
     if (!seen && !load('auve_subscribers', []).length) {
@@ -473,7 +473,7 @@ class Component extends DCLogic {
       self.go('#/confirm');
     };
     const baseMethod = s.pay === 'upi' ? 'UPI' : s.pay === 'card' ? 'Card / net banking' : 'Cash on delivery';
-    fetch('/api/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    fetch('api/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       .then(r => r.json())
       .then(res => {
         if (!res || !res.ok) { self.setState({ placing: false, coErr: (res && res.error) || 'Something went wrong placing your order. Please try again.' }); return; }
@@ -485,7 +485,7 @@ class Component extends DCLogic {
               prefill: { name: co.name.trim(), email: co.email.trim(), contact: '+91' + phone },
               theme: { color: '#1B1A34' },
               handler: (resp) => {
-                fetch('/api/orders/confirm-payment', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ orderId: res.order.id }, resp)) })
+                fetch('api/orders/confirm-payment', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ orderId: res.order.id }, resp)) })
                   .then(r2 => r2.json())
                   .then(v => {
                     if (v && v.ok) finishOrder(res.order.id, baseMethod);

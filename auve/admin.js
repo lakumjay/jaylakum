@@ -1,0 +1,903 @@
+/* AUVÉ Shop Manager — admin.js
+ * Talks to server.js: /api/admin/login, /api/admin/products,
+ * /api/admin/settings, /api/admin/orders. The login token is kept in
+ * sessionStorage (it disappears when the browser tab is closed). */
+'use strict';
+
+var SIZES = [35, 36, 37, 38, 39, 40, 41];
+var COLL_NAMES = { barely: 'The Barely Edit', gilded: 'Gilded', veil: 'Veil & Vow' };
+var SECTION_INFO = [
+  ['hero', 'Top photo banner', 'The big photo and heading at the very top of the homepage.'],
+  ['craftBanner', 'Craft video banner', 'The "Handcrafted. Comfort first." part with the video.'],
+  ['festive', 'Festive collection row', 'The row with the festive heading and pairs.'],
+  ['collections', 'Shop by collection', 'The three collection boxes: The Barely Edit, Gilded, Veil & Vow.'],
+  ['bestsellers', 'Bestsellers row', 'The row of best-selling pairs.'],
+  ['reels', 'Video reels', 'The "Moments in motion" video part.'],
+  ['newsletter', 'Newsletter box', 'The email signup box near the bottom of the homepage.']
+];
+
+var token = sessionStorage.getItem('auve_admin_token') || '';
+var products = [];
+var settings = {};
+var editingId = null; /* null = adding a new product */
+var editorReturnToVisual = false; /* product editor was opened from the visual view */
+
+function $(id) { return document.getElementById(id); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function inr(n) { return '₹' + Number(n || 0).toLocaleString('en-IN'); }
+
+function apiPath(p) {
+  if (p.indexOf('/api/') === 0) return 'api/' + p.slice(5);
+  if (p.indexOf('api/') === 0) return p;
+  return p;
+}
+
+function api(method, path, body) {
+  return fetch(apiPath(path), {
+    method: method,
+    headers: Object.assign({ 'Content-Type': 'application/json' }, token ? { 'x-admin-token': token } : {}),
+    body: body ? JSON.stringify(body) : undefined
+  }).then(function (r) {
+    return r.json().catch(function () { return {}; }).then(function (data) {
+      if (r.status === 401 && token) { logout(); throw new Error('Your login has ended. Please log in again.'); }
+      if (!r.ok) throw new Error(data.error || 'Something went wrong. Please try again.');
+      return data;
+    });
+  });
+}
+function showMsg(el, text, ok) {
+  el.innerHTML = text ? '<div class="' + (ok ? 'msg-ok' : 'msg-err') + '">' + esc(text) + '</div>' : '';
+  if (text) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ---------------- login ---------------- */
+function logout() {
+  token = '';
+  sessionStorage.removeItem('auve_admin_token');
+  $('mainView').classList.add('hidden');
+  $('loginView').classList.remove('hidden');
+}
+function doLogin() {
+  var pw = $('pw').value;
+  if (!pw) { showMsg($('loginErr'), 'Please type the password.', false); $('loginErr').classList.remove('hidden'); return; }
+  fetch(apiPath('/api/admin/login'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw }) })
+    .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+    .then(function (res) {
+      if (!res.ok) { var e = $('loginErr'); e.textContent = 'That password is not right. Please check and try again.'; e.classList.remove('hidden'); return; }
+      token = res.d.token;
+      sessionStorage.setItem('auve_admin_token', token);
+      $('loginErr').classList.add('hidden');
+      startApp();
+    })
+    .catch(function () { var e = $('loginErr'); e.textContent = 'Could not reach the server. Please try again.'; e.classList.remove('hidden'); });
+}
+function startApp() {
+  $('loginView').classList.add('hidden');
+  $('mainView').classList.remove('hidden');
+  loadProducts();
+  loadSettings();
+  loadOrders();
+  switchTab('visual');
+  loadSecurity();
+}
+
+/* ---------------- tabs ---------------- */
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(function (b) {
+    b.classList.toggle('on', b.dataset.tab === name);
+    var panel = $('tab-' + b.dataset.tab);
+    if (panel) panel.classList.toggle('hidden', b.dataset.tab !== name);
+  });
+  var wrap = document.querySelector('.wrap');
+  if (wrap) wrap.classList.toggle('wide', name === 'visual');
+  if (name === 'visual') { initVisual(); setTimeout(positionBadges, 120); }
+  if (name === 'security') loadSecurity();
+  if (name === 'payments') loadIntegrations();
+}
+document.querySelectorAll('.tab').forEach(function (btn) {
+  btn.addEventListener('click', function () { switchTab(btn.dataset.tab); });
+});
+
+/* ---------------- products ---------------- */
+function loadProducts() {
+  api('GET', '/api/admin/products').then(function (d) {
+    products = d.products || [];
+    renderProductList();
+  }).catch(function (e) { showMsg($('prodMsg'), e.message, false); });
+}
+function renderProductList() {
+  var el = $('productList');
+  if (!products.length) { el.innerHTML = '<p class="help">No products yet. Press the green button above to add your first product.</p>'; return; }
+  el.innerHTML = products.map(function (p) {
+    var img = p.cover || (p.variants[0] && p.variants[0].imgs[0]) || '';
+    return '<div class="prod-row">' +
+      (img ? '<img src="' + esc(img) + '" alt="">' : '') +
+      '<div class="grow"><div class="prod-name">' + esc(p.name) + '</div>' +
+      '<div class="prod-meta">' + esc(COLL_NAMES[p.coll] || p.coll) + ' · ' + esc(p.type) + ' · ' + inr(p.price) + '</div></div>' +
+      '<button class="btn btn-light btn-small" data-edit="' + esc(p.id) + '">Edit</button>' +
+      '<button class="btn btn-danger btn-small" data-del="' + esc(p.id) + '">Delete</button>' +
+      '</div>';
+  }).join('');
+  el.querySelectorAll('[data-edit]').forEach(function (b) { b.addEventListener('click', function () { openEditor(b.dataset.edit); }); });
+  el.querySelectorAll('[data-del]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.confirm) { deleteProduct(b.dataset.del); }
+      else { b.dataset.confirm = '1'; b.textContent = 'Really delete? Press again to confirm'; setTimeout(function () { delete b.dataset.confirm; b.textContent = 'Delete'; }, 4000); }
+    });
+  });
+}
+function deleteProduct(id) {
+  api('DELETE', '/api/admin/products/' + encodeURIComponent(id)).then(function () {
+    showMsg($('prodMsg'), 'Product deleted. It is no longer in the shop.', true);
+    loadProducts();
+    refreshVisualPreview();
+  }).catch(function (e) { showMsg($('prodMsg'), e.message, false); });
+}
+
+/* ----- product editor ----- */
+function variantCard(v) {
+  v = v || { name: '', sw: '#EEEEEE', imgs: [], desc: '' };
+  var div = document.createElement('div');
+  div.className = 'variant';
+  div.innerHTML =
+    '<label>Colour name</label>' +
+    '<input type="text" class="v-name" placeholder="Example: Brown" value="' + esc(v.name) + '">' +
+    '<label>Colour dot</label>' +
+    '<div class="color-row"><input type="color" class="v-sw" value="' + esc(v.sw || '#EEEEEE') + '"><div><input type="text" class="v-swtext" value="' + esc(v.sw || '#EEEEEE') + '"></div></div>' +
+    '<p class="field-help">The small round colour dot customers see next to the colour name.</p>' +
+    '<label>Photos of this colour</label>' +
+    '<textarea class="v-imgs" placeholder="One photo per line">' + esc((v.imgs || []).join('\n')) + '</textarea>' +
+    '<p class="field-help">One photo file name per line, like assets/p/my-photo.jpg. The first photo is shown first.</p>' +
+    '<label>About this colour (not needed)</label>' +
+    '<textarea class="v-desc" placeholder="Only if this colour needs its own words">' + esc(v.desc || '') + '</textarea>' +
+    '<p style="margin:12px 0 0"><button class="btn btn-danger btn-small v-remove">Remove this colour</button></p>';
+  div.querySelector('.v-remove').addEventListener('click', function () { div.remove(); });
+  var picker = div.querySelector('.v-sw'), text = div.querySelector('.v-swtext');
+  picker.addEventListener('input', function () { text.value = picker.value; });
+  text.addEventListener('change', function () { if (/^#[0-9a-fA-F]{6}$/.test(text.value)) picker.value = text.value; });
+  return div;
+}
+function detailRow(d) {
+  d = d || ['', ''];
+  var div = document.createElement('div');
+  div.className = 'detail-row';
+  div.style.marginBottom = '10px';
+  div.innerHTML =
+    '<div><label style="margin-top:0">Detail name</label><input type="text" class="d-label" placeholder="Example: Heel type" value="' + esc(d[0]) + '"></div>' +
+    '<div><label style="margin-top:0">Detail answer</label><input type="text" class="d-value" placeholder="Example: Block heel" value="' + esc(d[1] || '') + '"></div>' +
+    '<button class="btn btn-danger btn-small d-remove">Remove</button>';
+  div.querySelector('.d-remove').addEventListener('click', function () { div.remove(); });
+  return div;
+}
+function openEditor(id) {
+  var p = id ? products.find(function (x) { return x.id === id; }) : null;
+  editingId = id || null;
+  $('formTitle').textContent = p ? 'Edit product: ' + p.name : 'Add a new product';
+  $('idBlock').style.display = p ? 'none' : 'block';
+  showMsg($('formMsg'), '', true);
+  $('f-name').value = p ? p.name : '';
+  $('f-id').value = p ? p.id : '';
+  $('f-coll').value = p ? p.coll : 'barely';
+  $('f-type').value = p ? p.type : '';
+  $('f-price').value = p ? p.price : '';
+  $('f-desc').value = p ? p.desc : '';
+  $('f-tag').value = p ? (p.tag || '') : '';
+  $('f-cover').value = p ? (p.cover || '') : '';
+  $('f-cover2').value = p ? (p.cover2 || '') : '';
+  var vWrap = $('variants'); vWrap.innerHTML = '';
+  (p ? p.variants : [null]).forEach(function (v) { vWrap.appendChild(variantCard(v)); });
+  var sWrap = $('soldOutSizes'); sWrap.innerHTML = '';
+  SIZES.forEach(function (z) {
+    var on = p ? (p.soldOut || []).includes(z) : z === 35;
+    var lab = document.createElement('label');
+    lab.className = 'size-box';
+    lab.innerHTML = '<input type="checkbox" value="' + z + '"' + (on ? ' checked' : '') + '> EU ' + z;
+    sWrap.appendChild(lab);
+  });
+  var dWrap = $('details'); dWrap.innerHTML = '';
+  (p && p.details ? p.details : []).forEach(function (d) { dWrap.appendChild(detailRow(d)); });
+  $('productListCard').classList.add('hidden');
+  $('productFormCard').classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function closeEditor() {
+  $('productFormCard').classList.add('hidden');
+  $('productListCard').classList.remove('hidden');
+  if (editorReturnToVisual) { editorReturnToVisual = false; switchTab('visual'); }
+}
+function saveProduct() {
+  var variants = Array.prototype.map.call(document.querySelectorAll('#variants .variant'), function (div) {
+    var v = {
+      name: div.querySelector('.v-name').value.trim(),
+      sw: div.querySelector('.v-swtext').value.trim() || '#EEEEEE',
+      imgs: div.querySelector('.v-imgs').value.split(/[\n,]+/).map(function (s) { return s.trim(); }).filter(Boolean)
+    };
+    var desc = div.querySelector('.v-desc').value.trim();
+    if (desc) v.desc = desc;
+    return v;
+  }).filter(function (v) { return v.name && v.imgs.length; });
+  var details = Array.prototype.map.call(document.querySelectorAll('#details .detail-row'), function (div) {
+    return [div.querySelector('.d-label').value.trim(), div.querySelector('.d-value').value.trim()];
+  }).filter(function (d) { return d[0]; });
+  var soldOut = Array.prototype.filter.call(document.querySelectorAll('#soldOutSizes input:checked'), function () { return true; })
+    .map(function (cb) { return Number(cb.value); });
+  var product = {
+    name: $('f-name').value.trim(),
+    coll: $('f-coll').value,
+    type: $('f-type').value.trim(),
+    price: Number($('f-price').value),
+    desc: $('f-desc').value.trim(),
+    tag: $('f-tag').value.trim(),
+    cover: $('f-cover').value.trim(),
+    cover2: $('f-cover2').value.trim(),
+    variants: variants,
+    soldOut: soldOut,
+    details: details
+  };
+  if (!product.name) { showMsg($('formMsg'), 'Please write the product name.', false); return; }
+  if (!variants.length) { showMsg($('formMsg'), 'Please add at least one colour with at least one photo.', false); return; }
+  var done = function () {
+    var backToVisual = editorReturnToVisual;
+    closeEditor();
+    showMsg($('prodMsg'), 'Saved! "' + product.name + '" is updated in your shop.', true);
+    loadProducts();
+    refreshVisualPreview();
+    if (backToVisual) showMsg($('visualMsg'), 'Saved! "' + product.name + '" is updated in your shop. The picture above shows the change.', true);
+  };
+  if (editingId) {
+    api('PUT', '/api/admin/products/' + encodeURIComponent(editingId), { product: product }).then(done)
+      .catch(function (e) { showMsg($('formMsg'), e.message, false); });
+  } else {
+    product.id = $('f-id').value.trim();
+    if (!product.id) { showMsg($('formMsg'), 'Please write the web address name (small letters, no spaces).', false); return; }
+    api('POST', '/api/admin/products', { product: product }).then(done)
+      .catch(function (e) { showMsg($('formMsg'), e.message, false); });
+  }
+}
+
+/* ---------------- settings ---------------- */
+function loadSettings() {
+  api('GET', '/api/admin/settings').then(function (d) {
+    settings = d.settings || {};
+    fillLook(); fillWriting(); buildSectionToggles();
+  }).catch(function (e) { showMsg($('lookMsg'), e.message, false); });
+}
+function syncColor(pickerId, textId) {
+  var picker = $(pickerId), text = $(textId);
+  picker.addEventListener('input', function () { text.value = picker.value; });
+  text.addEventListener('change', function () { if (/^#[0-9a-fA-F]{6}$/.test(text.value)) picker.value = text.value; });
+}
+function setColor(pickerId, textId, val) { $(textId).value = val || ''; if (/^#[0-9a-fA-F]{6}$/.test(val || '')) $(pickerId).value = val; }
+function fillLook() {
+  var d = settings.design || {};
+  setColor('d-bg-picker', 'd-bg', d.backgroundColor);
+  setColor('d-ink-picker', 'd-ink', d.primaryColor);
+  setColor('d-btn-picker', 'd-btn', d.buttonColor);
+  setColor('d-btnink-picker', 'd-btnink', d.buttonTextColor);
+  $('d-font').value = d.fontPreset || 'classic';
+  $('d-hsize').value = d.headingSize == null ? '' : d.headingSize;
+  $('d-bsize').value = d.bodySize == null ? '' : d.bodySize;
+}
+function saveLook() {
+  var design = {
+    backgroundColor: $('d-bg').value.trim(),
+    primaryColor: $('d-ink').value.trim(),
+    buttonColor: $('d-btn').value.trim(),
+    buttonTextColor: $('d-btnink').value.trim(),
+    fontPreset: $('d-font').value,
+    headingSize: $('d-hsize').value === '' ? null : Number($('d-hsize').value),
+    bodySize: $('d-bsize').value === '' ? null : Number($('d-bsize').value)
+  };
+  api('PUT', '/api/admin/settings', { settings: { design: design } }).then(function (d) {
+    settings = d.settings;
+    showMsg($('lookMsg'), 'Saved! Your shop now uses the new look. Open "See my shop" to check it.', true);
+    refreshVisualPreview();
+  }).catch(function (e) { showMsg($('lookMsg'), e.message, false); });
+}
+function fillWriting() {
+  var c = settings.content || {};
+  $('c-ann-on').checked = c.announcementOn !== false;
+  $('c-ann').value = c.announcementText || '';
+  $('c-h1').value = c.heroHeading1 || '';
+  $('c-h2').value = c.heroHeading2 || '';
+  $('c-hdesk').value = c.heroDesktopImage || '';
+  $('c-hmob').value = c.heroMobileImage || '';
+  $('c-fest').value = c.festiveHeading || '';
+  $('c-best').value = c.bestsellersHeading || '';
+}
+function saveWriting() {
+  var content = {
+    announcementOn: $('c-ann-on').checked,
+    announcementText: $('c-ann').value.trim(),
+    heroHeading1: $('c-h1').value.trim(),
+    heroHeading2: $('c-h2').value.trim(),
+    heroDesktopImage: $('c-hdesk').value.trim(),
+    heroMobileImage: $('c-hmob').value.trim(),
+    festiveHeading: $('c-fest').value.trim(),
+    bestsellersHeading: $('c-best').value.trim()
+  };
+  api('PUT', '/api/admin/settings', { settings: { content: content } }).then(function (d) {
+    settings = d.settings;
+    showMsg($('writingMsg'), 'Saved! The new words are now in your shop.', true);
+    refreshVisualPreview();
+  }).catch(function (e) { showMsg($('writingMsg'), e.message, false); });
+}
+function buildSectionToggles() {
+  var sec = settings.sections || {};
+  $('sectionToggles').innerHTML = SECTION_INFO.map(function (row) {
+    var on = sec[row[0]] !== false;
+    return '<div class="toggle-row"><div class="grow"><b>' + esc(row[1]) + '</b><br><span class="field-help" style="margin:0">' + esc(row[2]) + '</span></div>' +
+      '<label class="switch"><input type="checkbox" data-section="' + row[0] + '"' + (on ? ' checked' : '') + '><span class="track"></span></label></div>';
+  }).join('');
+}
+function saveSections() {
+  var sections = {};
+  document.querySelectorAll('[data-section]').forEach(function (cb) { sections[cb.dataset.section] = cb.checked; });
+  api('PUT', '/api/admin/settings', { settings: { sections: sections } }).then(function (d) {
+    settings = d.settings;
+    showMsg($('sectionsMsg'), 'Saved! The homepage now shows only the parts you kept on.', true);
+    refreshVisualPreview();
+  }).catch(function (e) { showMsg($('sectionsMsg'), e.message, false); });
+}
+
+/* ---------------- orders ---------------- */
+function loadOrders() {
+  api('GET', '/api/admin/orders').then(function (d) { renderOrders(d.orders || []); })
+    .catch(function () { $('orderList').innerHTML = '<p class="help">Could not load orders. Press Refresh.</p>'; });
+}
+function renderOrders(orders) {
+  var el = $('orderList');
+  if (!orders.length) { el.innerHTML = '<p class="help">No orders yet. When a customer buys something, the order will appear here.</p>'; return; }
+  el.innerHTML = orders.map(function (o) {
+    var pay = o.payment || {};
+    var pill = pay.status === 'paid' ? '<span class="pill paid">Paid online</span>'
+      : pay.status === 'test_mode' ? '<span class="pill cod">TEST — no money taken</span>'
+      : pay.status === 'payment_pending' ? '<span class="pill">Payment not finished</span>'
+      : '<span class="pill cod">Cash on delivery</span>';
+    var items = (o.items || []).map(function (it) {
+      return '<tr><td>' + esc(it.name) + ' — ' + esc(it.variant) + ', EU ' + esc(it.size) + '</td><td>× ' + it.qty + '</td><td>' + inr(it.unitPrice * it.qty) + '</td></tr>';
+    }).join('');
+    var awb = o.shipment && o.shipment.awb ? '<br>Shipment AWB: <b>' + esc(o.shipment.awb) + '</b>' + (o.shipment.courier ? ' (' + esc(o.shipment.courier) + ')' : '') : '';
+    return '<div class="order"><b>Order ' + esc(o.id) + '</b> · ' + new Date(o.at).toLocaleString('en-IN') + ' &nbsp;' + pill +
+      '<br><b>' + esc(o.customer.name) + '</b> · ' + esc(o.customer.phone) + ' · ' + esc(o.customer.email) +
+      '<br>' + esc([o.customer.address, o.customer.city, o.customer.state, o.customer.pincode].filter(Boolean).join(', ')) + awb +
+      '<table>' + items + '<tr><td colspan="2"><b>Total</b></td><td><b>' + inr(o.totals && o.totals.total) + '</b></td></tr></table></div>';
+  }).join('');
+}
+
+/* ---------------- password and safety ---------------- */
+function loadSecurity() {
+  if (!$('recoveryStatus')) return;
+  api('GET', '/api/admin/security').then(function (d) {
+    $('recoveryStatus').textContent = d.recoverySet
+      ? 'Recovery code: set. If you forget your password, the login page will ask for this code.'
+      : 'Recovery code: not set yet. Set one below, so you can get back in if you forget your password.';
+  }).catch(function () { $('recoveryStatus').textContent = ''; });
+}
+function doChangePassword() {
+  api('POST', '/api/admin/security/change-password', { currentPassword: $('sec-cur').value, newPassword: $('sec-new').value })
+    .then(function (d) {
+      if (d.token) { token = d.token; sessionStorage.setItem('auve_admin_token', token); }
+      $('sec-cur').value = ''; $('sec-new').value = '';
+      showMsg($('changePwMsg'), 'Saved! Your new password is working. Use it the next time you log in.', true);
+    })
+    .catch(function (e) { showMsg($('changePwMsg'), e.message, false); });
+}
+function doSaveRecovery() {
+  api('POST', '/api/admin/security/recovery-code', { currentPassword: $('rec-cur').value, recoveryCode: $('rec-code').value })
+    .then(function () {
+      $('rec-cur').value = ''; $('rec-code').value = '';
+      showMsg($('recoveryMsg'), 'Saved! Your recovery code is set. Keep it written down somewhere safe.', true);
+      loadSecurity();
+    })
+    .catch(function (e) { showMsg($('recoveryMsg'), e.message, false); });
+}
+function doForgot() {
+  fetch(apiPath('/api/admin/forgot-password'), {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ recoveryCode: $('fg-code').value, newPassword: $('fg-new').value })
+  })
+    .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+    .then(function (res) {
+      if (!res.ok) { showMsg($('forgotMsg'), res.d.error || 'Something went wrong. Please try again.', false); return; }
+      token = res.d.token;
+      sessionStorage.setItem('auve_admin_token', token);
+      startApp();
+    })
+    .catch(function () { showMsg($('forgotMsg'), 'Could not reach the server. Please try again.', false); });
+}
+function wireEye(btn, input) {
+  if (!btn || !input) return;
+  btn.addEventListener('click', function () {
+    var show = input.type === 'password';
+    input.type = show ? 'text' : 'password';
+    btn.textContent = show ? 'Hide' : 'Show';
+  });
+}
+
+/* ---------------- payments and delivery keys ---------------- */
+function loadIntegrations() {
+  if (!$('rzStatus')) return;
+  api('GET', '/api/admin/integrations').then(function (d) {
+    var rz = d.razorpay || {}, sr = d.shiprocket || {};
+    $('rzStatus').textContent = rz.live
+      ? 'Razorpay: ON. Online payments are live' + (rz.source === 'admin' ? ' with the keys saved on this page.' : ' with keys from the server file.')
+      : 'Razorpay: OFF. The shop is in test mode, no real money is taken.';
+    $('rz-id').value = rz.adminKeyId || rz.keyId || '';
+    $('rz-secret').value = '';
+    $('rz-secret').placeholder = rz.adminSecretSet ? 'A secret is saved (hidden). Type only to replace it.' : 'Paste the Key Secret';
+    $('srStatus').textContent = sr.configured
+      ? 'Shiprocket: ON. Shipments will be created on their own' + (sr.source === 'admin' ? ' with the login saved on this page.' : ' with the login from the server file.')
+      : 'Shiprocket: OFF. Orders will not get a courier booking on their own.';
+    $('sr-email').value = sr.adminEmail || sr.email || '';
+    $('sr-pass').value = '';
+    $('sr-pass').placeholder = sr.adminPasswordSet ? 'A password is saved (hidden). Type only to replace it.' : 'Your Shiprocket password';
+    $('sr-pickup').value = sr.adminPickup || sr.pickupLocation || 'Primary';
+  }).catch(function () {});
+}
+function doSaveRazorpay() {
+  api('PUT', '/api/admin/integrations', { razorpayKeyId: $('rz-id').value.trim(), razorpayKeySecret: $('rz-secret').value })
+    .then(function () {
+      showMsg($('rzMsg'), 'Saved! If both the Key ID and the Key Secret are in, online payments are live right away. Use the Check button to test the format.', true);
+      loadIntegrations();
+    })
+    .catch(function (e) { showMsg($('rzMsg'), e.message, false); });
+}
+function doSaveShiprocket() {
+  api('PUT', '/api/admin/integrations', { shiprocketEmail: $('sr-email').value.trim(), shiprocketPassword: $('sr-pass').value, shiprocketPickup: $('sr-pickup').value.trim() })
+    .then(function () {
+      showMsg($('srMsg'), 'Saved! Use the Check button to try the login with Shiprocket.', true);
+      loadIntegrations();
+    })
+    .catch(function (e) { showMsg($('srMsg'), e.message, false); });
+}
+function doCheckRazorpay() {
+  showMsg($('rzMsg'), 'Checking...', true);
+  api('POST', '/api/admin/integrations/check-razorpay', {})
+    .then(function (d) { showMsg($('rzMsg'), d.message || d.error, !!d.ok); })
+    .catch(function (e) { showMsg($('rzMsg'), e.message, false); });
+}
+function doCheckShiprocket() {
+  showMsg($('srMsg'), 'Trying to log in to Shiprocket...', true);
+  api('POST', '/api/admin/integrations/check-shiprocket', {})
+    .then(function (d) { showMsg($('srMsg'), d.message || d.error, !!d.ok); })
+    .catch(function (e) { showMsg($('srMsg'), e.message, false); });
+}
+function doClearIntegration(which, msgEl) {
+  api('POST', '/api/admin/integrations/clear', { which: which })
+    .then(function () {
+      showMsg($(msgEl), 'Removed. The keys saved on this page are deleted.', true);
+      loadIntegrations();
+    })
+    .catch(function (e) { showMsg($(msgEl), e.message, false); });
+}
+
+/* ---------------- visual editor ----------------
+ * The visual view embeds the real homepage in an iframe (same site, so
+ * this page is allowed to look inside it). After the shop renders, we
+ * find each part on the page (the top strip, the hero photo, the rows,
+ * the footer, and every product card) and float a labelled button over
+ * it. Tapping a button, or tapping the part itself, opens the boxes for
+ * just that part under the picture. */
+var visualStarted = false;
+var visualRegions = [];
+var assetImages = [];
+var visualAllowClick = false;
+var VISUAL_SECTION_NAMES = {
+  hero: 'Top photo banner', craftBanner: 'Craft video banner', festive: 'Festive collection row',
+  collections: 'Shop by collection', bestsellers: 'Bestsellers row', reels: 'Video reels', newsletter: 'Newsletter box'
+};
+
+function previewDoc() {
+  var f = $('shopPreview');
+  if (!f) return null;
+  try { return f.contentDocument || null; } catch (e) { return null; }
+}
+function initVisual() {
+  if (visualStarted) return;
+  visualStarted = true;
+  api('GET', '/api/admin/assets').then(function (d) { assetImages = d.images || []; }).catch(function () {});
+  var f = $('shopPreview');
+  f.addEventListener('load', function () { setTimeout(setupPreview, 500); });
+  f.src = './';
+  var tick = 0;
+  setInterval(function () {
+    positionBadges();
+    tick++;
+    if (tick % 4 === 0) { var doc = previewDoc(); if (doc) closeShopPopup(doc); }
+  }, 450);
+}
+function refreshVisualPreview() {
+  if (!visualStarted) return;
+  var f = $('shopPreview');
+  try { f.contentWindow.location.reload(); } catch (e) { f.src = './'; }
+}
+function setupPreview() {
+  var doc = previewDoc();
+  if (!doc || !doc.body) { setTimeout(setupPreview, 800); return; }
+  attachPreviewClicks(doc);
+  closeShopPopup(doc);
+  scanRegions(8);
+}
+function closeShopPopup(doc) {
+  try {
+    var els = doc.querySelectorAll('body *');
+    for (var i = 0; i < els.length; i++) {
+      var e = els[i];
+      if (e.children.length === 0 && (e.textContent || '').trim() === '×') {
+        var cur = e, fixed = false;
+        while (cur && cur !== doc.body) { if (doc.defaultView.getComputedStyle(cur).position === 'fixed') { fixed = true; break; } cur = cur.parentElement; }
+        if (fixed) { visualAllowClick = true; e.click(); setTimeout(function () { visualAllowClick = false; }, 300); return; }
+      }
+    }
+  } catch (err) {}
+}
+function attachPreviewClicks(doc) {
+  if (doc.__auveVisual) return;
+  doc.__auveVisual = true;
+  doc.addEventListener('click', function (e) {
+    if (visualAllowClick) return;
+    e.preventDefault();
+    e.stopPropagation();
+    handlePreviewClick(e.target);
+  }, true);
+  doc.addEventListener('scroll', positionBadges, true);
+}
+function handlePreviewClick(target) {
+  var doc = previewDoc();
+  if (!doc || !target) return;
+  var a = target.closest ? target.closest('a[href^="#/product/"]') : null;
+  if (a) {
+    var id = (a.getAttribute('href') || '').replace('#/product/', '');
+    if (id && products.some(function (p) { return p.id === id; })) { openProductFromVisual(id); return; }
+  }
+  var sorted = visualRegions.slice().sort(function (x, y) { return depthOf(y.el) - depthOf(x.el); });
+  for (var i = 0; i < sorted.length; i++) {
+    var r = sorted[i];
+    if (!r.productId && r.el && r.el.isConnected && r.el.contains(target)) { openVisualEditor(r.key); return; }
+  }
+}
+function depthOf(el) { var d = 0, c = el; while (c && c.parentElement) { d++; c = c.parentElement; } return d; }
+
+function scanRegions(retries) {
+  var doc = previewDoc();
+  var overlay = $('visualOverlay');
+  if (!doc || !overlay) return;
+  overlay.innerHTML = '';
+  visualRegions = [];
+  var c = (settings && settings.content) || {};
+  function leafByText(t) {
+    if (!t) return null;
+    var els = doc.querySelectorAll('body *');
+    for (var i = 0; i < els.length; i++) {
+      if (els[i].children.length === 0 && (els[i].textContent || '').trim() === t) return els[i];
+    }
+    return null;
+  }
+  function sectionOf(el) {
+    var cur = el;
+    while (cur && cur.tagName !== 'SECTION' && cur !== doc.body) cur = cur.parentElement;
+    return (cur && cur.tagName === 'SECTION') ? cur : el;
+  }
+  function addRegion(key, label, el, productId) {
+    if (!el) return;
+    var outline = document.createElement('div');
+    outline.className = 'v-outline';
+    var badge = document.createElement('button');
+    badge.type = 'button';
+    badge.className = 'v-badge' + (productId ? ' prod' : '');
+    badge.textContent = label;
+    (function (k, pid) {
+      badge.addEventListener('click', function () { if (pid) openProductFromVisual(pid); else openVisualEditor(k); });
+    })(key, productId);
+    badge.addEventListener('mouseenter', function () { outline.classList.add('hot'); });
+    badge.addEventListener('mouseleave', function () { outline.classList.remove('hot'); });
+    overlay.appendChild(outline);
+    overlay.appendChild(badge);
+    visualRegions.push({ key: key, el: el, badge: badge, outline: outline, productId: productId || null });
+  }
+
+  var annLeaf = leafByText(c.announcementText);
+  if (annLeaf) addRegion('announcement', 'Top strip: Edit', annLeaf.parentElement);
+  var hero = doc.querySelector('section[data-screen-label="Home"]');
+  if (hero) {
+    addRegion('hero', 'Top photo: Edit', hero);
+    var h1 = hero.querySelector('h1');
+    if (h1) addRegion('heroHeading', 'Big heading: Edit', h1);
+  }
+  var craftVid = null;
+  Array.prototype.forEach.call(doc.querySelectorAll('video'), function (v) {
+    if ((v.getAttribute('src') || '').indexOf('banner2') >= 0) craftVid = v;
+  });
+  if (craftVid) addRegion('craftBanner', 'Video banner: Edit', sectionOf(craftVid));
+  else { var craftH = leafByText('Handcrafted. Comfort first.'); if (craftH) addRegion('craftBanner', 'Video banner: Edit', sectionOf(craftH)); }
+  var festLeaf = leafByText(c.festiveHeading);
+  if (festLeaf) addRegion('festive', 'Festive row: Edit', sectionOf(festLeaf));
+  var collCard = null;
+  Array.prototype.forEach.call(doc.querySelectorAll('a[href^="#/shop/"]'), function (a) {
+    if (!collCard && a.getBoundingClientRect().height > 100) collCard = a;
+  });
+  if (collCard) addRegion('collections', 'Collections: Edit', sectionOf(collCard));
+  var bestLeaf = leafByText(c.bestsellersHeading);
+  if (bestLeaf) addRegion('bestsellers', 'Bestsellers: Edit', sectionOf(bestLeaf));
+  var reelsH = leafByText('Moments in motion');
+  if (reelsH) addRegion('reels', 'Video reels: Edit', sectionOf(reelsH));
+  var newsSection = null;
+  Array.prototype.forEach.call(doc.querySelectorAll('section'), function (s) {
+    if (s !== hero && s.querySelector('input')) newsSection = s;
+  });
+  if (newsSection) addRegion('newsletter', 'Newsletter box: Edit', newsSection);
+  var footer = doc.querySelector('footer');
+  if (footer) addRegion('footer', 'Footer and colours: Edit', footer);
+  Array.prototype.forEach.call(doc.querySelectorAll('a[href^="#/product/"]'), function (a) {
+    if (a.getBoundingClientRect().height > 150) {
+      addRegion('product', 'Edit', a, (a.getAttribute('href') || '').replace('#/product/', ''));
+    }
+  });
+
+  renderHiddenParts();
+  positionBadges();
+  if (!hero && retries > 0) setTimeout(function () { scanRegions(retries - 1); }, 900);
+}
+function positionBadges() {
+  if (!visualStarted) return;
+  var tab = $('tab-visual');
+  if (!tab || tab.classList.contains('hidden')) return;
+  var f = $('shopPreview');
+  var overlay = $('visualOverlay');
+  if (!f || !overlay) return;
+  var fRect = f.getBoundingClientRect();
+  var oRect = overlay.getBoundingClientRect();
+  var needRescan = false;
+  visualRegions.forEach(function (r) {
+    if (!r.el || !r.el.isConnected) { needRescan = true; r.badge.style.display = 'none'; r.outline.style.display = 'none'; return; }
+    var rect = r.el.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > fRect.height || rect.width === 0) { r.badge.style.display = 'none'; r.outline.style.display = 'none'; return; }
+    var x = fRect.left - oRect.left + rect.left;
+    var y = fRect.top - oRect.top + rect.top;
+    r.outline.style.display = '';
+    r.outline.style.left = x + 'px';
+    r.outline.style.top = y + 'px';
+    r.outline.style.width = rect.width + 'px';
+    r.outline.style.height = rect.height + 'px';
+    r.badge.style.display = '';
+    if (r.productId) {
+      r.badge.style.left = (x + rect.width) + 'px';
+      r.badge.style.top = (y + 10) + 'px';
+      r.badge.style.transform = 'translateX(-100%) translateX(-10px)';
+    } else {
+      r.badge.style.left = (x + 12) + 'px';
+      r.badge.style.top = (y + 12) + 'px';
+      r.badge.style.transform = '';
+    }
+  });
+  if (needRescan) scanRegions(0);
+}
+function renderHiddenParts() {
+  var box = $('hiddenParts');
+  if (!box) return;
+  var sec = (settings && settings.sections) || {};
+  var c = (settings && settings.content) || {};
+  var hidden = [];
+  Object.keys(VISUAL_SECTION_NAMES).forEach(function (k) { if (sec[k] === false) hidden.push([k, VISUAL_SECTION_NAMES[k]]); });
+  if (c.announcementOn === false) hidden.push(['announcement', 'Top strip']);
+  if (!hidden.length) { box.innerHTML = ''; return; }
+  box.innerHTML = '<div class="hidden-parts"><b>Hidden parts:</b>' + hidden.map(function (h) {
+    return '<button class="btn btn-light btn-small" data-showpart="' + h[0] + '">' + esc(h[1]) + ' is off. Turn it on</button>';
+  }).join('') + '</div>';
+  box.querySelectorAll('[data-showpart]').forEach(function (b) {
+    b.addEventListener('click', function () { openVisualEditor(b.dataset.showpart); });
+  });
+}
+function openProductFromVisual(id) {
+  editorReturnToVisual = true;
+  switchTab('products');
+  openEditor(id);
+}
+
+/* ----- visual editor panels ----- */
+function vHead(title, help) {
+  return '<h2>' + esc(title) + '</h2><p class="help">' + help + '</p><div id="vMsg"></div>';
+}
+function vSaveRow(label) {
+  return '<p style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap"><button class="btn btn-green" id="vSave" style="font-size:19px; padding:16px 38px">' + esc(label) + '</button>' +
+    '<button class="btn btn-light" id="vClose">Close</button></p>';
+}
+function vSectionToggle(key) {
+  var on = !settings.sections || settings.sections[key] !== false;
+  return '<div class="toggle-row"><div class="grow"><b>Show this part on the homepage</b><br><span class="field-help" style="margin:0">Turning it off only hides the part. Nothing is deleted, and you can turn it back on any time.</span></div>' +
+    '<label class="switch"><input type="checkbox" id="v-sec"' + (on ? ' checked' : '') + '><span class="track"></span></label></div>';
+}
+function vSaveSettings(part, okText) {
+  api('PUT', '/api/admin/settings', { settings: part }).then(function (d) {
+    settings = d.settings;
+    fillLook(); fillWriting(); buildSectionToggles();
+    showMsg($('vMsg'), okText, true);
+    renderHiddenParts();
+    refreshVisualPreview();
+  }).catch(function (e) { showMsg($('vMsg'), e.message, false); });
+}
+function imgPickHtml(prefix, label, value, help) {
+  var opts = '';
+  if (value && assetImages.indexOf(value) < 0) opts += '<option value="' + esc(value) + '" selected>' + esc(value) + '</option>';
+  opts += assetImages.map(function (p) {
+    return '<option value="' + esc(p) + '"' + (p === value ? ' selected' : '') + '>' + esc(p.replace('assets/', '')) + '</option>';
+  }).join('');
+  return '<label>' + esc(label) + '</label>' +
+    '<div class="imgpick"><img id="' + prefix + '-thumb" src="' + esc(value || '') + '" alt="">' +
+    '<div class="grow"><select id="' + prefix + '-sel"><option value="">Choose a photo from your shop files...</option>' + opts + '</select>' +
+    '<input type="text" id="' + prefix + '-path" value="' + esc(value || '') + '" placeholder="Example: assets/hero-desktop.jpg">' +
+    '<p class="field-help">' + help + '</p></div></div>';
+}
+function wireImgPick(prefix) {
+  var sel = $(prefix + '-sel'), path = $(prefix + '-path'), thumb = $(prefix + '-thumb');
+  if (!sel || !path || !thumb) return;
+  sel.addEventListener('change', function () { if (sel.value) { path.value = sel.value; thumb.src = sel.value; } });
+  path.addEventListener('change', function () { thumb.src = path.value; });
+}
+function vColorRow(prefix, label, value, help) {
+  return '<label>' + esc(label) + '</label><div class="color-row"><input type="color" id="' + prefix + '-picker">' +
+    '<div><input type="text" id="' + prefix + '" value="' + esc(value || '') + '"></div></div><p class="field-help">' + help + '</p>';
+}
+
+function openVisualEditor(key) {
+  var card = $('visualEditorCard');
+  var box = $('visualEditor');
+  var c = (settings && settings.content) || {};
+  var d = (settings && settings.design) || {};
+  var html = '';
+  var wire = function () {};
+
+  if (key === 'announcement') {
+    html = vHead('The thin strip at the very top', 'This strip sits above everything and shows on every page of your shop.') +
+      '<label for="v-ann">Words on the top strip</label><input type="text" id="v-ann" value="' + esc(c.announcementText || '') + '">' +
+      '<p class="field-help">Keep it short, one line.</p>' +
+      '<div class="toggle-row"><div class="grow"><b>Show the top strip</b><br><span class="field-help" style="margin:0">Turn this off to hide the strip completely.</span></div>' +
+      '<label class="switch"><input type="checkbox" id="v-ann-on"' + (c.announcementOn !== false ? ' checked' : '') + '><span class="track"></span></label></div>' +
+      vSaveRow('SAVE');
+    wire = function () {
+      $('vSave').addEventListener('click', function () {
+        vSaveSettings({ content: { announcementText: $('v-ann').value.trim(), announcementOn: $('v-ann-on').checked } }, 'Saved! The top strip now shows your new words.');
+      });
+    };
+  } else if (key === 'hero' || key === 'heroHeading') {
+    html = vHead('The big photo and heading', 'This is the first thing every customer sees. The big words sit on top of the photo.') +
+      '<label for="v-h1">Big heading, first line</label><input type="text" id="v-h1" value="' + esc(c.heroHeading1 || '') + '">' +
+      '<label for="v-h2">Big heading, second line</label><input type="text" id="v-h2" value="' + esc(c.heroHeading2 || '') + '">' +
+      imgPickHtml('v-hdesk', 'Big photo, for computers', c.heroDesktopImage || 'assets/hero-desktop.jpg', 'Pick from the list, or type the file name. The small picture shows the photo you picked.') +
+      imgPickHtml('v-hmob', 'Big photo, for phones', c.heroMobileImage || 'assets/hero-mobile.jpg', 'Most customers visit on a phone, so this photo matters most.') +
+      vSectionToggle('hero') + vSaveRow('SAVE');
+    wire = function () {
+      wireImgPick('v-hdesk'); wireImgPick('v-hmob');
+      $('vSave').addEventListener('click', function () {
+        vSaveSettings({
+          content: {
+            heroHeading1: $('v-h1').value.trim(), heroHeading2: $('v-h2').value.trim(),
+            heroDesktopImage: $('v-hdesk-path').value.trim(), heroMobileImage: $('v-hmob-path').value.trim()
+          },
+          sections: { hero: $('v-sec').checked }
+        }, 'Saved! Your homepage now starts with the new photo and heading.');
+      });
+    };
+  } else if (key === 'festive' || key === 'bestsellers') {
+    var isFest = key === 'festive';
+    html = vHead(isFest ? 'Festive collection row' : 'Bestsellers row',
+      isFest ? 'This row shows your newest pairs under its heading.' : 'This row shows the pairs your developer picked as your best sellers.') +
+      '<label for="v-rowhead">Row heading</label><input type="text" id="v-rowhead" value="' + esc(isFest ? (c.festiveHeading || '') : (c.bestsellersHeading || '')) + '">' +
+      '<p class="help">To change a pair in this row, tap its Edit button in the picture above, or use the Products page.</p>' +
+      vSectionToggle(key) + vSaveRow('SAVE');
+    wire = function () {
+      $('vSave').addEventListener('click', function () {
+        var content = {};
+        content[isFest ? 'festiveHeading' : 'bestsellersHeading'] = $('v-rowhead').value.trim();
+        var part = { content: content, sections: {} };
+        part.sections[key] = $('v-sec').checked;
+        vSaveSettings(part, 'Saved! The row heading is updated in your shop.');
+      });
+    };
+  } else if (key === 'collections') {
+    var groups = [['barely', 'The Barely Edit'], ['gilded', 'Gilded'], ['veil', 'Veil & Vow']].map(function (g) {
+      var items = products.filter(function (p) { return p.coll === g[0]; }).map(function (p) {
+        return '<div class="prod-row"><div class="grow"><div class="prod-name" style="font-size:16.5px">' + esc(p.name) + '</div>' +
+          '<div class="prod-meta">' + inr(p.price) + '</div></div>' +
+          '<button class="btn btn-light btn-small" data-vprod="' + esc(p.id) + '">Edit</button></div>';
+      }).join('');
+      return '<h3>' + esc(g[1]) + '</h3>' + (items || '<p class="help">No pairs in this collection yet.</p>');
+    }).join('');
+    html = vHead('Shop by collection', 'These three boxes take customers to each collection. The boxes and their photos are part of the shop design. To change a pair, tap its Edit button here or in the picture above.') +
+      vSectionToggle('collections') + groups + vSaveRow('SAVE');
+    wire = function () {
+      box.querySelectorAll('[data-vprod]').forEach(function (b) {
+        b.addEventListener('click', function () { openProductFromVisual(b.dataset.vprod); });
+      });
+      $('vSave').addEventListener('click', function () {
+        var part = { sections: {} };
+        part.sections.collections = $('v-sec').checked;
+        vSaveSettings(part, 'Saved!');
+      });
+    };
+  } else if (key === 'craftBanner' || key === 'reels' || key === 'newsletter') {
+    var info = {
+      craftBanner: ['Craft video banner', 'This part plays your craft video next to the words "Handcrafted. Comfort first." The video and its words are part of the shop design. If you would like them changed, please ask your developer.'],
+      reels: ['Video reels', 'This part shows your "Moments in motion" videos. The videos are set up by your developer from your product videos.'],
+      newsletter: ['Newsletter box', 'Customers type their email address here to hear about new pairs and offers. The words in this box are part of the shop design.']
+    }[key];
+    html = vHead(info[0], info[1]) + vSectionToggle(key) + vSaveRow('SAVE');
+    wire = function () {
+      $('vSave').addEventListener('click', function () {
+        var part = { sections: {} };
+        part.sections[key] = $('v-sec').checked;
+        vSaveSettings(part, 'Saved!');
+      });
+    };
+  } else if (key === 'footer') {
+    html = vHead('Footer and shop colours', 'The footer is the part at the very bottom of every page, with your contact details and links. Its words are part of the shop design. The colours below change the whole shop at once, just like the Shop Look page.') +
+      vColorRow('v-d-bg', 'Background colour', d.backgroundColor, 'The main colour behind everything in the shop.') +
+      vColorRow('v-d-ink', 'Text colour', d.primaryColor, 'The colour of headings and most writing.') +
+      vColorRow('v-d-btn', 'Button colour', d.buttonColor, 'The round buttons customers tap.') +
+      vColorRow('v-d-btnink', 'Button text colour', d.buttonTextColor, 'The writing on those buttons.') +
+      '<label for="v-d-font">Writing style</label><select id="v-d-font">' +
+      '<option value="classic">Classic, the current AUVÉ look</option><option value="modern">Modern clean</option>' +
+      '<option value="serif">Old-style book letters</option><option value="simple">Simple</option></select>' +
+      '<p class="field-help">Changes the letter style of headings and reading text across the shop.</p>' +
+      '<label for="v-d-hsize">Section heading size (not needed)</label><input type="number" id="v-d-hsize" min="10" max="120" value="' + (d.headingSize == null ? '' : d.headingSize) + '" placeholder="Leave empty to keep the original">' +
+      '<label for="v-d-bsize">Reading text size (not needed)</label><input type="number" id="v-d-bsize" min="10" max="40" value="' + (d.bodySize == null ? '' : d.bodySize) + '" placeholder="Leave empty to keep the original">' +
+      vSaveRow('SAVE COLOURS');
+    wire = function () {
+      $('v-d-font').value = d.fontPreset || 'classic';
+      [['v-d-bg-picker', 'v-d-bg'], ['v-d-ink-picker', 'v-d-ink'], ['v-d-btn-picker', 'v-d-btn'], ['v-d-btnink-picker', 'v-d-btnink']].forEach(function (pair) {
+        setColor(pair[0], pair[1], $(pair[1]).value);
+        syncColor(pair[0], pair[1]);
+      });
+      $('vSave').addEventListener('click', function () {
+        vSaveSettings({
+          design: {
+            backgroundColor: $('v-d-bg').value.trim(), primaryColor: $('v-d-ink').value.trim(),
+            buttonColor: $('v-d-btn').value.trim(), buttonTextColor: $('v-d-btnink').value.trim(),
+            fontPreset: $('v-d-font').value,
+            headingSize: $('v-d-hsize').value === '' ? null : Number($('v-d-hsize').value),
+            bodySize: $('v-d-bsize').value === '' ? null : Number($('v-d-bsize').value)
+          }
+        }, 'Saved! Your shop now uses the new colours.');
+      });
+    };
+  } else {
+    return;
+  }
+
+  box.innerHTML = html;
+  card.classList.remove('hidden');
+  wire();
+  $('vClose').addEventListener('click', function () { card.classList.add('hidden'); });
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ---------------- wire up ---------------- */
+$('loginBtn').addEventListener('click', doLogin);
+$('pw').addEventListener('keydown', function (e) { if (e.key === 'Enter') doLogin(); });
+wireEye($('pwEye'), $('pw'));
+wireEye($('fgEye'), $('fg-new'));
+document.querySelectorAll('[data-eye]').forEach(function (b) { wireEye(b, $(b.dataset.eye)); });
+$('forgotLink').addEventListener('click', function () { $('forgotBox').classList.toggle('hidden'); });
+$('forgotBtn').addEventListener('click', doForgot);
+$('changePwBtn').addEventListener('click', doChangePassword);
+$('saveRecoveryBtn').addEventListener('click', doSaveRecovery);
+$('saveRzBtn').addEventListener('click', doSaveRazorpay);
+$('checkRzBtn').addEventListener('click', doCheckRazorpay);
+$('clearRzBtn').addEventListener('click', function () { doClearIntegration('razorpay', 'rzMsg'); });
+$('saveSrBtn').addEventListener('click', doSaveShiprocket);
+$('checkSrBtn').addEventListener('click', doCheckShiprocket);
+$('clearSrBtn').addEventListener('click', function () { doClearIntegration('shiprocket', 'srMsg'); });
+$('logoutBtn').addEventListener('click', logout);
+$('addProductBtn').addEventListener('click', function () { openEditor(null); });
+$('addVariantBtn').addEventListener('click', function () { $('variants').appendChild(variantCard(null)); });
+$('addDetailBtn').addEventListener('click', function () { $('details').appendChild(detailRow(null)); });
+$('saveProductBtn').addEventListener('click', saveProduct);
+$('cancelProductBtn').addEventListener('click', closeEditor);
+$('saveLookBtn').addEventListener('click', saveLook);
+$('saveWritingBtn').addEventListener('click', saveWriting);
+$('saveSectionsBtn').addEventListener('click', saveSections);
+$('refreshOrdersBtn').addEventListener('click', loadOrders);
+[['d-bg-picker', 'd-bg'], ['d-ink-picker', 'd-ink'], ['d-btn-picker', 'd-btn'], ['d-btnink-picker', 'd-btnink']].forEach(function (pair) { syncColor(pair[0], pair[1]); });
+
+if (token) startApp();

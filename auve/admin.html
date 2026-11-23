@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AUVÉ Shop Manager</title>
+<link rel="icon" href="assets/favicon.png">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #FAF6F0; color: #1B1A34; font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.5; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 20px 16px 70px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 23px; margin: 0 0 6px; }
+  h3 { font-size: 19px; margin: 22px 0 8px; }
+  .help { color: #5A5348; font-size: 15.5px; margin: 0 0 16px; }
+  .field-help { color: #5A5348; font-size: 14.5px; margin: 4px 0 0; }
+  .card { background: #FFF; border: 1px solid #E5DCCB; border-radius: 14px; padding: 22px; margin: 0 0 20px; }
+  label { display: block; font-weight: bold; font-size: 17px; margin: 18px 0 6px; }
+  label:first-child { margin-top: 0; }
+  input[type=text], input[type=number], input[type=password], textarea, select {
+    width: 100%; padding: 13px 14px; font-size: 17px; border: 1.5px solid #B9AE99; border-radius: 9px; background: #FFF; color: #1B1A34; font-family: inherit;
+  }
+  textarea { min-height: 84px; resize: vertical; }
+  input:focus, textarea:focus, select:focus { outline: 3px solid #B98E4F55; border-color: #B98E4F; }
+  .btn { display: inline-block; border: none; cursor: pointer; border-radius: 999px; padding: 14px 28px; font-size: 17px; font-weight: bold; background: #1B1A34; color: #FFF; }
+  .btn:hover { opacity: 0.9; }
+  .btn-green { background: #1E7B34; }
+  .btn-light { background: #EFE7D8; color: #1B1A34; }
+  .btn-danger { background: #FFF; color: #B3261E; border: 2px solid #B3261E; }
+  .btn-small { padding: 9px 18px; font-size: 15.5px; }
+  .msg-ok { background: #E3F4E5; border: 1.5px solid #1E7B34; color: #14532D; border-radius: 10px; padding: 13px 16px; margin: 0 0 16px; font-weight: bold; }
+  .msg-err { background: #FDECEA; border: 1.5px solid #B3261E; color: #7A1B16; border-radius: 10px; padding: 13px 16px; margin: 0 0 16px; font-weight: bold; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 22px; }
+  .tab { border: 2px solid #1B1A34; background: #FFF; color: #1B1A34; border-radius: 999px; padding: 12px 22px; font-size: 16.5px; font-weight: bold; cursor: pointer; }
+  .tab.on { background: #1B1A34; color: #FFF; }
+  .prod-row { display: flex; align-items: center; gap: 16px; padding: 13px 0; border-bottom: 1px solid #EEE4D2; }
+  .prod-row:last-child { border-bottom: none; }
+  .prod-row img { width: 58px; height: 72px; object-fit: cover; border-radius: 8px; background: #F3EFEA; flex-shrink: 0; }
+  .prod-row .grow { flex: 1; min-width: 0; }
+  .prod-name { font-weight: bold; font-size: 18px; }
+  .prod-meta { color: #5A5348; font-size: 15px; }
+  .sizes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .size-box { display: flex; align-items: center; gap: 8px; background: #FAF6F0; border: 1.5px solid #D8CDB4; border-radius: 9px; padding: 10px 14px; cursor: pointer; font-weight: bold; }
+  .size-box input { width: 20px; height: 20px; }
+  .variant { border: 1.5px solid #E5DCCB; border-radius: 12px; padding: 16px; margin: 0 0 14px; background: #FDFBF7; }
+  .detail-row, .color-row { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
+  .detail-row > div { flex: 1; min-width: 180px; }
+  .color-row > div { flex: 1; min-width: 200px; }
+  input[type=color] { width: 70px; height: 48px; padding: 4px; border: 1.5px solid #B9AE99; border-radius: 9px; background: #FFF; cursor: pointer; }
+  .toggle-row { display: flex; align-items: center; gap: 16px; padding: 15px 0; border-bottom: 1px solid #EEE4D2; }
+  .toggle-row:last-child { border-bottom: none; }
+  .toggle-row .grow { flex: 1; }
+  .switch { position: relative; width: 62px; height: 34px; flex-shrink: 0; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .track { position: absolute; inset: 0; background: #C9BFA9; border-radius: 999px; cursor: pointer; transition: background 0.2s; }
+  .track:before { content: ''; position: absolute; width: 26px; height: 26px; left: 4px; top: 4px; background: #FFF; border-radius: 50%; transition: left 0.2s; }
+  .switch input:checked + .track { background: #1E7B34; }
+  .switch input:checked + .track:before { left: 32px; }
+  .order { border: 1.5px solid #E5DCCB; border-radius: 12px; padding: 16px; margin: 0 0 14px; background: #FDFBF7; }
+  .order table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .order td { padding: 5px 6px; border-bottom: 1px solid #EEE4D2; font-size: 15.5px; vertical-align: top; }
+  .pill { display: inline-block; border-radius: 999px; padding: 3px 12px; font-size: 14px; font-weight: bold; background: #EFE7D8; }
+  .pill.paid { background: #E3F4E5; color: #14532D; }
+  .pill.cod { background: #FFF3D6; color: #7A5200; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .hidden { display: none !important; }
+  .login-box { max-width: 460px; margin: 56px auto 0; }
+  .login-logo { display: block; height: 44px; width: auto; margin: 6px auto 14px; }
+  .login-title { text-align: center; margin-bottom: 2px; }
+  .login-sub { text-align: center; }
+  .pw-wrap { position: relative; }
+  .pw-wrap input { padding-right: 96px; }
+  .eye-btn { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); border: none; background: #EFE7D8; color: #1B1A34; border-radius: 999px; padding: 8px 14px; font-size: 14.5px; font-weight: bold; cursor: pointer; }
+  .link-btn { background: none; border: none; color: #1B1A34; font-size: 16px; font-weight: bold; text-decoration: underline; cursor: pointer; padding: 6px 0; }
+  /* ---- visual editor ---- */
+  .wrap.wide { max-width: 1420px; }
+  .visual-stage { position: relative; border: 2px solid #1B1A34; border-radius: 14px; overflow: hidden; background: #FFF; }
+  .visual-stage iframe { display: block; width: 100%; height: 76vh; border: 0; background: #FFF; }
+  .visual-overlay { position: absolute; inset: 0; pointer-events: none; }
+  .v-outline { position: absolute; border: 2px dashed rgba(185,142,79,0.0); border-radius: 6px; transition: border-color 0.15s; }
+  .v-outline.hot { border-color: #B98E4F; background: rgba(185,142,79,0.07); }
+  .v-badge { position: absolute; pointer-events: auto; border: none; cursor: pointer; background: #1B1A34; color: #FFF; font-size: 14px; font-weight: bold; border-radius: 999px; padding: 8px 15px; box-shadow: 0 3px 10px rgba(27,26,52,0.35); white-space: nowrap; z-index: 5; }
+  .v-badge:hover { background: #B98E4F; color: #1B1A34; }
+  .v-badge.prod { background: #FFF; color: #1B1A34; border: 2px solid #1B1A34; padding: 5px 12px; font-size: 13px; }
+  .v-badge.prod:hover { background: #1B1A34; color: #FFF; }
+  .v-badge.off { background: #B3261E; }
+  .hidden-parts { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0 0; }
+  .imgpick { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; }
+  .imgpick img { width: 120px; height: 92px; object-fit: cover; border-radius: 9px; border: 1.5px solid #D8CDB4; background: #F3EFEA; }
+  .imgpick .grow { flex: 1; min-width: 220px; }
+  .imgpick select { margin-bottom: 8px; }
+  .status-line { font-weight: bold; margin: 0 0 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= LOGIN ================= -->
+  <div id="loginView" class="login-box">
+    <div class="card">
+      <img class="login-logo" src="assets/logo-navy.png" alt="AUVÉ">
+      <h1 class="login-title">Shop Manager</h1>
+      <p class="help login-sub">This is the private page where you manage your shop: products, prices, colours and orders. Customers never see this page.</p>
+      <div id="loginErr" class="msg-err hidden"></div>
+      <label for="pw">Password</label>
+      <div class="pw-wrap">
+        <input type="password" id="pw" autocomplete="current-password" placeholder="Type your password">
+        <button type="button" class="eye-btn" id="pwEye">Show</button>
+      </div>
+      <p class="field-help">This is the password your developer gave you.</p>
+      <p style="margin:20px 0 0"><button class="btn btn-green" id="loginBtn" style="width:100%">Open Shop Manager</button></p>
+      <p style="margin:14px 0 0; text-align:center"><button type="button" class="link-btn" id="forgotLink">Forgot your password?</button></p>
+
+      <div id="forgotBox" class="hidden" style="margin-top:10px; border-top:1px solid #EEE4D2; padding-top:16px">
+        <h3 style="margin-top:0">Get back in with your recovery code</h3>
+        <p class="help">When you were inside the Shop Manager, you could set a secret recovery code on the Password and Safety page. Type that code here, choose a new password, and you are back in. No email is needed.</p>
+        <div id="forgotMsg"></div>
+        <label for="fg-code">Your recovery code</label>
+        <input type="text" id="fg-code" autocomplete="off" placeholder="Type your recovery code">
+        <label for="fg-new">New password</label>
+        <div class="pw-wrap">
+          <input type="password" id="fg-new" autocomplete="new-password" placeholder="At least 6 letters or numbers">
+          <button type="button" class="eye-btn" id="fgEye">Show</button>
+        </div>
+        <p style="margin:18px 0 0"><button class="btn" id="forgotBtn" style="width:100%">Set new password and open my shop</button></p>
+        <p class="field-help">If you never set a recovery code, please ask your developer for help. After 5 wrong tries, this form waits 5 minutes before it can be used again.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN ================= -->
+  <div id="mainView" class="hidden">
+    <div class="topbar">
+      <div>
+        <h1>AUVÉ Shop Manager</h1>
+        <p class="help" style="margin:0">Pick one job below. Each page does one thing.</p>
+      </div>
+      <div>
+        <a class="btn btn-light btn-small" href="./" target="_blank">See my shop</a>
+        <button class="btn btn-light btn-small" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab on" data-tab="visual">Edit My Shop Visually</button>
+      <button class="tab" data-tab="products">Products</button>
+      <button class="tab" data-tab="look">Shop Look</button>
+      <button class="tab" data-tab="writing">Homepage Writing</button>
+      <button class="tab" data-tab="sections">Homepage Parts On/Off</button>
+      <button class="tab" data-tab="orders">Orders</button>
+      <button class="tab" data-tab="payments">Payments and Delivery</button>
+      <button class="tab" data-tab="security">Password and Safety</button>
+    </div>
+
+    <!-- ================= VISUAL EDITOR ================= -->
+    <div id="tab-visual">
+      <div class="card">
+        <h2>Your shop, exactly as customers see it</h2>
+        <p class="help">This is your real homepage. Tap any part of it, or tap one of the dark buttons on it, and the boxes for just that part open below. Change the words or the photo, press Save, and this picture updates at once, exactly like your real shop.</p>
+        <div id="visualMsg"></div>
+        <div class="visual-stage" id="visualStage">
+          <iframe id="shopPreview" title="Your shop homepage" src="about:blank"></iframe>
+          <div class="visual-overlay" id="visualOverlay"></div>
+        </div>
+        <p class="field-help">Tip: scroll inside the picture to see the whole homepage. Every part with a button on it can be changed.</p>
+        <div id="hiddenParts"></div>
+      </div>
+      <div class="card hidden" id="visualEditorCard">
+        <div id="visualEditor"></div>
+      </div>
+    </div>
+
+    <!-- ================= PRODUCTS LIST ================= -->
+    <div id="tab-products" class="hidden">
+      <div class="card" id="productListCard">
+        <h2>Your products</h2>
+        <p class="help">Add new products, change prices, or mark sizes as sold out. Every change appears in your shop as soon as you save it.</p>
+        <div id="prodMsg"></div>
+        <p><button class="btn btn-green" id="addProductBtn">+ Add a new product</button></p>
+        <div id="productList"></div>
+      </div>
+
+      <!-- ================= PRODUCT EDITOR ================= -->
+      <div class="card hidden" id="productFormCard">
+        <h2 id="formTitle">Edit product</h2>
+        <p class="help">Fill the boxes, then press the big green Save button at the bottom. The shop updates right away.</p>
+        <div id="formMsg"></div>
+
+        <label for="f-name">Product name</label>
+        <input type="text" id="f-name" placeholder="Example: Whisper">
+        <p class="field-help">The big title customers see for this product.</p>
+
+        <div id="idBlock">
+          <label for="f-id">Web address name</label>
+          <input type="text" id="f-id" placeholder="Example: red-heels">
+          <p class="field-help">Small letters and dashes only, no spaces. This becomes part of the product's web link, so it cannot be changed later.</p>
+        </div>
+
+        <label for="f-coll">Collection (the group this product belongs to)</label>
+        <select id="f-coll">
+          <option value="barely">The Barely Edit — everyday styles</option>
+          <option value="gilded">Gilded — gold styles</option>
+          <option value="veil">Veil &amp; Vow — festive and bridal styles</option>
+        </select>
+
+        <label for="f-type">Type of footwear</label>
+        <input type="text" id="f-type" placeholder="Example: Flats">
+        <p class="field-help">One word or two, like Flats, Heels, Slides or Wedges.</p>
+
+        <label for="f-price">Price, in rupees</label>
+        <input type="number" id="f-price" min="0" step="1" placeholder="Example: 2490">
+        <p class="field-help">Only the number. 2490 means ₹2,490. Do not type the ₹ sign.</p>
+
+        <label for="f-desc">About this product</label>
+        <textarea id="f-desc" placeholder="Write 2-3 lines about this pair"></textarea>
+        <p class="field-help">Customers read this on the product page.</p>
+
+        <label for="f-tag">Small label on the photo (not needed)</label>
+        <input type="text" id="f-tag" placeholder="Example: Bestseller">
+        <p class="field-help">A small tag shown on the product photo, like "Bestseller" or "New". Leave empty if you do not want a tag.</p>
+
+        <label for="f-cover">Main photo (the first photo in the shop list)</label>
+        <input type="text" id="f-cover" placeholder="Example: assets/p/my-photo.jpg">
+        <p class="field-help">The photo file name. New photos must first be uploaded by your developer — then type the file name here.</p>
+
+        <label for="f-cover2">Second photo (not needed)</label>
+        <input type="text" id="f-cover2" placeholder="Example: assets/p/my-photo-2.jpg">
+        <p class="field-help">On a computer, this photo appears when the customer moves the mouse over the product.</p>
+
+        <h3>Colours of this product</h3>
+        <p class="help">Most products have one colour. If the same design comes in two colours, add both here. Each colour has its own photos.</p>
+        <div id="variants"></div>
+        <p><button class="btn btn-light btn-small" id="addVariantBtn">+ Add another colour</button></p>
+
+        <h3>Sizes that are sold out</h3>
+        <p class="help" style="margin-bottom:6px">Tick a size if it is finished and cannot be bought. Ticked sizes show as sold out in the shop. Untick a size when it is back in stock.</p>
+        <div class="sizes" id="soldOutSizes"></div>
+
+        <h3>Extra details (not needed)</h3>
+        <p class="help" style="margin-bottom:6px">Extra facts shown on the product page. Example: the left box says "Heel type" and the right box says "Block heel".</p>
+        <div id="details"></div>
+        <p><button class="btn btn-light btn-small" id="addDetailBtn">+ Add one more detail</button></p>
+
+        <p style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap">
+          <button class="btn btn-green" id="saveProductBtn" style="font-size:19px; padding:16px 38px">SAVE PRODUCT</button>
+          <button class="btn btn-light" id="cancelProductBtn">Cancel</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= SHOP LOOK ================= -->
+    <div id="tab-look" class="hidden">
+      <div class="card">
+        <h2>Shop look — colours and writing style</h2>
+        <p class="help">Change the colours and the writing style of the whole shop at once. The change appears as soon as you save. If the shop ever looks wrong, come back here and set the original colours again: background <b>#1B1A34</b> (dark blue), text <b>#F3E6D8</b> (cream), button <b>#F3E6D8</b> (cream), button text <b>#1B1A34</b> (dark blue), writing style <b>Classic</b>.</p>
+        <div id="lookMsg"></div>
+
+        <label>Background colour</label>
+        <div class="color-row">
+          <input type="color" id="d-bg-picker">
+          <div><input type="text" id="d-bg" placeholder="#1B1A34"></div>
+        </div>
+        <p class="field-help">The main colour behind everything in the shop.</p>
+
+        <label>Text colour</label>
+        <div class="color-row">
+          <input type="color" id="d-ink-picker">
+          <div><input type="text" id="d-ink" placeholder="#F3E6D8"></div>
+        </div>
+        <p class="field-help">The colour of headings and most writing. If the background is dark, keep this light. If the background is light, make this dark.</p>
+
+        <label>Button colour</label>
+        <div class="color-row">
+          <input type="color" id="d-btn-picker">
+          <div><input type="text" id="d-btn" placeholder="#F3E6D8"></div>
+        </div>
+        <p class="field-help">The round buttons customers tap, like "Shop all pairs" and "Add to bag".</p>
+
+        <label>Button text colour</label>
+        <div class="color-row">
+          <input type="color" id="d-btnink-picker">
+          <div><input type="text" id="d-btnink" placeholder="#1B1A34"></div>
+        </div>
+        <p class="field-help">The writing on those buttons. It should be easy to read against the button colour.</p>
+
+        <label for="d-font">Writing style</label>
+        <select id="d-font">
+          <option value="classic">Classic — the current AUVÉ look</option>
+          <option value="modern">Modern clean</option>
+          <option value="serif">Old-style book letters</option>
+          <option value="simple">Simple</option>
+        </select>
+        <p class="field-help">Changes the letter style of headings and reading text across the shop.</p>
+
+        <label for="d-hsize">Section heading size (not needed)</label>
+        <input type="number" id="d-hsize" min="10" max="120" placeholder="Leave empty to keep the original">
+        <p class="field-help">How big the section headings are (like "Bestsellers"). The original is about 34. Leave empty to keep the original size.</p>
+
+        <label for="d-bsize">Reading text size (not needed)</label>
+        <input type="number" id="d-bsize" min="10" max="40" placeholder="Leave empty to keep the original">
+        <p class="field-help">How big normal reading text is. The original is about 15. Leave empty to keep the original size.</p>
+
+        <p style="margin-top:24px"><button class="btn btn-green" id="saveLookBtn" style="font-size:19px; padding:16px 38px">SAVE LOOK</button></p>
+      </div>
+    </div>
+
+    <!-- ================= HOMEPAGE WRITING ================= -->
+    <div id="tab-writing" class="hidden">
+      <div class="card">
+        <h2>Homepage writing and top photo</h2>
+        <p class="help">Change the words at the top of the shop and on the homepage. No code needed — type the new words and save.</p>
+        <div id="writingMsg"></div>
+
+        <h3>The thin strip at the very top</h3>
+        <div class="toggle-row" style="border:none; padding-top:0">
+          <div class="grow"><b>Show the top strip</b><br><span class="field-help" style="margin:0">The thin dark line above everything, seen on every page.</span></div>
+          <label class="switch"><input type="checkbox" id="c-ann-on"><span class="track"></span></label>
+        </div>
+        <label for="c-ann">Words on the top strip</label>
+        <input type="text" id="c-ann" placeholder="Example: Free shipping across India on all orders">
+        <p class="field-help">Keep it short — one line.</p>
+
+        <h3>The big photo on the homepage</h3>
+        <label for="c-h1">Big heading, first line</label>
+        <input type="text" id="c-h1" placeholder="Example: Step In.">
+        <label for="c-h2">Big heading, second line</label>
+        <input type="text" id="c-h2" placeholder="Example: Stand Out.">
+        <p class="field-help">These are the big words written on the homepage photo.</p>
+
+        <label for="c-hdesk">Big photo — for computers</label>
+        <input type="text" id="c-hdesk" placeholder="Example: assets/hero-desktop.jpg">
+        <label for="c-hmob">Big photo — for phones</label>
+        <input type="text" id="c-hmob" placeholder="Example: assets/hero-mobile.jpg">
+        <p class="field-help">Photo file names. New photos must first be uploaded by your developer — then type the file name here.</p>
+
+        <h3>Section headings</h3>
+        <label for="c-fest">Festive row heading</label>
+        <input type="text" id="c-fest" placeholder="Example: Festive collection">
+        <label for="c-best">Bestsellers row heading</label>
+        <input type="text" id="c-best" placeholder="Example: Bestsellers">
+
+        <p style="margin-top:24px"><button class="btn btn-green" id="saveWritingBtn" style="font-size:19px; padding:16px 38px">SAVE WRITING</button></p>
+      </div>
+    </div>
+
+    <!-- ================= SECTIONS ON/OFF ================= -->
+    <div id="tab-sections" class="hidden">
+      <div class="card">
+        <h2>Homepage parts — on or off</h2>
+        <p class="help">Turn parts of the homepage on or off. Turning a part off only hides it — nothing is deleted, and you can turn it back on any time. Then press Save.</p>
+        <div id="sectionsMsg"></div>
+        <div id="sectionToggles"></div>
+        <p style="margin-top:24px"><button class="btn btn-green" id="saveSectionsBtn" style="font-size:19px; padding:16px 38px">SAVE</button></p>
+      </div>
+    </div>
+
+    <!-- ================= ORDERS ================= -->
+    <div id="tab-orders" class="hidden">
+      <div class="card">
+        <h2>Orders received</h2>
+        <p class="help">Every order placed in the shop appears here, newest first. "Cash on delivery" means the customer pays when the parcel arrives. "Paid online" means the money is already received. "TEST" means the shop was in test mode and no money was taken.</p>
+        <p><button class="btn btn-light btn-small" id="refreshOrdersBtn">Refresh the list</button></p>
+        <div id="orderList"></div>
+      </div>
+    </div>
+
+    <!-- ================= PAYMENTS AND DELIVERY ================= -->
+    <div id="tab-payments" class="hidden">
+      <div class="card">
+        <h2>Online payments: Razorpay keys</h2>
+        <p class="help">Razorpay is the company that takes card and UPI payments for your shop. When your keys are saved here, online payment starts working on its own. Until then, the shop stays in test mode and no real money is taken.</p>
+        <p class="help"><b>Where to find your keys:</b> log in at <b>dashboard.razorpay.com</b>. Open <b>Settings</b>, then <b>API Keys</b>, then press <b>Generate Key</b>. Copy the <b>Key ID</b> and the <b>Key Secret</b>. The Key Secret is shown only once, so copy it right away and paste it here.</p>
+        <p class="status-line" id="rzStatus">Checking...</p>
+        <div id="rzMsg"></div>
+        <label for="rz-id">Razorpay Key ID</label>
+        <input type="text" id="rz-id" autocomplete="off" placeholder="Example: rzp_live_xxxxxxxxxxxx">
+        <p class="field-help">This one is not secret. It starts with rzp_test_ for testing or rzp_live_ for real sales.</p>
+        <label for="rz-secret">Razorpay Key Secret</label>
+        <div class="pw-wrap">
+          <input type="password" id="rz-secret" autocomplete="off" placeholder="Paste the Key Secret">
+          <button type="button" class="eye-btn" data-eye="rz-secret">Show</button>
+        </div>
+        <p class="field-help">Your saved secret is never shown back, not even here. If a secret is already saved and you leave this box empty, the saved one is kept.</p>
+        <p style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap">
+          <button class="btn btn-green" id="saveRzBtn">Save Razorpay keys</button>
+          <button class="btn btn-light" id="checkRzBtn">Check my Razorpay keys</button>
+          <button class="btn btn-danger" id="clearRzBtn">Remove saved Razorpay keys</button>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Delivery: Shiprocket login</h2>
+        <p class="help">Shiprocket books the courier when an order comes in. When your login is saved here, shipments are created on their own. Until then, orders still arrive here, you just book the courier yourself.</p>
+        <p class="help"><b>What to type:</b> the same email and password you use to log in at <b>app.shiprocket.in</b>. The pickup location name must match a pickup address name in your Shiprocket account. The usual name is <b>Primary</b>.</p>
+        <p class="status-line" id="srStatus">Checking...</p>
+        <div id="srMsg"></div>
+        <label for="sr-email">Shiprocket login email</label>
+        <input type="text" id="sr-email" autocomplete="off" placeholder="Example: you@yourshop.in">
+        <label for="sr-pass">Shiprocket password</label>
+        <div class="pw-wrap">
+          <input type="password" id="sr-pass" autocomplete="off" placeholder="Your Shiprocket password">
+          <button type="button" class="eye-btn" data-eye="sr-pass">Show</button>
+        </div>
+        <p class="field-help">Your saved password is never shown back. If a password is already saved and you leave this box empty, the saved one is kept.</p>
+        <label for="sr-pickup">Pickup location name</label>
+        <input type="text" id="sr-pickup" placeholder="Example: Primary">
+        <p style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap">
+          <button class="btn btn-green" id="saveSrBtn">Save Shiprocket details</button>
+          <button class="btn btn-light" id="checkSrBtn">Check Shiprocket login</button>
+          <button class="btn btn-danger" id="clearSrBtn">Remove saved Shiprocket details</button>
+        </p>
+      </div>
+
+      <div class="card">
+        <p class="help" style="margin:0"><b>Your keys are safe.</b> They are stored on the server only, in a private file that the shop can never open. They are never shown in your shop, never sent to customers, and this page never shows a saved secret back to anyone.</p>
+      </div>
+    </div>
+
+    <!-- ================= PASSWORD AND SAFETY ================= -->
+    <div id="tab-security" class="hidden">
+      <div class="card">
+        <h2>Change your password</h2>
+        <p class="help">Pick a password that is easy for you to remember and hard for others to guess. After you change it, the old password stops working at once.</p>
+        <div id="changePwMsg"></div>
+        <label for="sec-cur">Current password</label>
+        <div class="pw-wrap">
+          <input type="password" id="sec-cur" autocomplete="current-password" placeholder="Type your current password">
+          <button type="button" class="eye-btn" data-eye="sec-cur">Show</button>
+        </div>
+        <label for="sec-new">New password</label>
+        <div class="pw-wrap">
+          <input type="password" id="sec-new" autocomplete="new-password" placeholder="At least 6 letters or numbers">
+          <button type="button" class="eye-btn" data-eye="sec-new">Show</button>
+        </div>
+        <p style="margin-top:22px"><button class="btn btn-green" id="changePwBtn">Save new password</button></p>
+      </div>
+
+      <div class="card">
+        <h2>Your recovery code</h2>
+        <p class="help">A recovery code is a secret word or short phrase that only you know, like a pet name plus a number. If you ever forget your password, the login page asks for this code and lets you choose a new password right away. No email is needed.</p>
+        <p class="status-line" id="recoveryStatus">Checking...</p>
+        <p class="help">Write your code down and keep it somewhere safe, like a notebook at home. Anyone who knows this code can get into your shop manager, so do not share it.</p>
+        <div id="recoveryMsg"></div>
+        <label for="rec-cur">Current password</label>
+        <div class="pw-wrap">
+          <input type="password" id="rec-cur" autocomplete="current-password" placeholder="Type your current password">
+          <button type="button" class="eye-btn" data-eye="rec-cur">Show</button>
+        </div>
+        <label for="rec-code">Recovery code</label>
+        <input type="text" id="rec-code" autocomplete="off" placeholder="Example: monsoon-7421">
+        <p class="field-help">At least 4 letters or numbers. You will type it exactly like this, so keep it simple.</p>
+        <p style="margin-top:22px"><button class="btn btn-green" id="saveRecoveryBtn">Save recovery code</button></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
