@@ -362,6 +362,58 @@ class AuveStorage {
     }
 
     // -------------------------------------------------------------
+    // FORM SUBMISSIONS (newsletter, contact / help, bulk)
+    // -------------------------------------------------------------
+    public static function saveFormSubmission(array $sub): bool {
+        self::init();
+        if (self::$usingDatabase && self::$pdo) {
+            try {
+                self::$pdo->exec("CREATE TABLE IF NOT EXISTS auve_forms (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    type VARCHAR(32) NOT NULL,
+                    raw_json LONGTEXT,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    INDEX idx_type (type)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+                $stmt = self::$pdo->prepare("INSERT INTO auve_forms (type, raw_json) VALUES (:t, :j)");
+                $stmt->execute([':t' => $sub['type'] ?? 'form', ':j' => json_encode($sub)]);
+                return true;
+            } catch (Throwable $e) {}
+        }
+        $file = self::$dataDir . '/forms.json';
+        $list = [];
+        if (file_exists($file)) {
+            $arr = json_decode(file_get_contents($file), true);
+            if (is_array($arr)) $list = $arr;
+        }
+        array_unshift($list, $sub);
+        self::writeJsonAtomic($file, $list);
+        return true;
+    }
+
+    public static function getFormSubmissions(int $limit = 50): array {
+        self::init();
+        if (self::$usingDatabase && self::$pdo) {
+            try {
+                $stmt = self::$pdo->query("SELECT raw_json FROM auve_forms ORDER BY id DESC LIMIT " . intval($limit));
+                $rows = $stmt->fetchAll();
+                $list = [];
+                foreach ($rows as $r) {
+                    $s = json_decode($r['raw_json'], true);
+                    if ($s) $list[] = $s;
+                }
+                return $list;
+            } catch (Throwable $e) {}
+        }
+        $file = self::$dataDir . '/forms.json';
+        if (file_exists($file)) {
+            $arr = json_decode(file_get_contents($file), true);
+            if (is_array($arr)) return array_slice($arr, 0, $limit);
+        }
+        return [];
+    }
+
+    // -------------------------------------------------------------
     // COUPONS & DISCOUNTS
     // -------------------------------------------------------------
     public static function getCoupons(): array {
