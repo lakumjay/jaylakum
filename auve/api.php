@@ -78,6 +78,18 @@ function requireAdmin(): void {
 // PUBLIC STOREFRONT ENDPOINTS
 // -------------------------------------------------------------
 
+// GET api/system-status
+if ($route === 'system-status' && $method === 'GET') {
+    $dbActive = AuveStorage::isDatabaseActive();
+    $prodCount = count(AuveStorage::getProducts());
+    sendJson(200, [
+        'ok' => true,
+        'database' => $dbActive ? 'MySQL connected (snweba2e_auve)' : 'JSON fallback active',
+        'database_active' => $dbActive,
+        'products_count' => $prodCount
+    ]);
+}
+
 // GET api/store-config
 if ($route === 'store-config' && $method === 'GET') {
     $auth = AuveStorage::getAuth();
