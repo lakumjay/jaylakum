@@ -82,10 +82,28 @@ function requireAdmin(): void {
 if ($route === 'system-status' && $method === 'GET') {
     $dbActive = AuveStorage::isDatabaseActive();
     $prodCount = count(AuveStorage::getProducts());
+    $tablesInfo = [];
+    if ($dbActive && ($pdo = AuveStorage::getPdo())) {
+        try {
+            $tables = ['auve_products', 'auve_orders', 'auve_settings', 'auve_admins'];
+            foreach ($tables as $t) {
+                $st = $pdo->query("SHOW TABLES LIKE '$t'");
+                if ($st->rowCount() > 0) {
+                    $cnt = $pdo->query("SELECT COUNT(*) FROM `$t`")->fetchColumn();
+                    $tablesInfo[$t] = intval($cnt);
+                } else {
+                    $tablesInfo[$t] = 'NOT_FOUND';
+                }
+            }
+        } catch (Throwable $e) {
+            $tablesInfo['error'] = $e->getMessage();
+        }
+    }
     sendJson(200, [
         'ok' => true,
         'database' => $dbActive ? 'MySQL connected (snweba2e_auve)' : 'JSON fallback active',
         'database_active' => $dbActive,
+        'tables_in_mysql' => $tablesInfo,
         'products_count' => $prodCount
     ]);
 }
