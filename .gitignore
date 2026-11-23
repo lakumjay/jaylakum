@@ -6,3 +6,6 @@ scripts/*.log
 *.env
 
 
+
+# AUVE runtime state (rewritten on every admin login; must never block deploys)
+auve/data/tokens.json
