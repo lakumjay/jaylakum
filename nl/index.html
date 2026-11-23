@@ -19,8 +19,8 @@
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 <meta name="theme-color" content="#171410" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#FAF7F1" media="(prefers-color-scheme: light)" />
-<title>WooCommerce &amp; Shopify Speed, Bug Fixes | Jay Lakum</title>
-<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a." />
+<title>WooCommerce &amp; Shopify Speed, Bug Fixes &amp; Redesigns — Fixed Price | Jay Lakum</title>
+<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a WooCommerce store from 6.1s to 2.2s. Based in India, working with webshop owners in the Netherlands &amp; worldwide." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Jay lakum — India Coders" />
 <meta property="og:title" content="Jay lakum — WooCommerce &amp; Shopify fixes met vaste prijs" />
@@ -614,33 +614,34 @@
         <div class="grid-3 hub-grid" id="p1Grid">
           <article class="card">
             <div class="w-top"><span class="tag">Speed</span></div>
-            <h3><a href="#nl-snelheid" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3>
+            <h3><a href="/diensten/woocommerce-snelheid-optimalisatie/" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3>
             <p>Je WooCommerce webshop sneller maken: eerst meten, dan fixen, daarna opnieuw meten. Speed-pakket <strong>€690–€950</strong> vast — bewijs: een echte webshop van 6.1s naar 2.2s mobiel.</p>
-            <a class="more" href="#nl-snelheid">Bekijk de speed-pagina →</a>
+            <a class="more" href="/diensten/woocommerce-snelheid-optimalisatie/">Bekijk de speed-pagina →</a>
           </article>
           <article class="card">
             <div class="w-top"><span class="tag">Checkout</span></div>
-            <h3><a href="#nl-checkout-traag" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3>
+            <h3><a href="/diensten/woocommerce-checkout-traag/" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3>
             <p>Een trage checkout kost bestellingen op het duurste moment. Niemand verkoopt “binnen 48 uur gefixt” — deze pagina wel: vaste prijs <strong>€290–€450</strong>, staging eerst, geen oplossing geen factuur.</p>
-            <a class="more" href="#nl-checkout-traag">Bekijk de checkout-pagina →</a>
+            <a class="more" href="/diensten/woocommerce-checkout-traag/">Bekijk de checkout-pagina →</a>
           </article>
           <article class="card">
             <div class="w-top"><span class="tag">Mollie</span></div>
-            <h3><a href="#nl-mollie" style="color:var(--ink)">Mollie: Bestelling Blijft Hangen</a></h3>
+            <h3><a href="/diensten/mollie-bestelling-hangt/" style="color:var(--ink)">Mollie: Bestelling Blijft Hangen</a></h3>
             <p>Bestelling blijft op “afwachting van betaling” staan terwijl de klant wél betaalde? Bijna altijd de webhook-synchronisatie. De enige Dutch pagina die dit probleem bij naam noemt én de fix verkoopt.</p>
-            <a class="more" href="#nl-mollie">Bekijk de Mollie-pagina →</a>
+            <a class="more" href="/diensten/mollie-bestelling-hangt/">Bekijk de Mollie-pagina →</a>
           </article>
           <article class="card">
             <div class="w-top"><span class="tag">Spoed</span></div>
-            <h3><a href="#nl-storing" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3>
+            <h3><a href="/diensten/woocommerce-storing-oplossen/" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3>
             <p>Webshop kapot = omzet kapot. Dutch spoed-intentie wordt nu alleen door documentatie beantwoord. Hier geldt: <strong>diagnose binnen 4 uur</strong>, vaste prijs €290–€450, geen oplossing geen factuur.</p>
-            <a class="more" href="#nl-storing">Naar de spoed-pagina →</a>
+            <a class="more" href="/diensten/woocommerce-storing-oplossen/">Naar de spoed-pagina →</a>
           </article>
         </div>
         <div class="proof-strip" style="margin-top:26px">
           <div class="proof-num">6.1s <span class="gold">→ 2.2s</span></div>
           <div>
             <p><strong>Echt gemeten resultaat.</strong> Een echte WooCommerce webshop: mobiele laadtijd van 6.1 naar 2.2 seconden na de speed-fix. Zonder shopnaam (privacy van de klant) en zonder extra cijfers — dit is het gemeten resultaat, meer beloven we niet.</p>
+            <p><a href="/case-study/">Bekijk de volledige case study →</a></p>
           </div>
         </div>
       </div>
@@ -756,7 +757,7 @@
           </details>
           <details class="faq-item">
             <summary>My webshop is down right now. How fast do you respond?</summary>
-            <p>For a store that is broken or losing orders, email me with “storing” in the subject. The emergency promise on the <a href="#nl-storing">storing page</a> is a <strong>diagnosis within 4 hours</strong>, then the fixed €290–€450 repair — diagnosed first, repaired on staging, live only after testing.</p>
+            <p>For a store that is broken or losing orders, email me with “storing” in the subject. The emergency promise on the <a href="/diensten/woocommerce-storing-oplossen/">storing page</a> is a <strong>diagnosis within 4 hours</strong>, then the fixed €290–€450 repair — diagnosed first, repaired on staging, live only after testing.</p>
           </details>
           <details class="faq-item">
             <summary>Do you have a Dutch phone number?</summary>
@@ -800,7 +801,7 @@
           <h2>Speed Optimization</h2>
           <p class="lead">Most "slow store" problems are a handful of fixable causes — not a reason to rebuild everything. I measure first, then fix what the measurements actually show.</p>
           <span class="tag">Pakket €690–€950 · vaste prijs</span>
-          <p style="margin-top:14px"><a href="#nl-snelheid" style="font-weight:600">NL: WooCommerce snelheid optimalisatie →</a><br /><a href="#nl-shopify" style="font-weight:600">NL: Shopify snelheid &amp; spookcode →</a></p>
+          <p style="margin-top:14px"><a href="/diensten/woocommerce-snelheid-optimalisatie/" style="font-weight:600">NL: WooCommerce snelheid optimalisatie →</a><br /><a href="#nl-shopify" style="font-weight:600">NL: Shopify snelheid &amp; spookcode →</a></p>
         </div>
         <div>
           <ul>
@@ -824,7 +825,7 @@
           <h2>Bug Fixes</h2>
           <p class="lead">Something broke — or never worked properly. I reproduce the problem first, explain the cause in plain language, and only then fix it. No guessing on your live store.</p>
           <span class="tag">Fix €290–€450 · geen oplossing, geen factuur</span>
-          <p style="margin-top:14px"><a href="#nl-checkout-traag" style="font-weight:600">NL: Checkout traag →</a><br /><a href="#nl-mollie" style="font-weight:600">NL: Mollie bestelling blijft hangen →</a><br /><a href="#nl-storing" style="font-weight:600">NL: Storing oplossen (spoed) →</a></p>
+          <p style="margin-top:14px"><a href="/diensten/woocommerce-checkout-traag/" style="font-weight:600">NL: Checkout traag →</a><br /><a href="/diensten/mollie-bestelling-hangt/" style="font-weight:600">NL: Mollie bestelling blijft hangen →</a><br /><a href="/diensten/woocommerce-storing-oplossen/" style="font-weight:600">NL: Storing oplossen (spoed) →</a></p>
         </div>
         <div>
           <ul>
@@ -958,12 +959,12 @@
         <span class="ob-item">Altijd <span>geen oplossing, geen factuur</span></span>
       </div>
       <div class="hub-grid" style="padding-bottom:30px">
-        <article class="card"><span class="tag">Speed</span><h3><a href="#nl-snelheid" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3><p>Trage WooCommerce webshop sneller maken. Het enige echte bewijs op de site: 6.1s → 2.2s mobiel. Doelen: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.</p><a class="more" href="#nl-snelheid">Speed-pagina →</a></article>
-        <article class="card"><span class="tag">Checkout</span><h3><a href="#nl-checkout-traag" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3><p>Afrekenen duurt eeuwig of blijft laden? Oorzaken, herkenning en een vaste-prijs fix binnen 48 uur.</p><a class="more" href="#nl-checkout-traag">Checkout-pagina →</a></article>
-        <article class="card"><span class="tag">Mollie</span><h3><a href="#nl-mollie" style="color:var(--ink)">Mollie Bestelling Blijft Hangen</a></h3><p>Bestelling blijft op “afwachting van betaling” na een geslaagde iDEAL-betaling. Webhook-sync uitgelegd + fix.</p><a class="more" href="#nl-mollie">Mollie-pagina →</a></article>
-        <article class="card"><span class="tag">Spoed</span><h3><a href="#nl-storing" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3><p>Webshop kapot, wit scherm of checkout dood? Diagnose binnen 4 uur, vaste prijs, eerst staging.</p><a class="more" href="#nl-storing">Spoed-pagina →</a></article>
+        <article class="card"><span class="tag">Speed</span><h3><a href="/diensten/woocommerce-snelheid-optimalisatie/" style="color:var(--ink)">WooCommerce Snelheid Optimalisatie</a></h3><p>Trage WooCommerce webshop sneller maken. Het enige echte bewijs op de site: 6.1s → 2.2s mobiel. Doelen: LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1.</p><a class="more" href="/diensten/woocommerce-snelheid-optimalisatie/">Speed-pagina →</a></article>
+        <article class="card"><span class="tag">Checkout</span><h3><a href="/diensten/woocommerce-checkout-traag/" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3><p>Afrekenen duurt eeuwig of blijft laden? Oorzaken, herkenning en een vaste-prijs fix binnen 48 uur.</p><a class="more" href="/diensten/woocommerce-checkout-traag/">Checkout-pagina →</a></article>
+        <article class="card"><span class="tag">Mollie</span><h3><a href="/diensten/mollie-bestelling-hangt/" style="color:var(--ink)">Mollie Bestelling Blijft Hangen</a></h3><p>Bestelling blijft op “afwachting van betaling” na een geslaagde iDEAL-betaling. Webhook-sync uitgelegd + fix.</p><a class="more" href="/diensten/mollie-bestelling-hangt/">Mollie-pagina →</a></article>
+        <article class="card"><span class="tag">Spoed</span><h3><a href="/diensten/woocommerce-storing-oplossen/" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3><p>Webshop kapot, wit scherm of checkout dood? Diagnose binnen 4 uur, vaste prijs, eerst staging.</p><a class="more" href="/diensten/woocommerce-storing-oplossen/">Spoed-pagina →</a></article>
         <article class="card"><span class="tag">Shopify</span><h3><a href="#nl-shopify" style="color:var(--ink)">Shopify Snelheid &amp; Spookcode</a></h3><p>Trage Shopify shop? Vaak is het “spookcode”: achtergebleven code van verwijderde apps. Opruimen als betaalde dienst, €690–€950.</p><a class="more" href="#nl-shopify">Shopify-pagina →</a></article>
-        <article class="card"><span class="tag">B2B partners</span><h3><a href="#partner" style="color:var(--ink)">Partner voor bureaus (white-label)</a></h3><p>Voor agencies die bouwcapaciteit zoeken: alleen bouwen, volledig onzichtbaar, eerst een kleine betaalde pilot.</p><a class="more" href="#partner">Partner-pagina →</a></article>
+        <article class="card"><span class="tag">B2B partners</span><h3><a href="/for-agencies/" style="color:var(--ink)">Partner voor bureaus (white-label)</a></h3><p>Voor agencies die bouwcapaciteit zoeken: alleen bouwen, volledig onzichtbaar, eerst een kleine betaalde pilot.</p><a class="more" href="/for-agencies/">Partner-pagina →</a></article>
       </div>
       <div class="plan-block">
         <h3>Meest gelezen: PostNL × WooCommerce</h3>
@@ -1022,7 +1023,7 @@
             <li><b>Fix op staging eerst</b> — je live shop blijft verkopen tijdens het werk</li>
             <li><b>Uitleg in gewone taal</b> — wat het was, wat er veranderde, hoe je herhaling voorkomt</li>
           </ul>
-          <div class="who-for"><h3>Volgende stap</h3><p>Mail je shop-URL + wanneer het begon. Je krijgt eerst een diagnose en de vaste prijs; pas na je akkoord begint het werk. Zie ook <a href="#nl-mollie">Mollie bestelling blijft hangen</a> als betalingen wél slagen maar bestellingen blijven hangen.</p></div>
+          <div class="who-for"><h3>Volgende stap</h3><p>Mail je shop-URL + wanneer het begon. Je krijgt eerst een diagnose en de vaste prijs; pas na je akkoord begint het werk. Zie ook <a href="/diensten/mollie-bestelling-hangt/">Mollie bestelling blijft hangen</a> als betalingen wél slagen maar bestellingen blijven hangen.</p></div>
           <p style="margin-top:20px"><a class="btn" href="mailto:jay@jaylakum.com">Beschrijf je checkout-probleem</a></p>
         </div>
       </div>
@@ -1073,7 +1074,7 @@
           <ul>
             <li><b>Wit scherm na update</b> — plugin- of thema-conflict, veilig geïsoleerd op staging</li>
             <li><b>Checkout volledig dood</b> — reproductie als gast én als klant, logs erbij</li>
-            <li><b>Bestellingen komen niet door</b> — gateway- en webhook-controle (zie ook <a href="#nl-mollie">Mollie-pagina</a>)</li>
+            <li><b>Bestellingen komen niet door</b> — gateway- en webhook-controle (zie ook <a href="/diensten/mollie-bestelling-hangt/">Mollie-pagina</a>)</li>
             <li><b>“Er is een kritieke fout opgetreden”</b> — foutlog wijst het exacte bestand aan</li>
             <li><b>Eén wijziging tegelijk</b> — nooit vijf dingen tegelijk veranderen tijdens verkooptijd</li>
             <li><b>Samenvatting achteraf</b> — oorzaak, fix en preventie in gewone taal</li>
