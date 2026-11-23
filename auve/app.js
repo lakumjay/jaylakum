@@ -388,7 +388,7 @@ class Component extends DCLogic {
       (active ? 'var(--auve-ink); background: var(--auve-ink); color: var(--auve-bg);' : 'rgba(var(--auve-ink-rgb),0.2); background: none; color: var(--auve-muted2);');
   }
   optBox(active) {
-    return 'display: flex; align-items: center; gap: 14px; width: 100%; padding: 16px 18px; border-radius: 4px; cursor: pointer; color: var(--auve-ink); background: ' + (active ? '#FFF' : 'transparent') + '; border: 1px solid ' + (active ? 'var(--auve-ink)' : 'rgba(var(--auve-ink-rgb),0.16)') + ';';
+    return 'display: flex; align-items: center; gap: 14px; width: 100%; padding: 16px 18px; border-radius: 4px; cursor: pointer; color: ' + (active ? '#1B1A34' : 'var(--auve-ink)') + '; ' + (active ? '--auve-muted: rgba(27,26,52,0.62); ' : '') + 'background: ' + (active ? '#FFF' : 'transparent') + '; border: 1px solid ' + (active ? '#FFF' : 'rgba(var(--auve-ink-rgb),0.16)') + ';';
   }
   card(p, ov) {
     const v = p.variants[ov ? ov[2] : 0];
@@ -787,11 +787,11 @@ class Component extends DCLogic {
       coFields: fieldsFrom('co', [['name', 'Full name', 'Priya Shah'], ['phone', 'Mobile', '98XXX XXXXX', 'tel'], ['email', 'Email', 'priya@email.com', 'email'], ['address', 'House, street, area', 'B-402, Shanti Residency, Vesu'], ['city', 'City', 'Surat'], ['state', 'State', 'Gujarat'], ['pin', 'Pincode', '395007', 'numeric']]),
       shipOpts: [['standard', 'Standard', '5 to 7 working days · arrives by ' + fmtDate(addDays(7)), this.shipPriceLabel('standard', T.raw.after >= free ? 'Free' : inr(99))]].filter(o => this.shipAvailable(o[0])).map(o => ({
         label: o[1], eta: o[2], price: o[3], onPick: () => this.pickShip(o[0]), style: this.optBox(s.ship === o[0]),
-        dot: 'width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; border: ' + (s.ship === o[0] ? '5px solid var(--auve-ink)' : '1px solid rgba(var(--auve-ink-rgb),0.35)') + ';'
+        dot: 'width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; border: ' + (s.ship === o[0] ? '5px solid #1B1A34' : '1px solid rgba(var(--auve-ink-rgb),0.35)') + ';'
       })),
       payOpts: [['upi', 'UPI', 'GPay · PhonePe · Paytm'], ['card', 'Card', 'Debit · Credit'], ['cod', 'Cash on delivery', 'Free']].filter(o => this.payAvailable(o[0])).map(o => ({
         label: o[1], sub: o[2], onPick: () => this.pickPay(o[0]),
-        style: 'display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; padding: 14px; border-radius: 4px; cursor: pointer; color: var(--auve-ink); background: ' + (s.pay === o[0] ? '#FFF' : 'transparent') + '; border: 1px solid ' + (s.pay === o[0] ? 'var(--auve-ink)' : 'rgba(var(--auve-ink-rgb),0.16)') + ';'
+        style: 'display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; padding: 14px; border-radius: 4px; cursor: pointer; color: ' + (s.pay === o[0] ? '#1B1A34' : 'var(--auve-ink)') + '; ' + (s.pay === o[0] ? '--auve-muted: rgba(27,26,52,0.62); ' : '') + 'background: ' + (s.pay === o[0] ? '#FFF' : 'transparent') + '; border: 1px solid ' + (s.pay === o[0] ? '#FFF' : 'rgba(var(--auve-ink-rgb),0.16)') + ';'
       })),
       payUpi: s.pay === 'upi', payCard: s.pay === 'card', payCod: s.pay === 'cod',
       upiApps: [].map(a => ({ label: a, style: this.chip(s.upiApp === a && !s.upiId), onPick: () => this.setState({ upiApp: a, upiId: '' }) })),
