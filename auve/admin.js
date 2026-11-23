@@ -89,7 +89,7 @@ function switchTab(name) {
     if (panel) panel.classList.toggle('hidden', b.dataset.tab !== name);
   });
   var wrap = document.querySelector('.wrap');
-  if (wrap) wrap.classList.toggle('wide', name === 'visual');
+  if (wrap) wrap.classList.toggle('wide', name === 'visual' || name === 'orders');
   if (name === 'visual') { initVisual(); setTimeout(positionBadges, 120); }
   if (name === 'dashboard') loadDashboard();
   if (name === 'settings') { loadIntegrations(); loadSecurity(); fillStoreSettings(); loadFormMessages(); }
@@ -746,10 +746,18 @@ function renderOrders(orders) {
       return '<tr><td>' + esc(it.name) + ' — ' + esc(it.variant) + ', EU ' + esc(it.size) + '</td><td>× ' + it.qty + '</td><td>' + inr(it.unitPrice * it.qty) + '</td></tr>';
     }).join('');
     var awb = o.shipment && o.shipment.awb ? '<br>Shipment AWB: <b>' + esc(o.shipment.awb) + '</b>' + (o.shipment.courier ? ' (' + esc(o.shipment.courier) + ')' : '') : '';
-    return '<div class="order"><b>Order ' + esc(o.id) + '</b> · ' + new Date(o.at).toLocaleString('en-IN') + ' &nbsp;' + pill +
+    var t = o.totals || {};
+    var breakup = '<tr><td colspan="2">Subtotal</td><td>' + inr(t.subtotal || 0) + '</td></tr>'
+      + (t.promo ? '<tr><td colspan="2">Discount' + (o.promoCode ? ' (' + esc(o.promoCode) + ')' : '') + '</td><td>\u2212 ' + inr(t.promo) + '</td></tr>' : '')
+      + '<tr><td colspan="2">Shipping</td><td>' + (t.shipping ? inr(t.shipping) : 'Free') + '</td></tr>'
+      + (t.codFee ? '<tr><td colspan="2">COD fee</td><td>' + inr(t.codFee) + '</td></tr>' : '')
+      + '<tr><td colspan="2"><b>Total</b></td><td><b>' + inr(t.total || 0) + '</b></td></tr>';
+    var badges = (o.isTest ? ' <span class="pill test">TEST ORDER</span>' : '')
+      + (o.orderStatus ? ' <span class="pill status">' + esc(String(o.orderStatus).replace(/_/g, ' ')) + '</span>' : '');
+    return '<div class="order"><b>Order ' + esc(o.id) + '</b> · ' + new Date(o.at).toLocaleString('en-IN') + ' &nbsp;' + pill + badges +
       '<br><b>' + esc(o.customer.name) + '</b> · ' + esc(o.customer.phone) + ' · ' + esc(o.customer.email) +
       '<br>' + esc([o.customer.address, o.customer.city, o.customer.state, o.customer.pincode].filter(Boolean).join(', ')) + awb +
-      '<table>' + items + '<tr><td colspan="2"><b>Total</b></td><td><b>' + inr(o.totals && o.totals.total) + '</b></td></tr></table></div>';
+      '<table>' + items + breakup + '</table></div>';
   }).join('');
 }
 
