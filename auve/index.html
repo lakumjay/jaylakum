@@ -25,7 +25,7 @@
  * (managed by the owner in admin.html) instead of a hardcoded file.
  * app.js renders everything from window.AUVE_CATALOG, as before. */
 (function () {
-  function loadApp() { var s = document.createElement('script'); s.src = 'app.js?v=53'; document.body.appendChild(s); }
+  function loadApp() { var s = document.createElement('script'); s.src = 'app.js?v=54'; document.body.appendChild(s); }
   Promise.all([
     fetch('data/products.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('products ' + r.status); return r.json(); }),
     fetch('api/settings', { cache: 'no-store' })
