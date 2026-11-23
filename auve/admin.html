@@ -223,6 +223,35 @@
       body:has(#mainView:not(.hidden)) .topbar { position: static; backdrop-filter: none; }
     }
   }
+
+  /* ---- dashboard ---- */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 6px; }
+  .stat-card { background: var(--au-cream); border: 1px solid var(--au-line); border-radius: var(--au-radius); padding: 18px; }
+  .stat-card .stat-num { font-family: var(--au-font-head); font-size: 30px; font-weight: 700; color: var(--au-navy); line-height: 1.15; }
+  .stat-card .stat-label { color: var(--au-muted); font-size: 14px; font-weight: 600; margin-top: 2px; }
+  .stat-card.gold { background: #FBF3DF; border-color: #E7D29A; }
+  .chart { display: flex; align-items: flex-end; gap: 6px; height: 170px; padding-top: 10px; }
+  .chart .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+  .chart .bar { width: 100%; max-width: 44px; background: linear-gradient(180deg, var(--au-gold), #A9853B); border-radius: 6px 6px 0 0; min-height: 3px; }
+  .chart .bar.today { background: linear-gradient(180deg, var(--au-navy-2), var(--au-navy)); }
+  .chart .bar-val { font-size: 11.5px; font-weight: 700; color: var(--au-navy); white-space: nowrap; }
+  .chart .bar-day { font-size: 11.5px; color: var(--au-muted); white-space: nowrap; }
+  .dash-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .dash-cols .card { margin-bottom: 20px; }
+  @media (max-width: 900px) { .dash-cols { grid-template-columns: 1fr; } }
+  .dash-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--au-line); }
+  .dash-row:last-child { border-bottom: none; }
+  .dash-row .grow { flex: 1; min-width: 0; }
+  .dash-empty { color: var(--au-muted); padding: 10px 0; }
+  /* ---- product editor polish ---- */
+  #productFormCard { border-top: 4px solid var(--au-gold); }
+  .media-duo { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; align-items: start; }
+  @media (max-width: 900px) { .media-duo { grid-template-columns: 1fr; } }
+  .save-bar { position: sticky; bottom: 0; background: rgba(255,255,255,0.94); backdrop-filter: blur(8px); border-top: 1px solid var(--au-line); padding: 14px 4px; z-index: 20; border-radius: 0 0 var(--au-radius) var(--au-radius); }
+  .form-item { border: 1.5px solid var(--au-line); border-radius: var(--au-radius); padding: 14px 16px; margin: 0 0 12px; background: #FDFBF7; }
+  .form-item table { width: 100%; border-collapse: collapse; }
+  .form-item td { padding: 4px 6px; font-size: 15px; vertical-align: top; }
+  .form-item td:first-child { color: var(--au-muted); width: 150px; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -275,18 +304,52 @@
     </div>
 
     <div class="tabs">
-      <button class="tab on" data-tab="visual">Edit My Shop Visually</button>
+      <button class="tab on" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="visual">Edit My Shop Visually</button>
       <button class="tab" data-tab="products">Products</button>
       <button class="tab" data-tab="coupons">Coupons &amp; Discounts</button>
       <button class="tab" data-tab="look">Shop Look</button>
       <button class="tab" data-tab="writing">Homepage Writing</button>
       <button class="tab" data-tab="sections">Homepage Parts On/Off</button>
       <button class="tab" data-tab="orders">Orders</button>
-      <button class="tab" data-tab="payments">Payments and Delivery</button>
-      <button class="tab" data-tab="security">Password and Safety</button>
+      <button class="tab" data-tab="settings">Settings</button>
     </div>
 
     <!-- ================= VISUAL EDITOR ================= -->
+    <!-- ================= DASHBOARD ================= -->
+    <div id="tab-dashboard">
+      <div class="card">
+        <h2>Your shop at a glance</h2>
+        <p class="help">Sales, orders, income and delivery status, all in one place. This page refreshes every time you open it.</p>
+        <div id="dashMsg"></div>
+        <div class="stat-grid" id="dashStats"></div>
+      </div>
+      <div class="card">
+        <h2>Sales, last 14 days</h2>
+        <p class="help">Order money received, day by day.</p>
+        <div id="dashChart"></div>
+      </div>
+      <div class="dash-cols">
+        <div class="card">
+          <h2>Latest orders</h2>
+          <div id="dashRecent"></div>
+        </div>
+        <div class="card">
+          <h2>Best selling products</h2>
+          <div id="dashTop"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Delivery &amp; payments status</h2>
+        <div id="dashShip"></div>
+      </div>
+      <div class="card">
+        <h2>Stock that is running out</h2>
+        <p class="help">Products where many sizes are sold out. Restock these first.</p>
+        <div id="dashStock"></div>
+      </div>
+    </div>
+
     <div id="tab-visual">
       <div class="card">
         <h2>Your shop, exactly as customers see it</h2>
@@ -353,6 +416,7 @@
         <input type="text" id="f-tag" placeholder="Example: Bestseller">
         <p class="field-help">A small tag shown on the product photo, like "Bestseller" or "New". Leave empty if you do not want a tag.</p>
 
+        <div class="media-duo">
         <label>Main photo (the first photo in the shop list)</label>
         <div class="media-box" id="box-cover">
           <div class="media-preview-wrap">
@@ -395,6 +459,8 @@
           </div>
         </div>
 
+        </div>
+
         <h3>Colours of this product</h3>
         <p class="help">Most products have one colour. If the same design comes in two colours, add both here. Each colour has its own photos.</p>
         <div id="variants"></div>
@@ -409,7 +475,7 @@
         <div id="details"></div>
         <p><button class="btn btn-light btn-small" id="addDetailBtn">+ Add one more detail</button></p>
 
-        <p style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap">
+        <p class="save-bar" style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap">
           <button class="btn btn-green" id="saveProductBtn" style="font-size:19px; padding:16px 38px">SAVE PRODUCT</button>
           <button class="btn btn-light" id="cancelProductBtn">Cancel</button>
         </p>
@@ -708,8 +774,23 @@
       </div>
     </div>
 
-    <!-- ================= PAYMENTS AND DELIVERY ================= -->
-    <div id="tab-payments" class="hidden">
+    <!-- ================= SETTINGS ================= -->
+    <div id="tab-settings" class="hidden">
+      <div class="card">
+        <h2>Shop email &amp; contact</h2>
+        <p class="help">Newsletter signups, help form messages and bulk enquiries from your website are emailed to the address you set here. Change it any time and the very next message goes to the new address.</p>
+        <div id="storeMsg"></div>
+        <label for="set-notify">Form messages email (newsletter, help form, bulk enquiries)</label>
+        <input type="text" id="set-notify" placeholder="Example: orders@auve.in">
+        <p class="field-help">Leave empty to use the shop contact email below.</p>
+        <label for="set-contact">Shop contact email (shown on your website)</label>
+        <input type="text" id="set-contact" placeholder="Example: contact@auve.in">
+        <label for="set-wa">WhatsApp number (shown on your website)</label>
+        <input type="text" id="set-wa" placeholder="Example: +91 97251 24422">
+        <p style="margin-top:22px"><button class="btn btn-green" id="saveStoreBtn">Save email &amp; contact</button></p>
+      </div>
+
+
       <div class="card">
         <div style="background:#EDF7EE; border:1.5px solid #2d7a46; border-radius:12px; padding:16px 20px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px">
           <div>
@@ -766,10 +847,8 @@
       <div class="card">
         <p class="help" style="margin:0"><b>Your keys are safe.</b> They are stored on the server only, in a private file that the shop can never open. They are never shown in your shop, never sent to customers, and this page never shows a saved secret back to anyone.</p>
       </div>
-    </div>
 
-    <!-- ================= PASSWORD AND SAFETY ================= -->
-    <div id="tab-security" class="hidden">
+
       <div class="card">
         <h2>Change your password</h2>
         <p class="help">Pick a password that is easy for you to remember and hard for others to guess. After you change it, the old password stops working at once.</p>
@@ -803,6 +882,32 @@
         <p class="field-help">At least 4 letters or numbers. You will type it exactly like this, so keep it simple.</p>
         <p style="margin-top:22px"><button class="btn btn-green" id="saveRecoveryBtn">Save recovery code</button></p>
       </div>
+
+      <div class="card">
+        <h2>Privacy &amp; legal details</h2>
+        <p class="help">These details appear on your Privacy Policy, Terms, Shipping and Refund Policy pages. Fill them once and every legal page updates on its own.</p>
+        <div id="legalMsg"></div>
+        <label for="set-bizname">Registered business name</label>
+        <input type="text" id="set-bizname" placeholder="Example: AUVE Footwear LLP">
+        <label for="set-bizaddr">Business address</label>
+        <textarea id="set-bizaddr" placeholder="Full address with city, state and PIN code"></textarea>
+        <label for="set-bizgst">GSTIN (leave empty if you do not have one)</label>
+        <input type="text" id="set-bizgst" placeholder="Example: 24ABCDE1234F1Z5">
+        <label for="set-bizgrievance">Grievance officer name</label>
+        <input type="text" id="set-bizgrievance" placeholder="The person customers can contact for complaints">
+        <label for="set-bizphone">Business phone</label>
+        <input type="text" id="set-bizphone" placeholder="Example: +91 97251 24422">
+        <label for="set-bizemail">Business email for legal pages</label>
+        <input type="text" id="set-bizemail" placeholder="Example: contact@auve.in">
+        <p style="margin-top:22px"><button class="btn btn-green" id="saveLegalBtn">Save legal details</button></p>
+      </div>
+
+      <div class="card">
+        <h2>Form messages</h2>
+        <p class="help">Every newsletter signup, help form message and bulk enquiry is also saved here, so nothing is ever lost even if an email is missed.</p>
+        <p><button class="btn btn-light btn-small" id="refreshFormsBtn">Refresh the list</button></p>
+        <div id="formList"></div>
+      </div>
     </div>
 
   </div>
@@ -824,6 +929,6 @@
   </div>
 </div>
 
-<script src="admin.js?v=20261123_4"></script>
+<script src="admin.js?v=20261123_5"></script>
 </body>
 </html>
