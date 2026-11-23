@@ -246,6 +246,16 @@ class AuveStorage {
         self::init();
         $current = self::getSettings();
         $merged = array_replace_recursive($current, $newSettings);
+        // List-style content must replace wholesale, not merge recursively:
+        // array_replace_recursive can never shrink a list, so an admin save
+        // with fewer rows (or an empty list) would leave deleted rows live.
+        if (isset($newSettings['content']) && is_array($newSettings['content']) && isset($merged['content']) && is_array($merged['content'])) {
+            foreach (['pagesList', 'reelsList', 'collectionsList'] as $listKey) {
+                if (array_key_exists($listKey, $newSettings['content'])) {
+                    $merged['content'][$listKey] = $newSettings['content'][$listKey];
+                }
+            }
+        }
 
         if (self::$usingDatabase && self::$pdo) {
             try {
