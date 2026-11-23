@@ -32,6 +32,7 @@ class AuveStorage {
             self::$pdo = new PDO($dsn, AUVE_DB_USER, AUVE_DB_PASS, $options);
             self::$usingDatabase = true;
             self::ensureTablesExist();
+            self::runOrderMigrations();
         } catch (Throwable $e) {
             // MySQL not connected/configured yet — gracefully use JSON files
             self::$usingDatabase = false;
@@ -300,21 +301,25 @@ class AuveStorage {
         self::init();
         if (self::$usingDatabase && self::$pdo) {
             try {
+                $pstatusNorm = $order['paymentStatus'] ?? (($order['payment']['status'] ?? '') === 'paid' ? 'paid' : (($order['payment']['status'] ?? '') === 'payment_pending' ? 'pending' : 'cod_pending'));
                 $stmt = self::$pdo->prepare("
                     INSERT INTO auve_orders 
                         (id, customer_name, customer_phone, customer_email, customer_address, city, state, pincode, 
                          items_count, subtotal, discount, total, promo_code, shipping_type, payment_method, payment_status,
-                         razorpay_order_id, razorpay_payment_id, shipment_provider, shipment_awb, items_json, order_json)
+                         razorpay_order_id, razorpay_payment_id, shipment_provider, shipment_awb, items_json, order_json, order_status, shipment_status, is_test)
                     VALUES 
                         (:id, :name, :phone, :email, :address, :city, :state, :pincode, 
                          :items_count, :subtotal, :discount, :total, :promo, :shipping, :payment_method, :payment_status,
-                         :rz_order, :rz_pay, :sr_provider, :sr_awb, :items_json, :order_json)
+                         :rz_order, :rz_pay, :sr_provider, :sr_awb, :items_json, :order_json, :ostatus, :sstatus, :istest)
                     ON DUPLICATE KEY UPDATE
                         payment_status = VALUES(payment_status),
                         razorpay_payment_id = VALUES(razorpay_payment_id),
                         shipment_provider = VALUES(shipment_provider),
                         shipment_awb = VALUES(shipment_awb),
-                        order_json = VALUES(order_json)
+                        order_json = VALUES(order_json),
+                        order_status = VALUES(order_status),
+                        shipment_status = VALUES(shipment_status),
+                        is_test = VALUES(is_test)
                 ");
                 $stmt->execute([
                     ':id' => $order['id'],
@@ -332,13 +337,16 @@ class AuveStorage {
                     ':promo' => $order['promoCode'] ?? null,
                     ':shipping' => $order['shipping'] ?? 'standard',
                     ':payment_method' => $order['payment']['method'] ?? 'cod',
-                    ':payment_status' => $order['payment']['status'] ?? 'cod',
+                    ':payment_status' => $pstatusNorm,
                     ':rz_order' => $order['payment']['razorpayOrderId'] ?? null,
                     ':rz_pay' => $order['payment']['razorpayPaymentId'] ?? null,
                     ':sr_provider' => $order['shipment']['provider'] ?? null,
                     ':sr_awb' => $order['shipment']['awb'] ?? null,
                     ':items_json' => json_encode($order['items'] ?? []),
-                    ':order_json' => json_encode($order, JSON_UNESCAPED_UNICODE)
+                    ':order_json' => json_encode($order, JSON_UNESCAPED_UNICODE),
+                    ':ostatus' => $order['orderStatus'] ?? 'confirmed',
+                    ':sstatus' => $order['shipmentStatus'] ?? 'not_created',
+                    ':istest' => !empty($order['isTest']) ? 1 : 0
                 ]);
             } catch (Throwable $e) {}
         }
@@ -359,6 +367,207 @@ class AuveStorage {
         }
         self::writeJsonAtomic(self::$dataDir . '/orders.json', $orders);
         return true;
+    }
+
+    // -------------------------------------------------------------
+    // ORDER MONEY (integer paise). Invariant:
+    // total = subtotal - discount + shipping + codFee.
+    // GST (tax) is INCLUDED in the prices, so it is reported as the
+    // GST portion inside the total, never added on top.
+    // -------------------------------------------------------------
+    public static function orderMoney(int $subtotal, int $discount, int $shipping, int $codFee, float $gstRate = 0.18): array {
+        $subP = $subtotal * 100;
+        $discP = $discount * 100;
+        $shipP = $shipping * 100;
+        $codP = $codFee * 100;
+        $taxableP = max(0, $subP - $discP);
+        $taxP = (int) round($taxableP * $gstRate / (1 + $gstRate));
+        $totalP = $subP - $discP + $shipP + $codP;
+        return [
+            'subtotal' => $subP, 'discount' => $discP, 'shipping' => $shipP,
+            'codFee' => $codP, 'tax' => $taxP, 'total' => $totalP,
+            'ok' => ($totalP === $subP - $discP + $shipP + $codP)
+        ];
+    }
+
+    // -------------------------------------------------------------
+    // ORDER MANAGEMENT SCHEMA (migration 001, idempotent).
+    // New tables for payments, refunds, shipments, returns, events,
+    // notifications and webhooks + lifecycle columns on auve_orders.
+    // The legacy auve_orders.payment_status column is repurposed as
+    // the normalised payment_status (raw status stays in order_json).
+    // -------------------------------------------------------------
+    private static $orderMigrated = false;
+
+    private static function runOrderMigrations(): void {
+        if (self::$orderMigrated || !self::$usingDatabase || !self::$pdo) return;
+        self::$orderMigrated = true;
+        try {
+            $ver = null;
+            try {
+                $st = self::$pdo->prepare("SELECT setting_value FROM auve_settings WHERE setting_key = 'schema_version'");
+                $st->execute();
+                $ver = $st->fetchColumn();
+            } catch (Throwable $e) {}
+            if ($ver === '001') return;
+
+            $ddl = [
+                "CREATE TABLE IF NOT EXISTS auve_order_events (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    order_id VARCHAR(20) NOT NULL,
+                    event VARCHAR(48) NOT NULL,
+                    from_status VARCHAR(32) NULL,
+                    to_status VARCHAR(32) NULL,
+                    actor VARCHAR(16) NOT NULL DEFAULT 'system',
+                    note TEXT NULL,
+                    meta_json LONGTEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    INDEX idx_order (order_id), INDEX idx_created (created_at)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_payments (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    order_id VARCHAR(20) NOT NULL,
+                    gateway VARCHAR(24) NOT NULL DEFAULT 'razorpay',
+                    gateway_order_id VARCHAR(64) NULL,
+                    gateway_payment_id VARCHAR(64) NULL,
+                    method VARCHAR(24) NULL,
+                    amount_paise BIGINT NOT NULL DEFAULT 0,
+                    status VARCHAR(32) NOT NULL DEFAULT 'pending',
+                    signature_verified TINYINT NOT NULL DEFAULT 0,
+                    raw_json LONGTEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    INDEX idx_order (order_id), INDEX idx_gpay (gateway_payment_id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_refunds (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    order_id VARCHAR(20) NOT NULL,
+                    payment_id BIGINT NULL,
+                    gateway_refund_id VARCHAR(64) NULL,
+                    amount_paise BIGINT NOT NULL DEFAULT 0,
+                    reason VARCHAR(255) NULL,
+                    speed VARCHAR(16) NOT NULL DEFAULT 'normal',
+                    status VARCHAR(32) NOT NULL DEFAULT 'initiated',
+                    raw_json LONGTEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    INDEX idx_order (order_id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_shipments (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    order_id VARCHAR(20) NOT NULL,
+                    provider VARCHAR(24) NOT NULL DEFAULT 'shiprocket',
+                    awb VARCHAR(64) NULL,
+                    courier VARCHAR(96) NULL,
+                    status VARCHAR(32) NOT NULL DEFAULT 'not_created',
+                    pickup_date DATE NULL,
+                    expected_delivery DATE NULL,
+                    label_url VARCHAR(512) NULL,
+                    charges_paise BIGINT NOT NULL DEFAULT 0,
+                    raw_json LONGTEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    INDEX idx_order (order_id), INDEX idx_awb (awb)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_shipment_events (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    shipment_id BIGINT NULL,
+                    awb VARCHAR(64) NULL,
+                    status VARCHAR(48) NOT NULL,
+                    location VARCHAR(128) NULL,
+                    remark TEXT NULL,
+                    event_time DATETIME NULL,
+                    raw_json LONGTEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    INDEX idx_awb (awb)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_returns (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    order_id VARCHAR(20) NOT NULL,
+                    type VARCHAR(16) NOT NULL DEFAULT 'return',
+                    reason VARCHAR(255) NULL,
+                    status VARCHAR(32) NOT NULL DEFAULT 'requested',
+                    qc_status VARCHAR(32) NULL,
+                    refund_mode VARCHAR(24) NULL,
+                    raw_json LONGTEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    INDEX idx_order (order_id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_notifications_log (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    order_id VARCHAR(20) NULL,
+                    channel VARCHAR(16) NOT NULL,
+                    template VARCHAR(48) NOT NULL,
+                    to_address VARCHAR(191) NULL,
+                    status VARCHAR(24) NOT NULL DEFAULT 'queued',
+                    provider_id VARCHAR(96) NULL,
+                    error TEXT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    INDEX idx_order (order_id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4",
+                "CREATE TABLE IF NOT EXISTS auve_webhook_events (
+                    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                    provider VARCHAR(24) NOT NULL,
+                    event_id VARCHAR(96) NOT NULL,
+                    event_type VARCHAR(64) NOT NULL,
+                    payload_json LONGTEXT NULL,
+                    processed TINYINT NOT NULL DEFAULT 0,
+                    received_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE KEY uq_event (provider, event_id)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4"
+            ];
+            foreach ($ddl as $sql) { try { self::$pdo->exec($sql); } catch (Throwable $e) {} }
+
+            $cols = [
+                'order_status' => "VARCHAR(32) NOT NULL DEFAULT 'confirmed'",
+                'shipment_status' => "VARCHAR(32) NOT NULL DEFAULT 'not_created'",
+                'is_test' => "TINYINT NOT NULL DEFAULT 0"
+            ];
+            foreach ($cols as $col => $def) {
+                try {
+                    $st = self::$pdo->prepare("SELECT COUNT(*) FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'auve_orders' AND COLUMN_NAME = ?");
+                    $st->execute([$col]);
+                    if (intval($st->fetchColumn()) === 0) {
+                        self::$pdo->exec("ALTER TABLE auve_orders ADD COLUMN $col $def");
+                    }
+                } catch (Throwable $e) {}
+            }
+
+            self::backfillLegacyOrders();
+
+            try {
+                $st = self::$pdo->prepare("INSERT INTO auve_settings (setting_key, setting_value) VALUES ('schema_version', '001') ON DUPLICATE KEY UPDATE setting_value = '001'");
+                $st->execute();
+            } catch (Throwable $e) {}
+        } catch (Throwable $e) {}
+    }
+
+    // One-time repair: give every stored order the full money breakup
+    // (paise), the tax/codFee fields and the lifecycle statuses.
+    private static function backfillLegacyOrders(): void {
+        try {
+            $rows = self::$pdo->query("SELECT id, order_json FROM auve_orders")->fetchAll();
+            foreach ($rows as $r) {
+                $o = json_decode($r['order_json'], true);
+                if (!is_array($o) || isset($o['money'])) continue;
+                $t = $o['totals'] ?? [];
+                $codFee = intval($t['codFee'] ?? 0);
+                $money = self::orderMoney(intval($t['subtotal'] ?? 0), intval($t['promo'] ?? 0), intval($t['shipping'] ?? 0), $codFee, 0.18);
+                unset($money['ok']);
+                $o['totals']['codFee'] = $codFee;
+                $o['totals']['tax'] = round($money['tax'] / 100, 2);
+                $o['money'] = $money;
+                $payStatus = $o['payment']['status'] ?? 'cod';
+                $isTest = ($payStatus === 'test_mode') || (isset($o['shipment']['courier']) && stripos($o['shipment']['courier'], 'test') !== false);
+                $o['isTest'] = $isTest;
+                $o['orderStatus'] = ($payStatus === 'payment_pending') ? 'pending_payment' : 'confirmed';
+                $o['paymentStatus'] = $payStatus === 'paid' ? 'paid' : ($payStatus === 'payment_pending' ? 'pending' : 'cod_pending');
+                $o['shipmentStatus'] = !empty($o['shipment']['awb']) ? 'booked' : 'not_created';
+                $st = self::$pdo->prepare("UPDATE auve_orders SET order_json = :j, order_status = :os, payment_status = :ps, shipment_status = :ss, is_test = :it WHERE id = :id");
+                $st->execute([':j' => json_encode($o, JSON_UNESCAPED_UNICODE), ':os' => $o['orderStatus'], ':ps' => $o['paymentStatus'], ':ss' => $o['shipmentStatus'], ':it' => $isTest ? 1 : 0, ':id' => $r['id']]);
+            }
+        } catch (Throwable $e) {}
     }
 
     // -------------------------------------------------------------
