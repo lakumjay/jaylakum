@@ -1490,60 +1490,104 @@ function inrShort(n) {
   if (n >= 1000) return '₹' + (Math.round(n / 100) / 10) + 'k';
   return '₹' + n;
 }
+var dashOrdersCache = [];
+var dashRangeDays = 14;
+
+function renderDashChart() {
+  var days = [], byDay = {}, cnt = {}, i, d;
+  for (i = dashRangeDays - 1; i >= 0; i--) { d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - i); days.push(d); byDay[d.toDateString()] = 0; cnt[d.toDateString()] = 0; }
+  dashOrdersCache.forEach(function (o) { if (!o.at) return; var k = new Date(o.at).toDateString(); if (k in byDay) { byDay[k] += Number((o.totals && o.totals.total) || 0); cnt[k]++; } });
+  var max = 0, sum = 0, n = 0;
+  days.forEach(function (dd) { var v = byDay[dd.toDateString()]; max = Math.max(max, v); sum += v; n += cnt[dd.toDateString()]; });
+  $('dashChart').innerHTML = '<div class="chart">' + days.map(function (dd, idx) {
+    var v = byDay[dd.toDateString()]; var hgt = max > 0 ? Math.max(2, Math.round(v / max * 100)) : 2;
+    return '<div class="bar-col"><div class="bar-val">' + (v ? inrShort(v) : '') + '</div><div class="bar' + (idx === days.length - 1 ? ' today' : '') + '" style="height:' + hgt + '%"></div><div class="bar-day">' + dd.getDate() + ' ' + dd.toLocaleDateString('en-IN', { month: 'short' }) + '</div><div class="bar-orders">' + (cnt[dd.toDateString()] ? cnt[dd.toDateString()] + ' order' + (cnt[dd.toDateString()] > 1 ? 's' : '') : '') + '</div></div>';
+  }).join('') + '</div>' + (max === 0 ? '<p class="dash-empty">No sales in this period yet.</p>' : '');
+  $('dashLegend').innerHTML = '<span>Total <b>' + inr(sum) + '</b></span><span>Orders <b>' + n + '</b></span><span>Average per day <b>' + inr(Math.round(sum / dashRangeDays)) + '</b></span>';
+  var rb = $('dashRange');
+  if (rb) Array.prototype.forEach.call(rb.querySelectorAll('button'), function (b) {
+    b.classList.toggle('on', Number(b.getAttribute('data-days')) === dashRangeDays);
+    b.onclick = function () { dashRangeDays = Number(b.getAttribute('data-days')); renderDashChart(); };
+  });
+}
+
 function loadDashboard() {
   Promise.all([
     api('GET', '/api/admin/orders').catch(function () { return { orders: [] }; }),
-    api('GET', '/api/admin/products').catch(function () { return { products: products || [] }; }),
-    api('GET', '/api/admin/integrations').catch(function () { return {}; }),
-    api('GET', '/api/admin/forms').catch(function () { return { forms: [] }; })
+    api('GET', '/api/admin/products').catch(function () { return { products: products || [] }; })
   ]).then(function (res) {
     var orders = (res[0] && res[0].orders) || [];
     var prods = (res[1] && res[1].products) || [];
     products = prods;
-    var integ = res[2] || {};
-    var forms = (res[3] && res[3].forms) || [];
-    var income = 0, todayCount = 0, todayStr = new Date().toDateString();
+    dashOrdersCache = orders;
+    var income = 0, todayCount = 0, todayStr = new Date().toDateString(), codDue = 0, codCount = 0, testCount = 0, testMoney = 0;
     orders.forEach(function (o) {
-      income += Number((o.totals && o.totals.total) || 0);
+      var tot = Number((o.totals && o.totals.total) || 0);
+      income += tot;
       if (o.at && new Date(o.at).toDateString() === todayStr) todayCount++;
+      if (o.paymentStatus === 'cod_pending' || (!o.paymentStatus && o.payment && o.payment.status === 'cod')) { codDue += tot; codCount++; }
+      if (o.isTest) { testCount++; testMoney += tot; }
     });
-    var rz = integ.razorpay || {}, sr = integ.shiprocket || {};
     var stats = [
-      { num: inr(income), label: 'Total income (all orders)', gold: true },
+      { num: inr(income), label: 'Total revenue', gold: true },
       { num: orders.length, label: 'Total orders' },
       { num: todayCount, label: 'Orders today' },
-      { num: prods.length, label: 'Products in your shop' },
-      { num: forms.length, label: 'Form messages received' },
-      { num: rz.configured ? 'LIVE' : 'TEST', label: rz.configured ? 'Online payments are live' : 'Payments in test mode' }
+      { num: inr(codDue), label: 'COD to collect (' + codCount + ' order' + (codCount === 1 ? '' : 's') + ')' }
     ];
     $('dashStats').innerHTML = stats.map(function (s) {
       return '<div class="stat-card' + (s.gold ? ' gold' : '') + '"><div class="stat-num">' + s.num + '</div><div class="stat-label">' + s.label + '</div></div>';
     }).join('');
-    var days = [], byDay = {}, i, d;
-    for (i = 13; i >= 0; i--) { d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - i); days.push(d); byDay[d.toDateString()] = 0; }
-    orders.forEach(function (o) { if (!o.at) return; var k = new Date(o.at).toDateString(); if (k in byDay) byDay[k] += Number((o.totals && o.totals.total) || 0); });
-    var max = 0; days.forEach(function (dd) { max = Math.max(max, byDay[dd.toDateString()]); });
-    $('dashChart').innerHTML = '<div class="chart">' + days.map(function (dd, idx) {
-      var v = byDay[dd.toDateString()]; var hgt = max > 0 ? Math.max(2, Math.round(v / max * 100)) : 2;
-      return '<div class="bar-col"><div class="bar-val">' + (v ? inrShort(v) : '') + '</div><div class="bar' + (idx === 13 ? ' today' : '') + '" style="height:' + hgt + '%"></div><div class="bar-day">' + dd.getDate() + ' ' + dd.toLocaleDateString('en-IN', { weekday: 'narrow' }) + '</div></div>';
-    }).join('') + '</div>' + (max === 0 ? '<p class="dash-empty">No orders in the last 14 days yet. Your first order will appear here.</p>' : '');
-    $('dashRecent').innerHTML = orders.length ? orders.slice(0, 5).map(function (o) {
-      var pay = o.payment || {};
-      var pill = (pay.status === 'paid' || pay.method === 'razorpay') ? '<span class="pill paid">Paid online</span>' : (pay.method === 'cod' ? '<span class="pill cod">Cash on delivery</span>' : '<span class="pill">TEST</span>');
+    $('dashNote').textContent = testCount ? 'Includes ' + testCount + ' test order' + (testCount === 1 ? '' : 's') + ' (' + inr(testMoney) + '). Once live payment keys are added, only real sales will count here.' : '';
+    renderDashChart();
+    var toShip = orders.filter(function (o) { return o.orderStatus === 'confirmed' && o.shipmentStatus === 'not_created'; }).length;
+    var toPay = orders.filter(function (o) { return o.orderStatus === 'pending_payment'; }).length;
+    var attn = '';
+    if (toShip) attn += '<div class="attn">' + toShip + ' order' + (toShip === 1 ? '' : 's') + ' confirmed but the shipment is not created yet. Open the Orders tab to create the AWB.</div>';
+    if (toPay) attn += '<div class="attn red">' + toPay + ' order' + (toPay === 1 ? '' : 's') + ' waiting for payment.</div>';
+    $('dashAttention').innerHTML = attn;
+    $('dashRecent').innerHTML = orders.length ? orders.slice(0, 6).map(function (o) {
+      var pill = o.paymentStatus === 'paid' ? '<span class="pill paid">Paid online</span>'
+        : o.paymentStatus === 'cod_pending' ? '<span class="pill cod">Cash on delivery</span>'
+        : o.isTest ? '<span class="pill test">TEST</span>' : '<span class="pill">Pending</span>';
       var count = (o.totals && o.totals.pairs) || (o.items ? o.items.length : 0);
-      return '<div class="dash-row"><div class="grow"><b>' + esc(o.id || '') + '</b><div class="prod-meta">' + (o.at ? new Date(o.at).toLocaleString('en-IN') : '') + ' · ' + count + ' item(s)</div></div>' + pill + '<b>' + inr((o.totals && o.totals.total) || 0) + '</b></div>';
+      return '<div class="dash-row"><div class="grow"><b>' + esc(o.id || '') + '</b><div class="prod-meta">' + (o.at ? new Date(o.at).toLocaleString('en-IN') : '') + ' \u00B7 ' + count + ' item(s)</div></div>' + pill + '<b>' + inr((o.totals && o.totals.total) || 0) + '</b></div>';
     }).join('') : '<p class="dash-empty">No orders yet.</p>';
+    var byStatus = {};
+    orders.forEach(function (o) {
+      var s = o.shipmentStatus === 'booked' || o.shipmentStatus === 'shipped' ? 'shipped' : (o.orderStatus || 'confirmed');
+      byStatus[s] = (byStatus[s] || 0) + 1;
+    });
+    var sKeys = Object.keys(byStatus).sort(function (a, b) { return byStatus[b] - byStatus[a]; });
+    var sMax = sKeys.length ? byStatus[sKeys[0]] : 0;
+    $('dashStatus').innerHTML = sKeys.length ? sKeys.map(function (k) {
+      return '<div class="hbar-row"><div class="hbar-label">' + esc(k.replace(/_/g, ' ')) + '</div><div class="hbar-track"><div class="hbar-fill" style="width:' + Math.round(byStatus[k] / sMax * 100) + '%"></div></div><div class="hbar-num">' + byStatus[k] + '</div></div>';
+    }).join('') : '<p class="dash-empty">No orders yet.</p>';
+    var codN = 0, codR = 0, onN = 0, onR = 0, teN = 0, teR = 0;
+    orders.forEach(function (o) {
+      var tot = Number((o.totals && o.totals.total) || 0);
+      if (o.isTest) { teN++; teR += tot; }
+      else if (o.paymentStatus === 'paid') { onN++; onR += tot; }
+      else { codN++; codR += tot; }
+    });
+    var totAll = codR + onR + teR;
+    if (totAll > 0) {
+      $('dashPaySplit').innerHTML = '<div class="split-bar">'
+        + (codR ? '<div class="seg-cod" style="width:' + (codR / totAll * 100) + '%"></div>' : '')
+        + (onR ? '<div class="seg-online" style="width:' + (onR / totAll * 100) + '%"></div>' : '')
+        + (teR ? '<div class="seg-test" style="width:' + (teR / totAll * 100) + '%"></div>' : '')
+        + '</div><div class="split-legend">'
+        + '<span><span class="dot" style="background:var(--au-gold)"></span>COD \u00B7 ' + codN + ' \u00B7 ' + inr(codR) + '</span>'
+        + '<span><span class="dot" style="background:var(--au-navy)"></span>Online paid \u00B7 ' + onN + ' \u00B7 ' + inr(onR) + '</span>'
+        + (teN ? '<span><span class="dot" style="background:#CFC9BB"></span>Test \u00B7 ' + teN + ' \u00B7 ' + inr(teR) + '</span>' : '')
+        + '</div>';
+    } else {
+      $('dashPaySplit').innerHTML = '<p class="dash-empty">No payments yet.</p>';
+    }
     var byName = {};
     orders.forEach(function (o) { (o.items || []).forEach(function (it) { var n = it.name || it.id || 'Product'; byName[n] = (byName[n] || 0) + (Number(it.qty) || 1); }); });
     var top = Object.keys(byName).map(function (n) { return { name: n, qty: byName[n] }; }).sort(function (a, b) { return b.qty - a.qty; }).slice(0, 5);
-    $('dashTop').innerHTML = top.length ? top.map(function (t, i) { return '<div class="dash-row"><div class="grow"><b>' + (i + 1) + '. ' + esc(t.name) + '</b></div><span class="pill">' + t.qty + ' sold</span></div>'; }).join('') : '<p class="dash-empty">No sales yet. Best sellers will appear here.</p>';
-    var awbCount = 0; orders.forEach(function (o) { if (o.shipment && o.shipment.awb) awbCount++; });
-    $('dashShip').innerHTML =
-      '<div class="dash-row"><div class="grow"><b>Razorpay payments</b><div class="prod-meta">' + (rz.configured ? 'Live, real card and UPI payments are on' : 'Test mode, no real money is taken yet') + '</div></div><span class="pill ' + (rz.configured ? 'paid' : 'cod') + '">' + (rz.configured ? 'ON' : 'OFF') + '</span></div>'
-      + '<div class="dash-row"><div class="grow"><b>Shiprocket delivery</b><div class="prod-meta">' + (sr.configured ? 'Connected as ' + esc(sr.email || '') + ' · pickup: ' + esc(sr.pickupLocation || 'Primary') : 'Not connected, add your login in Settings') + '</div></div><span class="pill ' + (sr.configured ? 'paid' : 'cod') + '">' + (sr.configured ? 'ON' : 'OFF') + '</span></div>'
-      + '<div class="dash-row"><div class="grow"><b>Shipments created</b><div class="prod-meta">Orders with a courier AWB number</div></div><b>' + awbCount + '</b></div>';
-    var low = prods.filter(function (p) { return (p.soldOut || []).length >= 4; });
-    $('dashStock').innerHTML = low.length ? low.map(function (p) { return '<div class="dash-row"><div class="grow"><b>' + esc(p.name) + '</b><div class="prod-meta">' + (p.soldOut || []).length + ' sizes sold out</div></div><span class="pill cod">Restock</span></div>'; }).join('') : '<p class="dash-empty">Nothing is running out right now. Good.</p>';
+    $('dashTopCard').style.display = top.length ? '' : 'none';
+    $('dashTop').innerHTML = top.map(function (t, i) { return '<div class="dash-row"><div class="grow"><b>' + (i + 1) + '. ' + esc(t.name) + '</b></div><span class="pill">' + t.qty + ' sold</span></div>'; }).join('');
   }).catch(function (e) { showMsg($('dashMsg'), e.message, false); });
 }
 
