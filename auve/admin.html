@@ -258,6 +258,33 @@
   #tab-orders .order table { min-width: 460px; }
   .pill.test { background: var(--au-red-bg); color: #7A1B16; }
   .pill.status { background: #EAE6F5; color: var(--au-navy); text-transform: capitalize; }
+
+  /* ---- dashboard v2 ---- */
+  #tab-dashboard .stat-grid { margin-bottom: 14px; }
+  .dash-note { color: var(--au-muted); font-size: 13px; font-weight: 600; margin: 0 0 18px; }
+  .dash-note:empty { display: none; }
+  .dash-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .dash-head h2 { margin: 0; }
+  .dash-range { display: flex; gap: 6px; }
+  .dash-range button { border: 1px solid var(--au-line); background: #fff; color: var(--au-muted); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  .dash-range button.on { background: var(--au-navy); color: #fff; border-color: var(--au-navy); }
+  #tab-dashboard .chart { height: 210px; }
+  .chart .bar-orders { font-size: 10.5px; color: var(--au-muted); white-space: nowrap; }
+  .dash-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; color: var(--au-muted); font-size: 13.5px; font-weight: 600; }
+  .dash-legend b { color: var(--au-navy); }
+  .attn { border-left: 4px solid var(--au-gold); background: #FBF3DF; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; font-weight: 600; color: var(--au-navy); }
+  .attn.red { border-left-color: var(--au-red); background: var(--au-red-bg); }
+  .hbar-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; }
+  .hbar-label { width: 128px; font-weight: 600; font-size: 14px; color: var(--au-navy); text-transform: capitalize; flex-shrink: 0; }
+  .hbar-track { flex: 1; background: var(--au-cream); border: 1px solid var(--au-line); border-radius: 99px; height: 12px; overflow: hidden; }
+  .hbar-fill { height: 100%; background: linear-gradient(90deg, var(--au-gold), #A9853B); border-radius: 99px; min-width: 4px; }
+  .hbar-num { width: 30px; text-align: right; font-weight: 700; color: var(--au-navy); }
+  .split-bar { display: flex; height: 16px; border-radius: 99px; overflow: hidden; background: var(--au-cream); border: 1px solid var(--au-line); margin: 10px 0 8px; }
+  .split-bar .seg-cod { background: var(--au-gold); }
+  .split-bar .seg-online { background: var(--au-navy); }
+  .split-bar .seg-test { background: #CFC9BB; }
+  .split-legend { font-size: 13.5px; color: var(--au-muted); font-weight: 600; display: flex; gap: 16px; flex-wrap: wrap; }
+  .split-legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; }
 </style>
 </head>
 <body>
@@ -324,38 +351,39 @@
     <!-- ================= VISUAL EDITOR ================= -->
     <!-- ================= DASHBOARD ================= -->
     <div id="tab-dashboard">
+      <div id="dashMsg"></div>
+      <div class="stat-grid" id="dashStats"></div>
+      <div class="dash-note" id="dashNote"></div>
       <div class="card">
-        <h2>Your shop at a glance</h2>
-        <p class="help">Sales, orders, income and delivery status, all in one place. This page refreshes every time you open it.</p>
-        <div id="dashMsg"></div>
-        <div class="stat-grid" id="dashStats"></div>
-      </div>
-      <div class="card">
-        <h2>Sales, last 14 days</h2>
-        <p class="help">Order money received, day by day.</p>
+        <div class="dash-head">
+          <h2>Sales graph</h2>
+          <div class="dash-range" id="dashRange">
+            <button type="button" data-days="7">7 days</button>
+            <button type="button" data-days="14" class="on">14 days</button>
+            <button type="button" data-days="30">30 days</button>
+          </div>
+        </div>
         <div id="dashChart"></div>
+        <div class="dash-legend" id="dashLegend"></div>
       </div>
+      <div id="dashAttention"></div>
       <div class="dash-cols">
         <div class="card">
           <h2>Latest orders</h2>
           <div id="dashRecent"></div>
         </div>
         <div class="card">
-          <h2>Best selling products</h2>
-          <div id="dashTop"></div>
+          <h2>Orders by status</h2>
+          <div id="dashStatus"></div>
+          <h2 style="margin-top:24px">Payments</h2>
+          <div id="dashPaySplit"></div>
         </div>
       </div>
-      <div class="card">
-        <h2>Delivery &amp; payments status</h2>
-        <div id="dashShip"></div>
-      </div>
-      <div class="card">
-        <h2>Stock that is running out</h2>
-        <p class="help">Products where many sizes are sold out. Restock these first.</p>
-        <div id="dashStock"></div>
+      <div class="card" id="dashTopCard">
+        <h2>Best selling products</h2>
+        <div id="dashTop"></div>
       </div>
     </div>
-
     <div id="tab-visual">
       <div class="card">
         <h2>Your shop, exactly as customers see it</h2>
@@ -935,6 +963,6 @@
   </div>
 </div>
 
-<script src="admin.js?v=20261123_6"></script>
+<script src="admin.js?v=20261123_7"></script>
 </body>
 </html>
