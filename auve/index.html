@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AUVÉ | Handmade footwear from Surat</title>
+<meta name="description" content="AUVÉ handmade footwear: The Barely Edit, Gilded and Veil &amp; Vow. Free shipping across India on all orders.">
+<meta name="theme-color" content="#1B1A34">
+<meta property="og:title" content="AUVÉ | Step In. Stand Out.">
+<meta property="og:image" content="assets/hero-mobile.jpg">
+<link rel="preload" href="fonts/Montserrat-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Belleza-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Garet-Book.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="styles.css?v=50">
+<link rel="icon" href="assets/favicon.png">
+<style>html,body{background:#1B1A34}</style>
+</head>
+<body>
+<div id="root"></div>
+<noscript><div style="font-family: Montserrat, system-ui, sans-serif; padding: 40px 22px; color: #1B1A34;">AUVÉ needs JavaScript to show the store. WhatsApp us on +91 97251 24422 or email contact@auve.in.</div></noscript>
+<script src="vendor/react.production.min.js"></script>
+<script src="vendor/react-dom.production.min.js"></script>
+<script>
+/* Dynamic data layer: the catalogue is fetched from data/products.json
+ * (managed by the owner in admin.html) instead of a hardcoded file.
+ * app.js renders everything from window.AUVE_CATALOG, as before. */
+(function () {
+  function loadApp() { var s = document.createElement('script'); s.src = 'app.js?v=52'; document.body.appendChild(s); }
+  Promise.all([
+    fetch('data/products.json', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('products ' + r.status); return r.json(); }),
+    fetch('api-settings.json', { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })
+  ])
+    .then(function (res) { window.AUVE_CATALOG = res[0]; window.AUVE_SETTINGS = res[1] || {}; loadApp(); })
+    .catch(function () {
+      /* Fallback to the original static catalogue if the JSON layer is unreachable. */
+      var s = document.createElement('script'); s.src = 'data/catalog.js?v=50'; s.onload = loadApp; s.onerror = loadApp; document.body.appendChild(s);
+    });
+})();
+</script>
+</body>
+</html>
