@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Agencies — White-Label Shopify &amp; WooCommerce Development | Jay Lakum</title>
+<meta name="description" content="White-label development partner for web agencies: Shopify and WooCommerce build support, speed fixes, bug fixes and redesigns — delivered invisibly, under your brand. Start with a small paid pilot.">
+<link rel="canonical" href="https://jaylakum.com/for-agencies/">
+<style>
+  :root{
+    --green:#0C2E25; --green-dk:#082219; --ink:#1C1A17; --gold:#A98548; --gold-dk:#8A6D3B;
+    --muted:#5F6B64; --card:#FFFFFF; --line:#DFE7E1; --soft:#F4F7F4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:#fff;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+  /* HERO */
+  .hero{background:var(--green);color:#fff;padding:88px 0 72px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;
+    background:radial-gradient(circle,rgba(169,133,72,.28),transparent 70%)}
+  .eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;font-weight:700;margin-bottom:18px}
+  .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5.6vw,52px);
+    line-height:1.15;font-weight:700;max-width:680px}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero p.sub{color:#CFE0D6;font-size:18px;max-width:600px;margin:20px 0 32px}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:700;font-size:16px;
+    text-decoration:none;transition:transform .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-ghost{border:2px solid rgba(255,255,255,.35);color:#fff}
+  .trust{margin-top:28px;color:#9DB4A6;font-size:14px}
+  /* SECTIONS */
+  section{padding:72px 0}
+  .alt{background:var(--soft)}
+  .kicker{color:var(--gold-dk);font-size:12px;letter-spacing:3px;font-weight:700;margin-bottom:10px}
+  h2{font-family:Georgia,serif;font-size:clamp(26px,4vw,36px);margin-bottom:14px}
+  .lead{color:var(--muted);font-size:17px;max-width:660px;margin-bottom:36px}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px}
+  .card .icon{font-size:30px;margin-bottom:14px}
+  .card h3{font-size:19px;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:15px}
+  /* INVISIBILITY */
+  .invisible{background:var(--green);border-radius:16px;padding:40px;color:#fff}
+  .invisible h3{font-family:Georgia,serif;font-size:24px;margin-bottom:12px}
+  .invisible p{color:#CFE0D6;font-size:16px;max-width:720px;margin-bottom:24px}
+  .invisible ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px 28px}
+  .invisible li{font-size:15.5px;padding-left:26px;position:relative;color:#EAF2EC}
+  .invisible li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;counter-reset:step}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;position:relative}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:24px;
+    background:var(--gold);color:#fff;width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+  .step h3{font-size:17px;margin:8px 0 8px}
+  .step p{color:var(--muted);font-size:14.5px}
+  /* LOCK-IN */
+  .lockin{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px}
+  .lockin p{color:var(--muted);font-size:16.5px;max-width:740px}
+  .lockin p strong{color:var(--ink)}
+  /* PROOF */
+  .proof{background:var(--green);border-radius:20px;padding:56px 40px;text-align:center;color:#fff}
+  .proof .big{font-family:Georgia,serif;font-size:clamp(40px,7vw,64px);font-weight:700;color:#fff}
+  .proof .big em{color:var(--gold);font-style:normal}
+  .proof p{color:#CFE0D6;max-width:560px;margin:14px auto 0;font-size:16.5px}
+  /* CONTACT */
+  .contact{background:var(--green-dk);border-radius:20px;padding:56px 40px;text-align:center;color:#fff}
+  .contact h2{color:#fff}
+  .contact p{color:#CFE0D6;max-width:540px;margin:0 auto 30px;font-size:16.5px}
+  .mail-btn{display:inline-block;background:var(--gold);color:#fff;font-size:19px;font-weight:700;
+    padding:16px 44px;border-radius:12px;text-decoration:none}
+  .mail-btn:hover{transform:translateY(-2px)}
+  footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer a{color:var(--gold-dk);text-decoration:none}
+  @media(max-width:600px){.hero{padding:64px 0 52px}section{padding:52px 0}.contact,.proof{padding:40px 24px}.invisible{padding:28px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">FOR AGENCIES · WHITE-LABEL DEVELOPMENT</div>
+    <h1>I build webshops under your brand. <em>Your clients never see me.</em></h1>
+    <p class="sub">I'm a white-label development partner for web agencies: Shopify and WooCommerce build support, speed fixes, bug fixes and redesigns — delivered invisibly, under your name. I only build. I never contact your clients directly.</p>
+    <div class="btns">
+      <a class="btn btn-gold" href="mailto:jay@jaylakum.com">Start with a paid pilot</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+    <div class="trust">Jay Lakum · India Coders · Async-first, everything in writing · NDA before access, if you want one</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">WHAT I DO</div>
+    <h2>Build capacity, under your brand</h2>
+    <p class="lead">When your queue is full or a webshop problem lands that nobody in-house has time for, I take the build work off your plate. Your client sees your agency, your staging, your delivery — never me.</p>
+    <div class="grid2">
+      <div class="card">
+        <div class="icon">🏗️</div>
+        <h3>Build support</h3>
+        <p>New Shopify and WooCommerce builds, new sections and features, and overflow work when your own developers are fully booked. Built to your standards, with consistent naming and a tidy handover.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Speed fixes</h3>
+        <p>Slow client stores made fast: measured first, then image optimisation, caching, app and plugin cleanup and theme code diets — with a before/after report your client can understand.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Bug fixes</h3>
+        <p>Checkout errors, plugin conflicts, broken layouts, update damage. I reproduce the problem first, explain the cause in plain words, and fix it on a staging copy before anything touches the live store.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Redesigns</h3>
+        <p>Focused redesigns of the pages that sell — home, product, cart — in your client's branding, previewed on staging for your approval before they go live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="invisible">
+      <h3>Invisible by system, not just by promise</h3>
+      <p>Your biggest risk with a white-label partner isn't quality — it's your client finding out. So invisibility is set up as a system at kickoff, not left as a verbal promise:</p>
+      <ul>
+        <li>Commits land in your repo, under your agency's identity</li>
+        <li>Work happens on your staging domain, never mine</li>
+        <li>Deployments run through your accounts</li>
+        <li>No name of mine in code, metadata or screenshots</li>
+        <li>Your client communicates only with you — I never write to them</li>
+        <li>Happy to sign your NDA before I see anything</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="alt">
+  <div class="wrap">
+    <div class="kicker">HOW IT WORKS</div>
+    <h2>A paid pilot first. Then ongoing, if it fits.</h2>
+    <p class="lead">No free trial work, and no big commitment up front. We start with one small, real task from your queue — paid, fixed scope — so you can judge the work the way your clients will.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>Say hello by email</h3>
+        <p>Tell me your stack and where your queue is stuck. I reply in writing, usually within 24 hours.</p>
+      </div>
+      <div class="step">
+        <h3>Small paid pilot</h3>
+        <p>One real task, a fixed price agreed in writing before I start. Small enough to be low-risk, real enough to judge.</p>
+      </div>
+      <div class="step">
+        <h3>You review, your way</h3>
+        <p>Everything lands on your staging, at an agreed review moment. If I spot a problem outside the scope, I flag it early — with an alternative, not just a warning.</p>
+      </div>
+      <div class="step">
+        <h3>Ongoing capacity</h3>
+        <p>If the pilot works, I become overflow capacity you can call on. Maintenance and support after delivery are agreed up front, before handover — no surprises later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">YOUR CLIENT STAYS YOURS</div>
+    <div class="lockin">
+      <p><strong>No lock-in, by design.</strong> The domain, the accounts, the code and the data belong to your client and your agency — registered in their names, documented as I go. If you ever want to move the work in-house or to another developer, everything is written down well enough for them to take over tomorrow. And if I'm ever unavailable, you're not stranded: I work with a small team at India Coders, and everything we do is documented, not kept in one person's head.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="proof">
+      <div class="big">6.1s → <em>2.2s</em></div>
+      <p>The mobile load time of a real WooCommerce store I optimised. It's the only number on this page — because it's the only one I can prove.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="contact">
+      <div class="kicker" style="color:var(--gold)">CONTACT</div>
+      <h2>Tell me where your queue is stuck.</h2>
+      <p>One email is enough: your stack, the kind of work piling up, and when you'd need it. I'll reply in writing with honest next steps — and a small paid pilot we can start with.</p>
+      <a class="mail-btn" href="mailto:jay@jaylakum.com">jay@jaylakum.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026 Jay Lakum · <a href="https://indiacoders.in" target="_blank" rel="noopener">India Coders</a> · indiacoders.in · <a href="https://jaylakum.com/">jaylakum.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
