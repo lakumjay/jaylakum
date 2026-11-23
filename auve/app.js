@@ -414,8 +414,26 @@ class Component extends DCLogic {
     const sub = lines.reduce((n, c) => n + BYID[c.id].price * c.qty, 0);
     const r = this.rate(pairs);
     const disc = Math.round(sub * r);
-    const promo = s.promo ? Math.round((sub - disc) * 0.10) : 0;
-    const after = sub - disc - promo;
+    const coupons = (window.AUVE_COUPONS || ((window.AUVE_SETTINGS || {}).coupons) || []);
+    let promo = 0;
+    let promoLabel = '';
+    if (s.promo) {
+      const cp = coupons.find(c => c.code.toUpperCase() === s.promo.toUpperCase() && c.active !== false);
+      if (cp) {
+        if (cp.type === 'flat') {
+          promo = Math.min(sub - disc, Number(cp.value) || 0);
+          promoLabel = 'Code ' + s.promo + ' · ₹' + cp.value + ' off';
+        } else {
+          const pct = Number(cp.value) || 10;
+          promo = Math.round((sub - disc) * (pct / 100));
+          promoLabel = 'Code ' + s.promo + ' · ' + pct + '% off';
+        }
+      } else {
+        promo = Math.round((sub - disc) * 0.10);
+        promoLabel = 'Code ' + s.promo + ' · 10% off';
+      }
+    }
+    const after = Math.max(0, sub - disc - promo);
     let ship = 0;
     const cod = 0; /* cash on delivery is free */
     return {
@@ -423,7 +441,7 @@ class Component extends DCLogic {
       view: {
         subtotal: inr(sub), hasDiscount: disc > 0, discount: inr(disc),
         discountLabel: 'Pair & Spare ' + Math.round(r * 100) + '% off',
-        hasPromo: promo > 0, promo: inr(promo), promoLabel: 'Code ' + s.promo + ' · 10% off',
+        hasPromo: promo > 0, promo: inr(promo), promoLabel: promoLabel,
         shipping: ship === 0 ? 'Free' : inr(ship), hasCod: cod > 0, total: inr(after + ship + cod)
       }
     };
@@ -703,9 +721,24 @@ class Component extends DCLogic {
       hasPromoErr: !!s.promoErr, promoErr: s.promoErr,
       applyPromo: () => {
         const code = s.promoInput.trim().toUpperCase();
-        if (code !== 'WELCOME10') { this.setState({ promoErr: 'That code isn\'t valid.' }); return; }
-        if (s.orders.length) { this.setState({ promoErr: 'WELCOME10 is for first orders only.' }); return; }
-        save('auve_promo', code); this.setState({ promo: code, promoInput: '', promoErr: '' });
+        if (!code) return;
+        const coupons = (window.AUVE_COUPONS || ((window.AUVE_SETTINGS || {}).coupons) || []);
+        let cp = coupons.find(c => c.code.toUpperCase() === code && c.active !== false);
+        if (!cp && code === 'WELCOME10') {
+          cp = { code: 'WELCOME10', type: 'percent', value: 10, min: 0 };
+        }
+        if (!cp) {
+          this.setState({ promoErr: "That coupon code isn't valid." });
+          return;
+        }
+        const lines = s.cart.filter(c => BYID[c.id]);
+        const sub = lines.reduce((n, c) => n + BYID[c.id].price * c.qty, 0);
+        if (cp.min && sub < cp.min) {
+          this.setState({ promoErr: 'Minimum order of ₹' + cp.min + ' required for code ' + cp.code + '.' });
+          return;
+        }
+        save('auve_promo', cp.code);
+        this.setState({ promo: cp.code, promoInput: '', promoErr: '' });
       },
       removePromo: () => { save('auve_promo', ''); this.setState({ promo: '' }); },
 

@@ -193,6 +193,7 @@
     <div class="tabs">
       <button class="tab on" data-tab="visual">Edit My Shop Visually</button>
       <button class="tab" data-tab="products">Products</button>
+      <button class="tab" data-tab="coupons">Coupons &amp; Discounts</button>
       <button class="tab" data-tab="look">Shop Look</button>
       <button class="tab" data-tab="writing">Homepage Writing</button>
       <button class="tab" data-tab="sections">Homepage Parts On/Off</button>
@@ -275,34 +276,36 @@
             <div id="empty-cover" class="media-preview-empty">No photo<br>selected</div>
           </div>
           <div class="media-content">
-            <input type="text" id="f-cover" placeholder="Example: assets/p/my-photo.jpg">
+            <input type="hidden" id="f-cover">
+            <div id="name-cover" style="font-weight:600; font-size:14px; margin-bottom:8px; color:#1B1A34">No photo uploaded</div>
             <div class="media-btn-row">
               <label class="btn-upload">
-                📷 Upload Photo
-                <input type="file" id="up-cover" accept="image/*,video/mp4">
+                📷 Upload Photo or Video
+                <input type="file" id="up-cover" accept="image/*,video/mp4,video/webm,video/quicktime">
               </label>
               <button type="button" class="btn btn-light btn-small" id="lib-cover">Choose from Library</button>
-              <button type="button" class="btn btn-danger btn-small" id="del-cover" style="display:none">Clear</button>
+              <button type="button" class="btn btn-danger btn-small" id="del-cover" style="display:none">✕ Remove</button>
             </div>
-            <p class="field-help" style="margin:6px 0 0">Shown on cards in the shop. You can upload a new photo directly or pick from existing ones.</p>
+            <p class="field-help" style="margin:6px 0 0">Shown on cards across your shop. You can upload a new photo directly or pick from existing ones.</p>
           </div>
         </div>
 
-        <label>Second photo (on hover / not needed)</label>
+        <label>Second photo (shown on hover / not needed)</label>
         <div class="media-box" id="box-cover2">
           <div class="media-preview-wrap">
             <img id="prev-cover2" src="" alt="" style="display:none">
             <div id="empty-cover2" class="media-preview-empty">No second<br>photo</div>
           </div>
           <div class="media-content">
-            <input type="text" id="f-cover2" placeholder="Example: assets/p/my-photo-2.jpg">
+            <input type="hidden" id="f-cover2">
+            <div id="name-cover2" style="font-weight:600; font-size:14px; margin-bottom:8px; color:#1B1A34">No hover photo uploaded</div>
             <div class="media-btn-row">
               <label class="btn-upload">
-                📷 Upload Photo
-                <input type="file" id="up-cover2" accept="image/*,video/mp4">
+                📷 Upload Hover Photo
+                <input type="file" id="up-cover2" accept="image/*,video/mp4,video/webm,video/quicktime">
               </label>
               <button type="button" class="btn btn-light btn-small" id="lib-cover2">Choose from Library</button>
-              <button type="button" class="btn btn-danger btn-small" id="del-cover2" style="display:none">Clear</button>
+              <button type="button" class="btn btn-danger btn-small" id="del-cover2" style="display:none">✕ Remove</button>
             </div>
             <p class="field-help" style="margin:6px 0 0">On computers, this photo appears when the customer moves mouse over the card.</p>
           </div>
@@ -326,6 +329,54 @@
           <button class="btn btn-green" id="saveProductBtn" style="font-size:19px; padding:16px 38px">SAVE PRODUCT</button>
           <button class="btn btn-light" id="cancelProductBtn">Cancel</button>
         </p>
+      </div>
+    </div>
+
+    <!-- ================= COUPONS & DISCOUNTS ================= -->
+    <div id="tab-coupons" class="hidden">
+      <div class="card">
+        <h2>Coupons &amp; Discounts</h2>
+        <p class="help">Create and manage discount codes for your customers. Set percentage (e.g. 10% off) or flat amount (e.g. ₹500 off), and minimum order amounts. Every change applies automatically at checkout and in the shopping bag.</p>
+        <div id="couponMsg"></div>
+
+        <div style="background:#FFF; border:1.5px solid #E6DEC8; border-radius:12px; padding:18px; margin-bottom:24px">
+          <h3 style="margin-top:0">Create a New Coupon</h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px">
+            <div>
+              <label for="cp-code" style="margin-top:0">Coupon Code</label>
+              <input type="text" id="cp-code" placeholder="Example: FESTIVE20" style="text-transform:uppercase">
+              <p class="field-help" style="margin:2px 0 0">The code customers type (e.g. WELCOME10, SAVE20).</p>
+            </div>
+            <div>
+              <label for="cp-type" style="margin-top:0">Discount Type</label>
+              <select id="cp-type">
+                <option value="percent">Percentage (% off)</option>
+                <option value="flat">Flat Amount (₹ in rupees off)</option>
+              </select>
+              <p class="field-help" style="margin:2px 0 0">Choose % or flat ₹ amount.</p>
+            </div>
+            <div>
+              <label for="cp-value" style="margin-top:0">Discount Value</label>
+              <input type="number" id="cp-value" min="1" step="1" placeholder="Example: 10 or 500">
+              <p class="field-help" style="margin:2px 0 0">Type 10 for 10% or 500 for ₹500.</p>
+            </div>
+            <div>
+              <label for="cp-min" style="margin-top:0">Minimum Order (₹)</label>
+              <input type="number" id="cp-min" min="0" step="1" placeholder="0 = no minimum">
+              <p class="field-help" style="margin:2px 0 0">Cart must reach this amount to use code.</p>
+            </div>
+          </div>
+          <label for="cp-desc">Description / Label (seen by customer)</label>
+          <input type="text" id="cp-desc" placeholder="Example: 10% off your entire order">
+          <div class="toggle-row" style="border:none; padding:10px 0 0">
+            <div class="grow"><b>Active Coupon</b><br><span class="field-help" style="margin:0">Turn off to temporarily disable this coupon without deleting it.</span></div>
+            <label class="switch"><input type="checkbox" id="cp-active" checked><span class="track"></span></label>
+          </div>
+          <p style="margin-top:16px"><button type="button" class="btn btn-green" id="saveCouponBtn">+ SAVE COUPON</button></p>
+        </div>
+
+        <h3>Active Coupons</h3>
+        <div id="couponList"></div>
       </div>
     </div>
 
@@ -459,11 +510,12 @@
             <div id="empty-hdesk" class="media-preview-empty">No banner<br>selected</div>
           </div>
           <div class="media-content">
-            <input type="text" id="c-hdesk" placeholder="Example: assets/hero-desktop.jpg">
+            <input type="hidden" id="c-hdesk">
+            <div id="name-hdesk" style="font-weight:600; font-size:14px; margin-bottom:8px; color:#1B1A34">Current desktop banner active</div>
             <div class="media-btn-row">
               <label class="btn-upload">
-                📷 Upload Desktop Photo
-                <input type="file" id="up-hdesk" accept="image/*,video/mp4">
+                📷 Upload Desktop Photo / Video
+                <input type="file" id="up-hdesk" accept="image/*,video/mp4,video/webm">
               </label>
               <button type="button" class="btn btn-light btn-small" id="lib-hdesk">Choose from Library</button>
             </div>
@@ -477,11 +529,12 @@
             <div id="empty-hmob" class="media-preview-empty">No banner<br>selected</div>
           </div>
           <div class="media-content">
-            <input type="text" id="c-hmob" placeholder="Example: assets/hero-mobile.jpg">
+            <input type="hidden" id="c-hmob">
+            <div id="name-hmob" style="font-weight:600; font-size:14px; margin-bottom:8px; color:#1B1A34">Current mobile banner active</div>
             <div class="media-btn-row">
               <label class="btn-upload">
                 📷 Upload Mobile Photo
-                <input type="file" id="up-hmob" accept="image/*,video/mp4">
+                <input type="file" id="up-hmob" accept="image/*,video/mp4,video/webm">
               </label>
               <button type="button" class="btn btn-light btn-small" id="lib-hmob">Choose from Library</button>
             </div>
@@ -526,7 +579,8 @@
         <label>Craft video file</label>
         <div class="media-box" id="box-craftvid">
           <div class="media-content">
-            <input type="text" id="c-craft-vid" placeholder="Example: assets/banner2.mp4">
+            <input type="hidden" id="c-craft-vid">
+            <div id="name-craftvid" style="font-weight:600; font-size:14px; margin-bottom:8px; color:#1B1A34">Current craft video active</div>
             <div class="media-btn-row">
               <label class="btn-upload">
                 🎥 Upload Video
@@ -573,6 +627,14 @@
     <!-- ================= PAYMENTS AND DELIVERY ================= -->
     <div id="tab-payments" class="hidden">
       <div class="card">
+        <div style="background:#EDF7EE; border:1.5px solid #2d7a46; border-radius:12px; padding:16px 20px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px">
+          <div>
+            <b style="color:#2d7a46; font-size:16px">⚡ 1-Click Testing API Keys Ready</b>
+            <p style="margin:4px 0 0; font-size:13.5px; color:#1B1A34">Need to test orders, UPI payments, and courier delivery? Click below to instantly load verified sandbox test credentials.</p>
+          </div>
+          <button type="button" class="btn btn-green" id="loadTestKeysBtn" style="white-space:nowrap; padding:12px 22px; font-size:14px; font-weight:bold">Load Test Keys</button>
+        </div>
+
         <h2>Online payments: Razorpay keys</h2>
         <p class="help">Razorpay is the company that takes card and UPI payments for your shop. When your keys are saved here, online payment starts working on its own. Until then, the shop stays in test mode and no real money is taken.</p>
         <p class="help"><b>Where to find your keys:</b> log in at <b>dashboard.razorpay.com</b>. Open <b>Settings</b>, then <b>API Keys</b>, then press <b>Generate Key</b>. Copy the <b>Key ID</b> and the <b>Key Secret</b>. The Key Secret is shown only once, so copy it right away and paste it here.</p>
@@ -678,6 +740,6 @@
   </div>
 </div>
 
-<script src="admin.js?v=20261123_3"></script>
+<script src="admin.js?v=20261123_4"></script>
 </body>
 </html>

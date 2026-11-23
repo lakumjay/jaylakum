@@ -93,6 +93,7 @@ function switchTab(name) {
   if (name === 'visual') { initVisual(); setTimeout(positionBadges, 120); }
   if (name === 'security') loadSecurity();
   if (name === 'payments') loadIntegrations();
+  if (name === 'coupons') loadCoupons();
 }
 document.querySelectorAll('.tab').forEach(function (btn) {
   btn.addEventListener('click', function () { switchTab(btn.dataset.tab); });
@@ -279,23 +280,35 @@ function uploadFiles(fileList) {
   });
 }
 
-function updateMediaPreview(inputEl, imgEl, emptyEl, delBtn) {
-  if (!inputEl || !imgEl) return;
+function updateMediaPreview(inputEl, imgEl, emptyEl, delBtn, nameEl) {
+  if (!inputEl) return;
   var val = (inputEl.value || '').trim();
-  if (val) {
-    imgEl.src = val;
-    imgEl.style.display = 'block';
-    if (emptyEl) emptyEl.style.display = 'none';
-    if (delBtn) delBtn.style.display = 'inline-block';
-    imgEl.onerror = function () {
+  if (nameEl) {
+    if (val) {
+      var fn = val.split('/').pop();
+      nameEl.textContent = 'Selected: ' + (fn || val);
+      nameEl.style.color = '#2d7a46';
+    } else {
+      nameEl.textContent = 'No photo uploaded';
+      nameEl.style.color = '#8C827A';
+    }
+  }
+  if (imgEl) {
+    if (val) {
+      imgEl.src = val;
+      imgEl.style.display = 'block';
+      if (emptyEl) emptyEl.style.display = 'none';
+      if (delBtn) delBtn.style.display = 'inline-block';
+      imgEl.onerror = function () {
+        imgEl.style.display = 'none';
+        if (emptyEl) emptyEl.style.display = 'block';
+      };
+    } else {
+      imgEl.src = '';
       imgEl.style.display = 'none';
       if (emptyEl) emptyEl.style.display = 'block';
-    };
-  } else {
-    imgEl.src = '';
-    imgEl.style.display = 'none';
-    if (emptyEl) emptyEl.style.display = 'block';
-    if (delBtn) delBtn.style.display = 'none';
+      if (delBtn) delBtn.style.display = 'none';
+    }
   }
 }
 
@@ -336,12 +349,13 @@ function closeMediaLibrary() {
   mediaModalCallback = null;
 }
 
-function setupMediaField(inputId, prevImgId, emptyId, uploadId, libBtnId, delBtnId) {
-  var input = $(inputId), img = $(prevImgId), empty = $(emptyId);
-  var upload = $(uploadId), libBtn = $(libBtnId), delBtn = delBtnId ? $(delBtnId) : null;
+function setupMediaField(inputId, prevImgId, emptyId, uploadId, libBtnId, delBtnId, nameId) {
+  var input = $(inputId), img = prevImgId ? $(prevImgId) : null, empty = emptyId ? $(emptyId) : null;
+  var upload = uploadId ? $(uploadId) : null, libBtn = libBtnId ? $(libBtnId) : null, delBtn = delBtnId ? $(delBtnId) : null;
+  var nameEl = nameId ? $(nameId) : null;
   if (!input) return;
 
-  var sync = function () { updateMediaPreview(input, img, empty, delBtn); };
+  var sync = function () { updateMediaPreview(input, img, empty, delBtn, nameEl); };
   input.addEventListener('input', sync);
   input.addEventListener('change', sync);
 
@@ -1304,6 +1318,122 @@ function openVisualEditor(key) {
   card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
+/* ---------------- coupons ---------------- */
+var coupons = [];
+
+function loadCoupons() {
+  api('GET', '/api/admin/coupons').then(function (d) {
+    coupons = d.coupons || [];
+    renderCouponList();
+  }).catch(function (e) {
+    showMsg($('couponMsg'), 'Could not load coupons: ' + e.message, false);
+  });
+}
+
+function renderCouponList() {
+  var el = $('couponList');
+  if (!el) return;
+  if (!coupons.length) {
+    el.innerHTML = '<p class="help">No coupons created yet. Use the form above to create your first coupon (e.g. WELCOME10 for 10% off).</p>';
+    return;
+  }
+  el.innerHTML = coupons.map(function (c) {
+    var discText = (c.type === 'flat' ? ('₹' + c.value + ' OFF') : (c.value + '% OFF'));
+    var minText = c.min ? ('Min order ₹' + c.min) : 'No minimum';
+    var statusPill = c.active ? '<span class="pill paid">Active</span>' : '<span class="pill">Inactive</span>';
+    return '<div class="prod-row" style="align-items:center">' +
+      '<div style="font-size:22px; padding:0 8px">🎟️</div>' +
+      '<div class="grow">' +
+        '<div style="display:flex; align-items:center; gap:8px">' +
+          '<b style="font-size:16px; letter-spacing:0.06em; color:#1B1A34">' + esc(c.code) + '</b> ' + statusPill +
+        '</div>' +
+        '<div class="prod-meta" style="margin-top:2px"><b>' + esc(discText) + '</b> · ' + esc(minText) + (c.desc ? ' · ' + esc(c.desc) : '') + '</div>' +
+      '</div>' +
+      '<button type="button" class="btn btn-light btn-small" data-cp-toggle="' + esc(c.code) + '">' + (c.active ? 'Deactivate' : 'Activate') + '</button>' +
+      '<button type="button" class="btn btn-danger btn-small" data-cp-del="' + esc(c.code) + '">Delete</button>' +
+    '</div>';
+  }).join('');
+
+  el.querySelectorAll('[data-cp-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.dataset.cpToggle;
+      var cp = coupons.find(function (x) { return x.code === code; });
+      if (cp) {
+        cp.active = !cp.active;
+        api('POST', '/api/admin/coupons', cp).then(function (d) {
+          coupons = d.coupons || coupons;
+          renderCouponList();
+          showMsg($('couponMsg'), 'Coupon "' + code + '" ' + (cp.active ? 'activated' : 'deactivated') + ' successfully!', true);
+        }).catch(function (e) { showMsg($('couponMsg'), e.message, false); });
+      }
+    });
+  });
+
+  el.querySelectorAll('[data-cp-del]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.dataset.cpDel;
+      if (confirm('Delete coupon code "' + code + '"?')) {
+        api('DELETE', '/api/admin/coupons/' + encodeURIComponent(code)).then(function (d) {
+          coupons = d.coupons || [];
+          renderCouponList();
+          showMsg($('couponMsg'), 'Coupon "' + code + '" deleted.', true);
+        }).catch(function (e) { showMsg($('couponMsg'), e.message, false); });
+      }
+    });
+  });
+}
+
+function saveNewCoupon() {
+  var code = ($('cp-code').value || '').trim().toUpperCase();
+  var type = $('cp-type').value;
+  var val = Number($('cp-value').value);
+  var min = Number($('cp-min').value || 0);
+  var desc = ($('cp-desc').value || '').trim();
+  var active = $('cp-active').checked;
+
+  if (!code) { showMsg($('couponMsg'), 'Please enter a coupon code.', false); return; }
+  if (!val || val <= 0) { showMsg($('couponMsg'), 'Please enter a valid discount amount.', false); return; }
+
+  showMsg($('couponMsg'), 'Saving coupon...', true);
+  api('POST', '/api/admin/coupons', {
+    code: code,
+    type: type,
+    value: val,
+    min: min,
+    desc: desc,
+    active: active
+  }).then(function (d) {
+    coupons = d.coupons || [];
+    renderCouponList();
+    $('cp-code').value = '';
+    $('cp-value').value = '';
+    $('cp-min').value = '';
+    $('cp-desc').value = '';
+    showMsg($('couponMsg'), 'Coupon "' + code + '" saved and ready to use in shop!', true);
+  }).catch(function (e) {
+    showMsg($('couponMsg'), 'Failed to save coupon: ' + e.message, false);
+  });
+}
+
+function loadTestingKeys() {
+  var msg = $('rzMsg');
+  showMsg(msg, 'Loading sandbox testing credentials...', true);
+  api('POST', '/api/admin/integrations/load-test-keys').then(function (d) {
+    var integ = d.integrations || {};
+    $('rz-id').value = integ.razorpayKeyId || '';
+    $('rz-secret').value = integ.razorpayKeySecret || '';
+    $('sr-email').value = integ.shiprocketEmail || '';
+    $('sr-pass').value = integ.shiprocketPassword || '';
+    $('sr-pickup').value = integ.shiprocketPickup || 'Primary';
+    showMsg(msg, '⚡ Testing API keys loaded! Checking connections...', true);
+    loadIntegrations();
+    doCheckRazorpay();
+    doCheckShiprocket();
+  }).catch(function (e) {
+    showMsg(msg, 'Failed to load test keys: ' + e.message, false);
+  });
+}
+
 /* ---------------- wire up ---------------- */
 $('loginBtn').addEventListener('click', doLogin);
 $('pw').addEventListener('keydown', function (e) { if (e.key === 'Enter') doLogin(); });
@@ -1330,14 +1460,16 @@ $('saveLookBtn').addEventListener('click', saveLook);
 $('saveWritingBtn').addEventListener('click', saveWriting);
 $('saveSectionsBtn').addEventListener('click', saveSections);
 $('refreshOrdersBtn').addEventListener('click', loadOrders);
+if ($('saveCouponBtn')) $('saveCouponBtn').addEventListener('click', saveNewCoupon);
+if ($('loadTestKeysBtn')) $('loadTestKeysBtn').addEventListener('click', loadTestingKeys);
 [['d-bg-picker', 'd-bg'], ['d-ink-picker', 'd-ink'], ['d-btn-picker', 'd-btn'], ['d-btnink-picker', 'd-btnink'], ['c-ann-bg-picker', 'c-ann-bg'], ['c-ann-color-picker', 'c-ann-color']].forEach(function (pair) { if ($(pair[0]) && $(pair[1])) syncColor(pair[0], pair[1]); });
 
 /* Setup Photo & Video Controls */
-setupMediaField('f-cover', 'prev-cover', 'empty-cover', 'up-cover', 'lib-cover', 'del-cover');
-setupMediaField('f-cover2', 'prev-cover2', 'empty-cover2', 'up-cover2', 'lib-cover2', 'del-cover2');
-setupMediaField('c-hdesk', 'prev-hdesk', 'empty-hdesk', 'up-hdesk', 'lib-hdesk');
-setupMediaField('c-hmob', 'prev-hmob', 'empty-hmob', 'up-hmob', 'lib-hmob');
-setupMediaField('c-craft-vid', null, null, 'up-craftvid', 'lib-craftvid');
+setupMediaField('f-cover', 'prev-cover', 'empty-cover', 'up-cover', 'lib-cover', 'del-cover', 'name-cover');
+setupMediaField('f-cover2', 'prev-cover2', 'empty-cover2', 'up-cover2', 'lib-cover2', 'del-cover2', 'name-cover2');
+setupMediaField('c-hdesk', 'prev-hdesk', 'empty-hdesk', 'up-hdesk', 'lib-hdesk', null, 'name-hdesk');
+setupMediaField('c-hmob', 'prev-hmob', 'empty-hmob', 'up-hmob', 'lib-hmob', null, 'name-hmob');
+setupMediaField('c-craft-vid', null, null, 'up-craftvid', 'lib-craftvid', null, 'name-craftvid');
 $('closeMediaModal').addEventListener('click', closeMediaLibrary);
 $('cancelMediaModal').addEventListener('click', closeMediaLibrary);
 

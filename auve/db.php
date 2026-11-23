@@ -362,20 +362,113 @@ class AuveStorage {
     }
 
     // -------------------------------------------------------------
-    // AUTH & INTEGRATIONS
+    // COUPONS & DISCOUNTS
     // -------------------------------------------------------------
-    public static function getAuth(): array {
+    public static function getCoupons(): array {
         self::init();
-        $file = self::$dataDir . '/admin-auth.json';
+        if (self::$usingDatabase && self::$pdo) {
+            try {
+                $st = self::$pdo->prepare("SELECT setting_value FROM auve_settings WHERE setting_key = 'coupons'");
+                $st->execute();
+                $val = $st->fetchColumn();
+                if ($val) {
+                    $arr = json_decode($val, true);
+                    if (is_array($arr)) return $arr;
+                }
+            } catch (Throwable $e) {}
+        }
+        $file = self::$dataDir . '/coupons.json';
         if (file_exists($file)) {
             $arr = json_decode(file_get_contents($file), true);
             if (is_array($arr)) return $arr;
         }
-        return [];
+        return [
+            [
+                'code' => 'WELCOME10',
+                'type' => 'percent',
+                'value' => 10,
+                'min' => 0,
+                'active' => true,
+                'desc' => '10% discount on first order'
+            ],
+            [
+                'code' => 'AUVE20',
+                'type' => 'percent',
+                'value' => 20,
+                'min' => 1500,
+                'active' => true,
+                'desc' => '20% off on orders above ₹1,500'
+            ],
+            [
+                'code' => 'FLAT500',
+                'type' => 'flat',
+                'value' => 500,
+                'min' => 2500,
+                'active' => true,
+                'desc' => '₹500 flat discount on orders above ₹2,500'
+            ]
+        ];
+    }
+
+    public static function saveCoupons(array $coupons): bool {
+        self::init();
+        if (self::$usingDatabase && self::$pdo) {
+            try {
+                $json = json_encode($coupons, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+                $st = self::$pdo->prepare("
+                    INSERT INTO auve_settings (setting_key, setting_value)
+                    VALUES ('coupons', :val)
+                    ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value)
+                ");
+                $st->execute([':val' => $json]);
+            } catch (Throwable $e) {}
+        }
+        return self::writeJsonAtomic(self::$dataDir . '/coupons.json', $coupons);
+    }
+
+    // -------------------------------------------------------------
+    // AUTH & INTEGRATIONS
+    // -------------------------------------------------------------
+    public static function getAuth(): array {
+        self::init();
+        $auth = [];
+        $file = self::$dataDir . '/admin-auth.json';
+        if (file_exists($file)) {
+            $arr = json_decode(file_get_contents($file), true);
+            if (is_array($arr)) $auth = $arr;
+        }
+
+        // Merge integrations from MySQL auve_settings if present
+        if (self::$usingDatabase && self::$pdo) {
+            try {
+                $st = self::$pdo->prepare("SELECT setting_value FROM auve_settings WHERE setting_key = 'integrations'");
+                $st->execute();
+                $val = $st->fetchColumn();
+                if ($val) {
+                    $integ = json_decode($val, true);
+                    if (is_array($integ) && !empty($integ)) {
+                        $auth['integrations'] = array_merge($auth['integrations'] ?? [], $integ);
+                    }
+                }
+            } catch (Throwable $e) {}
+        }
+
+        return $auth;
     }
 
     public static function saveAuth(array $auth): bool {
         self::init();
+        if (self::$usingDatabase && self::$pdo && isset($auth['integrations'])) {
+            try {
+                $json = json_encode($auth['integrations'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+                $st = self::$pdo->prepare("
+                    INSERT INTO auve_settings (setting_key, setting_value)
+                    VALUES ('integrations', :val)
+                    ON DUPLICATE KEY UPDATE setting_value = VALUES(setting_value)
+                ");
+                $st->execute([':val' => $json]);
+            } catch (Throwable $e) {}
+        }
         return self::writeJsonAtomic(self::$dataDir . '/admin-auth.json', $auth);
     }
 
