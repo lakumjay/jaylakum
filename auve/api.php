@@ -85,7 +85,7 @@ if ($route === 'system-status' && $method === 'GET') {
     $tablesInfo = [];
     if ($dbActive && ($pdo = AuveStorage::getPdo())) {
         try {
-            $tables = ['auve_products', 'auve_orders', 'auve_settings', 'auve_admins'];
+            $tables = ['auve_products', 'auve_orders', 'auve_settings', 'auve_admins', 'auve_order_events', 'auve_payments', 'auve_refunds', 'auve_shipments', 'auve_shipment_events', 'auve_returns', 'auve_notifications_log', 'auve_webhook_events', 'auve_forms'];
             foreach ($tables as $t) {
                 $st = $pdo->query("SHOW TABLES LIKE '$t'");
                 if ($st->rowCount() > 0) {
@@ -310,6 +310,13 @@ if ($route === 'orders' && $method === 'POST') {
     }
     $shipping = 0;
     $total = max(0, $subtotal - $promo + $shipping);
+    $codFee = 0; // Store policy: cash on delivery is free (Terms & Conditions). COD fee settings arrive in Phase 3.
+    $gstRate = floatval(AuveStorage::getSettings()['content']['gstRate'] ?? 0.18);
+    if ($gstRate < 0 || $gstRate > 0.28) $gstRate = 0.18;
+    $money = AuveStorage::orderMoney($subtotal, $promo, $shipping, $codFee, $gstRate);
+    if (empty($money['ok']) || $money['total'] !== $total * 100) {
+        sendJson(500, ['ok' => false, 'error' => 'Order total check failed. Please try again.']);
+    }
 
     $methodChosen = in_array($body['payment']['method'] ?? '', ['upi', 'card', 'cod']) ? $body['payment']['method'] : 'cod';
 
@@ -343,8 +350,19 @@ if ($route === 'orders' && $method === 'POST') {
             'subtotal' => $subtotal,
             'promo' => $promo,
             'shipping' => $shipping,
+            'codFee' => $codFee,
+            'tax' => round($money['tax'] / 100, 2),
             'total' => $total
         ],
+        'money' => [
+            'subtotal' => $money['subtotal'], 'discount' => $money['discount'],
+            'shipping' => $money['shipping'], 'codFee' => $money['codFee'],
+            'tax' => $money['tax'], 'total' => $money['total']
+        ],
+        'orderStatus' => 'confirmed',
+        'paymentStatus' => 'cod_pending',
+        'shipmentStatus' => 'not_created',
+        'isTest' => false,
         'shipping' => $body['shipping'] ?? 'standard',
         'payment' => ['method' => $methodChosen, 'status' => 'cod'],
         'shipment' => null
@@ -366,6 +384,8 @@ if ($route === 'orders' && $method === 'POST') {
                 'razorpayOrderId' => $mockRzId,
                 'note' => 'TEST MODE — Simulated Test Approval'
             ];
+            $order['paymentStatus'] = 'paid';
+            $order['isTest'] = true;
             $razorpayInfo = [
                 'keyId' => $integ['razorpayKeyId'],
                 'orderId' => $mockRzId,
@@ -397,6 +417,9 @@ if ($route === 'orders' && $method === 'POST') {
                     'status' => 'payment_pending',
                     'razorpayOrderId' => $rzData['id']
                 ];
+                $order['orderStatus'] = 'pending_payment';
+                $order['paymentStatus'] = 'pending';
+                $order['isTest'] = str_starts_with($integ['razorpayKeyId'], 'rzp_test_');
                 $razorpayInfo = [
                     'keyId' => $integ['razorpayKeyId'],
                     'orderId' => $rzData['id'],
@@ -413,6 +436,7 @@ if ($route === 'orders' && $method === 'POST') {
             'status' => 'test_mode',
             'note' => 'TEST MODE - Razorpay keys not configured; treated as cash on delivery.'
         ];
+        $order['isTest'] = true;
     }
 
     // Shiprocket shipment booking or test simulation
@@ -424,6 +448,11 @@ if ($route === 'orders' && $method === 'POST') {
             'status' => 'booked',
             'pickupLocation' => $integ['shiprocketPickup'] ?? 'Primary'
         ];
+    }
+
+    if (!empty($order['shipment']['awb'])) {
+        $order['shipmentStatus'] = 'booked';
+        if (stripos($order['shipment']['courier'] ?? '', 'test') !== false) $order['isTest'] = true;
     }
 
     AuveStorage::saveOrder($order);
@@ -454,6 +483,8 @@ if ($route === 'orders/confirm-payment' && $method === 'POST') {
             $o['payment']['status'] = 'paid';
             $o['payment']['razorpayPaymentId'] = $rzPayId;
             $o['payment']['paidAt'] = date('c');
+            $o['paymentStatus'] = 'paid';
+            $o['orderStatus'] = 'confirmed';
             $found = $o;
             break;
         }
