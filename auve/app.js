@@ -114,6 +114,7 @@ const sizeIn = (z, sys) => { const r = SIZE_ROWS.find(x => +x.eu === z); return 
 const PAGES = ['home', 'shop', 'product', 'bag', 'checkout', 'confirm', 'about', 'contact', 'faq', 'account', 'terms', 'privacy', 'refund', 'shipping'];
 /* Policy pages. Replace the [BRACKETED] business details before going live - they must match your Razorpay/Cashfree KYC exactly. */
 const BIZ = { name: '[Registered Business Name]', address: '[Registered Business Address], Surat, Gujarat [PIN], India', gst: '[GSTIN]', grievance: '[Grievance Officer Name]', phone: '+91 97251 24422', email: 'contact@auve.in', updated: '29 October 2026' };
+try { const _bc = (window.AUVE_SETTINGS || {}).content || {}; if (_bc.bizName) BIZ.name = _bc.bizName; if (_bc.bizAddress) BIZ.address = _bc.bizAddress; if (_bc.bizGst) BIZ.gst = _bc.bizGst; if (_bc.bizGrievance) BIZ.grievance = _bc.bizGrievance; if (_bc.bizPhone) BIZ.phone = _bc.bizPhone; if (_bc.bizEmail) BIZ.email = _bc.bizEmail; else if (_bc.contactEmail) BIZ.email = _bc.contactEmail; } catch (e) {}
 const LEGAL = {
   terms: { label: 'Terms & Conditions', file: 'terms.html', title: 'Terms & Conditions', intro: 'These terms apply to every purchase made on this website. By placing an order, you agree to them. Please read them together with our Privacy Policy, Exchange & Cancellation Policy and Shipping Policy.', sections: [
     ['About us', ['This website is owned and operated by ' + BIZ.name + ' ("AUVÉ", "we", "us"), ' + BIZ.address + '. GSTIN: ' + BIZ.gst + '.', 'Contact: ' + BIZ.phone + ' · ' + BIZ.email + ' · 10am to 8pm, Monday to Saturday.']],
@@ -564,8 +565,8 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state;
-    const wa = this.props.whatsappNumber ?? '+91 97251 24422';
-    const email = this.props.email ?? 'contact@auve.in';
+    const wa = this.props.whatsappNumber ?? ((window.AUVE_SETTINGS && window.AUVE_SETTINGS.content && window.AUVE_SETTINGS.content.whatsappNumber) || '+91 97251 24422');
+    const email = this.props.email ?? ((window.AUVE_SETTINGS && window.AUVE_SETTINGS.content && window.AUVE_SETTINGS.content.contactEmail) || 'contact@auve.in');
     let digits = wa.replace(/\D/g, ''); if (digits.length === 10) digits = '91' + digits;
     const waUrl = t => 'https://wa.me/' + digits + (t ? '?text=' + encodeURIComponent(t) : '');
     const free = this.props.freeShippingOver ?? 0;
@@ -587,7 +588,7 @@ class Component extends DCLogic {
     // pdp
     const p = BYID[s.arg] || PRODUCTS[0] || EMPTY_P;
     const pv = p.variants[s.pdpVar] || p.variants[0];
-    const media = pv.imgs.map(src => ({ src, video: '' }));
+    const media = pv.imgs.map(src => /\.(mp4|webm|mov)$/i.test(src) ? { src: (pv.imgs.find(x => !/\.(mp4|webm|mov)$/i.test(x)) || BLANK_IMG), video: src } : { src, video: '' });
     const pvid = VID[p.id + ':' + pv.name] || VID[p.id];
     if (pvid) media.splice(Math.min(1, media.length), 0, { src: pv.imgs[0], video: pvid });
     const imgIdx = Math.min(s.pdpImg, media.length - 1);
@@ -711,6 +712,7 @@ class Component extends DCLogic {
       submitNl: () => {
         if (!/^\S+@\S+\.\S+$/.test(s.nlPhone.trim())) { this.setState({ nlErr: 'Enter a valid email address.' }); return; }
         save('auve_subscribers', load('auve_subscribers', []).concat([{ at: new Date().toISOString() }]));
+        try { fetch('api/forms', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'newsletter', email: s.nlPhone.trim(), size: s.nlSize ? String(s.nlSize) : '', interests: s.nlInt, month: s.nlMonth }) }).catch(() => {}); } catch (e) {}
         const first = this.state.orders.length === 0;
         if (first) save('auve_promo', 'WELCOME10');
         this.setState({ nlSent: true, nlErr: '', promo: first ? 'WELCOME10' : this.state.promo });
@@ -817,6 +819,7 @@ class Component extends DCLogic {
       bulkOpen: !s.bulkSent, bulkSent: s.bulkSent,
       submitBulk: () => {
         if (!s.bulk.name.trim() || !/^\S+@\S+\.\S+$/.test(s.bulk.email.trim())) { this.setState({ bulkErr: 'Add your name and a valid email address.' }); return; }
+        try { fetch('api/forms', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type: 'bulk', name: s.bulk.name.trim(), email: s.bulk.email.trim(), kind: s.bulkKind, city: s.bulk.city || '', date: s.bulk.date || '', message: s.bulkNote || '' }) }).catch(() => {}); } catch (e) {}
         this.setState({ bulkSent: true, bulkErr: '' });
       },
       bulkMsg: (s.bulk.name ? s.bulk.name.split(' ')[0] + ', we' : 'We') + ' have your ' + s.bulkKind.toLowerCase() + ' request and will email ' + (s.bulk.email || 'you') + ' with a quote within a few hours.',
@@ -826,9 +829,12 @@ class Component extends DCLogic {
       contactNote: s.contactNote, onContactNote: e => this.setState({ contactNote: e.target.value }),
       contactOpen: !s.contactSent, contactSent: s.contactSent,
       submitContact: () => {
-        /* BACKEND HOOK - Laravel: POST /api/contact. Preview opens the visitor's email app. */
-        const body = 'Hi AUVÉ! ' + (s.contact.name.trim() ? 'This is ' + s.contact.name.trim() + '. ' : '') + s.contactNote + (s.contact.email.trim() ? '\n\nReply to: ' + s.contact.email.trim() : '');
-        window.location.href = 'mailto:' + BIZ.email + '?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(body); this.setState({ contactSent: true });
+        const payload = { type: 'contact', name: s.contact.name.trim(), email: s.contact.email.trim(), message: s.contactNote };
+        try {
+          fetch('api/forms', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+            .then(r => { if (!r.ok) throw new Error('send failed'); this.setState({ contactSent: true }); })
+            .catch(() => { const body = 'Hi AUVÉ! ' + (payload.name ? 'This is ' + payload.name + '. ' : '') + payload.message + (payload.email ? '\n\nReply to: ' + payload.email : ''); window.location.href = 'mailto:' + BIZ.email + '?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(body); this.setState({ contactSent: true }); });
+        } catch (e) { this.setState({ contactSent: true }); }
       },
       resetContact: () => this.setState({ contactSent: false, contact: { name: '', email: '' }, contactNote: '' }),
       contactMsg: 'Thanks' + (s.contact.name ? ', ' + s.contact.name.split(' ')[0] : '') + '. We reply by email within a few hours, 10am to 8pm.',
