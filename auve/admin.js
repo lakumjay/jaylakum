@@ -94,6 +94,7 @@ function switchTab(name) {
   if (name === 'dashboard') loadDashboard();
   if (name === 'settings') { loadIntegrations(); loadSecurity(); fillStoreSettings(); loadFormMessages(); }
   if (name === 'coupons') loadCoupons();
+  if (name === 'pages') renderPagesEditor();
 }
 document.querySelectorAll('.tab').forEach(function (btn) {
   btn.addEventListener('click', function () { switchTab(btn.dataset.tab); });
@@ -670,6 +671,18 @@ function fillWriting() {
   if ($('c-reels-on')) $('c-reels-on').checked = s.reels !== false;
   if ($('c-reels-h')) $('c-reels-h').value = c.reelsHeading || 'Moments in motion';
 
+  // Menu, shop page & checkout words
+  if ($('c-nav-shopall')) $('c-nav-shopall').value = c.navShopAll || '';
+  if ($('c-nav-collections')) $('c-nav-collections').value = c.navCollections || '';
+  if ($('c-nav-story')) $('c-nav-story').value = c.navOurStory || '';
+  if ($('c-nav-account')) $('c-nav-account').value = c.navAccount || '';
+  if ($('c-shop-title')) $('c-shop-title').value = c.shopTitle || '';
+  if ($('c-shop-blurb')) $('c-shop-blurb').value = c.shopBlurb || '';
+  if ($('c-checkout-title')) $('c-checkout-title').value = c.checkoutTitle || '';
+  if ($('c-btn-place')) $('c-btn-place').value = c.btnPlaceOrderText || '';
+  if ($('c-btn-pay')) $('c-btn-pay').value = c.btnPayText || '';
+  if ($('c-link-continue')) $('c-link-continue').value = c.linkContinue || '';
+
   updateMediaPreview($('c-hdesk'), $('prev-hdesk'), $('empty-hdesk'));
   updateMediaPreview($('c-hmob'), $('prev-hmob'), $('empty-hmob'));
 }
@@ -697,7 +710,17 @@ function saveWriting() {
     craftBtnText: $('c-craft-btn') ? $('c-craft-btn').value.trim() : 'Shop all pairs',
     craftBtnLink: $('c-craft-link') ? $('c-craft-link').value.trim() : '#/shop',
     craftVideo: $('c-craft-vid') ? $('c-craft-vid').value.trim() : 'assets/banner2.mp4',
-    reelsHeading: $('c-reels-h') ? $('c-reels-h').value.trim() : 'Moments in motion'
+    reelsHeading: $('c-reels-h') ? $('c-reels-h').value.trim() : 'Moments in motion',
+    navShopAll: $('c-nav-shopall') ? $('c-nav-shopall').value.trim() : '',
+    navCollections: $('c-nav-collections') ? $('c-nav-collections').value.trim() : '',
+    navOurStory: $('c-nav-story') ? $('c-nav-story').value.trim() : '',
+    navAccount: $('c-nav-account') ? $('c-nav-account').value.trim() : '',
+    shopTitle: $('c-shop-title') ? $('c-shop-title').value.trim() : '',
+    shopBlurb: $('c-shop-blurb') ? $('c-shop-blurb').value.trim() : '',
+    checkoutTitle: $('c-checkout-title') ? $('c-checkout-title').value.trim() : '',
+    btnPlaceOrderText: $('c-btn-place') ? $('c-btn-place').value.trim() : '',
+    btnPayText: $('c-btn-pay') ? $('c-btn-pay').value.trim() : '',
+    linkContinue: $('c-link-continue') ? $('c-link-continue').value.trim() : ''
   };
   var sections = {};
   if ($('c-nl-on')) sections.newsletter = $('c-nl-on').checked;
@@ -1279,24 +1302,47 @@ function openVisualEditor(key) {
       });
     };
   } else if (key === 'collections') {
+    var collDefs = [['barely', 'The Barely Edit', 'Everyday \u00B7 2026', 'Soft, barely-there flats, slides and low heels for every ordinary day.', 'assets/p/bn-trace-1.jpg', 'assets/reels/muse.mp4'],
+      ['gilded', 'Gilded', 'The way we wear \u00B7 2026', 'Covered with gold. Chain-detail flats and block heels that dress up anything.', 'assets/p/gd-poise-1.jpg', 'assets/reels/poise.mp4'],
+      ['veil', 'Veil & Vow', 'Rooted in tradition \u00B7 2026', 'Brocade, velvet and heirloom gold for the days everyone remembers.', 'assets/p/v-08.jpg', 'assets/reels/first-look.mp4']];
+    var savedColl = c.collectionsList || {};
+    var fields = collDefs.map(function (g) {
+      var o = savedColl[g[0]] || {};
+      var v = function (f, dflt) { return o[f] || dflt; };
+      return '<h3>' + esc(v('name', g[1])) + '</h3>'
+        + '<label>Collection name</label><input type="text" id="v-coll-' + g[0] + '-name" value="' + esc(v('name', g[1])) + '">'
+        + '<label>Small line under the name (tagline)</label><input type="text" id="v-coll-' + g[0] + '-tag" value="' + esc(v('tag', g[2])) + '">'
+        + '<label>Description (shown on the shop page)</label><textarea id="v-coll-' + g[0] + '-blurb">' + esc(v('blurb', g[3])) + '</textarea>'
+        + '<label>Box photo</label><input type="text" id="v-coll-' + g[0] + '-img" value="' + esc(v('img', g[4])) + '">'
+        + '<label>Box video (optional, plays instead of the photo)</label><input type="text" id="v-coll-' + g[0] + '-video" value="' + esc(v('video', g[5])) + '">';
+    }).join('');
     var groups = [['barely', 'The Barely Edit'], ['gilded', 'Gilded'], ['veil', 'Veil & Vow']].map(function (g) {
       var items = products.filter(function (p) { return p.coll === g[0]; }).map(function (p) {
         return '<div class="prod-row"><div class="grow"><div class="prod-name" style="font-size:16.5px">' + esc(p.name) + '</div>' +
           '<div class="prod-meta">' + inr(p.price) + '</div></div>' +
           '<button class="btn btn-light btn-small" data-vprod="' + esc(p.id) + '">Edit</button></div>';
       }).join('');
-      return '<h3>' + esc(g[1]) + '</h3>' + (items || '<p class="help">No pairs in this collection yet.</p>');
+      return '<h4 style="margin:18px 0 6px">' + esc(g[1]) + ' — pairs</h4>' + (items || '<p class="help">No pairs in this collection yet.</p>');
     }).join('');
-    html = vHead('Shop by collection', 'These three boxes take customers to each collection. The boxes and their photos are part of the shop design. To change a pair, tap its Edit button here or in the picture above.') +
-      vSectionToggle('collections') + groups + vSaveRow('SAVE');
+    html = vHead('Shop by collection', 'These three boxes take customers to each collection. Change the name, tagline, description, photo or video of each collection here. To change a pair, tap its Edit button in the list below.') +
+      fields + '<h3 style="margin-top:26px">Pairs in each collection</h3>' + groups +
+      vSectionToggle('collections') + vSaveRow('SAVE COLLECTIONS');
     wire = function () {
       box.querySelectorAll('[data-vprod]').forEach(function (b) {
         b.addEventListener('click', function () { openProductFromVisual(b.dataset.vprod); });
       });
       $('vSave').addEventListener('click', function () {
-        var part = { sections: {} };
-        part.sections.collections = $('v-sec').checked;
-        vSaveSettings(part, 'Saved!');
+        var list = {};
+        collDefs.forEach(function (g) {
+          list[g[0]] = {
+            name: $('v-coll-' + g[0] + '-name').value.trim(),
+            tag: $('v-coll-' + g[0] + '-tag').value.trim(),
+            blurb: $('v-coll-' + g[0] + '-blurb').value.trim(),
+            img: $('v-coll-' + g[0] + '-img').value.trim(),
+            video: $('v-coll-' + g[0] + '-video').value.trim()
+          };
+        });
+        vSaveSettings({ content: { collectionsList: list }, sections: { collections: $('v-sec').checked } }, 'Saved! Your collections are updated in your shop.');
       });
     };
   } else if (key === 'craftBanner') {
@@ -1672,6 +1718,69 @@ function loadDashboard() {
     $('dashTopCard').style.display = top.length ? '' : 'none';
     $('dashTop').innerHTML = top.map(function (t, i) { return '<div class="dash-row"><div class="grow"><b>' + (i + 1) + '. ' + esc(t.name) + '</b></div><span class="pill">' + t.qty + ' sold</span></div>'; }).join('');
   }).catch(function (e) { showMsg($('dashMsg'), e.message, false); });
+}
+
+/* ---------------- custom pages ---------------- */
+function slugifyPage(s) {
+  return String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+function pageRowHtml(p) {
+  p = p || {};
+  return '<div class="page-row">'
+    + '<div class="reel-head"><b class="pg-title">Page</b><span><button type="button" class="btn btn-light btn-sm pg-del">Remove</button></span></div>'
+    + '<label>Page title</label><input type="text" class="pg-name" value="' + esc(p.title || '') + '" placeholder="Size guide">'
+    + '<label>Link name (slug). The page opens at #/page/this-name</label><input type="text" class="pg-slug" value="' + esc(p.slug || '') + '" placeholder="size-guide">'
+    + '<label>Menu label (shown in the top menu)</label><input type="text" class="pg-menu" value="' + esc(p.menuLabel || '') + '" placeholder="Size guide">'
+    + '<div class="toggle-row"><div class="grow"><b>Show in top menu</b></div><label class="switch"><input type="checkbox" class="pg-show"' + (p.showInMenu ? ' checked' : '') + '><span class="track"></span></label></div>'
+    + '<label>Page text (blank line = new paragraph)</label><textarea class="pg-body" placeholder="Write your page here...">' + esc(p.body || '') + '</textarea>'
+    + '</div>';
+}
+function renumberPageRows() {
+  Array.prototype.forEach.call(document.querySelectorAll('#pagesList .page-row'), function (row, i) {
+    row.querySelector('.pg-title').textContent = 'Page ' + (i + 1);
+  });
+}
+function renderPagesEditor() {
+  var list = (settings.content && settings.content.pagesList) || [];
+  $('pagesList').innerHTML = list.length ? list.map(pageRowHtml).join('') : '<p class="help">No pages yet. Tap "+ Add a page" to create your first one.</p>';
+  renumberPageRows();
+  var add = $('pageAdd'), save = $('pageSave');
+  if (add && !add.dataset.wired) {
+    add.dataset.wired = '1';
+    add.addEventListener('click', function () {
+      if ($('pagesList').querySelector('.help')) $('pagesList').innerHTML = '';
+      var div = document.createElement('div');
+      div.innerHTML = pageRowHtml({});
+      $('pagesList').appendChild(div.firstChild);
+      renumberPageRows();
+    });
+    $('pagesList').addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (btn && btn.classList.contains('pg-del')) { btn.closest('.page-row').remove(); renumberPageRows(); }
+    });
+  }
+  if (save && !save.dataset.wired) {
+    save.dataset.wired = '1';
+    save.addEventListener('click', savePages);
+  }
+}
+function savePages() {
+  var list = Array.prototype.map.call(document.querySelectorAll('#pagesList .page-row'), function (row) {
+    var title = row.querySelector('.pg-name').value.trim();
+    var slug = slugifyPage(row.querySelector('.pg-slug').value.trim() || title);
+    return {
+      title: title,
+      slug: slug,
+      menuLabel: row.querySelector('.pg-menu').value.trim(),
+      showInMenu: row.querySelector('.pg-show').checked,
+      body: row.querySelector('.pg-body').value.trim()
+    };
+  }).filter(function (p) { return p.slug && (p.title || p.body); });
+  api('PUT', '/api/admin/settings', { settings: { content: { pagesList: list } } }).then(function (d) {
+    settings = d.settings || settings;
+    renderPagesEditor();
+    showMsg($('pagesMsg'), 'Saved! ' + list.length + ' page' + (list.length === 1 ? '' : 's') + ' live in your shop. Links look like #/page/' + (list.length ? list[0].slug : 'your-page') + '.', true);
+  }).catch(function (e) { showMsg($('pagesMsg'), e.message, false); });
 }
 
 /* ---------------- settings: store email + legal + form messages ---------------- */
