@@ -289,6 +289,9 @@
   .reel-row { border: 1px solid var(--au-line); border-radius: var(--au-radius); padding: 16px; margin: 14px 0; background: #FFFDF8; }
   .reel-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
   .reel-btns { margin: 6px 0 10px; }
+
+  .page-row { border: 1px solid var(--au-line); border-radius: var(--au-radius); padding: 16px; margin: 14px 0; background: #FFFDF8; }
+  .page-row textarea { width: 100%; min-height: 110px; }
 </style>
 </head>
 <body>
@@ -349,6 +352,7 @@
       <button class="tab" data-tab="writing">Homepage Writing</button>
       <button class="tab" data-tab="sections">Homepage Parts On/Off</button>
       <button class="tab" data-tab="orders">Orders</button>
+      <button class="tab" data-tab="pages">Pages</button>
       <button class="tab" data-tab="settings">Settings</button>
     </div>
 
@@ -779,6 +783,29 @@
           </div>
         </div>
 
+        <h3>Menu, Shop Page &amp; Checkout Words</h3>
+        <p class="help">The words on your top menu, your shop page heading and the checkout buttons. Leave a box empty to use the standard word.</p>
+        <label for="c-nav-shopall">Menu: first link</label>
+        <input type="text" id="c-nav-shopall" placeholder="Shop all">
+        <label for="c-nav-collections">Menu: collections dropdown</label>
+        <input type="text" id="c-nav-collections" placeholder="Shop by collection">
+        <label for="c-nav-story">Menu: story link</label>
+        <input type="text" id="c-nav-story" placeholder="Our story">
+        <label for="c-nav-account">Menu: account link</label>
+        <input type="text" id="c-nav-account" placeholder="Account">
+        <label for="c-shop-title">Shop page heading</label>
+        <input type="text" id="c-shop-title" placeholder="Every pair, in stock.">
+        <label for="c-shop-blurb">Shop page line under the heading (empty = automatic pair count)</label>
+        <input type="text" id="c-shop-blurb" placeholder="19 handmade pairs across three collections. Sizes EU 35 to 41.">
+        <label for="c-checkout-title">Checkout page heading</label>
+        <input type="text" id="c-checkout-title" placeholder="Checkout">
+        <label for="c-btn-place">Cash on delivery button</label>
+        <input type="text" id="c-btn-place" placeholder="Place order">
+        <label for="c-btn-pay">Online payment button (the amount is added after it)</label>
+        <input type="text" id="c-btn-pay" placeholder="Pay">
+        <label for="c-link-continue">"Continue shopping" link</label>
+        <input type="text" id="c-link-continue" placeholder="Continue shopping">
+
         <h3>Video Reels</h3>
         <div class="toggle-row" style="border:none; padding-top:0">
           <div class="grow"><b>Show Video Reels</b></div>
@@ -813,6 +840,19 @@
     </div>
 
     <!-- ================= SETTINGS ================= -->
+    <div id="tab-pages" class="hidden">
+      <div class="card">
+        <h2>Your pages</h2>
+        <p class="help">Create your own pages, for example a size guide, a care guide or a story page. Every page gets its own link, like yourshop/#/page/size-guide. Tick "Show in top menu" to add it to the menu at the top of your shop. Write the text in paragraphs, leave a blank line between two paragraphs.</p>
+        <div id="pagesMsg"></div>
+        <div id="pagesList"></div>
+        <p style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap">
+          <button type="button" class="btn btn-light" id="pageAdd">+ Add a page</button>
+          <button type="button" class="btn btn-green" id="pageSave">SAVE PAGES</button>
+        </p>
+      </div>
+    </div>
+
     <div id="tab-settings" class="hidden">
       <div class="card">
         <h2>Shop email &amp; contact</h2>
@@ -967,6 +1007,6 @@
   </div>
 </div>
 
-<script src="admin.js?v=20261123_8"></script>
+<script src="admin.js?v=20261123_9"></script>
 </body>
 </html>
