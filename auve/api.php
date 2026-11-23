@@ -473,6 +473,76 @@ if (str_starts_with($route, 'admin/')) {
         sendJson(200, ['ok' => true, 'images' => $images]);
     }
 
+    // POST api/admin/upload (Single or Multiple Photos & Videos)
+    if ($route === 'admin/upload' && $method === 'POST') {
+        $files = [];
+        if (!empty($_FILES['file'])) {
+            $files[] = $_FILES['file'];
+        } elseif (!empty($_FILES['files'])) {
+            if (is_array($_FILES['files']['name'])) {
+                for ($i = 0; $i < count($_FILES['files']['name']); $i++) {
+                    $files[] = [
+                        'name' => $_FILES['files']['name'][$i],
+                        'type' => $_FILES['files']['type'][$i],
+                        'tmp_name' => $_FILES['files']['tmp_name'][$i],
+                        'error' => $_FILES['files']['error'][$i],
+                        'size' => $_FILES['files']['size'][$i]
+                    ];
+                }
+            } else {
+                $files[] = $_FILES['files'];
+            }
+        }
+
+        if (empty($files)) {
+            sendJson(400, ['ok' => false, 'error' => 'No files uploaded.']);
+        }
+
+        $uploadedUrls = [];
+        $allowedExts = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'svg', 'mp4', 'webm', 'mov'];
+        $videoExts = ['mp4', 'webm', 'mov'];
+
+        foreach ($files as $f) {
+            if (($f['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                continue;
+            }
+            $origName = $f['name'] ?? '';
+            $ext = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+            if (!in_array($ext, $allowedExts)) {
+                sendJson(400, ['ok' => false, 'error' => "File type .$ext is not allowed. Please upload JPG, PNG, WEBP, or MP4."]);
+            }
+
+            $isVideo = in_array($ext, $videoExts);
+            $targetDir = $isVideo ? (__DIR__ . '/assets/reels') : (__DIR__ . '/assets/p');
+            if (!is_dir($targetDir)) {
+                @mkdir($targetDir, 0755, true);
+            }
+
+            $rawBase = pathinfo($origName, PATHINFO_FILENAME);
+            $cleanBase = preg_replace('/[^a-zA-Z0-9_\-]/', '-', $rawBase);
+            $cleanBase = trim($cleanBase, '-');
+            if (!$cleanBase) $cleanBase = 'media';
+            $uniqueName = time() . '_' . substr(bin2hex(random_bytes(3)), 0, 5) . '_' . $cleanBase . '.' . $ext;
+
+            $destPath = $targetDir . '/' . $uniqueName;
+            if (move_uploaded_file($f['tmp_name'], $destPath)) {
+                $relUrl = ($isVideo ? 'assets/reels/' : 'assets/p/') . $uniqueName;
+                $uploadedUrls[] = $relUrl;
+            }
+        }
+
+        if (empty($uploadedUrls)) {
+            sendJson(500, ['ok' => false, 'error' => 'Failed to save uploaded files. Please check folder permissions.']);
+        }
+
+        sendJson(200, [
+            'ok' => true,
+            'url' => $uploadedUrls[0],
+            'urls' => $uploadedUrls,
+            'count' => count($uploadedUrls)
+        ]);
+    }
+
     // GET api/admin/security
     if ($route === 'admin/security' && $method === 'GET') {
         $auth = AuveStorage::getAuth();

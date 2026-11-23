@@ -134,27 +134,209 @@ function deleteProduct(id) {
   }).catch(function (e) { showMsg($('prodMsg'), e.message, false); });
 }
 
+/* ================= MEDIA & PHOTO UPLOADS ================= */
+var mediaModalCallback = null;
+
+function uploadFiles(fileList) {
+  var fd = new FormData();
+  for (var i = 0; i < fileList.length; i++) {
+    fd.append('files[]', fileList[i]);
+  }
+  return fetch(apiPath('/api/admin/upload'), {
+    method: 'POST',
+    headers: Object.assign({}, token ? { 'x-admin-token': token } : {}),
+    body: fd
+  }).then(function (r) {
+    return r.json().then(function (d) {
+      if (!r.ok || !d.ok) throw new Error(d.error || 'Upload failed');
+      return d;
+    });
+  });
+}
+
+function updateMediaPreview(inputEl, imgEl, emptyEl, delBtn) {
+  if (!inputEl || !imgEl) return;
+  var val = (inputEl.value || '').trim();
+  if (val) {
+    imgEl.src = val;
+    imgEl.style.display = 'block';
+    if (emptyEl) emptyEl.style.display = 'none';
+    if (delBtn) delBtn.style.display = 'inline-block';
+    imgEl.onerror = function () {
+      imgEl.style.display = 'none';
+      if (emptyEl) emptyEl.style.display = 'block';
+    };
+  } else {
+    imgEl.src = '';
+    imgEl.style.display = 'none';
+    if (emptyEl) emptyEl.style.display = 'block';
+    if (delBtn) delBtn.style.display = 'none';
+  }
+}
+
+function openMediaLibrary(callback) {
+  mediaModalCallback = callback;
+  var modal = $('mediaModal');
+  var grid = $('mediaGrid');
+  grid.innerHTML = '<p class="help">Loading library photos...</p>';
+  modal.classList.remove('hidden');
+
+  api('GET', '/api/admin/assets').then(function (d) {
+    assetImages = d.images || [];
+    if (!assetImages.length) {
+      grid.innerHTML = '<p class="help">No photos in library yet. Use the Upload button to upload new photos.</p>';
+      return;
+    }
+    grid.innerHTML = assetImages.map(function (src) {
+      var isVideo = /\.(mp4|webm|mov)$/i.test(src);
+      return '<div class="media-grid-item" data-src="' + esc(src) + '">' +
+        (isVideo ? '<video src="' + esc(src) + '"></video>' : '<img src="' + esc(src) + '" alt="" loading="lazy">') +
+        '</div>';
+    }).join('');
+
+    grid.querySelectorAll('.media-grid-item').forEach(function (item) {
+      item.addEventListener('click', function () {
+        var src = item.dataset.src;
+        if (mediaModalCallback) mediaModalCallback(src);
+        closeMediaLibrary();
+      });
+    });
+  }).catch(function (e) {
+    grid.innerHTML = '<p class="msg-err">Failed to load library: ' + esc(e.message) + '</p>';
+  });
+}
+
+function closeMediaLibrary() {
+  $('mediaModal').classList.add('hidden');
+  mediaModalCallback = null;
+}
+
+function setupMediaField(inputId, prevImgId, emptyId, uploadId, libBtnId, delBtnId) {
+  var input = $(inputId), img = $(prevImgId), empty = $(emptyId);
+  var upload = $(uploadId), libBtn = $(libBtnId), delBtn = delBtnId ? $(delBtnId) : null;
+  if (!input) return;
+
+  var sync = function () { updateMediaPreview(input, img, empty, delBtn); };
+  input.addEventListener('input', sync);
+  input.addEventListener('change', sync);
+
+  if (upload) {
+    upload.addEventListener('change', function () {
+      if (!upload.files || !upload.files.length) return;
+      var lbl = upload.parentElement;
+      var origText = lbl ? lbl.innerHTML : '';
+      if (lbl) lbl.innerHTML = '⏳ Uploading...';
+      uploadFiles(upload.files).then(function (res) {
+        input.value = res.url;
+        sync();
+        if (lbl) lbl.innerHTML = origText;
+        upload.value = '';
+      }).catch(function (e) {
+        alert('Upload failed: ' + e.message);
+        if (lbl) lbl.innerHTML = origText;
+        upload.value = '';
+      });
+    });
+  }
+
+  if (libBtn) {
+    libBtn.addEventListener('click', function () {
+      openMediaLibrary(function (src) {
+        input.value = src;
+        sync();
+      });
+    });
+  }
+
+  if (delBtn) {
+    delBtn.addEventListener('click', function () {
+      input.value = '';
+      sync();
+    });
+  }
+}
+
 /* ----- product editor ----- */
 function variantCard(v) {
   v = v || { name: '', sw: '#EEEEEE', imgs: [], desc: '' };
+  if (!Array.isArray(v.imgs)) v.imgs = [];
   var div = document.createElement('div');
   div.className = 'variant';
+
+  var renderGallery = function () {
+    var gal = div.querySelector('.variant-gallery');
+    if (!gal) return;
+    gal.innerHTML = '';
+    v.imgs.forEach(function (src, idx) {
+      var isVideo = /\.(mp4|webm|mov)$/i.test(src);
+      var card = document.createElement('div');
+      card.className = 'gallery-card';
+      card.innerHTML =
+        (isVideo ? '<video src="' + esc(src) + '"></video>' : '<img src="' + esc(src) + '" alt="">') +
+        '<button type="button" class="del-img" title="Remove photo">✕</button>';
+      card.querySelector('.del-img').addEventListener('click', function () {
+        v.imgs.splice(idx, 1);
+        sync();
+      });
+      gal.appendChild(card);
+    });
+
+    // Add upload dropzone card
+    var addCard = document.createElement('label');
+    addCard.className = 'gallery-add-card';
+    addCard.innerHTML = '<span>📷<br>+ Add Photos</span><input type="file" multiple accept="image/*,video/mp4">';
+    addCard.querySelector('input').addEventListener('change', function (e) {
+      if (!e.target.files || !e.target.files.length) return;
+      addCard.innerHTML = '<span>⏳<br>Uploading...</span>';
+      uploadFiles(e.target.files).then(function (res) {
+        (res.urls || [res.url]).forEach(function (u) { if (!v.imgs.includes(u)) v.imgs.push(u); });
+        sync();
+      }).catch(function (err) {
+        alert('Upload error: ' + err.message);
+        renderGallery();
+      });
+    });
+    gal.appendChild(addCard);
+  };
+
+  var sync = function () {
+    var ta = div.querySelector('.v-imgs');
+    if (ta) ta.value = v.imgs.join('\n');
+    var countLab = div.querySelector('.v-count-label');
+    if (countLab) countLab.textContent = 'Photos of this colour (' + v.imgs.length + ' photos)';
+    renderGallery();
+  };
+
   div.innerHTML =
     '<label>Colour name</label>' +
     '<input type="text" class="v-name" placeholder="Example: Brown" value="' + esc(v.name) + '">' +
     '<label>Colour dot</label>' +
     '<div class="color-row"><input type="color" class="v-sw" value="' + esc(v.sw || '#EEEEEE') + '"><div><input type="text" class="v-swtext" value="' + esc(v.sw || '#EEEEEE') + '"></div></div>' +
     '<p class="field-help">The small round colour dot customers see next to the colour name.</p>' +
-    '<label>Photos of this colour</label>' +
-    '<textarea class="v-imgs" placeholder="One photo per line">' + esc((v.imgs || []).join('\n')) + '</textarea>' +
-    '<p class="field-help">One photo file name per line, like assets/p/my-photo.jpg. The first photo is shown first.</p>' +
+    '<div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px;">' +
+      '<label class="v-count-label" style="margin:0">Photos of this colour (' + v.imgs.length + ' photos)</label>' +
+      '<button type="button" class="btn btn-light btn-small v-lib-btn">+ Pick from Library</button>' +
+    '</div>' +
+    '<div class="variant-gallery"></div>' +
+    '<textarea class="v-imgs" style="display:none">' + esc(v.imgs.join('\n')) + '</textarea>' +
+    '<p class="field-help">Click "+ Add Photos" to select multiple photos or videos from your computer/phone, or "Pick from Library" for existing ones.</p>' +
     '<label>About this colour (not needed)</label>' +
     '<textarea class="v-desc" placeholder="Only if this colour needs its own words">' + esc(v.desc || '') + '</textarea>' +
     '<p style="margin:12px 0 0"><button class="btn btn-danger btn-small v-remove">Remove this colour</button></p>';
+
   div.querySelector('.v-remove').addEventListener('click', function () { div.remove(); });
   var picker = div.querySelector('.v-sw'), text = div.querySelector('.v-swtext');
   picker.addEventListener('input', function () { text.value = picker.value; });
   text.addEventListener('change', function () { if (/^#[0-9a-fA-F]{6}$/.test(text.value)) picker.value = text.value; });
+
+  div.querySelector('.v-lib-btn').addEventListener('click', function () {
+    openMediaLibrary(function (src) {
+      if (!v.imgs.includes(src)) v.imgs.push(src);
+      sync();
+    });
+  });
+
+  renderGallery();
   return div;
 }
 function detailRow(d) {
@@ -184,6 +366,11 @@ function openEditor(id) {
   $('f-tag').value = p ? (p.tag || '') : '';
   $('f-cover').value = p ? (p.cover || '') : '';
   $('f-cover2').value = p ? (p.cover2 || '') : '';
+
+  // Synchronize cover previews
+  updateMediaPreview($('f-cover'), $('prev-cover'), $('empty-cover'), $('del-cover'));
+  updateMediaPreview($('f-cover2'), $('prev-cover2'), $('empty-cover2'), $('del-cover2'));
+
   var vWrap = $('variants'); vWrap.innerHTML = '';
   (p ? p.variants : [null]).forEach(function (v) { vWrap.appendChild(variantCard(v)); });
   var sWrap = $('soldOutSizes'); sWrap.innerHTML = '';
@@ -304,6 +491,8 @@ function fillWriting() {
   $('c-hmob').value = c.heroMobileImage || '';
   $('c-fest').value = c.festiveHeading || '';
   $('c-best').value = c.bestsellersHeading || '';
+  updateMediaPreview($('c-hdesk'), $('prev-hdesk'), $('empty-hdesk'));
+  updateMediaPreview($('c-hmob'), $('prev-hmob'), $('empty-hmob'));
 }
 function saveWriting() {
   var content = {
@@ -899,5 +1088,13 @@ $('saveWritingBtn').addEventListener('click', saveWriting);
 $('saveSectionsBtn').addEventListener('click', saveSections);
 $('refreshOrdersBtn').addEventListener('click', loadOrders);
 [['d-bg-picker', 'd-bg'], ['d-ink-picker', 'd-ink'], ['d-btn-picker', 'd-btn'], ['d-btnink-picker', 'd-btnink']].forEach(function (pair) { syncColor(pair[0], pair[1]); });
+
+/* Setup Photo & Video Controls */
+setupMediaField('f-cover', 'prev-cover', 'empty-cover', 'up-cover', 'lib-cover', 'del-cover');
+setupMediaField('f-cover2', 'prev-cover2', 'empty-cover2', 'up-cover2', 'lib-cover2', 'del-cover2');
+setupMediaField('c-hdesk', 'prev-hdesk', 'empty-hdesk', 'up-hdesk', 'lib-hdesk');
+setupMediaField('c-hmob', 'prev-hmob', 'empty-hmob', 'up-hmob', 'lib-hmob');
+$('closeMediaModal').addEventListener('click', closeMediaLibrary);
+$('cancelMediaModal').addEventListener('click', closeMediaLibrary);
 
 if (token) startApp();

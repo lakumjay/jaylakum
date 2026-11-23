@@ -90,6 +90,40 @@
   .imgpick .grow { flex: 1; min-width: 220px; }
   .imgpick select { margin-bottom: 8px; }
   .status-line { font-weight: bold; margin: 0 0 6px; }
+
+  /* ---- media upload & visual previews ---- */
+  .media-box { display: flex; gap: 14px; align-items: flex-start; margin-top: 6px; margin-bottom: 12px; background: #FFF; border: 1.5px solid #E6DEC8; border-radius: 12px; padding: 12px; }
+  .media-preview-wrap { width: 100px; height: 100px; border-radius: 8px; overflow: hidden; background: #F3EFEA; border: 1px solid #D8CDB4; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; }
+  .media-preview-wrap img, .media-preview-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .media-preview-empty { font-size: 12px; color: #8C827A; text-align: center; padding: 6px; line-height: 1.3; }
+  .media-content { flex: 1; min-width: 200px; }
+  .media-content input[type="text"] { margin-bottom: 8px; font-size: 15px; }
+  .media-btn-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .btn-upload { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; background: #1B1A34; color: #FFF; font-size: 14px; font-weight: bold; border-radius: 8px; padding: 8px 14px; transition: opacity 0.15s; }
+  .btn-upload:hover { opacity: 0.9; }
+  .btn-upload input[type="file"] { display: none; }
+  
+  /* variant gallery */
+  .variant-gallery { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0 14px; }
+  .gallery-card { position: relative; width: 90px; height: 90px; border-radius: 8px; overflow: hidden; border: 1.5px solid #D8CDB4; background: #F3EFEA; }
+  .gallery-card img, .gallery-card video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery-card .del-img { position: absolute; top: 3px; right: 3px; background: rgba(179,38,30,0.9); color: #FFF; border: none; border-radius: 50%; width: 22px; height: 22px; font-size: 13px; font-weight: bold; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .gallery-card .del-img:hover { background: #B3261E; }
+  .gallery-add-card { width: 90px; height: 90px; border-radius: 8px; border: 2px dashed #B98E4F; background: #FAF5EB; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; text-align: center; padding: 4px; transition: background 0.15s; font-size: 12px; font-weight: bold; color: #1B1A34; }
+  .gallery-add-card:hover { background: #F3EBD9; }
+  .gallery-add-card input[type="file"] { display: none; }
+
+  /* media library modal */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(27,26,52,0.65); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(2px); }
+  .modal-box { background: #FAF6F0; border-radius: 14px; max-width: 760px; width: 100%; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
+  .modal-head { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #E6DEC8; background: #FFF; }
+  .modal-head h3 { margin: 0; font-size: 20px; color: #1B1A34; }
+  .modal-body { padding: 16px; overflow-y: auto; flex: 1; }
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); gap: 10px; }
+  .media-grid-item { position: relative; aspect-ratio: 1; border-radius: 8px; overflow: hidden; border: 2px solid transparent; cursor: pointer; background: #FFF; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .media-grid-item:hover { border-color: #B98E4F; transform: scale(1.02); }
+  .media-grid-item img, .media-grid-item video { width: 100%; height: 100%; object-fit: cover; }
+  .modal-foot { padding: 12px 20px; border-top: 1px solid #E6DEC8; background: #FFF; display: flex; justify-content: flex-end; }
 </style>
 </head>
 <body>
@@ -219,13 +253,45 @@
         <input type="text" id="f-tag" placeholder="Example: Bestseller">
         <p class="field-help">A small tag shown on the product photo, like "Bestseller" or "New". Leave empty if you do not want a tag.</p>
 
-        <label for="f-cover">Main photo (the first photo in the shop list)</label>
-        <input type="text" id="f-cover" placeholder="Example: assets/p/my-photo.jpg">
-        <p class="field-help">The photo file name. New photos must first be uploaded by your developer — then type the file name here.</p>
+        <label>Main photo (the first photo in the shop list)</label>
+        <div class="media-box" id="box-cover">
+          <div class="media-preview-wrap">
+            <img id="prev-cover" src="" alt="" style="display:none">
+            <div id="empty-cover" class="media-preview-empty">No photo<br>selected</div>
+          </div>
+          <div class="media-content">
+            <input type="text" id="f-cover" placeholder="Example: assets/p/my-photo.jpg">
+            <div class="media-btn-row">
+              <label class="btn-upload">
+                📷 Upload Photo
+                <input type="file" id="up-cover" accept="image/*,video/mp4">
+              </label>
+              <button type="button" class="btn btn-light btn-small" id="lib-cover">Choose from Library</button>
+              <button type="button" class="btn btn-danger btn-small" id="del-cover" style="display:none">Clear</button>
+            </div>
+            <p class="field-help" style="margin:6px 0 0">Shown on cards in the shop. You can upload a new photo directly or pick from existing ones.</p>
+          </div>
+        </div>
 
-        <label for="f-cover2">Second photo (not needed)</label>
-        <input type="text" id="f-cover2" placeholder="Example: assets/p/my-photo-2.jpg">
-        <p class="field-help">On a computer, this photo appears when the customer moves the mouse over the product.</p>
+        <label>Second photo (on hover / not needed)</label>
+        <div class="media-box" id="box-cover2">
+          <div class="media-preview-wrap">
+            <img id="prev-cover2" src="" alt="" style="display:none">
+            <div id="empty-cover2" class="media-preview-empty">No second<br>photo</div>
+          </div>
+          <div class="media-content">
+            <input type="text" id="f-cover2" placeholder="Example: assets/p/my-photo-2.jpg">
+            <div class="media-btn-row">
+              <label class="btn-upload">
+                📷 Upload Photo
+                <input type="file" id="up-cover2" accept="image/*,video/mp4">
+              </label>
+              <button type="button" class="btn btn-light btn-small" id="lib-cover2">Choose from Library</button>
+              <button type="button" class="btn btn-danger btn-small" id="del-cover2" style="display:none">Clear</button>
+            </div>
+            <p class="field-help" style="margin:6px 0 0">On computers, this photo appears when the customer moves mouse over the card.</p>
+          </div>
+        </div>
 
         <h3>Colours of this product</h3>
         <p class="help">Most products have one colour. If the same design comes in two colours, add both here. Each colour has its own photos.</p>
@@ -327,11 +393,41 @@
         <input type="text" id="c-h2" placeholder="Example: Stand Out.">
         <p class="field-help">These are the big words written on the homepage photo.</p>
 
-        <label for="c-hdesk">Big photo — for computers</label>
-        <input type="text" id="c-hdesk" placeholder="Example: assets/hero-desktop.jpg">
-        <label for="c-hmob">Big photo — for phones</label>
-        <input type="text" id="c-hmob" placeholder="Example: assets/hero-mobile.jpg">
-        <p class="field-help">Photo file names. New photos must first be uploaded by your developer — then type the file name here.</p>
+        <label>Big photo — for computers (Desktop Banner)</label>
+        <div class="media-box" id="box-hdesk">
+          <div class="media-preview-wrap">
+            <img id="prev-hdesk" src="" alt="" style="display:none">
+            <div id="empty-hdesk" class="media-preview-empty">No banner<br>selected</div>
+          </div>
+          <div class="media-content">
+            <input type="text" id="c-hdesk" placeholder="Example: assets/hero-desktop.jpg">
+            <div class="media-btn-row">
+              <label class="btn-upload">
+                📷 Upload Desktop Photo
+                <input type="file" id="up-hdesk" accept="image/*,video/mp4">
+              </label>
+              <button type="button" class="btn btn-light btn-small" id="lib-hdesk">Choose from Library</button>
+            </div>
+          </div>
+        </div>
+
+        <label>Big photo — for phones (Mobile Banner)</label>
+        <div class="media-box" id="box-hmob">
+          <div class="media-preview-wrap">
+            <img id="prev-hmob" src="" alt="" style="display:none">
+            <div id="empty-hmob" class="media-preview-empty">No banner<br>selected</div>
+          </div>
+          <div class="media-content">
+            <input type="text" id="c-hmob" placeholder="Example: assets/hero-mobile.jpg">
+            <div class="media-btn-row">
+              <label class="btn-upload">
+                📷 Upload Mobile Photo
+                <input type="file" id="up-hmob" accept="image/*,video/mp4">
+              </label>
+              <button type="button" class="btn btn-light btn-small" id="lib-hmob">Choose from Library</button>
+            </div>
+          </div>
+        </div>
 
         <h3>Section headings</h3>
         <label for="c-fest">Festive row heading</label>
@@ -455,6 +551,23 @@
 
   </div>
 </div>
+
+<!-- ================= MEDIA LIBRARY MODAL ================= -->
+<div id="mediaModal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Choose Photo from Library</h3>
+      <button type="button" class="btn btn-light btn-small" id="closeMediaModal">✕ Close</button>
+    </div>
+    <div class="modal-body">
+      <div id="mediaGrid" class="media-grid"></div>
+    </div>
+    <div class="modal-foot">
+      <button type="button" class="btn btn-light" id="cancelMediaModal">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <script src="admin.js"></script>
 </body>
 </html>
