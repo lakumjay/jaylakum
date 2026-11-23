@@ -189,7 +189,7 @@ const addDays = n => { const d = new Date(); d.setDate(d.getDate() + n); return 
 const load = (k, f) => { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? f : v; } catch (e) { return f; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} };
 
-const REELS = [
+const DEFAULT_REELS = [
   { video: 'assets/reels/first-look.mp4', poster: 'assets/p/v-09.jpg', caption: 'First Look, brocade on a gold wedge', pid: 'first-look' },
   { video: 'assets/reels/muse.mp4', poster: 'assets/p/bn-muse-1.jpg', caption: 'Muse, in pastel', pid: 'muse' },
   { video: 'assets/reels/after-glow.mp4', poster: 'assets/p/gh-top.jpg', caption: 'Golden Hour', pid: 'golden-hour' },
@@ -198,6 +198,14 @@ const REELS = [
   { video: 'assets/reels/champagne.mp4', poster: 'assets/p/bn-whisper-1.jpg', caption: 'Step in. Stand out.', pid: 'whisper' },
   { video: 'assets/reels/dune.mp4', poster: 'assets/p/bn-dune-2.jpg', caption: 'The Barely Edit 2026', pid: 'dune' }
 ];
+/* The owner can replace the reels from the admin panel (Visual Editor,
+   Video reels). The saved list lives in settings.content.reelsList and is
+   loaded before this script runs; the defaults above are the fallback. */
+const _savedReels = ((window.AUVE_SETTINGS || {}).content || {}).reelsList;
+const _cleanReels = (Array.isArray(_savedReels) ? _savedReels : [])
+  .filter(function (r) { return r && (r.video || r.poster); })
+  .map(function (r) { return { video: r.video || '', poster: r.poster || '', caption: r.caption || '', pid: r.pid || '' }; });
+const REELS = _cleanReels.length ? _cleanReels : DEFAULT_REELS;
 const VID = Object.fromEntries(REELS.map(r => [r.pid, r.video]));
 /* Product-page-only videos (not in the home reels) */
 VID['desert-sand'] = 'assets/reels/desertsand.mp4';
