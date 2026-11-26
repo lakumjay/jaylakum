@@ -19,8 +19,8 @@
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 <meta name="theme-color" content="#171410" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#FAF7F1" media="(prefers-color-scheme: light)" />
-<title>WooCommerce &amp; Shopify Speed, Bug Fixes | Jay Lakum</title>
-<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a." />
+<title>WooCommerce &amp; Shopify Speed, Bug Fixes &amp; Redesigns — Fixed Price | Jay Lakum</title>
+<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a WooCommerce store from 6.1s to 2.2s. Based in India, working with webshop owners in the Netherlands &amp; worldwide." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Jay lakum — India Coders" />
 <meta property="og:title" content="Jay lakum — WooCommerce &amp; Shopify fixes met vaste prijs" />
@@ -825,7 +825,7 @@
           <h2>Bug Fixes</h2>
           <p class="lead">Something broke — or never worked properly. I reproduce the problem first, explain the cause in plain language, and only then fix it. No guessing on your live store.</p>
           <span class="tag">Fix €290–€450 · geen oplossing, geen factuur</span>
-          <p style="margin-top:14px"><a href="/diensten/woocommerce-checkout-traag/" style="font-weight:600">NL: Checkout traag →</a><br /><a href="/diensten/mollie-bestelling-hangt/" style="font-weight:600">NL: Mollie bestelling blijft hangen →</a><br /><a href="/diensten/woocommerce-storing-oplossen/" style="font-weight:600">NL: Storing oplossen (spoed) →</a></p>
+          <p style="margin-top:14px"><a href="/diensten/woocommerce-checkout-traag/" style="font-weight:600">NL: Checkout traag →</a><br /><a href="/diensten/mollie-bestelling-hangt/" style="font-weight:600">NL: Mollie bestelling blijft hangen →</a><br /><a href="/diensten/woocommerce-storing-oplossen/" style="font-weight:600">NL: Storing oplossen (spoed) →</a><br /><a href="/diensten/postnl-woocommerce-koppeling/" style="font-weight:600">NL: PostNL koppeling repareren →</a></p>
         </div>
         <div>
           <ul>
@@ -963,13 +963,14 @@
         <article class="card"><span class="tag">Checkout</span><h3><a href="/diensten/woocommerce-checkout-traag/" style="color:var(--ink)">WooCommerce Checkout Traag</a></h3><p>Afrekenen duurt eeuwig of blijft laden? Oorzaken, herkenning en een vaste-prijs fix binnen 48 uur.</p><a class="more" href="/diensten/woocommerce-checkout-traag/">Checkout-pagina →</a></article>
         <article class="card"><span class="tag">Mollie</span><h3><a href="/diensten/mollie-bestelling-hangt/" style="color:var(--ink)">Mollie Bestelling Blijft Hangen</a></h3><p>Bestelling blijft op “afwachting van betaling” na een geslaagde iDEAL-betaling. Webhook-sync uitgelegd + fix.</p><a class="more" href="/diensten/mollie-bestelling-hangt/">Mollie-pagina →</a></article>
         <article class="card"><span class="tag">Spoed</span><h3><a href="/diensten/woocommerce-storing-oplossen/" style="color:var(--ink)">WooCommerce Storing Oplossen</a></h3><p>Webshop kapot, wit scherm of checkout dood? Diagnose binnen 4 uur, vaste prijs, eerst staging.</p><a class="more" href="/diensten/woocommerce-storing-oplossen/">Spoed-pagina →</a></article>
+        <article class="card"><span class="tag">PostNL</span><h3><a href="/diensten/postnl-woocommerce-koppeling/" style="color:var(--ink)">PostNL WooCommerce Koppeling</a></h3><p>Labels printen niet, PostNL-punt werkt niet of de checkout hapert bij adresinvoer? Vaste prijs €290–€450, eerst op staging.</p><a class="more" href="/diensten/postnl-woocommerce-koppeling/">PostNL-pagina →</a></article>
         <article class="card"><span class="tag">Shopify</span><h3><a href="#nl-shopify" style="color:var(--ink)">Shopify Snelheid &amp; Spookcode</a></h3><p>Trage Shopify shop? Vaak is het “spookcode”: achtergebleven code van verwijderde apps. Opruimen als betaalde dienst, €690–€950.</p><a class="more" href="#nl-shopify">Shopify-pagina →</a></article>
         <article class="card"><span class="tag">B2B partners</span><h3><a href="/for-agencies/" style="color:var(--ink)">Partner voor bureaus (white-label)</a></h3><p>Voor agencies die bouwcapaciteit zoeken: alleen bouwen, volledig onzichtbaar, eerst een kleine betaalde pilot.</p><a class="more" href="/for-agencies/">Partner-pagina →</a></article>
       </div>
       <div class="plan-block">
         <h3>Meest gelezen: PostNL × WooCommerce</h3>
         <p class="plan-sub">Winkelwagen traag met PostNL in je WooCommerce shop? Dit artikel legt de oorzaken en de fix stap voor stap uit.</p>
-        <p><a class="btn btn-ghost" href="#blog/postnl-woocommerce-trage-winkelwagen-fix">Lees het PostNL-artikel →</a></p>
+        <p><a class="btn btn-ghost" href="/blog/trage-woocommerce-winkelwagen-postnl-exact-online/">Lees het PostNL-artikel →</a></p>
       </div>
       <p style="padding-bottom:70px;color:var(--ink-soft)">Ik werk remote vanuit India voor webshop-eigenaren in heel Nederland — Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en daarbuiten. Contact: <a href="https://wa.me/916353116138" target="_blank" rel="noopener">WhatsApp</a>, e-mail <a href="mailto:jay@jaylakum.com">jay@jaylakum.com</a> of het <a href="#contact">formulier</a>.</p>
     </div>
