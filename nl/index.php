@@ -19,8 +19,8 @@
 <meta name="twitter:image" content="https://jaylakum.com/og-image.png" />
 <meta name="theme-color" content="#171410" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#FAF7F1" media="(prefers-color-scheme: light)" />
-<title>WooCommerce &amp; Shopify Speed, Bug Fixes &amp; Redesigns — Fixed Price | Jay Lakum</title>
-<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a WooCommerce store from 6.1s to 2.2s. Based in India, working with webshop owners in the Netherlands &amp; worldwide." />
+<title>WooCommerce &amp; Shopify Speed, Bug Fixes | Jay Lakum</title>
+<meta name="description" content="Slow or broken webshop? Fixed-price Shopify &amp; WooCommerce speed optimisation, bug fixes and redesigns (€290–€950). Real result: a." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Jay lakum — India Coders" />
 <meta property="og:title" content="Jay lakum — WooCommerce &amp; Shopify fixes met vaste prijs" />
