@@ -89,7 +89,7 @@
       },
       "serviceType": "PostNL WooCommerce Koppeling Reparatie & Versnelling",
       "description": "Hapert de PostNL plugin in WooCommerce of vertraagt het adresveld de checkout? Wij lossen API timeouts, label print errors en afhaallocatie bugs binnen 48u op.",
-      "priceRange": "€290 – €490",
+      "priceRange": "€290 – €450",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "EUR",
@@ -115,7 +115,7 @@
           "name": "Werkt dit ook met MyParcel of Sendcloud?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Jazeker. Wij hebben ruime ervaring met alle gangbare Nederlandse verzendoplossingen (PostNL, MyParcel, Sendcloud, Trunkrs en Fietskoeriers) en zorgen dat ze probleemloos integreren zonder database-vervuiling."
+            "text": "Ja. De diagnose en reparatie werken hetzelfde voor de gangbare Nederlandse verzendoplossingen (PostNL, MyParcel, Sendcloud, Trunkrs en Fietskoeriers): eerst de API-calls en checkout-metadata controleren, daarna pas aanpassen — zonder database-vervuiling."
           }
         },
         {
@@ -123,7 +123,7 @@
           "name": "Wat kost een optimalisatie of reparatie van de PostNL koppeling?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Voor een complete analyse, ontkoppeling van vertragende synchrone calls en het foutloos instellen van pakketpunten hanteren we een vaste projectprijs van €290 tot €490. No-cure-no-pay binnen overeengekomen scope."
+            "text": "Voor een complete analyse, ontkoppeling van vertragende synchrone calls en het foutloos instellen van pakketpunten hanteren we een vaste projectprijs van €290 tot €450. No-cure-no-pay binnen overeengekomen scope."
           }
         },
         {
@@ -131,7 +131,47 @@
           "name": "Moet ik overstappen naar een andere hostingpartij?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "In 95% van de gevallen niet. De vertraging zit vrijwel altijd in de manier waarop de plugin API-calls afhandelt en niet in de serverhardware. Na de code-optimalisatie draait de checkout direct soepel op jouw bestaande hosting."
+            "text": "Meestal niet. De vertraging zit vrijwel altijd in de manier waarop de plugin API-calls afhandelt en niet in de serverhardware. Na de code-optimalisatie draait de checkout direct soepel op jouw bestaande hosting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waar vind ik mijn PostNL API key voor WooCommerce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je maakt de API key aan in Mijn PostNL Zakelijk: log in, ga naar de API-instellingen en genereer een key. Die key plak je in de PostNL-plugininstellingen in WooCommerce, samen met je klantnummer. Zonder geldige key kan de plugin geen labels of bezorgopties ophalen. Dit is de eerste controle bij elke PostNL-storing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom printen mijn PostNL verzendlabels niet ('Invalid address' of 'Unauthorized API key')?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "'Unauthorized API key' betekent dat de key in de plugin niet (meer) geldig is. 'Invalid address' wijst meestal op een adresveld dat PostNL niet accepteert, zoals een ontbrekend huisnummer. Controleer eerst de key en het klantnummer in Mijn PostNL Zakelijk, daarna de adresvelden van de order. Krijg je het niet rond? Wij repareren de label-flow voor een vaste prijs van €290 tot €450, eerst getest op staging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom krijgt mijn klant geen track & trace e-mail na verzending?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De track & trace-mail wordt pas verstuurd als het label is aangemaakt en de orderstatus naar 'voltooid' gaat. Faalt de labelaanmaak of blijft de status hangen, dan blijft ook de mail uit. Wij controleren de volledige keten (label, orderstatus en e-mailtrigger) en herstellen de flow voor een vaste prijs van €290 tot €450."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom werkt het PostNL-punt (afhaallocatie) niet in mijn checkout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meestal laadt de pakketpuntkiezer niet door een JavaScript- of CSS-conflict met je thema of een andere plugin, of de bezorgopties staan uit in de plugininstellingen. Wij isoleren het conflict op staging en zetten de kiezer weer werkend, voor een vaste prijs van €290 tot €450."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik avondbezorging of andere bezorgopties aanzetten in de PostNL koppeling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, als je PostNL-contract die opties dekt. Avondbezorging en afhaalpunten zet je aan in de plugininstellingen onder de bezorgopties; de checkout toont ze daarna automatisch. Wij stellen de opties samen met je in en testen de complete checkout, binnen dezelfde vaste prijs van €290 tot €450."
           }
         }
       ]
@@ -381,7 +421,7 @@
       <h1>PostNL WooCommerce Koppeling: Laten Maken & Repareren</h1>
       <p class="sub">Geen haperende checkout meer bij adresinvoer of afhaallocaties. Wij lossen PostNL API time-outs, labelprint fouten en database-transient vervuiling binnen 48 uur structureel op.</p>
       <div class="badges-row">
-        <span class="badge-item">✓ Checkout vertraging opgelost</span><span class="badge-item">✓ Vaste prijs: €290 – €490</span><span class="badge-item">✓ 100% Betalen bij oplevering</span><span class="badge-item">✓ Binnen 48 uur werkend</span>
+        <span class="badge-item">✓ Checkout vertraging opgelost</span><span class="badge-item">✓ Vaste prijs: €290 – €450</span><span class="badge-item">✓ 100% Betalen bij oplevering</span><span class="badge-item">✓ Binnen 48 uur werkend</span>
       </div>
       <div class="hero-ctas">
         <a href="https://wa.me/916353116138?text=Hallo%20Jay,%20ik%20heb%20hulp%20nodig%20met%20mijn%20WooCommerce%20webshop" target="_blank" rel="noopener" class="btn btn-wa">
@@ -487,7 +527,7 @@
         <div class="eyebrow" style="margin-bottom:8px">TRANSPARANTE TARIEVEN &middot; GEEN NACALCULATIE</div>
         <h3 style="font-size:28px;margin:0">Vaste Prijs Voor PostNL Koppeling Optimalisatie</h3>
         <p style="color:var(--ink-soft);font-size:16px;margin:8px 0 0">Foutloze adresvalidatie, afhaallocaties en verzendlabels zonder checkout vertraging.</p>
-        <div class="price-highlight">€290 – €490</div>
+        <div class="price-highlight">€290 – €450</div>
         <ul class="pricing-bullets">
           <li>✓ Volledige analyse van PostNL API wachttijden</li><li>✓ Transient caching voor razendsnelle postcodecheck</li><li>✓ Foutloze weergave van PostNL Pakketpunten & avondbezorging</li><li>✓ Reparatie van geautomatiseerde verzendlabels (PDF)</li><li>✓ Koppelingstest op veilige staging omgeving</li>
         </ul>
@@ -522,17 +562,42 @@
         
         <details class="faq-item">
           <summary>Werkt dit ook met MyParcel of Sendcloud?</summary>
-          <p>Jazeker. Wij hebben ruime ervaring met alle gangbare Nederlandse verzendoplossingen (PostNL, MyParcel, Sendcloud, Trunkrs en Fietskoeriers) en zorgen dat ze probleemloos integreren zonder database-vervuiling.</p>
+          <p>Ja. De diagnose en reparatie werken hetzelfde voor de gangbare Nederlandse verzendoplossingen (PostNL, MyParcel, Sendcloud, Trunkrs en Fietskoeriers): eerst de API-calls en checkout-metadata controleren, daarna pas aanpassen — zonder database-vervuiling.</p>
         </details>
         
         <details class="faq-item">
           <summary>Wat kost een optimalisatie of reparatie van de PostNL koppeling?</summary>
-          <p>Voor een complete analyse, ontkoppeling van vertragende synchrone calls en het foutloos instellen van pakketpunten hanteren we een vaste projectprijs van €290 tot €490. No-cure-no-pay binnen overeengekomen scope.</p>
+          <p>Voor een complete analyse, ontkoppeling van vertragende synchrone calls en het foutloos instellen van pakketpunten hanteren we een vaste projectprijs van €290 tot €450. No-cure-no-pay binnen overeengekomen scope.</p>
         </details>
         
         <details class="faq-item">
           <summary>Moet ik overstappen naar een andere hostingpartij?</summary>
-          <p>In 95% van de gevallen niet. De vertraging zit vrijwel altijd in de manier waarop de plugin API-calls afhandelt en niet in de serverhardware. Na de code-optimalisatie draait de checkout direct soepel op jouw bestaande hosting.</p>
+          <p>Meestal niet. De vertraging zit vrijwel altijd in de manier waarop de plugin API-calls afhandelt en niet in de serverhardware. Na de code-optimalisatie draait de checkout direct soepel op jouw bestaande hosting.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Waar vind ik mijn PostNL API key voor WooCommerce?</summary>
+          <p>Je maakt de API key aan in Mijn PostNL Zakelijk: log in, ga naar de API-instellingen en genereer een key. Die key plak je in de PostNL-plugininstellingen in WooCommerce, samen met je klantnummer. Zonder geldige key kan de plugin geen labels of bezorgopties ophalen. Dit is de eerste controle bij elke PostNL-storing.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Waarom printen mijn PostNL verzendlabels niet ('Invalid address' of 'Unauthorized API key')?</summary>
+          <p>'Unauthorized API key' betekent dat de key in de plugin niet (meer) geldig is. 'Invalid address' wijst meestal op een adresveld dat PostNL niet accepteert, zoals een ontbrekend huisnummer. Controleer eerst de key en het klantnummer in Mijn PostNL Zakelijk, daarna de adresvelden van de order. Krijg je het niet rond? Wij repareren de label-flow voor een vaste prijs van €290 tot €450, eerst getest op staging.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Waarom krijgt mijn klant geen track &amp; trace e-mail na verzending?</summary>
+          <p>De track &amp; trace-mail wordt pas verstuurd als het label is aangemaakt en de orderstatus naar 'voltooid' gaat. Faalt de labelaanmaak of blijft de status hangen, dan blijft ook de mail uit. Wij controleren de volledige keten (label, orderstatus en e-mailtrigger) en herstellen de flow voor een vaste prijs van €290 tot €450.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Waarom werkt het PostNL-punt (afhaallocatie) niet in mijn checkout?</summary>
+          <p>Meestal laadt de pakketpuntkiezer niet door een JavaScript- of CSS-conflict met je thema of een andere plugin, of de bezorgopties staan uit in de plugininstellingen. Wij isoleren het conflict op staging en zetten de kiezer weer werkend, voor een vaste prijs van €290 tot €450.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Kan ik avondbezorging of andere bezorgopties aanzetten in de PostNL koppeling?</summary>
+          <p>Ja, als je PostNL-contract die opties dekt. Avondbezorging en afhaalpunten zet je aan in de plugininstellingen onder de bezorgopties; de checkout toont ze daarna automatisch. Wij stellen de opties samen met je in en testen de complete checkout, binnen dezelfde vaste prijs van €290 tot €450.</p>
         </details>
         
       </div>
@@ -559,6 +624,12 @@
         <span class="rel-tag">Diepgaand Blogartikel</span>
         <h3>Trage WooCommerce Winkelwagen door PostNL Oplossen &rarr;</h3>
         <p>Gedetailleerde technische handleiding over transients, API latency en Exact Online.</p>
+      </a>
+
+      <a href="/diensten/woocommerce-checkout-traag/" class="related-card">
+        <span class="rel-tag">Checkout Reparatie</span>
+        <h3>WooCommerce Checkout Traag &rarr;</h3>
+        <p>Checkout blijft laden of hangt op verzendkosten? Oorzaken en vaste-prijs fix binnen 48 uur.</p>
       </a>
     
       <a href="/nl/rotterdam/" class="related-card">
@@ -624,6 +695,10 @@
         <ul style="list-style:none;padding:0;margin:0;line-height:1.8">
           <li><a href="/diensten/woocommerce-bug-fix/">WooCommerce Bug Fix & Kassa Reparatie</a></li>
           <li><a href="/diensten/postnl-woocommerce-koppeling/">PostNL WooCommerce Koppeling</a></li>
+          <li><a href="/diensten/woocommerce-snelheid-optimalisatie/">WooCommerce Snelheid Optimalisatie</a></li>
+          <li><a href="/diensten/woocommerce-checkout-traag/">WooCommerce Checkout Traag</a></li>
+          <li><a href="/diensten/mollie-bestelling-hangt/">Mollie Bestelling Blijft Hangen</a></li>
+          <li><a href="/diensten/woocommerce-storing-oplossen/">WooCommerce Storing Oplossen</a></li>
           <li><a href="/nl/#diensten">Core Web Vitals Snelheidssprint</a></li>
         </ul>
       </div>
